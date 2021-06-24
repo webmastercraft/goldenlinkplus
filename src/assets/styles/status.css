@@ -1,0 +1,26 @@
+.steps {
+	width: 85%;
+	margin: 35px auto 0;
+}
+
+.steps > ul {
+	display: flex;
+	margin-bottom: 0;
+}
+
+.steps > ul > li {
+	width: calc(100% / 7);
+} 
+
+.steps > ul > li > a {
+	height: 7px;
+	width: 80%;
+	display: block;
+	margin: auto;
+	background: #f1f1f1;
+	border-radius: 3px;
+}
+
+.steps > ul > li.action > a {
+	background: #13c8ff;
+}

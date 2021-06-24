@@ -15,7 +15,6 @@
               up first. Enter your social handle experience as well as audience
               size.
             </p>
-            
             <router-link to="/registration_one"  >
               Get Started
             </router-link>
@@ -31,7 +30,7 @@ import Navbar from '../layout/Navbar.vue';
 export default {
   name: 'Home',
   components: {
-    Navbar
+    Navbar,
   }
 }
 </script>

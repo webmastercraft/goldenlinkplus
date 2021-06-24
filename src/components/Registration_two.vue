@@ -4,54 +4,20 @@
       <div class="phone">
         <div class="content">
           <navbar></navbar>
+          <Status :current=2></Status>
           <div class="content_ragister">
             <form>
-              <h6>Marketing Direction</h6>
+              <h6>Your Internal Business Role</h6>
              
-              <div class="form-group">
-                <select class="form-control" id="v">
-                  <option>Verticals</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="form-control" id="tc">
-                  <option>Traffic Channel</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="form-control" id="ota">
-                  <option>Offer Types Accepted</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="form-control" id="ota">
-                  <option>Geolocation</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="kt" aria-describedby="kt" placeholder="Keyword Tags">
+              <div class="form-group s_filed">
+                <input type="Search" class="form-control" id="kt" aria-describedby="kt" placeholder="Search Location">
+                <span class="search_p"><a href="#"><img src="img/plus_search.svg"></a></span>
               </div>
              
               <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
+                <img src="img/map.png" class="img-fluid">
               </div>
-              <router-link to="/paymentoption"  type="submit" class="btn btn-primary next_btn">
+              <router-link to="/registration_three"  type="submit" class="btn btn-primary next_btn">
                 Next
               </router-link>
               <div class="icon_text">
@@ -66,12 +32,14 @@
 </template>
 <script>
 import Navbar from "../layout/Navbar.vue";
+import Status from "../layout/Status.vue";
 
 export default {
   name: "Registration_two",
   components: {
     Navbar,
-  },
-};
+    Status
+  }
+}
 </script>
 <style></style>
