@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" id="dateregistration" aria-describedby="dateofregistration" placeholder="Date of Registration">
               </div>
               <hr>
-              <router-link to="/registration_four"  type="submit" class="btn btn-primary next_btn">
+              <router-link to="/registration_four" class="btn btn-primary next_btn">
                 Next
               </router-link>
               <div class="icon_text">

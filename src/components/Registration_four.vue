@@ -117,7 +117,7 @@
               </div>
               <hr>
               <button type="submit" class="btn btn-primary next_btn add">Add more</button>
-              <router-link to="/registration_five"  type="submit" class="btn btn-primary next_btn">
+              <router-link to="/registration_five" class="btn btn-primary next_btn">
                 Next
               </router-link>
              

@@ -137,7 +137,7 @@
                 <div><img src=""></div>
               </div>
               <hr>
-              <router-link to="/registration_seven"  type="submit" class="btn btn-primary next_btn">
+              <router-link to="/registration_seven" class="btn btn-primary next_btn">
                 Next
               </router-link>
              

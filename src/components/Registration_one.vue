@@ -136,7 +136,7 @@
                 ></textarea>
               </div>
               <hr>
-              <router-link to="/registration_two"  type="submit" class="btn btn-primary next_btn">
+              <router-link to="/registration_two" class="btn btn-primary next_btn">
                 Next
               </router-link>
              
