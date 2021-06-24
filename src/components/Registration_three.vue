@@ -31,7 +31,6 @@
                 <input type="text" class="form-control" id="dateregistration" aria-describedby="dateofregistration" placeholder="Date of Registration">
               </div>
               <hr>
-              <button type="submit" class="btn btn-primary next_btn add">Add more</button>
               <router-link to="/registration_four"  type="submit" class="btn btn-primary next_btn">
                 Next
               </router-link>

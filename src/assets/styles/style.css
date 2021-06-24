@@ -56,7 +56,7 @@ ul {
 .phone {
     width: 100%;
     max-width: 414px;
-    /*  height: 575px; */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -64,7 +64,7 @@ ul {
 .content {
     border-radius: 0px;
     width: 100%;
-    height: 100%;
+    height: auto;
     background: #fff;
     overflow: hidden;
 }
@@ -169,7 +169,7 @@ nav {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 50px;
-    height: 100vh;
+    height: calc( 100vh - 55px );
 }
 
 .payment_h {
@@ -412,7 +412,7 @@ body
 {
     display: block;
     position: relative;
-    width: 384px;
+    /* width: 384px; */
     box-sizing: border-box;
 }
 .toggle-button-cover span {
