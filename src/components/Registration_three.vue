@@ -13,16 +13,7 @@
               </div>
               <div class="form-group toggle-button-cover">
                 <span class="toggle-title">Are you brand owner?</span>
-                <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" width='80' height='30' style='float: right;'/>
-                <!-- <div>
-                  <div class="button b2" id="button-13">
-                    <input type="checkbox" class="checkbox">
-                    <div class="knobs">
-                      <span></span>
-                    </div>
-                    <div class="layer"></div>
-                  </div>
-                </div> -->
+                <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" :width=80 :height=30 style='float: right;'/>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" id="placeregistration" aria-describedby="placeofregistration" placeholder="Place of Registration">

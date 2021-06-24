@@ -13,6 +13,9 @@ Vue.use(Router);
 
 export default new Router({
     linkExactActiveClass: 'active',
+    scrollBehavior (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    },
     routes: [{
             path: '/',
             name: 'home',

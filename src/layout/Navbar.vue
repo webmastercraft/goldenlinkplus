@@ -1,9 +1,9 @@
 <template>
   <nav role="navigation">
     <div class="back_logo">
-      <a  class="back_btn"><i class="bx bx-chevron-left"></i></a>
-      <a ><img src="img/logo.svg" /></a>
-      <a  class="search_btn"><i class="fas fa-search"></i></a>
+      <a href="#" class="back_btn"><i class="fa fa-angle-left"></i></a>
+      <router-link to="/" class="logo"><img src="img/logo.svg" /></router-link>
+      <a class="search_btn"><i class="fas fa-search"></i></a>
     </div>
     <div id="menuToggle">
       <input type="checkbox" />

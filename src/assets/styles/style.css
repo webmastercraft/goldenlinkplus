@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 body {
     background-color: #f9f9f9;
@@ -23,22 +24,27 @@ ul {
     align-items: center;
     height: 55px;
     justify-content: space-between;
-    max-width: 82%;
-    padding-left: 5px;
+    /* max-width: 82%; */
+    /* padding-left: 5px; */
     padding-right: 5px;
 }
-
-.back_logo .back_btn i {
+.back_logo .back_btn{
+    cursor: pointer;
+    margin-left: 20px;
     color: #fff;
     font-size: 21px;
-    vertical-align: middle;
 }
-
+.back_logo .logo{
+    width: calc(100% - 25px);
+    text-align: center;
+}
 .back_logo img {
     vertical-align: middle;
     max-width: 100%;
 }
-
+.back_logo .search_btn{
+    display: none;
+}
 .back_logo .search_btn i {
     font-size: 18px;
     vertical-align: middle;
