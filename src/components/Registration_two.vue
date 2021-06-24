@@ -17,7 +17,7 @@
               <div class="form-group">
                 <img src="img/map.png" class="img-fluid">
               </div>
-              <router-link to="/registration_three" class="btn btn-primary next_btn">
+              <router-link to="/registration_three"  type="submit" class="btn btn-primary next_btn" tag="button">
                 Next
               </router-link>
               <div class="icon_text">
