@@ -56,13 +56,13 @@
                 />
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="select-offer-type"
-                  aria-describedby="select-offer-type"
-                  placeholder="Select Offer Type"
-                />
+                <select class="form-control" id="select_offer_type">
+                  <option>Select Offer Type</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
                 <textarea

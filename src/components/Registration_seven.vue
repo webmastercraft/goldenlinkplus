@@ -19,22 +19,22 @@
                 />
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="select-offer"
-                  aria-describedby="select-offer"
-                  placeholder="Select Offer"
-                />
+                <select class="form-control" id="select_offer">
+                  <option>Select Offer</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="selected-red-packet-type"
-                  aria-describedby="selected-red-packet-type"
-                  placeholder="Selected Red Packet Type"
-                />
+                <select class="form-control" id="select_red_packet_type">
+                  <option>Selected Red Packet Type</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
                 <input

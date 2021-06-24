@@ -184,16 +184,28 @@ nav {
     line-height: 27px;
     letter-spacing: -0.01em;
     color: #3B3E51;
+    margin: 50px 0 24px 0;
 }
 
-.welcome_content p {
+.welcome_content p.first {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
     letter-spacing: -0.01em;
     color: #3B3E51;
+    margin: 0 45px 35px;
+}
+.welcome_content p.second {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #3B3E51;
+    margin: 0 50px 35px;
 }
 
 .welcome_content a {
@@ -212,6 +224,9 @@ nav {
     max-width: 150px;
     margin: 50px auto 0;
 }
+.welcome_content a:hover {
+    text-decoration: none;
+}
 
 .content_ragister {
     padding: 15px;
@@ -221,6 +236,7 @@ nav {
     position: relative;
     text-align: center;
     padding-bottom: 25px;
+    background-color: transparent !important;
 }
 
 .content_ragister h6 {
@@ -306,7 +322,7 @@ nav {
 }
 
 .add {
-    background-color: #03A9F4;
+    background-color: #13C8FF;
 }
 
 .later_icon {
@@ -421,15 +437,15 @@ body
     display: block;
     position: relative;
     width: 384px;
-    height: 45px;
     box-sizing: border-box;
 }
 .toggle-button-cover span {
     position: absolute;
-    left: 20px;
-    top: 7px;
     font-size: 16px;
     color: #3B3E51;
+}
+.toggle-button-cover .toggle-title {
+    left: 20px;
 }
 
 .button-cover
@@ -464,7 +480,7 @@ body
     position: relative;
     top: 15%;
     right: 2%;
-    width: 74px;
+    width: 80px;
     height: 35px;
     margin: 0;
     overflow: hidden;
@@ -479,6 +495,8 @@ body
 .button.b2
 {
     border-radius: 2px;
+    position: absolute;
+    right: 0%;
 }
 
 .btn-primary:hover {
@@ -507,18 +525,19 @@ body
 
 .layer
 {
-    width: 100%;
-    background-color: #03A9F4;
+    width: 80px;
+    height: 30px;
+    background-color: #13C8FF;
     transition: 0.3s ease all;
     z-index: 1;
-    border-radius: 50px;
+    border-radius: 48px;
 }
 
 /* Button 13 */
 #button-13 .knobs:before, #button-13 .knobs:after, #button-13 .knobs span
 {
     position: absolute;
-    top: 3px;
+    top: -5px;
     width: 20px;
     height: 10px;
     font-size: 12px;
@@ -540,28 +559,39 @@ body
 {
     content: 'YES';
     left: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 #button-13 .knobs:after
 {
     content: 'NO';
-    right: 7px;
+    right: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 #button-13 .knobs span
 {
-    width: 30px;
-    left: 41px;
+    width: 24px;
+    left: 50px;
     background-color: white;
     z-index: 2;
-    height: 30px;
+    height: 24px;
     border-radius: 50%;
+    top: 3px;
 }
 
 #button-13 .checkbox:checked + .knobs span
 {
     left: 4px;
     background-color: white;
+}
+#button-13 .checkbox:checked ~ .layer
+{
+    background-color: red;
 }
 
 /*#button-13 .checkbox:checked ~ .layer
@@ -626,7 +656,7 @@ h1 {
 .upload-options {
   position: relative;
   height: 35px;
-  background-color: #03A9F4;
+  background-color: #13C8FF;
   cursor: pointer;
   overflow: hidden;
   text-align: center;
@@ -639,7 +669,7 @@ h1 {
   border: 5px solid white;
 }
 .upload-options:hover {
-  background-color: #03A9F4;
+  background-color: #13C8FF;
 }
 .upload-options input {
   width: 0.1px;
@@ -794,4 +824,9 @@ i.material-icons {
 }
 .thumbnails + hr {
     margin-top: 15px;
+}
+.vue-js-switch .v-switch-core {
+    width: 80px;
+    height: 30px;
+    border-radius: 48px;
 }

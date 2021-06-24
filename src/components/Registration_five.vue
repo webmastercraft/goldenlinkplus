@@ -19,37 +19,38 @@
                 </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="Service category"
-                  aria-describedby="service category"
-                  placeholder="Service Category"
-                />
+                <select class="form-control" id="service_category">
+                  <option>Service Category</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
-              
+              <div class="form-group">
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
-                  
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  
-                  placeholder=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="service name"
-                  aria-describedby="service name"
+                  id="service_name"
+                  aria-describedby="service_name"
                   placeholder="Service Name"
                 />
               </div>
@@ -72,13 +73,13 @@
                 />
               </div>
               <div class="form-group">
-                <select class="form-control" id="service-item">
-                  <option>Service Item</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="service_item"
+                  aria-describedby="service_item"
+                  placeholder="Service Item"
+                />
               </div>
               <div class="form-group wrapper">
                 <div class="box">

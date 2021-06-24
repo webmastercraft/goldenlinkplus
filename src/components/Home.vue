@@ -5,15 +5,12 @@
         <div class="content">
           <navbar></navbar>
           <div class="welcome_content">
-            <h4>Welcome to Goldenlink+</h4>
-            <p>
-              Tell us about you marketing experience and you will be on your way
-              to promote businesses.
+            <h4><b>Welcome to Goldenlink+</b></h4>
+            <p class="first">
+              Tell us about your business and you'll be on your way to connect GS Marketers
             </p>
-            <p>
-              Step one: complete your Gold Striker (aka GS marketer) account set
-              up first. Enter your social handle experience as well as audience
-              size.
+            <p class="second">
+              We prefer you to complete your business account and set up your ad campaign with various offers, such as: G-Coins rewards, CPC G-Coins rate, conversion commission rate. Don’t forget recharge marketing fees for your campaign. GOLD ads campaign expenses will be flexible, and reliable. Make your social media events attractive and exciting.
             </p>
             <router-link to="/registration_one"  >
               Get Started

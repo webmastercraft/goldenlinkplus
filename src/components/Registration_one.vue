@@ -8,11 +8,16 @@
           <div class="content_ragister">
             <form>
               <h6>Your External Business Role</h6>
-              <div class="user-profile">
-                <img src="img/user_img.png" class="img-fluid" />
-                <span class="plus"
-                  ><img src="img/plus.png" class="img-fluid"
-                /></span>
+              
+              <div class="form-group wrapper">
+                <div class="box user-profile">
+                  <img src="img/user_img.png" class="img-fluid" />
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" accept="image/*" />
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <input
@@ -51,47 +56,49 @@
                 </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="choose industry"
-                  aria-describedby="choose industry"
-                  placeholder="Choose Industry"
-                />
+                <select class="form-control" id="choose_industry">
+                  <option>Choose Industry</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  
-                  placeholder=""
-                />
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  
-                  placeholder=""
-                />
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="role"
-                  aria-describedby="role"
-                  placeholder="External Business Role"
-                />
+                <select class="form-control" id="external_business_role">
+                  <option>External Business Role</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="company size"
-                  aria-describedby="company size"
-                  placeholder="Company Size"
-                />
+                <select class="form-control" id="company_size">
+                  <option>Company Size</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
                 <input

@@ -12,8 +12,9 @@
                 <input type="text" class="form-control" id="brand" aria-describedby="brand name" placeholder="Brand Name">
               </div>
               <div class="form-group toggle-button-cover">
-                <span>Are you brand owner?</span>
-                <div class="button-cover">
+                <span class="toggle-title">Are you brand owner?</span>
+                <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" width='80' height='30' style='float: right;'/>
+                <!-- <div>
                   <div class="button b2" id="button-13">
                     <input type="checkbox" class="checkbox">
                     <div class="knobs">
@@ -21,7 +22,7 @@
                     </div>
                     <div class="layer"></div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" id="placeregistration" aria-describedby="placeofregistration" placeholder="Place of Registration">
@@ -29,6 +30,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" id="dateregistration" aria-describedby="dateofregistration" placeholder="Date of Registration">
               </div>
+              <hr>
               <button type="submit" class="btn btn-primary next_btn add">Add more</button>
               <router-link to="/registration_four"  type="submit" class="btn btn-primary next_btn">
                 Next
@@ -44,14 +46,23 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'; 
 import Navbar from "../layout/Navbar.vue";
 import Status from "../layout/Status.vue";
+import ToggleButton from 'vue-js-toggle-button';
+
+Vue.use(ToggleButton)
 
 export default {
   name: "Registration_three",
   components: {
     Navbar,
-    Status
+    Status,
+  },
+  data() {
+      return {
+          currentState: false
+      }
   }
 }
 </script>

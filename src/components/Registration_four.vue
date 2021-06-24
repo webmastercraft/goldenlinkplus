@@ -19,30 +19,31 @@
                 </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="product category"
-                  aria-describedby="product category"
-                  placeholder="Product Category"
-                />
-              </div>
-              
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  
-                  placeholder=""
-                />
+                <select class="form-control" id="product_category">
+                  <option>Product Category</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  
-                  placeholder=""
-                />
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-control" id="">
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
               <div class="form-group">
                 <input
@@ -72,13 +73,13 @@
                 />
               </div>
               <div class="form-group">
-                <select class="form-control" id="item-number">
-                  <option>Item Number</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="item_number"
+                  aria-describedby="item_number"
+                  placeholder="Item Number"
+                />
               </div>
               <div class="form-group wrapper">
                 <div class="box">
