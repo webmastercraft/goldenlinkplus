@@ -23,7 +23,7 @@
               <div class="icon_text">
                 <div class="later_icon">
                   <router-link to="/registration_three">
-                    <small>i’ll do this later<img src="img/later.svg" class="img-fluid"/></small>
+                    <small>i’ll do this later <img src="img/later.svg" class="img-fluid"/></small>
                   </router-link>
                 </div>
               </div>
