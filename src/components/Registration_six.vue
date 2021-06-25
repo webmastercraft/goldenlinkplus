@@ -3,7 +3,7 @@
     <div class="container">
       <div class="phone">
         <div class="content">
-          <navbar></navbar>
+          <navbar :current=5></navbar>
           <Status :current=6></Status>
           <div class="content_ragister">
             <form>

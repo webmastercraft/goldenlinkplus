@@ -35,8 +35,10 @@ ul {
     font-size: 21px;
 }
 .back_logo .logo{
-    width: calc(100% - 25px);
+    width: 50%;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .back_logo img {
     vertical-align: middle;
