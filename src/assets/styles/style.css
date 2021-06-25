@@ -381,21 +381,6 @@ input[type=text]:invalid {
   left: -9999px;
 }
 
-
--- Yes or no --
-/* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
-
-*
-{
-    user-select: none;
-    -webkit-tap-highlight-color:transparent;
-}
-
-*:focus
-{
-    outline: none;
-}
-
 body
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -599,16 +584,6 @@ body
   box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
 }
 
-/*body {
-  font-family: "Raleway", sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #eff5f6;
-}
-*/
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -831,8 +806,12 @@ i.material-icons {
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;
-    background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1200 1000' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");
+    background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1700 1500' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) 50%;
 }
 
+.later_icon a {
+    color: #212529;
+    text-decoration: none;
+}

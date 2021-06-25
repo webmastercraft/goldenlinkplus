@@ -123,9 +123,9 @@
              
               <div class="icon_text">
                 <div class="later_icon">
-                  <small>i’ll do this later
-                    <img src="img/later.svg" class="img-fluid"
-                  /></small>
+                  <router-link to="/registration_five">
+                    <small>i’ll do this later<img src="img/later.svg" class="img-fluid"/></small>
+                  </router-link>
                 </div>
               </div>
             </form>
