@@ -108,8 +108,8 @@ export default new Router({
             components: { default: UserCenter_Internal_Business_Role },
         },
         {
-            path: '/usercenter/my_referrals',
-            name: 'my_referrals',
+            path: '/usercenter/referrals',
+            name: 'referrals',
             components: { default: UserCenter_My_Referrals },
         },
         {

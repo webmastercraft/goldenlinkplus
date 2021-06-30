@@ -49,10 +49,10 @@ export default {
           {rout : "notifications", name: "Notifications"},
           {rout : "referrals", name: "My Referrals"},
           {rout : "comments and reviews", name: "Comments and Reviews"},
-          {rout : "Commissions", name: "My commissions"},
-          {rout : "GS_membership", name: "GS Membership"},
-          {rout : "Payments", name: "Payments and Financials"},
-          {rout : "Invite", name: "Invite"}
+          {rout : "commissions", name: "My commissions"},
+          {rout : "gs_membership", name: "GS Membership"},
+          {rout : "payments", name: "Payments and Financials"},
+          {rout : "invite", name: "Invite"}
         ]
       }
     }
