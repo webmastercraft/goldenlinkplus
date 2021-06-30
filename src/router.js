@@ -113,8 +113,8 @@ export default new Router({
             components: { default: UserCenter_My_Referrals },
         },
         {
-            path: '/usercenter/my_commissions',
-            name: 'my_commissions',
+            path: '/usercenter/commissions',
+            name: 'commissions',
             components: { default: UserCenter_My_Commissions },
         },
         {

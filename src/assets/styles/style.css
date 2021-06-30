@@ -1023,3 +1023,72 @@ hr.subtitle-hr {
     color: #94989F;
     font-weight: 300;
 }
+
+.content_modal .commission_content {
+
+}
+
+.content_modal .direct_btn .direct {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.content_modal .striker_btn {
+    background: #F4992D;
+}
+
+.content_modal .commission_content {
+    padding: 0 15px;
+}
+
+.content_modal .commission_content.direct {
+    background: #0FA6D6;
+}
+
+.content_modal .commission_content.indirect {
+    background: #F4992D;
+}
+
+
+
+.content_modal .commission_content.total {
+    color: white;
+    padding: 1px 18px;
+    background: #3B3E51;
+    margin: auto 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.content_modal .commission_content .commission_text {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 0;
+}
+
+.content_modal .commission_content .price {
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content_modal .view-link {
+    text-align: right;
+    margin-top: 16px;
+    margin-bottom: 50px;
+    display: inline-block;
+    width: 100%;
+}
+
+.content_modal .view-link svg {
+    margin-left: 5px;
+    margin-right: 15px;
+    color: white;
+    background-color: black;
+    padding: 1px;
+    border-radius: 3px;
+}
