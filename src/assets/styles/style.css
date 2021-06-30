@@ -366,7 +366,30 @@ nav {
 }
 
 .content_register {
-    padding: 15px 41px;
+    padding: 15px 8%;
+}
+
+.full_content {
+    padding: 15px 0;
+}
+
+.full_content .s_filed {
+    margin: 0 8% 1rem;;
+}
+
+.full_content .search_p {
+    right: 10px;
+    border-left: 1px solid gray;
+    padding-left: 10px;
+}
+
+.full_content .search_p button {
+    border: none;
+    background: transparent;
+}
+
+.full_content .s_filed > input {
+    padding-right: 60px;
 }
 
 .user-profile {
@@ -872,6 +895,7 @@ small {
     margin: 0;
     text-align: left;
 }
+
 .content_modal .search_field {
     margin: 20px auto;
     position: relative;

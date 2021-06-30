@@ -5,18 +5,22 @@
         <div class="content">
           <navbar :current=1></navbar>
           <Status :current=2></Status>
-          <div class="content_register">
+          <div class="content_register full_content">
             <form>
               <h6>Your Internal Business Role</h6>
              
               <div class="form-group s_filed">
                 <input type="Search" class="form-control" id="kt" aria-describedby="kt" placeholder="Search Location">
-                <span class="search_p"><a href="#"><img src="img/plus_search.svg"></a></span>
+                <span class="search_p"><button type="button" @click="showModal"><img src="img/plus_search.svg"></button></span>
               </div>
              
               <div class="form-group">
                 <img src="img/map.png" class="img-fluid">
               </div>
+              <Modal
+                v-show="isModalVisible"
+                @close="closeModal"
+              />
               <router-link to="/registration/three"  type="submit" class="btn btn-primary next_btn" tag="button">
                 Next
               </router-link>
@@ -37,12 +41,27 @@
 <script>
 import Navbar from '../../layout/Navbar.vue';
 import Status from "../../layout/Status.vue";
+import Modal from "../../modal/map.vue";
 
 export default {
   name: "Registration_two",
   components: {
     Navbar,
-    Status
+    Status,
+    Modal
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
   }
 }
 </script>
