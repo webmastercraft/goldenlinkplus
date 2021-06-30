@@ -4,17 +4,16 @@
       <div class="phone">
         <div class="content">
           <navbar></navbar>
-          
           <div class="back_btn">
-            <router-link to="/#">
+            <router-link to="/">
                <i class="fa fa-angle-left"></i>
             </router-link>
           </div>
-          <p class="create-account"><b>Create a New Account</b></p>
-          <router-link to="/create_business_account" class="create-account business_plus"  >
-          <i class="fa fa-plus"></i>Create a Business Account
+          <p class="create_account"><b>Create a New Account</b></p>
+          <router-link to="/usercenter/create_business_account" class="create_account account_plus"  >
+            <i class="fa fa-plus"></i>Create a Business Account
           </router-link>
-          <p class="business_explain">This account lets you setup and launch exciting campaigns for your business. <b><router-link to="/">Learn more</router-link></b></p>
+          <p class="account_explain">This account lets you setup and launch exciting campaigns for your business. <b><router-link to="/">Learn more</router-link></b></p>
         </div>
       </div>
     </div>

@@ -1,0 +1,140 @@
+.modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: rgba(0, 0, 0, 0.3) !important; 
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .modal-backdrop .close_btn svg{
+    font-size: 27px;
+    color: grey;
+  }
+
+  .modal {
+    position: unset !important;
+    width: 100%;
+    margin: 20px;
+    max-width: 376px;
+    height: auto !important;
+    background: #FFFFFF !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 12px;
+  }
+
+  .modal-header,
+  .modal-footer {
+    padding: 15px;
+    display: flex;
+  }
+
+  .modal-header {
+    position: relative;
+    border-bottom: none !important;
+    justify-content: space-between;
+    display: block !important;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3B3E51;
+  }
+
+  .modal-header .close_btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .modal-footer {
+    border-top: none !important;
+    flex-direction: column;
+  }
+
+  .modal-footer .save_btn {
+    background: #F4992D;
+    border-radius: 20px;
+    border: 0;
+    padding: 12px 55px;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 1rem 1rem 0;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4AAE9B;
+    background: transparent;
+  }
+
+  .btn-green {
+    color: white;
+    background: #4AAE9B;
+    border: 1px solid #4AAE9B;
+    border-radius: 2px;
+  }
+
+  .modal-fade-enter,
+  .modal-fade-leave-to {
+    opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: opacity .5s ease;
+  }
+
+  .form-group select.form-control {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1700 1500' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 50%;
+  }
+
+  .form-group input.form-control {
+    color: #3B3E51;
+  }
+
+  .form-group .form-control {
+    background: #f4f9fe;
+    height: 50px;
+    border: 0;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 10px 20px;
+  }
+
+  .form-group .form-control:focus {
+    color: #495057;
+    background-color: #F4F9FE;
+    border-color: transparent;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }

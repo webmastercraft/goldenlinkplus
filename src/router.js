@@ -79,7 +79,7 @@ export default new Router({
         {
             path: '/usercenter',
             name: 'home',
-            components: { default: Registration_home }
+            components: { default: UserCenter_home }
         },
         {
             path: '/usercenter/profile',

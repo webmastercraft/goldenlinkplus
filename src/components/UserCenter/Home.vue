@@ -7,12 +7,12 @@
           <div class="welcome_content">
             <p class="welcome_title">Welcome to User Center Golden Link Plus!</p>
             <div class="profile">
-              <router-link to="/profile">
+              <router-link to="/usercenter/profile">
                 Go to Profile Page<i class="fa fa-angle-right"></i>
               </router-link>
             </div>
             <div class="menu_content">
-              <router-link class="menu_item" v-for="(item) in items" :key="item.rout" :to="item.rout">
+              <router-link class="menu_item" v-for="(item) in items" :key="item.rout" :to="`/usercenter/${item.rout}`">
                 <div class="">
                     {{item.name}}
                 </div>
@@ -20,14 +20,12 @@
             </div>
             <p class="gs-account">This is a <b>GS Account</b></p>
             <div class="welcome_bottom">
-              <router-link to="/create_account" class="create-account router-btn"  >
+              <router-link to="/usercenter/create_account" class="create-account router-btn"  >
                 Create a New Account
               </router-link>
             </div>
             <p class="switch">Switch to Business Account</p>
           </div>
-          
-         
         </div>
       </div>
     </div>
@@ -60,4 +58,3 @@ export default {
     }
 }
 </script>
-<style></style>

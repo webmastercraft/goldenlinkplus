@@ -27,7 +27,6 @@
   export default {
     props: ['current'],
     data() {
-      // console.log('cur', this.props.current);
       return { items: [
           'one', 'two', 'three', 'four', 'five', 'six', 'seven'
         ]

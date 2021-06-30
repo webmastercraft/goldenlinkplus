@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-        <div class="content_modal">
-          <div class="window-modal">
+        <div class="phone">
+          <div class="content">
             <div class="close_btn">
               <router-link to="/"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
             </div>
