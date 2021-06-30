@@ -1092,3 +1092,46 @@ hr.subtitle-hr {
     padding: 1px;
     border-radius: 3px;
 }
+
+.content_modal .payout-title {
+    background: #F4F9FE;
+    padding: 22px 0 22px 22px;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+.content_modal .payout-title p {
+    margin: 0;
+}
+
+.content_modal .payment-desc {
+    text-align: left;
+    margin: 19px 19px 19px 21px;
+}
+
+.content_modal .connect-paypal {
+    text-align: left;
+    font-size: 18px;
+    margin: 0 auto 16px 21px;
+}
+
+.content_modal .paypal_btn {
+    display: inline-block;
+    background: #0066cc;
+    border-radius: 35px;
+    color: white;
+    padding: 18px 37px;
+    margin-bottom: 50px;
+    margin-left: 21px;
+}
+
+.content_modal .paypal_btn svg {
+    float: none;
+    color: white;
+    margin-right: 5px;
+}
+
+.payment-content {
+    text-align: left;
+}
