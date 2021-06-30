@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="phone">
-        <div class="content">
+        <div class="content left-content">
           <navbar></navbar>
           <div class="back_usercenter">
             <router-link to="/">
