@@ -238,7 +238,7 @@ nav {
     margin: 0 50px 35px;
 }
 
-.welcome_content a {
+.welcome_content a.get_start {
     background: #F4992D;
     border-radius: 20px;
     font-family: Poppins;
@@ -259,13 +259,87 @@ nav {
     text-decoration: none;
 }
 
-.back_btn {
+.welcome_content .welcome_title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.welcome_content .menu_content {
+    width: 100%;
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.welcome_content .menu_content .menu_item {
+    margin: 5px;
+    height: 60px;
+    background: radial-gradient(204.24% 204.24% at 63.61% -18.64%, rgba(207, 246, 255, 0.5) 30.6%, rgba(19, 200, 255, 0.5) 100%), #CFF6FF;
+    width:calc(50% - 10px);
+    text-align: left;
+    position: relative;
+    border-radius: 5px;
+}
+
+.welcome_content .menu_content .menu_item div {
+    color: #006584;
+    text-decoration: none;
+    font-size: 13px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.welcome_content .welcome_bottom .router-btn {
+    display: block;
+    width: 100%;
+    background: #F4992D;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.welcome_content p.gs-account {
+    font-size: 14px;
+    text-align: left;
+    margin: 30px 10px 7px 10px;
+}
+
+.welcome_content p.switch {
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+.profile {
+    margin: auto -25px;
+    text-align: left; 
+    background-color: #F4F9FE;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+.profile a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+} 
+
+.profile svg {
+    float: right;
+    /*font-size: 22px;*/
+    margin-top: 4px;
+}
+
+.back_usercenter {
     width: 100%;
     background: #F4F9FE;
     padding: 19px 28px;
 }
 
-.back_btn a {
+.back_usercenter a {
     color: black;
 }
 

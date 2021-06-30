@@ -12,7 +12,7 @@
             <p class="second">
               We prefer you to complete your business account and set up your ad campaign with various offers, such as: G-Coins rewards, CPC G-Coins rate, conversion commission rate. Don’t forget recharge marketing fees for your campaign. GOLD ads campaign expenses will be flexible, and reliable. Make your social media events attractive and exciting.
             </p>
-            <router-link to="/registration/one"  >
+            <router-link to="/registration/one" class="get_start">
               Get Started
             </router-link>
           </div>

@@ -4,7 +4,7 @@
       <div class="phone">
         <div class="content">
           <navbar></navbar>
-          <div class="back_btn">
+          <div class="back_usercenter">
             <router-link to="/">
                <i class="fa fa-angle-left"></i>
             </router-link>
