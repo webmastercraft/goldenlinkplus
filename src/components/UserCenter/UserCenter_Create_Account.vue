@@ -5,7 +5,7 @@
         <div class="content left-content">
           <navbar></navbar>
           <div class="back_usercenter">
-            <router-link to="/">
+            <router-link to="/usercenter">
                <i class="fa fa-angle-left"></i>
             </router-link>
           </div>
