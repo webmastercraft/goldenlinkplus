@@ -202,7 +202,7 @@ nav {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 50px;
-    height: calc( 100vh - 55px );
+    /*height: calc( 100vh - 55px );*/
 }
 
 .payment_h {
@@ -349,11 +349,13 @@ nav {
 .create_account {
     font-size: 18px;
     padding: 30px 25px 15px 25px;
+    margin-left: 0;
 }
 
 .account_explain {
     font-size: 14px;
     padding: 19px 28px;
+    margin-left: 0;
 }
 
 .account_plus {
@@ -528,9 +530,7 @@ nav {
 
 hr {
     color: #F4F9FE;
-    margin-top: 4rem;
-    margin-left: -20px;
-    margin-right: -19px;
+    margin: 30px 0px;
 }
 
 p {
@@ -695,6 +695,7 @@ input[type=text]:invalid {
 .image-title {
     margin-bottom: 15px;
     margin-left: 10px;
+    text-align: left;
 }
 
 .image-content .for-image {
@@ -866,6 +867,19 @@ small {
     margin: 5px 3px;
     display: inline-flex;
     font-size: 14px;
+}
+
+.content_modal .marketing_list .form-group .form-control {
+    background: #f4f9fe;
+    height: 50px;
+    border: 0;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    padding: 10px 20px;
 }
 
 .content_modal .marketing_plus svg {
