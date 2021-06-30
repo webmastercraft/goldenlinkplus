@@ -98,7 +98,7 @@ export default new Router({
             components: { default: UserCenter_Marketing_Direction },
         },
         {
-            path: '/usercenter/marketing_direction_add',
+            path: '/usercenter/marketing_direction/add',
             name: 'marketing_direction_add',
             components: { default: UserCenter_Marketing_Direction_Add },
         },

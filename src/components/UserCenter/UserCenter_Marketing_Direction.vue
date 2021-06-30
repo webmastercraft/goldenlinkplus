@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="container">
-        <div class="content_modal">
-          <div class="window-modal">
+        <div class="phone">
+          <div class="content content_modal">
             <div class="close_btn">
               <router-link to="/"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
             </div>
             
             <div class="account-title  marketing_plus">
-              Marketing Direction<router-link to="/marketing_direction/add"><i class="fas fa-plus-circle"></i></router-link>
+              Marketing Direction<router-link to="/usercenter/marketing_direction/add"><i class="fas fa-plus-circle"></i></router-link>
             </div>
             <div class="marketing_list" v-for="(market, key) in markets" :key="key">
               <p class="marketing_subtitle">{{market.title}}</p>
