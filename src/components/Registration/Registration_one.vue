@@ -5,7 +5,7 @@
         <div class="content">
           <navbar></navbar>
           <Status :current=1></Status>
-          <div class="content_ragister">
+          <div class="content_register">
             <form>
               <h6>Your External Business Role</h6>
               

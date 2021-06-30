@@ -5,7 +5,7 @@
         <div class="content">
           <navbar :current=2></navbar>
           <Status :current=3></Status>
-          <div class="content_ragister">
+          <div class="content_register">
             <form>
               <h6>Add Your Brand</h6>
               <div class="form-group">

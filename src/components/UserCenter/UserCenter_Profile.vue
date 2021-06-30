@@ -2,7 +2,7 @@
   <div>
     <div class="container">
         <div class="phone">
-          <div class="content">
+          <div class="content content_modal">
             <div class="close_btn">
               <router-link to="/"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
             </div>

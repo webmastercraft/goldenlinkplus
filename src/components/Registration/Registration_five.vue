@@ -5,7 +5,7 @@
         <div class="content">
           <navbar :current=4></navbar>
           <Status :current=5></Status>
-          <div class="content_ragister">
+          <div class="content_register">
             <form>
               <h6>Add Your Services</h6>
               

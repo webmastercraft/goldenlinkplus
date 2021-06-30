@@ -5,7 +5,7 @@
         <div class="content">
           <navbar :current=1></navbar>
           <Status :current=2></Status>
-          <div class="content_ragister">
+          <div class="content_register">
             <form>
               <h6>Your Internal Business Role</h6>
              

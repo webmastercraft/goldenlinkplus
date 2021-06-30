@@ -37,6 +37,8 @@ ul {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    background: #E8F1FA;
+    text-align: center;
 }
 
 .content {
@@ -362,7 +364,7 @@ nav {
     margin-right: 10px;
 }
 
-.content_ragister {
+.content_register {
     padding: 15px 41px;
 }
 
@@ -373,7 +375,7 @@ nav {
     margin: 50px 0 !important;
 }
 
-.content_ragister h6 {
+.content_register h6 {
     text-align: center;
     font-size: 18px;
     padding-top: 15px;
@@ -384,7 +386,7 @@ nav {
     letter-spacing: -0.02em;
 }
 
-.content_ragister input {
+.content_register input {
     background: #F4F9FE;
     height: 50px;
     border: 0;
@@ -398,7 +400,7 @@ nav {
     padding: 10px 20px;
 }
 
-.content_ragister textarea {
+.content_register textarea {
     background: #F4F9FE;
     padding: 15px;
     font-size: 16px;
@@ -422,6 +424,30 @@ nav {
     display: block;
     margin-top: 40px;
     padding: 0;
+}
+
+.content_modal {
+    margin: 13px 12px;
+    background: white;
+    border-radius: 21px;
+    overflow: hidden;
+    min-height: calc(100vh - 26px);
+    padding-bottom: 30px;
+}
+
+.content_modal .close_btn {
+    text-align: right;
+}
+
+.content_modal .close_btn a {
+    display: inline-block;
+}
+
+.content_modal .close_btn svg {
+    float: right;
+    margin: 10px 10px 0 0;
+    color: grey;
+    font-size: 27px;
 }
 
 .add {
@@ -688,7 +714,7 @@ input[type=text]:invalid {
     margin-top: 15px;
 }
 
-.content_ragister select {
+.content_register select {
     background: #f4f9fe;
     height: 50px;
     border: 0;
@@ -711,7 +737,59 @@ input[type=text]:invalid {
     color: #212529;
     text-decoration: none;
 }
+
 small {
     font-size: 16px;
     line-height: 24px;
+}
+
+.content_modal p {
+    margin-bottom: 18px;
+}
+
+.content_modal .profile-img {
+    margin: 30px auto;
+}
+
+.content_modal .golden-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.content_modal .profile-title-year {
+    color: #888888;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content_modal .profile-title-year span {
+    color: black;
+    font-weight: normal;
+}
+
+.content_modal .profile-title {
+    color: #888888;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 42px 21px 42px;
+}
+
+.content_modal .contact-area p:last-child.profile-title {
+    margin: 0 42px;
+}
+
+.content_modal .profile-title span {
+    color: black;
+    font-weight: normal;
+}
+
+.content_modal .contact-info {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 42px 21px 42px;
+}
+
+.content_modal hr {
+    margin: 48px 1rem;
 }

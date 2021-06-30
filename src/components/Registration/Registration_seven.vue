@@ -5,7 +5,7 @@
         <div class="content">
           <navbar :current=6></navbar>
           <Status :current=7></Status>
-          <div class="content_ragister">
+          <div class="content_register">
             <form>
               <h6>Add G-coin Rewards</h6>
               
