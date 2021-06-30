@@ -1000,3 +1000,26 @@ hr.subtitle-hr {
 .btn:focus, .btn.focus {
     box-shadow: none;
 }
+
+.content_modal .notice_logo {
+    display: flex;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.content_modal .notice_logo img{
+    max-width: 50px;
+    width: 100%;
+    margin-left: 19px;
+    margin-right: 16px;
+    border-radius: 50%;
+}
+
+.content_modal .notice_list p {
+    margin: 0;
+}
+
+.content_modal .notice_time {
+    color: #94989F;
+    font-weight: 300;
+}

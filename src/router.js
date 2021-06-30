@@ -123,8 +123,8 @@ export default new Router({
             components: { default: UserCenter_Payments },
         },
         {
-            path: '/usercenter/messaging',
-            name: 'messaging',
+            path: '/usercenter/notifications',
+            name: 'notifications',
             components: { default: UserCenter_Messaging },
         },
         {
