@@ -901,3 +901,102 @@ small {
     border: none;
     padding: 0;
 }
+
+.content_modal .btn {
+    width: calc(50% - 15px);
+    background: red;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: left;
+    color: white;
+    margin: 0 5px 25px;
+}
+
+.content_modal .business_btn {
+    background: #0FA6D6;
+}
+
+.content_modal .business_btn span{
+    float: right;
+}
+
+.content_modal .striker_btn span{
+    float: right;
+}
+
+.content_modal .direct_btn {
+    background: #0FA6D6;
+    padding: 0 15px;
+}
+
+.content_modal .direct_btn .direct {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.content_modal .striker_btn {
+    background: #F4992D;
+}
+
+.content_modal .indirect_btn {
+    background: #F4992D;
+    padding: 0 15px;
+}
+
+.content_modal .indirect_btn .indirect {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.content_modal .btn.disable {
+    opacity: 0.2;
+}
+
+.content_modal .account-title hr {
+    margin: 0 8px 24px;
+}
+
+.content_modal .referrals-info {
+    display: grid;
+}
+
+.content_modal .referrals-info .profile-title{
+    margin: 0 auto 20px 24px;
+}
+
+.content_modal .referrals-info hr {
+    margin: 0px 7px 40px;
+}
+
+.content_modal .sub-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 21px;
+}
+
+.content_modal .sub-title span {
+    font-weight: 400;
+    float: right;
+    margin-right: 21px;
+}
+
+hr.referrals-hr {
+    margin: 0 7px 24px 8px;
+}
+
+hr.btn-hr {
+    margin: 0 7px 16px 8px;
+}
+
+hr.subtitle-hr {
+    margin: 0 7px 24px 8px;
+}
+
+.btn:focus, .btn.focus {
+    box-shadow: none;
+}

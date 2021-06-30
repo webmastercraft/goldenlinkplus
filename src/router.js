@@ -128,8 +128,8 @@ export default new Router({
             components: { default: UserCenter_Messaging },
         },
         {
-            path: '/usercenter/coin_award',
-            name: 'coin_award',
+            path: '/usercenter/coins_award',
+            name: 'coins_award',
             components: { default: UserCenter_Coin_Award },
         }
     ],

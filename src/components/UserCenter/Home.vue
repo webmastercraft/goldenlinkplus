@@ -44,7 +44,7 @@ export default {
           {rout : "marketing_direction", name: "Marketing Direction"}, 
           {rout : "offers", name: "Offers"},
           {rout : "internal_business_role", name: "Internal Business Role"},
-          {rout : "g_coins_award", name: "G-coin Awards"},
+          {rout : "coins_award", name: "G-coin Awards"},
           {rout : "social_media", name: "Social Media"},
           {rout : "Notifications", name: "Notifications"},
           {rout : "referrals", name: "My Referrals"},
