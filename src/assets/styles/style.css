@@ -860,3 +860,44 @@ small {
     margin: 0;
     font-size: 16px;
 }
+
+.content_modal .role-title {
+    background: #F4F9FE;
+    padding: 22px 0 22px 22px;
+}
+
+.content_modal .role-title p{
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+}
+.content_modal .search_field {
+    margin: 20px auto;
+    position: relative;
+}
+
+.content_modal .search_field input {
+    padding: 10px 60px 10px 15px;
+    background-color: #F4F9FE;
+    border-radius: 12px;
+    border: none;
+    width: 80%;
+}
+
+.content_modal .search_field input:focus-visible {
+    outline: none;
+}
+
+.content_modal .search_field span {
+    position: absolute;
+    top: 10px;
+    right: calc(10% + 15px);
+    border-left: 2px solid #D1D1D1;
+    padding-left: 15px;
+}
+
+.content_modal .search_field button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
