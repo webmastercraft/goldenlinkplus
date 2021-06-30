@@ -16,7 +16,7 @@
               <p>Branches 1</p>
             </div>
             <div class="search_field">
-              <input type="Search" id="keytext" aria-describedby="keytext" placeholder="Search Location">
+              <input type="Search" id="keytext" class="form-control" aria-describedby="keytext" placeholder="Search Location">
               <span class="search_p"><button type="button" @click="showModal"><img src="img/plus_search.svg"></button></span>
             </div>
              

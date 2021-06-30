@@ -66,7 +66,6 @@ nav {
     cursor: pointer;
     margin-left: 20px;
     color: #fff;
-    font-size: 21px;
 }
 
 .back_logo .logo{
@@ -330,9 +329,8 @@ nav {
     display: block;
 } 
 
-.profile svg {
+.profile a img {
     float: right;
-    /*font-size: 22px;*/
     margin-top: 4px;
 }
 
@@ -344,6 +342,8 @@ nav {
 
 .back_usercenter a {
     color: black;
+    width: 100%;
+    display: inline-block;
 }
 
 .create_account {
@@ -753,7 +753,8 @@ input[type=text]:invalid {
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;
-    background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1700 1500' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");
+    /*background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1700 1500' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");*/
+    background-image: url('../images/dropdown.png');
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) 50%;
 }
@@ -882,6 +883,16 @@ small {
     padding: 10px 20px;
 }
 
+.content_modal .marketing_list .form-group select.form-control {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    /*background-image: url("data:image/svg+xml,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='14px' height='14px' viewBox='0 0 1700 1500' fill='rgb(51,51,51)'><path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/></svg>");*/
+    background-image: url('../images/dropdown.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 50%;
+}
+
 .content_modal .marketing_plus svg {
     color: #13C8FF;
     margin-left: 20px;
@@ -921,6 +932,7 @@ small {
     border-radius: 12px;
     border: none;
     width: 80%;
+    display: inline-block;
 }
 
 .content_modal .search_field input:focus-visible {
@@ -942,7 +954,7 @@ small {
 }
 
 .content_modal .btn {
-    width: calc(50% - 15px);
+    width: calc(50% - 25px);
     background: red;
     border-radius: 20px;
     font-size: 14px;
@@ -1173,4 +1185,40 @@ hr.subtitle-hr {
 
 .left-content {
     text-align: left;
+}
+
+.overlay {
+    width: 100%;
+    background: #3B3E51;
+    text-align: center;
+}
+
+.overlay-window {
+    background: white;
+    margin: 30vh 50px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.overlay-window .btn {
+    padding: 3px 0;
+    color: white;
+    border-radius: 50px;
+    margin: 25px 10px;
+    font-size: 15px;
+    width: 40%;
+}
+
+.overlay-window .no_btn {
+    background: #C4C4C4;
+}
+
+.overlay-window .yes_btn {
+    background: #FF0000;
+}
+
+.overlay-window p {
+    text-align: left;
+    margin: 20px 20px 0;
+    display: inline-block;
 }

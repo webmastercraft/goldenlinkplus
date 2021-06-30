@@ -1,7 +1,7 @@
 <template>
   <nav role="navigation">
     <div class="back_logo">
-      <router-link v-if="current > 0" :to="`/registration/${items[current-1]}`" class="back_btn"><i class="fa fa-angle-left"></i></router-link>
+      <router-link v-if="current > 0" :to="`/registration/${items[current-1]}`" class="back_btn"><img src="img/backbtn.png"></router-link>
       <router-link to="/" class="logo"><img src="img/logo.svg" />
       </router-link>
       <a class="search_btn"><i class="fas fa-search"></i></a>

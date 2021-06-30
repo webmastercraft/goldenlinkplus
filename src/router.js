@@ -22,6 +22,9 @@ import UserCenter_Payments from './components/UserCenter/UserCenter_Payments.vue
 import UserCenter_Messaging from './components/UserCenter/UserCenter_Messaging.vue';
 import UserCenter_Coin_Award from './components/UserCenter/UserCenter_Coin_Award.vue';
 
+import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
+import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
+
 Vue.use(Router);
 
 export default new Router({
@@ -131,6 +134,16 @@ export default new Router({
             path: '/usercenter/coins_award',
             name: 'coins_award',
             components: { default: UserCenter_Coin_Award },
+        },
+        {
+            path: '/overlay_del_brand',
+            name: 'coins_award',
+            components: { default: Overlay_Del_Brand },
+        },
+        {
+            path: '/overlay_del_product',
+            name: 'coins_award',
+            components: { default: Overlay_Del_Product },
         }
     ],
 

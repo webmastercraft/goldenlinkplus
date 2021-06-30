@@ -6,7 +6,7 @@
           <navbar></navbar>
           <div class="back_usercenter">
             <router-link to="/usercenter">
-               <i class="fa fa-angle-left"></i>
+               <img src="img/backbtn_black_left.png">
             </router-link>
           </div>
           <p class="create_account"><b>Create a New Account</b></p>

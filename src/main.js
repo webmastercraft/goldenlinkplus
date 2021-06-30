@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import '@/assets/styles/style.css';
-// import '@/assets/styles/style_usercenter.css';
 import '@/assets/styles/modal.css';
 
 library.add(faUserSecret)

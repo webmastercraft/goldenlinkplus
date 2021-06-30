@@ -8,7 +8,7 @@
             <p class="welcome_title">Welcome to User Center Golden Link Plus!</p>
             <div class="profile">
               <router-link to="/usercenter/profile">
-                Go to Profile Page<i class="fa fa-angle-right"></i>
+                Go to Profile Page<img src="img/backbtn_black_right.png">
               </router-link>
             </div>
             <div class="menu_content">
