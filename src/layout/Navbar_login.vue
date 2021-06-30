@@ -1,10 +1,10 @@
 <template>
   <nav role="navigation">
     <div class="back_logo">
-      <router-link v-if="current > 0" :to="`/registration/${items[current-1]}`" class="back_btn"><i class="fa fa-angle-left"></i></router-link>
+      <router-link to="/usercenter" class="user_logo"><img src="img/logo.png"></router-link>
       <router-link to="/" class="logo"><img src="img/logo.svg" />
       </router-link>
-      <a class="search_btn"><i class="fas fa-search"></i></a>
+      <a class="search_btn"><i class="fa fa-search"></i></a>
     </div>
     <div id="menuToggle">
       <input type="checkbox" />
@@ -17,22 +17,12 @@
         <li><router-link to="/" ><img src="img/icons/privacy.png">Privacy Policy</router-link></li>
         <li><router-link to="/" ><img src="img/icons/coin.png"> G-Coin Rewards</router-link></li>
         <li><router-link to="/" ><img src="img/icons/contact.png">Contact Us</router-link></li>
-        <li><router-link to="/" ><img src="img/icons/switch.png">Switch to Business Account</router-link></li>
-        <li><router-link to="/" ><img src="img/icons/logout.png">Login</router-link></li>
+        <li><router-link to="/overlay_del_product" ><img src="img/icons/switch.png">Switch to Business Account</router-link></li>
+        <li><router-link to="/overlay_del_brand" ><img src="img/icons/logout.png">Login</router-link></li>
       </ul>
     </div>
   </nav>
 </template>
 <script>
-  export default {
-    props: ['current'],
-    data() {
-      // console.log('cur', this.props.current);
-      return { items: [
-          'one', 'two', 'three', 'four', 'five', 'six', 'seven'
-        ]
-      }
-    }
-  }
 </script>
 

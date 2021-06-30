@@ -137,13 +137,13 @@
                 <div><img src=""></div>
               </div>
               <hr>
-              <router-link to="/registration_seven"  type="submit" class="btn btn-primary next_btn" tag="button">
+              <router-link to="/registration/seven"  type="submit" class="btn btn-primary next_btn" tag="button">
                 Next
               </router-link>
              
               <div class="icon_text">
                 <div class="later_icon">
-                  <router-link to="/registration_seven">
+                  <router-link to="/registration/seven">
                     <small>i’ll do this later <img src="img/later.svg" class="img-fluid"/></small>
                   </router-link>
                 </div>
@@ -156,8 +156,8 @@
   </div>
 </template>
 <script>
-import Navbar from "../layout/Navbar.vue";
-import Status from "../layout/Status.vue";
+import Navbar from '../../layout/Navbar.vue';
+import Status from "../../layout/Status.vue";
 
 export default {
   name: "Registration_six",

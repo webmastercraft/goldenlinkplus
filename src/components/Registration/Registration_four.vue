@@ -3,11 +3,11 @@
     <div class="container">
       <div class="phone">
         <div class="content">
-          <navbar :current=4></navbar>
-          <Status :current=5></Status>
+          <navbar :current=3></navbar>
+          <Status :current=4></Status>
           <div class="content_ragister">
             <form>
-              <h6>Add Your Services</h6>
+              <h6>Add Your Products</h6>
               
               <div class="form-group">
                 <select class="form-control" id="select-brand">
@@ -19,8 +19,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <select class="form-control" id="service_category">
-                  <option>Service Category</option>
+                <select class="form-control" id="product_category">
+                  <option>Product Category</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
@@ -49,9 +49,9 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="service_name"
-                  aria-describedby="service_name"
-                  placeholder="Service Name"
+                  id="product name"
+                  aria-describedby="product name"
+                  placeholder="Product Name"
                 />
               </div>
               <div class="form-group">
@@ -76,9 +76,9 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="service_item"
-                  aria-describedby="service_item"
-                  placeholder="Service Item"
+                  id="item_number"
+                  aria-describedby="item_number"
+                  placeholder="Item Number"
                 />
               </div>
               <div class="form-group wrapper">
@@ -117,13 +117,13 @@
               </div>
               <hr>
               <button type="submit" class="btn btn-primary next_btn add">Add more</button>
-              <router-link to="/registration_six"  type="submit" class="btn btn-primary next_btn" tag="button">
+              <router-link to="/registration/five"  type="submit" class="btn btn-primary next_btn" tag="button">
                 Next
               </router-link>
              
               <div class="icon_text">
                 <div class="later_icon">
-                  <router-link to="/registration_six">
+                  <router-link to="/registration/five">
                     <small>i’ll do this later <img src="img/later.svg" class="img-fluid"/></small>
                   </router-link>
                 </div>
@@ -136,11 +136,11 @@
   </div>
 </template>
 <script>
-import Navbar from "../layout/Navbar.vue";
-import Status from "../layout/Status.vue";
+import Navbar from '../../layout/Navbar.vue';
+import Status from "../../layout/Status.vue";
 
 export default {
-  name: "Registration_five",
+  name: "Registration_four",
   components: {
     Navbar,
     Status

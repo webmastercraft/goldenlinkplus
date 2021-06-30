@@ -66,8 +66,8 @@
   </div>
 </template>
 <script>
-import Navbar from "../layout/Navbar.vue";
-import Status from "../layout/Status.vue";
+import Navbar from '../../layout/Navbar.vue';
+import Status from "../../layout/Status.vue";
 
 export default {
   name: "Registration_seven",
