@@ -25,6 +25,7 @@ import UserCenter_Coin_Award from './components/GSUserCenter/UserCenter_Coin_Awa
 import BUC_Home from './components/BusinessUserCenter/BUC_Home.vue';
 import BUC_Create_Account from './components/BusinessUserCenter/BUC_Create_Account.vue';
 import BUC_Profile from './components/BusinessUserCenter/BUC_Profile.vue';
+import BUC_External_Business_Role from './components/BusinessUserCenter/BUC_External_Business_Role.vue';
 
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
@@ -153,18 +154,22 @@ export default new Router({
         {
             path: '/businessusercenter',
             name: 'home',
-            components: { default: BUC_Home }
+            components: { default: BUC_Home },
         },
         {
             path: '/businessusercenter/create_account',
             name: 'create_account',
-            components: { default: BUC_Create_Account }
+            components: { default: BUC_Create_Account },
         },
         {
             path: '/businessusercenter/profile',
             name: 'profile',
             components: { default: BUC_Profile },
-
+        },
+        {
+            path: '/businessusercenter/external_business_role',
+            name: 'external_business_role',
+            components: { default: BUC_External_Business_Role },
         }
     ],
 

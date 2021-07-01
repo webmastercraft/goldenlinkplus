@@ -12,19 +12,19 @@
             <div class="golden-area">
               <p class="golden-title"><b>Gloden Link Plus</b></p>
               <p class="profile-title-year">Year Established:<span> 2018</span></p>
-              <p class="profile-title">Company Name:<span> Gloden Link Plus</span></p>
-              <p class="profile-title">Company Type:<span> S Corporation</span></p>
-              <p class="profile-title">Business Type:<span> Service</span></p>
-              <p class="profile-title">Industry:<span><br>Marketing & Advertising Services ->Internet Marketing Services ->Social Media Marketing Services</span></p>
-              <p class="profile-title">Company Size:<span></span></p>
-              <p class="profile-title">Capital:<span></span></p>
-              <p class="profile-title">Website:<span> www.goldenlinkplus.com</span></p>
-              <p class="profile-title">Description:<span><br> Golden Link Plus is a revolutionary social media marketing platform where businesses and marketers join forces to earn big profits from promoting products and services. GOLD is global with business and marketers connections in the U.S., China and many countries. • Intelligent business matching system • Online marketing self-service system • Online businesses channel promotion quantification system • Online traffic and conversion tracking system</span></p>
+              <p class="profile-title profile-title-buc">Company Name:<span> Gloden Link Plus</span></p>
+              <p class="profile-title profile-title-buc">Company Type:<span> S Corporation</span></p>
+              <p class="profile-title profile-title-buc">Business Type:<span> Service</span></p>
+              <p class="profile-title profile-title-buc">Industry:<span><br>Marketing & Advertising Services ->Internet Marketing Services ->Social Media Marketing Services</span></p>
+              <p class="profile-title profile-title-buc">Company Size:<span></span></p>
+              <p class="profile-title profile-title-buc">Capital:<span></span></p>
+              <p class="profile-title profile-title-buc">Website:<span> www.goldenlinkplus.com</span></p>
+              <p class="profile-title profile-title-buc">Description:<span><br> Golden Link Plus is a revolutionary social media marketing platform where businesses and marketers join forces to earn big profits from promoting products and services. GOLD is global with business and marketers connections in the U.S., China and many countries. • Intelligent business matching system • Online marketing self-service system • Online businesses channel promotion quantification system • Online traffic and conversion tracking system</span></p>
             </div>
             <hr>
             <div class="contact-area">
-              <p class="profile-title">Industry Business Chain<br><span>Agency (0)<br>Marketer (0)<br>Ad Exchange/Ad Network (1)<br>Publisher (0)</span></p>
-              <p class="profile-title">Internal Business Chain<br><span>Headquarter (1)<br>Branch (1)</span></p>
+              <p class="profile-title profile-title-buc">Industry Business Chain<br><span>Agency (0)<br>Marketer (0)<br>Ad Exchange/Ad Network (1)<br>Publisher (0)</span></p>
+              <p class="profile-title profile-title-buc">Internal Business Chain<br><span>Headquarter (1)<br>Branch (1)</span></p>
             </div>
             <hr>
             <div class="welcome_content buc_profile">
@@ -90,5 +90,9 @@ export default {
     border: 0;
     margin-top: 25px;
     font-weight: 600;
+  }
+
+  .profile-title-buc {
+    margin: 0 22px 21px 22px  !important;
   }
 </style>
