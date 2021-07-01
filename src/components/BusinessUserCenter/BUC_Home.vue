@@ -42,9 +42,9 @@ export default {
   data() {
       return { items: [
           {rout : "external_business_role", name: "External Business Role"}, 
-          {rout : "coins_reward", name: "G-coin Rewards"},
+          {rout : "coin_rewards", name: "G-coin Rewards"},
           {rout : "internal_business_role", name: "Internal Business Role"},
-          {rout : "marketing_channels", name: "Marketing Channels"},
+          {rout : "marketing_channel", name: "Marketing Channels"},
           {rout : "brands", name: "My Brands"},
           {rout : "certifications", name: "Certifications"},
           {rout : "products", name: "My Products"},

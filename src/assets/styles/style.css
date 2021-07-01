@@ -348,8 +348,9 @@ nav {
 
 .create_account {
     font-size: 18px;
-    padding: 30px 25px 15px 25px;
+    padding: 30px 25px 0;
     margin-left: 0;
+    display: block;
 }
 
 .account_explain {
@@ -361,6 +362,7 @@ nav {
 .account_plus {
     color: #13C8FF;
     text-decoration: none;
+    padding: 0 25px;
 }
 
 .account_plus svg{
@@ -1059,6 +1061,7 @@ hr.subtitle-hr {
     display: flex;
     margin: 30px 0;
     text-align: left;
+    width: 100%;
 }
 
 .content_modal .notice_logo img{

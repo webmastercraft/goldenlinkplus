@@ -26,7 +26,7 @@
               <p class="profile-title profile-title-buc">Company Size:<span></span></p>
               <p class="profile-title profile-title-buc">Capital:<span></span></p>
               <p class="profile-title profile-title-buc">Website:<span> www.goldenlinkplus.com</span></p>
-              <p class="profile-title profile-title-buc">Description:<span><br> Golden Link Plus is a revolutionary social media marketing platform where businesses and marketers join forces to earn big profits from promoting products and services. GOLD is global with business and marketers connections in the U.S., China and many countries. • Intelligent business matching system • Online marketing self-service system • Online businesses channel promotion quantification system • Online traffic and conversion tracking system</span></p>
+              <p class="profile-title profile-title-buc">Description:<span><br> Golden Link Plus is a revolutionary social media marketing platform where businesses and marketers join forces to earn big profits from promoting products and services. GOLD is global with business and marketers connections in the U.S., China and many countries.<br>• Intelligent business matching system<br>• Online marketing self-service system<br>• Online businesses channel promotion quantification system<br>• Online traffic and conversion tracking system</span></p>
               <p class="profile-title profile-title-buc">Keywords:<span><br> Social media marketing, CPA network, Performance marketing, Affiliate marketing, Advertising agency, Target business search, Industry business chain, Internal business chain, Online Traffic, Branding</span></p>
             </div>
             <hr>
@@ -52,6 +52,6 @@ export default {
   }
 
   .profile-title-buc {
-    margin: 0 22px 21px 22px !important;
+    margin: 0 21px 21px 22px !important;
   }
 </style>

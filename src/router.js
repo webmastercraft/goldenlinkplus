@@ -29,6 +29,15 @@ import BUC_External_Business_Role from './components/BusinessUserCenter/BUC_Exte
 import BUC_Internal_Business_Role from './components/BusinessUserCenter/BUC_Internal_Business_Role.vue';
 import BUC_Brands from './components/BusinessUserCenter/BUC_Brands.vue';
 import BUC_Account_Settings from './components/BusinessUserCenter/BUC_Account_Settings.vue';
+import BUC_Products from './components/BusinessUserCenter/BUC_Products.vue';
+import BUC_Services from './components/BusinessUserCenter/BUC_Services.vue';
+import BUC_Offers from './components/BusinessUserCenter/BUC_Offers.vue';
+import BUC_Start_Campaign from './components/BusinessUserCenter/BUC_Start_Campaign.vue';
+import BUC_Marketer_Profile from './components/BusinessUserCenter/BUC_Marketer_Profile.vue';
+import BUC_Coin_Rewards from './components/BusinessUserCenter/BUC_Coin_Rewards.vue';
+import BUC_Marketing_Channel from './components/BusinessUserCenter/BUC_Marketing_Channel.vue';
+import BUC_CPC_Rewards from './components/BusinessUserCenter/BUC_CPC_Rewards.vue';
+import BUC_Certifications from './components/BusinessUserCenter/BUC_Certifications.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -187,6 +196,51 @@ export default new Router({
             path: '/businessusercenter/account_settings',
             name: 'account settings',
             components: { default: BUC_Account_Settings },
+        },
+        {
+            path: '/businessusercenter/products',
+            name: 'products',
+            components: { default: BUC_Products },
+        },
+        {
+            path: '/businessusercenter/services',
+            name: 'services',
+            components: { default: BUC_Services },
+        },
+        {
+            path: '/businessusercenter/offers',
+            name: 'offers',
+            components: { default: BUC_Offers },
+        },
+        {
+            path: '/businessusercenter/start_campaign',
+            name: 'start_campaign',
+            components: { default: BUC_Start_Campaign },
+        },
+        {
+            path: '/businessusercenter/marketer_profile',
+            name: 'marketer_profile',
+            components: { default: BUC_Marketer_Profile },
+        },
+        {
+            path: '/businessusercenter/coin_rewards',
+            name: 'coin_rewards',
+            components: { default: BUC_Coin_Rewards },
+        },
+        {
+            path: '/businessusercenter/marketing_channel',
+            name: 'marketing_channel',
+            components: { default: BUC_Marketing_Channel },
+        },
+        {
+            path: '/businessusercenter/cpc_rewards',
+            name: 'cpc_rewards',
+            components: { default: BUC_CPC_Rewards },
+        },
+        {
+            path: '/businessusercenter/certifications',
+            name: 'certifications',
+            components: { default: BUC_Certifications },
         }
     ],
 
