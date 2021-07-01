@@ -1,7 +1,7 @@
 <template>
   <nav role="navigation">
     <div class="back_logo">
-      <router-link to="/usercenter" class="user_logo"><img src="img/logo.png"></router-link>
+      <router-link to="/businessusercenter" class="user_logo"><img src="img/logo.png"></router-link>
       <router-link to="/" class="logo"><img src="img/logo.svg" />
       </router-link>
       <a class="search_btn"><i class="fa fa-search"></i></a>
