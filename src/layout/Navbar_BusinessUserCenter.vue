@@ -17,8 +17,8 @@
         <li><router-link to="/" ><img src="img/icons/privacy.png">Privacy Policy</router-link></li>
         <li><router-link to="/" ><img src="img/icons/coin.png"> G-Coin Rewards</router-link></li>
         <li><router-link to="/" ><img src="img/icons/contact.png">Contact Us</router-link></li>
-        <li><router-link to="/overlay_del_product" ><img src="img/icons/switch.png">Switch to Business Account</router-link></li>
-        <li><router-link to="/overlay_del_brand" ><img src="img/icons/logout.png">Login</router-link></li>
+        <li><router-link to="/usercenter" ><img src="img/icons/switch.png">Switch to GS Account</router-link></li>
+        <li><router-link to="/" ><img src="img/icons/logout.png">Login</router-link></li>
       </ul>
     </div>
   </nav>

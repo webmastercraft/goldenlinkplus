@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import Navbar from '../../layout/Navbar_login.vue';
+import Navbar from '../../layout/Navbar_GSUserCenter.vue';
 
 export default {
   name: 'Create_Account',

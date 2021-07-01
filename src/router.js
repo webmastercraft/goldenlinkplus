@@ -10,17 +10,19 @@ import Registration_five from './components/Registration/Registration_five.vue';
 import Registration_six from './components/Registration/Registration_six.vue';
 import Registration_seven from './components/Registration/Registration_seven.vue';
 
-import UserCenter_home from './components/UserCenter/Home.vue';
-import UserCenter_Profile from './components/UserCenter/UserCenter_Profile.vue';
-import UserCenter_Create_Account from './components/UserCenter/UserCenter_Create_Account.vue';
-import UserCenter_Marketing_Direction from './components/UserCenter/UserCenter_Marketing_Direction.vue';
-import UserCenter_Marketing_Direction_Add from './components/UserCenter/UserCenter_Marketing_Direction_Add.vue';
-import UserCenter_Internal_Business_Role from './components/UserCenter/UserCenter_Internal_Business_Role.vue';
-import UserCenter_My_Referrals from './components/UserCenter/UserCenter_My_Referrals.vue';
-import UserCenter_My_Commissions from './components/UserCenter/UserCenter_My_Commissions.vue';
-import UserCenter_Payments from './components/UserCenter/UserCenter_Payments.vue';
-import UserCenter_Messaging from './components/UserCenter/UserCenter_Messaging.vue';
-import UserCenter_Coin_Award from './components/UserCenter/UserCenter_Coin_Award.vue';
+import UserCenter_home from './components/GSUserCenter/Home.vue';
+import UserCenter_Profile from './components/GSUserCenter/UserCenter_Profile.vue';
+import UserCenter_Create_Account from './components/GSUserCenter/UserCenter_Create_Account.vue';
+import UserCenter_Marketing_Direction from './components/GSUserCenter/UserCenter_Marketing_Direction.vue';
+import UserCenter_Marketing_Direction_Add from './components/GSUserCenter/UserCenter_Marketing_Direction_Add.vue';
+import UserCenter_Internal_Business_Role from './components/GSUserCenter/UserCenter_Internal_Business_Role.vue';
+import UserCenter_My_Referrals from './components/GSUserCenter/UserCenter_My_Referrals.vue';
+import UserCenter_My_Commissions from './components/GSUserCenter/UserCenter_My_Commissions.vue';
+import UserCenter_Payments from './components/GSUserCenter/UserCenter_Payments.vue';
+import UserCenter_Messaging from './components/GSUserCenter/UserCenter_Messaging.vue';
+import UserCenter_Coin_Award from './components/GSUserCenter/UserCenter_Coin_Award.vue';
+
+import BUC_Home from './components/BusinessUserCenter/BUC_Home.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -144,6 +146,11 @@ export default new Router({
             path: '/overlay_del_product',
             name: 'coins_award',
             components: { default: Overlay_Del_Product },
+        },
+        {
+            path: '/businessusercenter',
+            name: 'home',
+            components: { default: BUC_Home }
         }
     ],
 
