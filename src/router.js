@@ -28,6 +28,7 @@ import BUC_Profile from './components/BusinessUserCenter/BUC_Profile.vue';
 import BUC_External_Business_Role from './components/BusinessUserCenter/BUC_External_Business_Role.vue';
 import BUC_Internal_Business_Role from './components/BusinessUserCenter/BUC_Internal_Business_Role.vue';
 import BUC_Brands from './components/BusinessUserCenter/BUC_Brands.vue';
+import BUC_Account_Settings from './components/BusinessUserCenter/BUC_Account_Settings.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -181,6 +182,11 @@ export default new Router({
             path: '/businessusercenter/brands',
             name: 'brands',
             components: { default: BUC_Brands },
+        },
+        {
+            path: '/businessusercenter/account_settings',
+            name: 'account settings',
+            components: { default: BUC_Account_Settings },
         }
     ],
 
