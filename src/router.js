@@ -30,6 +30,7 @@ import BUC_Internal_Business_Role from './components/BusinessUserCenter/BUC_Inte
 import BUC_Brands from './components/BusinessUserCenter/BUC_Brands.vue';
 import BUC_Products from './components/BusinessUserCenter/BUC_Products.vue';
 import BUC_Services from './components/BusinessUserCenter/BUC_Services.vue';
+import BUC_Offers from './components/BusinessUserCenter/BUC_Offers.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -193,6 +194,11 @@ export default new Router({
             path: '/businessusercenter/services',
             name: 'services',
             components: { default: BUC_Services },
+        },
+        {
+            path: '/businessusercenter/offers',
+            name: 'offers',
+            components: { default: BUC_Offers },
         }
     ],
 

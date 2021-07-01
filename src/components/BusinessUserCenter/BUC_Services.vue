@@ -8,7 +8,7 @@
             </div>
             
             <div class="account-title  marketing_plus">
-              My Products<router-link to="/businessusercenter/services/edit"><i class="fas fa-plus-circle"></i></router-link>
+              My Services<router-link to="/businessusercenter/services/edit"><i class="fas fa-plus-circle"></i></router-link>
             </div>
             <div class="golden-area brands_top">
               <p class="profile-title profile-title-buc">Brand Name:<span> Gloden Link Plus</span><button class="remove_btn"><img src="img/remove.png"></button></p>
