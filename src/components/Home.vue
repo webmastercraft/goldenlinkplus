@@ -4,11 +4,14 @@
       <div class="phone">
         <div class="content">
           <div class="test_content">
-            <router-link to="/registration" class="test_reg" >
+            <router-link to="/registration" >
               Registration
             </router-link>
-            <router-link to="/usercenter" class="test_usercenter" >
-              UserCenter
+            <router-link to="/usercenter" >
+              GSUserCenter
+            </router-link>
+            <router-link to="/businessusercenter" >
+              BusinessUserCenter
             </router-link>
           </div>
         </div>

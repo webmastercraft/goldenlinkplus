@@ -1225,3 +1225,12 @@ hr.subtitle-hr {
     margin: 20px 20px 0;
     display: inline-block;
 }
+
+button {
+    background: transparent;
+    border: none;
+}
+
+.remove_btn {
+    float: right;
+}

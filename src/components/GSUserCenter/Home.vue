@@ -24,7 +24,7 @@
                 Create a New Account
               </router-link>
             </div>
-            <p class="switch">Switch to Business Account</p>
+            <p class="switch"><router-link to="/businessusercenter">Switch to Business Account</router-link></p>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
   </div>
 </template>
 <script>
-import Navbar from '../../layout/Navbar_login.vue';
+import Navbar from '../../layout/Navbar_GSUserCenter.vue';
 
 export default {
   name: 'Home',

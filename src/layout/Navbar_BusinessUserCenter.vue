@@ -1,7 +1,7 @@
 <template>
   <nav role="navigation">
     <div class="back_logo">
-      <router-link to="/usercenter" class="user_logo"><img src="img/logo.png"></router-link>
+      <router-link to="/businessusercenter" class="user_logo"><img src="img/logo.png"></router-link>
       <router-link to="/" class="logo"><img src="img/logo.svg" />
       </router-link>
       <a class="search_btn"><i class="fa fa-search"></i></a>
@@ -17,8 +17,8 @@
         <li><router-link to="/" ><img src="img/icons/privacy.png">Privacy Policy</router-link></li>
         <li><router-link to="/" ><img src="img/icons/coin.png"> G-Coin Rewards</router-link></li>
         <li><router-link to="/" ><img src="img/icons/contact.png">Contact Us</router-link></li>
-        <li><router-link to="/overlay_del_product" ><img src="img/icons/switch.png">Switch to Business Account</router-link></li>
-        <li><router-link to="/overlay_del_brand" ><img src="img/icons/logout.png">Login</router-link></li>
+        <li><router-link to="/usercenter" ><img src="img/icons/switch.png">Switch to GS Account</router-link></li>
+        <li><router-link to="/" ><img src="img/icons/logout.png">Login</router-link></li>
       </ul>
     </div>
   </nav>
