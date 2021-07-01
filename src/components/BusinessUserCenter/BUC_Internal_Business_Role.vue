@@ -4,7 +4,7 @@
         <div class="phone">
           <div class="content content_modal">
             <div class="close_btn">
-              <router-link to="/usercenter"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
+              <router-link to="/businessusercenter"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
             </div>
             
             <div class="account-title">
