@@ -388,6 +388,7 @@ nav {
 .full_content .search_p button {
     border: none;
     background: transparent;
+    display: flex;
 }
 
 .full_content .s_filed > input {
@@ -943,7 +944,6 @@ small {
     position: absolute;
     top: 10px;
     right: calc(10% + 15px);
-    border-left: 2px solid #D1D1D1;
     padding-left: 15px;
 }
 
@@ -951,6 +951,9 @@ small {
     background: transparent;
     border: none;
     padding: 0;
+    display: flex;
+    border-left: 2px solid #D1D1D1;
+    padding-left: 12px;
 }
 
 .content_modal .btn {
