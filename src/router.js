@@ -31,6 +31,8 @@ import BUC_Brands from './components/BusinessUserCenter/BUC_Brands.vue';
 import BUC_Products from './components/BusinessUserCenter/BUC_Products.vue';
 import BUC_Services from './components/BusinessUserCenter/BUC_Services.vue';
 import BUC_Offers from './components/BusinessUserCenter/BUC_Offers.vue';
+import BUC_Start_Campaign from './components/BusinessUserCenter/BUC_Start_Campaign.vue';
+import BUC_Marketer_Profile from './components/BusinessUserCenter/BUC_Marketer_Profile.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -199,6 +201,16 @@ export default new Router({
             path: '/businessusercenter/offers',
             name: 'offers',
             components: { default: BUC_Offers },
+        },
+        {
+            path: '/businessusercenter/start_campaign',
+            name: 'start_campaign',
+            components: { default: BUC_Start_Campaign },
+        },
+        {
+            path: '/businessusercenter/marketer_profile',
+            name: 'marketer_profile',
+            components: { default: BUC_Marketer_Profile },
         }
     ],
 

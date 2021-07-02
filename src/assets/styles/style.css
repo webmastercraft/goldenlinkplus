@@ -1059,6 +1059,7 @@ hr.subtitle-hr {
     display: flex;
     margin: 30px 0;
     text-align: left;
+    width: 100%;
 }
 
 .content_modal .notice_logo img{
