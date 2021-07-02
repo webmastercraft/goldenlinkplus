@@ -6,20 +6,133 @@
             <div class="close_btn">
               <router-link to="/businessusercenter"><i class="fa fa-times-circle" aria-hidden="true"></i></router-link>
             </div>
-            
             <div class="account-title  marketing_plus">
-              My Products<router-link to="/businessusercenter/products/edit"><i class="fas fa-plus-circle"></i></router-link>
+              My Products<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
             </div>
-            <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Brand Name:<span> Gloden Link Plus</span><button class="remove_btn"><img src="img/remove.png"></button></p>
-              <p class="profile-title profile-title-buc">Product Category:<span><br> Mature->Erotic->Erotic Games</span></p>
-              <p class="profile-title profile-title-buc">Product Name:<span> GLP</span></p>
-              <p class="profile-title profile-title-buc">Price:<span> $100</span></p>
-              <p class="profile-title profile-title-buc">Min Qty Per Order:<span> GLP</span></p>
-              <p class="profile-title profile-title-buc">Service Item:<span> 1</span></p>
-              <p class="profile-title profile-title-buc">URL:<span></span></p>
-              <p class="profile-title profile-title-buc">Uploaded Files:
-              </p>
+            <div class="content_register" v-if="isShow === true">
+              <form>
+                <div>
+                  <div class="form-group">
+                    <select class="form-control" id="select-brand">
+                      <option>Select Brand</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="product_category">
+                      <option>Product Category</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="">
+                      <option></option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="">
+                      <option></option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="product name"
+                      aria-describedby="product name"
+                      placeholder="Product Name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="price"
+                      aria-describedby="price"
+                      placeholder="Price"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="minimum quantity per order"
+                      aria-describedby="minimum quantity per order"
+                      placeholder="Minimum Quantity per Order"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="item_number"
+                      aria-describedby="item_number"
+                      placeholder="Item Number"
+                    />
+                  </div>
+                  <div class="form-group wrapper">
+                    <div class="box">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input type="file" class="image-upload" accept="image/*" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="box video">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input type="file" class="image-upload" accept="image/*" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group thumbnails">
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                    <div><img src=""></div>
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      rows="3"
+                      placeholder="Description"
+                    ></textarea>
+                  </div>
+                </div>
+                <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
+                <button type="button" class="btn btn_save " @click="addProduct()">SAVE</button>
+              </form>
+              <hr>
+            </div>
+            <div class="golden-area brands_top" v-for="(product, index) in products" :key="index">
+              <p class="profile-title profile-title-buc">Brand Name:<span> {{product.brand_name}}</span><button @click="removeProduct(index)" class="remove_btn"><img src="img/remove.png"></button></p>
+              <p class="profile-title profile-title-buc">Product Category:<span><br> {{product.product_category}}</span></p>
+              <p class="profile-title profile-title-buc">Product Name:<span> {{product.product_name}}</span></p>
+              <p class="profile-title profile-title-buc">Price:<span> {{product.price}}</span></p>
+              <p class="profile-title profile-title-buc">Min Qty Per Order:<span> {{product.min_qty}}</span></p>
+              <p class="profile-title profile-title-buc">Service Item:<span> {{product.service_item}}</span></p>
+              <p class="profile-title profile-title-buc">URL:<span> {{product.url}}</span></p>
+              <p class="profile-title profile-title-buc">Uploaded Files:</p>
               <div class="form-group thumbnails upload_img">
                 <div><img src=""></div>
                 <div><img src=""></div>
@@ -27,7 +140,7 @@
                 <div><img src=""></div>
                 <div><img src=""></div>
               </div>
-              <p class="profile-title profile-title-buc">Description:<span><br> Promotion</span></p>
+              <p class="profile-title profile-title-buc description">Description:<span><br> {{product.description}}</span></p>
               <hr>
             </div>
           </div>
@@ -40,6 +153,51 @@
 export default {
   name: 'Products',
   components: {
+  },
+  data () {
+    return { 
+        isShow: false,
+        products: [
+          {
+            brand_name: "Golden Link Plus",
+            product_category: "Mature->Erotic->Erotic Games",
+            product_name: "GLP",
+            price: "$100",
+            min_qty: "USA",
+            service_item: "1",
+            url: "",
+            uploaded_files: [],
+            description: "Promotion"
+          },
+          {
+            brand_name: "Golden Link Plus",
+            product_category: " Marketing & Advertising Services",
+            product_name: "Social Media Marketing Platform",
+            price: "$300",
+            min_qty: "1",
+            service_item: "Performance Marketing",
+            url: "http://goldenlinkplus....",
+            uploaded_files: [],
+            description: "Golden Link Plus is a revolutionary social media marketing platform where businesses and marketers join forces to earn big profits from promoting products and services. GOLD is global with business and marketers connections in the U.S., China and many countries.\n • Intelligent business matching system \n • Online marketing self-service system\n• Online businesses channel promotion quantification system\n• Online traffic and conversion tracking system"
+          },
+        ]
+    }
+  },
+  methods: {
+    removeProduct(index) {
+      this.$delete(this.products,index)
+    },
+    addProduct() {
+      // this.products.push(product);
+      this.hideEdit();
+    },
+    showEdit() {
+      console.log(this.isShow);
+      this.isShow = true;
+    },
+    hideEdit() {
+      this.isShow = false;
+    }
   }
 }
 </script>
@@ -47,5 +205,8 @@ export default {
   .upload_img {
     margin: 0 15px 15px !important;
     width: auto !important;
+  }
+  .description {
+    white-space: pre-line;
   }
 </style>

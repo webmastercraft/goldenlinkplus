@@ -960,7 +960,7 @@ small {
 
 .content_modal .btn {
     width: calc(50% - 25px);
-    background: red;
+    background: #F4992D;
     border-radius: 20px;
     font-size: 14px;
     text-align: left;
@@ -1008,7 +1008,7 @@ small {
     margin-bottom: 5px;
 }
 
-.content_modal .btn.disable {
+.content_modal .disable {
     opacity: 0.2;
 }
 
@@ -1236,4 +1236,14 @@ button {
 
 .remove_btn {
     float: right;
+}
+
+.content_modal .btn_cancel {
+    background: #C4C4C4;
+    text-align: center;
+}
+
+.content_modal .btn_save {
+    background: #F4992D;
+    text-align: center;
 }

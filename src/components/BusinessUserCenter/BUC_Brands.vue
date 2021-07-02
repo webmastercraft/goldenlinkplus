@@ -10,12 +10,11 @@
               My Brands
             </div>
             
-            
-            <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Brand Name:<span> Gloden Link Plus</span><button class="remove_btn"><img src="img/remove.png"></button></p>
-              <p class="profile-title profile-title-buc">Brand Ownership:<span> Owned</span></p>
-              <p class="profile-title profile-title-buc">Place of Registration:<span> USA</span></p>
-              <p class="profile-title profile-title-buc">Date of Registration:<span> 06/2011</span></p>
+            <div class="golden-area brands_top" v-for="(brand, index) in brands" :key="index" >
+              <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove.png"></button></p>
+              <p class="profile-title profile-title-buc">Brand Ownership:<span> {{brand.ownership}}</span></p>
+              <p class="profile-title profile-title-buc">Place of Registration:<span> {{brand.place}}</span></p>
+              <p class="profile-title profile-title-buc">Date of Registration:<span> {{brand.date}}</span></p>
             </div>
           </div>
         </div>
@@ -27,6 +26,29 @@
 export default {
   name: 'BUC_Brands',
   components: {
+  },
+  data () {
+    return { 
+        brands: [
+          {
+            name: "Golden Link Plus",
+            ownership: "Owned",
+            place: "USA",
+            date: "12/16/2020",
+          },
+          {
+            name: "Golden",
+            ownership: "Yes",
+            place: "Canada",
+            date: "10/09/1999",
+          }
+        ]
+    }
+  },
+  methods: {
+    removeBrand(index) {
+      this.$delete(this.brands,index)
+    }
   }
 }
 </script>
