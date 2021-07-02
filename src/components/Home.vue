@@ -40,8 +40,7 @@ export default {
     color: #FFFFFF;
     padding: 12px 14px;
     display: block;
-    width: 100%;
-    max-width: 150px;
+    width: 50%;
     margin: 51px auto 0;
 }
 </style>
