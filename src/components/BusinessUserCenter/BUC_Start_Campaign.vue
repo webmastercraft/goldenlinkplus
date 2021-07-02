@@ -168,7 +168,7 @@ export default {
   .campaign_select {
     width: calc(50% - 10px);
     display: inline-block;
-    margin: 0 5px;
+    margin: 5px;
   }
 
   .campaign_top {
