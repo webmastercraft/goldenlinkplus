@@ -34,6 +34,7 @@ import BUC_Offers from './components/BusinessUserCenter/BUC_Offers.vue';
 import BUC_Start_Campaign from './components/BusinessUserCenter/BUC_Start_Campaign.vue';
 import BUC_Marketer_Profile from './components/BusinessUserCenter/BUC_Marketer_Profile.vue';
 import BUC_Coin_Rewards from './components/BusinessUserCenter/BUC_Coin_Rewards.vue';
+import BUC_Marketing_Channel from './components/BusinessUserCenter/BUC_Marketing_Channel.vue';
 
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
@@ -217,6 +218,11 @@ export default new Router({
             path: '/businessusercenter/coin_rewards',
             name: 'coin_rewards',
             components: { default: BUC_Coin_Rewards },
+        },
+        {
+            path: '/businessusercenter/marketing_channel',
+            name: 'marketing_channel',
+            components: { default: BUC_Marketing_Channel },
         }
     ],
 
