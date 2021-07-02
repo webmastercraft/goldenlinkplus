@@ -79,7 +79,7 @@
                           <p class="balance">99,000</p>
                           <button class="balance_usd"><i class="fas fa-plus"></i></button>
                         </div>
-                        <p class="profile-title profile-title-buc">Payment Method<span class="payment-plus"><i class="fas fa-plus-circle"></i></span></p>
+                        <p class="profile-title profile-title-buc">Payment Method<span class="payment-plus"><router-link to="/businessusercenter/account_settings_deposit"><i class="fas fa-plus-circle"></i></router-link></span></p>
                         <a href=""><img src="img/paypal.png" class="profile-title-buc"></a>
                         <p class="profile-title-buc">alicedu@goldenlinkplus.com</p>
                         <p class="profile-title profile-title-buc">Billing Information</p>
@@ -114,7 +114,7 @@
 
 <script>
 export default {
-  name: "App",
+  name: "Account_Settings",
   data () {
     return {
       isActive: null
@@ -158,6 +158,9 @@ export default {
     display: table-cell;
     vertical-align: middle;
     float: right;
+}
+.accordion .accordion_title img {
+    margin-bottom: 2px;
 }
 .item-active{
     display: none;
