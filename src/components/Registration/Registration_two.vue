@@ -41,7 +41,7 @@
 <script>
 import Navbar from '../../layout/Navbar.vue';
 import Status from "../../layout/Status.vue";
-import Modal from "../../modal/map.vue";
+import Modal from "../../modal/map_internal.vue";
 
 export default {
   name: "Registration_two",
