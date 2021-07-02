@@ -52,6 +52,6 @@ export default {
   }
 
   .profile-title-buc {
-    margin: 0 22px 21px 22px !important;
+    margin: 0 21px 21px 22px !important;
   }
 </style>
