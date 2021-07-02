@@ -141,24 +141,23 @@
                 </div>
                 <hr>
                 <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
-                <button type="button" class="btn btn_save " @click="addOffer()">SAVE</button>
+                <button type="button" class="btn btn_save " @click="saveOffer()">SAVE</button>
               </form>
             </div>
-            <div v-for="(offer, index) in offers" :key="index">
-              <div class="offer_btn">
-                <button class="btn running_btn">Running</button>
-                <button class="btn track_btn">TRACK</button>
-              </div>
-              <div class="golden-area brands_top">
-                <p class="profile-title profile-title-buc">Title:<span> {{offer.title}}</span><button @click="removeOffer(index)" class="remove_btn"><img src="img/remove.png"></button></p>
-                <p class="profile-title profile-title-buc">Product:<span><br> {{offer.product}}</span></p>
-                <p class="profile-title profile-title-buc">Preview URL:<span>{{offer.preview_url}}</span></p>
-                <p class="profile-title profile-title-buc">Type:<span> {{offer.type}}</span></p>
-                <p class="profile-title profile-title-buc">Description:<span><br>{{offer.description}}</span></p>
-                <p class="profile-title profile-title-buc">Offer Commission:<span> {{offer.commission}}</span></p>
-                <p class="profile-title profile-title-buc">CPC:<span> {{offer.cpc}}</span></p>
-                <p class="profile-title profile-title-buc">Targeted Locations:<span> {{offer.location}}</span></p>
-              </div>
+            
+            <div class="offer_btn">
+              <button class="btn running_btn">Running</button>
+              <button class="btn track_btn">TRACK</button>
+            </div>
+            <div class="golden-area brands_top">
+              <p class="profile-title profile-title-buc">Title:<span> {{title}}</span></p>
+              <p class="profile-title profile-title-buc">Product:<span><br> {{product}}</span></p>
+              <p class="profile-title profile-title-buc">Preview URL:<span>{{preview_url}}</span></p>
+              <p class="profile-title profile-title-buc">Type:<span> {{type}}</span></p>
+              <p class="profile-title profile-title-buc">Description:<span><br>{{description}}</span></p>
+              <p class="profile-title profile-title-buc">Offer Commission:<span> {{commission}}</span></p>
+              <p class="profile-title profile-title-buc">CPC:<span> {{cpc}}</span></p>
+              <p class="profile-title profile-title-buc">Targeted Locations:<span> {{location}}</span></p>
             </div>
           </div>
         </div>
@@ -174,25 +173,18 @@ export default {
   data () {
     return { 
         isShow: false,
-        offers: [
-          {
-            title: "$300增会增会限限量布限限量布",
-            product: "Social Media Marketing",
-            preview_url: "",
-            type: "CPS",
-            description: "$300 增会员 （Premium member）\n限佣金惠offer\n1 G-Coins/CPC\n8895 G-Coins/CPS\n同 时保留推荐将10% 现金奖励",
-            commission: "50",
-            cpc: "0",
-            location: "Global"
-          }
-        ]
+        title: "$300增会增会限限量布限限量布",
+        product: "Social Media Marketing",
+        preview_url: "",
+        type: "CPS",
+        description: "$300 增会员 （Premium member）\n限佣金惠offer\n1 G-Coins/CPC\n8895 G-Coins/CPS\n同 时保留推荐将10% 现金奖励",
+        commission: "50",
+        cpc: "0",
+        location: "Global",
     }
   },
   methods: {
-    removeOffer(index) {
-      this.$delete(this.offers,index)
-    },
-    addOffer() {
+    saveOffer() {
       // this.offers.push(offer);
       this.hideEdit();
     },

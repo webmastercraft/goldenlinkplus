@@ -60,7 +60,7 @@
                   </div>
                 </div>
                 <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
-                <button type="button" class="btn btn_save " @click="addCoin()">SAVE</button>
+                <button type="button" class="btn btn_save " @click="saveCoin()">SAVE</button>
               </form>
               <hr>
             </div>
@@ -69,7 +69,7 @@
                 <button class="btn running_btn">Running</button>
               </div>
               <div class="golden-area brands_top">
-                <p class="profile-title profile-title-buc">Offer:<span> {{coin.offer}}</span><button @click="removeCoin(index)" class="remove_btn"><img src="img/remove.png"></button></p>
+                <p class="profile-title profile-title-buc">Offer:<span> {{coin.offer}}</span></p>
                 <p class="profile-title profile-title-buc">Packet Type:<span> {{coin.packet_type}}</span></p>
                 <p class="profile-title profile-title-buc">Amount:<span> {{coin.amount}}</span></p>
                 <p class="profile-title profile-title-buc">Copies Issued:<span> {{coin.copies}}</span></p>
@@ -110,10 +110,7 @@ export default {
     }
   },
   methods: {
-    removeCoin(index) {
-      this.$delete(this.coins,index)
-    },
-    addCoin() {
+    saveCoin() {
       // this.coins.push(coin);
       this.hideEdit();
     },

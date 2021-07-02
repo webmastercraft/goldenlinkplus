@@ -8,17 +8,71 @@
             </div>
             
             <div class="account-title  marketing_plus">
-              CPC Rewards<router-link to="/businessusercenter/cpc_rewards/edit"><i class="fas fa-plus-circle"></i></router-link>
+              CPC Rewards<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="content_register" v-if="isShow === true">
+              <form>
+                <div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      aria-describedby="title"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="offer"
+                      aria-describedby="offer"
+                      placeholder="Offer"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="rewards"
+                      aria-describedby="Rewards per Click"
+                      placeholder="Rewards per Click"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="datetime"
+                      class="form-control"
+                      id="begin_date"
+                      aria-describedby="begin_date"
+                      placeholder="Begin Date"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="datetime"
+                      class="form-control"
+                      id="end_date"
+                      aria-describedby="end_date"
+                      placeholder="End Date"
+                    />
+                  </div>
+                </div>
+                <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
+                <button type="button" class="btn btn_save " @click="saveCPC()">SAVE</button>
+              </form>
+              <hr>
             </div>
             <div class="offer_btn">
             <button class="btn running_btn">Running</button>
             </div>
             <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Title:<span> $300增会增会限限量布限限量布</span></p>
-              <p class="profile-title profile-title-buc">Offer:<span> Random</span></p>
-              <p class="profile-title profile-title-buc">Rewards per Click:<span> $1000</span></p>
-              <p class="profile-title profile-title-buc">Begin Date:<span> 07/14/2020</span></p>
-              <p class="profile-title profile-title-buc">End Date:<span> 21:05:00</span></p>
+              <p class="profile-title profile-title-buc">Title:<span> {{title}}</span></p>
+              <p class="profile-title profile-title-buc">Offer:<span> {{offer}}</span></p>
+              <p class="profile-title profile-title-buc">Rewards per Click:<span> {{rewards}}</span></p>
+              <p class="profile-title profile-title-buc">Begin Date:<span> {{begin_date}}</span></p>
+              <p class="profile-title profile-title-buc">End Date:<span> {{end_date}}</span></p>
             </div>
             <hr>
           </div>
@@ -31,6 +85,28 @@
 export default {
   name: 'CPC Rewards',
   components: {
+  },
+  data () {
+    return { 
+        isShow: false,
+        title: "$300增会增会限限量布限限量布",
+        offer: "Random",
+        rewards: "$1000",
+        begin_date: "07/14/2020",
+        end_date: "21:05:00",
+    }
+  },
+  methods: {
+    saveCPC() {
+      // this.coins.push(coin);
+      this.hideEdit();
+    },
+    showEdit() {
+      this.isShow = true;
+    },
+    hideEdit() {
+      this.isShow = false;
+    }
   }
 }
 </script>
