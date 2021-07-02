@@ -26,7 +26,14 @@
                         <form class="contact_form" v-else>
                             <p class="profile-title profile-title-buc">Contact Name:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.name}`"></p>
                             <p class="profile-title profile-title-buc">Telephone:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.telephone}`"></p>
-                            <p class="profile-title profile-title-buc">Channel:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.channel}`"></p>
+                            <p class="profile-title profile-title-buc">Channel:
+                                <select class="timeline_box" name="name">
+                                    <option value="" disabled selected>Choose Verticals</option>
+                                    <option value="1">WeChat</option>
+                                    <option value="2">Golden Link PLus 2</option>
+                                    <option value="3">Golden Link PLus 3</option>
+                                </select>
+                            </p>
                             <p class="profile-title profile-title-buc">ID:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.id}`"></p>
                             <p class="profile-title profile-title-buc">Email:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.email}`"></p>
                             <input type="button" class="account_post_btn" value="UPDATE" @click="stopEditContactInfo()">
@@ -200,6 +207,9 @@ export default {
     margin-left: 10px;
     margin-top: -5px;
     width: 100%;
+}
+.item-active .contact_form select.timeline_box {
+    padding: 7.4px 15px;
 }
 .active .item-active {
     will-change: height;
