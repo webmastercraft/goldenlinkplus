@@ -1247,3 +1247,7 @@ button {
     background: #F4992D;
     text-align: center;
 }
+
+.description {
+    white-space: pre-line;
+}

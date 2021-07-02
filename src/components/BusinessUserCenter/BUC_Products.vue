@@ -163,8 +163,8 @@ export default {
             product_category: "Mature->Erotic->Erotic Games",
             product_name: "GLP",
             price: "$100",
-            min_qty: "USA",
-            service_item: "1",
+            min_qty: "1",
+            service_item: "GLP",
             url: "",
             uploaded_files: [],
             description: "Promotion"
@@ -205,8 +205,5 @@ export default {
   .upload_img {
     margin: 0 15px 15px !important;
     width: auto !important;
-  }
-  .description {
-    white-space: pre-line;
   }
 </style>
