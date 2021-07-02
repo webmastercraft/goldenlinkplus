@@ -30,7 +30,7 @@
             </div>
             <div class="notice_logo">
               <div>
-              <img src="img/notice_logo.png">
+              <img src="img/users/SS.png">
               </div>
               <div>
                 <div>
@@ -42,7 +42,7 @@
             </div>
             <div class="notice_logo">
               <div>
-              <img src="img/notice_logo.png">
+              <img src="img/users/DF.png">
               </div>
               <div>
                 <div>
@@ -54,7 +54,7 @@
             </div>
             <div class="notice_logo">
               <div>
-              <img src="img/notice_logo.png">
+              <img src="img/users/GP.png">
               </div>
               <div>
                 <div>
@@ -66,7 +66,7 @@
             </div>
             <div class="notice_logo">
               <div>
-              <img src="img/notice_logo.png">
+              <img src="img/users/JG.png">
               </div>
               <div>
                 <div>
