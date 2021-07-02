@@ -29,6 +29,7 @@ import BUC_External_Business_Role from './components/BusinessUserCenter/BUC_Exte
 import BUC_Internal_Business_Role from './components/BusinessUserCenter/BUC_Internal_Business_Role.vue';
 import BUC_Brands from './components/BusinessUserCenter/BUC_Brands.vue';
 import BUC_Account_Settings from './components/BusinessUserCenter/BUC_Account_Settings.vue';
+import BUC_Account_Settings_Deposit from './components/BusinessUserCenter/BUC_Account_Settings_Deposit.vue';
 import BUC_Products from './components/BusinessUserCenter/BUC_Products.vue';
 import BUC_Services from './components/BusinessUserCenter/BUC_Services.vue';
 import BUC_Offers from './components/BusinessUserCenter/BUC_Offers.vue';
@@ -196,6 +197,11 @@ export default new Router({
             path: '/businessusercenter/account_settings',
             name: 'account settings',
             components: { default: BUC_Account_Settings },
+        },
+        {
+            path: '/businessusercenter/account_settings_deposit',
+            name: 'account_settings_deposit',
+            components: { default: BUC_Account_Settings_Deposit },
         },
         {
             path: '/businessusercenter/products',

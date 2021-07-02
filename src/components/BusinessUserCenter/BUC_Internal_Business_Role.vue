@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import Modal from "../../modal/map.vue";
+import Modal from "../../modal/map_internal.vue";
 
 export default {
   name: "BUC_Internal_Business_Role",

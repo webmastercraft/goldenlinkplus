@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import Modal from "../../modal/map.vue";
+import Modal from "../../modal/map_marketing.vue";
 
 export default {
   name: "BUC_Marketing_Channel",
