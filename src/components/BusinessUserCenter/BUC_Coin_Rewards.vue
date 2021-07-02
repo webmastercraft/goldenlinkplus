@@ -8,28 +8,74 @@
             </div>
             
             <div class="account-title  marketing_plus">
-              G-Coin Rewards<router-link to="/businessusercenter/coin_rewards/edit"><i class="fas fa-plus-circle"></i></router-link>
+              G-Coin Rewards<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
             </div>
-            <div class="offer_btn">
-            <button class="btn running_btn">Running</button>
+            <div class="content_register" v-if="isShow === true">
+              <form>
+                <div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      aria-describedby="title"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="select_offer">
+                      <option disabled selected>Select Offer</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="select_red_packet_type">
+                      <option disabled selected>Select Red Packet Type</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="copies-issued"
+                      aria-describedby="copies-issued"
+                      placeholder="Copies Issued"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="effective-date"
+                      aria-describedby="effective-date"
+                      placeholder="Effective Date"
+                    />
+                  </div>
+                </div>
+                <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
+                <button type="button" class="btn btn_save " @click="addCoin()">SAVE</button>
+              </form>
+              <hr>
             </div>
-            <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Offer:<span> $300增会增会限限量布限限量布</span><button class="remove_btn"><img src="img/remove.png"></button></p>
-              <p class="profile-title profile-title-buc">Packet Type:<span> Random</span></p>
-              <p class="profile-title profile-title-buc">Amount:<span> $1000</span></p>
-              <p class="profile-title profile-title-buc">Copies Issued:<span> 200</span></p>
-              <p class="profile-title profile-title-buc">Effectivity Date:<span> 07/14/2020 21:05:00</span></p>
-            </div>
-            <hr>
-            <div class="offer_btn">
-            <button class="btn running_btn">Running</button>
-            </div>
-            <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Offer:<span> $300增会增会限限量布限限量布</span><button class="remove_btn"><img src="img/remove.png"></button></p>
-              <p class="profile-title profile-title-buc">Packet Type:<span> Random</span></p>
-              <p class="profile-title profile-title-buc">Amount:<span> $1000</span></p>
-              <p class="profile-title profile-title-buc">Copies Issued:<span> 200</span></p>
-              <p class="profile-title profile-title-buc">Effectivity Date:<span> 07/14/2020 21:05:00</span></p>
+            <div v-for="(coin, index) in coins" :key="index">
+              <div class="offer_btn">
+                <button class="btn running_btn">Running</button>
+              </div>
+              <div class="golden-area brands_top">
+                <p class="profile-title profile-title-buc">Offer:<span> {{coin.offer}}</span><button @click="removeCoin(index)" class="remove_btn"><img src="img/remove.png"></button></p>
+                <p class="profile-title profile-title-buc">Packet Type:<span> {{coin.packet_type}}</span></p>
+                <p class="profile-title profile-title-buc">Amount:<span> {{coin.amount}}</span></p>
+                <p class="profile-title profile-title-buc">Copies Issued:<span> {{coin.copies}}</span></p>
+                <p class="profile-title profile-title-buc">Effectivity Date:<span> {{coin.date}}</span></p>
+              </div>
+              <hr>
             </div>
           </div>
         </div>
@@ -41,6 +87,42 @@
 export default {
   name: 'Coin_Rewards',
   components: {
+  },
+  data () {
+    return { 
+        isShow: false,
+        coins: [
+          {
+            offer: "$300增会增会限限量布限限量布",
+            packet_type: "Random",
+            amount: "$1000",
+            copies: "200",
+            date: "07/14/2020 21:05:00",
+          },
+          {
+            offer: "$300增会增会限限量布限限量布",
+            packet_type: "Random",
+            amount: "$1000",
+            copies: "200",
+            date: "07/14/2020 21:05:00",
+          }
+        ]
+    }
+  },
+  methods: {
+    removeCoin(index) {
+      this.$delete(this.coins,index)
+    },
+    addCoin() {
+      // this.coins.push(coin);
+      this.hideEdit();
+    },
+    showEdit() {
+      this.isShow = true;
+    },
+    hideEdit() {
+      this.isShow = false;
+    }
   }
 }
 </script>

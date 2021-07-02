@@ -35,12 +35,6 @@ export default {
             ownership: "Owned",
             place: "USA",
             date: "12/16/2020",
-          },
-          {
-            name: "Golden",
-            ownership: "Yes",
-            place: "Canada",
-            date: "10/09/1999",
           }
         ]
     }

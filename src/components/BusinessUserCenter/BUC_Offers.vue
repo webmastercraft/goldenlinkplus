@@ -14,7 +14,7 @@
               <form>
                 <div class="form-group">
                   <select class="form-control" id="select-product">
-                    <option>Select Product</option>
+                    <option disabled selected>Select Product</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                   <select class="form-control" id="select_offer_type">
-                    <option>Select Offer Type</option>
+                    <option disabled selected>Select Offer Type</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
@@ -197,7 +197,6 @@ export default {
       this.hideEdit();
     },
     showEdit() {
-      console.log(this.isShow);
       this.isShow = true;
     },
     hideEdit() {

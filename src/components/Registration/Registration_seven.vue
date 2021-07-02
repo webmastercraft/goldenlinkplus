@@ -20,7 +20,7 @@
               </div>
               <div class="form-group">
                 <select class="form-control" id="select_offer">
-                  <option>Select Offer</option>
+                  <option disabled selected>Select Offer</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
@@ -29,7 +29,7 @@
               </div>
               <div class="form-group">
                 <select class="form-control" id="select_red_packet_type">
-                  <option>Selected Red Packet Type</option>
+                  <option disabled selected>Select Red Packet Type</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
