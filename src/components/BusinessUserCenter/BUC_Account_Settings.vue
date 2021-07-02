@@ -17,10 +17,20 @@
                         <div v-else><img src="img/accordion_open.png"></div>
                     </div>
                     <div class="golden-area item-active">
-                      <p class="profile-title profile-title-buc">Contact Name:<span> Alice Hansen</span><button class="remove_btn"><img src="img/edit.png"></button></p>
-                      <p class="profile-title profile-title-buc">Telephone:<span> 6266848151</span></p>
-                      <p class="profile-title profile-title-buc">Channel:<span> WeChat (GoldenLinkPlus2018)</span></p>
-                      <p class="profile-title profile-title-buc">Email:<span> alicedu@goldenlinkplus.com</span></p>
+                        <div v-if="isEditContactInfo === false">
+                            <p class="profile-title profile-title-buc">Contact Name:<span> {{contact_infomation.name}}</span><button class="remove_btn" @click="editContactInfo()"><img src="img/edit.png"></button></p>
+                            <p class="profile-title profile-title-buc">Telephone:<span> {{contact_infomation.telephone}}</span></p>
+                            <p class="profile-title profile-title-buc">Channel:<span> {{contact_infomation.channel}} ({{contact_infomation.id}})</span></p>
+                            <p class="profile-title profile-title-buc">Email:<span> {{contact_infomation.email}}</span></p>
+                        </div>
+                        <form class="contact_form" v-else>
+                            <p class="profile-title profile-title-buc">Contact Name:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.name}`"></p>
+                            <p class="profile-title profile-title-buc">Telephone:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.telephone}`"></p>
+                            <p class="profile-title profile-title-buc">Channel:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.channel}`"></p>
+                            <p class="profile-title profile-title-buc">ID:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.id}`"></p>
+                            <p class="profile-title profile-title-buc">Email:<input type="text" class="timeline_box" name="name" :value="`${contact_infomation.email}`"></p>
+                            <input type="button" class="account_post_btn" value="UPDATE" @click="stopEditContactInfo()">
+                        </form>
                     </div>
                 </div>
                 <div :class="{active: isActive === 2}">
@@ -117,18 +127,30 @@ export default {
   name: "Account_Settings",
   data () {
     return {
-      isActive: null
+      isActive: null,
+      isEditContactInfo: false,
+      contact_infomation: {
+        name: "Alice Hansen",
+        telephone: "6266848151",
+        channel: "WeChat",
+        email: "alicedu@goldenlinkplus.com",
+        id: "GoldenLinkPlus2018"
+      }
     }
   },
   methods: {
     toggleItem(index) {
-        console.log("index", index);
-        console.log("this.isActive", this.isActive);
         if(this.isActive === index)
             this.isActive = null;
         else
           this.isActive = index;
     },
+    editContactInfo() {
+        this.isEditContactInfo = true;
+    },
+    stopEditContactInfo() {
+        this.isEditContactInfo = false;
+    }
   }
 };
 </script>
@@ -164,6 +186,20 @@ export default {
 }
 .item-active{
     display: none;
+}
+.item-active .contact_form {
+    text-align: center;
+}
+.item-active .contact_form p {
+    display: flex;
+    white-space: nowrap;
+}
+.item-active .contact_form .timeline_box {
+    padding: 5px 15px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: -5px;
+    width: 100%;
 }
 .active .item-active {
     will-change: height;
@@ -275,23 +311,10 @@ export default {
     margin: -10px 21px 21px 22px;
 }
 
-.timeline_box {
-    background: #f4f9fe;
-    height: 50px;
-    border: 0;
-    border-radius: 12px;
-    padding: 10px 20px;
-    width: calc(100% - 84px);
-}
-
-.timeline_box:focus-visible {
-    outline: none;
-}
-
 .account_post_btn {
     background: #F3921E;
     padding: 15px 80px;
-    border-radius: 15px;
+    border-radius: 20px;
     color: white;
     border: 0;
     margin-top: 25px;
