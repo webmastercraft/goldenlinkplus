@@ -8,21 +8,157 @@
             </div>
             
             <div class="account-title  marketing_plus">
-              My Offers<router-link to="/businessusercenter/offers/edit"><i class="fas fa-plus-circle"></i></router-link>
+              My Offers<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
             </div>
-            <div class="offer_btn">
-            <button class="btn running_btn">Running</button>
-            <button class="btn track_btn">TRACK</button>
+            <div class="content_register" v-if="isShow === true">
+              <form>
+                <div class="form-group">
+                  <select class="form-control" id="select-product">
+                    <option>Select Product</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    aria-describedby="title"
+                    placeholder="Title"
+                  />
+                </div>
+                
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="preview-url"
+                    aria-describedby="preview-url"
+                    placeholder="Preview URL"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    aria-describedby="price"
+                    placeholder="Price"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="minimum quantity per order"
+                    aria-describedby="minimum quantity per order"
+                    placeholder="Minimum Quantity per Order"
+                  />
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="select_offer_type">
+                    <option>Select Offer Type</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="offer-commission"
+                    aria-describedby="offer-commission"
+                    placeholder="Offer Commission"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cpc"
+                    aria-describedby="cpc"
+                    placeholder="CPC"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="targeted-locations"
+                    aria-describedby="targeted-locations"
+                    placeholder="Targeted Locations"
+                  />
+                </div>
+                <div class="form-group">
+                  <div class="image-title">Upload Banners</div>
+                  <div class="image-content">
+                    <div>
+                      <div class="js--image-preview for-image"></div>
+                      <div class="upload-options for-upload">
+
+                        <label>
+                          <input type="file" class="image-upload" accept="image/*" />
+                        </label>
+                      </div>
+                    </div>
+                    <div>
+                      <div>Recommended size</div>
+                      <div class="for-size">
+                        <div>
+                          <p>300 * 250px</p>
+                          <p>250 * 250px</p>
+                          <p>180 * 150px</p>
+                          <p>300 * 100px</p>
+                        </div>
+                        <div>
+                          <p>728 * 90px</p>
+                          <p>160 * 600px</p>
+                          <p>120 * 600px</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group thumbnails">
+                  <div><img src=""></div>
+                  <div><img src=""></div>
+                  <div><img src=""></div>
+                  <div><img src=""></div>
+                  <div><img src=""></div>
+                </div>
+                <hr>
+                <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
+                <button type="button" class="btn btn_save " @click="addOffer()">SAVE</button>
+              </form>
             </div>
-            <div class="golden-area brands_top">
-              <p class="profile-title profile-title-buc">Title:<span> $300增会增会限限量布限限量布</span><button class="remove_btn"><img src="img/remove.png"></button></p>
-              <p class="profile-title profile-title-buc">Product:<span><br> Social Media Marketing</span></p>
-              <p class="profile-title profile-title-buc">Preview URL:<span></span></p>
-              <p class="profile-title profile-title-buc">Type:<span> CPS</span></p>
-              <p class="profile-title profile-title-buc">Description:<span><br>$300 增会员 （Premium member）<br>限佣金惠offer<br>1 G-Coins/CPC<br>8895 G-Coins/CPS<br>同 时保留推荐将10% 现金奖励</span></p>
-              <p class="profile-title profile-title-buc">Offer Commission:<span> 50</span></p>
-              <p class="profile-title profile-title-buc">CPC:<span> 0</span></p>
-              <p class="profile-title profile-title-buc">Targeted Locations:<span> Global</span></p>
+            <div v-for="(offer, index) in offers" :key="index">
+              <div class="offer_btn">
+                <button class="btn running_btn">Running</button>
+                <button class="btn track_btn">TRACK</button>
+              </div>
+              <div class="golden-area brands_top">
+                <p class="profile-title profile-title-buc">Title:<span> {{offer.title}}</span><button @click="removeOffer(index)" class="remove_btn"><img src="img/remove.png"></button></p>
+                <p class="profile-title profile-title-buc">Product:<span><br> {{offer.product}}</span></p>
+                <p class="profile-title profile-title-buc">Preview URL:<span>{{offer.preview_url}}</span></p>
+                <p class="profile-title profile-title-buc">Type:<span> {{offer.type}}</span></p>
+                <p class="profile-title profile-title-buc">Description:<span><br>{{offer.description}}</span></p>
+                <p class="profile-title profile-title-buc">Offer Commission:<span> {{offer.commission}}</span></p>
+                <p class="profile-title profile-title-buc">CPC:<span> {{offer.cpc}}</span></p>
+                <p class="profile-title profile-title-buc">Targeted Locations:<span> {{offer.location}}</span></p>
+              </div>
             </div>
           </div>
         </div>
@@ -34,6 +170,39 @@
 export default {
   name: 'Offers',
   components: {
+  },
+  data () {
+    return { 
+        isShow: false,
+        offers: [
+          {
+            title: "$300增会增会限限量布限限量布",
+            product: "Social Media Marketing",
+            preview_url: "",
+            type: "CPS",
+            description: "$300 增会员 （Premium member）\n限佣金惠offer\n1 G-Coins/CPC\n8895 G-Coins/CPS\n同 时保留推荐将10% 现金奖励",
+            commission: "50",
+            cpc: "0",
+            location: "Global"
+          }
+        ]
+    }
+  },
+  methods: {
+    removeOffer(index) {
+      this.$delete(this.offers,index)
+    },
+    addOffer() {
+      // this.offers.push(offer);
+      this.hideEdit();
+    },
+    showEdit() {
+      console.log(this.isShow);
+      this.isShow = true;
+    },
+    hideEdit() {
+      this.isShow = false;
+    }
   }
 }
 </script>
