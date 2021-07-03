@@ -1114,7 +1114,7 @@ hr.subtitle-hr {
     color: white;
     padding: 1px 18px;
     background: #3B3E51;
-    margin: auto 10px;
+    margin: auto 20px;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -1143,9 +1143,9 @@ hr.subtitle-hr {
 
 .content_modal .view-link svg {
     margin-left: 5px;
-    margin-right: 15px;
+    margin-right: 25px;
     color: white;
-    background-color: black;
+    background-color: #3b3e51;
     padding: 1px;
     border-radius: 3px;
 }
@@ -1250,4 +1250,13 @@ button {
 
 .description {
     white-space: pre-line;
+}
+
+.item-active .contact_form select.timeline_box {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../images/dropdown.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) 50%;
 }
