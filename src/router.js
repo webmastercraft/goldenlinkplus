@@ -21,6 +21,7 @@ import UserCenter_My_Commissions from './components/GSUserCenter/UserCenter_My_C
 import UserCenter_Payments from './components/GSUserCenter/UserCenter_Payments.vue';
 import UserCenter_Messaging from './components/GSUserCenter/UserCenter_Messaging.vue';
 import UserCenter_Coin_Award from './components/GSUserCenter/UserCenter_Coin_Award.vue';
+import UserCenter_Social_Media from './components/GSUserCenter/UserCenter_Social_Media.vue';
 
 import BUC_Home from './components/BusinessUserCenter/BUC_Home.vue';
 import BUC_Create_Account from './components/BusinessUserCenter/BUC_Create_Account.vue';
@@ -152,6 +153,11 @@ export default new Router({
             path: '/usercenter/coins_award',
             name: 'coins_award',
             components: { default: UserCenter_Coin_Award },
+        },
+        {
+            path: '/usercenter/social_media',
+            name: 'social_media',
+            components: { default: UserCenter_Social_Media },
         },
         {
             path: '/overlay_del_brand',
