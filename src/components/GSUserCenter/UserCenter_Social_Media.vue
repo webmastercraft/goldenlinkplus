@@ -73,56 +73,6 @@
 export default {
   name: "Social Media",
   components: {
-  },
-  data () {
-    return { 
-      isBusiness: true,
-      business: {
-        subtitle: "BUSINESSES", 
-        items: [
-          {
-            company: "GlodenlinkPlus",
-            contactname: "Alice Du",
-            telephone: "+1626-684-8151",
-            email: "",
-            skype: "alicedu"
-          },
-          {
-            company: "GlodenlinkPlus",
-            contactname: "Alice Du",
-            telephone: "+1626-684-8151",
-            email: "",
-            skype: "alicedu"
-          }
-        ]
-      }, goldstriker : {
-         subtitle: "GOLD STRIKERS", 
-        items: [
-          {
-            company: "GlodenlinkPLus GOLD",
-            contactname: "Alice Hansen",
-            telephone: "+1626-6848151",
-            email: "",
-            skype: "alicehansen"
-          },
-          {
-            company: "Glodenstriker 1",
-            contactname: "Gold Striker",
-            telephone: "+1626-6848151",
-            email: "",
-            skype: "gold"
-          }
-        ]
-      }
-    }
-  },
-  methods: {
-    showBusiness() {
-      this.isBusiness = true;
-    },
-    showGoldStriker() {
-      this.isBusiness = false;
-    }
   }
 }
 </script>
