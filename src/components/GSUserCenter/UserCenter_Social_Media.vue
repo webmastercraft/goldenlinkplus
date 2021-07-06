@@ -36,8 +36,8 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="copies-issued"
-                      aria-describedby="copies-issued"
+                      id=""
+                      aria-describedby=""
                       placeholder="What is your audience size?"
                     />
                   </div>
