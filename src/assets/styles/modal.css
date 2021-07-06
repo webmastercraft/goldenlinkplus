@@ -24,7 +24,7 @@
   max-width: 376px;
   height: auto !important;
   background: #FFFFFF !important;
-  display: flex !important;
+  display: flex;
   flex-direction: column !important;
   border-radius: 12px;
 }
