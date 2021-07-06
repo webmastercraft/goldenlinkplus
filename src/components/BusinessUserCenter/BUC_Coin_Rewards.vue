@@ -20,11 +20,12 @@
                       id="title"
                       aria-describedby="title"
                       placeholder="Title"
+                      v-model="title"
                     />
                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="select_offer">
-                      <option disabled selected>Select Offer</option>
+                    <select class="form-control" id="select_offer" v-model="offer">
+                      <option value="null" disabled selected>Select Offer</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -32,8 +33,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="select_red_packet_type">
-                      <option disabled selected>Select Red Packet Type</option>
+                    <select class="form-control" id="select_red_packet_type" v-model="packet_type">
+                      <option value="null" disabled selected>Select Red Packet Type</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -47,15 +48,17 @@
                       id="copies-issued"
                       aria-describedby="copies-issued"
                       placeholder="Copies Issued"
+                      v-model="copies"
                     />
                   </div>
                   <div class="form-group">
                     <input
-                      type="text"
+                      type="datetime-local"
                       class="form-control"
                       id="effective-date"
                       aria-describedby="effective-date"
                       placeholder="Effective Date"
+                      v-model="date"
                     />
                   </div>
                 </div>
@@ -91,6 +94,11 @@ export default {
   data () {
     return { 
         isShow: false,
+        title: null,
+        offer: null,
+        packet_type: null,
+        copies: null,
+        date: null,
         coins: [
           {
             offer: "$300增会增会限限量布限限量布",
@@ -110,8 +118,17 @@ export default {
     }
   },
   methods: {
-    saveCoin() {
-      // this.coins.push(coin);
+    saveCoin(e) {
+      if (!this.title && !this.offer && !this.packet_type && !this.copies && !this.date ) 
+        return false;
+      let coin = {
+        offer: this.offer,
+        packet_type: this.packet_type,
+        amount: this.title,
+        copies: this.copies,
+        date: this.date,
+      }
+      this.coins.push(coin);
       this.hideEdit();
     },
     showEdit() {
