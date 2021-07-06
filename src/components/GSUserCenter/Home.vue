@@ -50,9 +50,9 @@ export default {
           {rout : "referrals", name: "My Referrals"},
           {rout : "comments and reviews", name: "Comments and Reviews"},
           {rout : "commissions", name: "My commissions"},
-          {rout : "upgrade_gs_account", name: "Upgrade GS Account"},
+          // {rout : "upgrade_gs_account", name: "Upgrade GS Account"},
+          {rout : "invite", name: "Invite"},
           {rout : "payments", name: "Payments and Financials"},
-          {rout : "invite", name: "Invite"}
         ]
       }
     }
