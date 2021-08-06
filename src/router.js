@@ -45,6 +45,13 @@ import BUC_Certifications from './components/BusinessUserCenter/BUC_Certificatio
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
 
+import SocialMedia_login from './components/SocialMedia/SocialMedia_login.vue';
+import SocialMedia_Reg_intro from './components/SocialMedia/SocialMedia_Reg_intro.vue';
+import SocialMedia_Reg_verify from './components/SocialMedia/SocialMedia_Reg_verify.vue';
+import SocialMedia_Reg_security from './components/SocialMedia/SocialMedia_Reg_security.vue';
+import SocialMedia_Reg_touch_security from './components/SocialMedia/SocialMedia_Reg_touch_security.vue';
+
+
 Vue.use(Router);
 
 export default new Router({
@@ -259,6 +266,36 @@ export default new Router({
             path: '/businessusercenter/certifications',
             name: 'certifications',
             components: { default: BUC_Certifications },
+        },
+        {
+            path: '/socialmedia/socialmedialogin',
+            name: 'socialmedialogin',
+            components: { default: SocialMedia_login },
+        },
+        {
+            path: '/socialmedia/socialmedia_reg_intro',
+            name: 'socialmedia_reg_intro',
+            components: { default: SocialMedia_Reg_intro },
+        },
+        {
+            path: '/socialmedia/socialmedia_reg_intro',
+            name: 'socialmedia_reg_intro',
+            components: { default: SocialMedia_Reg_intro },
+        },
+        {
+            path: '/socialmedia/socialMedia_reg_verify',
+            name: 'socialMedia_reg_verify',
+            components: { default: SocialMedia_Reg_verify },
+        },
+        {
+            path: '/socialmedia/socialMedia_reg_security',
+            name: 'socialMedia_reg_security',
+            components: { default: SocialMedia_Reg_security },
+        },
+        {
+            path: '/socialmedia/socialMedia_reg_touch_security',
+            name: 'socialMedia_reg_touch_security',
+            components: { default: SocialMedia_Reg_touch_security },
         }
     ],
 

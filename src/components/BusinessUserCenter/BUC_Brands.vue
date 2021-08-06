@@ -56,7 +56,7 @@
                 <button type="button" class="btn btn_cancel" @click="hideEdit()">CANCEL</button>
                 <button type="button" class="btn btn_save " @click="addBrand()">SAVE</button>
               </form>
-              <hr>
+              <hr style="margin: 0 auto">
             </div>
             <div class="golden-area brands_top" v-for="(brand, index) in brands" :key="index" >
               <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove.png"></button></p>

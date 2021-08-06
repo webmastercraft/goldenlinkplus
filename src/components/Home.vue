@@ -13,6 +13,9 @@
             <router-link to="/businessusercenter" >
               BusinessUserCenter
             </router-link>
+            <router-link to="/socialmedia/socialmedialogin" >
+              SocialMedia
+            </router-link>
           </div>
         </div>
       </div>
