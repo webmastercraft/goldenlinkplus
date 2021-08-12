@@ -9,9 +9,10 @@
             <div class="account-title marketing_plus">
               My Brands<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
             </div>
+            <hr class="brand_hr">
             <div class="content_register" v-if="isShow === true">
               <form>
-                <div>
+                <div v-if="isEditBrand === false" @click="editBrand()">
                   <div class="form-group">
                     <input
                       type="text"
@@ -22,15 +23,9 @@
                       v-model="brand_title"
                     />
                   </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="ownership"
-                      aria-describedby="offer"
-                      placeholder="Brand Ownership"
-                      v-model="brand_ownership"
-                    />
+                  <div class="form-group toggle-button-cover">
+                    <span class="toggle-title">Are you brand owner?</span>
+                    <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" :width=80 :height=30 style='float: right;' v-model="brand_ownership"/>
                   </div>
                   <div class="form-group">
                     <input
@@ -62,8 +57,8 @@
               <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove.png"></button></p>
               <p class="profile-title profile-title-buc">Brand Ownership:<span> {{brand.ownership}}</span></p>
               <p class="profile-title profile-title-buc">Place of Registration:<span> {{brand.place}}</span></p>
-              <p class="profile-title profile-title-buc">Date of Registration:<span> {{brand.date}}</span></p>
-              <hr>
+              <p class="profile-title profile-title-last-buc">Date of Registration:<span> {{brand.date}}</span></p>
+              
             </div>
           </div>
         </div>
@@ -71,6 +66,10 @@
   </div>
 </template>
 <script>
+import Vue from 'vue';
+import ToggleButton from 'vue-js-toggle-button';
+
+Vue.use(ToggleButton)
 
 export default {
   name: 'BUC_Brands',
@@ -79,6 +78,7 @@ export default {
   data () {
     return { 
         isShow: false,
+        isEditBrand: false,
         brand_title: null,
         brand_ownership: null,
         brand_place: null,
@@ -112,6 +112,9 @@ export default {
     showEdit() {
       this.isShow = true;
     },
+    editBrand() {
+        this.isEditBrand = true;
+    },
     hideEdit() {
       this.isShow = false;
     }
@@ -122,8 +125,16 @@ export default {
   .profile-title-buc {
     margin: 0 21px 21px 22px !important;
   }
-
+  .profile-title-last-buc {
+    margin: 0 21px 0 22px !important;
+  }
   .brands_top {
-    margin-top: 25px;
+    margin: 25px 15px;
+    background-color: #F4F9FE;
+    padding: 10px 0;
+    border-radius: 12px;
+  }
+  .brand_hr {
+    margin: 0 10px 10px 10px !important;
   }
 </style>

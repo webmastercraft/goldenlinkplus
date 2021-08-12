@@ -23,6 +23,10 @@ import UserCenter_Messaging from './components/GSUserCenter/UserCenter_Messaging
 import UserCenter_Coin_Award from './components/GSUserCenter/UserCenter_Coin_Award.vue';
 import UserCenter_Social_Media from './components/GSUserCenter/UserCenter_Social_Media.vue';
 import UserCenter_Invite from './components/GSUserCenter/UserCenter_Invite.vue';
+import UserCenter_Upgrade_GS_Account from './components/GSUserCenter/UserCenter_Upgrade_GS_Account.vue';
+import UserCenter_How_It_Works from './components/GSUserCenter/UserCenter_How_It_Works.vue';
+import UserCenter_Membership_Agreement from './components/GSUserCenter/UserCenter_Membership_Agreement.vue';
+import UserCenter_Secure_Checkout from './components/GSUserCenter/UserCenter_Secure_Checkout.vue';
 
 import BUC_Home from './components/BusinessUserCenter/BUC_Home.vue';
 import BUC_Create_Account from './components/BusinessUserCenter/BUC_Create_Account.vue';
@@ -41,15 +45,24 @@ import BUC_Coin_Rewards from './components/BusinessUserCenter/BUC_Coin_Rewards.v
 import BUC_Marketing_Channel from './components/BusinessUserCenter/BUC_Marketing_Channel.vue';
 import BUC_CPC_Rewards from './components/BusinessUserCenter/BUC_CPC_Rewards.vue';
 import BUC_Certifications from './components/BusinessUserCenter/BUC_Certifications.vue';
+import BUC_Upgrade_Account from './components/BusinessUserCenter/BUC_Upgrade_Account.vue';
+import BUC_Business_Agreement from './components/BusinessUserCenter/BUC_Business_Agreement.vue';
+import BUC_Secure_Checkout from './components/BusinessUserCenter/BUC_Secure_Checkout.vue';
 
+BUC_Secure_Checkout
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
 
-import SocialMedia_login from './components/SocialMedia/SocialMedia_login.vue';
+import SocialMedia_Start from './components/SocialMedia/SocialMedia_Start.vue';
 import SocialMedia_Reg_intro from './components/SocialMedia/SocialMedia_Reg_intro.vue';
 import SocialMedia_Reg_verify from './components/SocialMedia/SocialMedia_Reg_verify.vue';
 import SocialMedia_Reg_security from './components/SocialMedia/SocialMedia_Reg_security.vue';
 import SocialMedia_Reg_touch_security from './components/SocialMedia/SocialMedia_Reg_touch_security.vue';
+import SocialMedia_Reg_account_option from './components/SocialMedia/SocialMedia_Reg_account_option.vue';
+import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intro.vue';
+import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
+import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
+import SocialMedia_Log_touch_security from './components/SocialMedia/SocialMedia_Log_touch_security.vue';
 
 
 Vue.use(Router);
@@ -141,6 +154,26 @@ export default new Router({
             path: '/usercenter/referrals',
             name: 'referrals',
             components: { default: UserCenter_My_Referrals },
+        },
+        {
+            path: '/usercenter/upgrade_gs_account',
+            name: 'upgrade_gs_account',
+            components: { default: UserCenter_Upgrade_GS_Account },
+        },
+        {
+            path: '/usercenter/how_it_works',
+            name: 'how_it_works',
+            components: { default: UserCenter_How_It_Works },
+        },
+        {
+            path: '/usercenter/membership_agreement',
+            name: 'membership_agreement',
+            components: { default: UserCenter_Membership_Agreement },
+        },
+        {
+            path: '/usercenter/secure_checkout',
+            name: 'secure_checkout',
+            components: { default: UserCenter_Secure_Checkout },
         },
         {
             path: '/usercenter/commissions',
@@ -238,6 +271,21 @@ export default new Router({
             components: { default: BUC_Offers },
         },
         {
+            path: '/businessusercenter/upgrade_business_account',
+            name: 'upgrade_business_account',
+            components: { default: BUC_Upgrade_Account },
+        },
+        {
+            path: '/businessusercenter/business_agreement',
+            name: 'business_agreement',
+            components: { default: BUC_Business_Agreement },
+        },
+        {
+            path: '/businessusercenter/business_secure_checkout',
+            name: 'business_secure_checkout',
+            components: { default: BUC_Secure_Checkout },
+        },
+        {
             path: '/businessusercenter/start_campaign',
             name: 'start_campaign',
             components: { default: BUC_Start_Campaign },
@@ -268,9 +316,9 @@ export default new Router({
             components: { default: BUC_Certifications },
         },
         {
-            path: '/socialmedia/socialmedialogin',
-            name: 'socialmedialogin',
-            components: { default: SocialMedia_login },
+            path: '/socialmedia/socialmediastart',
+            name: 'socialmediastart',
+            components: { default: SocialMedia_Start },
         },
         {
             path: '/socialmedia/socialmedia_reg_intro',
@@ -278,24 +326,44 @@ export default new Router({
             components: { default: SocialMedia_Reg_intro },
         },
         {
-            path: '/socialmedia/socialmedia_reg_intro',
-            name: 'socialmedia_reg_intro',
-            components: { default: SocialMedia_Reg_intro },
-        },
-        {
-            path: '/socialmedia/socialMedia_reg_verify',
-            name: 'socialMedia_reg_verify',
+            path: '/socialmedia/socialmedia_reg_verify',
+            name: 'socialmedia_reg_verify',
             components: { default: SocialMedia_Reg_verify },
         },
         {
-            path: '/socialmedia/socialMedia_reg_security',
-            name: 'socialMedia_reg_security',
+            path: '/socialmedia/socialmedia_reg_security',
+            name: 'socialmedia_reg_security',
             components: { default: SocialMedia_Reg_security },
         },
         {
-            path: '/socialmedia/socialMedia_reg_touch_security',
-            name: 'socialMedia_reg_touch_security',
+            path: '/socialmedia/socialmedia_reg_touch_security',
+            name: 'socialmedia_reg_touch_security',
             components: { default: SocialMedia_Reg_touch_security },
+        },
+        {
+            path: '/socialmedia/socialmedia_reg_account_option',
+            name: 'socialmedia_reg_account_option',
+            components: { default: SocialMedia_Reg_account_option },
+        },
+        {
+            path: '/socialmedia/socialmedia_log_intro',
+            name: 'socialmedia_log_intro',
+            components: { default: SocialMedia_Log_intro },
+        },
+        {
+            path: '/socialmedia/socialmedia_log_verify',
+            name: 'socialmedia_log_verify',
+            components: { default: SocialMedia_Log_verify },
+        },
+        {
+            path: '/socialmedia/socialmedia_log_security',
+            name: 'socialmedia_log_security',
+            components: { default: SocialMedia_Log_security },
+        },
+        {
+            path: '/socialmedia/socialmedia_log_touch_security',
+            name: 'socialmedia_log_touch_security',
+            components: { default: SocialMedia_Log_touch_security },
         }
     ],
 
