@@ -52,8 +52,10 @@ export default {
           {rout : "services", name: "My Services"},
           {rout : "account_settings", name: "Account Settings"},
           {rout : "offers", name: "My Offers"},
+          {rout : "upgrade_business_account", name: "Upgrade Business Account"},
+          {rout : "cpc_rewards", name: "CPC Rewards"},
           {rout : "start_campaign", name: "Start Campaign"},
-          {rout : "cpc_rewards", name: "CPC Rewards"}
+          {rout : "social_media_matrix", name: "Go to Social Media Matrix"}
         ]
       }
     }

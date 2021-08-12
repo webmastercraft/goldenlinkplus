@@ -48,11 +48,11 @@ export default {
           {rout : "social_media", name: "Social Media"},
           {rout : "notifications", name: "Notifications"},
           {rout : "referrals", name: "My Referrals"},
-          {rout : "comments and reviews", name: "Comments and Reviews"},
+          {rout : "upgrade_gs_account", name: "Upgrade Your GS Account"},
           {rout : "commissions", name: "My commissions"},
-          // {rout : "upgrade_gs_account", name: "Upgrade GS Account"},
           {rout : "invite", name: "Invite"},
           {rout : "payments", name: "Payments and Financials"},
+          {rout : "social_media_matrix", name: "Go to Social Media Matrix"},
         ]
       }
     }
