@@ -13,8 +13,8 @@
             aria-describedby=""
             placeholder=""
           />
-          <p class="glplogo_reg_des">Enter code in 180s<span><router-link to="/" class="glplogo_reg_code">Resend Code</router-link></span></p>
-          <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_reg_account_option" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
+          <p class="glplogo_reg_des">Enter code in 180s<span><router-link to="/socialmedia/socialmedia_reg_security" class="glplogo_reg_code">Resend Code</router-link></span></p>
+          <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_log_touch_security" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
 
 
 export default {
-  name: 'SocialMedia_Reg_verify',
+  name: 'SocialMedia_Log_verify',
   components: {
   }
 }

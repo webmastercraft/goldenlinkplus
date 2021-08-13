@@ -8,8 +8,8 @@
           <p class="glplogo_p">Welcome to<br>Your Social Media<br>Matrix</p>
           <img src="Group 724.png">
           <div class="sociallogo_btn">
-            <button class="social_reg"><router-link to="/" class="socialbtn">Register</router-link></button>
-            <button class="social_log"><router-link to="/socialmedia/socialmedia_reg_intro" class="socialbtn">Login</router-link></button>
+            <button class="social_reg"><router-link to="/socialmedia/socialmedia_reg_intro" class="socialbtn">Register</router-link></button>
+            <button class="social_log"><router-link to="/socialmedia/socialmedia_log_intro" class="socialbtn">Login</router-link></button>
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@
 
 
 export default {
-  name: 'SocialMedia_login',
+  name: 'SocialMedia_Start',
   components: {
   }
 }

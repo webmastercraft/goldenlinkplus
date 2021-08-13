@@ -49,7 +49,7 @@ import BUC_Upgrade_Account from './components/BusinessUserCenter/BUC_Upgrade_Acc
 import BUC_Business_Agreement from './components/BusinessUserCenter/BUC_Business_Agreement.vue';
 import BUC_Secure_Checkout from './components/BusinessUserCenter/BUC_Secure_Checkout.vue';
 
-BUC_Secure_Checkout
+
 import Overlay_Del_Brand from './components/Overlay/Overlay_Del_Brand.vue';
 import Overlay_Del_Product from './components/Overlay/Overlay_Del_Product.vue';
 
@@ -63,6 +63,13 @@ import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intr
 import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
 import SocialMedia_Log_touch_security from './components/SocialMedia/SocialMedia_Log_touch_security.vue';
+import SocialMedia_Messaging_Messages from './components/SocialMedia/SocialMedia_Messaging_Messages.vue';
+import SocialMedia_Messaging_Chat from './components/SocialMedia/SocialMedia_Messaging_Chat.vue';
+import SocialMedia_Search_Communities from './components/SocialMedia/SocialMedia_Search_Communities.vue';
+import SocialMedia_Search_GS from './components/SocialMedia/SocialMedia_Search_GS.vue';
+import SocialMedia_Search_Products from './components/SocialMedia/SocialMedia_Search_Products.vue';
+import SocialMedia_Search_Services from './components/SocialMedia/SocialMedia_Search_Services.vue';
+
 
 
 Vue.use(Router);
@@ -364,6 +371,36 @@ export default new Router({
             path: '/socialmedia/socialmedia_log_touch_security',
             name: 'socialmedia_log_touch_security',
             components: { default: SocialMedia_Log_touch_security },
+        },
+        {
+            path: '/socialmedia/socialmedia_messaging_messages',
+            name: 'socialmedia_messaging_messages',
+            components: { default: SocialMedia_Messaging_Messages },
+        },
+        {
+            path: '/socialmedia/socialmedia_messaging_chat',
+            name: 'socialmedia_messaging_chat',
+            components: { default: SocialMedia_Messaging_Chat },
+        },
+        {
+            path: '/socialmedia/socialmedia_search_products',
+            name: 'socialmedia_search_products',
+            components: { default: SocialMedia_Search_Products },
+        },
+        {
+            path: '/socialmedia/socialmedia_search_gs',
+            name: 'socialmedia_search_gs',
+            components: { default: SocialMedia_Search_GS },
+        },
+        {
+            path: '/socialmedia/socialmedia_search_services',
+            name: 'socialmedia_search_services',
+            components: { default: SocialMedia_Search_Services },
+        },
+        {
+            path: '/socialmedia/socialmedia_search_communities',
+            name: 'socialmedia_search_communities',
+            components: { default: SocialMedia_Search_Communities },
         }
     ],
 

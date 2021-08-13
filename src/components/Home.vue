@@ -16,6 +16,21 @@
             <router-link to="/socialmedia/socialmediastart" >
               SocialMedia
             </router-link>
+            <router-link to="/socialmedia/socialmedia_messaging_messages" >
+              Messaging
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_search_products" >
+              Search/Products
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_search_gs" >
+              Search/GS
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_search_services" >
+              Search/Services
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_search_communities" >
+              Search/Communities
+            </router-link>
           </div>
         </div>
       </div>

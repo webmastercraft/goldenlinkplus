@@ -3,13 +3,12 @@
     <div class="container">
       <div class="phone passcode">
         <div class="glplogo_reg_security">
-          <p class="glplogo_reg_security_title"><b>Use TouchID to Sign up</b></p>
+          <p class="glplogo_reg_security_title"><b>Use TouchID to Login</b></p>
           <p class="glplogo_reg_tocuh_title">Place your finger on the device</p>
           <img class="touch_img" src="Group 743.png">
           <p class="touch_per">100%</p>
           <hr class="touch_progress">
-          <p>
-            <router-link class="glplogo_reg_passcode_ins" to="/socialmedia/socialmedia_reg_security">or use a passcode instead</router-link></p>
+          <p class="glplogo_reg_passcode_ins">or use a passcode instead</p>
         </div>
       </div>
     </div>
@@ -19,7 +18,7 @@
   
   export default {
     name: 'ProgressProPage',
-    name: 'SocialMedia_Reg_touch_security',
+    name: 'SocialMedia_Log_touch_security',
     components: {
     },
     data() {
