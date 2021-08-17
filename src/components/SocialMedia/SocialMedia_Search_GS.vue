@@ -17,7 +17,9 @@
                 <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
                 <div class="search_transmit search_gs_grid">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
+                <router-link to="/socialmedia/socialmedia_messaging_chat">
                 <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                </router-link>
                 </div>
             </div>
 
@@ -65,7 +67,6 @@ export default {
   },
   methods: {
     selectFollow(index) {
-      console.log(index, this.datas[index])
       this.datas[index].follow = false
       this.image1 =  this.image2;
     },

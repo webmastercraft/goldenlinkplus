@@ -14,7 +14,9 @@
                 <p class="socialmedia_search_title search_para"><b>{{item.name}}</b><br><span class="search_area">{{item.address}}</span><br><img src="gcoins.png" class="search_coins_img"><span class="search_coins"></span>{{item.coin}} G-Coin Rewards<br><span class="search_check_offer"><b>Check Offer</b></span></p>
                 <div class="search_transmit">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
+                <router-link to="/socialmedia/socialmedia_messaging_chat">
                 <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                </router-link>
                 </div>
               </div>
           </div>
@@ -72,7 +74,6 @@ export default {
   },
   methods: {
     selectFollow(index) {
-      console.log(index, this.datas[index])
       this.datas[index].follow = false
     },
   }

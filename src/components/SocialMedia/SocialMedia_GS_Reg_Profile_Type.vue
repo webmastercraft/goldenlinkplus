@@ -99,7 +99,7 @@ export default {
   }
   .status_skip_btn {
     background-color: #13C8FF;
-    opacity: 30%;
+    opacity: 0.3;
     color: white;
     padding: 0 25px;
     border-radius: 10px;
