@@ -6,7 +6,6 @@
           <router-link to="/"><img src="glplogo.png" class="glplogo_reg_img">
           </router-link>
           <p class="glplogo_reg_p">Enter your phone number</p>
-          <div>
             <div class="container mb-3">
               <div class="flex flex-wrap">
                 <div class="component-container">
@@ -16,8 +15,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <p class="glplogo_reg_des">By entering your number, you're agreeing to our <b>Terms of Sevice</b> and <b>Privacy Policy</b>.</p>
+            <p class="validation_desc">Please use a valid phone number, not a VoIP or landline number.</p>
+          <p class="glplogo_reg_validate">By entering your number, you're agreeing to our <b>Terms of Sevice</b> and <b>Privacy Policy</b>.</p>
           <div class="sociallogo_btn">
             <router-link to="/socialmedia/socialmedia_log_verify">
               <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
@@ -91,9 +90,9 @@ export default {
     margin-bottom: 20px;
     background-color: #F4F9FE !important;
   }
-  .glplogo_reg_des {
+  .glplogo_reg_validate {
     font-size: 14px;
-    margin: 0;
+    margin: 20px 0 0;
   }
   .glplogo_reg_btn {
     background-color: #F4992D;
@@ -108,6 +107,15 @@ export default {
   }
   .input-tel__input {
     border-radius: 20px;
+  }
+  .validation_desc {
+    color: #FF0000;
+    font-size: 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .mb-3 {
+    margin-bottom: 0 !important;
   }
 </style>
 

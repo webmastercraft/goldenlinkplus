@@ -69,6 +69,10 @@ import SocialMedia_Search_Communities from './components/SocialMedia/SocialMedia
 import SocialMedia_Search_GS from './components/SocialMedia/SocialMedia_Search_GS.vue';
 import SocialMedia_Search_Products from './components/SocialMedia/SocialMedia_Search_Products.vue';
 import SocialMedia_Search_Services from './components/SocialMedia/SocialMedia_Search_Services.vue';
+import SocialMedia_GS_Reg_Profile_Type from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Type.vue';
+import SocialMedia_GS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Photo.vue';
+import SocialMedia_GS_Reg_Connect_Paypal from './components/SocialMedia/SocialMedia_GS_Reg_Connect_Paypal.vue';
+import SocialMedia_GS_Reg_Start from './components/SocialMedia/SocialMedia_GS_Reg_Start.vue';
 
 
 
@@ -401,6 +405,26 @@ export default new Router({
             path: '/socialmedia/socialmedia_search_communities',
             name: 'socialmedia_search_communities',
             components: { default: SocialMedia_Search_Communities },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_reg_connect_paypal',
+            name: 'socialmedia_gs_reg_connect_paypal',
+            components: { default: SocialMedia_GS_Reg_Connect_Paypal },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_reg_profile_photo',
+            name: 'socialmedia_gs_reg_profile_photo',
+            components: { default: SocialMedia_GS_Reg_Profile_Photo },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_reg_profile_type',
+            name: 'socialmedia_gs_reg_profile_type',
+            components: { default: SocialMedia_GS_Reg_Profile_Type },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_reg_start',
+            name: 'socialmedia_gs_reg_start',
+            components: { default: SocialMedia_GS_Reg_Start },
         }
     ],
 
