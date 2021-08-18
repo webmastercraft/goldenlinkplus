@@ -5,18 +5,20 @@
         <div class="glplogo">
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
-          <p class="glplogo_reg_p">Enter your Email Address</p>
-          <input
-            type="email"
-            class="form-control socialmedia_reg_email"
-            id=""
-            aria-describedby=""
-            placeholder=""
-          />
           <form>
+            <p class="glplogo_reg_p">Enter your Email Address</p>
+            <input
+              type="email"
+              class="form-control socialmedia_reg_email"
+              id=""
+              aria-describedby=""
+              placeholder=""
+              v-model = "email"
+            />
+            <p v-if="!email" style="color:red">Email is required</p>
               <div class="socialmedia_check">
                 <div class="checkbox_check">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked="true">
                   <label for="vehicle1"></label>
                   <p>YES! Send me real-time reports on marketing campaigns, fan base events, as well as sales conversions.</p>
                 </div>
@@ -44,6 +46,11 @@
 export default {
   name: 'SocialMedia_Reg_account_option',
   components: {
+  },
+  data() {
+    return {
+      email: null
+    }
   }
 }
 </script>
@@ -111,8 +118,12 @@ export default {
       background-size: 100%;
       display:inline-block;
   }
+  .socialmedia_check {
+    margin-top: 15px;
+  }
   .socialmedia_check .checkbox_check {
     margin: 0;
+    margin-top: 15px;
     display: flex;
     font-size: 14px;
   }
