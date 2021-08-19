@@ -8,7 +8,9 @@
           <img class="touch_img" src="Group 743.png">
           <p class="touch_per">100%</p>
           <hr class="touch_progress">
-          <p class="glplogo_reg_passcode_ins">or use a passcode instead</p>
+          <router-link to="/socialmedia/socialmedia_log_security">
+            <p class="glplogo_reg_passcode_ins">or use a passcode instead</p>
+          </router-link>
         </div>
       </div>
     </div>

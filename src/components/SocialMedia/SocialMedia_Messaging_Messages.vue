@@ -4,7 +4,7 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Messages</a>
           </div>
           <div class="content left-content header_top height_static">

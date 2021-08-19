@@ -73,7 +73,12 @@ import SocialMedia_GS_Reg_Profile_Type from './components/SocialMedia/SocialMedi
 import SocialMedia_GS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Photo.vue';
 import SocialMedia_GS_Reg_Connect_Paypal from './components/SocialMedia/SocialMedia_GS_Reg_Connect_Paypal.vue';
 import SocialMedia_GS_Reg_Start from './components/SocialMedia/SocialMedia_GS_Reg_Start.vue';
-
+import SocialMedia_Main from './components/SocialMedia/SocialMedia_Main.vue';
+import SocialMedia_Main_Create_Event from './components/SocialMedia/SocialMedia_Main_Create_Event.vue';
+import SocialMedia_Main_Event_Invite from './components/SocialMedia/SocialMedia_Main_Event_Invite.vue';
+import SocialMedia_Main_Audio_Event from './components/SocialMedia/SocialMedia_Main_Audio_Event.vue';
+import SocialMedia_Main_Activities from './components/SocialMedia/SocialMedia_Main_Activities.vue';
+import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_Lounge.vue';
 
 
 Vue.use(Router);
@@ -425,6 +430,36 @@ export default new Router({
             path: '/socialmedia/socialmedia_gs_reg_start',
             name: 'socialmedia_gs_reg_start',
             components: { default: SocialMedia_GS_Reg_Start },
+        },
+        {
+            path: '/socialmedia/socialmedia_main',
+            name: 'socialmedia_main',
+            components: { default: SocialMedia_Main },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_create_event',
+            name: 'socialmedia_main_create_event',
+            components: { default: SocialMedia_Main_Create_Event },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_invite',
+            name: 'socialmedia_main_event_invite',
+            components: { default: SocialMedia_Main_Event_Invite },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_audio_event',
+            name: 'socialmedia_main_audio_event',
+            components: { default: SocialMedia_Main_Audio_Event },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_activities',
+            name: 'socialmedia_main_activities',
+            components: { default: SocialMedia_Main_Activities },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_lounge',
+            name: 'socialmedia_main_lounge',
+            components: { default: SocialMedia_Main_Lounge },
         }
     ],
 

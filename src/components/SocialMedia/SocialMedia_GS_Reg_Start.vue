@@ -9,7 +9,7 @@
           <img src="Group 724.png">
           <p class="gs_reg_start_desc">Promote businesses, host events, mine g-coins and earn big rewards! Start by following<br>people now.</p>
            <div class="sociallogo_btn status_next">
-              <router-link to="/">
+              <router-link to="/socialmedia/socialmedia_gs_reg_profile_type">
                 <button class="status_reg_start_btn">Get Started <img class="glplogo_reg_btn_img" src="reg_next.png"/>
                 </button>
               </router-link>

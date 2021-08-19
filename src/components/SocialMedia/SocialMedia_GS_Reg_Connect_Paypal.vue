@@ -19,7 +19,7 @@
                 <button class="glplogo_reg_btn" @click="showModal">Connect
                 </button>
             </div>
-            <router-link to="/socialmedia/socialmedia_gs_reg_start">
+            <router-link to="/">
               <button class="status_skip_btn">Skip this</button>
             </router-link>
           </div>

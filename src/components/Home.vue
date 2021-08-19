@@ -31,7 +31,7 @@
             <router-link to="/socialmedia/socialmedia_search_communities" >
               Search/Communities
             </router-link>
-            <router-link to="/socialmedia/socialmedia_gs_reg_profile_type" >
+            <router-link to="/socialmedia/socialmedia_gs_reg_start" >
               Registration/GS
             </router-link>
           </div>

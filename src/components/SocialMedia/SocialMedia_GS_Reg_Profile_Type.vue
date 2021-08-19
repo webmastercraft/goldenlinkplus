@@ -4,7 +4,7 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_gs_reg_start" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Set Up Your Profile</a>
           </div>
           <div class="content header_top height_static">
