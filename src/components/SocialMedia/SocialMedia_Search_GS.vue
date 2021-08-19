@@ -4,64 +4,23 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>6 GS Marketers Found</a>
           </div>
           <div class="content left-content header_top height_static">
-            
-              <div class="socialmedia_messages search_gs_margin">
-                <img src="Ray_big.png" class="socialmedia_messages_size">
+
+            <div class="socialmedia_messages search_gs_margin" v-for="(item, index) in datas" :key="index">
+              <div class="dot_green">
+                <img :src="`${item.image_url}`" class="socialmedia_messages_size">
+                <img src="dot_green.png" v-show="!item.follow" class="over_img">
+              </div>
                 <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
                 <div class="search_transmit search_gs_grid">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn_disable"><img src="airplane.png">Send</button>
+                <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
+                <router-link to="/socialmedia/socialmedia_messaging_chat">
+                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                </router-link>
                 </div>
-              </div>
-
-            
-            <div class="socialmedia_messages search_gs_margin">
-              <img src="Ray_big_on.png" class="socialmedia_messages_size">
-              <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
-              <div class="search_transmit search_gs_grid">
-                <button class="follow_btn_disable">Following</button>
-                <router-link to="/socialmedia/socialmedia_messaging_chat"><button class="send_btn"><img src="airplane.png">Send</button></router-link>
-              </div>
-            </div>
-
-            <div class="socialmedia_messages search_gs_margin">
-              <img src="Ray_big_on.png" class="socialmedia_messages_size">
-              <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
-              <div class="search_transmit search_gs_grid">
-                <button class="follow_btn_disable">Following</button>
-                <router-link to="/socialmedia/socialmedia_messaging_chat"><button class="send_btn"><img src="airplane.png">Send</button></router-link>
-              </div>
-            </div>
-
-            <div class="socialmedia_messages search_gs_margin">
-              <img src="Ray_big_on.png" class="socialmedia_messages_size">
-              <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
-              <div class="search_transmit search_gs_grid">
-                <button class="follow_btn_disable">Following</button>
-                <router-link to="/socialmedia/socialmedia_messaging_chat"><button class="send_btn"><img src="airplane.png">Send</button></router-link>
-              </div>
-            </div>
-
-            <div class="socialmedia_messages search_gs_margin">
-              <img src="Ray_big.png" class="socialmedia_messages_size">
-              <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
-              <div class="search_transmit search_gs_grid">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn_disable"><img src="airplane.png">Send</button>
-              </div>
-            </div>
-
-            <div class="socialmedia_messages search_gs_margin">
-              <img src="Ray_big.png" class="socialmedia_messages_size">
-              <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
-              <div class="search_transmit search_gs_grid">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn_disable"><img src="airplane.png">Send</button>
-              </div>
             </div>
 
           </div>
@@ -75,6 +34,42 @@
 export default {
   name: 'Search GS',
   components: {
+  },
+  data () {
+    return { 
+        datas: [
+          {
+            image_url: "Ray_big.png",
+            follow: true,
+          },
+          {
+            image_url: "Ray_big.png",
+            follow: true,
+          },
+          {
+            image_url: "Ray_big.png",
+            follow: false,
+          },
+          {
+            image_url: "Ray_big.png",
+            follow: false,
+          },
+          {
+            image_url: "Ray_big.png",
+            follow: true,
+          },
+          {
+            image_url: "Ray_big.png",
+            follow: true,
+          },
+        ]
+    }
+  },
+  methods: {
+    selectFollow(index) {
+      this.datas[index].follow = false
+      this.image1 =  this.image2;
+    },
   }
 }
 </script>
@@ -106,11 +101,20 @@ export default {
   .search_gs_margin {
     background-color: white !important;
     margin-right: 20px;
+    margin-left: 20px;
   }
   .search_gs_name {
-    margin: auto auto auto 0 !important;
+    margin: auto !important;
   }
   .search_gs_grid {
     display: grid;
+  }
+  .dot_green {
+    position: relative;
+  }
+  .over_img {
+    position: absolute;
+    bottom: 0;
+    left: 52px;
   }
 </style>

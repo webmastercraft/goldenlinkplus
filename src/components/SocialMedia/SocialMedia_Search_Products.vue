@@ -4,35 +4,19 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>3 Products Found</a>
           </div>
           <div class="content left-content header_top height_static">
             
-              <div class="socialmedia_search_para">
-                <img src="starbucks.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>Starbucks</b><br><span class="search_area">Los Angeles, California</span><br><img src="gcoins.png" class="search_coins_img"><span class="search_coins"></span>6 G-Coin Rewards<br><span class="search_check_offer"><b>Check Offer</b></span></p>
+              <div class="socialmedia_search_para" v-for="(item, index) in datas" :key="index">
+                <img :src="`${item.image_url}`" class="socialmedia_search_logo_size">
+                <p class="socialmedia_search_title search_para"><b>{{item.name}}</b><br><span class="search_area">{{item.address}}</span><br><img src="gcoins.png" class="search_coins_img"><span class="search_coins"></span>{{item.coin}} G-Coin Rewards<br><span class="search_check_offer"><b>Check Offer</b></span></p>
                 <div class="search_transmit">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn_disable"><img src="airplane.png">Send</button>
-                </div>
-              </div>
-
-              <div class="socialmedia_search_para">
-                <img src="coach.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>Coach</b><br><span class="search_area">Los Angeles, California</span><br><img src="gcoins.png" class="search_coins_img"><span class="search_coins"></span>20 G-Coin Rewards<br><span class="search_check_offer"><b>Check Offer</b></span></p>
-                <div class="search_transmit">
-                <button class="follow_btn_disable">Following</button>
-                <router-link to="/socialmedia/socialmedia_messaging_chat"><button class="send_btn"><img src="airplane.png">Send</button></router-link>
-                </div>
-              </div>
-
-              <div class="socialmedia_search_para">
-                <img src="paint_company.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>The Paint Company</b><br><span class="search_area">San Diego, California</span><br><img src="gcoins.png" class="search_coins_img"><span class="search_coins"></span>13 G-Coin Rewards<br><span class="search_check_offer"><b>Check Offer</b></span></p>
-                <div class="search_transmit">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn_disable"><img src="airplane.png">Send</button>
+                <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
+                <router-link to="/socialmedia/socialmedia_messaging_chat">
+                  <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                </router-link>
                 </div>
               </div>
 
@@ -47,6 +31,38 @@
 export default {
   name: 'Search Products',
   components: {
+  },
+  data () {
+    return { 
+        datas: [
+          {
+            image_url: "starbucks.png",
+            name: "Starbucks",
+            address: "Los Angeles, California",
+            coin: 6,
+            follow: true,
+          },
+          {
+            image_url: "coach.png",
+            name: "Coach",
+            address: "Los Angeles, California",
+            coin: 20,
+            follow: true,
+          },
+          {
+            image_url: "paint_company.png",
+            name: "The Paint Company",
+            address: "San Diego, California",
+            coin: 13,
+            follow: true,
+          }
+        ]
+    }
+  },
+  methods: {
+    selectFollow(index) {
+      this.datas[index].follow = false
+    },
   }
 }
 </script>
@@ -106,16 +122,17 @@ export default {
   .follow_btn {
     background: #EF8200;
   }
-  .send_btn {
-    background: #13C8FF;
-  }
   .follow_btn_disable {
-    background: #13C8FF;
-    opacity: 20%;
+    background: #13C8FF33;
+    color: #3DAEC9 !important;
   }
   .send_btn_disable {
     background: #13C8FF;
-    opacity: 20%;
+    opacity: 0.2;
+  }
+  .send_btn {
+    background: #13C8FF;
+    opacity: 1;
   }
   .search_transmit button {
     padding: 5px 10px;

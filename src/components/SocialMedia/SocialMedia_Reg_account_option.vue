@@ -5,21 +5,28 @@
         <div class="glplogo">
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
+          <p class="glplogo_reg_p">Enter your Email Address</p>
+          <input
+            type="email"
+            class="form-control socialmedia_reg_email"
+            id=""
+            aria-describedby=""
+            placeholder=""
+          />
           <form>
-            <div>
-              <div>
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                <label for="vehicle1"></label>
+              <div class="socialmedia_check">
+                <div class="checkbox_check">
+                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                  <label for="vehicle1"></label>
+                  <p>YES! Send me real-time reports on marketing campaigns, fan base events, as well as sales conversions.</p>
+                </div>
+                <div class="checkbox_check">
+                  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                  <label for="vehicle2"></label>
+                  <p>YES! I understand and agree to Goldenlink+ Terms of service, including the User Agreement and Privacy Policy</p>
+                </div>
               </div>
-              <div>
-                <p></p>
-              </div>
-              <div>
-                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                <label for="vehicle2"></label>
-              </div>
-            </div>
-          </form>
+            </form>
           <p class="glplogo_reg_account_title">Set up your Account:</p>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_business">Register as a Business</router-link></button>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_gsmarketer">Register as  a GS Marketer</router-link></button>
@@ -103,5 +110,16 @@ export default {
       width: 39px;
       background-size: 100%;
       display:inline-block;
+  }
+  .socialmedia_check .checkbox_check {
+    margin: 0;
+    display: flex;
+    font-size: 14px;
+  }
+  .socialmedia_check p {
+    margin: 0;
+  }
+  .socialmedia_reg_email {
+    border-radius: 12px;
   }
 </style>

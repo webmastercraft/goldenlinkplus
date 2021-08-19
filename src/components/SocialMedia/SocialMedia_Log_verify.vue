@@ -13,7 +13,7 @@
             aria-describedby=""
             placeholder=""
           />
-          <p class="glplogo_reg_des">Enter code in 180s<span><router-link to="/socialmedia/socialmedia_log_security" class="glplogo_reg_code">Resend Code</router-link></span></p>
+          <p class="glplogo_reg_des">Enter code in 180s<span class="glplogo_reg_code">Resend Code</span></p>
           <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_log_touch_security" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
           </div>
         </div>
