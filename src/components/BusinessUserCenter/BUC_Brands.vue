@@ -8,8 +8,8 @@
             </div>
             <div class="account-title marketing_plus">
               My Brands<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
-              <button class="page-button" @click="nextPage()" :disabled="(pagination+3)>brands.length" :class="{disable: (pagination+3)>brands.length}" style="margin-right: 15px;"><i class="fa fa-chevron-right"></i></button>
-              <button class="page-button" @click="prevPage()" :disabled="(pagination-3)<0" :class="{disable: (pagination-3)<0}"><i class="fa fa-chevron-left"></i></button>
+              <button class="page-button" @click="nextPage()" :disabled="(pagination+3)>=brands.length" :class="{disable: (pagination+3)>=brands.length}" style="margin-right: 15px;"><i class="fa fa-chevron-right"></i></button>
+              <button class="page-button" @click="prevPage()" :disabled="(pagination-3)<=0" :class="{disable: (pagination-3)<=0}"><i class="fa fa-chevron-left"></i></button>
             </div>
             <hr class="brand_hr">
             <div class="content_register" v-if="isShow === true">
@@ -64,7 +64,7 @@
             </div>
             <div class="golden-area brands_top" v-for="(brand, index) in brands.slice(pagination, pagination+3)" :key="index" @click="editBrand(index)">
               <div v-show="!brand.editing">
-                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove.png"></button></p>
+                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove1.png"></button></p>
                 <p class="profile-title profile-title-buc">Brand Ownership:<span> {{brand.ownership? 'Owned' : 'Carried'}}</span></p>
                 <p class="profile-title profile-title-buc">Place of Registration:<span> {{brand.place}}</span></p>
                 <p class="profile-title profile-title-last-buc">Date of Registration:<span> {{brand.date}}</span></p>
@@ -88,8 +88,8 @@
                     <input type="date" class="form-control" placeholder="Date of Registration" v-model="brand.date" />
                 </p>
                 <div class="edit-button">
-                    <p><button class="remove_btn" @click="updateBrand(index)"><img src="img/remove.png"></button></p>
-                    <p><button class="remove_btn" @click="cancelUpdateBrand(index)"><img src="img/remove.png"></button></p>
+                    <p><button class="remove_btn" @click="updateBrand(index)"><img src="img/update.svg"></button></p>
+                    <p><button class="remove_btn" @click="cancelUpdateBrand(index)"><img src="img/cancel.svg"></button></p>
                 </div>
               </div>
             </div>
@@ -129,28 +129,28 @@ export default {
             name: "Golden Link Plus 2",
             ownership: false,
             place: "CHINA",
-            date: "12/16/2020",
+            date: "2020-12-16",
             editing: false
           },
           {
             name: "Golden Link Plus 3",
             ownership: true,
             place: "USA",
-            date: "12/16/2020",
+            date: "2020-12-16",
             editing: false
           },
           {
             name: "Golden Link Plus 4",
             ownership: true,
             place: "USA",
-            date: "12/16/2020",
+            date: "2020-12-16",
             editing: false
           },
           {
             name: "Golden Link Plus 5",
             ownership: false,
             place: "USA",
-            date: "12/16/2020",
+            date: "2020-12-16",
             editing: false
           }
         ]
@@ -191,10 +191,11 @@ export default {
       this.isShow = false;
     },
     updateBrand(index) {
-        this.isCRUD = true
+      this.isCRUD = true
       this.brands[index].editing = false
     },
     cancelUpdateBrand(index) {
+      this.isCRUD = true
       this.brands[index].editing = false
     },
     nextPage() {
