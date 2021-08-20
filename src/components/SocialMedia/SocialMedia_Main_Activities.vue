@@ -75,7 +75,7 @@
             <div class="footer_modal">
               <router-link to="/socialmedia/socialmedia_main">
                 <span class="footer_img_rest_left">
-                  <img src="home.png">
+                  <img src="Home.png">
                   <p>Home</p>
                 </span>
               </router-link>

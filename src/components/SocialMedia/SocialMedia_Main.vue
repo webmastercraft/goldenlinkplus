@@ -19,7 +19,7 @@
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
-                    <img src="search.png">
+                    <img src="Search.png">
             </div>
           </div>
 
@@ -226,7 +226,7 @@ export default {
     return {
       datas: [
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -237,7 +237,7 @@ export default {
           users: 15
         },
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -248,7 +248,7 @@ export default {
           users: 15
         },
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -259,7 +259,7 @@ export default {
           users: 15
         },
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -270,7 +270,7 @@ export default {
           users: 15
         },
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -281,7 +281,7 @@ export default {
           users: 15
         },
         {
-          img: 'International_user.png',
+          img: 'international_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
