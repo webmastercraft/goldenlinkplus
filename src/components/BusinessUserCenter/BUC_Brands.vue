@@ -64,7 +64,7 @@
             </div>
             <div class="golden-area brands_top" v-for="(brand, index) in brands.slice(pagination, pagination+3)" :key="index" @click="editBrand(index)">
               <div v-show="!brand.editing">
-                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove1.png" @click="showModal"></button></p>
+                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="showModal(index)"><img src="img/remove1.png"></button></p>
                 <p class="profile-title profile-title-buc">Brand Ownership:<span> {{brand.ownership? 'Owned' : 'Carried'}}</span></p>
                 <p class="profile-title profile-title-buc">Place of Registration:<span> {{brand.place}}</span></p>
                 <p class="profile-title profile-title-last-buc">Date of Registration:<span> {{brand.date}}</span></p>
@@ -117,6 +117,7 @@ export default {
   data () {
     return { 
         isModalVisible: false,
+        selectedItem: -1,
         pagination: 0,
         isCRUD: false,
         isShow: false,
@@ -164,9 +165,8 @@ export default {
     }
   },
   methods: {
-    removeBrand(index) {
-      this.isCRUD = true
-      this.$delete(this.brands,index)
+    removeBrand() {
+      this.$delete(this.brands, this.selectedItem)
     },
     addBrand() {
       if (!this.brand_title ) 
@@ -211,14 +211,16 @@ export default {
     prevPage() {
         this.pagination -= 3;
     },
-    showModal() {
+    showModal(index) {
+      this.isCRUD = true
+      this.selectedItem = index
       this.isModalVisible = true;
     },
     closeModal() {
       this.isModalVisible = false;
     },
   }
-}
+};
 </script>
 <style>
   .profile-title-buc {
@@ -269,5 +271,8 @@ export default {
   }
   .page-button svg {
     color: black !important;
+  }
+  .profile-title-buc span {
+    font-size: 16px;
   }
 </style>
