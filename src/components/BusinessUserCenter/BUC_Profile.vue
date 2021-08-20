@@ -14,6 +14,7 @@
                 <b v-show="!is_editTitle">{{title}}</b>
                 <input type="text" name="" v-model="title" v-show="is_editTitle">
                 <img :src="`${!is_editTitle ? img_edit : img_done}`" style="margin-left: 10px;" @click="editTitle">
+                <img :src="`${img_cancel}`" v-show="is_editTitle" style="margin-left: 10px;" @click="cancelEditTitle">
               </p>
               <p class="profile-title-year">Year Established:<span> 2018</span></p>
               <p class="profile-title profile-title-buc">Company Name:<span> Gloden Link Plus</span></p>
@@ -68,12 +69,19 @@ export default {
         title: "Gloden Link Plus",
         is_editTitle: false,
         img_edit: 'edit.png',
-        img_done: 'Checkbox.png'
+        img_done: 'img/update.svg',
+        img_cancel: 'img/cancel.svg',
+        old_title: '',
       }
     },
     methods: {
         editTitle() {
-            this.is_editTitle = !this.is_editTitle;
+          this.old_title = this.title
+          this.is_editTitle = !this.is_editTitle;
+        },
+        cancelEditTitle() {
+          this.title = this.old_title
+          this.is_editTitle = false
         }
     }
 }
