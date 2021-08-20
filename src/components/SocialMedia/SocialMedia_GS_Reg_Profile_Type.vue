@@ -11,8 +11,10 @@
             <img src="status_one.png" class="status_img">
             <p class="status_title">What type of marketer are you?</p>
             <div class="gs_reg_status">
-              <button class="individual">An Individual</button>
-              <button class="enterprise">I work for an Enterprise</button>
+              <!-- <button class="individual">An Individual</button>
+              <button class="enterprise">I work for an Enterprise</button> -->
+              <button class="individual" :class="{'selected_stage': is_stage1 == true}" @click="selectStage(1)">An Individual</button>
+              <button  class="individual" :class="{'selected_stage': is_stage1 != true}" @click="selectStage(2)">I work for an Enterprise</button>
             </div>
             <div class="sociallogo_btn status_next">
               <router-link to="/socialmedia/socialmedia_gs_reg_profile_photo">
@@ -34,6 +36,20 @@
 export default {
   name: 'GS_Reg_Profile_Type',
   components: {
+  },
+  data () {
+    return {
+      is_stage1: true
+    }
+  },
+  methods: {
+    selectStage(key) {
+        if (key == 1) {
+            this.is_stage1 = true;
+        } else {
+            this.is_stage1 = false;
+        }
+    }
   }
 }
 </script>
@@ -85,14 +101,14 @@ export default {
     margin: 0 25px;
     border-radius: 4px;
   }
-  .gs_reg_status .individual {
-    background: #13C8FF;
-    color: white;
-    margin: 5px 0;
-  }
-  .gs_reg_status .enterprise {
+  .individual {
     background: #F4F9FE;
     color: #3B3E51;
+    margin: 5px 0;
+  }
+  .individual.selected_stage {
+    background: #13C8FF;
+    color: white;
   }
   .status_next {
     margin: 120px 0 0;
