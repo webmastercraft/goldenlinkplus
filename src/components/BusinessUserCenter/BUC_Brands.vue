@@ -9,7 +9,7 @@
             <div class="account-title marketing_plus">
               My Brands<button @click="showEdit()" :disabled="isShow" :class="{disable: isShow === true}"><i class="fas fa-plus-circle"></i></button>
               <button class="page-button" @click="nextPage()" :disabled="(pagination+3)>=brands.length" :class="{disable: (pagination+3)>=brands.length}" style="margin-right: 15px;"><i class="fa fa-chevron-right"></i></button>
-              <button class="page-button" @click="prevPage()" :disabled="(pagination-3)<=0" :class="{disable: (pagination-3)<=0}"><i class="fa fa-chevron-left"></i></button>
+              <button class="page-button" @click="prevPage()" :disabled="(pagination-3)<0" :class="{disable: (pagination-3)<0}"><i class="fa fa-chevron-left"></i></button>
             </div>
             <hr class="brand_hr">
             <div class="content_register" v-if="isShow === true">
