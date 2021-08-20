@@ -151,13 +151,6 @@ export default {
 }
 </script>
 <style>
-  .main_audio_modal {
-    height: 90px;
-    position: fixed;
-    width: calc(100% - 40px);
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%);
-    padding-top: 20px;
-  }
   .main_audio_modal .favicon_img {
     margin-right: 8px;
     text-align: left;
