@@ -24,36 +24,25 @@
             <ul>
               <li>No sign up fee</li>
               <li>No exclusive marketing agent benefits</li>
-              <li>You earn direct commissions of 50% of converted sales from the start at any stage.</li>
-              <li>After you make 1,000 referrals and $1,000 in converted sales, then you can start earning Direct commissions at 50% of converted sales AND 6% Indirect commission from GS Marketers that you refer.</li>
-              <li>Membership referral: 5% of business and GS Gold paid memberships.</li>
+              <li>You earn direct commissions of 50% of converted sales AND 6% Indirect commission from GS Marketers that you refer.</li>
+              <li>Paid membership referral: 5% of business and GS Gold paid memberships.</li>
             </ul>
 
             <p class="medium_1_title">GS Gold</p>
             <ul>
               <li>As a GS Gold, if you bring referred business registrations, you will become the global exclusive marketing agent of that business on GOLD; also, enjoy all the privileges of direct and indirect sales commission rewards. This benefit is permanent, and cannot be lost (as long as your membership remains in good standing).</li>
-              <li>When you sign-up as a GS Gold Member you must make a choice between either Commission plan, pick one of the two below:</li>
-              <li><b>Stage 1:</b>$1,000 Referral Reward Program</li>
-              <li><b>Stage 2:</b>Indirect Commission Program</li>
             </ul>
 
-            <p class="upgrade_gs_para">This is a one time choice for you.  As soon as you apply, you agree with the benefit plan you choose. See below for details:</p>
-            <p class="upgrade_gs_para"><b>Stage 1</b> choice is preferred if you wish to remain an independent direct commission bundled together with referral rewards credit only. If you choose Stage 1, after you obtain $1,000 rewards, you will automatically be upgraded to Stage 2.</p>
-            <p class="upgrade_gs_para"><b>Stage 2</b> choice is an upgraded option for getting the most benefits, especially those members who wish to grow their marketing sales and grow their team.   If you choose Stage 2, then Stage 1 benefits do not apply.</p>
-
-            <ul>
-              <li>Stage 2 commission plan:</li>
-            </ul>
             <table class="table0">
               <tr>
-                <th scope="col" class="th01">GS Regular<br>Indirect<br>Commission<br>(6%)</th>
-                <th scope="col" class="th02">GS Gold<br>Indirect<br>Commission<br>(10%-80%)</th> 
-                <th scope="col" class="th03">All GS<br>Direct<br>Commission<br>(50%)</th>
+                <th scope="col" class="th01">Indirect<br>Commission<br>GOLD 50% /<br>GS 50%</th>
+                <th scope="col" class="th02">Monthly<br>Sales<br>Revenue<br>See Revenue<br>Levels Below<br>Direct<br>Commission<br>(50%) All<br>Memberships</th> 
+                <th scope="col" class="th03">Regular GS<br>Indirect<br>Commission<br>(6% of the<br>50%)<br>Indirect<br>Commission<br>6% /GS<br>Regular 25%</th>
               </tr>
               <tr v-for="(value, index) in values" :key="index">
-                <td>{{value.regular}}</td>
                 <td>{{value.gold}}</td>
                 <td>{{value.all}}</td>
+                <td>{{value.regular}}</td>
               </tr>
             </table>
 
@@ -62,7 +51,7 @@
             </ul>
             <table class="table1">
               <tr>
-                <th scope="col" class="th11">GS Gold<br>Membership</th>
+                <th scope="col" class="th11">GS Gold Paid<br>Membership</th>
                 <th scope="col" class="th12">Limited Time<br>Offer</th> 
               </tr>
               <tr v-for="(value, index) in percentage" :key="index">
@@ -70,6 +59,8 @@
                 <td>{{value.offer}}</td>
               </tr>
             </table>
+
+            <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
 
             <ul>
               <li>You have the right to sell, transfer or auction your ownership of these exclusive rights at your sole discretion; upon such a sale, the following fees are applied:</li>
@@ -96,20 +87,10 @@
             <p class="gs_account_link"><router-link class="gs_account_check_link" to="/usercenter/membership_agreement"><b>Check Membership Agreement >></b></router-link></p>
 
             <p class="medium_title">UPGRADE YOUR ACCOUNT</p>
-            <p class="upgrade_gs_para"><span class="gs_account_color"><b>Congratulations!</b></span> You qualify in our <b>Early Bird price of $99</b> (599 Regular Price)</p>
+            <p class="upgrade_gs_para"><span class="gs_account_color"><b>Congratulations!</b></span> You qualify in our <b>Early Bird price of $199</b> (599 Regular Price) + <b>FREE Add-on items</b> (worth $190)</p>
             <img src="img/logo.svg" class="gs_account_logo">
 
-            <div class="gs_account_stage">
-              <p class="gs_account_stage_purple stage_purple">GS Gold Membership Plan:</p>
-              <p><span class="stage_green">Stage one:</span> 1000 Referral Program;</p>
-              <p><span class="stage_green">Stage two:</span> indirect Commission Program;</p>
-              <p class="upgrade_gs_para">You can choose <b>Stage one</b> if you wish to remain independent only. You can choose <b>Stage two</b> if you want to grow your marketing sales, grow your team and get the most benefits.</p>
-              <span class="gs_account_link_modal" @click="showModal">See Details >></span>
-              <p class="medium_2_title"><b>Choose your Plan</b></p>
-              <button class="gs_account_link_stage_btn" :class="{'selected_stage': is_stage1 == true}" @click="selectStage(1)">Stage 1</button>
-              <button  class="gs_account_link_stage_btn" :class="{'selected_stage': is_stage1 != true}" @click="selectStage(2)">Stage 2</button>
-
-            </div>
+            
             <div class="gs_account_stage_year">
             <select class="form-control gs_account_stage_select">
               <option>1 Year</option>
@@ -118,11 +99,11 @@
               <option>4 Year</option>
               <option>5 Year</option>
             </select>
-            <p><span class="gs_account_color">$99</span><br><span class="stage_green">84%OFF</span></p>
+            <p><span class="gs_account_color">$199</span><br><span class="stage_green">84%OFF</span></p>
             </div>
-            <p class="gs_account_stage_date">Renews July 2022 for $99</p>
+            <p class="gs_account_stage_date">Renews July 2022 for $199</p>
             <hr class="stage_date_money">
-            <p class="stage_total">Total Amount<span class="stage_right"><b>$99</b></span></p>
+            <p class="stage_total">Total Amount<span class="stage_right"><b>$199</b></span></p>
             <button class="stage_paypal_btn"><img src="img/paypal.png" class="paypal_btn_img">alicedu@goldenlinkplus.com</button>
             <router-link to="/usercenter/secure_checkout">
               <button class="gs_account_stage_checkout_btn">Checkout
@@ -172,13 +153,13 @@ export default {
         {regular: "6%", gold: "60%", all: "$2500-$2999"},
         {regular: "6%", gold: "70%", all: "$3000-$3499"},
         {regular: "6%", gold: "80%", all: "$3500-$3999"},
-        {regular: "", gold:"100%", all: "> $3999"}
+        {regular: "6%", gold:"100%", all: "$4000 or more"}
       ],
       percentage: [
-        {membership: "Early bird special", offer: "For the first 1,000 paid members"},
-        {membership: "Early price $199", offer: "For the next 2,000 paid members"},
-        {membership: "Early price $399", offer: "For the next 8,000 paid members"},
-        {membership: "Regular price $599", offer: "For the last 9,000 paid members"},
+        {membership: "Early bird special: $199 (add-on items free)", offer: "For the first 1,000 paid members"},
+        {membership: "Early price: $199 + $100 (add-on items)", offer: "For the next 2,000 paid members"},
+        {membership: "Early price: $399 + $100 (add-on items)", offer: "For the next 8,000 paid members"},
+        {membership: "Regular price $599 + $100 (Add-on items )", offer: "For the last 9,000 paid members"},
         {membership: "Total early stage opportunity", offer: "First 2,0000 paid members"},
       ],
       is_stage1: true,
@@ -267,11 +248,14 @@ export default {
    background-color: #F4F9FE;
   }
   .table0 th {
-    height: 115px;
     color: white;
+    padding: 10px;
   }
   .table0 tr {
     height: 30px;
+  }
+  .table0 tr td:nth-child(2) {
+    text-align: right;
   }
   .table1 th {
     height: 70px;
@@ -280,15 +264,30 @@ export default {
   .table1 tr {
     height: 70px;
   }
-  .th01 {
+  .table1 tr td {
+    padding: 15px 25px;
+  }
+  .table1 tr:nth-child(3) td:nth-child(1){
+    background: #FFFCF4 !important;
+  }
+  .table1 tr:nth-child(3) td:nth-child(2){
+    background: white !important;
+  }
+  .table1 tr td:nth-child(2) {
+    background-color: #F3F9FF;
+  }
+  .table1 tr td:nth-child(1) {
+    background-color: #FFF9EA;
+  }
+  .th03 {
     width: 110px;
     background: #B09858;
   }
-  .th02 {
+  .th01 {
     width: 105px;
     background: #FFB800;
   }
-  .th03 {
+  .th02 {
     width: 115px;
     background: #3B3E51;
   }

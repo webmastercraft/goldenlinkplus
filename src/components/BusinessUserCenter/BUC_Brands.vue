@@ -64,7 +64,7 @@
             </div>
             <div class="golden-area brands_top" v-for="(brand, index) in brands.slice(pagination, pagination+3)" :key="index" @click="editBrand(index)">
               <div v-show="!brand.editing">
-                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove1.png"></button></p>
+                <p class="profile-title profile-title-buc">Brand Name:<span> {{brand.name}}</span><button class="remove_btn" @click="removeBrand(index)"><img src="img/remove1.png" @click="showModal"></button></p>
                 <p class="profile-title profile-title-buc">Brand Ownership:<span> {{brand.ownership? 'Owned' : 'Carried'}}</span></p>
                 <p class="profile-title profile-title-buc">Place of Registration:<span> {{brand.place}}</span></p>
                 <p class="profile-title profile-title-last-buc">Date of Registration:<span> {{brand.date}}</span></p>
@@ -93,6 +93,10 @@
                 </div>
               </div>
             </div>
+            <Modal
+              v-show="isModalVisible"
+              @close="closeModal"
+            />
           </div>
         </div>
     </div>
@@ -101,15 +105,18 @@
 <script>
 import Vue from 'vue';
 import ToggleButton from 'vue-js-toggle-button';
+import Modal from "../../modal/brand_del.vue";
 
 Vue.use(ToggleButton)
 
 export default {
   name: 'BUC_Brands',
   components: {
+    Modal
   },
   data () {
     return { 
+        isModalVisible: false,
         pagination: 0,
         isCRUD: false,
         isShow: false,
@@ -203,7 +210,13 @@ export default {
     },
     prevPage() {
         this.pagination -= 3;
-    }
+    },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
   }
 }
 </script>
