@@ -26,7 +26,7 @@
 
 
 export default {
-  name: 'Search Communities',
+  name: 'Search_Communities',
   components: {
   },
   data () {

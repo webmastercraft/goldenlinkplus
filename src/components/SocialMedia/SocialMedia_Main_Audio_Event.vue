@@ -145,7 +145,7 @@
 
 
 export default {
-  name: 'Audio Event',
+  name: 'Audio_Event',
   components: {
   }
 }

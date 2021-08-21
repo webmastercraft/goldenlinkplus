@@ -69,7 +69,7 @@ import Modal from "../../modal/co-host or ghost.vue";
 Vue.use(ToggleButton)
 
 export default {
-  name: 'Create Your Event',
+  name: 'Create_Your_Event',
   components: {
     Modal
   },

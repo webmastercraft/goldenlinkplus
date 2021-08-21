@@ -57,7 +57,7 @@
 
 
 export default {
-  name: 'Messaging Chat',
+  name: 'Messaging_Chat',
   components: {
   }
 }

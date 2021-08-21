@@ -32,7 +32,7 @@
 
 
 export default {
-  name: 'Search GS',
+  name: 'Search_GS',
   components: {
   },
   data () {
