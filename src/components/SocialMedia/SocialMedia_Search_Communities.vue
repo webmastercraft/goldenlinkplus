@@ -8,33 +8,14 @@
             <a>3 Communities Found</a>
           </div>
           <div class="content left-content header_top height_static">
-              <div class="socialmedia_search_para">
-                <img src="marketers_int.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>Marketers Int</b><br><span class="search_commun"></span>Private Community<br>235K Members</p>
+              <div class="socialmedia_search_para" v-for="(item, index) in datas" :key="index">
+                <img :src="`${item.image_url}`" class="socialmedia_search_logo_size">
+                <p class="socialmedia_search_title search_para"><b>{{item.name}}</b><br><span class="search_commun"></span>Private Community<br>{{item.price}}K Members</p>
                 <div class="search_transmit">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn"><img src="next_arrow.png">Join</button>
+                <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
+                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="next_arrow.png">Join</button>
                 </div>
               </div>
-
-              <div class="socialmedia_search_para">
-                <img src="international_market.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>International<br>Market</b><br><span class="search_commun"></span>Private Community<br>2K Members</p>
-                <div class="search_transmit">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn"><img src="next_arrow.png">Join</button>
-                </div>
-              </div>
-
-              <div class="socialmedia_search_para">
-                <img src="money_builders.png" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>Money Builders</b><br><span class="search_commun"></span>Private Community<br>54K Members</p>
-                <div class="search_transmit">
-                <button class="follow_btn">Follow <img src="contact.png"></button>
-                <button class="send_btn"><img src="next_arrow.png">Join</button>
-                </div>
-              </div>
-
 
           </div>
       </div>
@@ -47,6 +28,33 @@
 export default {
   name: 'Search Communities',
   components: {
+  },
+  data () {
+    return {
+      datas: [
+      { image_url: "marketers_int.png",
+        name: "Markets Int",
+        price: 235,
+        follow:true
+      },
+      { image_url: "international_market.png",
+        name: "International\nMarket",
+        price: 2,
+        follow:true
+      },
+      { image_url: "money_builders.png",
+        name: "Money Builders",
+        price: 54,
+        follow:true
+      }
+      ]
+    }
+  },
+  methods: {
+    selectFollow(index) {
+      this.datas[index].follow = false
+      this.image1 =  this.image2;
+    },
   }
 }
 </script>
