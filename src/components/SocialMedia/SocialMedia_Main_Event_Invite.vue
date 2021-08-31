@@ -41,7 +41,7 @@
 <script>
 
 export default {
-  name: "Event Invite",
+  name: "Event_Invite",
   components: {
   },
 }

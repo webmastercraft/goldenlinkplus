@@ -29,7 +29,7 @@
 
 
 export default {
-  name: 'Search Products',
+  name: 'Search_Products',
   components: {
   },
   data () {

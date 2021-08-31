@@ -7,7 +7,9 @@
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <img src="main_calendar.png" class="main_icon">
+              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                <img src="main_calendar.png" class="main_icon">
+              </router-link>
               <img src="main_contact.png" class="main_icon">
               <img src="main_user.png" class="main_user">
             </div>
@@ -17,7 +19,9 @@
             <div class="para_event">
               <div class="para_title">
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                </router-link>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -35,7 +39,9 @@
             <div class="para_event">
               <div class="para_title">
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                </router-link>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -53,7 +59,9 @@
             <div class="para_event">
               <div class="para_title">
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                </router-link>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -71,7 +79,9 @@
             <div class="para_event">
               <div class="para_title">
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                </router-link>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -89,7 +99,9 @@
             <div class="para_event">
               <div class="para_title">
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                </router-link>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -104,35 +116,20 @@
               </div>
             </div>
           </div>
-          <div class="footer_background">
-            <div class="footer_modal">
-              <router-link to="/socialmedia/socialmedia_main">
-              <span class="footer_img_rest_left">
-              <img src="Home.png">
-              <p>Home</p>
-              </span>
-              </router-link>
-
-              <span class="footer_img">
-              <img src="audio_events_orange.png">
-              <p class="footer_select_title">Audio Events</p>
+          <div class="footer_background hallway_bottom">
+            <div class="hallway_bottom">
+              
+              <span class="hallway_log">
+                <img src="hallway_user.png">
+                <span>+254 others</span>
               </span>
 
               <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
 
-              <router-link to="/socialmedia/socialmedia_main_lounge">
-              <span class="footer_img_rest_right">
-              <img src="lounge.png">
-              <p>Lounge</p>
+              <span class="hallway_icon">
+                <img src="invite.png">
+                <img src="mute.png">
               </span>
-              </router-link>
-
-              <router-link to="/socialmedia/socialmedia_main_activities">
-                <span class="footer_img_rest_right">
-                  <img src="activities.png">
-                  <p>Activities</p>
-                </span>
-              </router-link>
 
             </div>
           </div>
@@ -145,22 +142,49 @@
 
 
 export default {
-  name: 'Audio_Event',
+  name: 'Event_Hallway',
   components: {
   }
 }
 </script>
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
+  .hallway_bottom {
+    background-image: none !important;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    bottom: 0;
+    width: 414px;
+    height: 90px;
+    background: white;
+    position: fixed;
   }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
+  .hallway_log {
+    width: 50%;
+    display: flex;
+    margin: 40px auto 0;
+    padding-left: 20px;
   }
-  .main_body_audio {
-    margin: 90px 20px 150px 20px !important;
+  .hallway_log img{
+    width: 89px;
+    height: 37px;
+    float: left;
+  }
+  .hallway_log span {
+    margin: auto;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .hallway_icon {
+    width: 50% !important;
+    text-align: right !important;
+    margin: 50px auto 0;
+    padding-right: 20px;
+  }
+  .hallway_bottom button {
+    bottom: 40px !important;
+  }
+  .hallway_icon img:first-child {
+    margin: 0 20px;
   }
 </style>
  

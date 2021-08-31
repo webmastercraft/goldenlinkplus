@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 
+
 import router from './router';
 import NowUiKit from './plugins/now-ui-kit';
 import { library } from '@fortawesome/fontawesome-svg-core';

@@ -28,7 +28,7 @@
 
 
 export default {
-  name: 'Search Services',
+  name: 'Search_Services',
   components: {
   },
   data () {
