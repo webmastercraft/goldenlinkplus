@@ -39,7 +39,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -59,7 +61,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -79,7 +83,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -99,7 +105,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -119,7 +127,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
