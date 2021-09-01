@@ -79,6 +79,10 @@ import SocialMedia_Main_Event_Invite from './components/SocialMedia/SocialMedia_
 import SocialMedia_Main_Audio_Event from './components/SocialMedia/SocialMedia_Main_Audio_Event.vue';
 import SocialMedia_Main_Activities from './components/SocialMedia/SocialMedia_Main_Activities.vue';
 import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_Lounge.vue';
+import SocialMedia_Main_Event_Voice from './components/SocialMedia/SocialMedia_Main_Event_Voice.vue';
+import SocialMedia_Main_Event_Hallway from './components/SocialMedia/SocialMedia_Main_Event_Hallway.vue';
+import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Main_Event_Chat.vue';
+import SocialMedia_Main_Event_Upcoming from './components/SocialMedia/SocialMedia_Main_Event_Upcoming.vue';
 
 
 Vue.use(Router);
@@ -460,6 +464,26 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_lounge',
             name: 'socialmedia_main_lounge',
             components: { default: SocialMedia_Main_Lounge },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_voice',
+            name: 'socialmedia_main_event_voice',
+            components: { default: SocialMedia_Main_Event_Voice },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_hallway',
+            name: 'socialmedia_main_event_hallway',
+            components: { default: SocialMedia_Main_Event_Hallway },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_chat',
+            name: 'socialmedia_main_event_chat',
+            components: { default: SocialMedia_Main_Event_Chat },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_upcoming',
+            name: 'socialmedia_main_event_upcoming',
+            components: { default: SocialMedia_Main_Event_Upcoming },
         }
     ],
 

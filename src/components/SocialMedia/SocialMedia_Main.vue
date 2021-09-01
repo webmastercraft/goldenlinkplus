@@ -7,7 +7,9 @@
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <img src="main_calendar.png" class="main_icon">
+              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                <img src="main_calendar.png" class="main_icon">
+              </router-link>
               <img src="main_contact.png" class="main_icon">
               <img src="main_user.png" class="main_user">
             </div>
@@ -31,7 +33,9 @@
                 <div class="para_event">
                   <div class="para_title">
                     <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    </router-link>
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -49,7 +53,9 @@
                 <div class="para_event">
                   <div class="para_title">
                     <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    </router-link>
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -67,7 +73,9 @@
                 <div class="para_event">
                   <div class="para_title">
                     <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    </router-link>
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -85,7 +93,9 @@
                 <div class="para_event">
                   <div class="para_title">
                     <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    </router-link>
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -103,7 +113,9 @@
                 <div class="para_event">
                   <div class="para_title">
                     <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
+                    </router-link>
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -352,6 +364,7 @@ export default {
   }
   .main_body .favicon_img {
     margin-right: 8px;
+    margin-bottom: 3px;
   }
   .para_event {
     margin: 10px 0;
