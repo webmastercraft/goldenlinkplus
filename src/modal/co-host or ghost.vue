@@ -22,10 +22,12 @@
                     <input type="text" placeholder="Find People" class="form-control">
                     <img src="Search_modal.png" class="">
             </div>
-            <div class="guest_find_user" v-for="(item, index) in datas" :key="index">
-              <img :src="`${item.img}`">
-              <p>{{item.name}}</p>
-              <button @click="added(index)" :class="{'not_added': item.added == false}">{{ item.added ? 'Invite Sent' : 'add Co-host' }}</button>
+            <div class="modal_scroll">
+              <div class="guest_find_user" v-for="(item, index) in datas" :key="index">
+                <img :src="`${item.img}`">
+                <p>{{item.name}}</p>
+                <button @click="added(index)" :class="{'not_added': item.added == false}">{{ item.added ? 'Invite Sent' : 'add Co-host' }}</button>
+              </div>
             </div>
         </header>
       </div>
@@ -99,6 +101,11 @@
             name: 'Melissa Brown11',
             added: false
           },
+          {
+            img: 'Melissa Brown.png',
+            name: 'Melissa Brown12',
+            added: false
+          },
         ]
       }
     },
@@ -113,6 +120,10 @@
   };
 </script>
 <style>
+.modal_scroll {
+    overflow: scroll;
+    max-height: 350px;
+}
 .guest_find {
   margin: 30px 0;
 }
@@ -167,5 +178,8 @@
   padding: 3px 10px;
   letter-spacing: 0.02em;
   width: 100px;
+}
+.modal {
+  max-height: 500px;
 }
 </style>

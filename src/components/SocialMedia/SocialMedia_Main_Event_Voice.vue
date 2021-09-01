@@ -116,27 +116,16 @@
 
             </div>
           </div>
-          <Send
-            v-show="isModalVisibleSend"
-            @close="closeModal"
-          />
-          <User
-            v-show="isModalVisibleUser"
-            @close="closeModal"
-          />   
+          
       </div>
     </div>
   </div>
 </template>
 <script>
-import Send from "../../modal/send_gcoin.vue";
-import User from "../../modal/profile_option.vue";
 
 export default {
   name: 'Event_Voice',
   components: {
-    Send,
-    User
   },
   data () {
     return {
