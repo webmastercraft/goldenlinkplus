@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal"
+      <div class="modal modal_transform"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
@@ -181,5 +181,8 @@
 }
 .modal {
   max-height: 500px;
+}
+.modal_transform {
+  transform: translate(0, 30%) !important;
 }
 </style>
