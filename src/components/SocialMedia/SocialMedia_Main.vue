@@ -21,7 +21,7 @@
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
-                    <img src="Search.png">
+                    <img src="search.png">
             </div>
           </div>
 
@@ -39,7 +39,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -59,7 +61,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -79,7 +83,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -99,7 +105,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -119,7 +127,9 @@
                     <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                     <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <button>Join this Event</button>
+                    <router-link to="/socialmedia/socialmedia_main_event_voice">
+                      <button>Join this Event</button>
+                    </router-link>
                   </div>
                   <div class="para_group">
                     <img src="Group_user.png">
@@ -238,7 +248,7 @@ export default {
     return {
       datas: [
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -249,7 +259,7 @@ export default {
           users: 15
         },
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -260,7 +270,7 @@ export default {
           users: 15
         },
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -271,7 +281,7 @@ export default {
           users: 15
         },
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -282,7 +292,7 @@ export default {
           users: 15
         },
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
@@ -293,7 +303,7 @@ export default {
           users: 15
         },
         {
-          img: 'international_user.png',
+          img: 'International_user.png',
           user_imgs: [
             'man.png',
             'woman.png',
