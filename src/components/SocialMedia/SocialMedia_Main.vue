@@ -374,7 +374,6 @@ export default {
   }
   .main_body .favicon_img {
     margin-right: 8px;
-    margin-bottom: 3px;
   }
   .para_event {
     margin: 10px 0;
