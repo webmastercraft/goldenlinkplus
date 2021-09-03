@@ -331,7 +331,7 @@
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
     animation-duration: 0.4s;
-    overflow: scroll;
+    overflow: auto;
   }
   .user_pos.modal-content {
     position: relative !important;

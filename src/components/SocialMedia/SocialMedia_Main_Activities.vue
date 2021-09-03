@@ -176,6 +176,7 @@ export default {
   }
   .main_body_activities {
     margin: 90px 0 20px 0;
+    font-size: 14px;
   }
   .activities_color {
     background: white;
