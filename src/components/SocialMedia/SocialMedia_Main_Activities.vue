@@ -71,11 +71,11 @@
 
             
           </div>
-          <div class="footer_background">
+          <!-- <div class="footer_background">
             <div class="footer_modal">
               <router-link to="/socialmedia/socialmedia_main">
                 <span class="footer_img_rest_left">
-                  <img src="Home.png">
+                  <img src="home.png">
                   <p>Home</p>
                 </span>
               </router-link>
@@ -101,7 +101,7 @@
               <p class="footer_select_title">Activities</p>
               </span>
             </div>
-          </div>
+          </div> -->
             
       </div>
     </div>
@@ -139,10 +139,12 @@ export default {
     display: flex;
     text-align: center;
     width: 100%;
-    padding: 15px 20px;
+    padding: 7px 20px;
   }
   .activities_user img {
     height: 100%;
+    width: 32px;
+    height: 32px;
   }
   .activities_user p {
     margin: auto auto auto 15px;
@@ -169,11 +171,11 @@ export default {
     border-radius: 8px;
     letter-spacing: 0.02em;
     padding: 2px 10px;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 165px;
   }
   .main_body_activities {
-    margin: 90px 0 100px 0;
+    margin: 90px 0 20px 0;
   }
   .activities_color {
     background: white;
