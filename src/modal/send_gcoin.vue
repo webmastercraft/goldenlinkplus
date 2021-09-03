@@ -10,7 +10,7 @@
           @open="handleOpen" 
           ref="myModal"
         >
-          <div class="modal-content">
+          <div class="user_pos modal-content">
             <header
               class="modal-header"
               id="modalTitle"

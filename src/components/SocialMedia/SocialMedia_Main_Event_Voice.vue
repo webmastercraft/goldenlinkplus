@@ -488,10 +488,8 @@ export default {
           break;
       }
 
-      this.$emit('f_show_send_gcoin_re', this.f_show_send_gcoin);
       this.f_show_send_gcoin = false,
 
-      this.$emit('f_show_user_profile_re', this.f_show_user_profile);
       this.f_show_user_profile = false
     },
     showUserProfile() {

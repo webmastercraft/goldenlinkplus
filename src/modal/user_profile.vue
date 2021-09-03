@@ -10,7 +10,7 @@
           @open="handleOpen" 
           ref="myModal"
         >
-          <div class="modal-content">
+          <div class="user_pos modal-content">
             <header
               class="modal-header"
               id="modalTitle"
@@ -185,7 +185,9 @@
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  -webkit-transform: translate3d(0, 25%, 0);
+  transform: translate3d(0, 25%, 0);
 }
 
 /* Modal Content */
@@ -200,9 +202,7 @@
   animation-duration: 0.4s;
   overflow: scroll;
 }
-
-.modal{
-  -webkit-transform: translate3d(0, 25%, 0);
-  transform: translate3d(0, 25%, 0);
+.user_pos.modal-content {
+  position: relative !important;
 }
 </style>
