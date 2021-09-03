@@ -107,7 +107,6 @@
         this.$emit('close');
       },
       userProfileBackdrop(evt) {
-        console.log('user profile');
         if(evt.target.classList.length > 0 && "bg-mask"){
           this.$emit('user-backdrop');
         }
@@ -121,10 +120,6 @@
       closeViewProfile() {
         this.f_show_view_profile = false;
       },
-
-      f_show_user_profile_re(para) {
-        console.log('return emit = ', para);
-      }
     },
   };
 </script>

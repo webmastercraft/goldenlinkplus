@@ -437,9 +437,6 @@ export default {
       }, 2000)
     },
     showIt() {
-      console.log('what is = ', Vuedals)
-        // this.$vuedals.new();
-
         Vuedals.$emit('new', {
             name: 'showing-the-money',
 
