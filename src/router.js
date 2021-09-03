@@ -485,6 +485,7 @@ export default new Router({
             name: 'socialmedia_main_event_upcoming',
             components: { default: SocialMedia_Main_Event_Upcoming },
         }
+
     ],
 
 });

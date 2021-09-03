@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="container">
-      <div class="phone sociallogin">
+      <div class="loading_screen" v-show="isloading" >
+        <img src="loading_logo.png">
+      </div>
+      <div class="phone sociallogin" v-show="!isloading">
         
           <div class="event_body_title">
             <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
@@ -15,7 +18,7 @@
           </div>
           <div class="event_body">
             <div class="event_users">
-              <span @click="showModalUser"><img src="Jean.png" class="event_users_img">Jean</span>
+              <span><img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean</span>
               <span><img src="50k_coin.png" class="event_coin"><button>00:14:59</button></span>
               <div class="event_para_group">
                     <p>
@@ -98,42 +101,57 @@
     v-on:click ="clicked = !clicked">
                   <img :src="imgSrc"/>
                 </button>
-              
-
-              
                 <span class="footer_img_rest_right" >
                   <img src="invite.png">
                   <p>Invite</p>
                 </span>
 
               
-              <span class="footer_img_rest_right" @click="showModalSend">
+              <span class="footer_img_rest_right" @click="showSendGcoin">
               <img src="send_gcoins.png">
               <p>Send GCoins</p>
               </span>
-              
-
-
             </div>
           </div>
-          
+          <SendGcoin 
+            v-show="f_show_send_gcoin"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </SendGcoin>
+          <vuedal></vuedal>
+          <UserProfile 
+            v-show="f_show_user_profile"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </UserProfile>
       </div>
     </div>
   </div>
+
 </template>
+
 <script>
+import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
+import UserProfile from "../../modal/user_profile.vue";
+import SendGcoin from "../../modal/send_gcoin.vue";
 
 export default {
   name: 'Event_Voice',
   components: {
+      Vuedal,
+      UserProfile,
+      SendGcoin
   },
   data () {
     return {
-      isModalVisibleSend: false,
-      isModalVisibleUser: false,
+      isloading: true,
+      isModalVisible: false,
       clicked: false,
       imgClicked: false,
       isAudience: true,
+      f_show_user_profile: false,
+      f_show_send_gcoin: false,
+      modalStack: [],
       datas: [
         {
           image_url: "shane.png",
@@ -411,31 +429,95 @@ export default {
       ]
     }
   },
+  
   methods: {
+    killLoading() {
+      setTimeout(() => {
+          this.isloading = false
+      }, 2000)
+    },
+    showIt() {
+      console.log('what is = ', Vuedals)
+        // this.$vuedals.new();
+
+        Vuedals.$emit('new', {
+            name: 'showing-the-money',
+
+            component: {
+                name: 'the-money',
+
+                template: `
+                    <div>
+                        <h1>THE MONEY!</h1>
+                        <p>Money, money, money, moooneeyyy $ $ $ $</p>
+                    </div>
+                `
+              }
+            });
+    },
     showAudience() {
       this.isAudience = true;
     },
     showSpeakers() {
       this.isAudience = false;
     },
-    showModalUser() {
-      this.isModalVisibleUser = true;
+    showModal() {
+      this.isModalVisible = true;
     },
-    closeModal() {
-      this.isModalVisibleSend = false;
-      this.isModalVisibleUser = false;
+    closeUserProfileModal() {
+      this.isModalVisible = false;
     },
-    showModalSend() {
-      this.isModalVisibleSend = true;
+    closeSendGcoinModal() {
+      this.isModalVisible = false;
     },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+
+      switch (temp) {
+        case 'f_show_send_gcoin':
+          this.f_show_send_gcoin = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_user_profile':
+          this.f_show_user_profile = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+
+      this.$emit('f_show_send_gcoin_re', this.f_show_send_gcoin);
+      this.f_show_send_gcoin = false,
+
+      this.$emit('f_show_user_profile_re', this.f_show_user_profile);
+      this.f_show_user_profile = false
+    },
+    showUserProfile() {
+      this.f_show_user_profile = true;
+      this.modalStack.push('f_show_user_profile');
+    },
+    showSendGcoin() {
+      this.f_show_send_gcoin = true;
+      this.modalStack.push('f_show_send_gcoin');
+    }
   },
   computed: {
     imgSrc: function () {
       return this.imgClicked ? 'figure_orange.png' : 'figure.png'
-    }
+    },
+  },
+  created () {
+    this.killLoading();
   },
 }
+
 </script>
+
 <style>
   .main_audio_modal .favicon_img {
     margin-right: 8px;
@@ -623,6 +705,18 @@ export default {
     background-color: #3B3E51;
     transition-duration: 1s;
     transition-property: background-color;
+  }
+  .loading_screen {
+    width: 100%;
+    height: 100vh;
+  }
+  .loading_screen > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
   }
 </style>
  
