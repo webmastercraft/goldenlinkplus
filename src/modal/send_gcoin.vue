@@ -10,7 +10,7 @@
           @open="handleOpen" 
           ref="myModal"
         >
-          <div class="modal-content">
+          <div class="user_pos modal-content">
             <header
               class="modal-header"
               id="modalTitle"
@@ -96,7 +96,6 @@
         this.$emit('close');
       },
       userProfileBackdrop(evt) {
-        console.log('user profile');
         if(evt.target.classList.length > 0 && "bg-mask"){
           this.$emit('user-backdrop');
         }
@@ -111,9 +110,7 @@
         this.f_show_charge_gcoin = false;
       },
 
-      f_show_send_gcoin_re(para) {
-        console.log('return emit = ', para);
-      }
+      
     },
   };
 </script>
