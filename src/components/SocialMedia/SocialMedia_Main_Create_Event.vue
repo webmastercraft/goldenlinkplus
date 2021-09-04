@@ -64,7 +64,7 @@
 <script>
 import Vue from 'vue'; 
 import ToggleButton from 'vue-js-toggle-button';
-import Modal from "../../modal/co-host or ghost.vue";
+import Modal from "../../modal/co_host_ghost.vue";
 
 Vue.use(ToggleButton)
 
