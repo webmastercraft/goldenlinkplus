@@ -85,43 +85,37 @@
             </div>
           </div>
           <div class="footer_background">
-            <div class="footer_modal">
-              <router-link to="/socialmedia/socialmedia_main">
-              <span class="footer_img_rest_left">
-              <img src="Leave_Quietly.png">
-              <p>Leave Quietly</p>
-              </span>
-              </router-link>
-
-              <span class="footer_img_rest_left">
-              <router-link to="/socialmedia/socialmedia_main_event_chat">
-              <img src="chat.png">
-              </router-link>
-              <p>Chat</p>
-              </span>
-
-              
-                <button class="audio_circle_btn figure_btn"  @click="imgClicked = !imgClicked" v-bind:class="{'hand_orange': !clicked, 'hand_black': clicked}"
-    v-on:click ="clicked = !clicked">
-                  <img :src="imgSrc"/>
+            <div class="footer_modal" v-show="!isAddingCoin">
+                <router-link to="/socialmedia/socialmedia_main">
+                    <span class="footer_img_rest_left">
+                        <img src="Leave_Quietly.png">
+                        <p>Leave Quietly</p>
+                    </span>
+                </router-link>
+                <span class="footer_img_rest_left">
+                    <router-link to="/socialmedia/socialmedia_main_event_chat">
+                        <img src="chat.png">
+                    </router-link>
+                    <p>Chat</p>
+                </span>
+                <button class="audio_circle_btn figure_btn"  @click="imgClicked = !imgClicked" v-bind:class="{'hand_orange': !clicked, 'hand_black': clicked}" v-on:click ="clicked = !clicked">
+                    <img :src="imgSrc"/>
                 </button>
                 <span class="footer_img_rest_right" >
-                  <img src="invite.png">
-                  <p>Invite</p>
+                    <img src="invite.png">
+                    <p>Invite</p>
                 </span>
-
-              
-              <span class="footer_img_rest_right" @click="showSendGcoin">
-              <img src="send_gcoins.png">
-              <p>Send GCoins</p>
-              </span>
+                <span class="footer_img_rest_right" @click="showSendGcoin">
+                    <img src="send_gcoins.png">
+                    <p>Send GCoins</p>
+                </span>
             </div>
-            <div class="footer_modal footer_modal_border">
-              <button class="send_coin_btn "><img src="modal_coin.png">115, 250</button>
-              <div class="charge_close">
-                <img src="cancel_coin.png">
-                <span>Close</span>
-              </div>
+            <div class="footer_modal footer_modal_border" v-show="isAddingCoin">
+                <button class="send_coin_btn "><img src="modal_coin.png">115, 250</button>
+                <div class="charge_close" @click="doneAddingCoin">
+                    <img src="cancel_coin.png">
+                    <span>Close</span>
+                </div>
             </div>
           </div>
           <SendGcoin 
@@ -141,7 +135,6 @@
 
 </template>
 
-<script src="https://code.jquery.com/jquery-3.4.0.js"></script>
 <script>
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import UserProfile from "../../modal/user_profile.vue";
@@ -156,16 +149,17 @@ export default {
   },
   data () {
     return {
-      isBlink: false,
-      isloading: true,
-      isModalVisible: false,
-      clicked: false,
-      imgClicked: false,
-      isAudience: true,
-      f_show_user_profile: false,
-      f_show_send_gcoin: false,
-      modalStack: [],
-      datas: [
+        isAddingCoin: false,
+        isBlink: false,
+        isloading: true,
+        isModalVisible: false,
+        clicked: false,
+        imgClicked: false,
+        isAudience: true,
+        f_show_user_profile: false,
+        f_show_send_gcoin: false,
+        modalStack: [],
+        datas: [
         {
           image_url: "shane.png",
           image_star_url: "pink_star.png",
@@ -238,8 +232,8 @@ export default {
           event_user_coin: 190.5,
           name: "Philip"
         },
-      ],
-      rangking2: [
+        ],
+        rangking2: [
         {
           rangking_image: "Ray.png",
           rangking_name: "Virginia Jones",
@@ -265,8 +259,8 @@ export default {
           rangking_name: "Robert Fox",
           rangking_coin: "113.3K",
         },
-      ],
-      rangking1: [
+        ],
+        rangking1: [
         {
           rangking_image: "Ray.png",
           rangking_name: "Erin Hughes",
@@ -357,8 +351,8 @@ export default {
           rangking_name: "Cody Fisher",
           rangking_coin: "75",
         },
-      ],
-      mutedata: [
+        ],
+        mutedata: [
         {
           mute_image: "Irma.png",
           mute_user: "Pat",
@@ -439,11 +433,18 @@ export default {
           mute_image: "Irma.png",
           mute_user: "Arlene",
         },
-      ]
+        ]
     }
   },
   
   methods: {
+    addingCoin() {
+        this.isAddingCoin = true;
+        this.f_show_send_gcoin = false;
+    },
+    doneAddingCoin() {
+        this.isAddingCoin = false;
+    },
     showBlink() {
       this.isBlink = true
       setTimeout(() => {

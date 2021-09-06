@@ -22,7 +22,7 @@
                     <div v-for="(item, index) in coindata" :key="index" class="mute_user">
                       
                       <div class="mute_icon">
-                        <img :src="`${item.coin_image}`" class="mute_user_img">
+                        <img :src="`${item.coin_image}`" class="mute_user_img" @click="addingCoin">
                       </div>
                       <p class="coins_modal">{{item.coin}}</p>
                     </div>
@@ -109,6 +109,9 @@
       closeChargeGcoin() {
         this.f_show_charge_gcoin = false;
       },
+      addingCoin() {
+        this.$parent.addingCoin();
+      }
     },
   };
 </script>
