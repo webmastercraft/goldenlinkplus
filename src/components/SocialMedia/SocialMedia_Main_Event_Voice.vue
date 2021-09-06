@@ -18,22 +18,24 @@
           </div>
           <div class="event_body">
             <div class="event_users">
-              <span><img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean</span>
-              <span class="blink_span">
-                <img class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
-                <img src="50k_coin.png" class="event_coin">
-                <button>00:14:59</button>
-              </span>
-              <div class="event_para_group">
+                <span class="blink_span">
+                    <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink1 == true}" src="coin_10.png"  @click="showBlink1">
+                    <img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean
+                </span>
+                <span class="blink_span">
+                    <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
+                    <img src="50k_coin.png" class="event_coin">
+                    <button>00:14:59</button>
+                </span>
+                <div class="event_para_group">
                     <p>
-                      <img src="user_count_grey.png">2501
-                      <img src="msg_count_grey.png">139
+                        <img src="user_count_grey.png">2501
+                        <img src="msg_count_grey.png">139
                     </p>
                     <p>13.9 K<img src="diamond.png"></p>
                     <p>625.4 K<img src="event_coin.png"></p>
                     <p><img src="login_users.png"></p>
-              </div>
-              
+                </div>
             </div>
             <div class="event_user_group">
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
@@ -151,6 +153,7 @@ export default {
     return {
         isAddingCoin: false,
         isBlink: false,
+        isBlink1: false,
         isloading: true,
         isModalVisible: false,
         clicked: false,
@@ -160,279 +163,279 @@ export default {
         f_show_send_gcoin: false,
         modalStack: [],
         datas: [
-        {
-          image_url: "shane.png",
-          image_star_url: "pink_star.png",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 892,
-          name: "Shane"
-        },
-        {
-          image_url: "kristin.png",
-          image_star_url: "",
-          image_mute_url: "",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 484.2,
-          name: "Kristin"
-        },
-        {
-          image_url: "leslie.png",
-          image_star_url: "pink_star.png",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 345.6,
-          name: "Leslie"
-        },
-        {
-          image_url: "eduardo.png",
-          image_star_url: "pink_star.png",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 527.1,
-          name: "Eduardo"
-        },
-        {
-          image_url: "jorge.png",
-          image_star_url: "",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 78.5,
-          name: "Jorge"
-        },
-        {
-          image_url: "esther.png",
-          image_star_url: "pink_star.png",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 18.9,
-          name: "Esther"
-        },
-        {
-          image_url: "leslie.png",
-          image_star_url: "",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 27.5,
-          name: "Tanya"
-        },
-        {
-          image_url: "shane.png",
-          image_star_url: "",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 38.8,
-          name: "Ronald"
-        },
-        {
-          image_url: "esther.png",
-          image_star_url: "",
-          image_mute_url: "mute.png",
-          image_diamond_url: "diamond.png",
-          event_user_coin: 190.5,
-          name: "Philip"
-        },
+            {
+              image_url: "shane.png",
+              image_star_url: "pink_star.png",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 892,
+              name: "Shane"
+            },
+            {
+              image_url: "kristin.png",
+              image_star_url: "",
+              image_mute_url: "",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 484.2,
+              name: "Kristin"
+            },
+            {
+              image_url: "leslie.png",
+              image_star_url: "pink_star.png",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 345.6,
+              name: "Leslie"
+            },
+            {
+              image_url: "eduardo.png",
+              image_star_url: "pink_star.png",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 527.1,
+              name: "Eduardo"
+            },
+            {
+              image_url: "jorge.png",
+              image_star_url: "",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 78.5,
+              name: "Jorge"
+            },
+            {
+              image_url: "esther.png",
+              image_star_url: "pink_star.png",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 18.9,
+              name: "Esther"
+            },
+            {
+              image_url: "leslie.png",
+              image_star_url: "",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 27.5,
+              name: "Tanya"
+            },
+            {
+              image_url: "shane.png",
+              image_star_url: "",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 38.8,
+              name: "Ronald"
+            },
+            {
+              image_url: "esther.png",
+              image_star_url: "",
+              image_mute_url: "mute.png",
+              image_diamond_url: "diamond.png",
+              event_user_coin: 190.5,
+              name: "Philip"
+            },
         ],
         rangking2: [
-        {
-          rangking_image: "Ray.png",
-          rangking_name: "Virginia Jones",
-          rangking_coin: "915.6K",
-        },
-        {
-          rangking_image: "mona.png",
-          rangking_name: "Lavern Laboy",
-          rangking_coin: "847.3K",
-        },
-        {
-          rangking_image: "Jean_Smith.png",
-          rangking_name: "Annette Black",
-          rangking_coin: "654.2K",
-        },
-        {
-          rangking_image: "Richard_Bennett_off.png",
-          rangking_name: "Darron Kowski",
-          rangking_coin: "302.8K",
-        },
-        {
-          rangking_image: "Susan Boyle.png",
-          rangking_name: "Robert Fox",
-          rangking_coin: "113.3K",
-        },
+            {
+              rangking_image: "Ray.png",
+              rangking_name: "Virginia Jones",
+              rangking_coin: "915.6K",
+            },
+            {
+              rangking_image: "mona.png",
+              rangking_name: "Lavern Laboy",
+              rangking_coin: "847.3K",
+            },
+            {
+              rangking_image: "Jean_Smith.png",
+              rangking_name: "Annette Black",
+              rangking_coin: "654.2K",
+            },
+            {
+              rangking_image: "Richard_Bennett_off.png",
+              rangking_name: "Darron Kowski",
+              rangking_coin: "302.8K",
+            },
+            {
+              rangking_image: "Susan Boyle.png",
+              rangking_name: "Robert Fox",
+              rangking_coin: "113.3K",
+            },
         ],
         rangking1: [
-        {
-          rangking_image: "Ray.png",
-          rangking_name: "Erin Hughes",
-          rangking_coin: "876.5K",
-        },
-        {
-          rangking_image: "mona.png",
-          rangking_name: "Marvin McKinney",
-          rangking_coin: "678.6K",
-        },
-        {
-          rangking_image: "Jean_Smith.png",
-          rangking_name: "Lucy Fletcher",
-          rangking_coin: "582.3K",
-        },
-        {
-          rangking_image: "Richard_Bennett_off.png",
-          rangking_name: "Ronald Richards",
-          rangking_coin: "76.5K",
-        },
-        {
-          rangking_image: "Susan Boyle.png",
-          rangking_name: "Kathryn Murphy",
-          rangking_coin: "24K",
-        },
-        {
-          rangking_image: "Alex Smith.png",
-          rangking_name: "Emily Malone",
-          rangking_coin: "18.5K",
-        },
-        {
-          rangking_image: "Collen.png",
-          rangking_name: "Patricia Clark",
-          rangking_coin: "12.9K",
-        },
-        {
-          rangking_image: "Grandma.png",
-          rangking_name: "Jerome Bell",
-          rangking_coin: "6.7K",
-        },
-        {
-          rangking_image: "Irma.png",
-          rangking_name: "Floyd Miles",
-          rangking_coin: "5.9K",
-        },
-        {
-          rangking_image: "Lily.png",
-          rangking_name: "Mary Lopez",
-          rangking_coin: "3.6K",
-        },
-        {
-          rangking_image: "Kathry.png",
-          rangking_name: "Amanda Rice",
-          rangking_coin: "3.2K",
-        },
-        {
-          rangking_image: "Judith.png",
-          rangking_name: "Lydia Sharp",
-          rangking_coin: "1.1K",
-        },
-        {
-          rangking_image: "Priscilla.png",
-          rangking_name: "Darrell Steward",
-          rangking_coin: "546",
-        },
-        {
-          rangking_image: "Serenity.png",
-          rangking_name: "Ida Baldwin",
-          rangking_coin: "404",
-        },
-        {
-          rangking_image: "Savannah.png",
-          rangking_name: "Jacob Jones",
-          rangking_coin: "395",
-        },
-        {
-          rangking_image: "Wendy.png",
-          rangking_name: "Linda Carroll",
-          rangking_coin: "375",
-        },
-        {
-          rangking_image: "Susan Boyle.png",
-          rangking_name: "Ruth West",
-          rangking_coin: "210",
-        },
-        {
-          rangking_image: "Philip.png",
-          rangking_name: "Cody Fisher",
-          rangking_coin: "75",
-        },
+            {
+              rangking_image: "Ray.png",
+              rangking_name: "Erin Hughes",
+              rangking_coin: "876.5K",
+            },
+            {
+              rangking_image: "mona.png",
+              rangking_name: "Marvin McKinney",
+              rangking_coin: "678.6K",
+            },
+            {
+              rangking_image: "Jean_Smith.png",
+              rangking_name: "Lucy Fletcher",
+              rangking_coin: "582.3K",
+            },
+            {
+              rangking_image: "Richard_Bennett_off.png",
+              rangking_name: "Ronald Richards",
+              rangking_coin: "76.5K",
+            },
+            {
+              rangking_image: "Susan Boyle.png",
+              rangking_name: "Kathryn Murphy",
+              rangking_coin: "24K",
+            },
+            {
+              rangking_image: "Alex Smith.png",
+              rangking_name: "Emily Malone",
+              rangking_coin: "18.5K",
+            },
+            {
+              rangking_image: "Collen.png",
+              rangking_name: "Patricia Clark",
+              rangking_coin: "12.9K",
+            },
+            {
+              rangking_image: "Grandma.png",
+              rangking_name: "Jerome Bell",
+              rangking_coin: "6.7K",
+            },
+            {
+              rangking_image: "Irma.png",
+              rangking_name: "Floyd Miles",
+              rangking_coin: "5.9K",
+            },
+            {
+              rangking_image: "Lily.png",
+              rangking_name: "Mary Lopez",
+              rangking_coin: "3.6K",
+            },
+            {
+              rangking_image: "Kathry.png",
+              rangking_name: "Amanda Rice",
+              rangking_coin: "3.2K",
+            },
+            {
+              rangking_image: "Judith.png",
+              rangking_name: "Lydia Sharp",
+              rangking_coin: "1.1K",
+            },
+            {
+              rangking_image: "Priscilla.png",
+              rangking_name: "Darrell Steward",
+              rangking_coin: "546",
+            },
+            {
+              rangking_image: "Serenity.png",
+              rangking_name: "Ida Baldwin",
+              rangking_coin: "404",
+            },
+            {
+              rangking_image: "Savannah.png",
+              rangking_name: "Jacob Jones",
+              rangking_coin: "395",
+            },
+            {
+              rangking_image: "Wendy.png",
+              rangking_name: "Linda Carroll",
+              rangking_coin: "375",
+            },
+            {
+              rangking_image: "Susan Boyle.png",
+              rangking_name: "Ruth West",
+              rangking_coin: "210",
+            },
+            {
+              rangking_image: "Philip.png",
+              rangking_name: "Cody Fisher",
+              rangking_coin: "75",
+            },
         ],
         mutedata: [
-        {
-          mute_image: "Irma.png",
-          mute_user: "Pat",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Wendy",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Tanya",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Marvin",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Ronald",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Cameron",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Brandon",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Randall",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Jorge",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Dustin",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Regina",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Gloria",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Harold",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Francisco",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Julie",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Savannah",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Calvin",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Dwight",
-        },
-        {
-          mute_image: "Wendy.png",
-          mute_user: "Ann",
-        },
-        {
-          mute_image: "Irma.png",
-          mute_user: "Arlene",
-        },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Pat",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Wendy",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Tanya",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Marvin",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Ronald",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Cameron",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Brandon",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Randall",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Jorge",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Dustin",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Regina",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Gloria",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Harold",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Francisco",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Julie",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Savannah",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Calvin",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Dwight",
+            },
+            {
+              mute_image: "Wendy.png",
+              mute_user: "Ann",
+            },
+            {
+              mute_image: "Irma.png",
+              mute_user: "Arlene",
+            },
         ]
     }
   },
@@ -446,10 +449,20 @@ export default {
         this.isAddingCoin = false;
     },
     showBlink() {
-      this.isBlink = true
-      setTimeout(() => {
-          this.isBlink = false
-      }, 2000)
+        if (this.isAddingCoin) {
+            this.isBlink = true
+            setTimeout(() => {
+                this.isBlink = false
+            }, 2000)
+        }
+    },
+    showBlink1() {
+        if (this.isAddingCoin) {
+            this.isBlink1 = true
+            setTimeout(() => {
+                this.isBlink1 = false
+            }, 2000)
+        } 
     },
     killLoading() {
       setTimeout(() => {
@@ -513,8 +526,12 @@ export default {
       this.f_show_user_profile = false
     },
     showUserProfile() {
-      this.f_show_user_profile = true;
-      this.modalStack.push('f_show_user_profile');
+        if (!this.isAddingCoin) {
+            this.f_show_user_profile = true;
+            this.modalStack.push('f_show_user_profile');
+        } else {
+            this.isAddingCoin = true
+        }
     },
     showSendGcoin() {
       this.f_show_send_gcoin = true;
@@ -530,7 +547,6 @@ export default {
     this.killLoading();
   },
 }
-
 </script>
 
 <style>
@@ -788,7 +804,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    margin: 12px auto 0;
+    margin: 20px auto;
     width: 55px;
     height: 55px;
   }
