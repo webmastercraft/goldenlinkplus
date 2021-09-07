@@ -15,13 +15,13 @@
               class="modal-header"
               id="modalTitle"
             >
-                <div class="connect_modal">
+                <div clas s="connect_modal">
                   <p class="coin_title">Send G-Coins </p>
                   <hr class="coin_hr">
                   <div class="event_mute_group">
                     <div v-for="(item, index) in coindata" :key="index" class="mute_user">
                       
-                      <div class="mute_icon">
+                      <div>
                         <img :src="`${item.coin_image}`" class="mute_user_img" @click="addingCoin">
                       </div>
                       <p class="coins_modal">{{item.coin}}</p>
