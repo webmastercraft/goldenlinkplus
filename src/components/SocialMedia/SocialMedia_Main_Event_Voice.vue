@@ -39,13 +39,12 @@
             </div>
             <div class="event_user_group">
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
-                
                 <div class="event_icon">
-                  <img :src="`${item.image_url}`">
+                  <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
                   <div>
-                  <img :src="`${item.image_star_url}`" class="event_star">
-                  <img :src="`${item.image_mute_url}`" class="event_mute">
-                  <img :src="`${item.image_diamond_url}`" class="event_diamond">
+                  <img src="pink_star.png" v-if="item.star" class="event_star">
+                  <img src="mute.png" v-if="item.mute" class="event_mute">
+                  <img src="diamond.png" v-if="item.diamond" class="event_diamond">
                   </div>
                 </div>
                 <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin">{{item.event_user_coin}}K</p>
@@ -165,73 +164,82 @@ export default {
         datas: [
             {
               image_url: "shane.png",
-              image_star_url: "pink_star.png",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: true,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 892,
               name: "Shane"
             },
             {
-              image_url: "kristin.png",
-              image_star_url: "",
-              image_mute_url: "",
-              image_diamond_url: "diamond.png",
+              image_url: "eduardo.png",
+              star: false,
+              mute: false,
+              diamond: true,
+              active: true,
               event_user_coin: 484.2,
               name: "Kristin"
             },
             {
               image_url: "leslie.png",
-              image_star_url: "pink_star.png",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: true,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 345.6,
               name: "Leslie"
             },
             {
               image_url: "eduardo.png",
-              image_star_url: "pink_star.png",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: true,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 527.1,
               name: "Eduardo"
             },
             {
-              image_url: "jorge.png",
-              image_star_url: "",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              image_url: "eduardo.png",
+              star: false,
+              mute: true,
+              diamond: true,
+              active: true,
               event_user_coin: 78.5,
               name: "Jorge"
             },
             {
               image_url: "esther.png",
-              image_star_url: "pink_star.png",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: true,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 18.9,
               name: "Esther"
             },
             {
               image_url: "leslie.png",
-              image_star_url: "",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: false,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 27.5,
               name: "Tanya"
             },
             {
               image_url: "shane.png",
-              image_star_url: "",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: false,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 38.8,
               name: "Ronald"
             },
             {
               image_url: "esther.png",
-              image_star_url: "",
-              image_mute_url: "mute.png",
-              image_diamond_url: "diamond.png",
+              star: false,
+              mute: true,
+              diamond: true,
+              active: false,
               event_user_coin: 190.5,
               name: "Philip"
             },
@@ -780,7 +788,11 @@ export default {
     height: 35px;
     margin: auto 20px !important;
   }
-
+  .user_logo_border {
+    border: 3px solid #ffb803;
+    border-radius: 50%;
+    padding: 2px;
+  }
   /* Animation coin  */
   @keyframes blinkingFrames {
     0% {opacity: 0.00;}
