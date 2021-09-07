@@ -19,7 +19,11 @@
           <div class="event_body">
             <div class="event_users">
               <span><img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean</span>
-              <span><img src="50k_coin.png" class="event_coin"><button>00:14:59</button></span>
+              <span class="blink_span">
+                <img class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
+                <img src="50k_coin.png" class="event_coin">
+                <button>00:14:59</button>
+              </span>
               <div class="event_para_group">
                     <p>
                       <img src="user_count_grey.png">2501
@@ -112,6 +116,13 @@
               <p>Send GCoins</p>
               </span>
             </div>
+            <div class="footer_modal footer_modal_border">
+              <button class="send_coin_btn "><img src="modal_coin.png">115, 250</button>
+              <div class="charge_close">
+                <img src="cancel_coin.png">
+                <span>Close</span>
+              </div>
+            </div>
           </div>
           <SendGcoin 
             v-show="f_show_send_gcoin"
@@ -130,6 +141,7 @@
 
 </template>
 
+<script src="https://code.jquery.com/jquery-3.4.0.js"></script>
 <script>
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import UserProfile from "../../modal/user_profile.vue";
@@ -144,6 +156,7 @@ export default {
   },
   data () {
     return {
+      isBlink: false,
       isloading: true,
       isModalVisible: false,
       clicked: false,
@@ -431,6 +444,12 @@ export default {
   },
   
   methods: {
+    showBlink() {
+      this.isBlink = true
+      setTimeout(() => {
+          this.isBlink = false
+      }, 2000)
+    },
     killLoading() {
       setTimeout(() => {
           this.isloading = false
@@ -533,7 +552,7 @@ export default {
     width: 85px;
     height: 85px;
     bottom: 35px;
-    left: calc(50vw - 44px);
+    left: calc(50vw - 47px);
   }
   .figure_btn img{
     margin-right: 3px;
@@ -675,6 +694,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding: 0 10px;
+    margin-top: 20px;
   }
   .mute_user {
     width: 25%;
@@ -682,10 +702,10 @@ export default {
   }
   .mute_icon {
     position: relative;
-    height: 90px;
+    height: 60px;
   }
   .mute_user p {
-    margin: 10px 0 0;
+    margin: 0;
   }
   .mute_user_img {
     border-radius: 50%;
@@ -713,6 +733,67 @@ export default {
     right: 0;
     left: 0;
     margin: auto;
+  }
+
+  .charge_select {
+    color: #808695;
+  }
+  .footer_modal_border {
+    border-top: 3px solid #E8F1FA;
+    margin: auto;
+    width: 414px;
+    display: flex;
+  }
+  .footer_modal_border button {
+    margin: 20px auto;
+  }
+  .charge_close {
+    margin: auto 20px auto auto;
+    float: right;
+    text-align: center;
+    display: grid;
+  }
+  .charge_close img {
+    margin: auto;
+  }
+  .charge_close span {
+    padding-top: 5px !important;
+    color: #FFB803 !important;
+  }
+  .footer_modal_border .send_coin_btn {
+    height: 35px;
+    margin: auto 20px !important;
+  }
+
+  /* Animation coin  */
+  @keyframes blinkingFrames {
+    0% {opacity: 0.00;}
+    50% {opacity: 1.00;}
+    100% {opacity: 0.00;}
+    from {bottom: 80px;}
+    to {bottom: 95px;}
+  }
+
+  .blinking {
+      animation-name: blinkingFrames;
+      animation-duration: 0.5s;
+      /*animation-iteration-count: infinite;*/
+  }
+
+/*  button {
+      vertical-align: top;
+  }*/
+  .blink-img {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 12px auto 0;
+    width: 55px;
+    height: 55px;
+  }
+  .blink_span {
+    position: relative;
   }
 </style>
  
