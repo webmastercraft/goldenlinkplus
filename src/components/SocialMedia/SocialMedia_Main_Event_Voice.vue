@@ -40,12 +40,14 @@
             <div class="event_user_group">
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
                 <div class="event_icon">
-                  <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
-                  <div>
-                  <img src="pink_star.png" v-if="item.star" class="event_star">
-                  <img src="mute.png" v-if="item.mute" class="event_mute">
-                  <img src="diamond.png" v-if="item.diamond" class="event_diamond">
-                  </div>
+                    <img v-if="isAddingCoin" class="blink-img"  :class="{'blinkingUser': item.blink == true}" src="coin_10.png"  @click="showBlinkItem(index)">
+                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="diamond_frame.png"  @dblclick="showDiamondItem(index)">
+                    <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
+                    <div>
+                        <img src="pink_star.png" v-if="item.star" class="event_star">
+                        <img src="mute.png" v-if="item.mute" class="event_mute">
+                        <img src="diamond.png" v-if="item.diamond" class="event_diamond">
+                    </div>
                 </div>
                 <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin">{{item.event_user_coin}}K</p>
                 <p>{{item.name}}</p>
@@ -152,6 +154,7 @@ export default {
     return {
         isAddingCoin: false,
         isBlink: false,
+        isDiamond: false,
         isBlink1: false,
         isloading: true,
         isModalVisible: false,
@@ -168,8 +171,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 892,
-              name: "Shane"
+              name: "Shane",
+              diamondActive: false
             },
             {
               image_url: "eduardo.png",
@@ -177,8 +182,10 @@ export default {
               mute: false,
               diamond: true,
               active: true,
+              blink: false,
               event_user_coin: 484.2,
-              name: "Kristin"
+              name: "Kristin",
+              diamondActive: false
             },
             {
               image_url: "leslie.png",
@@ -186,8 +193,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 345.6,
-              name: "Leslie"
+              name: "Leslie",
+              diamondActive: false
             },
             {
               image_url: "eduardo.png",
@@ -195,8 +204,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 527.1,
-              name: "Eduardo"
+              name: "Eduardo",
+              diamondActive: false
             },
             {
               image_url: "eduardo.png",
@@ -204,8 +215,10 @@ export default {
               mute: true,
               diamond: true,
               active: true,
+              blink: false,
               event_user_coin: 78.5,
-              name: "Jorge"
+              name: "Jorge",
+              diamondActive: false
             },
             {
               image_url: "esther.png",
@@ -213,8 +226,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 18.9,
-              name: "Esther"
+              name: "Esther",
+              diamondActive: false
             },
             {
               image_url: "leslie.png",
@@ -222,8 +237,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 27.5,
-              name: "Tanya"
+              name: "Tanya",
+              diamondActive: false
             },
             {
               image_url: "shane.png",
@@ -231,8 +248,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 38.8,
-              name: "Ronald"
+              name: "Ronald",
+              diamondActive: false
             },
             {
               image_url: "esther.png",
@@ -240,8 +259,10 @@ export default {
               mute: true,
               diamond: true,
               active: false,
+              blink: false,
               event_user_coin: 190.5,
-              name: "Philip"
+              name: "Philip",
+              diamondActive: false
             },
         ],
         rangking2: [
@@ -456,6 +477,22 @@ export default {
     doneAddingCoin() {
         this.isAddingCoin = false;
     },
+    showBlinkItem(index) {
+        if (this.isAddingCoin) {
+            this.datas[index].blink = true
+            setTimeout(() => {
+                this.datas[index].blink = false
+            }, 2000)
+        }
+    },
+    showDiamondItem(index) {
+        if (!this.isAddingCoin) {
+            this.datas[index].diamondActive = true
+            setTimeout(() => {
+                this.datas[index].diamondActive = false
+            }, 2000)
+        }
+    },
     showBlink() {
         if (this.isAddingCoin) {
             this.isBlink = true
@@ -472,6 +509,12 @@ export default {
             }, 2000)
         } 
     },
+    // showDiamond() {
+    //   this.isDiamond = true
+    //   setTimeout(() => {
+    //       this.isDiamond = false
+    //   }, 2000)
+    // },
     killLoading() {
       setTimeout(() => {
           this.isloading = false
@@ -805,12 +848,29 @@ export default {
   .blinking {
       animation-name: blinkingFrames;
       animation-duration: 0.5s;
-      /*animation-iteration-count: infinite;*/
   }
-
-/*  button {
-      vertical-align: top;
-  }*/
+    .blinkingUser {
+        animation-name: blinkingFramesUser;
+        animation-duration: 0.5s;
+    }
+    @keyframes blinkingFramesUser {
+    0% {opacity: 0.00;}
+    50% {opacity: 1.00;}
+    100% {opacity: 0.00;}
+    from {bottom: 50px;}
+    to {bottom: 75px;}
+  }
+  .diamondAppear {
+        animation-name: diamondFramesUser;
+        animation-duration: 1s;
+    }
+    @keyframes diamondFramesUser {
+    0% {opacity: 0.00;}
+    50% {opacity: 1.00;}
+    100% {opacity: 0.00;}
+    from {bottom: 5px;}
+    to {bottom: 5px;}
+  }
   .blink-img {
     opacity: 0;
     position: absolute;
@@ -820,6 +880,15 @@ export default {
     width: 55px;
     height: 55px;
   }
+  .diamond-img {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 27px auto;
+    width: 30px;
+    height: 30px;
+}
   .blink_span {
     position: relative;
   }
