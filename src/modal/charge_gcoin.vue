@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal"
+      <div class="modal modal_new"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
@@ -112,8 +112,8 @@
   background: #F4992D;
   border-radius: 0 !important;
   position: absolute;
-  left: 40px;
-  width: 65px;
+  left: 45px;
+  width: 80px;
   font-size: 10px;
   margin: 0 !important;
   padding: 13px 0;

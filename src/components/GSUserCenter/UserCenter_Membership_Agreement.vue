@@ -82,12 +82,7 @@ export default {
     width: 100%;
     display: inline-block;
   }
-  .header_top {
-    margin: 80px 20px 20px 20px;
-    border-radius: 12px;
-    overflow: hidden;
-    min-height: calc(100vh - 26px);
-  }
+
   .header_top ul {
     padding: revert;
     list-style-type: disc;

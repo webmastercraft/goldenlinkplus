@@ -57,7 +57,7 @@ export default {
     border-radius: 0px 30px 30px 0px;
   }
   .sociallogo_btn {
-    margin: 35px 0;
+    margin: 35px 0 0;
     text-align: center;
   }
   .gs_reg_start_desc {

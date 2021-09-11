@@ -41,7 +41,7 @@
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
                 <div class="event_icon">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinkingUser': item.blink == true}" src="coin_10.png"  @click="showBlinkItem(index)">
-                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="diamond_frame.png"  @dblclick="showDiamondItem(index)">
+                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="diamond_frame.png"  @click="showDiamondItem(index)">
                     <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
                     <div>
                         <img src="pink_star.png" v-if="item.star" class="event_star">

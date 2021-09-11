@@ -48,34 +48,42 @@
                   <p>I want to start this event now</p>
               </div>
             </form>
-            <router-link to="/socialmedia/socialmedia_main_event_invite">
-              <button class="event_go">LET'S GO
+              <button class="event_go" @click="showEventInvite">LET'S GO
               </button>
-            </router-link>
           </div>
           <Modal
             v-show="isModalVisible"
             @close="closeModal"
           />
+          <EventInvite 
+            v-show="f_show_event_invite"
+            @close="closeModal"
+          >
+          </EventInvite>
       </div>
     </div>
   </div>
 </template>
 <script>
 import Vue from 'vue'; 
+import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import ToggleButton from 'vue-js-toggle-button';
 import Modal from "../../modal/co_host_ghost.vue";
+import EventInvite from "../../modal/event_invite.vue";
 
 Vue.use(ToggleButton)
 
 export default {
   name: 'Create_Your_Event',
   components: {
-    Modal
+    Modal,
+    EventInvite
   },
   data () {
     return {
-      isModalVisible: false
+      isModalVisible: false,
+      f_show_event_invite: false,
+      modalStack: [],
     };
   },
   methods: {
@@ -83,8 +91,12 @@ export default {
       this.isModalVisible = true;
     },
     closeModal() {
+      this.f_show_event_invite = false;
       this.isModalVisible = false;
-    }
+    },
+    showEventInvite() {
+      this.f_show_event_invite = true;
+    },
   }
 }
 </script>

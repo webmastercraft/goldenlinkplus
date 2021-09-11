@@ -2,7 +2,7 @@
   <transition name="slide-fade" mode="out-in">
     <div class=" modal-backdrop bg-user-mask" v-on:click.self="userProfileBackdrop" style="overflow-y: auto">
       <div class="bg-user-mask" v-on:click.self="userProfileBackdrop">
-        <div class="modal"
+        <div class="modal modal_new"
           id="myModal"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -152,5 +152,9 @@
 }
 .charge_high {
   height: 465px;
+}
+.modal_new {
+  max-width: 414px !important;
+  margin: 0 !important;
 }
 </style>
