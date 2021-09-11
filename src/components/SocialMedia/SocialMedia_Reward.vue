@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <div class="phone overlay_desc">
+      <div class="reward_phone">
           <img src="Members_Lounge3.png">
-        <div class="overlay_img">
+        <div class="overlay_img forget_img">
           <div class="overlay_modal">
             <p class="lounge_reward">Thank you for signing up!</p>
             <p class="reward_forget">Don’t Forget<br>to Claim Your<br>$5 Reward</p>
@@ -76,6 +76,18 @@ export default {
 }
 .reward_btn {
   background-color: #13C8FF;
+}
+.forget_img {
+  width: 414px !important;
+  height: 736px;
+}
+.reward_phone {
+  width: 100%;
+  max-width: 414px;
+  display: flex;
+  justify-content: center;
+  background: #E8F1FA;
+  text-align: center;
 }
 </style>
  

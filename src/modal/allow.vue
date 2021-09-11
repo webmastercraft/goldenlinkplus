@@ -21,7 +21,7 @@
                 <button>Don't Allow</button>
               </router-link>
               <router-link to="/socialmedia/socialmedia_recommendation_two">
-                <button>OK</button>
+                <button>Allow</button>
               </router-link>
             </div>
         </header>
