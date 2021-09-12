@@ -14,7 +14,9 @@
             <div class="connect_modal" @click="close">
               <img src="connect_modal.png">
               <p>Great! Your Paypal Account<br>is connected.</p>
-              <p>Tap to continue</p>
+              <router-link to="/socialmedia/socialmedia_recommendation_one">
+                <p>Tap to continue</p>
+              </router-link>
             </div>
         </header>
       </div>

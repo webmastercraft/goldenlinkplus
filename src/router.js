@@ -75,7 +75,6 @@ import SocialMedia_GS_Reg_Connect_Paypal from './components/SocialMedia/SocialMe
 import SocialMedia_GS_Reg_Start from './components/SocialMedia/SocialMedia_GS_Reg_Start.vue';
 import SocialMedia_Main from './components/SocialMedia/SocialMedia_Main.vue';
 import SocialMedia_Main_Create_Event from './components/SocialMedia/SocialMedia_Main_Create_Event.vue';
-import SocialMedia_Main_Event_Invite from './components/SocialMedia/SocialMedia_Main_Event_Invite.vue';
 import SocialMedia_Main_Audio_Event from './components/SocialMedia/SocialMedia_Main_Audio_Event.vue';
 import SocialMedia_Main_Activities from './components/SocialMedia/SocialMedia_Main_Activities.vue';
 import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_Lounge.vue';
@@ -83,6 +82,22 @@ import SocialMedia_Main_Event_Voice from './components/SocialMedia/SocialMedia_M
 import SocialMedia_Main_Event_Hallway from './components/SocialMedia/SocialMedia_Main_Event_Hallway.vue';
 import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Main_Event_Chat.vue';
 import SocialMedia_Main_Event_Upcoming from './components/SocialMedia/SocialMedia_Main_Event_Upcoming.vue';
+import SocialMedia_BS_Reg_Start from './components/SocialMedia/SocialMedia_BS_Reg_Start.vue';
+import SocialMedia_Members_Lounge_One from './components/SocialMedia/SocialMedia_Members_Lounge_One.vue';
+import SocialMedia_Members_Lounge_Two from './components/SocialMedia/SocialMedia_Members_Lounge_Two.vue';
+import SocialMedia_Members_Lounge_Three from './components/SocialMedia/SocialMedia_Members_Lounge_Three.vue';
+import SocialMedia_Reward from './components/SocialMedia/SocialMedia_Reward.vue';
+import SocialMedia_BS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_BS_Reg_Profile_Photo.vue';
+import SocialMedia_BS_Reg_Basic_Info from './components/SocialMedia/SocialMedia_BS_Reg_Basic_Info.vue';
+import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMedia_BS_Recommendation_One.vue';
+import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/SocialMedia_GS_Wallet_GLC.vue';
+
+import SocialMedia_Recommendation_One from './components/SocialMedia/SocialMedia_Recommendation_One.vue';
+import SocialMedia_Recommendation_Two from './components/SocialMedia/SocialMedia_Recommendation_Two.vue';
+import SocialMedia_Recommendation_Three from './components/SocialMedia/SocialMedia_Recommendation_Three.vue';
+
+import SocialMedia_BS_Profile from './components/SocialMedia/SocialMedia_BS_Profile.vue';
+import SocialMedia_GS_Profile from './components/SocialMedia/SocialMedia_GS_Profile.vue';
 
 
 Vue.use(Router);
@@ -446,11 +461,6 @@ export default new Router({
             components: { default: SocialMedia_Main_Create_Event },
         },
         {
-            path: '/socialmedia/socialmedia_main_event_invite',
-            name: 'socialmedia_main_event_invite',
-            components: { default: SocialMedia_Main_Event_Invite },
-        },
-        {
             path: '/socialmedia/socialmedia_main_audio_event',
             name: 'socialmedia_main_audio_event',
             components: { default: SocialMedia_Main_Audio_Event },
@@ -484,8 +494,77 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_event_upcoming',
             name: 'socialmedia_main_event_upcoming',
             components: { default: SocialMedia_Main_Event_Upcoming },
-        }
-
+        },
+        {
+            path: '/socialmedia/socialmedia_recommendation_one',
+            name: 'socialMedia_recommendation_one',
+            components: { default: SocialMedia_Recommendation_One },
+        },
+        {
+            path: '/socialmedia/socialmedia_recommendation_two',
+            name: 'socialMedia_recommendation_two',
+            components: { default: SocialMedia_Recommendation_Two },
+        },
+        {
+            path: '/socialmedia/socialmedia_recommendation_three',
+            name: 'socialMedia_recommendation_three',
+            components: { default: SocialMedia_Recommendation_Three },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_reg_start',
+            name: 'socialMedia_bs_reg_start',
+            components: { default: SocialMedia_BS_Reg_Start },
+        },
+        {
+            path: '/socialmedia/socialmedia_members_lounge_one',
+            name: 'socialMedia_members_lounge_one',
+            components: { default: SocialMedia_Members_Lounge_One },
+        },
+        {
+            path: '/socialmedia/socialmedia_members_lounge_two',
+            name: 'socialMedia_members_lounge_two',
+            components: { default: SocialMedia_Members_Lounge_Two },
+        },
+        {
+            path: '/socialmedia/socialmedia_members_lounge_three',
+            name: 'socialMedia_members_lounge_three',
+            components: { default: SocialMedia_Members_Lounge_Three },
+        },
+        {
+            path: '/socialmedia/socialmedia_reward',
+            name: 'socialMedia_reward',
+            components: { default: SocialMedia_Reward },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_reg_profile_photo',
+            name: 'socialmedia_bs_reg_profile_photo',
+            components: { default: SocialMedia_BS_Reg_Profile_Photo },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_reg_basic_info',
+            name: 'socialmedia_bs_reg_basic_info',
+            components: { default: SocialMedia_BS_Reg_Basic_Info },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_recommendation_one',
+            name: 'socialmedia_bs_recommendation_one',
+            components: { default: SocialMedia_BS_Recommendation_One },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_wallet_glc',
+            name: 'socialmedia_gs_wallet_glc',
+            components: { default: SocialMedia_GS_Wallet_GLC },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_profile',
+            name: 'socialmedia_bs_profile',
+            components: { default: SocialMedia_BS_Profile },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_profile',
+            name: 'socialmedia_gs_profile',
+            components: { default: SocialMedia_GS_Profile },
+        },
     ],
 
 });

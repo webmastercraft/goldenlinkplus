@@ -2,7 +2,7 @@
   <transition name="slide-fade" mode="out-in">
     <div class=" modal-backdrop bg-user-mask" v-on:click.self="userProfileBackdrop" style="overflow-y: auto">
       <div class="bg-user-mask" v-on:click.self="userProfileBackdrop">
-        <div class="modal"
+        <div class="modal modal_user_profile"
           id="myModal"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -335,5 +335,9 @@
   }
   .user_pos.modal-content {
     position: relative !important;
+  }
+  .modal_user_profile {
+    max-width: 400px !important;
+    margin: 0 !important;
   }
 </style>

@@ -53,8 +53,4 @@ export default {
     padding: 7px 60px;
     border-radius: 0px 30px 30px 0px;
   }
-  .sociallogo_btn {
-    margin: 35px 0;
-    text-align: center;
-  }
 </style>

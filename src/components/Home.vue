@@ -34,6 +34,18 @@
             <router-link to="/socialmedia/socialmedia_gs_reg_start" >
               Registration/GS
             </router-link>
+            <router-link to="/socialmedia/socialmedia_bs_reg_profile_photo" >
+              Registration/BS
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_gs_wallet_glc" >
+              GS Wallet
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_bs_profile" >
+              BS Profile
+            </router-link>
+            <router-link to="/socialmedia/socialmedia_gs_profile" >
+              GS Profile
+            </router-link>
           </div>
         </div>
       </div>

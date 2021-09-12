@@ -211,7 +211,7 @@
                 </span>
               </router-link>
 
-              <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
+              <button class="audio_circle_btn" @click="showEventType">Create Audio Event</button>
 
               <router-link to="/socialmedia/socialmedia_main_lounge">
                 <span class="footer_img_rest_right">
@@ -229,7 +229,11 @@
               </router-link>
             </div>
           </div>
-            
+          <EventType 
+            v-show="f_show_event_type"
+            @close="closeModal"
+          >
+          </EventType>
       </div>
     </div>
   </div>
@@ -237,15 +241,20 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
+import EventType from "../../modal/event_type.vue";
 
 export default {
   name: 'SocialMedia_Main',
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    EventType
   },
   data () {
     return {
+      isModalVisible: false,
+      f_show_event_type: false,
+      modalStack: [],
       datas: [
         {
           img: 'International_user.png',
@@ -315,12 +324,20 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    closeModal() {
+      this.f_show_event_type = false;
+      this.isModalVisible = false;
+    },
+    showEventType() {
+      this.f_show_event_type = true;
+    },
   }
 }
 </script>
 <style>
   .swiper {
-    min-height: 100vh;
     max-width: 414px;
   }
    .swiper .swiper-slide {
