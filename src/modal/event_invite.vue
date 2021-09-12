@@ -10,7 +10,15 @@
           class="event_invite_position"
           id="modalTitle"
         >
-            <p class="medium_1_title">TOMORROW   7:00 AM<img src="edit.png" @click="close"></p>
+            <button
+            type="button"
+            class="close_btn type_close"
+            @click="close"
+            aria-label="Close modal"
+            >
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+            <p class="medium_1_title">TOMORROW   7:00 AM</p>
               <p class="medium_title">Let’s All win the Market!!<br>Start Learning today!</p>
               
               <p class="event_invite_para"><span>from</span><img src="triangle.png" class="favicon_img"><span class="event_para_small">MAKING BIG TIME MONEY 101...</span></p>
