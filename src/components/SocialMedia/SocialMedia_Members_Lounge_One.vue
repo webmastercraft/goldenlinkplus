@@ -33,6 +33,7 @@ export default {
 }
 .overlay_desc {
   min-height: auto !important;
+  position: relative;
 }
 .lounge_btn {
   position: absolute;
