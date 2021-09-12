@@ -71,15 +71,9 @@
               <swiper class="swiper">
                 <swiper-slide class="slide_block">
                   <!-- Marketing Direction -->
-                    <div class="gs_marketing">
-                      <button>Verticals</button>
-                      <p>Baby & Toddler, Health & Beauty, Mature, Media, Toys & games</p>
-                      <button>Marketing Methods</button>
-                      <p>SMS, Social media, News media online,<br>SEM, Landing page design, Influencer</p>
-                      <button>Offer Types Accepted</button>
-                      <p>CPC, CPS, CPA, CPL, CPI, CPM</p>
-                      <button>Geolocation</button>
-                      <p>China, United States</p>
+                    <div class="gs_marketing" v-for="(item, index) in marketingdata" :key="index">
+                      <button>{{item.button}}</button>
+                      <p>{{item.title}}</p>
                     </div>
                 </swiper-slide>
 
@@ -91,63 +85,24 @@
 
                 <swiper-slide class="slide_block">
                   <!-- Certifications -->
-                    <div class="certificate_desc">
-                      <img src="profile/profile_doc.png">
-                      <p class="relax_desc"><b>Certification Type:</b><br>Exclusive Marketing Agent<br><b>Certification Number:</b><br>10452563<br><b>Authority of Issue:</b><br>Goldenlinkplus<b><br>Issue Date: </b>09/04/2021<br><b>Expiration Date: </b>09/04/2022<br><b>Description:</b><br>Exclusive Marketing Agent for business</p>
+                    <div class="certificate_desc" v-for="(item, index) in certificationdata" :key="index">
+                      <img :src="`${item.image_url}`">
+                      <p class="relax_desc"><b>Certification Type:</b><br>{{item.type}}<br><b>Certification Number:</b><br>{{item.number}}<br><b>Authority of Issue:</b><br>{{item.issue}}<b><br>Issue Date: </b>{{item.issuedate}}<br><b>Expiration Date: </b>{{item.date}}<br><b>Description:</b><br>{{item.desc}}</p>
                     </div>
                 </swiper-slide>
 
                 <swiper-slide class="slide_block">
                   <!-- Reviews -->
-                    <div class="profile_services">
+                    <div class="profile_services" v-for="(item, index) in reviewdata" :key="index">
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
-                      <p class="relax_desc">This marketer works great for my business!<br>Highly recommended</p>
+                      <p class="relax_desc">{{item.review_title}}</p>
                       <div class="review_user">
-                        <img src="profile/review_user.png">
-                        <p><b>Willy Williams</b><br>Marketing Head, Detour</p>
-                      </div>
-                      <hr class="review_hr">
-                    </div>
-                    <div class="profile_services">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <p class="relax_desc">Woah! My sales rocketed ever since!</p>
-                      <div class="review_user">
-                        <img src="recommendation/recom_user5.png">
-                        <p><b>Jack Hugh</b><br>Owner, Tickles</p>
-                      </div>
-                      <hr class="review_hr">
-                    </div>
-                    <div class="profile_services">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <p class="relax_desc">Great job so far I like this GS!</p>
-                      <div class="review_user">
-                        <img src="recommendation/recom_user3.png">
-                        <p><b>Amanda Bright</b><br>CEO, Perfect Shape</p>
-                      </div>
-                      <hr class="review_hr">
-                    </div>
-                    <div class="profile_services">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <p class="relax_desc">Thanks for helping my business.This<br>Marketer really cares about your business, I<br>highly recommend!</p>
-                      <div class="review_user">
-                        <img src="recommendation/recom_user4.png">
-                        <p><b>Matt Mackenzie</b><br>CEO, Matt and Mackenzie</p>
+                        <img :src="`${item.review_user}`">
+                        <p><b>{{item.review_name}}</b><br>{{item.review_address}}</p>
                       </div>
                       <hr class="review_hr">
                     </div>
@@ -175,6 +130,61 @@ export default {
         {
           follow: true
         }
+      ],
+      marketingdata: [ 
+        {
+          button: "Verticals",
+          title: "Baby & Toddler, Health & Beauty, Mature, Media, Toys & games"
+        },
+        {
+          button: "Marketing Methods",
+          title: "SMS, Social media, News media online,<br>SEM, Landing page design, Influence"
+        },
+        {
+          button: "Offer Types Accepted",
+          title: "CPC, CPS, CPA, CPL, CPI, CPM"
+        },
+        {
+          button: "Geolocation",
+          title: "China, United States"
+        },
+      ],
+      certificationdata: [
+        {
+          image_url: "profile/profile_doc.png",
+          type: "Exclusive Marketing Agent",
+          number: "10452563",
+          issue: "Goldenlinkplus",
+          issuedate: "09/04/2021",
+          date: "09/04/2022",
+          desc: "Exclusive Marketing Agent for business"
+        }
+      ],
+      reviewdata: [
+        {
+          review_title: "This marketer works great for my business! \n Highly recommended",
+          review_user: "profile/review_user.png",
+          review_name: "Willy Williams",
+          review_address: "Marketing Head, Detour",
+        },
+        {
+          review_title: "Woah! My sales rocketed ever since!",
+          review_user: "recommendation/recom_user5.png",
+          review_name: "Jack Hugh",
+          review_address: "Owner, Tickles",
+        },
+        {
+          review_title: "Great job so far I like this GS!",
+          review_user: "recommendation/recom_user3.png",
+          review_name: "Amanda Bright",
+          review_address: "CEO, Perfect Shape",
+        },
+        {
+          review_title: "Thanks for helping my business.This \n Marketer really cares about your business, I \n highly recommend!",
+          review_user: "recommendation/recom_user4.png",
+          review_name: "Matt Mackenzie",
+          review_address: "CEO, Matt and Mackenzie",
+        },
       ],
       swiperOption: {
           slidesPerView: 'auto',
