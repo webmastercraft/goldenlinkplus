@@ -130,7 +130,7 @@
               <router-link to="/socialmedia/socialmedia_main_activities">
                 <span class="footer_img_rest_right">
                   <img src="activities.png">
-                  <p>Activities</p>
+                  <p>Notification</p>
                 </span>
               </router-link>
 

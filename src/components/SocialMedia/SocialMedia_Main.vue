@@ -17,7 +17,7 @@
               <router-link to="/socialmedia/socialmedia_search_products"><span><b>Products</b></span></router-link>
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_gs"><span>GS</span></router-link>
-              <router-link to="/socialmedia/socialmedia_search_communities"><span>Communities</span></router-link>
+              <router-link to="/socialmedia/socialmedia_search_communities"><span>Brand</span></router-link>
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
@@ -224,7 +224,7 @@
               <router-link to="/socialmedia/socialmedia_main_activities">
                 <span class="footer_img_rest_right">
                   <img src="activities.png">
-                  <p>Activities</p>
+                  <p>Notification</p>
                 </span>
               </router-link>
             </div>

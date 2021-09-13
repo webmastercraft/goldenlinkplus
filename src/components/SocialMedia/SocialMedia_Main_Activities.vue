@@ -40,7 +40,7 @@
 
             <div class="activities_user">
               <img src="Geoffrey Mott.png">
-              <p><b>Geoffrey Mott</b> removed you from an Event <u>How to make Money Online</u><br><button class="rejoin">Rejoin the Event</button></p>
+              <p><b>Geoffrey Mott</b> removed you from an Event <u>How to make Money Online</u><br><router-link to="/socialmedia/socialmedia_main_event_voice"><button class="rejoin">Rejoin the Event</button></router-link></p>
               <p class="activities_num">25m</p>
             </div>
 
@@ -58,7 +58,7 @@
             
             <div class="activities_user activities_color">
               <img src="Geoffrey Mott.png">
-              <p><b>Geoffrey Mott</b> removed you from an Event <u>How to make Money Online</u><br><button class="rejoin">Rejoin the Event</button></p>
+              <p><b>Geoffrey Mott</b> removed you from an Event <u>How to make Money Online</u><br><router-link to="/socialmedia/socialmedia_main_event_voice"><button class="rejoin">Rejoin the Event</button></router-link></p>
               <p class="activities_num">25m</p>
             </div>
 
@@ -67,42 +67,7 @@
               <p><b>Geoffrey Mott</b> followed you</p>
               <p class="activities_num">25m</p>
             </div>
-            
-
-            
           </div>
-          <!-- <div class="footer_background">
-            <div class="footer_modal">
-              <router-link to="/socialmedia/socialmedia_main">
-                <span class="footer_img_rest_left">
-                  <img src="home.png">
-                  <p>Home</p>
-                </span>
-              </router-link>
-
-              <router-link to="/socialmedia/socialmedia_main_audio_event">
-                <span class="footer_img_rest_left">
-                  <img src="audio_events.png">
-                  <p>Audio Events</p>
-                </span>
-              </router-link>
-
-              <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
-
-              <router-link to="/socialmedia/socialmedia_main_lounge">
-              <span class="footer_img_rest_right">
-              <img src="lounge.png">
-              <p>Lounge</p>
-              </span>
-              </router-link>
-
-              <span class="footer_img footer_img_rest_right">
-              <img src="activities_orange.png">
-              <p class="footer_select_title">Activities</p>
-              </span>
-            </div>
-          </div> -->
-            
       </div>
     </div>
   </div>
@@ -111,7 +76,7 @@
 
 
 export default {
-  name: 'Activities',
+  name: 'Notification',
   components: {
   }
 }
