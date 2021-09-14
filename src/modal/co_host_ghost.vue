@@ -19,7 +19,7 @@
               <i class="fa fa-times-circle" aria-hidden="true"></i>
             </button>
             <div class="guest_find">
-                    <input type="text" placeholder="Find People" class="form-control">
+                    <input type="search" placeholder="Find People" class="form-control">
                     <img src="Search_modal.png" class="">
             </div>
             <div class="modal_scroll">

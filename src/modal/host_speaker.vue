@@ -105,9 +105,6 @@
   };
 </script>
 <style>
-.view_profile {
-  display: flex;
-}
 .view_img {
   width: 80px;
   height: 80px;
@@ -198,13 +195,6 @@
   color: white;
   font-size: 16px;
 }
-.view_btn button {
-  width: 100%;
-  background-color: #E8F1FA;
-  border-radius: 16px;
-  height: 40px;
-  margin: 5px 0;
-}
 .view_color_btn button {
   width: calc(50% - 5px);
   color: white;
@@ -218,5 +208,8 @@
 .view_green {
   background-color: #39B54A !important;
   margin-left: 5px !important;
+}
+.bg-view-mask {
+  width: 100%;
 }
 </style>

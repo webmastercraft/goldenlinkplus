@@ -105,9 +105,6 @@
   };
 </script>
 <style>
-.view_profile {
-  display: flex;
-}
 .view_img {
   width: 80px;
   height: 80px;
@@ -197,13 +194,6 @@
   width: calc(100% - 40px);
   color: white;
   font-size: 16px;
-}
-.view_btn button {
-  width: 100%;
-  background-color: #E8F1FA;
-  border-radius: 16px;
-  height: 40px;
-  margin: 5px 0;
 }
 .view_color_btn button {
   width: calc(50% - 5px);
