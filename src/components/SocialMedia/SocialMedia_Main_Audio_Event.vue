@@ -7,7 +7,9 @@
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <img src="main_calendar.png" class="main_icon">
+              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                <img src="main_calendar.png" class="main_icon">
+              </router-link>
               <img src="main_contact.png" class="main_icon">
               <img src="main_user.png" class="main_user">
             </div>

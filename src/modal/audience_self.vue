@@ -22,16 +22,10 @@
               <div v-for="(item, index) in viewdata" :key="index">
                 <div class="view_profile">
                   <img :src="`${item.user_img}`" class="view_img">
-                  <div class="view_icon">
-                    <img src="view_mute.png" class="view_mute">
-                    <button class="view_follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'view_following_btn': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
-                  </div>
                 </div>
                 <div class="view_profile_title">
-                  <p class="view_name"><b>{{item.name}}</b><span>Follows You</span></p>
+                  <p class="view_name"><b>{{item.name}}</b><span>You</span></p>
                   <p class="view_followers"><b>{{item.coin_followers}}</b> followers<span><b>{{item.coin_following}}</b> following</span></p>
-                  <p class="view_followers"><img src="view_star.png">Host of this Event</p>
-                  <p class="view_check"><b>Check Business Offers</b></p>
                   <p class="view_mark">{{item.front_name}} @ <b>{{item.last_name}}</b></p>
                 </div>
               </div>
@@ -42,13 +36,11 @@
                 <img src="view_ring.png" class="view_ring">
               </div>
               <div class="view_btn">
-                <div class="view_color_btn">
-                  <router-link to="/socialmedia/socialmedia_messaging_chat">
-                    <button class="view_sky">Send Message</button>
-                  </router-link>
+                <div class="view_color_btn view_self">
+                  
                   <button class="view_green" @click="showProfile">View Full Profile</button>
                 </div>
-                
+                <button>Set Myself as Audience</button>
               </div>
           </header>
         </div>
@@ -218,5 +210,12 @@
 .view_green {
   background-color: #39B54A !important;
   margin-left: 5px !important;
+}
+.modal {
+  width: 414px !important;
+}
+.view_self button{
+  width: 100% !important;
+  margin: 0 !important;
 }
 </style>

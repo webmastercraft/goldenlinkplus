@@ -9,7 +9,9 @@
               <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
               <img src="main_calendar.png" class="main_icon">
               <img src="main_contact.png" class="main_icon">
-              <img src="main_user.png" class="main_user">
+              <router-link to="/socialmedia/socialmedia_main_switch_account">
+                <img src="mona.png" class="main_user">
+              </router-link>
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>
           </div>
@@ -73,9 +75,9 @@ export default {
   },
   data() {
       return { items: [
-          {rout : "", img: "lounge_profile.png", name: "My Profile"}, 
+          {rout : "socialmedia_bs_profile", img: "lounge_profile.png", name: "My Profile"}, 
           {rout : "", img: "lounge_usercenter.png", name: "My User Center"},
-          {rout : "", img: "lounge-addons.png", name: "My Add-ons"},
+          {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
           {rout : "", img: "lounge_membership.png", name: "My Membership"},
           {rout : "", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "", img: "lounge_communities.png", name: "My Communities"},

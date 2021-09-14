@@ -5,7 +5,7 @@
         
           <div class="header_modal">
             <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>3 Business Found</a>
+            <a>3 Communities Found</a>
           </div>
           <div class="content left-content header_top height_static">
               <div class="socialmedia_search_para" v-for="(item, index) in datas" :key="index">

@@ -6,12 +6,16 @@
           <div class="main_audio_modal">
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
-                <img src="main_calendar.png" class="main_icon">
-              </router-link>
-              <img src="main_contact.png" class="main_icon">
-              <img src="main_user.png" class="main_user">
+              <div class="logo_header">
+                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                  <img src="main_calendar.png">
+                </router-link>
+                <img src="main_contact.png">
+                <router-link to="/socialmedia/socialmedia_main_switch_account">
+                  <img src="mona.png" class="main_user">
+                </router-link>
+              </div>
             </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
           </div>
@@ -153,7 +157,8 @@ export default {
     border-radius: 30px 30px 0 0;
     display: flex;
     bottom: 0;
-    width: 414px;
+    max-width: 414px;
+    width: 100%;
     height: 90px;
     background: white;
     position: fixed;
@@ -185,6 +190,12 @@ export default {
   }
   .hallway_icon img:first-child {
     margin: 0 20px;
+  }
+  .logo_header {
+    display: flex;
+  }
+  .logo_header a{
+    margin: auto;
   }
 </style>
  

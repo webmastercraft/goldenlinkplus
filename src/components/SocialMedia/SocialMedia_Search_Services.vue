@@ -5,7 +5,7 @@
         
           <div class="header_modal">
             <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>5 Services Found</a>
+            <a>5 Businesses Found</a>
           </div>
           <div class="content left-content header_top height_static">
 
@@ -15,7 +15,7 @@
                 <div class="search_transmit">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
                 <router-link to="/socialmedia/socialmedia_messaging_chat">
-                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}">Message</button>
                 </router-link>
                 </div>
               </div>

@@ -7,7 +7,9 @@
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <img src="main_calendar.png" class="main_icon">
+              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                <img src="main_calendar.png" class="main_icon">
+              </router-link>
               <img src="main_contact.png" class="main_icon">
               <img src="main_user.png" class="main_user">
             </div>
@@ -67,6 +69,9 @@
               <p><b>Geoffrey Mott</b> followed you</p>
               <p class="activities_num">25m</p>
             </div>
+            
+
+            
           </div>
       </div>
     </div>
@@ -76,7 +81,7 @@
 
 
 export default {
-  name: 'Notification',
+  name: 'Activities',
   components: {
   }
 }
@@ -85,7 +90,8 @@ export default {
   .main_audio_modal {
     height: 90px;
     position: fixed;
-    width: 414px;
+    max-width: 414px;
+    width: 100%;
     background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%);
     padding: 20px;
   }

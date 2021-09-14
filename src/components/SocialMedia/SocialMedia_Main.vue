@@ -6,18 +6,22 @@
           <div class="main_modal">
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
-                <img src="main_calendar.png" class="main_icon">
-              </router-link>
-              <img src="main_contact.png" class="main_icon">
-              <img src="main_user.png" class="main_user">
+              <div class="logo_header">
+                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                  <img src="main_calendar.png">
+                </router-link>
+                <img src="main_contact.png">
+                <router-link to="/socialmedia/socialmedia_main_switch_account">
+                  <img src="mona.png" class="main_user">
+                </router-link>
+              </div>
             </div>
             <div class="main_header">
               <router-link to="/socialmedia/socialmedia_search_products"><span><b>Products</b></span></router-link>
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_gs"><span>GS</span></router-link>
-              <router-link to="/socialmedia/socialmedia_search_communities"><span>Brand</span></router-link>
+              <router-link to="/socialmedia/socialmedia_search_communities"><span>Brands</span></router-link>
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
@@ -345,7 +349,8 @@ export default {
   }
   .main_modal {
     height: 170px;
-    width: 414px;
+    width: 100%;
+    max-width: 414px;
     position: fixed;
     background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%);
     padding: 20px;
@@ -359,6 +364,9 @@ export default {
   }
   .main_user {
     float: right;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
   }
   .main_header {
     text-align: left;
@@ -435,7 +443,7 @@ export default {
   }
   .footer_modal {
     bottom: 0;
-    width: 414px;
+    width: 100%;
     height: 80px;
     background: white;
     position: fixed;
@@ -458,7 +466,7 @@ export default {
   }
   .footer_background {
     position: fixed;
-    width: 414px;
+    width: 100%;
     max-width: 414px;
     height: 200px;
     bottom: 0;

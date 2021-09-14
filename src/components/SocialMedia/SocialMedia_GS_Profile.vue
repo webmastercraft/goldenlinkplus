@@ -18,14 +18,14 @@
                 <p><img src="event_coin.png">99.5K</p>
                 <p>Conversion Rate<br>80%</p>
               </div>
-              <div class="profile_gs_box">
+              <div class="profile_gs_box" v-for="(item, index) in datas" :key="index">
                 <div class="profile_box_line">
-                  <img src="profile/numbers.png">
+                  <img src="profile/numbers.png"><span class="login_number">{{item.login_number}}</span>
                   <img src="profile/gs_grey.png">
                   <img src="profile/gs_orange.png">
                   <img src="profile/warning.png">
                 </div>
-                <div class="search_transmit btn_positions" v-for="(item, index) in datas" :key="index">
+                <div class="search_transmit btn_positions">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
                   <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
                 </div>
@@ -127,7 +127,8 @@ export default {
   data () {
     return { 
       datas: [
-        {
+        { 
+          login_number: "12",
           follow: true
         }
       ],
@@ -259,6 +260,12 @@ export default {
 }
 .swiperslide_btn {
   width: auto;
+}
+.login_number {
+  position: absolute;
+  left: 23px;
+  bottom: 18px;
+  color: red !important;
 }
 </style>
 <!-- <style lang="scss" scoped>

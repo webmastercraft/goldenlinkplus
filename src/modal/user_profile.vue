@@ -38,7 +38,8 @@
                   <button @click="hostSelf">Speaker view Self profile</button>
                 </div>
                 <div class="audience_profile">
-                  <button @click="audienceAny">Audience view Any Profile</button>
+                  <button @click="audienceAny">Audience view Any profile</button>
+                  <button @click="audienceSelf">Audience view Self profile</button>
                 </div>
               </div>
             </header>
@@ -111,6 +112,12 @@
         @view-backdrop="closeViewProfile"
       >
       </AudienceAny>
+      <AudienceSelf 
+        v-show="f_audience_self"
+        @close="closeViewProfile"
+        @view-backdrop="closeViewProfile"
+      >
+      </AudienceSelf>
     </div>
   </transition>
 
@@ -128,6 +135,7 @@
   import SpeakerSpeaker from "./speaker_speaker.vue";
   import SpeakerAudience from "./speaker_audience.vue";
   import AudienceAny from "./audience_any.vue";
+  import AudienceSelf from "./audience_self.vue";
 
   export default {
     name: 'User',
@@ -142,7 +150,8 @@
       SpeakerCoHost,
       SpeakerAudience,
       SpeakerSpeaker,
-      AudienceAny
+      AudienceAny,
+      AudienceSelf
     },
     data () {
       return {
@@ -191,6 +200,7 @@
         f_speaker_audience: false,
         f_speaker_speaker: false,
         f_audience_any: false,
+        f_audience_self: false,
       }
     },
     methods: {
@@ -238,6 +248,9 @@
       audienceAny() {
         this.f_audience_any = true;
       },
+      audienceSelf() {
+        this.f_audience_self = true;
+      },
       closeViewProfile() {
         this.f_host_co_host = false;
         this.f_host_speaker = false;
@@ -250,6 +263,7 @@
         this.f_speaker_speaker = false;
         this.f_speaker_audience = false;
         this.f_audience_any = false;
+        this.f_audience_self = false;
       },
     },
   };

@@ -68,14 +68,6 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_modal {
-    position: fixed;
-    height: 60px;
-    background: white;
-    width: 100%;
-    max-width: 414px;
-    opacity: 0.9;
-  }
   .header_modal a {
     line-height: 60px;
     font-weight: 600;

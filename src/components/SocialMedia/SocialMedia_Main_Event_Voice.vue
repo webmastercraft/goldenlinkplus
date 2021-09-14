@@ -630,7 +630,7 @@ export default {
   .event_body_title {
     position: absolute;
     text-align: left;
-    width: 414px;
+    width: 100%;
   }
   .event_body_title .event_favicon_img{
     margin: 20px 20px 0;

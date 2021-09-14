@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="reward_phone">
-          <img src="Members_Lounge3.png">
+          <img src="Members_Lounge3.png" class="reward_lounge3">
         <div class="overlay_img forget_img">
           <div class="overlay_modal">
             <p class="lounge_reward">Thank you for signing up!</p>
@@ -37,6 +37,8 @@ export default {
   border-radius: 12px;
   padding: 32px;
   text-align: center;
+  max-width: 414px;
+  width: calc(100% - 50px);
 }
 .lounge_reward {
   margin: 0;
@@ -78,7 +80,6 @@ export default {
   background-color: #13C8FF;
 }
 .forget_img {
-  width: 414px !important;
   height: 736px;
 }
 .reward_phone {
@@ -88,6 +89,10 @@ export default {
   justify-content: center;
   background: #E8F1FA;
   text-align: center;
+}
+.reward_lounge3 {
+  width: 100%;
+  max-width: 414px;
 }
 </style>
  

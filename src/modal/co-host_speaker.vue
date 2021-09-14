@@ -2,7 +2,7 @@
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
       <div class="bg-view-mask" v-on:click.self="viewProfileBackdrop">
-        <div class="modal modal_new"
+        <div class="modal modal_user_profile"
           role="dialog"
           aria-labelledby="modalTitle"
           aria-describedby="modalDescription"
