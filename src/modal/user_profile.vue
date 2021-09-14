@@ -351,7 +351,9 @@
     position: relative !important;
   }
   .modal_user_profile {
-    max-width: 400px !important;
-    margin: 0 !important;
+    max-width: 414px !important;
+    margin: 0 10px !important;
+    width: calc(100% - 20px) !important;
+    transform: translate3d(0, 3%, 0) !important;
   }
 </style>

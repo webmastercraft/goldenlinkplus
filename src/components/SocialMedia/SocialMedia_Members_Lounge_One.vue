@@ -36,10 +36,6 @@ export default {
   position: relative;
   height: 100%;
 }
-.overlay_desc img {
-  width: 100%;
-  height: 100%;
-}
 .lounge_btn {
   position: absolute;
   border: 2px solid #FFFFFF;
