@@ -22,7 +22,6 @@
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_gs"><span>GS</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_communities"><span>Brands</span></router-link>
-              <router-link to="/socialmedia/socialmedia_search_communities"><span>Brand</span></router-link>
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
