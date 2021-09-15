@@ -179,9 +179,9 @@
   letter-spacing: 0.02em;
   width: 100px;
 }
-.modal {
+/*.modal {
   max-height: 500px;
-}
+}*/
 .modal_transform {
   transform: translate(0, 30%) !important;
 }
