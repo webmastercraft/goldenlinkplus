@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
-      <div class="bg-view-mask" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
         <div class="modal modal_user_profile"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -37,7 +37,7 @@
               <div class="view_details">
                 <p class="view_date">TODAY<br>10:30PM</p>
                 <p class="view_details_title"><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<br>Let’s All win the Market!! We can...</p>
-                <img src="view_ring.png" class="view_ring">
+                <img :src="ringSrc" class="view_ring" @click="ringClicked = !ringClicked">
               </div>
               <div class="view_btn">
                 <div class="view_color_btn">
@@ -47,7 +47,6 @@
                   <button class="view_green" @click="showProfile">View Full Profile</button>
                 </div>
                 <button>Invite to Speak</button>
-                <button>Remove User from Event</button>
               </div>
           </header>
         </div>
@@ -71,6 +70,7 @@
     },  
     data () {
       return {
+        ringClicked: true,
         viewdata: [
           {
             user_img: "Susan_Doyle.png",
@@ -99,6 +99,11 @@
       },
       showProfile() {
         this.f_show_view_profile = !this.f_show_view_profile;
+      },
+    },
+    computed: {
+      ringSrc: function () {
+        return this.ringClicked ? 'view_ring.png' : 'view_ring-gold.png'
       },
     }
   };
@@ -187,12 +192,6 @@
 }
 .view_details_title img {
   margin: 0 5px 3px 0;
-}
-.view_btn {
-  margin: 30px 20px 0;
-  width: calc(100% - 40px);
-  color: white;
-  font-size: 16px;
 }
 .view_color_btn button {
   width: calc(50% - 5px);

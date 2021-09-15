@@ -39,7 +39,7 @@
               <div class="view_details">
                 <p class="view_date">TODAY<br>10:30PM</p>
                 <p class="view_details_title"><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<br>Let’s All win the Market!! We can...</p>
-                <img src="view_ring.png" class="view_ring">
+                <img :src="ringSrc" class="view_ring" @click="ringClicked = !ringClicked">
               </div>
               <div class="view_btn">
                 <div class="view_color_btn">
@@ -74,6 +74,7 @@
     },  
     data () {
       return {
+        ringClicked: true,
         viewdata: [
           {
             user_img: "Jean_Bright.png",
@@ -102,6 +103,11 @@
       },
       showProfile() {
         this.f_show_view_profile = !this.f_show_view_profile;
+      },
+    },
+    computed: {
+      ringSrc: function () {
+        return this.ringClicked ? 'view_ring.png' : 'view_ring-gold.png'
       },
     }
   };
@@ -190,12 +196,6 @@
 }
 .view_details_title img {
   margin: 0 5px 3px 0;
-}
-.view_btn {
-  margin: 30px 20px 0;
-  width: calc(100% - 40px);
-  color: white;
-  font-size: 16px;
 }
 .view_color_btn button {
   width: calc(50% - 5px);
