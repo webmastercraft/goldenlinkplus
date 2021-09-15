@@ -6,12 +6,16 @@
           <div class="main_audio_modal">
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <router-link to="/socialmedia/socialmedia_main_event_upcoming">
-                <img src="main_calendar.png" class="main_icon">
-              </router-link>
-              <img src="main_contact.png" class="main_icon">
-              <img src="main_user.png" class="main_user">
+              <div class="logo_header">
+                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                  <img src="main_calendar.png">
+                </router-link>
+                <img src="main_contact.png">
+                <router-link to="/socialmedia/socialmedia_main_switch_account">
+                  <img src="mona.png" class="main_user">
+                </router-link>
+              </div>
             </div>
             <p><img src="ring.png" class="favicon_img">ACTIVITIES</p>
           </div>

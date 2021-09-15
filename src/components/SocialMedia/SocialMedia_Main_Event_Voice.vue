@@ -631,6 +631,7 @@ export default {
     position: absolute;
     text-align: left;
     width: 100%;
+    max-width: 414px;
   }
   .event_body_title .event_favicon_img{
     margin: 20px 20px 0;
@@ -886,7 +887,7 @@ export default {
     left: 0;
     right: 0;
     margin: 27px auto;
-    width: 30px;
+    width: 40px;
     height: 30px;
 }
   .blink_span {

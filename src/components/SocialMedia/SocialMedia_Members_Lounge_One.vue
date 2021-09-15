@@ -54,6 +54,7 @@ export default {
 .overlay_img_fix {
   width: 100%;
   height: 100%;
+  max-width: 414px;
 }
 </style>
  
