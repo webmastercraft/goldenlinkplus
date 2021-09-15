@@ -98,7 +98,7 @@ export default {
   .chat_time {
     font-size: 11px;
     margin: 0 0 0 10px;
-    background-color: #E6F7FF;
+    
     border-radius: 8px;
     padding: 10px;
   }
@@ -107,6 +107,8 @@ export default {
   }
   .socialmedia_chat_para {
     width: 100%;
+    background-color: #E6F7FF;
+    display: flex;
   }
   .socialmedia_chat_text {
     display: flex;

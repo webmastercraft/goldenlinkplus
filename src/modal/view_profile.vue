@@ -191,12 +191,6 @@
 .view_details_title img {
   margin: 0 5px 3px 0;
 }
-.view_btn {
-  margin: 30px 20px 0;
-  width: calc(100% - 40px);
-  color: white;
-  font-size: 16px;
-}
 .view_color_btn button {
   width: calc(50% - 5px);
   color: white;

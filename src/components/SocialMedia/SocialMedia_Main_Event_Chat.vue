@@ -18,6 +18,7 @@
                         <img src="mona.png" class="chat_logo">
                         <div class="socialmedia_chat_para">
                           <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                          <img src="chat_diamond.png"><span>125</span>
                         </div>
                     </div>
                     <div class="event_chat_login">
@@ -38,6 +39,7 @@
                         <img src="mona.png" class="chat_logo">
                         <div class="socialmedia_chat_para">
                           <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                          <img src="chat_diamond.png"><span>125</span>
                         </div>
                     </div>
                     <div class="event_chat_login">
@@ -58,6 +60,7 @@
                         <img src="mona.png" class="chat_logo">
                         <div class="socialmedia_chat_para">
                           <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                          <img src="chat_diamond.png"><span>125</span>
                         </div>
                     </div>
                     <div class="event_chat_login">
@@ -78,6 +81,7 @@
                         <img src="mona.png" class="chat_logo">
                         <div class="socialmedia_chat_para">
                           <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                          <img src="chat_diamond.png"><span>125</span>
                         </div>
                     </div>
                     <div class="event_chat_login">
@@ -156,6 +160,14 @@ export default {
   display: flex;
   padding: 20px 20px 0;
   width: 100%;
+}
+.socialmedia_chat_para img {
+  width: 21px;
+  height: 16px;
+  margin: 5px 5px 0 auto;
+}
+.socialmedia_chat_para span{
+  margin: 0 10px 0 0;
 }
 </style>
  

@@ -143,6 +143,7 @@
               <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
 
               <span class="hallway_icon">
+                &#x270C;
                 <img src="invite.png" @click="showHallway">
                 <img src="mute.png">
               </span>

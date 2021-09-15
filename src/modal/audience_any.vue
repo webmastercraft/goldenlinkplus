@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
-      <div class="bg-view-mask" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
         <div class="modal modal_user_profile"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -38,7 +38,7 @@
               <div class="view_details">
                 <p class="view_date">TODAY<br>10:30PM</p>
                 <p class="view_details_title"><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<br>Let’s All win the Market!! We can...</p>
-                <img src="view_ring.png" class="view_ring">
+                <img :src="ringSrc" class="view_ring" @click="ringClicked = !ringClicked">
               </div>
               <div class="view_btn">
                 <div class="view_color_btn">
@@ -70,6 +70,7 @@
     },  
     data () {
       return {
+        ringClicked: true,
         viewdata: [
           {
             user_img: "Jean_Bright.png",
@@ -99,8 +100,13 @@
       showProfile() {
         this.f_show_view_profile = !this.f_show_view_profile;
       },
+    },
+    computed: {
+      ringSrc: function () {
+        return this.ringClicked ? 'view_ring.png' : 'view_ring-gold.png'
+      },
     }
-  };
+}
 </script>
 <style>
 .view_profile {
@@ -216,5 +222,9 @@
 .view_green {
   background-color: #39B54A !important;
   margin-left: 5px !important;
+}
+.user_modal_width {
+  width: 100%;
+  max-width: 414px;
 }
 </style>
