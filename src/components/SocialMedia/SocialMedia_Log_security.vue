@@ -13,7 +13,11 @@
             placeholder=""
           />
           <p class="glplogo_reg_passcode">I forgot my passcode</p>
-          <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_main" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
+          <div class="sociallogo_btn">
+            <router-link to="/socialmedia/socialmedia_main">
+              <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
+              </button>
+            </router-link>
           </div>
         </div>
       </div>

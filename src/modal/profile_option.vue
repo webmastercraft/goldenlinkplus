@@ -19,19 +19,17 @@
               <i class="fa fa-times-circle" aria-hidden="true"></i>
             </button>
             <div class="profile_option">
-              <div class="profile_buc">
-              <img src="view_user.png">
-              <p><b>Ana Smith</b></p>
-              <p class="profile_type">BUSINESS</p>
-              </div>
-
+              <router-link to="/socialmedia/socialmedia_bs_profile" class="profile_buc">
+                  <img src="view_user.png">
+                  <p><b>Ana Smith</b></p>
+                  <p class="profile_type">BUSINESS</p>
+              </router-link>
               <img src="line.png" class="profile_line">
-
-              <div class="profile_gs">
-              <img src="view_user.png">
-              <p><b>Ana Smith</b></p>
-              <p class="profile_type">GS</p>
-              </div>
+              <router-link to="/socialmedia/socialmedia_gs_profile" class="profile_gs">
+                  <img src="view_user.png">
+                  <p><b>Ana Smith</b></p>
+                  <p class="profile_type">GS</p>
+              </router-link>
             </div>
         </header>
       </div>
@@ -67,7 +65,7 @@
   font-weight: 400;
   margin-top: 20px;
 }
-.profile_option div {
+.profile_option a {
   margin: auto;
 }
 .profile_option p {

@@ -3,8 +3,8 @@
     <div class="container">
       <div class="phone overlay_desc">
         <div class="overlay_img"></div>
-        <img src="Members_Lounge3.png">
-        <img src="Members_Lounge2.png" class="overlay_img_position">
+        <img src="Members_Lounge3.png" class="overlay_img_fix">
+        <img src="Members_Lounge2.png" class="overlay_img_position overlay_img_fix">
         <router-link to="/socialmedia/socialmedia_main" class="lounge_btn_start">
           <button>START</button>
         </router-link>

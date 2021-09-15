@@ -78,10 +78,14 @@ import SocialMedia_Main_Create_Event from './components/SocialMedia/SocialMedia_
 import SocialMedia_Main_Audio_Event from './components/SocialMedia/SocialMedia_Main_Audio_Event.vue';
 import SocialMedia_Main_Activities from './components/SocialMedia/SocialMedia_Main_Activities.vue';
 import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_Lounge.vue';
+import SocialMedia_Main_Lounge_Add from './components/SocialMedia/SocialMedia_Main_Lounge_Add.vue';
 import SocialMedia_Main_Event_Voice from './components/SocialMedia/SocialMedia_Main_Event_Voice.vue';
 import SocialMedia_Main_Event_Hallway from './components/SocialMedia/SocialMedia_Main_Event_Hallway.vue';
 import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Main_Event_Chat.vue';
 import SocialMedia_Main_Event_Upcoming from './components/SocialMedia/SocialMedia_Main_Event_Upcoming.vue';
+import SocialMedia_Main_Switch_Account from './components/SocialMedia/SocialMedia_Main_Switch_Account.vue';
+import SocialMedia_Main_Notification_Setting from './components/SocialMedia/SocialMedia_Main_Notification_Setting.vue';
+
 import SocialMedia_BS_Reg_Start from './components/SocialMedia/SocialMedia_BS_Reg_Start.vue';
 import SocialMedia_Members_Lounge_One from './components/SocialMedia/SocialMedia_Members_Lounge_One.vue';
 import SocialMedia_Members_Lounge_Two from './components/SocialMedia/SocialMedia_Members_Lounge_Two.vue';
@@ -564,6 +568,21 @@ export default new Router({
             path: '/socialmedia/socialmedia_gs_profile',
             name: 'socialmedia_gs_profile',
             components: { default: SocialMedia_GS_Profile },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_switch_account',
+            name: 'socialmedia_main_switch_account',
+            components: { default: SocialMedia_Main_Switch_Account },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_notification_setting',
+            name: 'socialmedia_main_notification_setting',
+            components: { default: SocialMedia_Main_Notification_Setting },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_lounge_add',
+            name: 'socialmedia_main_lounge_add',
+            components: { default: SocialMedia_Main_Lounge_Add },
         },
     ],
 

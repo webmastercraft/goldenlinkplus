@@ -2,7 +2,7 @@
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
       <div class="bg-view-mask" v-on:click.self="viewProfileBackdrop">
-        <div class="modal modal_new"
+        <div class="modal modal_user_profile"
           role="dialog"
           aria-labelledby="modalTitle"
           aria-describedby="modalDescription"
@@ -22,9 +22,6 @@
               <div v-for="(item, index) in viewdata" :key="index">
                 <div class="view_profile">
                   <img :src="`${item.user_img}`" class="view_img">
-                  <div class="view_icon">
-                    <img src="view_mute.png" class="view_mute">
-                  </div>
                 </div>
                 <div class="view_profile_title">
                   <p class="view_name"><b>{{item.name}}</b><span>You</span></p>

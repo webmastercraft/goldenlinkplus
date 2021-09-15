@@ -488,6 +488,7 @@ export default {
   .profile_box_line {
     margin-bottom: 15px;
     text-align: right;
+    position: relative;
   }
   .profile_box_line img {
     margin: 0 4px;

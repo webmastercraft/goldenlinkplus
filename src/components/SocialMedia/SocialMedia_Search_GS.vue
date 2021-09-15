@@ -11,14 +11,19 @@
 
             <div class="socialmedia_messages search_gs_margin" v-for="(item, index) in datas" :key="index">
               <div class="dot_green">
-                <img :src="`${item.image_url}`" class="socialmedia_messages_size">
+                <img :src="`${item.image_url}`" class="gs_market_user">
                 <img src="dot_green.png" v-show="!item.follow" class="over_img">
               </div>
+              <div class="gs_market_content">
+                <img src="profile/gs_orange.png" v-if="item.orange">
+                <img src="profile/gs_grey.png" v-if="item.grey">
+                <img src="profile/numbers.png" v-if="item.numbers">
                 <p class="socialmedia_messages_p search_gs_name">Rayford Chenail</p>
+              </div>
                 <div class="search_transmit search_gs_grid">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
                 <router-link to="/socialmedia/socialmedia_messaging_chat">
-                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}">Message</button>
                 </router-link>
                 </div>
             </div>
@@ -41,27 +46,24 @@ export default {
           {
             image_url: "Ray_big.png",
             follow: true,
+            orange: true
           },
           {
             image_url: "Ray_big.png",
             follow: true,
+            grey: true
           },
           {
             image_url: "Ray_big.png",
             follow: false,
+            grey: true
           },
           {
             image_url: "Ray_big.png",
             follow: false,
-          },
-          {
-            image_url: "Ray_big.png",
-            follow: true,
-          },
-          {
-            image_url: "Ray_big.png",
-            follow: true,
-          },
+            orange: true,
+            numbers: true
+          }
         ]
     }
   },
@@ -111,10 +113,19 @@ export default {
   }
   .dot_green {
     position: relative;
+    margin: auto 10px;
   }
   .over_img {
     position: absolute;
     bottom: 0;
-    left: 52px;
+    left: 35px;
+  }
+  .gs_market_user {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .gs_market_content {
+    margin: auto 40px auto 10px;
   }
 </style>

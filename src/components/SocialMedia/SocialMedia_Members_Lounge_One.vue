@@ -3,8 +3,8 @@
     <div class="container">
       <div class="phone overlay_desc">
         <div class="overlay_img"></div>
-        <img src="Members_Lounge3.png">
-        <img src="Members_Lounge.png" class="overlay_img_position">
+        <img src="Members_Lounge3.png" class="overlay_img_fix">
+        <img src="Members_Lounge.png" class="overlay_img_position overlay_img_fix">
         <router-link to="/socialmedia/socialmedia_members_lounge_two" class="lounge_btn">
           <button>Next<img class="glplogo_reg_btn_img" src="reg_next.png"/></button>
         </router-link>
@@ -34,6 +34,11 @@ export default {
 .overlay_desc {
   min-height: auto !important;
   position: relative;
+  height: 100%;
+}
+.overlay_desc img {
+  width: 100%;
+  height: 100%;
 }
 .lounge_btn {
   position: absolute;
@@ -49,6 +54,10 @@ export default {
 }
 .lounge_btn button {
   color: white;
+}
+.overlay_img_fix {
+  width: 100%;
+  height: 100%;
 }
 </style>
  

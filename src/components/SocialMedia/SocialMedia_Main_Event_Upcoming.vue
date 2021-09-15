@@ -5,16 +5,14 @@
         
           <div class="header_modal">
             <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>Upcoming Audio Events</a>
+            <router-link to="/socialmedia/socialmedia_main_create_event" class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow"><img src="profile/profile_plus.png" class="upcoming_plus"></router-link>
           </div>
           <div class="main_body upcoming_body">
             <div class="para_event">
-              <div class="para_title">
+              <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <router-link to="/socialmedia/socialmedia_main_event_voice">
-                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                </router-link>
+                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -30,12 +28,10 @@
             </div>
 
             <div class="para_event">
-              <div class="para_title">
+              <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <router-link to="/socialmedia/socialmedia_main_event_voice">
-                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                </router-link>
+                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -51,12 +47,10 @@
             </div>
 
             <div class="para_event">
-              <div class="para_title">
+              <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <router-link to="/socialmedia/socialmedia_main_event_voice">
-                  <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                </router-link>
+                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
@@ -70,7 +64,11 @@
                 </p>
               </div>
             </div>
-
+            <UpcomingEvent 
+                v-show="f_show_upcoming_event"
+                @user-backdrop="removeFlagFromStack"
+                >
+            </UpcomingEvent>
             
           </div>
       </div>
@@ -78,12 +76,39 @@
   </div>
 </template>
 <script>
-
+import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
+import UpcomingEvent from "../../modal/upcoming_event.vue";
 
 export default {
   name: 'Event_Upcoming',
   components: {
+    UpcomingEvent,
   },
+  data () {
+    return {
+        f_show_upcoming_event: false,
+        modalStack: [],
+    }
+  },
+  methods: {
+    showUpcomingEvent() {
+        this.f_show_upcoming_event = true;
+        this.modalStack.push('f_show_upcoming_event');
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+
+      switch (temp) {
+        case 'f_show_upcoming_event':
+          this.f_show_upcoming_event = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_upcoming_event = false
+    }
+  }
 }
 </script>
 <style>
@@ -96,5 +121,19 @@ export default {
 }
 .upcoming_body {
   margin: 80px 20px 0 !important;
+}
+.upcoming_pos {
+  position: relative;
+}
+.upcoming_plus {
+  position: absolute;
+  text-align: right;
+  right: 30px;
+  top: 19px;
+}
+.upcoming_arrow {
+    position: absolute;
+    right: 88px;
+    top: 28px;
 }
 </style>
