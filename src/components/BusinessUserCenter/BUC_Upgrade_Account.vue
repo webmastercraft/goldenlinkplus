@@ -301,7 +301,7 @@ export default {
       width: 39px;
       background-size: 100%;
       background: url('../../../public/Checkbox_non.png') no-repeat;
-      margin-right: 35px;
+      margin-right: 4px;
   }
 
   input[type=checkbox]:checked + label {

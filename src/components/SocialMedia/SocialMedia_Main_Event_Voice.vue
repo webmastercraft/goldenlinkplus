@@ -41,7 +41,7 @@
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
                 <div class="event_icon">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinkingUser': item.blink == true}" src="coin_10.png"  @click="showBlinkItem(index)">
-                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="diamond_frame.png"  @click="showDiamondItem(index)">
+                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="diamond_frame.png"  @dblclick="showDiamondItem(index)">
                     <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
                     <div>
                         <img src="pink_star.png" v-if="item.star" class="event_star">
@@ -809,7 +809,8 @@ export default {
   .footer_modal_border {
     border-top: 3px solid #E8F1FA;
     margin: auto;
-    width: 414px;
+    max-width: 414px;
+    width: 100%;
     display: flex;
   }
   .footer_modal_border button {
@@ -869,8 +870,8 @@ export default {
     0% {opacity: 0.00;}
     50% {opacity: 1.00;}
     100% {opacity: 0.00;}
-    from {bottom: 5px;}
-    to {bottom: 5px;}
+    from {bottom: 25px;}
+    to {bottom: 25px;}
   }
   .blink-img {
     opacity: 0;
@@ -886,6 +887,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 30px;
     margin: 27px auto;
     width: 40px;
     height: 30px;

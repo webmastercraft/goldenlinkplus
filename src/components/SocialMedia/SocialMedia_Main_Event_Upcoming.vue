@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="container">
-      <div class="phone sociallogin">
+      <div class="profile_phone">
         
-          <div class="header_modal">
+          <div class="header_modal profile_modal">
             <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <router-link to="/socialmedia/socialmedia_main_create_event" class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow"><img src="profile/profile_plus.png" class="upcoming_plus"></router-link>
+            <router-link to="/socialmedia/socialmedia_main_create_event" class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow"></router-link>
           </div>
           <div class="main_body upcoming_body">
-            <div class="para_event">
+            <div class="para_event upcoming_para_event">
               <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
@@ -20,14 +20,10 @@
               </div>
               <div class="para_group upcoming_group">
                 <img src="Group_user.png">
-                <p>
-                  <img src="user_count.png">2501
-                  <img src="msg_count.png">139
-                </p>
               </div>
             </div>
 
-            <div class="para_event">
+            <div class="para_event upcoming_para_event">
               <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
@@ -39,14 +35,10 @@
               </div>
               <div class="para_group upcoming_group">
                 <img src="Group_user.png">
-                <p>
-                  <img src="user_count.png">2501
-                  <img src="msg_count.png">139
-                </p>
               </div>
             </div>
 
-            <div class="para_event">
+            <div class="para_event upcoming_para_event">
               <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
                 <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
@@ -58,10 +50,6 @@
               </div>
               <div class="para_group upcoming_group">
                 <img src="Group_user.png">
-                <p>
-                  <img src="user_count.png">2501
-                  <img src="msg_count.png">139
-                </p>
               </div>
             </div>
             <UpcomingEvent 
@@ -117,7 +105,7 @@ export default {
   margin: 5px 0 10px !important;
 }
 .upcoming_group {
-  margin: auto 0 0 !important;
+  margin: auto !important;
 }
 .upcoming_body {
   margin: 80px 20px 0 !important;
@@ -133,7 +121,11 @@ export default {
 }
 .upcoming_arrow {
     position: absolute;
-    right: 88px;
+    right: 65px;
     top: 28px;
+}
+.upcoming_para_event {
+  padding: 8px 15px;
+  margin: 0;
 }
 </style>

@@ -31,7 +31,7 @@
                 </div>
               </div>
               <p class="charge_balance">Your current G-Coins Balance</p>
-              <p class="charge_balance_coin"><img src="charge_coin.png">10</p>
+              <p class="charge_balance_coin"><img src="charge_coin.png">100,000</p>
             </div>
         </header>
       </div>
@@ -48,28 +48,38 @@
         bonusdata: [
           {
           plus: 2,
-          coin: 50,
+          coin: 100,
           price: 0.99 
           },
           {
           plus: 6,
-          coin: 250,
+          coin: 500,
           price: 4.99 
           },
           {
           plus: 15,
-          coin: 500,
+          coin: 1000,
           price: 9.99 
           },
           {
           plus: 32,
-          coin: 1000,
+          coin: 2000,
           price: 19.99 
           },
           {
           plus: 66,
-          coin: 2000,
+          coin: 4000,
           price: 39.99 
+          },
+          {
+          plus: 86,
+          coin: 7000,
+          price: 69.99 
+          },
+          {
+          plus: 100,
+          coin: 10000,
+          price: 99.99 
           }
         ]
       }
@@ -112,7 +122,7 @@
   background: #F4992D;
   border-radius: 0 !important;
   position: absolute;
-  left: 45px;
+  left: 35px;
   width: 80px;
   font-size: 10px;
   margin: 0 !important;
@@ -136,6 +146,7 @@
   width: 100%;
   position: absolute;
   top: 30px;
+  color: #EF8200;
 }
 .bonus_price {
   position: absolute;
@@ -143,13 +154,11 @@
   top: 55px;
 }
 .charge_balance {
-  text-align: left !important;
   font-weight: 400;
   margin: 5px 0 !important;
 }
 .charge_balance_coin {
   margin: 5px 0 !important;
-  text-align: left !important;
 }
 .charge_balance_coin img{
   margin: 0 10px 4px 0 !important;

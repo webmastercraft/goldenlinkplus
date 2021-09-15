@@ -22,6 +22,7 @@
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_gs"><span>GS</span></router-link>
               <router-link to="/socialmedia/socialmedia_search_communities"><span>Brands</span></router-link>
+              <span>Events</span>
             </div>
             <div class="main_search">
                     <input type="text" placeholder="Search  Products..." class="form-control">
@@ -99,107 +100,58 @@
                     </p>
                   </div>
                 </div>
-
-                <div class="para_event">
-                  <div class="para_title">
-                    <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <router-link to="/socialmedia/socialmedia_main_event_voice">
-                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                    </router-link>
-                    <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <router-link to="/socialmedia/socialmedia_main_event_voice">
-                      <button>Join this Event</button>
-                    </router-link>
-                  </div>
-                  <div class="para_group">
-                    <img src="Group_user.png">
-                    <p>
-                      <img src="user_count.png">2501
-                      <img src="msg_count.png">139
-                    </p>
-                  </div>
-                </div>
-
-                <div class="para_event">
-                  <div class="para_title">
-                    <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                    <router-link to="/socialmedia/socialmedia_main_event_voice">
-                      <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                    </router-link>
-                    <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                    <router-link to="/socialmedia/socialmedia_main_event_voice">
-                      <button>Join this Event</button>
-                    </router-link>
-                  </div>
-                  <div class="para_group">
-                    <img src="Group_user.png">
-                    <p>
-                      <img src="user_count.png">2501
-                      <img src="msg_count.png">139
-                    </p>
-                  </div>
-                </div>
               </div>         
             </swiper-slide>
 
             <swiper-slide>
               <!-- slide2 -->
               <div class="main_body">
-                <img src="member's_lounge.png" class="favicon_img">ACTIVE USERS
+                <p class="main_body_title"><img src="loading.png" class="favicon_img">ACTIVE COMMUNITIES</p>
+                <div class="active_messages">
+                    <img src="Alex_Burnham_off.png" class="messages_user_size">
+                    <p>Alex Burnham<br><span class="socialmedia_messages_desc">6h</span></p>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
+                </div>
+
+                <div class="active_messages">
+                    <img src="Chloe_Dickenson_off.png" class="messages_user_size">
+                    <p>Chloe Dickenson<br><span class="socialmedia_messages_desc">6h</span></p>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
+                </div>
+                <p class="main_body_title"><img src="member's_lounge.png" class="favicon_img">ACTIVE USERS</p>
 
                   <div class="active_messages">
-                    <img src="Alice_Wilson_on.png" class="socialmedia_messages_size">
+                    <img src="Alice_Wilson_on.png" class="messages_user_size">
                     <p>Alice Wilson<br><span class="socialmedia_messages_desc">Everything will be good!</span></p>
-                    <button class="send_btn"><img src="airplane.png">Send</button>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
                   </div>
 
                   <div class="active_messages">
-                    <img src="Richard_Bennett_off.png" class="socialmedia_messages_size">
+                    <img src="Richard_Bennett_off.png" class="messages_user_size">
                     <p>Richard Bennett<br><span class="socialmedia_messages_desc">6h</span></p>
-                    <button class="send_btn"><img src="airplane.png">Send</button>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
                   </div>
                   
                   <div class="active_messages">
-                    <img src="Alex_Burnham_off.png" class="socialmedia_messages_size">
+                    <img src="Alex_Burnham_off.png" class="messages_user_size">
                     <p>Alex Burnham<br><span class="socialmedia_messages_desc">6h</span></p>
-                    <button class="send_btn"><img src="airplane.png">Send</button>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
                   </div>
 
                   <div class="active_messages">
-                    <img src="Chloe_Dickenson_off.png" class="socialmedia_messages_size">
+                    <img src="Chloe_Dickenson_off.png" class="messages_user_size">
                     <p>Chloe Dickenson<br><span class="socialmedia_messages_desc">6h</span></p>
-                    <button class="send_btn"><img src="airplane.png">Send</button>
+                    <img src="send_2.png" class="active_send">
+                    <img src="phone_call.png" class="active_send">
                   </div>
-
-                <img src="loading.png" class="favicon_img">ACTIVE COMMUNITIES
-
-                <div class="marketer_para" v-for="(item, index) in datas" :key="index">
-                  <div class="active_communities">
-                    <p><img src="triangle.png" class="favicon_img"><b>Marketers International</b></p>
-                  </div>
-
-                  <div class="main_markets">
-                    <img :src="`${item.img}`">
-                    <div class="user_inter">
-                      <img :src="`${user}`" v-for="(user, key) in item.user_imgs" :key="key">
-                      <p>{{item.users}} Members online</p>
-                    </div>
-                    <div class="active_messages">
-                      <button class="send_btn"><img src="airplane.png">Send</button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </swiper-slide>
           </swiper>
-
-
-
-            
             
           <div class="footer_background">
             <div class="footer_modal">
@@ -259,74 +211,6 @@ export default {
       isModalVisible: false,
       f_show_event_type: false,
       modalStack: [],
-      datas: [
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        },
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        },
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        },
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        },
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        },
-        {
-          img: 'International_user.png',
-          user_imgs: [
-            'man.png',
-            'woman.png',
-            'man.png',
-            'woman.png',
-            'man.png',
-          ],
-          users: 15
-        }
-      ]
     }
   },
   methods: {
@@ -344,7 +228,7 @@ export default {
   .swiper {
     max-width: 414px;
   }
-   .swiper .swiper-slide {
+  .swiper .swiper-slide {
      display: flex;
   }
   .main_modal {
@@ -371,9 +255,15 @@ export default {
   .main_header {
     text-align: left;
     margin-top: 20px;
+    width: 100%;
+    display: flex;
   }
-  .main_header span {
-    margin: 0 25px 0 5px;
+  .main_header a {
+    margin: auto;
+    text-align: left;
+  }
+  .main_header a:first-child {
+    margin: auto auto auto 0;
   }
   .main_search {
     position: relative;
@@ -497,9 +387,6 @@ export default {
     left: calc(50vw - 50px);
     bottom: 30px;
   }
-
-
-
   .active_messages {
     padding: 10px 0 15px;
     color: #3B3E51;
@@ -542,6 +429,18 @@ export default {
   }
   .marketer_para {
     margin: 20px 0;
+  }
+  .messages_user_size {
+    margin: auto;
+    width: 35px;
+    height: 35px;
+  }
+  .active_send {
+    height: 100%;
+    margin: auto;
+  }
+  .main_body_title {
+    margin: 0;
   }
 </style>
  

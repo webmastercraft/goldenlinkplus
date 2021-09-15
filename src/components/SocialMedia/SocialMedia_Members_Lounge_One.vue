@@ -27,6 +27,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
+    max-width: 414px;
 }
 .overlay_img_position {
   position: absolute;

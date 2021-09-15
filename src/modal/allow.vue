@@ -43,6 +43,7 @@
 <style>
 .small_modal {
   max-width: 300px !important;
+  height: auto !important;
 }
 .recom_modal {
   font-size: 16px;
