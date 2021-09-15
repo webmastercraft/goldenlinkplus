@@ -24,7 +24,7 @@
                   <img :src="`${item.user_img}`" class="view_img">
                 </div>
                 <div class="view_profile_title">
-                  <p class="view_name"><b>{{item.name}}</b><span>You</span></p>
+                  <p class="view_name"><b>{{item.name}}</b></p>
                   <p class="view_followers"><b>{{item.coin_followers}}</b> followers<span><b>{{item.coin_following}}</b> following</span></p>
                   <p class="view_mark">{{item.front_name}} @ <b>{{item.last_name}}</b></p>
                 </div>
@@ -40,7 +40,6 @@
                   
                   <button class="view_green" @click="showProfile">View Full Profile</button>
                 </div>
-                <button>Set Myself as Audience</button>
               </div>
           </header>
         </div>
@@ -97,9 +96,6 @@
   };
 </script>
 <style>
-.view_profile {
-  display: flex;
-}
 .view_img {
   width: 80px;
   height: 80px;
@@ -136,11 +132,6 @@
 .view_name {
   font-size: 17px;
   margin: 3px 0;
-}
-.view_name span {
-  color: #BFC1CE;
-  font-size: 14px;
-  margin-left: 10px;
 }
 .view_followers {
   font-size: 15px;
@@ -190,13 +181,6 @@
   color: white;
   font-size: 16px;
 }
-.view_btn button {
-  width: 100%;
-  background-color: #E8F1FA;
-  border-radius: 16px;
-  height: 40px;
-  margin: 5px 0;
-}
 .view_color_btn button {
   width: calc(50% - 5px);
   color: white;
@@ -210,9 +194,6 @@
 .view_green {
   background-color: #39B54A !important;
   margin-left: 5px !important;
-}
-.modal {
-  width: 414px !important;
 }
 .view_self button{
   width: 100% !important;

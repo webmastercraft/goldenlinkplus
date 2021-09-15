@@ -29,7 +29,9 @@
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <button>Join this Event</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <button>Join this Event</button>
+                </router-link>
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
@@ -49,7 +51,9 @@
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <button>Join this Event</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <button>Join this Event</button>
+                </router-link>
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
@@ -69,7 +73,9 @@
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <button>Join this Event</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <button>Join this Event</button>
+                </router-link>
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
@@ -89,7 +95,9 @@
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <button>Join this Event</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <button>Join this Event</button>
+                </router-link>
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
@@ -109,7 +117,11 @@
                 <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
                 <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <button>Join this Event</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <router-link to="/socialmedia/socialmedia_main_event_voice">
+                  <button>Join this Event</button>
+                </router-link>
+                </router-link>
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
@@ -131,23 +143,54 @@
               <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
 
               <span class="hallway_icon">
-                <img src="invite.png">
+                <img src="invite.png" @click="showHallway">
                 <img src="mute.png">
               </span>
 
             </div>
           </div>
-            
+          <Hallway 
+                v-show="f_show_hallway"
+                @user-backdrop="removeFlagFromStack"
+          >
+          </Hallway>
       </div>
     </div>
   </div>
 </template>
 <script>
-
+import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
+import Hallway from "../../modal/hallway.vue";
 
 export default {
   name: 'Event_Hallway',
   components: {
+    Hallway
+  },
+  data () {
+    return {
+      f_show_hallway: false,
+      modalStack: [],
+    }
+  },
+  methods: {
+    showHallway() {
+        this.f_show_hallway = true;
+        this.modalStack.push('f_show_hallway');
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+
+      switch (temp) {
+        case 'f_show_hallway':
+          this.f_show_hallway = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_hallway = false
+    }
   }
 }
 </script>
