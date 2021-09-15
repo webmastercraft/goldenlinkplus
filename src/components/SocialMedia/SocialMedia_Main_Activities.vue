@@ -69,6 +69,9 @@
               <p><b>Geoffrey Mott</b> followed you</p>
               <p class="activities_num">25m</p>
             </div>
+            
+
+            
           </div>
       </div>
     </div>
@@ -78,7 +81,7 @@
 
 
 export default {
-  name: 'Notification',
+  name: 'Activities',
   components: {
   }
 }
