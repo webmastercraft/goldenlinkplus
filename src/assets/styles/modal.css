@@ -21,7 +21,7 @@
   position: unset !important;
   width: 100%;
   max-width: 376px;
-  height: auto !important;
+  /*height: auto !important;*/
   background: #FFFFFF !important;
   display: flex;
   flex-direction: column !important;
