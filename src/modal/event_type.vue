@@ -187,7 +187,8 @@
   height: 900px;
   background: white;
   border-radius: 12px;
-  width: 414px;
+  max-width: 414px;
+  width: 100%;
 }
 .type_height {
   height: 900px;

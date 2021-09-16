@@ -23,11 +23,12 @@
               <hr class="coin_hr">
               <p class="bonus_title">First Recharge Bonus!</p>
               <div class="bonus_group">
-                <div v-for="(item, index) in bonusdata" :key="index" class="bonus_charge">
+                <div v-for="(item, index) in bonusdata" :key="index" class="bonus_charge" @click="showBonusItem(index)">
                   <button></button>
                   <span>+{{item.plus}} Bonus</span>
                   <p class="bonus_coin"><img src="charge_coin.png">{{item.coin}}</p>
                   <p class="bonus_price">${{item.price}}</p>
+                  <img class="bonus_img" :class="{'bonusAppear': item.bonusActive == true}">
                 </div>
               </div>
               <p class="charge_balance">Your current G-Coins Balance</p>
@@ -49,37 +50,44 @@
           {
           plus: 2,
           coin: 100,
-          price: 0.99 
+          price: 0.99,
+          bonusActive: false,
           },
           {
           plus: 6,
           coin: 500,
-          price: 4.99 
+          price: 4.99,
+          bonusActive: false,
           },
           {
           plus: 15,
           coin: 1000,
-          price: 9.99 
+          price: 9.99,
+          bonusActive: false,
           },
           {
           plus: 32,
           coin: 2000,
-          price: 19.99 
+          price: 19.99,
+          bonusActive: false,
           },
           {
           plus: 66,
           coin: 4000,
-          price: 39.99 
+          price: 39.99,
+          bonusActive: false,
           },
           {
           plus: 86,
           coin: 7000,
-          price: 69.99 
+          price: 69.99,
+          bonusActive: false,
           },
           {
           plus: 100,
           coin: 10000,
-          price: 99.99 
+          price: 99.99,
+          bonusActive: false,
           }
         ]
       }
@@ -88,13 +96,19 @@
       close() {
         this.$emit('close');
       },
+      showBonusItem(index) {
+            this.bonusdata[index].bonusActive = true
+            setTimeout(() => {
+                this.bonusdata[index].bonusActive = false
+            }, 5000)
+      },
     },
   };
 </script>
 <style>
 .recharge_title {
   text-align: left !important;
-  color: #3B3E51;
+  color: #EF8200;
   font-size: 18px;
   font-weight: 500;
 }
@@ -122,7 +136,7 @@
   background: #F4992D;
   border-radius: 0 !important;
   position: absolute;
-  left: 35px;
+  left: 40px;
   width: 80px;
   font-size: 10px;
   margin: 0 !important;
@@ -163,4 +177,27 @@
 .charge_balance_coin img{
   margin: 0 10px 4px 0 !important;
 }
+  .bonusAppear {
+        animation-name: bonusFramesUser;
+        animation-duration: 5s;
+    }
+    @keyframes bonusFramesUser {
+    0% {opacity: 0.00;}
+    25% {opacity: 1.00; width: 117px; height: 80px; background: url('../../public/bonus_blank.png') no-repeat;}
+    75% {opacity: 1.00; width: 117px; height: 80px; background: url('../../public/charge_word.png') no-repeat;}
+    100% {opacity: 0.00;}
+    from {bottom: 0;}
+    to {bottom: 0;}
+  }
+  .bonus_img {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+  }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal_event_transform each_height"
+      <div class="modal_event_transform"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
         <header
-          class="event_invite_position"
+          class="host_view_position"
           id="modalTitle"
         >
             <button
@@ -42,13 +42,6 @@
                 <p><img src="copy_link.png"><br><span>Copy Link</span></p>
                 <p><img src="add_tocal.png"><br><span>Add to Cal</span></p>
               </div>
-              <button
-                type="button"
-                class="event_done"
-                @click="close"
-                aria-label="Close modal"
-              >JOIN NOW
-              </button>
         </header>
       </div>
     </div>
@@ -137,7 +130,8 @@
   height: 1000px;
   background: white;
   border-radius: 12px;
-  width: 414px;
+  width: 100%;
+  max-width: 414px;
 }
 .each_height {
   height: 1000px !important;

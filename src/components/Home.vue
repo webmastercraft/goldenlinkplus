@@ -46,6 +46,9 @@
             <router-link to="/socialmedia/socialmedia_gs_profile" >
               GS Profile
             </router-link>
+            <router-link to="/socialmedia/socialmedia_main_event_host_view" >
+              Event Host View
+            </router-link>
           </div>
         </div>
       </div>
