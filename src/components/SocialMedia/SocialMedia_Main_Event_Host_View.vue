@@ -41,7 +41,7 @@
               <div v-for="(item, index) in datas" :key="index" class="event_each_user">
                 <div class="event_icon">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinkingUser': item.blink == true}" src="coin_10.png"  @click="showBlinkItem(index)">
-                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="frame_diamond2.png" @dblclick="showDiamondItem(index)">
+                    <img v-if="!isAddingCoin" class="diamond-img"  :class="{'diamondAppear': item.diamondActive == true}" src="frame_diamond2.png"  @dblclick="showDiamondItem(index)">
                     <img :src="`${item.image_url}`" :class="{'user_logo_border': item.active == true}">
                     <div>
                         <img src="pink_star.png" v-if="item.star" class="event_star">
@@ -89,29 +89,28 @@
           </div>
           <div class="footer_background">
             <div class="footer_modal" v-show="!isAddingCoin">
-                <router-link to="/socialmedia/socialmedia_main">
-                    <span class="footer_img_rest_left">
-                        <img src="Leave_Quietly.png">
-                        <p>Leave Quietly</p>
-                    </span>
-                </router-link>
                 <span class="footer_img_rest_left">
                     <router-link to="/socialmedia/socialmedia_main_event_chat">
                         <img src="chat.png">
                     </router-link>
                     <p>Chat</p>
                 </span>
-                <button class="audio_circle_btn figure_btn"  @click="imgClicked = !imgClicked" v-bind:class="{'hand_orange': !clicked, 'hand_black': clicked}" v-on:click ="clicked = !clicked">
-                    <img :src="imgSrc"/>
-                </button>
-                <span class="footer_img_rest_right" >
-                    <img src="invite.png">
-                    <p>Invite</p>
-                </span>
-                <span class="footer_img_rest_right" @click="showSendGcoin">
+                <span class="footer_img_rest_left" @click="showSendGcoin">
                     <img src="send_gcoins.png">
                     <p>Send GCoins</p>
                 </span>
+                <button class="audio_circle_btn"  @click="imgClicked = !imgClicked" v-on:click ="clicked = !clicked">
+                    <img :src="imgSrc"/>
+                </button>
+                <span class="footer_img_rest_right" @click="showInvite">
+                    <img src="invite.png">
+                    <p>Invite</p>
+                </span>
+                <span class="footer_img_rest_right" @click="showHostView">
+                    <img src="participant.png">
+                    <p>Participant<img src="participant_10.png" class="participant_img"></p>
+                </span>
+                
             </div>
             <div class="footer_modal footer_modal_border" v-show="isAddingCoin">
                 <button class="send_coin_btn "><img src="modal_coin.png">115, 250</button>
@@ -132,6 +131,16 @@
             @user-backdrop="removeFlagFromStack"
           >
           </UserProfile>
+          <HostView 
+            v-show="f_show_host_view"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </HostView>
+          <Invite 
+            v-show="f_show_invite"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </Invite>
       </div>
     </div>
   </div>
@@ -142,13 +151,17 @@
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import UserProfile from "../../modal/user_profile.vue";
 import SendGcoin from "../../modal/send_gcoin.vue";
+import HostView from "../../modal/host_view.vue";
+import Invite from "../../modal/invite.vue";
 
 export default {
-  name: 'Event_Voice',
+  name: 'Event_Voice_Host',
   components: {
       Vuedal,
       UserProfile,
-      SendGcoin
+      SendGcoin,
+      HostView,
+      Invite
   },
   data () {
     return {
@@ -163,6 +176,8 @@ export default {
         isAudience: true,
         f_show_user_profile: false,
         f_show_send_gcoin: false,
+        f_show_host_view: false,
+        f_show_invite: false,
         modalStack: [],
         datas: [
             {
@@ -551,6 +566,9 @@ export default {
     closeSendGcoinModal() {
       this.isModalVisible = false;
     },
+    closeHostViewModal() {
+      this.isModalVisible = false;
+    },
     removeFlagFromStack() {
 
       let temp = this.modalStack.pop(-1);
@@ -571,10 +589,29 @@ export default {
           // statements_def
           break;
       }
-
+      switch (temp) {
+        case 'f_show_host_view':
+          this.f_show_host_view = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_invite':
+          this.f_show_invite = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
       this.f_show_send_gcoin = false,
 
-      this.f_show_user_profile = false
+      this.f_show_user_profile = false,
+
+      this.f_show_invite = false,
+
+      this.f_show_host_view = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
@@ -587,314 +624,33 @@ export default {
     showSendGcoin() {
       this.f_show_send_gcoin = true;
       this.modalStack.push('f_show_send_gcoin');
-    }
+    },
+    showHostView() {
+      this.f_show_host_view = true;
+    },
+    showInvite() {
+      this.f_show_invite = true;
+    },
   },
   computed: {
     imgSrc: function () {
-      return this.imgClicked ? 'figure_orange.png' : 'figure.png'
+      return this.imgClicked ? 'mute_large.png' : 'Mic_Mute.png'
     },
   },
   created () {
     this.killLoading();
   },
+  closeModal() {
+      this.f_show_host_view = false;
+      this.isModalVisible = false;
+  },
 }
 </script>
-
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
-  }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
-  }
-  .event_body {
-    margin: 150px 20px 150px;
-    background: white;
-    width: 100%;
-    border-radius: 16px;
-  }
-  .figure_btn {
-    width: 85px;
-    height: 85px;
-    bottom: 35px;
-    left: calc(50vw - 47px);
-  }
-  .figure_btn img{
-    margin-right: 3px;
-  }
-  .main_event {
-    margin: 0 20px;
-  }
-  .event_body_title {
+  .participant_img {
     position: absolute;
-    text-align: left;
-    width: 100%;
-    max-width: 414px;
-  }
-  .event_body_title .event_favicon_img{
-    margin: 20px 20px 0;
-    letter-spacing: 0.08em;
-    font-size: 14px;
-  }
-  .event_favicon_img img{
-    margin-right: 8px;
-  }
-  .event_body_title .event_desc {
-    font-size: 20px;
-    margin: 10px 20px 0;
-    letter-spacing: 0.02em;
-  }
-  .event_body_title .event_back {
-    margin: 10px 20px;
-  }
-  .event_body_title .event_back img {
-    margin: 0 5px 2px;
-  }
-  .event_body_title .event_back span {
-    float: right;
-  }
-  .event_users {
-    display: flex;
-    padding: 15px 10px;
-  }
-  .event_users span {
-    width: 100%;
-  }
-  .event_users_img {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-  }
-  .event_coin {
-    width: 82px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .event_users span button {
-    background: #FFB803;
-    border-radius: 16px;
-    color: white;
-    letter-spacing: 0.1em;
-    padding: 0 10px;
-    margin-top: 10px;
-  }
-  .event_para_group {
-    width: 100%;
-    letter-spacing: 0.08em;
-    font-size: 14px;
-  }
-  .event_para_group p {
-    margin: 4px 0;
-    text-align: right;
-  } 
-  .event_para_group p img {
-    margin: 0 5px;
-  }
-  .event_user_group {
-    display: flex;
-    flex-wrap: wrap;
-    letter-spacing: ;
-  }
-  .event_each_user {
-    width: 33.33%;
-    margin: 10px 0 20px;
-  }
-  .event_icon {
-    position: relative;
-    height: 90px;
-  }
-  .event_star {
-    position: absolute;
-    left: 20px;
-    top: 0;
-  }
-  .event_mute {
-    top: 48px;
-    left: 20px;
-    position: absolute;
-  }
-  .event_diamond {
-    position: absolute;
-    top: 48px;
-    right: 15px;
-  }
-  .event_each_user p {
-    margin: 0;
-  }
-  .coin_letter {
-    letter-spacing: 0.08em;
-    font-size: 13px;
-  }
-  .event_user_coin {
-    margin: 0 10px 3px 0;
-  }
-  .event_ranking button{
-    width: calc(50% - 40px);
-    padding: 5px 10px;
-  }
-  .rangking_data {
-    display: flex;
-    margin: 10px 50px;
-  }
-  .rangking_data img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-  }
-  .rangking_data p {
-    margin: auto auto auto 15px;
-    width: 100%;
-    text-align: left;
-  }
-  .rangking_data span {
-    float: right;
-  }
-  .border_btn {
-    border-bottom: 4px solid #EF8200;
-  }
-  .event_ranking_title {
-    margin: 20px 50px;
-    text-align: left;
-  }
-  .event_mute_group {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px;
-    margin-top: 20px;
-  }
-  .mute_user {
-    width: 25%;
-    margin-bottom: 20px;
-  }
-  .mute_icon {
-    position: relative;
-    height: 60px;
-  }
-  .mute_user p {
-    margin: 0;
-  }
-  .mute_user_img {
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-  }
-  .hand_orange {
-    background-color: #E8F1FA;
-    transition-duration: 1s;
-    transition-property: background-color;
-  }
-  .hand_black {
-    background-color: #3B3E51;
-    transition-duration: 1s;
-    transition-property: background-color;
-  }
-  .loading_screen {
-    width: 100%;
-    height: 100vh;
-  }
-  .loading_screen > img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-  }
-
-  .charge_select {
-    color: #808695;
-  }
-  .footer_modal_border {
-    border-top: 3px solid #E8F1FA;
-    margin: auto;
-    max-width: 414px;
-    width: 100%;
-    display: flex;
-  }
-  .footer_modal_border button {
-    margin: 20px auto;
-  }
-  .charge_close {
-    margin: auto 20px auto auto;
-    float: right;
-    text-align: center;
-    display: grid;
-  }
-  .charge_close img {
-    margin: auto;
-  }
-  .charge_close span {
-    padding-top: 5px !important;
-    color: #FFB803 !important;
-  }
-  .footer_modal_border .send_coin_btn {
-    height: 35px;
-    margin: auto 20px !important;
-  }
-  .user_logo_border {
-    border: 3px solid #ffb803;
-    border-radius: 50%;
-    padding: 2px;
-  }
-  /* Animation coin  */
-  @keyframes blinkingFrames {
-    0% {opacity: 0.00;}
-    50% {opacity: 1.00;}
-    100% {opacity: 0.00;}
-    from {bottom: 80px;}
-    to {bottom: 90px;}
-  }
-
-  .blinking {
-      animation-name: blinkingFrames;
-      animation-duration: 0.5s;
-  }
-    .blinkingUser {
-        animation-name: blinkingFramesUser;
-        animation-duration: 0.5s;
-    }
-    @keyframes blinkingFramesUser {
-    0% {opacity: 0.00;}
-    50% {opacity: 1.00;}
-    100% {opacity: 0.00;}
-    from {bottom: 50px;}
-    to {bottom: 60px;}
-  }
-  .diamondAppear {
-        animation-name: diamondFramesUser;
-        animation-duration: 1.5s;
-    }
-    @keyframes diamondFramesUser {
-    0% {opacity: 0.00;}
-    25% {opacity: 0.75;}
-    75% {opacity: 1.00;}
-    100% {opacity: 0.00;}
-    from {bottom: 25px;}
-    to {bottom: 25px;}
-  }
-  .blink-img {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 20px auto;
-    width: 55px;
-    height: 55px;
-  }
-  .diamond-img {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 30px;
-    margin: 27px auto;
-    width: 50px;
-    height: 40px;
-}
-  .blink_span {
-    position: relative;
+    bottom: 47px;
+    right: 10px;
   }
 </style>
  

@@ -143,7 +143,9 @@
               <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
 
               <span class="hallway_icon">
-                &#x270C;
+                <router-link to="/socialmedia/socialmedia_main">
+                  <img src="thumbs.png">
+                </router-link>
                 <img src="invite.png" @click="showHallway">
                 <img src="mute.png">
               </span>
@@ -226,19 +228,25 @@ export default {
   .hallway_icon {
     width: 50% !important;
     text-align: right !important;
-    margin: 50px auto 0;
     padding-right: 20px;
+    display: flex;
+    padding: 35px 25px 0px;
   }
   .hallway_bottom button {
     bottom: 40px !important;
   }
-  .hallway_icon img:first-child {
-    margin: 0 20px;
+  .hallway_icon img {
+    width: 27px;
+    height: 27px;
+    margin: auto;
   }
   .logo_header {
     display: flex;
   }
   .logo_header a{
+    margin: auto;
+  }
+  .hallway_icon a {
     margin: auto;
   }
 </style>

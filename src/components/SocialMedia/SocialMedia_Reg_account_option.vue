@@ -56,10 +56,6 @@ export default {
     width: 100%;
     margin: 30px 25px;
   }
-  .glplogo_p {
-    font-size: 32px;
-    margin: 10px 0;
-  }
   .glplogo_reg_account_title {
     margin: 65px 0 15px 0;
     font-size: 18px;

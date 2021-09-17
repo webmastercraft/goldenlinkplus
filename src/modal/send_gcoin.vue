@@ -130,7 +130,7 @@
   margin: 0 !important;
 } 
 .send_coin_btn {
-  background-color: #FFB803;
+  background-color: #EF8200;
   border-radius: 30px !important;
   color: white;
   padding: 5px 10px !important;
@@ -141,7 +141,7 @@
 .charge_coin_btn {
   border: 1px solid #13C8FF;
   color: #13C8FF;
-  border-radius: 8px;
+  border-radius: 30px;
   padding: 5px 10px !important;
   margin: 0 !important;
   width: 125px !important;

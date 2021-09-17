@@ -34,23 +34,9 @@ export default {
     width: 100%;
     margin: 30px 25px;
   }
-  .glplogo_p {
-    font-size: 32px;
-    margin: 10px 0;
-  }
   .socialbtn {
     color: white;
     font-size: 18px;
     line-height: 27px;
-  }
-  .social_reg {
-    background-color: #F4992D;
-    padding: 7px 45px;
-    border-radius: 30px 0px 0px 30px;
-  }
-  .social_log {
-    background-color: #FFB803;
-    padding: 7px 60px;
-    border-radius: 0px 30px 30px 0px;
   }
 </style>

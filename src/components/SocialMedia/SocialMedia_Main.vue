@@ -374,6 +374,7 @@ export default {
   .footer_img_rest_right {
     float: right !important;
     border-top: 3px solid #e8f1fa;
+    position: relative;
   }
   .audio_circle_btn {
     width: calc(100% - 300px);

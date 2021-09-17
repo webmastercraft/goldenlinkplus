@@ -85,6 +85,7 @@ import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Ma
 import SocialMedia_Main_Event_Upcoming from './components/SocialMedia/SocialMedia_Main_Event_Upcoming.vue';
 import SocialMedia_Main_Switch_Account from './components/SocialMedia/SocialMedia_Main_Switch_Account.vue';
 import SocialMedia_Main_Notification_Setting from './components/SocialMedia/SocialMedia_Main_Notification_Setting.vue';
+import SocialMedia_Main_Event_Host_View from './components/SocialMedia/SocialMedia_Main_Event_Host_View.vue';
 
 import SocialMedia_BS_Reg_Start from './components/SocialMedia/SocialMedia_BS_Reg_Start.vue';
 import SocialMedia_Members_Lounge_One from './components/SocialMedia/SocialMedia_Members_Lounge_One.vue';
@@ -583,6 +584,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_lounge_add',
             name: 'socialmedia_main_lounge_add',
             components: { default: SocialMedia_Main_Lounge_Add },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_host_view',
+            name: 'socialmedia_main_event_host_view',
+            components: { default: SocialMedia_Main_Event_Host_View },
         },
     ],
 
