@@ -33,7 +33,7 @@
                         <img src="msg_count_grey.png">139
                     </p>
                     <p>13.9 K<img src="diamond.png"></p>
-                    <p>625.4 K<img src="event_coin.png"></p>
+                    <p @click="showPrice">625.4 K<img src="event_coin.png"></p>
                     <p><img src="login_users.png"></p>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 <button class="audio_circle_btn figure_btn"  @click="imgClicked = !imgClicked" v-bind:class="{'hand_orange': !clicked, 'hand_black': clicked}" v-on:click ="clicked = !clicked">
                     <img :src="imgSrc"/>
                 </button>
-                <span class="footer_img_rest_right" >
+                <span class="footer_img_rest_right"  @click="showInvite">
                     <img src="invite.png">
                     <p>Invite</p>
                 </span>
@@ -132,6 +132,16 @@
             @user-backdrop="removeFlagFromStack"
           >
           </UserProfile>
+          <Invite 
+            v-show="f_show_invite"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </Invite>
+          <Price 
+            v-show="f_show_price"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </Price>
       </div>
     </div>
   </div>
@@ -142,13 +152,17 @@
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import UserProfile from "../../modal/user_profile.vue";
 import SendGcoin from "../../modal/send_gcoin.vue";
+import Invite from "../../modal/invite.vue";
+import Price from "../../modal/price.vue";
 
 export default {
   name: 'Event_Voice',
   components: {
       Vuedal,
       UserProfile,
-      SendGcoin
+      SendGcoin,
+      Invite,
+      Price
   },
   data () {
     return {
@@ -163,6 +177,8 @@ export default {
         isAudience: true,
         f_show_user_profile: false,
         f_show_send_gcoin: false,
+        f_show_invite: false,
+        f_show_price: false,
         modalStack: [],
         datas: [
             {
@@ -566,23 +582,48 @@ export default {
           // statements_def
           break;
       }
-
+      switch (temp) {
+        case 'f_show_invite':
+          this.f_show_invite = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_price':
+          this.f_show_price = false
+          break;
+        default:
+          break;
+      }
       this.f_show_send_gcoin = false,
 
-      this.f_show_user_profile = false
+      this.f_show_user_profile = false,
+
+      this.f_show_invite = false,
+
+      this.f_show_price = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
             this.f_show_user_profile = true;
             this.modalStack.push('f_show_user_profile');
         } else {
-            this.isAddingCoin = true
+            this.isAddingCoin = true;
         }
     },
     showSendGcoin() {
       this.f_show_send_gcoin = true;
       this.modalStack.push('f_show_send_gcoin');
-    }
+    },
+    showInvite() {
+      this.f_show_invite = true;
+    },
+    showPrice() {
+        this.f_show_price = true;
+        this.modalStack.push('f_show_price');
+    },
   },
   computed: {
     imgSrc: function () {

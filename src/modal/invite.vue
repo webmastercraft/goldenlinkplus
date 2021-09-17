@@ -41,7 +41,7 @@
     import UpcomingEvent from "./event_invite.vue";
 
   export default {
-    name: 'Modal',
+    name: 'Inivite',
     components: {
       UpcomingEvent
     },
