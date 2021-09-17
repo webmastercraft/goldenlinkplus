@@ -14,7 +14,7 @@
               <div class="host_view_user" v-for="(item, index) in HostData" :key="index">
                 <img :src="`${item.host_img}`" class="host_user">
                 <span>{{item.host_name}}</span>
-                <button class="host_btn" :disabled="!item.host" @click="selectHost(index)" :class="{'host_btn_opacity': item.host == false}">
+                <button class="host_btn">
                     <img src="mic.png" class="mic_img"><img src="check.png">
                 </button>
               </div>
@@ -33,37 +33,30 @@
                 {
                     host_img: "Jean_Smith.png",
                     host_name: "Carol White",
-                    host: true
                 },
                 {
                     host_img: "Collen.png",
                     host_name: "Carla Rose",
-                    host: true
                 },
                 {
                     host_img: "Brandie.png",
                     host_name: "Wendy Jones",
-                    host: true
                 },
                 {
                     host_img: "Conniel.png",
                     host_name: "Joseph Merk",
-                    host: true
                 },
                 {
                     host_img: "Priscilla.png",
                     host_name: "Leah Lawson",
-                    host: true
                 },
                 {
                     host_img: "Wendy.png",
                     host_name: "Mary Lopez",
-                    host: true
                 },
                 {
                     host_img: "Susan Boyle.png",
                     host_name: "Lydia Murphy",
-                    host: true
                 }
             ]
         }
@@ -76,9 +69,6 @@
         if(evt.target.classList.length > 0 && "bg-mask"){
           this.$emit('user-backdrop');
         }
-      },
-      selectHost(index) {
-        this.HostData[index].host = false;
       },
     },
   };

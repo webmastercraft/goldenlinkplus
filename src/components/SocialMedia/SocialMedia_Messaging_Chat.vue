@@ -48,6 +48,7 @@
                     </button>
                 </div>
                 
+                
             </div>
       </div>
     </div>
@@ -115,7 +116,9 @@ export default {
     margin: 20px 20px 0;
   }
   .chat_logo {
-    height: 100%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
   }
   .chat_logo_small {
     float: right;
