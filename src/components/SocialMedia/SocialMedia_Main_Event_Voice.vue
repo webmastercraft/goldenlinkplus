@@ -559,11 +559,6 @@ export default {
         case 'f_show_send_gcoin':
           this.f_show_send_gcoin = false
           break;
-        default:
-          // statements_def
-          break;
-      }
-      switch (temp) {
         case 'f_show_user_profile':
           this.f_show_user_profile = false
           break;

@@ -11,77 +11,103 @@
           id="modalTitle"
         >
             <div class="invite_modal">
-                <p class="invite_title">Invite People to this Event<span><img src="share.png">SHARE</span></p>
+                <p class="invite_title">Invite People to this Event<span class="share_span" v-on:click="showUpcomingEvent"><img  src="share.png" >SHARE</span></p>
                 <div class="invite_find">
                         <input type="search" placeholder="Find People" class="form-control">
                         <img src="Search_modal.png">
                 </div>
                 <div class="invite_users">
                   <div v-for="(item, index) in HostData" :key="index" class="invite_user">
-                    <img :src="`${item.host_img}`">
+                    <div class="background-Image" :class="{'activeHostBlink': item.blink == true}">
+                        <img :src="`${item.host_img}`"  @click="toggleActive(index)">
+                    </div>
                     <span>{{item.host_name}}</span>
                   </div>
                 </div>
             </div>
         </header>
       </div>
+      <UpcomingEvent 
+        v-show="f_show_upcoming_event"
+        @close="closeUpcomingEvent"
+        @view-backdrop="closeUpcomingEvent"
+      >
+      </UpcomingEvent>
     </div>
   </transition>
 </template>
 
 <script>
+    import UpcomingEvent from "./event_invite.vue";
+
   export default {
     name: 'Modal',
+    components: {
+      UpcomingEvent
+    },
     data () {
         return {
+            f_show_upcoming_event: false,
             HostData: [
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
                 {
                     host_img: "Ray_big_on.png",
                     host_name: "Joseph Merk",
+                    blink: false,
                 },
             ]
         }
@@ -95,10 +121,46 @@
           this.$emit('user-backdrop');
         }
       },
+      test(evt) {
+        if(evt.target.classList.length > 0 && "share_span"){
+            console.log('hello world');
+          this.$emit('user-backdrop');
+        }
+      },
+      toggleActive(index) {
+            this.HostData[index].blink = true
+            setTimeout(() => {
+                this.HostData[index].blink = false
+            }, 2000)
+      },
+      showUpcomingEvent() {
+        this.f_show_upcoming_event = true;
+      },
+      closeUpcomingEvent() {
+        this.f_show_upcoming_event = false;
+      },
     },
   };
 </script>
 <style>
+    .background-Image {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 76px;
+        height: 76px;
+    }
+    @keyframes activeHostBlinkingFrames {
+        0% {background-color: transparent;}
+        15% {background-color: rgba(19,200,255,0.5);}
+        50% {background-color: rgba(19,200,255,1);}
+        75% {background-color: rgba(19,200,255,0.5);}
+        100% {background-color: transparent;}
+    }
+
+    .activeHostBlink {
+      animation-name: activeHostBlinkingFrames;
+      animation-duration: 0.5s;
+    }
     .invite_title {
         margin: 0;
     }
@@ -143,16 +205,19 @@
     .invite_user {
         width: 25%;
         display: grid;
-        margin: auto auto 15px;
+        margin: auto auto 35px;
         height: 100px;
         padding: 0 5px;
     }
     .invite_user img {
-        margin: 0 auto auto;
+        margin: 10px auto auto;
         width: 56px;
         height: 56px;
     }
     .invite_user span {
         margin: 0;
+    }
+    .share_span {
+        cursor: pointer;
     }
 </style>

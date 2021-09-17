@@ -19,33 +19,13 @@
               <i class="fa fa-times-circle" aria-hidden="true"></i>
             </button>
             <div class="event_type">
-              <div>
-                <img src="event_type/type_1.png">
-                <p>Public</p>
-              </div>
-              <div>
-                <img src="event_type/type_2.png">
-                <p>Connections Only</p>
-              </div>
-              <div>
-                <img src="event_type/type_3.png">
-                <p>Invite<br>Only</p>
-              </div>
-              <div>
-                <img src="event_type/type_4.png">
-                <p>Goldenlink Plus</p>
-              </div>
-              <div>
-                <img src="event_type/type_4.png">
-                <p>Marketing Elites</p>
-              </div>
-              <div>
-                <img src="event_type/type_4.png">
-                <p>Money Builders</p>
+              <div v-for="(item, index) in data" :key="index" @click="setActiveHost(index)">
+                <img :src="`${item.host_img}`" :class="{activeHost: activeHost === index}">
+                <span>{{item.host_name}}</span>
               </div>
             </div>
             <div class="type_btn">
-              <p>Start an Event open to every one</p>
+              <p>{{ data[activeHost].description }}</p>
               <router-link to="/socialmedia/socialmedia_main_create_event">
               <button class="event_go">LET'S GO
               </button>
@@ -60,15 +40,59 @@
 <script>
   export default {
     name: 'Modal',
+    data () {
+        return {
+          activeHost: 0,
+            data: [
+                {
+                    host_img: "event_type/type_1.png",
+                    host_name: "Public",
+                    description: "Start an Event open to everyone",
+                },
+                {
+                    host_img: "event_type/type_2.png",
+                    host_name: "Connections Only",
+                    description: "Start an Event with people I'm connected with",
+                },
+                {
+                    host_img: "event_type/type_3.png",
+                    host_name: "Only",
+                    description: "Start an Event people I choose",
+                },
+                {
+                    host_img: "event_type/type_4.png",
+                    host_name: "Goldenlink Plus",
+                    description: "Start an Event for Goldenlinkplus",
+                },
+                {
+                    host_img: "event_type/type_4.png",
+                    host_name: "Marketing Elites",
+                    description: "Start an Event Marketing Elites",
+                },
+                {
+                    host_img: "event_type/type_4.png",
+                    host_name: "Money Builders",
+                    description: "Start an Event Money Builders",
+                },
+            ]
+        }
+    },
     methods: {
       close() {
         this.$emit('close');
       },
+      setActiveHost(index) {
+        this.activeHost = index;
+      }
     },
   };
 </script>
 <style>
-  .header_event {
+.activeHost {
+  border-radius: 50%;
+  border: 4px solid #F4992D;
+}
+.header_event {
   border-radius: 30px;
 }
 .event_invite_hr {
