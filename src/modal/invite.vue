@@ -11,7 +11,7 @@
           id="modalTitle"
         >
             <div class="invite_modal">
-                <p class="invite_title">Invite People to this Event<span><img src="share.png">SHARE</span></p>
+                <p class="invite_title">Invite People to this Event<span @click="close"><img src="share.png">SHARE</span></p>
                 <div class="invite_find">
                         <input type="search" placeholder="Find People" class="form-control">
                         <img src="Search_modal.png">
@@ -31,7 +31,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Inivite',
     data () {
         return {
             HostData: [
