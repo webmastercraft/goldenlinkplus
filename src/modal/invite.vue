@@ -123,7 +123,6 @@
       },
       test(evt) {
         if(evt.target.classList.length > 0 && "share_span"){
-            console.log('hello world');
           this.$emit('user-backdrop');
         }
       },
