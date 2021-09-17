@@ -851,11 +851,11 @@ export default {
       animation-name: blinkingFrames;
       animation-duration: 0.5s;
   }
-    .blinkingUser {
+  .blinkingUser {
         animation-name: blinkingFramesUser;
         animation-duration: 0.5s;
-    }
-    @keyframes blinkingFramesUser {
+  }
+  @keyframes blinkingFramesUser {
     0% {opacity: 0.00;}
     50% {opacity: 1.00;}
     100% {opacity: 0.00;}
@@ -864,7 +864,7 @@ export default {
   }
   .diamondAppear {
         animation-name: diamondFramesUser;
-        animation-duration: 1.5s;
+        animation-duration: 1s;
     }
     @keyframes diamondFramesUser {
     0% {opacity: 0.00;}
@@ -888,7 +888,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 30px;
+    bottom: 0;
     margin: 27px auto;
     width: 50px;
     height: 40px;
