@@ -37,7 +37,7 @@ export default {
     .add_modal {
         margin: 80px 20px 0;
         max-width: 414px;
-        width: 100%;
+        width: calc(100% - 40px);
     }
     .add_title {
         color: #EF8200;
@@ -46,19 +46,24 @@ export default {
     }
     .add_modal_part {
         display: flex;
+        width: 100%;
     }
     .add_modal_title {
         text-align: left;
+        margin: auto;
+        width: 70%;
     }
     .add_modal_price {
+        width: 30%;
     }
     .add_price_title {
         margin: auto;
         position: relative;
+        height: 50px;
     }
     .add_price_title span:first-child {
         position: absolute;
-        right: 65px;
+        left: 0;
         top: 11px;
         font-size: 12px;
     }
@@ -76,6 +81,7 @@ export default {
         color: white;
         padding: 8px;
         font-size: 13px;
+        margin: 5px 0;
     }
     .add_reward_btn {
         background-color: #FFB803;
@@ -87,6 +93,6 @@ export default {
     .add_content {
         margin: 0;
         font-size: 13px;
-        margin: 0 20px 0 0;
+        margin: 0;
     }
 </style>
