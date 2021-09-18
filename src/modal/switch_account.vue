@@ -26,8 +26,10 @@
                         <p>Your Business Account<br><b>$3800</b></p>
                     </div>
                 </router-link>
+                <p class="switch_title">Activity</p>
+                <router-link to="/socialmedia/socialmedia_main_create_event"><p class="switch_content">Schedule an Event</p></router-link>
                 <p class="switch_title">Account</p>
-                <p class="switch_content">View Profile</p>
+                <router-link to="/socialmedia/socialmedia_bs_profile"><p class="switch_content">View Profile</p></router-link>
                 <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
                 <hr class="switch_hr">
@@ -37,7 +39,9 @@
                     <p class="switch_content">Notification Settings</p>
                 </router-link>
                 <p class="switch_title">Communities</p>
-                <p class="switch_content">Create a Community</p>
+                <router-link to="/socialmedia/socialmedia_main_notification_setting">
+                    <p class="switch_content">Create a Community</p>
+                </router-link>
                 <p class="switch_title">Finances</p>
                 <p class="switch_content">Cash Balance<span><b>$254</b></span></p>
                 <hr class="switch_hr">

@@ -187,23 +187,11 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_modal a {
-    line-height: 60px;
-    font-weight: 600;
-    width: 100%;
-    display: inline-block;
-  }
-
   .header_top ul {
     padding: revert;
     list-style-type: disc;
     margin: 0 10px 0 0;
     font-size: 14px;
-  }
-  .header_arrow {
-    text-align: left;
-    margin-left: 22px;
-    position: absolute;
   }
   .medium_title {
     margin: 20px 20px 10px 20px;
@@ -383,25 +371,6 @@ export default {
   }
   input[type=checkbox] {
     display:none;
-  }
-
-  input[type=checkbox] + label {
-      display:inline-block;
-      padding: 0 0 0 0px;
-      height: 39px;
-      width: 39px;
-      background-size: 100%;
-      background: url('../../../public/Checkbox_non.png') no-repeat;
-      margin-right: 35px;
-  }
-
-  input[type=checkbox]:checked + label {
-      background: url('../../../public/Checkbox.png') no-repeat;
-      width: 39px;
-      height: 39px;
-      background-size: 100%;
-      display:inline-block;
-      margin-right: 35px;
   }
   .checkbox_check {
     display: flex;
