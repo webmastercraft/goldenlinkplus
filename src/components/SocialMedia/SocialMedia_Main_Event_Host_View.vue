@@ -33,8 +33,8 @@
                         <img src="msg_count_grey.png">139
                     </p>
                     <p>13.9 K<img src="diamond.png"></p>
-                    <p>625.4 K<img src="event_coin.png"></p>
-                    <p><img src="login_users.png"></p>
+                    <p @click="showPrice">625.4 K<img src="event_coin.png"></p>
+                    <p @click="showSupporter"><img src="login_users.png"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -141,6 +141,16 @@
             @user-backdrop="removeFlagFromStack"
           >
           </Invite>
+          <Price 
+            v-show="f_show_price"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </Price>
+          <Supporter 
+            v-show="f_show_supporter"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </Supporter>
       </div>
     </div>
   </div>
@@ -153,6 +163,8 @@ import UserProfile from "../../modal/user_profile.vue";
 import SendGcoin from "../../modal/send_gcoin.vue";
 import HostView from "../../modal/host_view.vue";
 import Invite from "../../modal/invite.vue";
+import Price from "../../modal/price.vue";
+import Supporter from "../../modal/supporter.vue";
 
 export default {
   name: 'Event_Voice_Host',
@@ -161,7 +173,9 @@ export default {
       UserProfile,
       SendGcoin,
       HostView,
-      Invite
+      Invite,
+      Price,
+      Supporter
   },
   data () {
     return {
@@ -178,6 +192,8 @@ export default {
         f_show_send_gcoin: false,
         f_show_host_view: false,
         f_show_invite: false,
+        f_show_supporter: false,
+        f_show_price: false,
         modalStack: [],
         datas: [
             {
@@ -605,13 +621,31 @@ export default {
           // statements_def
           break;
       }
+      switch (temp) {
+        case 'f_show_price':
+          this.f_show_price = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_supporter':
+          this.f_show_supporter = false
+          break;
+        default:
+          break;
+      }
       this.f_show_send_gcoin = false,
 
       this.f_show_user_profile = false,
 
       this.f_show_invite = false,
 
-      this.f_show_host_view = false
+      this.f_show_host_view = false,
+
+      this.f_show_price = false,
+
+      this.f_show_supporter = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
@@ -630,6 +664,14 @@ export default {
     },
     showInvite() {
       this.f_show_invite = true;
+    },
+    showPrice() {
+        this.f_show_price = true;
+        this.modalStack.push('f_show_price');
+    },
+    showSupporter() {
+        this.f_show_supporter = true;
+        this.modalStack.push('f_show_supporter');
     },
   },
   computed: {

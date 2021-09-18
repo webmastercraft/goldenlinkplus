@@ -11,7 +11,7 @@
           id="modalTitle"
         >
             <div class="invite_modal">
-                <p class="invite_title">Invite People to this Event<span class="share_span" v-on:click="showUpcomingEvent"><img  src="share.png" >SHARE</span></p>
+                <p class="invite_title">Invite People to this Event<span class="share_span"><img  src="share.png" @click="showUpcomingEvent" >SHARE</span></p>
                 <div class="invite_find">
                         <input type="search" placeholder="Find People" class="form-control">
                         <img src="Search_modal.png">
@@ -27,27 +27,27 @@
             </div>
         </header>
       </div>
-      <UpcomingEvent 
+<!--       <UpcomingEvent 
         v-show="f_show_upcoming_event"
         @close="closeUpcomingEvent"
         @view-backdrop="closeUpcomingEvent"
       >
-      </UpcomingEvent>
+      </UpcomingEvent> -->
     </div>
   </transition>
 </template>
 
 <script>
-    import UpcomingEvent from "./event_invite.vue";
+    // import UpcomingEvent from "./event_invite.vue";
 
   export default {
     name: 'Inivite',
     components: {
-      UpcomingEvent
+      // UpcomingEvent
     },
     data () {
         return {
-            f_show_upcoming_event: false,
+            // f_show_upcoming_event: false,
             HostData: [
                 {
                     host_img: "Ray_big_on.png",
@@ -134,11 +134,12 @@
             }, 2000)
       },
       showUpcomingEvent() {
-        this.f_show_upcoming_event = true;
+        console.log('invite event');
+        this.$emit('share');
       },
-      closeUpcomingEvent() {
-        this.f_show_upcoming_event = false;
-      },
+      // closeUpcomingEvent() {
+      //   this.f_show_upcoming_event = false;
+      // },
     },
   };
 </script>
