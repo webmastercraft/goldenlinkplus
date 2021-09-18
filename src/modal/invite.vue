@@ -133,7 +133,6 @@
             }, 2000)
       },
       showUpcomingEvent() {
-        console.log('invite event');
         this.$emit('share');
       },
       // closeUpcomingEvent() {
