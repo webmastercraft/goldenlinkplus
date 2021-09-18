@@ -59,6 +59,7 @@
           <EventInvite 
             v-show="f_show_event_invite"
             @close="closeModal"
+            @user-backdrop="removeFlagFromStack"
           >
           </EventInvite>
       </div>
@@ -101,6 +102,18 @@ export default {
     },
     showEventInvite() {
       this.f_show_event_invite = true;
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_event_invite':
+          this.f_show_event_invite = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_event_invite = false
     },
   }
 }
