@@ -90,23 +90,6 @@ export default {
   input[type=checkbox] {
     display:none;
   }
-
-  input[type=checkbox] + label {
-      display:inline-block;
-      padding: 0 0 0 0px;
-      height: 39px;
-      width: 39px;
-      background-size: 100%;
-      background: url('../../../public/Checkbox_non.png') no-repeat;
-  }
-
-  input[type=checkbox]:checked + label {
-      background: url('../../../public/Checkbox.png') no-repeat;
-      height: 39px;
-      width: 39px;
-      background-size: 100%;
-      display:inline-block;
-  }
   .socialmedia_check .checkbox_check {
     margin: 0;
     display: flex;

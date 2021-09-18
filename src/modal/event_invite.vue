@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop">
+    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
       <div class="modal_event_transform"
         role="dialog"
         aria-labelledby="modalTitle"
@@ -10,14 +10,6 @@
           class="host_view_position"
           id="modalTitle"
         >
-            <button
-            type="button"
-            class="close_btn type_close"
-            @click="close"
-            aria-label="Close modal"
-            >
-              <i class="fa fa-times-circle" aria-hidden="true"></i>
-            </button>
             <p class="medium_1_title">TOMORROW   7:00 AM</p>
               <p class="medium_title">Let’s All win the Market!!<br>Start Learning today!</p>
               
@@ -54,6 +46,11 @@
     methods: {
       close() {
         this.$emit('close');
+      },
+      userProfileBackdrop(evt) {
+        if(evt.target.classList.length > 0 && "bg-mask"){
+          this.$emit('user-backdrop');
+        }
       },
     },
   };

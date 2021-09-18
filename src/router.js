@@ -83,9 +83,10 @@ import SocialMedia_Main_Event_Voice from './components/SocialMedia/SocialMedia_M
 import SocialMedia_Main_Event_Hallway from './components/SocialMedia/SocialMedia_Main_Event_Hallway.vue';
 import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Main_Event_Chat.vue';
 import SocialMedia_Main_Event_Upcoming from './components/SocialMedia/SocialMedia_Main_Event_Upcoming.vue';
+import SocialMedia_Main_My_Event from './components/SocialMedia/SocialMedia_Main_My_Event.vue';
 import SocialMedia_Main_Notification_Setting from './components/SocialMedia/SocialMedia_Main_Notification_Setting.vue';
 import SocialMedia_Main_Event_Host_View from './components/SocialMedia/SocialMedia_Main_Event_Host_View.vue';
-
+import SocialMedia_Main_Event_Quick from './components/SocialMedia/SocialMedia_Main_Event_Quick.vue';
 import SocialMedia_BS_Reg_Start from './components/SocialMedia/SocialMedia_BS_Reg_Start.vue';
 import SocialMedia_Members_Lounge_One from './components/SocialMedia/SocialMedia_Members_Lounge_One.vue';
 import SocialMedia_Members_Lounge_Two from './components/SocialMedia/SocialMedia_Members_Lounge_Two.vue';
@@ -500,6 +501,11 @@ export default new Router({
             components: { default: SocialMedia_Main_Event_Upcoming },
         },
         {
+            path: '/socialmedia/socialmedia_main_my_event',
+            name: 'socialmedia_main_my_event',
+            components: { default: SocialMedia_Main_My_Event },
+        },
+        {
             path: '/socialmedia/socialmedia_recommendation_one',
             name: 'socialMedia_recommendation_one',
             components: { default: SocialMedia_Recommendation_One },
@@ -583,6 +589,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_event_host_view',
             name: 'socialmedia_main_event_host_view',
             components: { default: SocialMedia_Main_Event_Host_View },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_event_quick',
+            name: 'socialmedia_main_event_quick',
+            components: { default: SocialMedia_Main_Event_Quick },
         },
     ],
 

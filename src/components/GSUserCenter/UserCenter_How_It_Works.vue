@@ -55,12 +55,6 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_modal a {
-    line-height: 60px;
-    font-weight: 600;
-    width: 100%;
-    display: inline-block;
-  }
   .header_top {
     margin: 80px 20px 20px 20px;
     border-radius: 12px;
@@ -72,15 +66,6 @@ export default {
     list-style-type: disc;
     margin: 0 10px 0 0;
     font-size: 14px;
-  }
-  .header_arrow {
-    text-align: left;
-    margin-left: 22px;
-    position: absolute;
-  }
-  .medium_1_title {
-    margin: 20px 20px 10px 20px;
-    color: #EF8200;
   }
   .gs_account_stage_checkout_btn {
     color: white;

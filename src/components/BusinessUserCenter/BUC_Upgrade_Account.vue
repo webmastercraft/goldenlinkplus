@@ -195,30 +195,15 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_modal a {
-    line-height: 60px;
-    font-weight: 600;
-    width: 100%;
-    display: inline-block;
-  }
   .header_top ul {
     padding: revert;
     list-style-type: disc;
     margin: 0 10px 0 0;
     font-size: 14px;
   }
-  .header_arrow {
-    text-align: left;
-    margin-left: 22px;
-    position: absolute;
-  }
   .medium_title {
     margin: 20px 20px 10px 20px;
     font-weight: 600;
-  }
-  .medium_1_title {
-    margin: 20px 20px 10px 20px;
-    color: #EF8200;
   }
   .medium_2_title {
     margin: 0 20px;
@@ -228,8 +213,6 @@ export default {
     margin: 10px 20px;
     font-size: 14px;
   }
-  
-  
   .gs_account_check_link {
     color: #13C8FF;
     font-size: 18px;
@@ -301,7 +284,6 @@ export default {
       width: 39px;
       background-size: 100%;
       background: url('../../../public/Checkbox_non.png') no-repeat;
-      margin-right: 4px;
   }
 
   input[type=checkbox]:checked + label {
@@ -310,7 +292,8 @@ export default {
       height: 39px;
       background-size: 100%;
       display:inline-block;
-      margin-right: 35px;
+      margin: auto;
+
   }
   .checkbox_check {
     display: flex;
