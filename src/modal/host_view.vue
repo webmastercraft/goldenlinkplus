@@ -11,9 +11,9 @@
           id="modalTitle"
         >
             <p class="host_view_title"><img src="participant.png">Raised Hands</p>
-              <div class="host_view_user" v-for="(item, index) in HostData" :key="index">
+              <div class="host_view_user" v-for="(item, index) in HostData" :key="index" v-on:click="test">
                 <img :src="`${item.host_img}`" class="host_user">
-                <span>{{item.host_name}}</span>
+                <p>{{item.host_name}}</p>
                 <button class="host_btn">
                     <img src="mic.png" class="mic_img"><img src="check.png">
                 </button>
@@ -70,6 +70,11 @@
           this.$emit('user-backdrop');
         }
       },
+      test(evt) {
+        if(evt.target.classList.length > 0 && "share_span"){
+          this.$emit('user-backdrop');
+        }
+      },
     },
   };
 </script>
@@ -88,7 +93,7 @@
         width: calc(100% - 50px);
         display: flex;
     }
-    .host_view_user span {
+    .host_view_user p {
         margin: auto auto auto 15px;
         width: 150px;
     }

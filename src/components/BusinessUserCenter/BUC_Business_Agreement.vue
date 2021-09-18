@@ -116,6 +116,7 @@ export default {
   .medium_1_title {
     margin: 20px 20px 10px 20px;
     color: #EF8200;
+    position: relative;
   }
 
   .upgrade_gs_para {

@@ -123,12 +123,11 @@ export default {
     background: #EF8200;
   }
   .follow_btn_disable {
-    background: #13C8FF33;
+    background: #13C8FF;
     color: #3DAEC9 !important;
   }
   .send_btn_disable {
-    background: #13C8FF;
-    opacity: 0.2;
+    background: rgba(19, 200, 255, 0.2);
   }
   .send_btn {
     background: #13C8FF;

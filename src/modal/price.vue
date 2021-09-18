@@ -37,7 +37,7 @@
 <script>
 
   export default {
-    name: 'Upcoming_Event',
+    name: 'Price',
     components: {
       
     },
@@ -47,36 +47,96 @@
         rangking2: [
             {
               rangking_image: "Ray.png",
-              rangking_name: "Virginia Jones",
-              rangking_coin: "915.6K",
-            },
-            {
-              rangking_image: "mona.png",
-              rangking_name: "Lavern Laboy",
-              rangking_coin: "847.3K",
-            },
-            {
-              rangking_image: "Jean_Smith.png",
-              rangking_name: "Annette Black",
-              rangking_coin: "654.2K",
-            },
-            {
-              rangking_image: "Richard_Bennett_off.png",
-              rangking_name: "Darron Kowski",
-              rangking_coin: "302.8K",
-            },
-            {
-              rangking_image: "Susan Boyle.png",
-              rangking_name: "Robert Fox",
-              rangking_coin: "113.3K",
-            },
-        ],
-        rangking1: [
-            {
-              rangking_image: "Ray.png",
               rangking_name: "Erin Hughes",
               rangking_coin: "876.5K",
             },
+            {
+              rangking_image: "mona.png",
+              rangking_name: "Marvin McKinney",
+              rangking_coin: "678.6K",
+            },
+            {
+              rangking_image: "Jean_Smith.png",
+              rangking_name: "Lucy Fletcher",
+              rangking_coin: "582.3K",
+            },
+            {
+              rangking_image: "Richard_Bennett_off.png",
+              rangking_name: "Ronald Richards",
+              rangking_coin: "76.5K",
+            },
+            {
+              rangking_image: "Susan Boyle.png",
+              rangking_name: "Kathryn Murphy",
+              rangking_coin: "24K",
+            },
+            {
+              rangking_image: "Alex Smith.png",
+              rangking_name: "Emily Malone",
+              rangking_coin: "18.5K",
+            },
+            {
+              rangking_image: "Collen.png",
+              rangking_name: "Patricia Clark",
+              rangking_coin: "12.9K",
+            },
+            {
+              rangking_image: "Grandma.png",
+              rangking_name: "Jerome Bell",
+              rangking_coin: "6.7K",
+            },
+            {
+              rangking_image: "Irma.png",
+              rangking_name: "Floyd Miles",
+              rangking_coin: "5.9K",
+            },
+            {
+              rangking_image: "Lily.png",
+              rangking_name: "Mary Lopez",
+              rangking_coin: "3.6K",
+            },
+            {
+              rangking_image: "Kathry.png",
+              rangking_name: "Amanda Rice",
+              rangking_coin: "3.2K",
+            },
+            {
+              rangking_image: "Judith.png",
+              rangking_name: "Lydia Sharp",
+              rangking_coin: "1.1K",
+            },
+            {
+              rangking_image: "Priscilla.png",
+              rangking_name: "Darrell Steward",
+              rangking_coin: "546",
+            },
+            {
+              rangking_image: "Serenity.png",
+              rangking_name: "Ida Baldwin",
+              rangking_coin: "404",
+            },
+            {
+              rangking_image: "Savannah.png",
+              rangking_name: "Jacob Jones",
+              rangking_coin: "395",
+            },
+            {
+              rangking_image: "Wendy.png",
+              rangking_name: "Linda Carroll",
+              rangking_coin: "375",
+            },
+            {
+              rangking_image: "Susan Boyle.png",
+              rangking_name: "Ruth West",
+              rangking_coin: "210",
+            },
+            {
+              rangking_image: "Philip.png",
+              rangking_name: "Cody Fisher",
+              rangking_coin: "75",
+            },
+        ],
+        rangking1: [
             {
               rangking_image: "mona.png",
               rangking_name: "Marvin McKinney",

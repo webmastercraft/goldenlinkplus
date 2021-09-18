@@ -11,7 +11,7 @@
                   <router-link to="/socialmedia/socialmedia_main_event_hallway">
                     <img src="event_back.png">Back
                   </router-link>
-                <router-link to=""><span>See All Chat Members</span></router-link></p>
+                <router-link to=""><span @click="showChatMembers">See All Chat Members</span></router-link></p>
             </div>
             <div class="left-content event_chat_window">
                     <div class="event_chat_content"  v-for="(item, index) in DiamondData" :key="index">
@@ -52,20 +52,29 @@
                     <img src="send.png">
                 </button>
             </div>
+            <ChatMembers 
+                v-show="f_show_chat_members"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </ChatMembers>
           </div> 
       </div>
     </div>
 </template>
 <script>
-
+import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
+import ChatMembers from "../../modal/chat_members.vue";
 
 export default {
   name: 'Event_Chat',
   components: {
+    ChatMembers
   },
   data () {
     return {
+        f_show_chat_members: false,
         numClicks: 0,
+        modalStack: [],
         DiamondData: [
             {
                 diamond_img: "mona.png",
@@ -115,6 +124,23 @@ export default {
             setTimeout(() => {
                 this.DiamondData[index].diaTwoActive = false
             }, 2000)
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+
+      switch (temp) {
+        case 'f_show_chat_members':
+          this.f_show_chat_members = false;
+          break;
+        default:
+          break;
+      }
+      this.f_show_chat_members = false
+    },
+    showChatMembers() {
+        this.f_show_chat_members = true;
+        this.modalStack.push('f_show_chat_members');
     },
   }
 }
