@@ -34,10 +34,16 @@
                 <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" :width=80 :height=30 style='float: right;'/>
             </div>
             <div class="event_data">
-              <p class="event_text">Date<span>Today</span></p>
+              <p class="event_text">
+                Date
+                <span><input  type="date" class="form-control event_date_time" aria-describedby="begin_date" v-model="event_date" /></span>
+              </p>
               <hr class="event_text_hr">
 
-              <p class="event_text">TIME<span>7:00 AM</span></p>
+              <p class="event_text">
+                TIME
+                <span><input  type="time" class="form-control event_date_time" min="00:00" max="24:00" v-model="event_time" /></span>
+              </p>
               <hr class="event_text_hr">
             </div>
 
@@ -87,6 +93,8 @@ export default {
       isModalVisible: false,
       f_show_event_invite: false,
       modalStack: [],
+      event_date: new Date().toISOString().slice(0,10),
+      event_time: new Date().toISOString().slice(10,20),
     };
   },
   methods: {
@@ -196,5 +204,8 @@ export default {
     padding: 8px 50px;
     margin: 0 auto 50px;
     display: flex;
+  }
+  .event_date_time {
+    margin-top: -7px;
   }
 </style>
