@@ -125,7 +125,6 @@
         },
         userProfileBackdrop(evt) {
             if(evt.target.classList.length > 0 && "bg-mask"){
-                console
                 this.$emit('user-backdrop');
             }
         },

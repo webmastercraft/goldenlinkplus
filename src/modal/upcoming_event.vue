@@ -12,7 +12,7 @@
         >
           <div class="user_pos modal-content">
             <header
-              class=""
+              class="upcmoing_event_modal"
               id="modalTitle"
             >
                     <p class="medium_1_title">TOMORROW   7:00 AM</p>
@@ -102,5 +102,8 @@
         margin: 10px 20px;
         font-size: 20px;
         font-weight: 600;
+    }
+    .upcmoing_event_modal {
+      text-align: left;
     }
 </style>

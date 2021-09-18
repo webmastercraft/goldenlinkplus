@@ -4,7 +4,7 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main_my_event" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Create Your Event</a>
           </div>
           <div class="content left-content header_top height_static">
@@ -34,21 +34,28 @@
                 <toggle-button :value="true" :labels="{checked: 'YES', unchecked: 'NO'}" :color="{checked: '#13C8FF', unchecked: '#FF0000', disabled: '#CCCCCC'}" :width=80 :height=30 style='float: right;'/>
             </div>
             <div class="event_data">
-              <p class="event_text">Date<span>Today</span></p>
+              <p class="event_text">
+                Date
+                <span><input  type="date" class="form-control event_date_time" aria-describedby="begin_date" v-model="event_date" /></span>
+              </p>
               <hr class="event_text_hr">
 
-              <p class="event_text">TIME<span>7:00 AM</span></p>
+              <p class="event_text">
+                TIME
+                <span><input  type="time" class="form-control event_date_time" min="00:00" max="24:00" v-model="event_time" /></span>
+              </p>
               <hr class="event_text_hr">
             </div>
 
             <form>
               <div class="event_check">
                   <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                  <label for="vehicle1"></label>
+                  <label for="vehicle1" @click="startEvent"></label>
                   <p>I want to start this event now</p>
               </div>
             </form>
-              <button class="event_go" @click="showEventInvite">LET'S GO
+              <button class="event_go" @click="showEventInvite">
+                {{ isStartEvent ? "LET'S GO!" : "SET SCHEDULE!" }}
               </button>
           </div>
           <Modal
@@ -58,6 +65,7 @@
           <EventInvite 
             v-show="f_show_event_invite"
             @close="closeModal"
+            @user-backdrop="removeFlagFromStack"
           >
           </EventInvite>
       </div>
@@ -81,12 +89,18 @@ export default {
   },
   data () {
     return {
+      isStartEvent: false,
       isModalVisible: false,
       f_show_event_invite: false,
       modalStack: [],
+      event_date: new Date().toISOString().slice(0,10),
+      event_time: new Date().toISOString().slice(10,20),
     };
   },
   methods: {
+    startEvent() {
+      this.isStartEvent = !this.isStartEvent;
+    },
     showModal() {
       this.isModalVisible = true;
     },
@@ -96,6 +110,18 @@ export default {
     },
     showEventInvite() {
       this.f_show_event_invite = true;
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_event_invite':
+          this.f_show_event_invite = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_event_invite = false
     },
   }
 }
@@ -178,5 +204,8 @@ export default {
     padding: 8px 50px;
     margin: 0 auto 50px;
     display: flex;
+  }
+  .event_date_time {
+    margin-top: -7px;
   }
 </style>

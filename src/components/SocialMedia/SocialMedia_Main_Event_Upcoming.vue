@@ -4,8 +4,10 @@
       <div class="profile_phone">
         
           <div class="header_modal profile_modal">
-            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <router-link to="/socialmedia/socialmedia_main_create_event" class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow"></router-link>
+            <router-link to="/socialmedia/socialmedia_main" class="header_arrow">
+              <img src="img/header_arrow.png" class="upcoming_event_back">
+            </router-link>
+            <a class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow" @click="showEventLink"></a>
           </div>
           <div class="main_body upcoming_body">
             <div class="para_event upcoming_para_event">
@@ -57,7 +59,12 @@
                 @user-backdrop="removeFlagFromStack"
                 >
             </UpcomingEvent>
-            
+            <EventLink 
+              v-show="f_show_event_link"
+              @close="closeEventLink"
+              @user-backdrop="removeFlagFromStack"
+            >
+            </EventLink>
           </div>
       </div>
     </div>
@@ -66,15 +73,18 @@
 <script>
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import UpcomingEvent from "../../modal/upcoming_event.vue";
+import EventLink from "../../modal/event_link.vue";
 
 export default {
   name: 'Event_Upcoming',
   components: {
     UpcomingEvent,
+    EventLink,
   },
   data () {
     return {
         f_show_upcoming_event: false,
+        f_show_event_link: false,
         modalStack: [],
     }
   },
@@ -94,8 +104,24 @@ export default {
         default:
           break;
       }
-      this.f_show_upcoming_event = false
-    }
+      switch (temp) {
+        case 'f_show_event_link':
+          this.f_show_event_link = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_upcoming_event = false,
+
+      this.f_show_event_link = false
+    },
+    showEventLink() {
+        this.f_show_event_link = true;
+        this.modalStack.push('f_show_event_link');
+    },
+    closeEventLink() {
+        this.f_show_event_link = false;
+    },
   }
 }
 </script>
@@ -120,12 +146,14 @@ export default {
   top: 19px;
 }
 .upcoming_arrow {
-    position: absolute;
-    right: 65px;
-    top: 28px;
+    margin-left: 10px; 
 }
 .upcoming_para_event {
   padding: 8px 15px;
   margin: 0;
+}
+.upcoming_event_back {
+  position: absolute;
+  top: 22px;
 }
 </style>

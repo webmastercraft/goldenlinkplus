@@ -27,27 +27,19 @@
             </div>
         </header>
       </div>
-<!--       <UpcomingEvent 
-        v-show="f_show_upcoming_event"
-        @close="closeUpcomingEvent"
-        @view-backdrop="closeUpcomingEvent"
-      >
-      </UpcomingEvent> -->
+
     </div>
   </transition>
 </template>
 
 <script>
-    // import UpcomingEvent from "./event_invite.vue";
 
   export default {
     name: 'Inivite',
     components: {
-      // UpcomingEvent
     },
     data () {
         return {
-            // f_show_upcoming_event: false,
             HostData: [
                 {
                     host_img: "Ray_big_on.png",
@@ -135,9 +127,7 @@
       showUpcomingEvent() {
         this.$emit('share');
       },
-      // closeUpcomingEvent() {
-      //   this.f_show_upcoming_event = false;
-      // },
+
     },
   };
 </script>
