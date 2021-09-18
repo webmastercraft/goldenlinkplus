@@ -209,10 +209,6 @@ export default {
     margin: 20px 20px 10px 20px;
     font-weight: 600;
   }
-  .medium_1_title {
-    margin: 20px 20px 10px 20px;
-    color: #EF8200;
-  }
   .medium_2_title {
     margin: 0 20px;
     font-weight: 500;

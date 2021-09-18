@@ -118,9 +118,6 @@
   text-align: center;
   display: flex;
 }
-.event_user img {
-  margin: auto;
-}
 .event_invite_title {
   color: #F4992D;
   font-size: 18px;

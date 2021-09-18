@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal modal-profile"
+      <div class="modal modal-profile height_auto"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
@@ -85,5 +85,8 @@
 }
 .modal-profile {
   margin: 40px !important;
+}
+.height_auto {
+  height: auto !important;
 }
 </style>

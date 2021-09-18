@@ -86,11 +86,6 @@ export default {
     margin-left: 22px;
     position: absolute;
   }
-  
-  .medium_1_title {
-    margin: 20px 20px 10px 20px;
-    color: #EF8200;
-  }
   .header_top table {
     margin: 10px auto;
     text-align: center;
