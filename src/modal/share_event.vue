@@ -53,6 +53,7 @@
             this.$emit('close');
         },
         userProfileBackdrop(evt) {
+
             if(evt.target.classList.length > 0 && "bg-mask"){
                 this.$emit('user-backdrop');
             }

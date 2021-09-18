@@ -19,9 +19,12 @@
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
                             <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
-                            <img src="chatdia.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
-                            <img src="frame_diamond2.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
-                            <img src="chat_diamond.png" @click="showDiaOneItem(index)"><span>125</span>
+                            <div class="diamond_animation">
+                              <img src="chatdia.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
+                              <img src="frame_diamond2.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
+                              <img src="chat_diamond.png" @click="showDiaOneItem(index)">
+                            </div>
+                              <span>125</span>
                           </div>
                       </div>
                           <div class="event_chat_login">
@@ -184,7 +187,6 @@ export default {
 .event_chat_text {
   display: flex;
   width: 100%;
-  position: relative;
 }
 .socialmedia_chat_para img {
   width: 21px;
@@ -229,7 +231,15 @@ export default {
     position: absolute;
     width: 35px !important;
     height: 28px !important;
-    right: 30px;
+    top: 0;
+    right: 0;
+}
+.diamond_animation {
+    position: relative;
+    width: 30px;
+    margin: 0 auto auto;
+}
+.diamond_animation img {
+  margin: 0;
 }
 </style>
- 

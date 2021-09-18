@@ -12,9 +12,7 @@
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
-                <router-link to="/socialmedia/socialmedia_main_switch_account">
-                  <img src="mona.png" class="main_user">
-                </router-link>
+                <img src="mona.png" class="main_user" @click="showSwitchAccount">
               </div>
             </div>
             <p><img src="ring.png" class="favicon_img">ACTIVITIES</p>
@@ -73,20 +71,37 @@
               <p><b>Geoffrey Mott</b> followed you</p>
               <p class="activities_num">25m</p>
             </div>
-            
-
-            
           </div>
+          <SwitchAccount 
+            v-show="f_show_switch_account"
+            @close="closeModal"
+          >
+          </SwitchAccount>
       </div>
     </div>
   </div>
 </template>
 <script>
-
+import SwitchAccount from "../../modal/switch_account.vue";
 
 export default {
   name: 'Activities',
   components: {
+    SwitchAccount
+  },
+  data() {
+    return {
+      f_show_switch_account: false,
+    }
+  },
+  methods: {
+    closeModal() {
+      this.f_show_switch_account = false;
+      this.isModalVisible = false;
+    },
+    showSwitchAccount() {
+      this.f_show_switch_account = true;
+    },
   }
 }
 </script>

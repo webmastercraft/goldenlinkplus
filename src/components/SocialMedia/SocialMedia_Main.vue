@@ -11,10 +11,8 @@
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
-                <img src="main_contact.png">
-                <router-link to="/socialmedia/socialmedia_main_switch_account">
-                  <img src="mona.png" class="main_user">
-                </router-link>
+                <img src="main_contact.png" class="main_contact">
+                <img src="mona.png" class="main_user" @click="showSwitchAccount">
               </div>
             </div>
             <div class="main_header">
@@ -190,6 +188,11 @@
             @close="closeModal"
           >
           </EventType>
+          <SwitchAccount 
+            v-show="f_show_switch_account"
+            @close="closeModal"
+          >
+          </SwitchAccount>
       </div>
     </div>
   </div>
@@ -198,28 +201,35 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
 import EventType from "../../modal/event_type.vue";
+import SwitchAccount from "../../modal/switch_account.vue";
 
 export default {
   name: 'SocialMedia_Main',
   components: {
     Swiper,
     SwiperSlide,
-    EventType
+    EventType,
+    SwitchAccount
   },
   data () {
     return {
       isModalVisible: false,
       f_show_event_type: false,
+      f_show_switch_account: false,
       modalStack: [],
     }
   },
   methods: {
     closeModal() {
       this.f_show_event_type = false;
+      this.f_show_switch_account = false;
       this.isModalVisible = false;
     },
     showEventType() {
       this.f_show_event_type = true;
+    },
+    showSwitchAccount() {
+      this.f_show_switch_account = true;
     },
   }
 }
@@ -251,6 +261,7 @@ export default {
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    margin: auto;
   }
   .main_header {
     text-align: left;
@@ -442,6 +453,9 @@ export default {
   }
   .main_body_title {
     margin: 0;
+  }
+  .main_contact {
+    margin: auto;
   }
 </style>
  

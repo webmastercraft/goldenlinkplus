@@ -6,12 +6,14 @@
           <div class="main_audio_modal">
             <div>
               <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png" class="main_icon"></router-link>
-              <img src="main_calendar.png" class="main_icon">
-              <img src="main_contact.png" class="main_icon">
-              <router-link to="/socialmedia/socialmedia_main_switch_account">
-                <img src="mona.png" class="main_user">
-              </router-link>
+              <div class="logo_header">
+                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                  <img src="main_calendar.png">
+                </router-link>
+                <img src="main_contact.png">
+                <img src="mona.png" class="main_user" @click="showSwitchAccount">
+              </div>
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>
           </div>
@@ -25,9 +27,6 @@
                 </div>
               </router-link>
             </div>
-            
-
-            
           </div>
           <div class="footer_background">
             <div class="footer_modal">
@@ -61,20 +60,27 @@
               
             </div>
           </div>
-            
+          <SwitchAccount 
+            v-show="f_show_switch_account"
+            @close="closeModal"
+          >
+          </SwitchAccount>
       </div>
     </div>
   </div>
 </template>
 <script>
-
+import SwitchAccount from "../../modal/switch_account.vue";
 
 export default {
   name: 'Lounge',
   components: {
+    SwitchAccount
   },
   data() {
-      return { items: [
+      return {
+      f_show_switch_account: false,
+      items: [
           {rout : "socialmedia_bs_profile", img: "lounge_profile.png", name: "My Profile"}, 
           {rout : "", img: "lounge_usercenter.png", name: "My User Center"},
           {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
@@ -86,6 +92,15 @@ export default {
           {rout : "", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
+  },
+  methods: {
+    closeModal() {
+      this.f_show_switch_account = false;
+      this.isModalVisible = false;
+    },
+    showSwitchAccount() {
+      this.f_show_switch_account = true;
+    },
   }
 }
 </script>
