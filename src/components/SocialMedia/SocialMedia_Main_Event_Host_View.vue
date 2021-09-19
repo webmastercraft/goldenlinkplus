@@ -14,7 +14,7 @@
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
                   <img src="event_back.png">Go to Hallway
                 </router-link>
-              <span><img src="img/dots.png"></span></p>
+              <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
           <div class="event_body">
             <div class="event_users">
@@ -151,6 +151,18 @@
             @user-backdrop="removeFlagFromStack"
           >
           </Supporter>
+          <EventSetting 
+            v-show="f_show_event_setting"
+            @close="closeEventSetting"
+            @user-backdrop="removeFlagFromStack"
+          >
+          </EventSetting>
+          <UpcomingEvent 
+            v-show="f_show_upcoming_event"
+            @close="closeUpcomingEvent"
+            @view-backdrop="closeUpcomingEvent"
+          >
+          </UpcomingEvent>
       </div>
     </div>
   </div>
@@ -165,6 +177,8 @@ import HostView from "../../modal/host_view.vue";
 import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
 import Supporter from "../../modal/supporter.vue";
+import EventSetting from "../../modal/event_setting.vue";
+import UpcomingEvent from "../../modal/event_invite.vue";
 
 export default {
   name: 'Event_Voice_Host',
@@ -175,7 +189,9 @@ export default {
       HostView,
       Invite,
       Price,
-      Supporter
+      Supporter,
+      EventSetting,
+      UpcomingEvent
   },
   data () {
     return {
@@ -194,6 +210,8 @@ export default {
         f_show_invite: false,
         f_show_supporter: false,
         f_show_price: false,
+        f_show_event_setting: false,
+        f_show_upcoming_event: false,
         modalStack: [],
         datas: [
             {
@@ -540,12 +558,6 @@ export default {
             }, 2000)
         } 
     },
-    // showDiamond() {
-    //   this.isDiamond = true
-    //   setTimeout(() => {
-    //       this.isDiamond = false
-    //   }, 2000)
-    // },
     killLoading() {
       setTimeout(() => {
           this.isloading = false
@@ -635,6 +647,13 @@ export default {
         default:
           break;
       }
+      switch (temp) {
+        case 'f_show_event_setting':
+          this.f_show_event_setting = false
+          break;
+        default:
+          break;
+      }
       this.f_show_send_gcoin = false,
 
       this.f_show_user_profile = false,
@@ -645,7 +664,9 @@ export default {
 
       this.f_show_price = false,
 
-      this.f_show_supporter = false
+      this.f_show_supporter = false,
+
+      this.f_show_event_setting = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
@@ -672,6 +693,25 @@ export default {
     showSupporter() {
         this.f_show_supporter = true;
         this.modalStack.push('f_show_supporter');
+    },
+    showEventSetting() {
+        this.f_show_event_setting = true;
+        this.modalStack.push('f_show_event_setting');
+    },
+    ttt() {
+      this.f_show_upcoming_event = true; // showing child
+      this.f_show_invite = false;
+      // this.$emit('close'); // disable myself to parent
+    },
+    closeEventSetting() {
+        this.f_show_event_setting = false;
+    },
+
+    closeInviteModal() {
+        this.f_show_invite = false;
+    },
+    closeUpcomingEvent() {
+      this.f_show_upcoming_event = false;
     },
   },
   computed: {
