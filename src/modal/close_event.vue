@@ -13,7 +13,7 @@
             <div class="close_event_modal">
               <p>You are about the close this event. Continue closing this event?</p>
               <button class="bg-mask" @click="userProfileBackdrop">Do not close this event</button>
-              <button>Yes, close this event</button>
+              <button @click="closeModal">Yes, close this event</button>
             </div>
         </header>
       </div>
@@ -32,6 +32,9 @@
       }
     },
     methods: {
+      closeModal() {
+        this.$emit('close');
+      },
       userProfileBackdrop(evt) {
             if(evt.target.classList.length > 0 && "bg-mask"){
                 this.$emit('user-backdrop');
