@@ -4,7 +4,7 @@
       <div class="phone sociallogin">
         
           <div class="header_modal">
-            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main_my_event" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Create Your Event</a>
           </div>
           <div class="content left-content header_top height_static">
@@ -44,11 +44,12 @@
             <form>
               <div class="event_check">
                   <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                  <label for="vehicle1"></label>
+                  <label for="vehicle1" @click="startEvent"></label>
                   <p>I want to start this event now</p>
               </div>
             </form>
-              <button class="event_go" @click="showEventInvite">LET'S GO
+              <button class="event_go" @click="showEventInvite">
+                {{ isStartEvent ? "LET'S GO!" : "SET SCHEDULE!" }}
               </button>
           </div>
           <Modal
@@ -81,12 +82,16 @@ export default {
   },
   data () {
     return {
+      isStartEvent: false,
       isModalVisible: false,
       f_show_event_invite: false,
       modalStack: [],
     };
   },
   methods: {
+    startEvent() {
+      this.isStartEvent = !this.isStartEvent;
+    },
     showModal() {
       this.isModalVisible = true;
     },

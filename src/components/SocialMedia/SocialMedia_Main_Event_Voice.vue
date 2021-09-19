@@ -553,12 +553,6 @@ export default {
             }, 2000)
         } 
     },
-    // showDiamond() {
-    //   this.isDiamond = true
-    //   setTimeout(() => {
-    //       this.isDiamond = false
-    //   }, 2000)
-    // },
     killLoading() {
       setTimeout(() => {
           this.isloading = false

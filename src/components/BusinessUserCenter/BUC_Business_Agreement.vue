@@ -108,6 +108,7 @@ export default {
     text-align: left;
     margin-left: 22px;
     position: absolute;
+    z-index: 1;
   }
   .medium_title {
     margin: 20px 20px 10px 20px;
