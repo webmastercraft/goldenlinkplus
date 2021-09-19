@@ -26,7 +26,7 @@
             </div>
             <div class="type_btn">
               <p>{{ data[activeHost].description }}</p>
-              <router-link to="/socialmedia/socialmedia_main_create_event">
+              <router-link to="/socialmedia/socialmedia_main_event_quick">
               <button class="event_go">LET'S GO
               </button>
               </router-link>
