@@ -11,11 +11,18 @@
           id="modalTitle"
         >
             <p class="host_view_title"><img src="participant.png">Raised Hands</p>
+            <div class="host_view_user"  v-on:click="test">
+                <img src="Jean_Smith.png" class="host_user">
+                <p>Carol White</p>
+                <button class="host_btn">
+                    <img src="mic.png" class="mic_img"><img src="check.png">
+                </button>
+            </div>
               <div class="host_view_user" v-for="(item, index) in HostData" :key="index" v-on:click="test">
                 <img :src="`${item.host_img}`" class="host_user">
                 <p>{{item.host_name}}</p>
-                <button class="host_btn">
-                    <img src="mic.png" class="mic_img"><img src="check.png">
+                <button class="host_btn_dis">
+                    <img src="mic_dis.png" class="mic_img"><img src="check_dis.png">
                 </button>
               </div>
         </header>
@@ -30,10 +37,6 @@
     data () {
         return {
             HostData: [
-                {
-                    host_img: "Jean_Smith.png",
-                    host_name: "Carol White",
-                },
                 {
                     host_img: "Collen.png",
                     host_name: "Carla Rose",
@@ -130,5 +133,15 @@
     }
     .host_modal_transform {
         transform: translate(0, 33%) !important;
+    }
+    .host_btn_dis {
+        background-color: #F4F9FE;
+        margin: auto;
+        width: 70px;
+        height: 30px;
+        border-radius: 16px;
+    }
+    .host_btn_dis img {
+        margin: 0 5px;
     }
 </style>

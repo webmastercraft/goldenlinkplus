@@ -69,6 +69,7 @@ import SocialMedia_Search_Communities from './components/SocialMedia/SocialMedia
 import SocialMedia_Search_GS from './components/SocialMedia/SocialMedia_Search_GS.vue';
 import SocialMedia_Search_Products from './components/SocialMedia/SocialMedia_Search_Products.vue';
 import SocialMedia_Search_Services from './components/SocialMedia/SocialMedia_Search_Services.vue';
+import SocialMedia_Search_Brands from './components/SocialMedia/SocialMedia_Search_Brands.vue';
 import SocialMedia_GS_Reg_Profile_Type from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Type.vue';
 import SocialMedia_GS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Photo.vue';
 import SocialMedia_GS_Reg_Connect_Paypal from './components/SocialMedia/SocialMedia_GS_Reg_Connect_Paypal.vue';
@@ -103,6 +104,7 @@ import SocialMedia_Recommendation_Three from './components/SocialMedia/SocialMed
 
 import SocialMedia_BS_Profile from './components/SocialMedia/SocialMedia_BS_Profile.vue';
 import SocialMedia_GS_Profile from './components/SocialMedia/SocialMedia_GS_Profile.vue';
+import SocialMedia_Profile_Offer from './components/SocialMedia/SocialMedia_Profile_Offer.vue';
 
 
 Vue.use(Router);
@@ -436,6 +438,11 @@ export default new Router({
             components: { default: SocialMedia_Search_Communities },
         },
         {
+            path: '/socialmedia/socialmedia_search_brands',
+            name: 'socialmedia_search_brands',
+            components: { default: SocialMedia_Search_Brands },
+        },
+        {
             path: '/socialmedia/socialmedia_gs_reg_connect_paypal',
             name: 'socialmedia_gs_reg_connect_paypal',
             components: { default: SocialMedia_GS_Reg_Connect_Paypal },
@@ -574,6 +581,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_gs_profile',
             name: 'socialmedia_gs_profile',
             components: { default: SocialMedia_GS_Profile },
+        },
+        {
+            path: '/socialmedia/socialmedia_profile_offer',
+            name: 'socialmedia_profile_offer',
+            components: { default: SocialMedia_Profile_Offer },
         },
         {
             path: '/socialmedia/socialmedia_main_notification_setting',

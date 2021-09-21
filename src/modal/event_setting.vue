@@ -80,6 +80,7 @@ import SearchEvent from "../modal/search_event.vue";
     },
     methods: {
         closeModal() {
+            this.f_show_close_event = false;
             this.$emit('close');
         },
         handleOpen() {

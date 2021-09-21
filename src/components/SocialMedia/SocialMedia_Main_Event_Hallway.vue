@@ -130,26 +130,28 @@
               </div>
             </div>
           </div>
-          <div class="footer_background hallway_bottom">
-            <div class="hallway_bottom">
-              
-              <span class="hallway_log">
-                <img src="hallway_user.png">
-                <span>+254 others</span>
-              </span>
+          <router-link to="/socialmedia/socialmedia_main_event_voice" class="footer_background hallway_bottom">
+            <div>
+              <div class="hallway_bottom">
+                
+                <span class="hallway_log">
+                  <img src="hallway_user.png">
+                  <span>+254 others</span>
+                </span>
 
-              <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
+                <router-link to="/socialmedia/socialmedia_main_create_event"><button class="audio_circle_btn">Create Audio Event</button></router-link>
 
-              <span class="hallway_icon">
-                <router-link to="/socialmedia/socialmedia_main">
-                  <img src="thumbs.png">
-                </router-link>
-                <img src="invite.png" @click="showHallway">
-                <img src="mute.png">
-              </span>
+                <span class="hallway_icon">
+                  <router-link to="/socialmedia/socialmedia_main">
+                    <img src="thumbs.png">
+                  </router-link>
+                  <img src="invite.png" @click="showHallway" class="invite_correct_btn">
+                  <img :src="imgSrc" @click="micClicked = !micClicked" class="hallway_mic_btn">
+                </span>
 
+              </div>
             </div>
-          </div>
+          </router-link>
           <Hallway 
                 v-show="f_show_hallway"
                 @user-backdrop="removeFlagFromStack"
@@ -177,6 +179,7 @@ export default {
   },
   data () {
     return {
+      micClicked: false,
       f_show_hallway: false,
       f_show_switch_account: false,
       modalStack: [],
@@ -206,6 +209,11 @@ export default {
     },
     showSwitchAccount() {
       this.f_show_switch_account = true;
+    },
+  },
+  computed: {
+    imgSrc: function () {
+      return this.micClicked ? 'mic_small.png' : 'mic_small_dis.png'
     },
   }
 }
@@ -261,6 +269,14 @@ export default {
   }
   .hallway_icon a {
     margin: auto;
+  }
+  .invite_correct_btn {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .hallway_mic_btn {
+    width: 13px !important;
+    height: 18px !important;
   }
 </style>
  

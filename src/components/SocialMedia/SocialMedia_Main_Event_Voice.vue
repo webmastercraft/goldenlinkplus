@@ -4,15 +4,22 @@
       <div class="loading_screen" v-show="isloading" >
         <img src="loading_logo.png">
       </div>
+      <!-- <div class="welcome_dialog loading_screen" v-if="!isloading">
+        <div class="welcome_dialog_content">
+          <img src="welcome_dialog.png">
+          <p class="welcome_dialog_title">Congratulations!</p>
+          <p class="welcome_dialog_price">You received 20 G-Coins</p>
+          <p class="welcome_dialog_btn">Tap to continue</p>
+        </div>
+      </div> -->
       <div class="phone sociallogin" v-show="!isloading">
-        
           <div class="event_body_title">
             <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
-                  <img src="event_back.png">Go to Hallway
+                  <img src="event_back.png">Hallway
                 </router-link>
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
@@ -55,7 +62,7 @@
             </div>
             <div class="event_ranking">
               <button class="audience_btn" :class="{'border_btn': isAudience == true}" @click="showAudience"><b>Audience</b></button>
-              <button class="speakers_btn" :class="{'border_btn': isAudience != true}" @click="showSpeakers"><b>Speakers</b></button>
+              <button class="speakers_btn" :class="{'border_btn': isSpeakers != true}" @click="showSpeakers"><b>Speakers</b></button>
             </div>
 
             <div v-if="isAudience == true" class="coin_letter">
@@ -199,7 +206,9 @@ export default {
         isModalVisible: false,
         clicked: false,
         imgClicked: false,
-        isAudience: true,
+        isAudience: false,
+        isSpeakers: false,
+        
         f_show_user_profile: false,
         f_show_send_gcoin: false,
         f_show_invite: false,
@@ -578,7 +587,7 @@ export default {
       this.isAudience = true;
     },
     showSpeakers() {
-      this.isAudience = false;
+      this.isSpeakers = true;
     },
     showModal() {
       this.isModalVisible = true;
@@ -601,7 +610,6 @@ export default {
           this.f_show_user_profile = false
           break;
         default:
-          // statements_def
           break;
       }
       switch (temp) {
@@ -609,7 +617,6 @@ export default {
           this.f_show_invite = false
           break;
         default:
-          // statements_def
           break;
       }
       switch (temp) {
@@ -669,8 +676,9 @@ export default {
         this.modalStack.push('f_show_supporter');
     },
     showEventSetting() {
+      console.log('wondering');
         this.f_show_event_setting = true;
-        this.modalStack.push('f_show_event_setting');
+        // this.modalStack.push('f_show_event_setting');
     },
     ttt() {
       this.f_show_upcoming_event = true; // showing child
@@ -996,6 +1004,39 @@ export default {
   }
   .blink_span {
     position: relative;
+  }
+  .welcome_dialog {
+    max-width: 414px;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background: rgba(195, 195, 195, 0.2);
+  }
+  .welcome_dialog p {
+    margin: 10px auto 0;
+  }
+  .welcome_dialog_content {
+    text-align: center;
+    background: white;
+    border-radius: 25px;
+    width: 70%;
+    height: 50vh;
+    margin: 25vh 15%;
+  }
+  .welcome_dialog_content > img {
+    width: 100%;
+    padding: 10px;
+  }
+  .welcome_dialog_title {
+    font-size: 20px;
+  }
+  .welcome_dialog_price {
+    font-size: 16px;
+    color: #EF8200;
+    font-weight: 600;
+  }
+  .welcome_dialog_btn {
+    font-size: 13px;
   }
 </style>
  
