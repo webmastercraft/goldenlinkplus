@@ -32,16 +32,16 @@
                 <span class="blink_span gcoin_animation">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
                     <img src="50k_coin.png" class="event_coin">
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
-                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <button>00:14:59</button>
                 </span>
                 <div class="event_para_group">
@@ -730,7 +730,7 @@ export default {
   created () {
     this.killLoading();
   },
-}
+};
 </script>
 
 <style>
@@ -1035,6 +1035,7 @@ export default {
     top: 0;
     z-index: 100;
     background: rgba(195, 195, 195, 0.2);
+    position: fixed;
   }
   .welcome_dialog p {
     margin: 10px auto 0;
@@ -1066,43 +1067,45 @@ export default {
     position: relative;
   }
   @keyframes floatBubble1 {
-        0% { top:234px; opacity: 1; } 99% { top: 350px; } 100% { opacity: 0; }
+        0% { top:10px; opacity: 1; } 99% { top: -5px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble2 {
-        0% { left:234px; opacity: 1; } 99% { left: 150px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); opacity: 1; } 99% { left: calc(50% - 0px); } 100% { opacity: 0; }
     }
     @keyframes floatBubble3 {
-        0% { left:234px; opacity: 1; } 99% { left: 350px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); opacity: 1; } 99% { left: calc(50% - 10px); } 100% { opacity: 0; }
     }
     @keyframes floatBubble4 {
-        0% { top:234px; opacity: 1; } 99% { top: 350px; } 100% { opacity: 0; }
+        0% { top:10px; opacity: 1; } 99% { top: 50px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble5 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 150px; top: 220px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 20px); top: -5px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble6 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 150px; top: 200px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 10px); top: 0px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble7 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 200px; top: 150px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 40px); top: -5px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble8 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 190px; top: 170px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 50px); top: -7px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble9 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 260px; top: 220px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 60px); top: -3px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble10 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 250px; top: 260px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 0px); top: 20px; } 100% { opacity: 0; }
     }
     @keyframes floatBubble11 {
-        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 180px; top: 270px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 10px); top: 25px; } 100% { opacity: 0; }
     }
     .moving {
       position: absolute;
-      top: 234px;
-      left: 234px;
-        opacity: 0;
+      top: 10px;
+      left: calc(50% - 30px);
+      opacity: 0;
+      width: 60px;
+      height: 60px;
     }
     .moving:nth-of-type(1) { animation: floatBubble1 2s; }
     .moving:nth-of-type(2) { animation: floatBubble2 2s; }
