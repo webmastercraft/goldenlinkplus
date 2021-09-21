@@ -4,14 +4,14 @@
       <div class="loading_screen" v-show="isloading" >
         <img src="loading_logo.png">
       </div>
-      <!-- <div class="welcome_dialog loading_screen" v-if="!isloading">
-        <div class="welcome_dialog_content">
+      <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
+        <div class="welcome_dialog_content" @click="killGcoinTap">
           <img src="welcome_dialog.png">
           <p class="welcome_dialog_title">Congratulations!</p>
           <p class="welcome_dialog_price">You received 20 G-Coins</p>
           <p class="welcome_dialog_btn">Tap to continue</p>
         </div>
-      </div> -->
+      </div>
       <div class="phone sociallogin" v-show="!isloading">
           <div class="event_body_title">
             <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
@@ -29,9 +29,19 @@
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink1 == true}" src="coin_10.png"  @click="showBlink1">
                     <img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean
                 </span>
-                <span class="blink_span">
+                <span class="blink_span gcoin_animation">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
                     <img src="50k_coin.png" class="event_coin">
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
+                    <img src="99.png" class="moving" v-if="gcoin_animation" />
                     <button>00:14:59</button>
                 </span>
                 <div class="event_para_group">
@@ -198,6 +208,8 @@ export default {
   },
   data () {
     return {
+        gcoin_tap: false,
+        gcoin_animation: false,
         isAddingCoin: false,
         isBlink: false,
         isDiamond: false,
@@ -566,6 +578,18 @@ export default {
       setTimeout(() => {
           this.isloading = false
       }, 2000)
+
+      setTimeout(() => {
+          this.gcoin_animation = true
+      }, 3500)
+
+      setTimeout(() => {
+          this.gcoin_tap = true
+      }, 6000)
+    },
+    killGcoinTap() {
+      this.gcoin_animation = false
+      this.gcoin_tap = false
     },
     showIt() {
         Vuedals.$emit('new', {
@@ -1020,8 +1044,8 @@ export default {
     background: white;
     border-radius: 25px;
     width: 70%;
-    height: 50vh;
-    margin: 25vh 15%;
+    height: 355px;
+    margin: calc(50vh - 177.5px) 15%;
   }
   .welcome_dialog_content > img {
     width: 100%;
@@ -1038,5 +1062,58 @@ export default {
   .welcome_dialog_btn {
     font-size: 13px;
   }
+  .gcoin_animation {
+    position: relative;
+  }
+  @keyframes floatBubble1 {
+        0% { top:234px; opacity: 1; } 99% { top: 350px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble2 {
+        0% { left:234px; opacity: 1; } 99% { left: 150px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble3 {
+        0% { left:234px; opacity: 1; } 99% { left: 350px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble4 {
+        0% { top:234px; opacity: 1; } 99% { top: 350px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble5 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 150px; top: 220px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble6 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 150px; top: 200px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble7 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 200px; top: 150px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble8 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 190px; top: 170px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble9 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 260px; top: 220px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble10 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 250px; top: 260px; } 100% { opacity: 0; }
+    }
+    @keyframes floatBubble11 {
+        0% { left:234px; top: 234px; opacity: 1; } 99% { left: 180px; top: 270px; } 100% { opacity: 0; }
+    }
+    .moving {
+      position: absolute;
+      top: 234px;
+      left: 234px;
+        opacity: 0;
+    }
+    .moving:nth-of-type(1) { animation: floatBubble1 2s; }
+    .moving:nth-of-type(2) { animation: floatBubble2 2s; }
+    .moving:nth-of-type(3) { animation: floatBubble3 2s; }
+    .moving:nth-of-type(4) { animation: floatBubble4 2s; }
+    .moving:nth-of-type(5) { animation: floatBubble5 2s; }
+    .moving:nth-of-type(6) { animation: floatBubble6 2s; }
+    .moving:nth-of-type(7) { animation: floatBubble7 2s; }
+    .moving:nth-of-type(8) { animation: floatBubble8 2s; }
+    .moving:nth-of-type(9) { animation: floatBubble9 2s; }
+    .moving:nth-of-type(10) { animation: floatBubble10 2s; }
+    .moving:nth-of-type(11) { animation: floatBubble11 2s; }
 </style>
  
