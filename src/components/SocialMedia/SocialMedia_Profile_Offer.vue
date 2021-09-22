@@ -27,11 +27,95 @@
               <swiper class="swiper">
                 <swiper-slide class="slide_block">
                   <!-- Offers -->
-                    <p class="profile_relax"><b>Relaxology (14)</b></p>
+                    <p class="profile_relax"><b>Foot</b></p>
+                    <div class="profile_relax_detail">
+                      <img src="profile/pressure.png" class="relax_chair">
+                      <div class="relax_massage">
+                        <p class="profile_relax_msg"><b>Foot Air Pressure Leg Massager Body Massager</b></p>
+                        <table class="profile_table">
+                          <tr>
+                            <th>Price</th>
+                            <th>Payout</th>
+                            <th>CPC</th>
+                          </tr>
+                          <tr>
+                            <td>$85.99</td>
+                            <td>$6</td>
+                            <td>5 GCoins</td>
+                          </tr>
+                        </table>
+                        <button class="relax_buy">BUY NOW</button>
+                      </div>
+                    </div>
+                    <div class="relax_link">
+                      <div>
+                      <img src="profile/copy_link.png">
+                      <p>Copy Link</p>
+                      </div>
+                      <div>
+                      <img src="profile/videos.png">
+                      <p>Videos</p>
+                      </div>
+                      <div>
+                      <img src="profile/banners.png">
+                      <p>Banners</p>
+                      </div>
+                      <div>
+                      <img src="profile/detail.png">
+                      <p>Detail</p>
+                      </div>
+                      <div>
+                      <img src="profile/reviews.png">
+                      <p>Reviews</p>
+                      </div>
+                    </div>
+                    <hr class="profile_hr">
+                    <div class="profile_relax_detail">
+                      <img src="profile/electric.png" class="relax_chair">
+                      <div class="relax_massage">
+                        <p class="profile_relax_msg"><b>Electric Massager Leg Foot Massager 3 Modes</b></p>
+                        <table class="profile_table">
+                          <tr>
+                            <th>Price</th>
+                            <th>Payout</th>
+                            <th>CPC</th>
+                          </tr>
+                          <tr>
+                            <td>$99.99</td>
+                            <td>$8</td>
+                            <td>8 GCoins</td>
+                          </tr>
+                        </table>
+                        <button class="relax_buy">BUY NOW</button>
+                      </div>
+                    </div>
+                    <div class="relax_link">
+                      <div>
+                      <img src="profile/copy_link.png">
+                      <p>Copy Link</p>
+                      </div>
+                      <div>
+                      <img src="profile/videos.png">
+                      <p>Videos</p>
+                      </div>
+                      <div>
+                      <img src="profile/banners.png">
+                      <p>Banners</p>
+                      </div>
+                      <div>
+                      <img src="profile/detail.png">
+                      <p>Detail</p>
+                      </div>
+                      <div>
+                      <img src="profile/reviews.png">
+                      <p>Reviews</p>
+                      </div>
+                    </div>
+                    <p class="profile_relax"><b>Full Body</b></p>
                     <div class="profile_relax_detail">
                       <img src="profile/relax_chair.png" class="relax_chair">
                       <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
+                        <p class="profile_relax_msg"><b>Full Body Massage Cushion</b></p>
                         <table class="profile_table">
                           <tr>
                             <th>Price</th>
@@ -73,7 +157,7 @@
                     <div class="profile_relax_detail">
                       <img src="profile/relax_chair.png" class="relax_chair">
                       <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
+                        <p class="profile_relax_msg"><b>Collapsible Full-body Massage Mattress</b></p>
                         <table class="profile_table">
                           <tr>
                             <th>Price</th>
@@ -111,49 +195,6 @@
                       <p>Reviews</p>
                       </div>
                     </div>
-                    <p class="profile_relax"><b>Relaxology (1)</b></p>
-                    <div class="profile_relax_detail">
-                      <img src="profile/relax_chair.png" class="relax_chair">
-                      <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
-                        <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
-                          </tr>
-                        </table>
-                        <button class="relax_buy">BUY NOW</button>
-                      </div>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
-                      </div>
-                      <div>
-                      <img src="profile/videos.png">
-                      <p>Videos</p>
-                      </div>
-                      <div>
-                      <img src="profile/banners.png">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                    <hr class="profile_hr"> 
                   </swiper-slide>
 
                   <swiper-slide class="slide_block">
@@ -279,7 +320,7 @@
                     <p class="future_maps">2 Headquarters</p>
                   </swiper-slide>
             </swiper>
-            
+
           </div>
       </div>
     </div>
@@ -391,11 +432,12 @@ export default {
 </script>
 <style>
   .profile_each_size {
-    display: grid !important;
+    display: block !important;
   }
   .profile_each_session {
-    padding: 0 25px;
+    margin: 0 25px;
     width: calc(100% - 50px);
+    max-width: 414px;
   }
   .profile_each_titile {
     max-width: 414px;
@@ -410,5 +452,8 @@ export default {
   .profile_btn_orange button {
     background-color: #FFB803 !important;
     color: white !important;
+  }
+  .brands_owned div {
+    width: 33.33%;
   }
 </style>

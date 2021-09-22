@@ -32,6 +32,7 @@
                 <span class="blink_span gcoin_animation">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
                     <img src="50k_coin.png" class="event_coin">
+
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
@@ -40,8 +41,7 @@
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
-                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
-                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+
                     <button>00:14:59</button>
                 </span>
                 <div class="event_para_group">
@@ -585,7 +585,7 @@ export default {
 
       setTimeout(() => {
           this.gcoin_tap = true
-      }, 6000)
+      }, 7000)
     },
     killGcoinTap() {
       this.gcoin_animation = false
@@ -1066,39 +1066,44 @@ export default {
   .gcoin_animation {
     position: relative;
   }
-  @keyframes floatBubble1 {
-        0% { top:10px; opacity: 1; } 99% { top: -5px; } 100% { opacity: 0; }
+    @keyframes floatBubble1 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 30px); top: -55px; }
     }
     @keyframes floatBubble2 {
-        0% { left:calc(50% - 30px); opacity: 1; } 99% { left: calc(50% - 0px); } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 20px); top: -40px; }
     }
     @keyframes floatBubble3 {
-        0% { left:calc(50% - 30px); opacity: 1; } 99% { left: calc(50% - 10px); } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 40px); top: 10px; }
     }
+
+
     @keyframes floatBubble4 {
-        0% { top:10px; opacity: 1; } 99% { top: 50px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 10px); top: 60px; }
     }
     @keyframes floatBubble5 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 20px); top: -5px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 30px); top: 75px; }
     }
     @keyframes floatBubble6 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 10px); top: 0px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 80px); top: 60px; }
     }
+
+
     @keyframes floatBubble7 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 40px); top: -5px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 100px); top: 10px; }
     }
     @keyframes floatBubble8 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 50px); top: -7px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 80px); top: -40px; }
     }
-    @keyframes floatBubble9 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 60px); top: -3px; } 100% { opacity: 0; }
+
+    /*@keyframes floatBubble9 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 60px); top: -3px; }
     }
     @keyframes floatBubble10 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 0px); top: 20px; } 100% { opacity: 0; }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 0px); top: 20px; }
     }
     @keyframes floatBubble11 {
-        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 99% { left: calc(50% - 10px); top: 25px; } 100% { opacity: 0; }
-    }
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 10px); top: 25px; }
+    }*/
     .moving {
       position: absolute;
       top: 10px;
@@ -1107,16 +1112,16 @@ export default {
       width: 60px;
       height: 60px;
     }
-    .moving:nth-of-type(1) { animation: floatBubble1 2s; }
-    .moving:nth-of-type(2) { animation: floatBubble2 2s; }
-    .moving:nth-of-type(3) { animation: floatBubble3 2s; }
-    .moving:nth-of-type(4) { animation: floatBubble4 2s; }
-    .moving:nth-of-type(5) { animation: floatBubble5 2s; }
-    .moving:nth-of-type(6) { animation: floatBubble6 2s; }
-    .moving:nth-of-type(7) { animation: floatBubble7 2s; }
-    .moving:nth-of-type(8) { animation: floatBubble8 2s; }
-    .moving:nth-of-type(9) { animation: floatBubble9 2s; }
-    .moving:nth-of-type(10) { animation: floatBubble10 2s; }
-    .moving:nth-of-type(11) { animation: floatBubble11 2s; }
+    .moving:nth-of-type(2) { animation: floatBubble1 2s ; animation-delay: 0.5s;}
+    .moving:nth-of-type(3) { animation: floatBubble2 2s ; animation-delay: 0s; }
+    .moving:nth-of-type(4) { animation: floatBubble3 2s ; animation-delay: 0.68s;}
+    .moving:nth-of-type(5) { animation: floatBubble4 2s ; animation-delay: 0.2s;}
+    .moving:nth-of-type(6) { animation: floatBubble5 2s ; animation-delay: 0.88s;}
+    .moving:nth-of-type(7) { animation: floatBubble6 2s ; animation-delay: 1.2s;}
+    .moving:nth-of-type(8) { animation: floatBubble7 2s ; animation-delay: 0.3s;}
+    .moving:nth-of-type(9) { animation: floatBubble8 2s ; animation-delay: 1s;}
+    /*.moving:nth-of-type(10) { animation: floatBubble9 2s infinite  normal ease-out; }
+    .moving:nth-of-type(11) { animation: floatBubble10 2s infinite  normal ease-out; }
+    .moving:nth-of-type(12) { animation: floatBubble11 2s infinite  normal ease-out; }*/
 </style>
  
