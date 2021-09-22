@@ -547,6 +547,7 @@ export default {
   .profile_btn {
     text-align: left;
     margin: 20px 0;
+    font-size: 15px;
   }
   .profile_btn button { 
     background-color: #13C8FF;
@@ -597,6 +598,7 @@ export default {
     color: white;
     padding: 5px 15px;
     margin: 7px 0;
+    font-size: 14px;
   }
   .relax_massage {
     margin: 0 0 0 3%;

@@ -4,7 +4,7 @@
       <div class="profile_phone profile_each_size">
         
           <div class="header_modal profile_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_bs_profile" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Brand Name Title</a>
           </div>
           <div class="profile_each_titile">
@@ -15,8 +15,6 @@
           <div class="profile_each_session">
               <swiper class="swiper profile_btn profile_btn_orange" :options="swiperOption">
                 <swiper-slide class="swiperslide_btn"><button>Offers</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Brands</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Services</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Business Chain</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Certifications</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Reviews</button></swiper-slide>
@@ -123,7 +121,7 @@
                             <th>CPC</th>
                           </tr>
                           <tr>
-                            <td>$2,100</td>
+                            <td>$129.95</td>
                             <td>$10</td>
                             <td>10 GCoins</td>
                           </tr>
@@ -154,7 +152,7 @@
                       </div>
                     </div>
                     <hr class="profile_hr">
-                    <div class="profile_relax_detail">
+                    <!-- <div class="profile_relax_detail">
                       <img src="profile/relax_chair.png" class="relax_chair">
                       <div class="relax_massage">
                         <p class="profile_relax_msg"><b>Collapsible Full-body Massage Mattress</b></p>
@@ -165,9 +163,9 @@
                             <th>CPC</th>
                           </tr>
                           <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
+                            <td>$49.99</td>
+                            <td>$3</td>
+                            <td>4 GCoins</td>
                           </tr>
                         </table>
                         <button class="relax_buy">BUY NOW</button>
@@ -194,85 +192,9 @@
                       <img src="profile/reviews.png">
                       <p>Reviews</p>
                       </div>
-                    </div>
+                    </div> -->
                   </swiper-slide>
-
-                  <swiper-slide class="slide_block">
-                    <!-- Brands -->
-                    <div v-for="(item, index) in BSbrandsdata" :key="index">
-                      <p class="profile_relax"><b>{{item.title}}</b></p>
-                      <div class="brands_owned">
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                      </div>
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
-                    <!-- Services -->
-                    <p class="profile_relax"><b>Massage(1)</b></p>
-                    <div class="profile_services">
-                      <p class="profile_commun"><b>Foot and Body Massage</b></p>
-                      <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
-                          </tr>
-                      </table>
-                      <button class="relax_buy">BUY NOW</button>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
-                      </div>
-                      <div>
-                      <img src="profile/videos.png">
-                      <p>Videos</p>
-                      </div>
-                      <div>
-                      <img src="profile/banners.png">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                  </swiper-slide>
-
+                  
                   <swiper-slide class="slide_block">
                     <!-- Business Chain -->
                     <div class="profile_services">
@@ -317,7 +239,8 @@
                     <p class="future_maps">2 Headquarters</p>
                     <p class="future_maps">1 Chain Store</p>
                     <p class="future_maps">1 Country</p>
-                    <p class="future_maps">2 Headquarters</p>
+                    <p class="future_maps">2 Franchisee</p>
+                    <p class="future_maps">2 Other</p>
                   </swiper-slide>
             </swiper>
 
@@ -344,15 +267,6 @@ export default {
         }
       ],
       BScertificationdata: [
-        {
-          image_url: "profile/profile_doc.png",
-          type: "Brandname Certification",
-          number: "86831221",
-          issue: "US Patent & Trademark Office",
-          issuedate: "03/01/2017",
-          date: "04/15/2017",
-          desc: "Trade Mark Certificate \n for Relaxxology"
-        },
         {
           image_url: "profile/profile_doc.png",
           type: "Brandname Certification",

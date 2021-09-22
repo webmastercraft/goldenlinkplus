@@ -3,7 +3,7 @@
         <div class="profile_phone">
 
             <div class="header_modal profile_modal">
-                <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
                 <a>My Add-Ons</a>
             </div>
             <div class="add_modal">
