@@ -39,7 +39,7 @@
                     class="event_done"
                     @click="close"
                     aria-label="Close modal"
-                    >Join this Event
+                    >Confirm Joining
                     </button>
             </header>
           </div>

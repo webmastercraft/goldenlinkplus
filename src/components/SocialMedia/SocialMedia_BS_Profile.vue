@@ -583,8 +583,8 @@ export default {
     font-weight: 600;
   }
   .relax_chair {
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: 25%;
   }
   .profile_relax_msg {
     color: #EF8200;
@@ -599,7 +599,8 @@ export default {
     margin: 7px 0;
   }
   .relax_massage {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 3%;
+    width: 75%;
   }
   .relax_link {
     display: flex;
