@@ -45,15 +45,6 @@ export default {
   .glplogo_reg_img {
     margin: 250px 0 30px 0;
   }
-  .social_input_password {
-    border-radius: 12px !important;
-    border: 0 solid white !important;
-    margin-bottom: 20px;
-    max-height: 50px;
-    font-size: 50px !important;
-    background-color: #F4F9FE !important;
-    text-align: center;
-  }
   .glplogo_reg_des {
     font-size: 14px;
     margin: 0;

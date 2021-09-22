@@ -12,7 +12,7 @@
             
               <p class="event_back">
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
-                  <img src="event_back.png">Go to Hallway
+                  <img src="event_back.png">Hallway
                 </router-link>
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
@@ -716,7 +716,7 @@ export default {
   },
   computed: {
     imgSrc: function () {
-      return this.imgClicked ? 'mute_large.png' : 'Mic_Mute.png'
+      return this.imgClicked ? 'Mic_Mute.png' : 'mute_large.png'
     },
   },
   created () {

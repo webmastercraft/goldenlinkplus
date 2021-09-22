@@ -1,55 +1,19 @@
 <template>
   <div>
     <div class="container">
-      <div class="profile_phone">
+      <div class="profile_phone profile_each_size">
         
           <div class="header_modal profile_modal">
             <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>Ana’s Business Profile</a>
+            <a>Brand Name Title</a>
           </div>
-          <div class="profile_session">
-            <div class="profile_header">
-              <div class="profile_logo">
-                <img src="profile/profile_logo.png">
-                <img src="connect_modal.png">
-              </div>
-              <div class="profile_price">
-                <p><img src="diamond_frame.png">2.6K</p>
-                <p><img src="event_coin.png">99.5K</p>
-                <p>Sales Revenue<br>$1,000,000</p>
-              </div>
-              <div class="profile_box">
-                <div class="profile_box_line">
-                  <img src="profile/star_grey.png">
-                  <img src="profile/star_orange.png">
-                  <img src="profile/warning.png">
-                </div>
-                <div class="search_transmit btn_positions" v-for="(item, index) in datas" :key="index">
-                <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
-                  <router-link to="/socialmedia/socialmedia_messaging_chat">
-                    <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}">Message</button>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-              <p class="profile_name"><b>Dr Approved Massage Chairs</b></p>
-              <p class="profile_follow">6.3k followers<span>1.2k following</span></p>
-              <div class="profile_icon">
-                <img src="profile/facebook.png">
-                <img src="profile/twitter.png">
-                <img src="profile/instagram.png">
-                <img src="profile/youtube.png">
-              </div>
-              <p class="profile_commun"><b>Communities</b></p>
-              <div class="profile_brand">
-                <img src="profile/commun1.png">
-                <img src="profile/commun2.png">
-                <img src="profile/commun3.png">
-                <img src="profile/commun4.png">
-                <img src="profile/commun5.png">
-                <img src="profile/profile_plus.png">
-              </div>
-              <swiper class="swiper profile_btn" :options="swiperOption">
+          <div class="profile_each_titile">
+            <img src="profile/massage.png">
+            <p>Relaxology</p>
+            <p class="profile_title_desc">Relaxology brand is a brand under the business name. This is only a sample description you are reading.</p>
+          </div>
+          <div class="profile_each_session">
+              <swiper class="swiper profile_btn profile_btn_orange" :options="swiperOption">
                 <swiper-slide class="swiperslide_btn"><button>Offers</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Brands</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Services</button></swiper-slide>
@@ -197,42 +161,30 @@
                     <div v-for="(item, index) in BSbrandsdata" :key="index">
                       <p class="profile_relax"><b>{{item.title}}</b></p>
                       <div class="brands_owned">
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
+                        <div>
+                          <img src="profile/massage.png">
+                          <p>Relaxology</p>
+                        </div>
                       </div>
                     </div>
                   </swiper-slide>
@@ -327,14 +279,7 @@
                     <p class="future_maps">2 Headquarters</p>
                   </swiper-slide>
             </swiper>
-                
-
-                <p class="profile_commun"><b>More About Dr Approved Massage Chairs</b></p>
-                <p class="relax_desc">For over 35 years, our focus has been<br>designing the highest quality massage<br>chairs - for a deeper, stronger, smoother,<br>and more therapeutic massage - and<br>offering them to those in need of intense<br>stress relief.</p>
-                <p class="relax_desc"><b>Year Established:</b> 2018</p>
-                <p class="relax_desc"><b>Company Type</b> S Corporation</p>
-                <p class="relax_desc"><b>Business Type:</b> Product</p>
-                <p class="relax_desc"><b>Industry:</b><br>Marketing & Advertising Services<br>->Internet Marketing Services<br>->Social Media Marketing Services</p>
+            
           </div>
       </div>
     </div>
@@ -445,238 +390,25 @@ export default {
 }
 </script>
 <style>
-  .profile_modal {
-    box-shadow: 0 5px 10px #f2f2f2;
+  .profile_each_size {
+    display: grid !important;
   }
-  .profile_phone {
-      width: 100%;
-      max-width: 414px; 
-      min-height: 100vh;
-      display: flex;
-      background: white;
-      text-align: center;
+  .profile_each_session {
+    padding: 0 25px;
+    width: calc(100% - 50px);
   }
-  .header_modal a {
-    padding-left: 22px;
-    margin: 0 !important;
+  .profile_each_titile {
+    max-width: 414px;
+    width: 100%;
+    margin-top: 80px;
   }
-  .profile_session {
-    padding: 85px 25px;
-      width: 414px;
-  }
-  .profile_header {
-    display: flex;
-  }
-  .profile_logo {
-    position: relative;
-  }
-  .profile_logo img:first-child {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .profile_logo img:last-child {
-    position: absolute;
-    width: 24px;
-    border-radius: 50%;
-    border: 2px solid white;
-    left: 0;
-    top: 57px;
-  }
-  .profile_price {
+  .profile_title_desc {
+    margin: 0 25px;
     text-align: left;
-    margin: 0 auto 0 15px;
-    letter-spacing: 0.08em;
     font-size: 14px;
   }
-  .profile_price p {
-    margin: 0 0 10px;
-  }
-  .profile_price p img {
-    margin: 0 5px 2px 0;
-  }
-  .profile_box {
-    display: block;
-    width: 130px;
-  }
-  .profile_box_line {
-    margin-bottom: 15px;
-    text-align: right;
-    position: relative;
-  }
-  .profile_box_line img {
-    margin: 0 4px;
-  }
-  .profile_name {
-    text-align: left;
-    margin: 5px 0 10px;
-  }
-  .profile_follow {
-    text-align: left;
-    font-size: 14px;
-    margin: 5px 0 10px;
-  }
-  .profile_follow span {
-    margin-left: 20px;
-  }
-  .profile_icon {
-    text-align: left;
-  }
-  .profile_icon img {
-    margin-right: 30px;
-  }
-  .profile_commun {
-    color: #EF8200;
-    text-align: left;
-    margin: 15px 0 5px;
-  }
-  .profile_brand {
-    text-align: left;
-  }
-  .profile_brand img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-  .profile_brand img:last-child {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-  }
-  .profile_btn {
-    text-align: left;
-    margin: 20px 0;
-  }
-  .profile_btn button { 
-    background-color: #13C8FF;
-    border-radius: 16px;
-    width: auto;
-    padding: 3px 10px;
-  }
-  .profile_hr { 
-    margin: 0;
-  }
-  .profile_relax {
-    text-align: left;
-    margin: 20px 0 0;
-    font-size: 15px;
-  }
-  .profile_relax_detail {
-    display: flex;
-    text-align: left;
-    margin-top: 10px;
-  }
-  .profile_table {
-    font-size: 13px;
-    width: 100%;
-  }
-  .profile_table th{
-    background: #E8F1FA;
-    font-weight: 400;
-    width: 80px;
-  }
-  .profile_table tr {
-  }
-  .profile_table td {
-    border: 1px solid #E8F1FA;
-    font-weight: 600;
-  }
-  .relax_chair {
-    width: 100px;
-    height: 100px;
-  }
-  .profile_relax_msg {
-    color: #EF8200;
-    text-align: left;
-    margin: 0 0 5px;
-  }
-  .relax_buy {
-    background-color: #13C8FF;
-    border-radius: 30px;
-    color: white;
-    padding: 5px 15px;
-    margin: 7px 0;
-  }
-  .relax_massage {
-    margin: 0 0 0 auto;
-  }
-  .relax_link {
-    display: flex;
-    width: 100%;
-    margin: 10px 0;
-  }
-  .relax_link p {
-    margin: 0;
-  }
-  .relax_link div {
-    width: 25%;
-  }
-  .relax_desc {
-    text-align: left;
-    margin: 5px 20px 5px 0;
-  }
-  .brands_owned {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 10px 0;
-  }
-  .brands_owned a{
-    width: 33.33%;
-    margin: 5px 0;
-  }
-  .brands_owned p {
-    margin: 5px 0;
-  }
-  .profile_services {
-    text-align: left;
-    margin: 0 10px;
-  }
-  .certificate_desc {
-    display: flex;
-    width: 100%;
-    font-size: 15px;
-    margin: 10px 0;
-  }
-  .certificate_desc img {
-    height: 100%;
-    margin: 0 13px;
-  }
-  .review_user {
-    display: flex;
-    margin-left: 100px;
-    font-size: 15px;
-  }
-  .review_user p {
-    margin: auto 0;
-  }
-  .review_user img {
-    height: 40px;
-    width: 40px;
-    margin: auto;
-  }
-  .review_hr {
-    margin: 20px 0;
-  }
-  .future_maps {
-    color: #13C8FF;
-    text-align: left;
-    margin: 0;
-  }
-  .future_maps span {
-    margin: 0 0 0 30px;
-    text-align: left;
-    color: #BFC1CE !important;
-  }
-  .trends_map {
-    width: 100%;
-    margin: 10px 0;
-  }
-  .btn_positions {
-    text-align: right;
-  }
-  .bs_relax_desc {
-    margin: 20px 20px 5px 0;
+  .profile_btn_orange button {
+    background-color: #FFB803 !important;
+    color: white !important;
   }
 </style>
