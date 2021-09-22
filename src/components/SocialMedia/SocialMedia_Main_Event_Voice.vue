@@ -71,27 +71,28 @@
               </div>
             </div>
             <div class="event_ranking">
-              <button class="audience_btn" :class="{'border_btn': isAudience == true}" @click="showAudience"><b>Audience</b></button>
-              <button class="speakers_btn" :class="{'border_btn': isSpeakers != true}" @click="showSpeakers"><b>Speakers</b></button>
+              <button class="audience_btn" :class="{'border_btn': isAudience || (!isAudience&&!isSpeakers)}" @click="showAudience"><b>Audience</b></button>
+              <button class="speakers_btn" :class="{'border_btn': isSpeakers|| (!isAudience&&!isSpeakers)}" @click="showSpeakers"><b>Speakers</b></button>
             </div>
-
-            <div v-if="isAudience == true" class="coin_letter">
-            <p class="event_ranking_title">Top 18 GCoins sent by audience</p>
-            </div>
-            <div v-else class="coin_letter">
-            <p class="event_ranking_title">Top 5 GCoins sent by speakers</p>
-            </div>
-
-            <div v-if="isAudience == true">
-              <div v-for="(item, index) in rangking1" :key="index" class="rangking_data">
-                <img :src="`${item.rangking_image}`">
-                <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+            <div v-if="isAudience || isSpeakers">
+              <div v-if="isAudience == true" class="coin_letter">
+                <p class="event_ranking_title">Top 18 GCoins sent by audience</p>
               </div>
-            </div>
-            <div v-else>
-              <div v-for="(item, index) in rangking2" :key="index" class="rangking_data">
-                <img :src="`${item.rangking_image}`">
-                <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+              <div v-if="isSpeakers == true" class="coin_letter">
+                <p class="event_ranking_title">Top 5 GCoins sent by speakers</p>
+              </div>
+
+              <div v-if="isAudience == true">
+                <div v-for="(item, index) in rangking1" :key="index" class="rangking_data">
+                  <img :src="`${item.rangking_image}`">
+                  <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+                </div>
+              </div>
+              <div v-if="isSpeakers == true">
+                <div v-for="(item, index) in rangking2" :key="index" class="rangking_data">
+                  <img :src="`${item.rangking_image}`">
+                  <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+                </div>
               </div>
             </div>
             <div class="event_mute_group">
@@ -608,10 +609,16 @@ export default {
             });
     },
     showAudience() {
-      this.isAudience = true;
+      this.isAudience = !this.isAudience;
+      if (this.isSpeakers) {
+        this.isSpeakers = false;
+      }
     },
     showSpeakers() {
-      this.isSpeakers = true;
+      this.isSpeakers = !this.isSpeakers;
+      if (this.isAudience) {
+        this.isAudience = false;
+      }
     },
     showModal() {
       this.isModalVisible = true;

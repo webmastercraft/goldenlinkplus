@@ -49,6 +49,9 @@
             <router-link to="/socialmedia/socialmedia_main_event_host_view" >
               Event Host View
             </router-link>
+            <router-link to="/socialmedia/socialmedia_main_lounge_following" >
+              Following
+            </router-link>
           </div>
         </div>
       </div>
