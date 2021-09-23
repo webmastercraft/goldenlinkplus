@@ -462,7 +462,8 @@ export default {
   }
   .profile_session {
     padding: 85px 25px;
-      width: 414px;
+    width: 100%;
+    max-width: 414px;
   }
   .profile_header {
     display: flex;

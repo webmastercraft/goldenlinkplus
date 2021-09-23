@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './components/Home.vue';
+
 import Registration_home from './components/Registration/Home.vue';
 import Registration_one from './components/Registration/Registration_one.vue';
 import Registration_two from './components/Registration/Registration_two.vue';
@@ -82,6 +83,7 @@ import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_L
 import SocialMedia_Main_Lounge_Add from './components/SocialMedia/SocialMedia_Main_Lounge_Add.vue';
 import SocialMedia_Main_Lounge_Following from './components/SocialMedia/SocialMedia_Main_Lounge_Following.vue';
 import SocialMedia_Main_Lounge_Event from './components/SocialMedia/SocialMedia_Main_Lounge_Event.vue';
+import SocialMedia_Main_Lounge_Reward from './components/SocialMedia/SocialMedia_Main_Lounge_Reward.vue';
 import SocialMedia_Main_Event_Voice from './components/SocialMedia/SocialMedia_Main_Event_Voice.vue';
 import SocialMedia_Main_Event_Hallway from './components/SocialMedia/SocialMedia_Main_Event_Hallway.vue';
 import SocialMedia_Main_Event_Chat from './components/SocialMedia/SocialMedia_Main_Event_Chat.vue';
@@ -107,6 +109,15 @@ import SocialMedia_Recommendation_Three from './components/SocialMedia/SocialMed
 import SocialMedia_BS_Profile from './components/SocialMedia/SocialMedia_BS_Profile.vue';
 import SocialMedia_GS_Profile from './components/SocialMedia/SocialMedia_GS_Profile.vue';
 import SocialMedia_Profile_Offer from './components/SocialMedia/SocialMedia_Profile_Offer.vue';
+
+import SocialMedia_BS_User_Center from './components/SocialMedia/BS_Center/SocialMedia_BS_User_Center.vue';
+import SocialMedia_BS_Update_Profile from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Profile.vue';
+import SocialMedia_BS_Internal_Role from './components/SocialMedia/BS_Center/SocialMedia_BS_Internal_Role.vue';
+import SocialMedia_BS_Brands from './components/SocialMedia/BS_Center/SocialMedia_BS_Brands.vue';
+import SocialMedia_BS_Product from './components/SocialMedia/BS_Center/SocialMedia_BS_Product.vue';
+import SocialMedia_BS_Services from './components/SocialMedia/BS_Center/SocialMedia_BS_Services.vue';
+import SocialMedia_BS_Offers from './components/SocialMedia/BS_Center/SocialMedia_BS_Offers.vue';
+import SocialMedia_BS_Reward from './components/SocialMedia/BS_Center/SocialMedia_BS_Reward.vue';
 
 
 Vue.use(Router);
@@ -610,6 +621,11 @@ export default new Router({
             components: { default: SocialMedia_Main_Lounge_Event },
         },
         {
+            path: '/socialmedia/socialmedia_main_lounge_reward',
+            name: 'socialmedia_main_lounge_reward',
+            components: { default: SocialMedia_Main_Lounge_Reward },
+        },
+        {
             path: '/socialmedia/socialmedia_main_event_host_view',
             name: 'socialmedia_main_event_host_view',
             components: { default: SocialMedia_Main_Event_Host_View },
@@ -618,6 +634,46 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_event_quick',
             name: 'socialmedia_main_event_quick',
             components: { default: SocialMedia_Main_Event_Quick },
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_user_center',
+            name: 'socialmedia_bs_user_center',
+            components: { default: SocialMedia_BS_User_Center }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_profile',
+            name: 'socialmedia_bs_update_profile',
+            components: { default: SocialMedia_BS_Update_Profile }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_internal_role',
+            name: 'socialmedia_bs_internal_role',
+            components: { default: SocialMedia_BS_Internal_Role }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_brands',
+            name: 'socialmedia_bs_brands',
+            components: { default: SocialMedia_BS_Brands }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_product',
+            name: 'socialmedia_bs_product',
+            components: { default: SocialMedia_BS_Product }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_services',
+            name: 'socialmedia_bs_services',
+            components: { default: SocialMedia_BS_Services }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_offers',
+            name: 'socialmedia_bs_offers',
+            components: { default: SocialMedia_BS_Offers }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_reward',
+            name: 'socialmedia_bs_reward',
+            components: { default: SocialMedia_BS_Reward }
         },
     ],
 
