@@ -34,36 +34,30 @@ export default {
   data () {
     return {
       datas: [
-      { image_url: "Ray_big_on.png",
-        name: "Willard Jones",
-        user: "Chief Executive Officer",
-        price: "Gecko & Co",
-        follow:true
-      },
-      { image_url: "Ray_big_on.png",
-        name: "Willard Jones",
-        user: "Chief Executive Officer",
-        price: "Gecko & Co",
-        follow:true
-      },
-      { image_url: "Ray_big_on.png",
-        name: "Willard Jones",
-        user: "Chief Executive Officer",
-        price: "Gecko & Co",
-        follow:true
-      },
-      { image_url: "Ray_big_on.png",
-        name: "Willard Jones",
-        user: "Chief Executive Officer",
-        price: "Gecko & Co",
-        follow:true
-      },
-      { image_url: "Ray_big_on.png",
-        name: "Willard Jones",
-        user: "Chief Executive Officer",
-        price: "Gecko & Co",
-        follow:true
-      }
+          { image_url: "Ray_big_on.png",
+            name: "Willard Jones",
+            user: "Chief Executive Officer",
+            price: "Gecko & Co",
+            follow:true
+          },
+          { image_url: "Ray_big_on.png",
+            name: "Willard Jones",
+            user: "Chief Executive Officer",
+            price: "Gecko & Co",
+            follow:true
+          },
+          { image_url: "Ray_big_on.png",
+            name: "Willard Jones",
+            user: "Chief Executive Officer",
+            price: "Gecko & Co",
+            follow:true
+          },
+          { image_url: "Ray_big_on.png",
+            name: "Willard Jones",
+            user: "Chief Executive Officer",
+            price: "Gecko & Co",
+            follow:true
+          }
       ]
     }
   },

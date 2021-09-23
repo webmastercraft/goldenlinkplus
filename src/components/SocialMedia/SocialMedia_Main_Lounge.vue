@@ -89,7 +89,7 @@ export default {
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
           {rout : "", img: "lounge_interests.png", name: "My Interests"},
-          {rout : "", img: "lounge_rewards.png", name: "My Rewards"},
+          {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
   },

@@ -33,6 +33,8 @@
                 <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
                 <hr class="switch_hr">
+                <router-link to="/socialmedia/bs_center/socialmedia_bs_user_center"><p class="switch_content">User Center</p></router-link>
+                <hr class="switch_hr">
                 <p class="switch_content">Security</p>
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/socialmedia_main_notification_setting">

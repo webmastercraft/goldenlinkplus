@@ -11,7 +11,7 @@
               <div class="para_title">
                 <p class="upcoming_orange"><b>JULY 25TH 2021 9:00 AM CST</b></p>
                 <p class="lounge_event_title"><img src="lounge_users.png" class="lounge_users"><span>Let’s All win the Market!! asdf asd asdfsad</span></p>
-                <p>from<img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p class="lounge_favicon">from<img src="triangle.png">MAKING BIG TIME MONEY 101</p>
               </div>
             </div>
             <hr class="lounge_hr">
@@ -19,7 +19,7 @@
               <div class="para_title">
                 <p class="upcoming_orange"><b>JULY 25TH 2021 9:00 AM CST</b></p>
                 <p class="lounge_event_title"><img src="lounge_users.png" class="lounge_users"><span>Let’s All win the Market!! asdf asd asdfsad</span></p>
-                <p>from<img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p class="lounge_favicon">from<img src="triangle.png">MAKING BIG TIME MONEY 101</p>
               </div>
             </div>
             <hr class="lounge_hr">
@@ -27,7 +27,7 @@
               <div class="para_title">
                 <p class="upcoming_orange"><b>JULY 25TH 2021 9:00 AM CST</b></p>
                 <p class="lounge_event_title"><img src="lounge_users.png" class="lounge_users"><span>Let’s All win the Market!! asdf asd asdfsad</span></p>
-                <p>from<img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p class="lounge_favicon">from<img src="triangle.png">MAKING BIG TIME MONEY 101</p>
               </div>
             </div>
             <hr class="lounge_hr">
@@ -35,7 +35,7 @@
               <div class="para_title">
                 <p class="upcoming_orange"><b>JULY 25TH 2021 9:00 AM CST</b></p>
                 <p class="lounge_event_title"><img src="lounge_users.png" class="lounge_users"><span>Let’s All win the Market!! asdf asd asdfsad</span></p>
-                <p>from<img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p class="lounge_favicon">from<img src="triangle.png">MAKING BIG TIME MONEY 101</p>
               </div>
             </div>
             <hr class="lounge_hr">
@@ -75,9 +75,16 @@ export default {
         margin: 0;
     }
     .lounge_event {
-        margin: 20px 0;
+        margin: 20px 0 15px;
+        padding: 0 10px;
     }
     .lounge_event_body {
         margin: 60px 20px 0 !important;
+    }
+    .lounge_favicon {
+        margin: 5px 0 !important;
+    }
+    .lounge_favicon img {
+        margin: 0 5px 3px;
     }
 </style>
