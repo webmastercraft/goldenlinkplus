@@ -14,28 +14,21 @@
                     <p class="socialmedia_chat_p">Rayford Chenail</p>
                     <span class="socialmedia_chat_span">...</span>
                 </div>
-                <div class="content left-content socialmedia_chat_window">
-                    <div class="socialmedia_chat_text">
-                        <img src="mona.png" class="chat_logo">
-                        <div class="socialmedia_chat_para">
-                          <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what's upu Ray!!</span></p>
-                        </div>
-                    </div>
-                    <img src="Ray_small.png" class="chat_logo_small">
-                    <div class="socialmedia_chat_text">
-                        <img src="Ray.png" class="chat_logo">
-                        <div class="socialmedia_chat_para">
-                          <p class="chat_time">1 minutes ago<br><span class="chat_sentence">I am good! thanks Lets meet<br>tonight at 8.</span></p>
-                        </div>
-                    </div>
-                    <div class="socialmedia_chat_text">
-                        <img src="mona.png" class="chat_logo">
-                        <div class="socialmedia_chat_para">
-                          <p class="chat_time">Just now<br><span class="chat_sentence">Okay thanks!</span></p>
-                        </div>
+                <div class="left-content messaging_chat_window">
+                    <div class="messaging_chat_content"  v-for="(item, index) in DiamondData" :key="index">
+                      <div class="messaging_chat_text">
+                          <img :src="`${item.diamond_img}`" class="chat_logo">
+                          <div class="socialmedia_chat_para">
+                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                            <div class="diamond_animation">
+                              <img src="chat_diamond.png">
+                            </div>
+                            <span>125</span>
+                          </div>
+                      </div>
                     </div>
                 </div>
-                <div class="chat_sentence">
+                <div class="chat_sentence event_chat_send messaging_chat_width">
                     <input type="text" placeholder="Type your message here..." class="socialmedia_chat_input form-control">
                     <button type="button" class="btn_cam">
                         <img src="camera.png">
@@ -60,6 +53,27 @@
 export default {
   name: 'Messaging_Chat',
   components: {
+  },
+  data () {
+    return {
+      DiamondData: [
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false
+            },
+      ]
+    }
   }
 }
 </script>
@@ -110,6 +124,7 @@ export default {
     width: 100%;
     background-color: #E6F7FF;
     display: flex;
+    border-radius: 8px;
   }
   .socialmedia_chat_text {
     display: flex;
@@ -119,6 +134,7 @@ export default {
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    margin: 0 10px auto auto;
   }
   .chat_logo_small {
     float: right;
@@ -153,5 +169,24 @@ export default {
   }
   .height_static {
     min-height: 100%;
+  }
+  .messaging_chat_window {
+    margin: 10px 0;
+    background-color: white !important;
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+  }
+  .messaging_chat_content {
+    display: grid;
+  }
+  .messaging_chat_text {
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .messaging_chat_width {
+    width: calc(100% - 40px) !important;
+    margin: 0 !important;
   }
 </style>

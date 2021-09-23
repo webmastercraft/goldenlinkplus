@@ -131,19 +131,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -173,19 +173,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>

@@ -4,7 +4,7 @@
             <div class="phone sociallogin">
 
                 <div class="header_modal">
-                    <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+                    <router-link to="/socialmedia/socialmedia_search_brands" class="header_arrow"><img src="img/header_arrow.png"></router-link>
                     <a>3 Results Found</a>
                 </div>
                 <div class="original_modal">
