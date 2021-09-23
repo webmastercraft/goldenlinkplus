@@ -30,8 +30,7 @@
                     <img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean
                 </span>
                 <span class="blink_span gcoin_animation">
-                    <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
-                    <img src="50k_coin.png" class="event_coin">
+                    <img src="50k_coin.png" class="event_coin" @click="showGCoinGrab" />
 
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
                     <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
@@ -580,16 +579,23 @@ export default {
           this.isloading = false
       }, 2000)
 
-      setTimeout(() => {
-          this.gcoin_animation = true
-      }, 3500)
+      // setTimeout(() => {
+      //     this.gcoin_animation = true
+      // }, 3500)
 
+      // setTimeout(() => {
+      //     this.gcoin_tap = true
+      // }, 7000)
+    },
+    showGCoinGrab() {
+      this.gcoin_animation = true
       setTimeout(() => {
+          this.gcoin_animation = false
           this.gcoin_tap = true
-      }, 7000)
+      }, 3500)
     },
     killGcoinTap() {
-      this.gcoin_animation = false
+      // this.gcoin_animation = false
       this.gcoin_tap = false
     },
     showIt() {
@@ -707,7 +713,6 @@ export default {
         this.modalStack.push('f_show_supporter');
     },
     showEventSetting() {
-      console.log('wondering');
         this.f_show_event_setting = true;
         // this.modalStack.push('f_show_event_setting');
     },
