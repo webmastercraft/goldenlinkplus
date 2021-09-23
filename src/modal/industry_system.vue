@@ -56,7 +56,6 @@
       viewProfileBackdrop(evt) {
 
         if(evt.target.classList.length > 0 && "bg-view-mask"){
-            console.log('backdrop  industryService');
           this.$emit('view-backdrop');
         }
       },
