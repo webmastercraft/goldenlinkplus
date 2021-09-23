@@ -50,7 +50,7 @@
                 <img src="profile/profile_plus.png">
               </div>
               <swiper class="swiper profile_btn" :options="swiperOption">
-                <swiper-slide class="swiperslide_btn"><button>Offers</button></swiper-slide>
+                <swiper-slide class="swiperslide_btn"><button class="profile_action_btn">Offers</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Brands</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Services</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Business Chain</button></swiper-slide>
@@ -643,10 +643,12 @@ export default {
     font-size: 15px;
   }
   .profile_btn button { 
-    background-color: #13C8FF;
     border-radius: 16px;
     width: auto;
     padding: 3px 10px;
+  }
+  .profile_action_btn {
+    background-color: #13C8FF;
   }
   .profile_hr { 
     margin: 0;
