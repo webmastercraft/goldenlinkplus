@@ -71,6 +71,7 @@ import SocialMedia_Search_GS from './components/SocialMedia/SocialMedia_Search_G
 import SocialMedia_Search_Products from './components/SocialMedia/SocialMedia_Search_Products.vue';
 import SocialMedia_Search_Services from './components/SocialMedia/SocialMedia_Search_Services.vue';
 import SocialMedia_Search_Brands from './components/SocialMedia/SocialMedia_Search_Brands.vue';
+import SocialMedia_Search_Brands_Event from './components/SocialMedia/SocialMedia_Search_Brands_Event.vue';
 import SocialMedia_GS_Reg_Profile_Type from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Type.vue';
 import SocialMedia_GS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_GS_Reg_Profile_Photo.vue';
 import SocialMedia_GS_Reg_Connect_Paypal from './components/SocialMedia/SocialMedia_GS_Reg_Connect_Paypal.vue';
@@ -454,6 +455,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_search_brands',
             name: 'socialmedia_search_brands',
             components: { default: SocialMedia_Search_Brands },
+        },
+        {
+            path: '/socialmedia/socialmedia_search_brands_event',
+            name: 'socialmedia_search_brands_event',
+            components: { default: SocialMedia_Search_Brands_Event },
         },
         {
             path: '/socialmedia/socialmedia_gs_reg_connect_paypal',

@@ -177,9 +177,6 @@
   .each_height {
     height: 1000px !important;
   }
-  .modal_event_transform {
-    transform: translate(0, 25%) !important;
-  }
   .event_type {
     display: flex;
     flex-wrap: wrap;

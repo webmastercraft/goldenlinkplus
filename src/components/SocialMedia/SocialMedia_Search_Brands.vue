@@ -11,7 +11,7 @@
                     <div class="brand_content" v-for="(item, index) in brandData" :key="index">
                         <img :src="`${item.brand_img}`" class="brand_img">
                         <div class="brand_content_detail">
-                        <p class="brand_name">{{item.brand_name}}<button class="brand_see_btn">See Events</button></p>
+                        <p class="brand_name">{{item.brand_name}}<router-link to="/socialmedia/socialmedia_search_brands_event"><button class="brand_see_btn">See Events</button></router-link></p>
                         <hr class="brands_hr">
                         <button class="brands_own_btn">Owners</button>
                         <p class="brands_title"><img src="brands/brands_sm-1.png">{{item.brands_sm_1}}</p>

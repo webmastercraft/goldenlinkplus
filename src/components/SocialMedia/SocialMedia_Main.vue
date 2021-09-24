@@ -298,8 +298,9 @@ export default {
     width: 100%;
     text-align: left;
   }
-  .main_body .favicon_img {
+  .favicon_img {
     margin-right: 8px;
+    margin-bottom: 3px;
   }
   .para_event {
     margin: 10px 0;
