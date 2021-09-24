@@ -75,5 +75,6 @@
   .review_modal_transform {
     transform: translate(0, 38%) !important;
     width: 100%;
+    max-width: 414px;
   }
 </style>
