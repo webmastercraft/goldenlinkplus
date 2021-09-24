@@ -51,19 +51,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -93,19 +93,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -135,64 +135,23 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
                     <hr class="profile_hr">
-                    <!-- <div class="profile_relax_detail">
-                      <img src="profile/relax_chair.png" class="relax_chair">
-                      <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Collapsible Full-body Massage Mattress</b></p>
-                        <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$49.99</td>
-                            <td>$3</td>
-                            <td>4 GCoins</td>
-                          </tr>
-                        </table>
-                        <button class="relax_buy">BUY NOW</button>
-                      </div>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
-                      </div>
-                      <div>
-                      <img src="profile/videos.png">
-                      <p>Videos</p>
-                      </div>
-                      <div>
-                      <img src="profile/banners.png">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png">
-                      <p>Reviews</p>
-                      </div>
-                    </div> -->
                   </swiper-slide>
                   
                   <swiper-slide class="slide_block">
@@ -246,21 +205,58 @@
 
           </div>
       </div>
+      <Video 
+        v-show="f_show_video"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Video>
+      <Banner 
+        v-show="f_show_banner"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Banner>
+      <Detail 
+        v-show="f_show_detail"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Detail>
+      <Review 
+        v-show="f_show_review"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Review>
     </div>
   </div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
+import Video from "../../modal/video.vue";
+import Banner from "../../modal/banner.vue";
+import Detail from "../../modal/detail.vue";
+import Review from "../../modal/review.vue";
 
 export default {
   name: 'Profile_Offers',
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    Video,
+    Banner,
+    Detail,
+    Review
   },
   data () {
-    return { 
+    return {
+      f_show_video: false,
+      f_show_banner: false,
+      f_show_detail: false,
+      f_show_review: false,
+      modalStack: [],
       datas: [
         {
           follow: true
@@ -341,6 +337,61 @@ export default {
     selectFollow(index) {
       this.datas[index].follow = false
     },
+    closeModal() {
+      this.f_show_video = false;
+      this.f_show_banner = false;
+      this.f_show_detail = false;
+      this.f_show_review = false;
+      this.isModalVisible = false;
+    },
+    showVideo() {
+      this.f_show_video = true;
+    },
+    showBanner() {
+      this.f_show_banner = true;
+    },
+    showDetail() {
+      this.f_show_detail = true;
+    },
+    showReview() {
+      this.f_show_review = true;
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_video':
+          this.f_show_video = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_banner':
+          this.f_show_banner = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_detail':
+          this.f_show_detail = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_review':
+          this.f_show_review = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_video = false
+      this.f_show_banner = false,
+      this.f_show_detail = false,
+      this.f_show_review = false
+    }
   }
 }
 </script>

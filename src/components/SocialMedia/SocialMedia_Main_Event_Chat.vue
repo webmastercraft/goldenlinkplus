@@ -24,7 +24,7 @@
                               <img src="frame_diamond2.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
                               <img src="chat_diamond.png" @click="showDiaOneItem(index)">
                             </div>
-                              <span>125</span>
+                              <span>{{item.diaSize}}</span>
                           </div>
                       </div>
                           <div class="event_chat_login">
@@ -82,17 +82,20 @@ export default {
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
+                diaTwoActive: false,
+                diaSize: 120,
             },
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
+                diaTwoActive: false,
+                diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
+                diaTwoActive: false,
+                diaSize: 12,
             },
         ]
     }
@@ -110,9 +113,11 @@ export default {
                 switch(self.numClicks) {     // check the event type
                     case 1:
                         self.DiamondData[index].diaOneActive = true
+                        self.DiamondData[index].diaSize++;
                         break;
                     default:
                         self.DiamondData[index].diaTwoActive = true
+                        self.DiamondData[index].diaSize--;
                 }
                 self.numClicks = 0;               // reset the first click
             }, 200);          
@@ -121,12 +126,6 @@ export default {
             this.DiamondData[index].diaOneActive = false
             this.DiamondData[index].diaTwoActive = false
         }, 1500)
-    },
-    showDiaTwoItem(index) {
-            this.DiamondData[index].diaTwoActive = true
-            setTimeout(() => {
-                this.DiamondData[index].diaTwoActive = false
-            }, 2000)
     },
     removeFlagFromStack() {
 
