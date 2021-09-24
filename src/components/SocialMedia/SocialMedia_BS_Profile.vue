@@ -26,7 +26,9 @@
                 </div>
                 <div class="search_transmit btn_positions" v-for="(item, index) in datas" :key="index">
                 <button class="follow_btn" :disabled="!item.follow" @click="selectFollow(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
-                  <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}"><img src="airplane.png">Send</button>
+                  <router-link to="/socialmedia/socialmedia_messaging_chat">
+                    <button class="send_btn_disable" :disabled="item.follow" :class="{'send_btn': item.follow == false}">Message</button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -48,7 +50,7 @@
                 <img src="profile/profile_plus.png">
               </div>
               <swiper class="swiper profile_btn" :options="swiperOption">
-                <swiper-slide class="swiperslide_btn"><button>Offers</button></swiper-slide>
+                <swiper-slide class="swiperslide_btn"><button class="profile_action_btn">Offers</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Brands</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Services</button></swiper-slide>
                 <swiper-slide class="swiperslide_btn"><button>Business Chain</button></swiper-slide>
@@ -63,7 +65,7 @@
                   <!-- Offers -->
                     <p class="profile_relax"><b>Relaxology (14)</b></p>
                     <div class="profile_relax_detail">
-                      <img src="profile/relax_chair.png" clas s="relax_chair">
+                      <img src="profile/relax_chair.png" class="relax_chair">
                       <div class="relax_massage">
                         <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
                         <table class="profile_table">
@@ -87,19 +89,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -129,19 +131,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -171,19 +173,19 @@
                       <p>Copy Link</p>
                       </div>
                       <div>
-                      <img src="profile/videos.png">
+                      <img src="profile/videos.png" @click="showVideo">
                       <p>Videos</p>
                       </div>
                       <div>
-                      <img src="profile/banners.png">
+                      <img src="profile/banners.png" @click="showBanner">
                       <p>Banners</p>
                       </div>
                       <div>
-                      <img src="profile/detail.png">
+                      <img src="profile/detail.png" @click="showDetail">
                       <p>Detail</p>
                       </div>
                       <div>
-                      <img src="profile/reviews.png">
+                      <img src="profile/reviews.png" @click="showReview">
                       <p>Reviews</p>
                       </div>
                     </div>
@@ -195,30 +197,42 @@
                     <div v-for="(item, index) in BSbrandsdata" :key="index">
                       <p class="profile_relax"><b>{{item.title}}</b></p>
                       <div class="brands_owned">
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
-                        <div>
-                          <img src="profile/massage.png">
-                          <p>Relaxology</p>
-                        </div>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_profile_offer">
+                          <div>
+                            <img src="profile/massage.png">
+                            <p>Relaxology</p>
+                          </div>
+                        </router-link>
                       </div>
                     </div>
                   </swiper-slide>
@@ -323,21 +337,58 @@
                 <p class="relax_desc"><b>Industry:</b><br>Marketing & Advertising Services<br>->Internet Marketing Services<br>->Social Media Marketing Services</p>
           </div>
       </div>
+      <Video 
+        v-show="f_show_video"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Video>
+      <Banner 
+        v-show="f_show_banner"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Banner>
+      <Detail 
+        v-show="f_show_detail"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Detail>
+      <Review 
+        v-show="f_show_review"
+        @close="closeModal"
+        @user-backdrop="removeFlagFromStack"
+      >
+      </Review>
     </div>
   </div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
+import Video from "../../modal/video.vue";
+import Banner from "../../modal/banner.vue";
+import Detail from "../../modal/detail.vue";
+import Review from "../../modal/review.vue";
 
 export default {
   name: 'Profile_Offers',
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    Video,
+    Banner,
+    Detail,
+    Review
   },
   data () {
     return { 
+      f_show_video: false,
+      f_show_banner: false,
+      f_show_detail: false,
+      f_show_review: false,
+      modalStack: [],
       datas: [
         {
           follow: true
@@ -427,6 +478,61 @@ export default {
     selectFollow(index) {
       this.datas[index].follow = false
     },
+    closeModal() {
+      this.f_show_video = false;
+      this.f_show_banner = false;
+      this.f_show_detail = false;
+      this.f_show_review = false;
+      this.isModalVisible = false;
+    },
+    showVideo() {
+      this.f_show_video = true;
+    },
+    showBanner() {
+      this.f_show_banner = true;
+    },
+    showDetail() {
+      this.f_show_detail = true;
+    },
+    showReview() {
+      this.f_show_review = true;
+    },
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_video':
+          this.f_show_video = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_banner':
+          this.f_show_banner = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_detail':
+          this.f_show_detail = false
+          break;
+        default:
+          break;
+      }
+      switch (temp) {
+        case 'f_show_review':
+          this.f_show_review = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_video = false
+      this.f_show_banner = false,
+      this.f_show_detail = false,
+      this.f_show_review = false
+    }
   }
 }
 </script>
@@ -448,7 +554,8 @@ export default {
   }
   .profile_session {
     padding: 85px 25px;
-      width: 414px;
+    width: 100%;
+    max-width: 414px;
   }
   .profile_header {
     display: flex;
@@ -533,11 +640,15 @@ export default {
   .profile_btn {
     text-align: left;
     margin: 20px 0;
+    font-size: 15px;
   }
   .profile_btn button { 
-    background-color: #13C8FF;
     border-radius: 16px;
     width: auto;
+    padding: 3px 10px;
+  }
+  .profile_action_btn {
+    background-color: #13C8FF;
   }
   .profile_hr { 
     margin: 0;
@@ -568,8 +679,8 @@ export default {
     font-weight: 600;
   }
   .relax_chair {
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: 25%;
   }
   .profile_relax_msg {
     color: #EF8200;
@@ -582,9 +693,11 @@ export default {
     color: white;
     padding: 5px 15px;
     margin: 7px 0;
+    font-size: 14px;
   }
   .relax_massage {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 3%;
+    width: 75%;
   }
   .relax_link {
     display: flex;
@@ -607,7 +720,7 @@ export default {
     width: 100%;
     margin: 10px 0;
   }
-  .brands_owned div {
+  .brands_owned a{
     width: 33.33%;
     margin: 5px 0;
   }

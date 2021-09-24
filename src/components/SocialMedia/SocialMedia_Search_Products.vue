@@ -97,9 +97,6 @@ export default {
   .search_area {
     font-size: 11px;
   }
-  .socialmedia_search_title {
-    font-size: 16px;
-  }
   .search_coins {
     font-size: 14px;
   }
@@ -114,10 +111,6 @@ export default {
   .socialmedia_search_para {
     padding: 15px 10px;
     display: flex;
-  }
-  .search_para {
-    margin: 0;
-    width: 100%;
   }
   .follow_btn {
     background: #EF8200;

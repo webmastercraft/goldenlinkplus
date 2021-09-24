@@ -86,10 +86,10 @@ export default {
           {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
           {rout : "", img: "lounge_membership.png", name: "My Membership"},
           {rout : "", img: "lounge_wallet.png", name: "My Wallet"},
-          {rout : "", img: "lounge_communities.png", name: "My Communities"},
-          {rout : "", img: "lounge_event.png", name: "My Events"},
+          {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
+          {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
           {rout : "", img: "lounge_interests.png", name: "My Interests"},
-          {rout : "", img: "lounge_rewards.png", name: "My Rewards"},
+          {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
   },

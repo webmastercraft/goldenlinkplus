@@ -563,7 +563,6 @@ input[type=text]:invalid {
     box-sizing: border-box;
 }
 .toggle-button-cover span {
-    position: absolute;
     font-size: 16px;
     color: #3B3E51;
 }

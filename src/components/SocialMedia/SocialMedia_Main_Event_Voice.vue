@@ -4,15 +4,22 @@
       <div class="loading_screen" v-show="isloading" >
         <img src="loading_logo.png">
       </div>
+      <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
+        <div class="welcome_dialog_content" @click="killGcoinTap">
+          <img src="welcome_dialog.png">
+          <p class="welcome_dialog_title">Congratulations!</p>
+          <p class="welcome_dialog_price">You received 20 G-Coins</p>
+          <p class="welcome_dialog_btn">Tap to continue</p>
+        </div>
+      </div>
       <div class="phone sociallogin" v-show="!isloading">
-        
           <div class="event_body_title">
             <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
-                  <img src="event_back.png">Go to Hallway
+                  <img src="event_back.png">Hallway
                 </router-link>
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
@@ -22,9 +29,18 @@
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink1 == true}" src="coin_10.png"  @click="showBlink1">
                     <img src="Jean.png" class="event_users_img" @click="showUserProfile">Jean
                 </span>
-                <span class="blink_span">
-                    <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink == true}" src="coin_10.png"  @click="showBlink">
-                    <img src="50k_coin.png" class="event_coin">
+                <span class="blink_span gcoin_animation">
+                    <img src="50k_coin.png" class="event_coin" @click="showGCoinGrab" />
+
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+                    <img src="coin_animation.png" class="moving" v-if="gcoin_animation" />
+
                     <button>00:14:59</button>
                 </span>
                 <div class="event_para_group">
@@ -54,27 +70,28 @@
               </div>
             </div>
             <div class="event_ranking">
-              <button class="audience_btn" :class="{'border_btn': isAudience == true}" @click="showAudience"><b>Audience</b></button>
-              <button class="speakers_btn" :class="{'border_btn': isAudience != true}" @click="showSpeakers"><b>Speakers</b></button>
+              <button class="audience_btn" :class="{'border_btn': isAudience || (!isAudience&&!isSpeakers)}" @click="showAudience"><b>Audience</b></button>
+              <button class="speakers_btn" :class="{'border_btn': isSpeakers|| (!isAudience&&!isSpeakers)}" @click="showSpeakers"><b>Speakers</b></button>
             </div>
-
-            <div v-if="isAudience == true" class="coin_letter">
-            <p class="event_ranking_title">Top 18 GCoins sent by audience</p>
-            </div>
-            <div v-else class="coin_letter">
-            <p class="event_ranking_title">Top 5 GCoins sent by speakers</p>
-            </div>
-
-            <div v-if="isAudience == true">
-              <div v-for="(item, index) in rangking1" :key="index" class="rangking_data">
-                <img :src="`${item.rangking_image}`">
-                <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+            <div v-if="isAudience || isSpeakers">
+              <div v-if="isAudience == true" class="coin_letter">
+                <p class="event_ranking_title">Top 18 GCoins sent by audience</p>
               </div>
-            </div>
-            <div v-else>
-              <div v-for="(item, index) in rangking2" :key="index" class="rangking_data">
-                <img :src="`${item.rangking_image}`">
-                <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+              <div v-if="isSpeakers == true" class="coin_letter">
+                <p class="event_ranking_title">Top 5 GCoins sent by speakers</p>
+              </div>
+
+              <div v-if="isAudience == true">
+                <div v-for="(item, index) in rangking1" :key="index" class="rangking_data">
+                  <img :src="`${item.rangking_image}`">
+                  <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+                </div>
+              </div>
+              <div v-if="isSpeakers == true">
+                <div v-for="(item, index) in rangking2" :key="index" class="rangking_data">
+                  <img :src="`${item.rangking_image}`">
+                  <p>{{item.rangking_name}}<span>{{item.rangking_coin}}</span></p>
+                </div>
               </div>
             </div>
             <div class="event_mute_group">
@@ -191,6 +208,8 @@ export default {
   },
   data () {
     return {
+        gcoin_tap: false,
+        gcoin_animation: false,
         isAddingCoin: false,
         isBlink: false,
         isDiamond: false,
@@ -199,7 +218,9 @@ export default {
         isModalVisible: false,
         clicked: false,
         imgClicked: false,
-        isAudience: true,
+        isAudience: false,
+        isSpeakers: false,
+        
         f_show_user_profile: false,
         f_show_send_gcoin: false,
         f_show_invite: false,
@@ -557,6 +578,25 @@ export default {
       setTimeout(() => {
           this.isloading = false
       }, 2000)
+
+      // setTimeout(() => {
+      //     this.gcoin_animation = true
+      // }, 3500)
+
+      // setTimeout(() => {
+      //     this.gcoin_tap = true
+      // }, 7000)
+    },
+    showGCoinGrab() {
+      this.gcoin_animation = true
+      setTimeout(() => {
+          this.gcoin_animation = false
+          this.gcoin_tap = true
+      }, 3500)
+    },
+    killGcoinTap() {
+      // this.gcoin_animation = false
+      this.gcoin_tap = false
     },
     showIt() {
         Vuedals.$emit('new', {
@@ -575,10 +615,16 @@ export default {
             });
     },
     showAudience() {
-      this.isAudience = true;
+      this.isAudience = !this.isAudience;
+      if (this.isSpeakers) {
+        this.isSpeakers = false;
+      }
     },
     showSpeakers() {
-      this.isAudience = false;
+      this.isSpeakers = !this.isSpeakers;
+      if (this.isAudience) {
+        this.isAudience = false;
+      }
     },
     showModal() {
       this.isModalVisible = true;
@@ -601,7 +647,6 @@ export default {
           this.f_show_user_profile = false
           break;
         default:
-          // statements_def
           break;
       }
       switch (temp) {
@@ -609,7 +654,6 @@ export default {
           this.f_show_invite = false
           break;
         default:
-          // statements_def
           break;
       }
       switch (temp) {
@@ -670,7 +714,7 @@ export default {
     },
     showEventSetting() {
         this.f_show_event_setting = true;
-        this.modalStack.push('f_show_event_setting');
+        // this.modalStack.push('f_show_event_setting');
     },
     ttt() {
       this.f_show_upcoming_event = true; // showing child
@@ -698,7 +742,7 @@ export default {
   created () {
     this.killLoading();
   },
-}
+};
 </script>
 
 <style>
@@ -997,5 +1041,99 @@ export default {
   .blink_span {
     position: relative;
   }
+  .welcome_dialog {
+    max-width: 414px;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background: rgba(195, 195, 195, 0.2);
+    position: fixed;
+  }
+  .welcome_dialog p {
+    margin: 10px auto 0;
+  }
+  .welcome_dialog_content {
+    text-align: center;
+    background: white;
+    border-radius: 25px;
+    width: 70%;
+    height: 355px;
+    margin: calc(50vh - 177.5px) 15%;
+  }
+  .welcome_dialog_content > img {
+    width: 100%;
+    padding: 10px;
+  }
+  .welcome_dialog_title {
+    font-size: 20px;
+  }
+  .welcome_dialog_price {
+    font-size: 16px;
+    color: #EF8200;
+    font-weight: 600;
+  }
+  .welcome_dialog_btn {
+    font-size: 13px;
+  }
+  .gcoin_animation {
+    position: relative;
+  }
+    @keyframes floatBubble1 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 30px); top: -55px; }
+    }
+    @keyframes floatBubble2 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 20px); top: -40px; }
+    }
+    @keyframes floatBubble3 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 40px); top: 10px; }
+    }
+
+
+    @keyframes floatBubble4 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% + 10px); top: 60px; }
+    }
+    @keyframes floatBubble5 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 30px); top: 75px; }
+    }
+    @keyframes floatBubble6 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 80px); top: 60px; }
+    }
+
+
+    @keyframes floatBubble7 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 100px); top: 10px; }
+    }
+    @keyframes floatBubble8 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 40% {opacity: 0.8;} 70% {opacity: 1;} 100% { left: calc(50% - 80px); top: -40px; }
+    }
+
+    /*@keyframes floatBubble9 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 60px); top: -3px; }
+    }
+    @keyframes floatBubble10 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 0px); top: 20px; }
+    }
+    @keyframes floatBubble11 {
+        0% { left:calc(50% - 30px); top: 10px; opacity: 1; } 100% { left: calc(50% - 10px); top: 25px; }
+    }*/
+    .moving {
+      position: absolute;
+      top: 10px;
+      left: calc(50% - 30px);
+      opacity: 0;
+      width: 60px;
+      height: 60px;
+    }
+    .moving:nth-of-type(2) { animation: floatBubble1 2s ; animation-delay: 0.5s;}
+    .moving:nth-of-type(3) { animation: floatBubble2 2s ; animation-delay: 0s; }
+    .moving:nth-of-type(4) { animation: floatBubble3 2s ; animation-delay: 0.68s;}
+    .moving:nth-of-type(5) { animation: floatBubble4 2s ; animation-delay: 0.2s;}
+    .moving:nth-of-type(6) { animation: floatBubble5 2s ; animation-delay: 0.88s;}
+    .moving:nth-of-type(7) { animation: floatBubble6 2s ; animation-delay: 1.2s;}
+    .moving:nth-of-type(8) { animation: floatBubble7 2s ; animation-delay: 0.3s;}
+    .moving:nth-of-type(9) { animation: floatBubble8 2s ; animation-delay: 1s;}
+    /*.moving:nth-of-type(10) { animation: floatBubble9 2s infinite  normal ease-out; }
+    .moving:nth-of-type(11) { animation: floatBubble10 2s infinite  normal ease-out; }
+    .moving:nth-of-type(12) { animation: floatBubble11 2s infinite  normal ease-out; }*/
 </style>
  

@@ -13,7 +13,9 @@
             <div class="close_event_modal">
               <p>You are about the close this event. Continue closing this event?</p>
               <button class="bg-mask" @click="userProfileBackdrop">Do not close this event</button>
-              <button @click="closeModal">Yes, close this event</button>
+              <router-link to="/socialmedia/socialmedia_main">
+                <button class="bg-mask">Yes, close this event</button>
+              </router-link>
             </div>
         </header>
       </div>
