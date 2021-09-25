@@ -437,7 +437,6 @@ export default {
   },
   watch: {
     currentCarouselIndex () {
-      console.log('watch', this.currentCarouselIndex);
       this.$refs.carousel.slideTo(this.currentCarouselIndex);
     }
   },
