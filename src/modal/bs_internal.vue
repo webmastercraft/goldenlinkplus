@@ -14,8 +14,8 @@
                 <p class="switch_title">Add Location<span class="profile_modal_done" @click="closeModal">Cancel</span></p>
                 <p class="update_profile_content">Internal Business Role</p>
                 <div class="profile_internal_select">
-                  <p><img src="profile/sky.png">Headquarter</p>
-                  <p><img src="profile/grey.png">Branch</p>
+                  <p @click="selectInternal(1)"><button class="select_internal_modal"  :class="{'select_internal_active': is_Internal == true}"></button>Headquarter</p>
+                  <p @click="selectInternal(2)"><button class="select_internal_modal" :class="{'select_internal_active': is_Internal != true}"></button>Branch</p>
                 </div>
                 <p class="update_profile_content">Address 1</p>
                 <div class="form-group profile_input profile_role_input">
@@ -66,11 +66,6 @@
           </header>
         </div>
       </div>
-      <ProfileOption 
-        v-show="f_show_view_profile"
-        @close="showProfile"
-      >
-      </ProfileOption>
     </div>
   </transition>
 </template>
@@ -78,11 +73,12 @@
 <script>
 
   export default {
-    name: 'BS_Internal',
+    name: 'User',
     components: {
     },  
     data () {
         return {
+          is_Internal: true,
       }
     },
     methods: {
@@ -92,6 +88,13 @@
       viewProfileBackdrop(evt) {
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
+        }
+      },
+      selectInternal(key) {
+        if (key == 1) {
+            this.is_Internal = true;
+        } else {
+            this.is_Internal = false;
         }
       }
     }
@@ -116,7 +119,7 @@
       margin: 10px 0;
       font-size: 15px;
     }
-    .profile_internal_select img {
+    .profile_internal_select button {
       margin: 0 10px 3px;
     }
     .profile_map_del {
@@ -127,5 +130,14 @@
     .profile_map_update {
       width: calc(50% - 5px) !important;
       margin-left: 5px;
+    }
+    .select_internal_modal {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: #E8F1FA;
+    }
+    .select_internal_active {
+      background-color: #13C8FF;
     }
 </style>
