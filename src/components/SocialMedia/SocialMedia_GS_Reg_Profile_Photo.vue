@@ -45,17 +45,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
   .socialmedia_messages {
     display: flex;
     padding: 15px 0;
@@ -66,17 +55,7 @@ export default {
     height: 100%;
     margin: auto;
   }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
-  .search_gs_margin {
-    background-color: white !important;
-    margin-right: 20px;
-  }
 
-  .search_gs_grid {
-    display: grid;
-  }
   .status_add_photo {
     font-size: 20px;
     margin: 40px 0 10px;

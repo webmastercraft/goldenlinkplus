@@ -89,7 +89,8 @@ export default {
     background: white;
     width: 100%;
     max-width: 414px;
-    opacity: 0.9;
+    opacity: 1;
+    z-index: 1040;
   }
   .header_modal a {
     line-height: 60px;

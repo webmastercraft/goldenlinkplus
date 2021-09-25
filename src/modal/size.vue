@@ -12,19 +12,17 @@
             id="modalTitle"
           >
               <div class="switch_area">
-                <p class="switch_content" @click="closeModal">Corporation</p>
+                <p class="switch_content" @click="closeModal">1-49 Employees</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Partnership</p>
+                <p class="switch_content" @click="closeModal">50-99 Employees</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Sole Proprietorship</p>
+                <p class="switch_content" @click="closeModal">100-499 Employees</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">S Corporation</p>
+                <p class="switch_content" @click="closeModal">500-499 Emloyees</p>
                 <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
-                    <p class="switch_content">Limited Liability Company</p>
-                </router-link>
+                <p class="switch_content" @click="closeModal">500-999 Employees</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Other</p>
+                <p class="switch_content" @click="closeModal">Over 1000 Employees</p>
                 <hr class="switch_hr">
               </div>
           </header>
@@ -37,7 +35,7 @@
 <script>
 
   export default {
-    name: 'Company',
+    name: 'Size',
     components: {
     },  
     data () {

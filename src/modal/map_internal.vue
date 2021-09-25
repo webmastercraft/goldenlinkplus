@@ -93,7 +93,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Map_Internal',
     methods: {
       close() {
         this.$emit('close');

@@ -62,7 +62,7 @@
   Vue.use(ToggleButton)
 
   export default {
-    name: 'User',
+    name: 'BS_Brand',
     components: {
     },  
     data () {

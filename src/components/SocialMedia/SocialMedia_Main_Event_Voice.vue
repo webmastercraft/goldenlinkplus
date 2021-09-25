@@ -764,7 +764,7 @@ export default {
     width: 85px;
     height: 85px;
     bottom: 35px;
-    left: calc(50vw - 47px);
+    left: calc(50vw - 40px);
   }
   .figure_btn img{
     margin-right: 3px;

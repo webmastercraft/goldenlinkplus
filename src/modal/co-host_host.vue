@@ -68,7 +68,7 @@
   import ProfileOption from "./profile_option.vue";
 
   export default {
-    name: 'User',
+    name: 'Co-host_Host',
     components: {
       ProfileOption,
     },  

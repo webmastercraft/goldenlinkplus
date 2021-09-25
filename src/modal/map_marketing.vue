@@ -84,7 +84,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Map_Marketing',
     methods: {
       close() {
         this.$emit('close');

@@ -81,6 +81,7 @@ import SocialMedia_Main_Create_Event from './components/SocialMedia/SocialMedia_
 import SocialMedia_Main_Audio_Event from './components/SocialMedia/SocialMedia_Main_Audio_Event.vue';
 import SocialMedia_Main_Activities from './components/SocialMedia/SocialMedia_Main_Activities.vue';
 import SocialMedia_Main_Lounge from './components/SocialMedia/SocialMedia_Main_Lounge.vue';
+import SocialMedia_Main_Lounge_Bs from './components/SocialMedia/SocialMedia_Main_Lounge_Bs.vue';
 import SocialMedia_Main_Lounge_Add from './components/SocialMedia/SocialMedia_Main_Lounge_Add.vue';
 import SocialMedia_Main_Lounge_Following from './components/SocialMedia/SocialMedia_Main_Lounge_Following.vue';
 import SocialMedia_Main_Lounge_Event from './components/SocialMedia/SocialMedia_Main_Lounge_Event.vue';
@@ -119,6 +120,14 @@ import SocialMedia_BS_Product from './components/SocialMedia/BS_Center/SocialMed
 import SocialMedia_BS_Services from './components/SocialMedia/BS_Center/SocialMedia_BS_Services.vue';
 import SocialMedia_BS_Offers from './components/SocialMedia/BS_Center/SocialMedia_BS_Offers.vue';
 import SocialMedia_BS_Reward from './components/SocialMedia/BS_Center/SocialMedia_BS_Reward.vue';
+
+import SocialMedia_User_Center from './components/SocialMedia/User_Center/SocialMedia_User_Center.vue';
+import SocialMedia_GS_Update_Profile from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Profile.vue';
+import SocialMedia_GS_Internal_Role from './components/SocialMedia/User_Center/SocialMedia_GS_Internal_Role.vue';
+import SocialMedia_GS_Marketing from './components/SocialMedia/User_Center/SocialMedia_GS_Marketing.vue';
+import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMedia_GS_Social.vue';
+import SocialMedia_GS_Referrals from './components/SocialMedia/User_Center/SocialMedia_GS_Referrals.vue';
+import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMedia_GS_Invite.vue';
 
 
 Vue.use(Router);
@@ -507,6 +516,11 @@ export default new Router({
             components: { default: SocialMedia_Main_Lounge },
         },
         {
+            path: '/socialmedia/socialmedia_main_lounge_bs',
+            name: 'socialmedia_main_lounge_bs',
+            components: { default: SocialMedia_Main_Lounge_Bs },
+        },
+        {
             path: '/socialmedia/socialmedia_main_event_voice',
             name: 'socialmedia_main_event_voice',
             components: { default: SocialMedia_Main_Event_Voice },
@@ -680,6 +694,41 @@ export default new Router({
             path: '/socialmedia/bs_center/socialmedia_bs_reward',
             name: 'socialmedia_bs_reward',
             components: { default: SocialMedia_BS_Reward }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_user_center',
+            name: 'socialmedia_user_center',
+            components: { default: SocialMedia_User_Center }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_profile',
+            name: 'socialmedia_gs_update_profile',
+            components: { default: SocialMedia_GS_Update_Profile }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_internal_role',
+            name: 'socialmedia_gs_internal_role',
+            components: { default: SocialMedia_GS_Internal_Role }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_marketing',
+            name: 'socialmedia_gs_marketing',
+            components: { default: SocialMedia_GS_Marketing }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_social',
+            name: 'socialmedia_gs_social',
+            components: { default: SocialMedia_GS_Social }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_referrals',
+            name: 'socialmedia_gs_referrals',
+            components: { default: SocialMedia_GS_Referrals }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_invite',
+            name: 'socialmedia_gs_invite',
+            components: { default: SocialMedia_GS_Invite }
         },
     ],
 

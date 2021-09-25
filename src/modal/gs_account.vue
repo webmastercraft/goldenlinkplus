@@ -33,7 +33,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'GS_Account',
     methods: {
       close() {
         this.$emit('close');
