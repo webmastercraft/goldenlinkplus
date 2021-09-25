@@ -20,8 +20,8 @@
                           <div class="socialmedia_chat_para">
                             <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
                             <div class="diamond_animation">
-                              <img src="chatdia.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
-                              <img src="frame_diamond2.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
+                              <img src="frame_diamond2.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
+                              <img src="chatdia.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
                               <img src="chat_diamond.png" @click="showDiaOneItem(index)">
                             </div>
                               <span>{{item.diaSize}}</span>
@@ -106,6 +106,9 @@ export default {
             // setTimeout(() => {
             //     this.DiamondData[index].diaOneActive = false
             // }, 2000)
+        if(this.DiamondData[index].diaOneActive || this.DiamondData[index].diaTwoActive ) {
+          return;
+        }
         this.numClicks++;
         if (this.numClicks === 1) {          // the first click in .2s
             var self = this;
