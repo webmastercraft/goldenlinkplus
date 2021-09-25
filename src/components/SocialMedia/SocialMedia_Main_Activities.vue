@@ -12,7 +12,7 @@
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
-                <img src="mona.png" class="main_user" @click="showSwitchAccount">
+                <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
             </div>
             <p><img src="ring.png" class="favicon_img">ACTIVITIES</p>
@@ -72,35 +72,35 @@
               <p class="activities_num">25m</p>
             </div>
           </div>
-          <SwitchAccount 
-            v-show="f_show_switch_account"
+          <SwitchGsAccount 
+            v-show="f_show_switch_gs_account"
             @close="closeModal"
           >
-          </SwitchAccount>
+          </SwitchGsAccount>
       </div>
     </div>
   </div>
 </template>
 <script>
-import SwitchAccount from "../../modal/switch_account.vue";
+import SwitchGsAccount from "../../modal/switch_gs_account.vue";
 
 export default {
   name: 'Activities',
   components: {
-    SwitchAccount
+    SwitchGsAccount
   },
   data() {
     return {
-      f_show_switch_account: false,
+      f_show_switch_gs_account: false,
     }
   },
   methods: {
     closeModal() {
-      this.f_show_switch_account = false;
+      this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
     },
-    showSwitchAccount() {
-      this.f_show_switch_account = true;
+    showSwitchGsAccount() {
+      this.f_show_switch_gs_account = true;
     },
   }
 }

@@ -4,7 +4,7 @@
       <div class="profile_phone">
         
           <div class="header_modal profile_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Ana’s GS Profile</a>
           </div>
           <div class="profile_session">
@@ -63,38 +63,22 @@
                 <img src="profile/commun11.png">
                 <img src="profile/profile_plus.png">
               </div>
-              <swiper class="swiper profile_btn" :options="swiperOption">
-                  <swiper-slide class="swiperslide_btn"><button>Marketing Direction</button></swiper-slide>
-                  <swiper-slide class="swiperslide_btn"><button>More About Ana</button></swiper-slide>
-                  <swiper-slide class="swiperslide_btn"><button>Certifications</button></swiper-slide>
-                  <swiper-slide class="swiperslide_btn"><button>Reviews</button></swiper-slide>
-              </swiper>
 
-              <swiper class="swiper">
-                <swiper-slide class="slide_block">
                   <!-- Marketing Direction -->
+                  <div class="marketing_direction_margin">
                     <div class="gs_marketing" v-for="(item, index) in marketingdata" :key="index">
                       <button>{{item.button}}</button>
                       <p>{{item.title}}</p>
                     </div>
-                </swiper-slide>
+                  </div>
 
-                <swiper-slide class="slide_block">
                   <!-- More about Ana -->
+                    <p class="profile_commun"><b>More About Ana</b></p>
                     <p class="gs_about_title">Chief Executive Office @ APPLESEED Corporation</p>
                     <p class="profile_follow">APPLESEED Corporation, a global conglomerate concentrating in industries of real estate, media and entertainment, sports, retail, IoT, healthcare and more.One of the most attractive early advantages business corporations offered to their investors, compared to earlier business entities like sole proprietorships and general partnerships, was limited liability.[clarification needed] Limited liability means that a passive shareholder in a corporation will not be personally liable either for contractually agreed obligations of the corporation, or for torts (involuntary harms) committed by the corporation against a third party. Limited liability in contract is uncontroversial because the parties to the contract could have agreed to it and could agree to waive it by contract. However, limited liability in tort remains controversial because third parties do not agree to waive the right to pursue shareholders. There is significant concern that limited liability in tort may lead to excessive corporate risk taking and more harm by corporations to third parties.</p>
-                </swiper-slide>
 
-                <swiper-slide class="slide_block">
-                  <!-- Certifications -->
-                    <div class="certificate_desc" v-for="(item, index) in certificationdata" :key="index">
-                      <img :src="`${item.image_url}`">
-                      <p class="relax_desc"><b>Certification Type:</b><br>{{item.type}}<br><b>Certification Number:</b><br>{{item.number}}<br><b>Authority of Issue:</b><br>{{item.issue}}<b><br>Issue Date: </b>{{item.issuedate}}<br><b>Expiration Date: </b>{{item.date}}<br><b>Description:</b><br>{{item.desc}}</p>
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide_block">
                   <!-- Reviews -->
+                    <p class="profile_commun"><b>Latest Reviews</b></p>
                     <div class="profile_services" v-for="(item, index) in reviewdata" :key="index">
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
@@ -108,23 +92,16 @@
                       </div>
                       <hr class="review_hr">
                     </div>
-                </swiper-slide>
-            </swiper>
           </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import "swiper/swiper-bundle.min.css"
-// import "swiper/css/swiper.css"
 
 export default {
   name: 'Profile_Offers',
   components: {
-    Swiper,
-    SwiperSlide
   },
   data () {
     return { 
@@ -151,17 +128,6 @@ export default {
           button: "Geolocation",
           title: "China, United States"
         },
-      ],
-      certificationdata: [
-        {
-          image_url: "profile/profile_doc.png",
-          type: "Exclusive Marketing Agent",
-          number: "10452563",
-          issue: "Goldenlinkplus",
-          issuedate: "09/04/2021",
-          date: "09/04/2022",
-          desc: "Exclusive Marketing Agent for business"
-        }
       ],
       reviewdata: [
         {
@@ -268,6 +234,9 @@ export default {
   left: 23px;
   bottom: 18px;
   color: red !important;
+}
+.marketing_direction_margin {
+  margin-top: 20px;
 }
 </style>
 <!-- <style lang="scss" scoped>

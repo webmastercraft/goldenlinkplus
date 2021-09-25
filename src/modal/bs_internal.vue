@@ -78,7 +78,7 @@
 <script>
 
   export default {
-    name: 'User',
+    name: 'BS_Internal',
     components: {
     },  
     data () {

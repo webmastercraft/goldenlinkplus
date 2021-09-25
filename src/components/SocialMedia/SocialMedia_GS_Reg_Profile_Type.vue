@@ -11,8 +11,6 @@
             <img src="status_one.png" class="status_img">
             <p class="status_title">What type of marketer are you?</p>
             <div class="gs_reg_status">
-              <!-- <button class="individual">An Individual</button>
-              <button class="enterprise">I work for an Enterprise</button> -->
               <button class="individual" :class="{'selected_stage': is_stage1 == true}" @click="selectStage(1)">An Individual</button>
               <button  class="individual" :class="{'selected_stage': is_stage1 != true}" @click="selectStage(2)">I work for an Enterprise</button>
             </div>
@@ -54,37 +52,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_messages_size {
-    height: 100%;
-    margin: auto;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
-  .search_gs_margin {
-    background-color: white !important;
-    margin-right: 20px;
-  }
-  .search_gs_grid {
-    display: grid;
-  }
   .status_img {
     margin: 50px auto 0;
   }

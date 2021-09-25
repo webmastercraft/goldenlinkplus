@@ -28,7 +28,7 @@
 <script>
 
   export default {
-    name: 'Switch_Account',
+    name: 'Business',
     components: {
     },  
     data () {

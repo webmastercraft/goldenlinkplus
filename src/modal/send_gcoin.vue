@@ -48,7 +48,7 @@
 <script>
   import ChargeGcoin from "./charge_gcoin.vue";
   export default {
-    name: 'Send',
+    name: 'Send_GCoin',
     components: {
       ChargeGcoin
     },

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="user_center_area">
-                <router-link to="/socialmedia/socialmedia_main_lounge">
+                <router-link to="/socialmedia/socialmedia_main_lounge_bs">
                     <img src="cancel_black.png"  class="user_center_close">
                 </router-link>
                 <p class="switch_title">Business Information Settings</p>

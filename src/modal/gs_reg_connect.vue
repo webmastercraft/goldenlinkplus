@@ -26,7 +26,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'GS_Reg_Connect',
     methods: {
       close() {
         this.$emit('close');

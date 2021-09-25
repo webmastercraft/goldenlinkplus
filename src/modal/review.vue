@@ -34,7 +34,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Review',
     data () {
       return {
           BSreviewdata: [

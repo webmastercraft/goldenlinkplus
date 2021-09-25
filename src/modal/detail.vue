@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Detail',
     methods: {
       close() {
         this.$emit('close');

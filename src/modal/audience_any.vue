@@ -64,7 +64,7 @@
   import ProfileOption from "./profile_option.vue";
 
   export default {
-    name: 'User',
+    name: 'Audience_Any',
     components: {
       ProfileOption,
     },  

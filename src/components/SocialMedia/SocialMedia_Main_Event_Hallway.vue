@@ -12,7 +12,7 @@
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
-                <img src="mona.png" class="main_user" @click="showSwitchAccount">
+                <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
             </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
@@ -157,11 +157,11 @@
                 @user-backdrop="removeFlagFromStack"
           >
           </Hallway>
-          <SwitchAccount 
-            v-show="f_show_switch_account"
+          <SwitchGsAccount 
+            v-show="f_show_switch_gs_account"
             @close="closeModal"
           >
-          </SwitchAccount>
+          </SwitchGsAccount>
       </div>
     </div>
   </div>
@@ -169,25 +169,25 @@
 <script>
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import Hallway from "../../modal/hallway.vue";
-import SwitchAccount from "../../modal/switch_account.vue";
+import SwitchGsAccount from "../../modal/switch_gs_account.vue";
 
 export default {
   name: 'Event_Hallway',
   components: {
-    SwitchAccount,
+    SwitchGsAccount,
     Hallway
   },
   data () {
     return {
       micClicked: false,
       f_show_hallway: false,
-      f_show_switch_account: false,
+      f_show_switch_gs_account: false,
       modalStack: [],
     }
   },
   methods: {
     closeModal() {
-      this.f_show_switch_account = false;
+      this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
     },
     showHallway() {
@@ -207,8 +207,8 @@ export default {
       }
       this.f_show_hallway = false
     },
-    showSwitchAccount() {
-      this.f_show_switch_account = true;
+    showSwitchGsAccount() {
+      this.f_show_switch_gs_account = true;
     },
   },
   computed: {

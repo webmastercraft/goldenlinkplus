@@ -12,37 +12,33 @@
             id="modalTitle"
           >
               <div class="switch_area">
-                <p class="switch_content" @click="closeModal">Corporation</p>
+                <img src="profile/back.png" @click="closeModal" class="bg-view-mask">
+                <p class="switch_content"  @click="showIndustryService">Health Care</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Partnership</p>
+                <p class="switch_content">Jewelry Cleaning and Care</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Sole Proprietorship</p>
-                <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">S Corporation</p>
-                <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
-                    <p class="switch_content">Limited Liability Company</p>
-                </router-link>
-                <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Other</p>
+                <p class="switch_content">Personal Care</p>
                 <hr class="switch_hr">
               </div>
           </header>
         </div>
       </div>
+
     </div>
   </transition>
 </template>
 
 <script>
+    
 
   export default {
-    name: 'Company',
+    name: 'Product_Health',
     components: {
+        
     },  
     data () {
       return {
-        f_show_view_profile: false
+        f_show_view_profile: false,
       }
     },
     methods: {
@@ -50,20 +46,28 @@
         this.$emit('close');
       },
       viewProfileBackdrop(evt) {
+
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
         }
+      },
+      showIndustryService(){
+        this.$emit('showIndustryService');
+      },
+      close() {
+        this.$emit('close');
+      },
+      userProfileBackdrop(evt) {
+        if(evt.target.classList.length > 0 && "bg-mask"){
+          this.$emit('user-backdrop');
+        }
+      },
+
+      closeViewProfile() {
+        this.f_industry_service = false;
       },
     },
   }
 </script>
 <style>
-    .bs_user_center_modal {
-        height: 100vh !important;
-        max-width: 414px;
-        margin-right: 140px;
-        width: calc(100% - 140px) !important;
-        transform: translate3d(0, 0, 0) !important;
-        border-radius: 0 !important;
-    }
 </style>
