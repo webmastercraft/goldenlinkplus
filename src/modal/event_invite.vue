@@ -26,12 +26,12 @@
               <hr class="event_invite_hr">
               <p class="event_invite_title">Invite 1,000 people to your Event!</p>
               <div class="event_invite_url">
-                      <input type="text" placeholder="" class="form-control" value="https://www.goldenlinkplus.com/join/452%">
+                      <input type="text" placeholder="" class="form-control" v-model="promotion_link">
               </div>
               <div class="event_user">
                 <p><img src="share.png"><br><span>Share</span></p>
                 <p><img src="tweet.png"><br><span>Tweet</span></p>
-                <p><img src="copy_link.png"><br><span>Copy Link</span></p>
+                <p><img src="copy_link.png" @click="copyLink"><br><span>Copy Link</span></p>
                 <p><img src="add_tocal.png"><br><span>Add to Cal</span></p>
               </div>
         </header>
@@ -43,6 +43,11 @@
 <script>
   export default {
     name: 'Event_Invite',
+    data() {
+      return {
+        promotion_link: "https://www.goldenlinkplus.com"
+      }
+    },
     methods: {
       close() {
         this.$emit('close');
@@ -52,7 +57,10 @@
           this.$emit('user-backdrop');
         }
       },
-    },
+      copyLink() {
+          this.promotion_link = this.promotion_link
+      }
+    }
   };
 </script>
 <style>

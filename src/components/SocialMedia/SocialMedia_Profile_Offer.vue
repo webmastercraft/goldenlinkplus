@@ -15,7 +15,7 @@
             <div class="profile_each_session">
                 <hooper group="group1" :itemsToShow="4" :centerMode="true" class="profile_hooper_btn profile_offer_btn">
                     <slide class="swiperslide_btn">
-                    <button @click=setCurrentCarouselIndex(0)>Offers</button>
+                    <button @click=setCurrentCarouselIndex(0)>Products</button>
                     </slide>
                     <slide class="swiperslide_btn">
                     <button @click=setCurrentCarouselIndex(1)>Business Chain</button>
