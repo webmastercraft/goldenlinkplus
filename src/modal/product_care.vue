@@ -12,19 +12,20 @@
             id="modalTitle"
           >
               <div class="switch_area">
-                <p class="switch_content" @click="closeModal">Corporation</p>
+                <img src="profile/back.png" @click="closeModal" class="bg-view-mask">
+                <p class="switch_content">Acupunture</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Partnership</p>
+                <p class="switch_content">Biometric Monitors</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Sole Proprietorship</p>
+                <p class="switch_content">Diabetes Care</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">S Corporation</p>
+                <p class="switch_content">Hearing Aids</p>
                 <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
-                    <p class="switch_content">Limited Liability Company</p>
-                </router-link>
+                <p class="switch_content">Medical Alarm Systems</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Other</p>
+                <p class="switch_content">Medicine and Drugs</p>
+                <hr class="switch_hr">
+                <p class="switch_content">Mobility and Accessibility</p>
                 <hr class="switch_hr">
               </div>
           </header>
@@ -37,7 +38,7 @@
 <script>
 
   export default {
-    name: 'Company',
+    name: 'Product_Care',
     components: {
     },  
     data () {

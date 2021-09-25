@@ -77,14 +77,13 @@ export default {
     height: 100%;
     margin: auto;
   }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
   .search_gs_margin {
     background-color: white !important;
     margin-right: 20px;
   }
-  
+  .socialmedia_messages_p {
+    margin: 0;
+  }
   .search_gs_grid {
     display: grid;
   }

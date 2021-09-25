@@ -460,7 +460,6 @@ nav {
     background: white;
     border-radius: 21px;
     overflow: hidden;
-    min-height: calc(100vh - 26px);
     padding-bottom: 30px;
 }
 
@@ -854,7 +853,6 @@ small {
 }
 
 .content_modal span .marketing_btn svg {
-    color: #7FD7EC;
     margin-left: 5px;
 }
 
@@ -863,13 +861,13 @@ small {
 }
 
 .content_modal .marketing_list span {
-    background: #CFF6FF;
     border-radius: 50px;
     padding: 5px;
     padding: 7px 20px;
     margin: 5px 3px;
     display: inline-flex;
     font-size: 14px;
+    border: 1px solid #13C8FF;
 }
 
 .content_modal .marketing_list .form-group .form-control {
@@ -960,7 +958,7 @@ small {
 .content_modal .btn {
     width: calc(50% - 25px);
     background: #F4992D;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 14px;
     text-align: left;
     color: white;
@@ -968,7 +966,7 @@ small {
 }
 
 .content_modal .business_btn {
-    background: #0FA6D6;
+    background: #13C8FF;
 }
 
 .content_modal .business_btn span{
@@ -1005,10 +1003,6 @@ small {
     font-weight: bold;
     text-align: right;
     margin-bottom: 5px;
-}
-
-.content_modal .disable {
-    opacity: 0.2;
 }
 
 .content_modal .account-title hr {
@@ -1092,7 +1086,7 @@ hr.subtitle-hr {
 }
 
 .content_modal .striker_btn {
-    background: #F4992D;
+    background: #EF8200;
 }
 
 .content_modal .commission_content {

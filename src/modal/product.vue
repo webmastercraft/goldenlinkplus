@@ -12,20 +12,28 @@
             id="modalTitle"
           >
               <div class="switch_area">
-                <p class="switch_content" @click="closeModal">Corporation</p>
+                
+                <p class="switch_content">Animals and Pet Supplies</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Partnership</p>
+                <p class="switch_content">Apparel and Accessories</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Sole Proprietorship</p>
+                <p class="switch_content">Arts and Entertainment</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">S Corporation</p>
+                <p class="switch_content">Baby And Toddler</p>
                 <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
-                    <p class="switch_content">Limited Liability Company</p>
-                </router-link>
+                <p class="switch_content">Business and Industrial</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Other</p>
+                <p class="switch_content">Cameras and Optics</p>
                 <hr class="switch_hr">
+                <p class="switch_content">Electronics</p>
+                <hr class="switch_hr">
+                <p class="switch_content">Food and Beverages</p>
+                <hr class="switch_hr">
+                <p class="switch_content">Marketing and Advetising System</p>
+                <hr class="switch_hr">
+                <p class="switch_content"  @click="showIndustrySystem">Health and Beauty</p>
+                <hr class="switch_hr">
+                <p class="switch_content">Home and Garden</p>
               </div>
           </header>
         </div>
@@ -35,14 +43,14 @@
 </template>
 
 <script>
-
   export default {
-    name: 'Company',
+    name: 'Product',
     components: {
     },  
     data () {
       return {
-        f_show_view_profile: false
+        f_show_view_profile: false,
+
       }
     },
     methods: {
@@ -53,6 +61,20 @@
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
         }
+      },
+      close() {
+        this.$emit('close');
+      },
+      userProfileBackdrop(evt) {
+        if(evt.target.classList.length > 0 && "bg-mask"){
+          this.$emit('user-backdrop');
+        }
+      },
+      showIndustrySystem() {
+        this.$emit('showIndustrySystem');
+      },
+      closeViewProfile() {
+        this.f_industry_system = false;
       },
     },
   }

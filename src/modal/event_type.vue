@@ -46,7 +46,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Event_Type',
     data () {
         return {
           activeHost: 0,

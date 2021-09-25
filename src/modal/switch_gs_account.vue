@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
-      <div class="bg-view-mask" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
         <div class="modal swtich_account_modal"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -20,7 +20,7 @@
                     <p>Bundle GS and Business Profiles.<br>Easily switch between profiles.</p>
                     <button>GET THIS</button>
                 </div>
-                <router-link to="/socialmedia/socialmedia_main_lounge">
+                <router-link to="/socialmedia/socialmedia_main_lounge_bs">
                     <div class="switch_user">
                         <img src="Jean_Smith.png">
                         <p>Your Business Account<br><b>$3800</b></p>
@@ -29,11 +29,9 @@
                 <p class="switch_title">Activity</p>
                 <router-link to="/socialmedia/socialmedia_main_create_event"><p class="switch_content">Schedule an Event</p></router-link>
                 <p class="switch_title">Account</p>
-                <router-link to="/socialmedia/socialmedia_bs_profile"><p class="switch_content">View Profile</p></router-link>
+                <router-link to="/socialmedia/socialmedia_gs_profile"><p class="switch_content">View Profile</p></router-link>
                 <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
-                <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_user_center"><p class="switch_content">User Center</p></router-link>
                 <hr class="switch_hr">
                 <p class="switch_content">Security</p>
                 <hr class="switch_hr">
@@ -65,7 +63,7 @@
 <script>
 
   export default {
-    name: 'Switch_Account',
+    name: 'Switch_GS_Account',
     components: {
     },  
     data () {
@@ -186,9 +184,9 @@
     }
     .swtich_account_modal {
         height: 100vh !important;
-        max-width: 414px;
-        margin-left: 140px;
-        width: calc(100% - 140px) !important;
+        max-width: 414px !important;
+        margin-right: 100px;
+        width: calc(100% - 100px) !important;
         transform: translate3d(0, 0, 0) !important;
         border-radius: 0 !important;
     }

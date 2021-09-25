@@ -16,21 +16,6 @@
             <router-link to="/socialmedia/socialmediastart" >
               SocialMedia
             </router-link>
-            <router-link to="/socialmedia/socialmedia_messaging_messages" >
-              Messaging
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_search_products" >
-              Search/Products
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_search_gs" >
-              Search/GS
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_search_services" >
-              Search/Services
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_search_communities" >
-              Search/Communities
-            </router-link>
             <router-link to="/socialmedia/socialmedia_gs_reg_start" >
               Registration/GS
             </router-link>
@@ -39,12 +24,6 @@
             </router-link>
             <router-link to="/socialmedia/socialmedia_gs_wallet_glc" >
               GS Wallet
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_bs_profile" >
-              BS Profile
-            </router-link>
-            <router-link to="/socialmedia/socialmedia_gs_profile" >
-              GS Profile
             </router-link>
             <router-link to="/socialmedia/socialmedia_main_event_host_view" >
               Event Host View

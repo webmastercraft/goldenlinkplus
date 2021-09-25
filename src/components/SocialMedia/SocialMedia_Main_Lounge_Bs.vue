@@ -12,7 +12,7 @@
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
-                <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
+                <img src="Jean_Smith.png" class="main_user" @click="showSwitchBsAccount">
               </div>
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>
@@ -60,46 +60,45 @@
               
             </div>
           </div>
-          <SwitchGsAccount 
-            v-show="f_show_switch_gs_account"
+          <SwitchBsAccount 
+            v-show="f_show_switch_bs_account"
             @close="closeModal"
           >
-          </SwitchGsAccount>
+          </SwitchBsAccount>
       </div>
     </div>
   </div>
 </template>
 <script>
-import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import SwitchBsAccount from "../../modal/switch_bs_account.vue";
 
 export default {
-  name: 'Lounge',
+  name: 'Lounge_BS',
   components: {
-    SwitchGsAccount
+    SwitchBsAccount
   },
   data() {
       return {
-      f_show_switch_gs_account: false,
+      f_show_switch_bs_account: false,
       items: [
-          {rout : "socialmedia_gs_profile", img: "lounge_profile.png", name: "My Profile"}, 
-          {rout : "user_center/socialmedia_user_center", img: "lounge_usercenter.png", name: "My User Center"},
-          {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
+          {rout : "socialmedia_bs_profile", img: "lounge_profile.png", name: "My Profile"}, 
+          {rout : "bs_center/socialmedia_bs_user_center", img: "lounge_usercenter.png", name: "My User Center"},
           {rout : "", img: "lounge_membership.png", name: "My Membership"},
           {rout : "", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
-          {rout : "", img: "lounge_interests.png", name: "My Interests"},
+          {rout : "", img: "lounge_interests.png", name: "My Campaigns"},
           {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
   },
   methods: {
     closeModal() {
-      this.f_show_switch_gs_account = false;
+      this.f_show_switch_bs_account = false;
       this.isModalVisible = false;
     },
-    showSwitchGsAccount() {
-      this.f_show_switch_gs_account = true;
+    showSwitchBsAccount() {
+      this.f_show_switch_bs_account = true;
     },
   }
 }

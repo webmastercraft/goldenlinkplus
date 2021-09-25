@@ -42,7 +42,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Event_Invite',
     methods: {
       close() {
         this.$emit('close');

@@ -80,15 +80,6 @@ export default {
 }
 </script>
 <style>
-  .qr_scan {
-    max-width: 100%;
-    height: auto;
-    margin: 0 20px 20px;
-  }
-  .qr_scan_color {
-    color: #F4992D;
-    margin: 0 10px;
-  }
   .hr_qr_up {
     margin: 60px 7px 0 8px !important;
   }

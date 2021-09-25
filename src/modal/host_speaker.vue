@@ -66,7 +66,7 @@
   import ProfileOption from "./profile_option.vue";
 
   export default {
-    name: 'User',
+    name: 'Host_Speaker',
     components: {
       ProfileOption,
     },  

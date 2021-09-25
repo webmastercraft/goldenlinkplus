@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Banner',
     methods: {
       close() {
         this.$emit('close');

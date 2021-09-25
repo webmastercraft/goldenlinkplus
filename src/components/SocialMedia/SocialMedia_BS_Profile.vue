@@ -4,7 +4,7 @@
       <div class="profile_phone">
         
           <div class="header_modal profile_modal">
-            <router-link to="/" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/socialmedia_main_lounge_bs" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Ana’s Business Profile</a>
           </div>
           <div class="profile_session">
@@ -49,20 +49,37 @@
                 <img src="profile/commun5.png">
                 <img src="profile/profile_plus.png">
               </div>
-              <swiper class="swiper profile_btn" :options="swiperOption">
-                <swiper-slide class="swiperslide_btn"><button class="profile_action_btn">Offers</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Brands</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Services</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Business Chain</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Certifications</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Reviews</button></swiper-slide>
-                <swiper-slide class="swiperslide_btn"><button>Marketing Future Trends</button></swiper-slide>
-              </swiper>
-              <hr class="profile_hr">
 
-              <swiper class="swiper">
-                <swiper-slide class="slide_block">
-                  <!-- Offers -->
+              <div class="hooper_height">
+                <hooper group="group1" :itemsToShow="4" :centerMode="true" class="profile_hooper_btn">
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(0)>Products</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(1)>Brands</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(2)>Services</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(3)>Business Chain</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(4)>Certifications</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(5)>Reviews</button>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <button @click=setCurrentCarouselIndex(6)>Marketing Future Trends</button>
+                  </slide>
+                  <hooper-navigation slot="hooper-addons"></hooper-navigation>
+                  <hooper-pagination slot="hooper-addons"></hooper-pagination>
+                </hooper>
+                <hr class="profile_hr">
+                <hooper group="group1" ref="carousel" @slide="updateCarousel" class="profile_hooper_content">
+                  <slide class="slide_block">
+                    <!-- Offers -->
                     <p class="profile_relax"><b>Relaxology (14)</b></p>
                     <div class="profile_relax_detail">
                       <img src="profile/relax_chair.png" class="relax_chair">
@@ -85,256 +102,206 @@
                     </div>
                     <div class="relax_link">
                       <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
+                        <img src="profile/copy_link.png">
+                        <p>Copy Link</p>
+                        </div>
+                        <div>
+                        <img src="profile/videos.png" @click="showVideo">
+                        <p>Videos</p>
+                        </div>
+                        <div>
+                        <img src="profile/banners.png" @click="showBanner">
+                        <p>Banners</p>
+                        </div>
+                        <div>
+                        <img src="profile/detail.png" @click="showDetail">
+                        <p>Detail</p>
+                        </div>
+                        <div>
+                        <img src="profile/reviews.png" @click="showReview">
+                        <p>Reviews</p>
+                        </div>
                       </div>
-                      <div>
-                      <img src="profile/videos.png" @click="showVideo">
-                      <p>Videos</p>
+                      <hr class="profile_hr">
+                      <div class="profile_relax_detail">
+                        <img src="profile/relax_chair.png" class="relax_chair">
+                        <div class="relax_massage">
+                          <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
+                          <table class="profile_table">
+                            <tr>
+                              <th>Price</th>
+                              <th>Payout</th>
+                              <th>CPC</th>
+                            </tr>
+                            <tr>
+                              <td>$2,100</td>
+                              <td>$10</td>
+                              <td>10 GCoins</td>
+                            </tr>
+                          </table>
+                          <button class="relax_buy">BUY NOW</button>
+                        </div>
                       </div>
-                      <div>
-                      <img src="profile/banners.png" @click="showBanner">
-                      <p>Banners</p>
+                      <div class="relax_link">
+                        <div>
+                        <img src="profile/copy_link.png">
+                        <p>Copy Link</p>
+                        </div>
+                        <div>
+                        <img src="profile/videos.png" @click="showVideo">
+                        <p>Videos</p>
+                        </div>
+                        <div>
+                        <img src="profile/banners.png" @click="showBanner">
+                        <p>Banners</p>
+                        </div>
+                        <div>
+                        <img src="profile/detail.png" @click="showDetail">
+                        <p>Detail</p>
+                        </div>
+                        <div>
+                        <img src="profile/reviews.png" @click="showReview">
+                        <p>Reviews</p>
+                        </div>
                       </div>
-                      <div>
-                      <img src="profile/detail.png" @click="showDetail">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png" @click="showReview">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                    <hr class="profile_hr">
-                    <div class="profile_relax_detail">
-                      <img src="profile/relax_chair.png" class="relax_chair">
-                      <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
-                        <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
-                          </tr>
-                        </table>
-                        <button class="relax_buy">BUY NOW</button>
-                      </div>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
-                      </div>
-                      <div>
-                      <img src="profile/videos.png" @click="showVideo">
-                      <p>Videos</p>
-                      </div>
-                      <div>
-                      <img src="profile/banners.png" @click="showBanner">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png" @click="showDetail">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png" @click="showReview">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                    <p class="profile_relax"><b>Relaxology (1)</b></p>
-                    <div class="profile_relax_detail">
-                      <img src="profile/relax_chair.png" class="relax_chair">
-                      <div class="relax_massage">
-                        <p class="profile_relax_msg"><b>Relaxology Mini 3 Massage<br>Chair</b></p>
-                        <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
-                          </tr>
-                        </table>
-                        <button class="relax_buy">BUY NOW</button>
-                      </div>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
-                      </div>
-                      <div>
-                      <img src="profile/videos.png" @click="showVideo">
-                      <p>Videos</p>
-                      </div>
-                      <div>
-                      <img src="profile/banners.png" @click="showBanner">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png" @click="showDetail">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png" @click="showReview">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                    <hr class="profile_hr"> 
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
+                  </slide>
+                  <slide class="swiperslide_btn">
                     <!-- Brands -->
-                    <div v-for="(item, index) in BSbrandsdata" :key="index">
-                      <p class="profile_relax"><b>{{item.title}}</b></p>
-                      <div class="brands_owned">
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
-                        <router-link to="/socialmedia/socialmedia_profile_offer">
-                          <div>
-                            <img src="profile/massage.png">
-                            <p>Relaxology</p>
-                          </div>
-                        </router-link>
+                      <div v-for="(item, index) in BSbrandsdata" :key="index">
+                        <p class="profile_relax"><b>{{item.title}}</b></p>
+                        <div class="brands_owned">
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                          <router-link to="/socialmedia/socialmedia_profile_offer">
+                            <div>
+                              <img src="profile/massage.png">
+                              <p>Relaxology</p>
+                            </div>
+                          </router-link>
+                        </div>
                       </div>
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
+                  </slide>
+                  <slide class="swiperslide_btn">
                     <!-- Services -->
-                    <p class="profile_relax"><b>Massage(1)</b></p>
-                    <div class="profile_services">
-                      <p class="profile_commun"><b>Foot and Body Massage</b></p>
-                      <table class="profile_table">
-                          <tr>
-                            <th>Price</th>
-                            <th>Payout</th>
-                            <th>CPC</th>
-                          </tr>
-                          <tr>
-                            <td>$2,100</td>
-                            <td>$10</td>
-                            <td>10 GCoins</td>
-                          </tr>
-                      </table>
-                      <button class="relax_buy">BUY NOW</button>
-                    </div>
-                    <div class="relax_link">
-                      <div>
-                      <img src="profile/copy_link.png">
-                      <p>Copy Link</p>
+                      <p class="profile_relax"><b>Massage(1)</b></p>
+                      <div class="profile_services">
+                        <p class="profile_commun"><b>Foot and Body Massage</b></p>
+                        <table class="profile_table">
+                            <tr>
+                              <th>Price</th>
+                              <th>Payout</th>
+                              <th>CPC</th>
+                            </tr>
+                            <tr>
+                              <td>$2,100</td>
+                              <td>$10</td>
+                              <td>10 GCoins</td>
+                            </tr>
+                        </table>
+                        <button class="relax_buy">BUY NOW</button>
                       </div>
-                      <div>
-                      <img src="profile/videos.png">
-                      <p>Videos</p>
+                      <div class="relax_link">
+                        <div>
+                        <img src="profile/copy_link.png">
+                        <p>Copy Link</p>
+                        </div>
+                        <div>
+                        <img src="profile/videos.png">
+                        <p>Videos</p>
+                        </div>
+                        <div>
+                        <img src="profile/banners.png">
+                        <p>Banners</p>
+                        </div>
+                        <div>
+                        <img src="profile/detail.png">
+                        <p>Detail</p>
+                        </div>
+                        <div>
+                        <img src="profile/reviews.png">
+                        <p>Reviews</p>
+                        </div>
                       </div>
-                      <div>
-                      <img src="profile/banners.png">
-                      <p>Banners</p>
-                      </div>
-                      <div>
-                      <img src="profile/detail.png">
-                      <p>Detail</p>
-                      </div>
-                      <div>
-                      <img src="profile/reviews.png">
-                      <p>Reviews</p>
-                      </div>
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
+                  </slide>
+                  <slide class="swiperslide_btn">
                     <!-- Business Chain -->
-                    <div class="profile_services">
-                      <p class="bs_relax_desc" v-for="(item, index) in industry" :key="index"><b>{{item.title1}}</b><br>{{item.property1}}<br>{{item.property2}}<br>{{item.property3}}<br>{{item.property4}}<br>{{item.property5}}</p>
-                      <p class="relax_desc" v-for="(item, index) in internal" :key="index"><b>{{item.title2}}</b><br>{{item.property6}}<br>{{item.property7}}<br>{{item.property8}}<br>{{item.property9}}<br>{{item.property10}}<br>{{item.property11}}<br>{{item.property12}}<br>{{item.property13}}</p>
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
-                    <!-- Certifications -->
-                    <p class="profile_relax"><b>Trademark Certificates (2)</b></p>
-                    <div class="certificate_desc" v-for="(item, index) in BScertificationdata" :key="index">
-                      <img :src="`${item.image_url}`">
-                      <p class="relax_desc"><b>Certification Type:</b><br>{{item.type}}<br><b>Certification Number:</b><br>{{item.number}}<br><b>Authority of Issue:</b><br>{{item.issue}}<b><br>Issue Date: </b>{{item.issuedate}}<br><b>Expiration Date: </b>{{item.date}}<br><b>Description:</b><br>{{item.desc}}</p>
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
-                    <!-- Reviews -->
-                    <p class="profile_commun"><b>Latest Reviews</b></p>
-                    <div class="profile_services" v-for="(item, index) in BSreviewdata" :key="index">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <img src="profile/review_star.png">
-                      <p class="relax_desc">{{item.review_title}}</p>
-                      <div class="review_user">
-                        <img :src="`${item.review_user}`">
-                        <p><b>{{item.review_name}}</b><br>{{item.review_address}}</p>
+                      <div class="profile_services">
+                        <p class="bs_relax_desc" v-for="(item, index) in industry" :key="index"><b>{{item.title1}}</b><br>{{item.property1}}<br>{{item.property2}}<br>{{item.property3}}<br>{{item.property4}}<br>{{item.property5}}</p>
+                        <p class="relax_desc" v-for="(item, index) in internal" :key="index"><b>{{item.title2}}</b><br>{{item.property6}}<br>{{item.property7}}<br>{{item.property8}}<br>{{item.property9}}<br>{{item.property10}}<br>{{item.property11}}<br>{{item.property12}}<br>{{item.property13}}</p>
                       </div>
-                      <hr class="review_hr">
-                    </div>
-                  </swiper-slide>
-
-                  <swiper-slide class="slide_block">
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <!-- Certifications -->
+                      <p class="profile_relax"><b>Trademark Certificates (2)</b></p>
+                      <div class="certificate_desc" v-for="(item, index) in BScertificationdata" :key="index">
+                        <img :src="`${item.image_url}`">
+                        <p class="relax_desc"><b>Certification Type:</b><br>{{item.type}}<br><b>Certification Number:</b><br>{{item.number}}<br><b>Authority of Issue:</b><br>{{item.issue}}<b><br>Issue Date: </b>{{item.issuedate}}<br><b>Expiration Date: </b>{{item.date}}<br><b>Description:</b><br>{{item.desc}}</p>
+                      </div>
+                  </slide>
+                  <slide class="swiperslide_btn">
+                    <!-- Reviews -->
+                      <p class="profile_commun"><b>Latest Reviews</b></p>
+                      <div class="profile_services" v-for="(item, index) in BSreviewdata" :key="index">
+                        <img src="profile/review_star.png">
+                        <img src="profile/review_star.png">
+                        <img src="profile/review_star.png">
+                        <img src="profile/review_star.png">
+                        <img src="profile/review_star.png">
+                        <p class="relax_desc">{{item.review_title}}</p>
+                        <div class="review_user">
+                          <img :src="`${item.review_user}`">
+                          <p><b>{{item.review_name}}</b><br>{{item.review_address}}</p>
+                        </div>
+                        <hr class="review_hr">
+                      </div>
+                  </slide>
+                  <slide class="swiperslide_btn">
                     <!-- Marketing Future Trends -->
-                    <p class="profile_commun"><b>Marketing Future Trends</b></p>
-                    <p class="future_maps">2 Headquarters<span>10 Branches</span></p>
-                    <img src="profile/future_maps.png" class="trends_map">
-                    <p class="profile_commun"><b>Existing Branches</b></p>
-                    <p class="future_maps">2 Headquarters</p>
-                    <p class="future_maps">1 Chain Store</p>
-                    <p class="future_maps">1 Country</p>
-                    <p class="future_maps">2 Headquarters</p>
-                  </swiper-slide>
-            </swiper>
-                
-
-                <p class="profile_commun"><b>More About Dr Approved Massage Chairs</b></p>
-                <p class="relax_desc">For over 35 years, our focus has been<br>designing the highest quality massage<br>chairs - for a deeper, stronger, smoother,<br>and more therapeutic massage - and<br>offering them to those in need of intense<br>stress relief.</p>
-                <p class="relax_desc"><b>Year Established:</b> 2018</p>
-                <p class="relax_desc"><b>Company Type</b> S Corporation</p>
-                <p class="relax_desc"><b>Business Type:</b> Product</p>
-                <p class="relax_desc"><b>Industry:</b><br>Marketing & Advertising Services<br>->Internet Marketing Services<br>->Social Media Marketing Services</p>
+                      <p class="profile_commun"><b>Marketing Future Trends</b></p>
+                      <p class="future_maps">2 Headquarters<span>10 Branches</span></p>
+                      <img src="profile/future_maps.png" class="trends_map">
+                      <p class="profile_commun"><b>Existing Branches</b></p>
+                      <p class="future_maps">2 Headquarters</p>
+                      <p class="future_maps">1 Chain Store</p>
+                      <p class="future_maps">1 Country</p>
+                      <p class="future_maps">2 Headquarters</p>
+                  </slide>
+                </hooper>
+              </div>
+              <p class="profile_commun"><b>More About Dr Approved Massage Chairs</b></p>
+              <p class="relax_desc">For over 35 years, our focus has been<br>designing the highest quality massage<br>chairs - for a deeper, stronger, smoother,<br>and more therapeutic massage - and<br>offering them to those in need of intense<br>stress relief.</p>
+              <p class="relax_desc"><b>Year Established:</b> 2018</p>
+              <p class="relax_desc"><b>Company Type</b> S Corporation</p>
+              <p class="relax_desc"><b>Business Type:</b> Product</p>
+              <p class="relax_desc"><b>Industry:</b><br>Marketing & Advertising Services<br>->Internet Marketing Services<br>->Social Media Marketing Services</p>
           </div>
       </div>
       <Video 
@@ -365,22 +332,24 @@
   </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import "swiper/swiper-bundle.min.css";
+// import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+// import "swiper/swiper-bundle.min.css";
 import Video from "../../modal/video.vue";
 import Banner from "../../modal/banner.vue";
 import Detail from "../../modal/detail.vue";
 import Review from "../../modal/review.vue";
+import { Hooper, Slide } from 'hooper';
+import 'hooper/dist/hooper.css';
 
 export default {
   name: 'Profile_Offers',
   components: {
-    Swiper,
-    SwiperSlide,
     Video,
     Banner,
     Detail,
-    Review
+    Review,
+    Hooper,
+    Slide
   },
   data () {
     return { 
@@ -389,21 +358,13 @@ export default {
       f_show_detail: false,
       f_show_review: false,
       modalStack: [],
+      currentCarouselIndex: 0,
       datas: [
         {
           follow: true
         }
       ],
       BScertificationdata: [
-        {
-          image_url: "profile/profile_doc.png",
-          type: "Brandname Certification",
-          number: "86831221",
-          issue: "US Patent & Trademark Office",
-          issuedate: "03/01/2017",
-          date: "04/15/2017",
-          desc: "Trade Mark Certificate \n for Relaxxology"
-        },
         {
           image_url: "profile/profile_doc.png",
           type: "Brandname Certification",
@@ -474,6 +435,11 @@ export default {
       }
     }
   },
+  watch: {
+    currentCarouselIndex () {
+      this.$refs.carousel.slideTo(this.currentCarouselIndex);
+    }
+  },
   methods: {
     selectFollow(index) {
       this.datas[index].follow = false
@@ -532,7 +498,10 @@ export default {
       this.f_show_banner = false,
       this.f_show_detail = false,
       this.f_show_review = false
-    }
+    },
+    setCurrentCarouselIndex(index) {
+      this.currentCarouselIndex = index;
+    },
   }
 }
 </script>
@@ -643,11 +612,11 @@ export default {
     font-size: 15px;
   }
   .profile_btn button { 
+  }
+  .profile_action_btn {
     border-radius: 16px;
     width: auto;
     padding: 3px 10px;
-  }
-  .profile_action_btn {
     background-color: #13C8FF;
   }
   .profile_hr { 
@@ -776,5 +745,31 @@ export default {
   }
   .bs_relax_desc {
     margin: 20px 20px 5px 0;
+  }
+  .profile_hooper_btn .is-current {
+    border-radius: 16px;
+    width: auto;
+    padding: 3px 10px;
+    background-color: #13C8FF;
+  }
+  .profile_hooper_btn button {
+    width: auto;
+  }
+  .profile_hooper_btn li {
+    width: auto !important;
+    padding: 3px 5px;
+  }
+  .profile_hooper_btn {
+    height: auto !important;
+  }
+  .profile_hooper_btn ul {
+    margin: 20px -20px 10px;
+    /*transform: translate(0px, 0px) !important;*/
+  }
+  .hooper_height {
+    height: auto;
+  }
+  .profile_hooper_content {
+    height: auto !important;
   }
 </style>

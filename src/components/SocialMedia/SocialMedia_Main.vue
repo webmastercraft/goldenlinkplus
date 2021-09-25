@@ -12,7 +12,7 @@
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png" class="main_contact">
-                <img src="mona.png" class="main_user" @click="showSwitchAccount">
+                <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
             </div>
             <div class="main_header">
@@ -188,11 +188,11 @@
             @close="closeModal"
           >
           </EventType>
-          <SwitchAccount 
-            v-show="f_show_switch_account"
+          <SwitchGsAccount 
+            v-show="f_show_switch_gs_account"
             @close="closeModal"
           >
-          </SwitchAccount>
+          </SwitchGsAccount>
       </div>
     </div>
   </div>
@@ -201,7 +201,7 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
 import EventType from "../../modal/event_type.vue";
-import SwitchAccount from "../../modal/switch_account.vue";
+import SwitchGsAccount from "../../modal/switch_gs_account.vue";
 
 export default {
   name: 'SocialMedia_Main',
@@ -209,27 +209,27 @@ export default {
     Swiper,
     SwiperSlide,
     EventType,
-    SwitchAccount
+    SwitchGsAccount
   },
   data () {
     return {
       isModalVisible: false,
       f_show_event_type: false,
-      f_show_switch_account: false,
+      f_show_switch_gs_account: false,
       modalStack: [],
     }
   },
   methods: {
     closeModal() {
       this.f_show_event_type = false;
-      this.f_show_switch_account = false;
+      this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
     },
     showEventType() {
       this.f_show_event_type = true;
     },
-    showSwitchAccount() {
-      this.f_show_switch_account = true;
+    showSwitchGsAccount() {
+      this.f_show_switch_gs_account = true;
     },
   }
 }
@@ -359,6 +359,7 @@ export default {
     padding-top: 15px;
     display: inline-block;
     float: left;
+    z-index: -1;
   }
   .footer_modal span p {
     margin: 10px 0 0;

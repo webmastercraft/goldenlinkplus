@@ -37,7 +37,7 @@
 
 <script>
   export default {
-    name: 'Modal',
+    name: 'Co-host_ghost',
     data() {
       return {
         datas: [

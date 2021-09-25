@@ -12,19 +12,13 @@
             id="modalTitle"
           >
               <div class="switch_area">
-                <p class="switch_content" @click="closeModal">Corporation</p>
+                <p class="switch_content" @click="closeModal">Agency</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Partnership</p>
+                <p class="switch_content" @click="closeModal">Marketer</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Sole Proprietorship</p>
+                <p class="switch_content" @click="closeModal">Ad-Echange / Ad Network</p>
                 <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">S Corporation</p>
-                <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
-                    <p class="switch_content">Limited Liability Company</p>
-                </router-link>
-                <hr class="switch_hr">
-                <p class="switch_content" @click="closeModal">Other</p>
+                <p class="switch_content" @click="closeModal">Publisher</p>
                 <hr class="switch_hr">
               </div>
           </header>
@@ -37,7 +31,7 @@
 <script>
 
   export default {
-    name: 'Company',
+    name: 'External',
     components: {
     },  
     data () {
@@ -58,12 +52,4 @@
   }
 </script>
 <style>
-    .bs_user_center_modal {
-        height: 100vh !important;
-        max-width: 414px;
-        margin-right: 140px;
-        width: calc(100% - 140px) !important;
-        transform: translate3d(0, 0, 0) !important;
-        border-radius: 0 !important;
-    }
 </style>

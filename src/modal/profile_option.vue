@@ -40,7 +40,7 @@
 <script>
 
   export default {
-    name: 'User',
+    name: 'Profile_Option',
     components: {
     },  
     data () {

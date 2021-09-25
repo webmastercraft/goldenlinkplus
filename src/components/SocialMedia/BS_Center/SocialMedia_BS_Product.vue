@@ -19,7 +19,7 @@
                     />
                 </div>
                 <p class="update_profile_content">Product Category</p>
-                <div class="form-group profile_input profile_role_input">
+                <div class="form-group profile_input profile_role_input"  @click="showIndustry">
                     <select class="form-control" id="year_established">
                         <option>Biometric Monitors</option>
                         <option>2</option>
@@ -147,20 +147,48 @@
             @view-backdrop="closeViewProfile"
         >
         </BsProduct>
+        <Industry 
+            v-show="f_show_industry"
+            @view-backdrop="closeViewProfile"
+            @showIndustrySystem="industrySystem"
+        >
+        </Industry>
+        <IndustrySystem 
+            v-show="f_industry_system"
+            @close="backIndustrySystem"
+            @view-backdrop="closeViewProfile"
+            @showIndustryService="industryService"
+        >
+        </IndustrySystem>
+        <IndustryService
+            v-show="f_industry_service"
+            @close="backIndustryService"
+            @view-backdrop="closeViewProfile"
+        >
+        </IndustryService>
     </div>
 </template>
 
 <script>
     import BsProduct from "../../../modal/bs_product.vue";
+    import Industry from "../../../modal/product.vue";
+    import IndustrySystem from "../../../modal/product_health.vue";
+    import IndustryService from "../../../modal/product_care.vue";
 
     export default {
         name: 'BS_Product',
         components: {
-            BsProduct
+            BsProduct,
+            Industry,
+            IndustrySystem,
+            IndustryService,
         },  
         data () {
                 return {
                     f_bs_product: false,
+                    f_show_industry: false,
+                    f_industry_system: false,
+                    f_industry_service: false,
                     productData: [
                         {
                             productname: "GLP",
@@ -189,6 +217,24 @@
             },
             closeViewProfile() {
                 this.f_bs_product = false;
+                this.f_show_industry = false;
+                this.f_industry_system = false;
+                this.f_industry_service = false;
+            },
+            showIndustry() {
+                this.f_show_industry = true;
+            },
+            industrySystem() {
+                this.f_industry_system = true;
+            },
+            industryService() {
+                this.f_industry_service = true;
+            },
+            backIndustrySystem() {
+                this.f_industry_system = false;
+            },
+            backIndustryService() {
+                this.f_industry_service = false;
             }
         }
     }
