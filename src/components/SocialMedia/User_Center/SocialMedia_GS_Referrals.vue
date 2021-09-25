@@ -17,64 +17,24 @@
                             <button class="page-button" :class="{'disable': !b_current}" @click="prevPage"><i class="fa fa-chevron-left"></i></button>
                         </p>
                         <p class="update_profile_content">Company</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="Goldenlinkplus"
-                              v-model="business[b_current].company"
-                            />
+                        <div class="referrals_data">
+                            {{business[b_current].company}}
                         </div>
                         <p class="update_profile_content">Contact Name</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="Alice Du"
-                              v-model="business[b_current].contactname"
-                            />
+                        <div class="referrals_data">
+                            {{business[b_current].contactname}}
                         </div>
                         <p class="update_profile_content">Telephone </p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="+1626-684-8151"
-                              v-model="business[b_current].telephone"
-                            />
+                        <div class="referrals_data">
+                            {{business[b_current].telephone}}
                         </div>
                         <p class="update_profile_content">Email</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="contact@goldenlinkplus.com"
-                              v-model="business[b_current].email"
-                            />
+                        <div class="referrals_data">
+                            {{business[b_current].email}}
                         </div>
                         <p class="update_profile_content">Skype</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="alicedu"
-                              v-model="business[b_current].skype"
-                            />
+                        <div class="referrals_data">
+                            {{business[b_current].skype}}
                         </div>
                     </div>
                     <div v-else>
@@ -83,64 +43,24 @@
                             <button class="page-button" :class="{'disable': !g_current}" @click="prevPage"><i class="fa fa-chevron-left"></i></button>
                         </p>
                         <p class="update_profile_content">Company</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="Goldenlinkplus"
-                              v-model="goldstriker[g_current].company"
-                            />
+                        <div class="referrals_data">
+                            {{goldstriker[g_current].company}}
                         </div>
                         <p class="update_profile_content">Contact Name</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="Alice Du"
-                              v-model="goldstriker[g_current].contactname"
-                            />
+                        <div class="referrals_data">
+                            {{goldstriker[g_current].contactname}}
                         </div>
                         <p class="update_profile_content">Telephone </p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="+1626-684-8151"
-                              v-model="goldstriker[g_current].telephone"
-                            />
+                        <div class="referrals_data">
+                            {{goldstriker[g_current].telephone}}
                         </div>
                         <p class="update_profile_content">Email</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="contact@goldenlinkplus.com"
-                              v-model="goldstriker[g_current].email"
-                            />
+                        <div class="referrals_data">
+                            {{goldstriker[g_current].email}}
                         </div>
                         <p class="update_profile_content">Skype</p>
-                        <div class="form-group profile_input profile_role_input">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cname"
-                              aria-describedby="comname"
-                              placeholder=""
-                              value="alicedu"
-                              v-model="goldstriker[g_current].skype"
-                            />
+                        <div class="referrals_data">
+                            {{goldstriker[g_current].skype}}
                         </div>
                     </div>
                 </div>
@@ -274,5 +194,13 @@
     }
     .gs_marketing_modal .page-button.disable > svg {
         color: grey !important;
+    }
+    .referrals_data {
+        background: #F4F9FE;
+        border: 0;
+        height: 40px;
+        border-radius: 8px;
+        letter-spacing: -0.02em;
+        padding: 8px 20px;
     }
 </style>
