@@ -18,7 +18,7 @@
                         <h6 class="qr_h6">Use Invite code</h6>
                         <hr class="hr_qr_down">
                         <div>
-                            <input type="text" class="qr-group" name="invite_code" value="GID9174"><button><img src="img/QRuse.png"></button>
+                            <input type="text" class="qr-group" name="invite_code" v-model="invite_code"><button @click="copyInvitCode"><img src="img/QRuse.png"></button>
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                         <h6 class="qr_h6">Use Promotion Link</h6>
                         <hr class="hr_qr_down">
                         <div>
-                            <input type="text" class="qr-group" name="invite_code" value="https://www.goldenlinkplus.c"><button><img src="img/QRuse.png"></button>
+                            <input type="text" class="qr-group" name="invite_code" v-model="promotion_link"><button @click="copyLink"><img src="img/QRuse.png"></button>
                         </div>
                     </div>
 
@@ -72,6 +72,20 @@
     export default {
         name: 'GS_Invite',
         components: {
+        },
+        data() {
+            return {
+                invite_code: "GID9174",
+                promotion_link: "https://www.goldenlinkplus.com"
+            }
+        },
+        methods: {
+            copyInvitCode() {
+                this.invite_code = this.invite_code
+            },
+            copyLink() {
+                this.promotion_link = this.promotion_link
+            }
         }
     }
 </script>
