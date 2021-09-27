@@ -761,6 +761,7 @@ export default {
   }
   .profile_hooper_btn {
     height: auto !important;
+    outline: unset;
   }
   .profile_hooper_btn ul {
     margin: 20px -20px 10px;
@@ -771,5 +772,6 @@ export default {
   }
   .profile_hooper_content {
     height: auto !important;
+    outline: unset;
   }
 </style>

@@ -12,7 +12,9 @@
                     <img src="profile/LOGO-G1.png" class="profile_map_each_2" @click="bsInternal">
                 </div>
                 <div class="profile_role_para">
-                    <p class="update_profile_content">Search location<span class="profile_done">Add Location</span></p>
+                    <p class="update_profile_content">Search location
+                        <span class="profile_done" @click="showIndustry">Add Location</span>
+                    </p>
                     <div class="form-group profile_input profile_role_input">
                         <input
                           type="text"
@@ -34,19 +36,39 @@
             @view-backdrop="closeViewProfile"
         >
         </BsInternal>
+        <Industry 
+            v-show="f_show_industry"
+            @view-backdrop="closeViewProfile"
+            @showIndustrySystem="industrySystem"
+        >
+        </Industry>
+        <IndustrySystem 
+            v-show="f_industry_system"
+            @close="backIndustrySystem"
+            @view-backdrop="closeViewProfile"
+            @showIndustryService="industryService"
+        >
+        </IndustrySystem>
     </div>
 </template>
 
 <script>
     import BsInternal from "../../../modal/bs_internal.vue";
+    import Industry from "../../../modal/profile_map.vue";
+    import IndustrySystem from "../../../modal/bs_internal.vue";
+
     export default {
         name: 'BS_Internal_Role',
         components: {
-        BsInternal
+            BsInternal,
+            Industry,
+            IndustrySystem,
         },  
         data () {
             return {
-                f_bs_internal: false
+                f_bs_internal: false,
+                f_show_industry: false,
+                f_industry_system: false,
             }
         },
         methods: {
@@ -55,7 +77,18 @@
             },
             closeViewProfile() {
                 this.f_bs_internal = false;
-            }
+                this.f_show_industry = false;
+                this.f_industry_system = false;
+            },
+            showIndustry() {
+                this.f_show_industry = true;
+            },
+            industrySystem() {
+                this.f_industry_system = true;
+            },
+            backIndustrySystem() {
+                this.f_industry_system = false;
+            },
         }
     }
 </script>

@@ -22,9 +22,6 @@
             <router-link to="/socialmedia/socialmedia_bs_reg_profile_photo" >
               Registration/BS
             </router-link>
-            <router-link to="/socialmedia/socialmedia_gs_wallet_glc" >
-              GS Wallet
-            </router-link>
             <router-link to="/socialmedia/socialmedia_main_event_host_view" >
               Event Host View
             </router-link>
