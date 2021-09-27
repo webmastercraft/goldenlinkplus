@@ -1,57 +1,29 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="phone sociallogin">
-        
-          <div class="header_modal">
-            <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>GS Wallet<span>GLC</span></a>
-          </div>
-          
-      </div>
+    <div>
+        <div class="container">
+            <div class="phone sociallogin">
+
+                <div class="header_modal">
+                    <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+                    <a>GS Wallet<span>GLC</span></a>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 <script>
-
-
-export default {
-  name: 'Search_Products',
-  components: {
-  },
-  data () {
-    return { 
-        datas: [
-          {
-            image_url: "starbucks.png",
-            name: "Starbucks",
-            address: "Los Angeles, California",
-            coin: 6,
-            follow: true,
-          },
-          {
-            image_url: "coach.png",
-            name: "Coach",
-            address: "Los Angeles, California",
-            coin: 20,
-            follow: true,
-          },
-          {
-            image_url: "paint_company.png",
-            name: "The Paint Company",
-            address: "San Diego, California",
-            coin: 13,
-            follow: true,
-          }
-        ]
+    export default {
+        name: 'GS_Wallet_GLC',
+        components: {
+        },
+        data () {
+            return { 
+            }
+        },
+        methods: {
+        }
     }
-  },
-  methods: {
-    selectFollow(index) {
-      this.datas[index].follow = false
-    },
-  }
-}
 </script>
 <style>
   .sociallogin {

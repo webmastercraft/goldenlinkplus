@@ -102,10 +102,6 @@ export default {
   },
   methods: {
     showDiaOneItem(index) {
-            // this.DiamondData[index].diaOneActive = true
-            // setTimeout(() => {
-            //     this.DiamondData[index].diaOneActive = false
-            // }, 2000)
         if(this.DiamondData[index].diaOneActive || this.DiamondData[index].diaTwoActive ) {
           return;
         }
@@ -116,18 +112,22 @@ export default {
                 switch(self.numClicks) {     // check the event type
                     case 1:
                         self.DiamondData[index].diaOneActive = true
-                        self.DiamondData[index].diaSize++;
                         break;
                     default:
                         self.DiamondData[index].diaTwoActive = true
-                        self.DiamondData[index].diaSize--;
                 }
                 self.numClicks = 0;               // reset the first click
             }, 200);          
         }
         setTimeout(() => {
+          if (this.DiamondData[index].diaOneActive) {
             this.DiamondData[index].diaOneActive = false
+            self.DiamondData[index].diaSize++;
+          }
+          if (this.DiamondData[index].diaTwoActive) {
             this.DiamondData[index].diaTwoActive = false
+            self.DiamondData[index].diaSize--;
+          }
         }, 1500)
     },
     removeFlagFromStack() {
