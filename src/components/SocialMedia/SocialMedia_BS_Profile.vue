@@ -772,4 +772,8 @@ export default {
   .profile_hooper_content {
     height: auto !important;
   }
+  .hooper-list:focus-visible {
+    outline: unset;
+    
+  }
 </style>

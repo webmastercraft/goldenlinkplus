@@ -9,10 +9,12 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
+import VueClipboard from 'vue-clipboard2';
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import '@/assets/styles/style.css';
 import '@/assets/styles/modal.css';
+
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap-vue/dist/bootstrap-vue.css';
 
@@ -23,6 +25,7 @@ Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
 Vue.use(Vuedals);
+Vue.use(VueClipboard)
 
 new Vue({
     router,
