@@ -18,7 +18,10 @@
                         <h6 class="qr_h6">Use Invite code</h6>
                         <hr class="hr_qr_down">
                         <div>
-                            <input type="text" class="qr-group" name="invite_code" v-model="invite_code"><button @click="copyInvitCode"><img src="img/QRuse.png"></button>
+                            <input type="text" class="qr-group" name="invite_code" v-model="invite">
+                            <button  @click="copyInvite">
+                                    <img src="img/QRuse.png">
+                            </button>
                         </div>
                     </div>
 
@@ -27,7 +30,10 @@
                         <h6 class="qr_h6">Use Promotion Link</h6>
                         <hr class="hr_qr_down">
                         <div>
-                            <input type="text" class="qr-group" name="invite_code" v-model="promotion_link"><button @click="copyLink"><img src="img/QRuse.png"></button>
+                            <input type="text" class="qr-group" name="invite_code" v-model="link">
+                            <button @click="copyLink">
+                                <img src="img/QRuse.png">
+                            </button>
                         </div>
                     </div>
 
@@ -57,7 +63,7 @@
                     <div class="social_invite_img social_invite_link">
                         <a href=""><img src="img/facebook.png"></a>
                         <a href=""><img src="img/twitter.png"></a>
-                        <a href=""><img src="img/instagram.png"></a>
+                        <a href=""><img src="img/instagram.png"></a>  
                     </div>
                     <div class="invite_desc">
                         <p><span class="text-para">An email invitation will be sent to your contacts or partners with the registration link provided.</span></p>
@@ -69,23 +75,29 @@
 </template>
 
 <script>
+    import VueClipboard from 'vue-clipboard2'
+    
     export default {
         name: 'GS_Invite',
         components: {
         },
         data() {
             return {
-                invite_code: "GID9174",
-                promotion_link: "https://www.goldenlinkplus.com"
+                invite: 'GID9174',
+                link: "https://www.goldenlinkplus.com"
             }
         },
         methods: {
-            copyInvitCode() {
-                this.invite_code = this.invite_code
-            },
-            copyLink() {
-                this.promotion_link = this.promotion_link
-            }
+          copyInvite: function () {
+            this.$copyText(this.invite).then(function (e) {
+            }, function (e) {
+            })
+          },
+          copyLink: function () {
+            this.$copyText(this.link).then(function (e) {
+            }, function (e) {
+            })
+          }
         }
     }
 </script>

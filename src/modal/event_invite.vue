@@ -45,7 +45,7 @@
     name: 'Event_Invite',
     data() {
       return {
-        promotion_link: "https://www.goldenlinkplus.com"
+        promotion_link: "www.goldenlinkplus.com"
       }
     },
     methods: {
@@ -57,88 +57,90 @@
           this.$emit('user-backdrop');
         }
       },
-      copyLink() {
-          this.promotion_link = this.promotion_link
+      copyLink: function () {
+        this.$copyText(this.promotion_link).then(function (e) {
+        }, function (e) {
+        })
       }
     }
   };
 </script>
 <style>
-  .header_event {
-  border-radius: 30px;
-}
-.event_invite_hr {
-  margin: 10px 20px 20px;
-}
-.event_invite_para {
-  margin: 10px 20px;
-  display: inline-block;
-  font-size: 16px;
-}
-.event_invite_para img {
-  margin: 0 5px 0 10px;
-}
-.event_invite_para span {
-  font-size: 16px;
-}
-.event_invite_para .event_para_small {
-  font-size: 14px;
-  letter-spacing: 0.05em;
-}
-.event_user {
-  margin: 0 20px;
-  text-align: center;
-  display: flex;
-}
-.event_invite_title {
-  color: #F4992D;
-  font-size: 18px;
-  margin: 0 20px;
-}
-.event_invite_url {
-  margin: 10px 20px 20px;
-}
-.event_invite_url input {
-  height: 50px;
-  padding: 0 38px;
-  background-color: #F4F9FE;
-  border: 0 solid white;
-  border-radius: 12px;
-}
-.event_user p {
-  margin: auto;
-}
-.event_user span {
-  margin-top: 10px;
-  display: block;
-}
-.event_done {
-  border-radius: 30px;
-  background-color: #F4992D;
-  color: white;
-  padding: 8px 50px;
-  margin: 30px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.medium_1_title img {
-  float: right;
-  margin-top: 5px;
-}
-.event_invite_position {
-  text-align: left;
-  overflow: auto;
-  height: 1000px;
-  background: white;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 414px;
-}
-.each_height {
-  height: 1000px !important;
-}
-.modal_event_transform {
-  transform: translate(0, 25%) !important;
-}
+    .header_event {
+    border-radius: 30px;
+  }
+  .event_invite_hr {
+    margin: 10px 20px 20px;
+  }
+  .event_invite_para {
+    margin: 10px 20px;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .event_invite_para img {
+    margin: 0 5px 0 10px;
+  }
+  .event_invite_para span {
+    font-size: 16px;
+  }
+  .event_invite_para .event_para_small {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  .event_user {
+    margin: 0 20px;
+    text-align: center;
+    display: flex;
+  }
+  .event_invite_title {
+    color: #F4992D;
+    font-size: 18px;
+    margin: 0 20px;
+  }
+  .event_invite_url {
+    margin: 10px 20px 20px;
+  }
+  .event_invite_url input {
+    height: 50px;
+    padding: 0 38px;
+    background-color: #F4F9FE;
+    border: 0 solid white;
+    border-radius: 12px;
+  }
+  .event_user p {
+    margin: auto;
+  }
+  .event_user span {
+    margin-top: 10px;
+    display: block;
+  }
+  .event_done {
+    border-radius: 30px;
+    background-color: #F4992D;
+    color: white;
+    padding: 8px 50px;
+    margin: 30px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .medium_1_title img {
+    float: right;
+    margin-top: 5px;
+  }
+  .event_invite_position {
+    text-align: left;
+    overflow: auto;
+    height: 1000px;
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 414px;
+  }
+  .each_height {
+    height: 1000px !important;
+  }
+  .modal_event_transform {
+    transform: translate(0, 25%) !important;
+  }
 </style>
