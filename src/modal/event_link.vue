@@ -49,27 +49,4 @@
   };
 </script>
 <style>
-    .event_select {
-        align-items: start !important;
-    }
-    .event_select_modal {
-        max-width: 414px !important;
-        transform: translate3d(0, 37%, 0) !important;
-        margin: 0 30px 0 50px !important;
-        width: calc(100% - 80px) !important;
-        border-radius: 12px !important;
-    }
-    .upcoming_select_btn {
-        width: 100%;
-        font-size: 16px;
-        text-align: center;
-    }
-    .upcoming_select_btn button {
-        width: 100%;
-        padding: 7px;
-    }
-    .upcoming_select_btn img {
-        margin-bottom: 3px;
-        margin-right: 10px;
-    }
 </style>
