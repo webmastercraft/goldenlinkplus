@@ -85,7 +85,7 @@ export default {
           {rout : "user_center/socialmedia_user_center", img: "lounge_usercenter.png", name: "My User Center"},
           {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
           {rout : "", img: "lounge_membership.png", name: "My Membership"},
-          {rout : "gs_wallet/socialmedia_gs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
+          {rout : "", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
           {rout : "", img: "lounge_interests.png", name: "My Interests"},
