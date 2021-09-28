@@ -13,6 +13,8 @@
             aria-describedby=""
             placeholder=""
           />
+          <p class="email_validation">Email is required</p>
+          <p class="code_sample">Referral Code: 123456</p>
           <form>
               <div class="socialmedia_check">
                 <div class="checkbox_check">
@@ -23,7 +25,7 @@
                 <div class="checkbox_check">
                   <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
                   <label for="vehicle2"></label>
-                  <p>YES! I understand and agree to Goldenlink+ Terms of service, including the User Agreement and Privacy Policy</p>
+                  <p>YES! I understand and agree to Goldenlink+ Terms of service, including the <b>User Agreement</b> and <b><router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link></b></p>
                 </div>
               </div>
             </form>
@@ -90,15 +92,26 @@ export default {
   input[type=checkbox] {
     display:none;
   }
+  .socialmedia_check {
+    margin: 10px 0;
+  }
   .socialmedia_check .checkbox_check {
     margin: 0;
     display: flex;
     font-size: 14px;
   }
   .socialmedia_check p {
-    margin: 0;
+    margin: 5px auto;
   }
   .socialmedia_reg_email {
     border-radius: 12px;
+  }
+  .email_validation {
+    color: red;
+    font-size: 13px;
+    margin: 0;
+  }
+  .code_sample {
+    margin: 5px 0 0;
   }
 </style>
