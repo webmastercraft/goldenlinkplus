@@ -1,13 +1,13 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="modal_event_transform"
+    <div class="modal-backdrop bg-mask event_invite_position" v-on:click.self="userProfileBackdrop">
+      <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
         <header
-          class="host_view_position"
+          class="event_invite_body"
           id="modalTitle"
         >
             <p class="medium_1_title">TOMORROW   7:00 AM</p>
@@ -142,5 +142,20 @@
   }
   .modal_event_transform {
     transform: translate(0, 25%) !important;
+  }
+  .event_invite_modal {
+    transform: translate(0, 0) !important;
+  }
+  .event_invite_position {
+    align-items: end !important;
+  }
+  .event_invite_body {
+    text-align: left;
+    overflow: auto;
+    height: 100%;
+    background: white;
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    max-width: 414px;
   }
 </style>

@@ -1,110 +1,150 @@
 <template>
-    <div>
-        <div class="container">
-            <div class="phone sociallogin">
-
-                <div class="header_modal">
-                    <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-                    <a>GS Wallet<span>GLC</span></a>
-                </div>
-
+    <div class="container">
+        <div class="profile_phone">
+            <div class="header_modal profile_modal">
+                <router-link to="/socialmedia/gs_wallet/socialmedia_gs_wallet" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+                <a>GLC GoldLink Coin</a>
             </div>
+            <div class="wallet_glc_content">
+                <div class="wallet_glc_coin">
+                    <img src="wallet/GLC_coin.png">
+                    <p>Current Balance<span>50 GLC</span></p>
+                </div>
+                <p class="wallet_glc_record">GLC Earning Records</p>
+            </div>
+            <div class="wallet_glc_data left-content">
+                <div>
+                    <div v-for="(item, index) in walletdata" :key="index" class="wallet_glc_count">
+                        <p class="wallet_user_detail">Earned {{item.earned}} Diamonds</p>
+                        <p class="wallet_user_date">{{item.date}}<span :class="{'wallet_user_amount': item.coin == true}">{{item.amount}} GLC</span></p>
+                    </div>
+                </div>
+            </div>    
         </div>
     </div>
 </template>
 <script>
-    export default {
-        name: 'GS_Wallet_GLC',
-        components: {
-        },
-        data () {
-            return { 
-            }
-        },
-        methods: {
+
+
+export default {
+    name: 'Wallet_Wallet_GLC',
+    components: {
+    },
+    data () {
+        return {
+            walletdata: [
+                {
+                    earned: "200",
+                    date: "08.14.21 09:30",
+                    amount: "1",
+                },
+                {
+                    earned: "400",
+                    date: "08.14.21 08:57",
+                    amount: "2",
+                },
+                {
+                    earned: "1000",
+                    date: "08.14.21 09:30",
+                    amount: "1",
+                },
+                {
+                    earned: "1000",
+                    date: "08.14.21 08:57",
+                    amount: "2",
+                },
+                {
+                    earned: "2000",
+                    date: "08.14.21 09:30",
+                    amount: "1",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 08:57",
+                    amount: "1",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 09:30",
+                    amount: "2",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 08:57",
+                    amount: "1",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 09:30",
+                    amount: "2",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 08:57",
+                    amount: "1",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 09:30",
+                    amount: "1",
+                },
+                {
+                    earned: "200",
+                    date: "08.14.21 08:57",
+                    amount: "1",
+                },
+            ]
+        }
+    },
+    methods: {
+        selectFollow(index) {
+            this.datas[index].follow = false
+            this.image1 =  this.image2;
         }
     }
+}
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_search_logo_size {
-    height: 100%;
-    margin: 0 15px;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
-  .notification_non {
-    background-color: white;
-  }
-  .search_area {
-    font-size: 11px;
-  }
-  .socialmedia_search_title {
-    font-size: 16px;
-  }
-  .search_coins {
-    font-size: 14px;
-  }
-  .search_coins_img {
-    margin-bottom: 4px;
-    margin-right: 5px;
-  }
-  .search_check_offer {
-    color: #13C8FF;
-    font-size: 16px;
-  }
-  .socialmedia_search_para {
-    padding: 15px 10px;
-    display: flex;
-  }
-  .search_para {
-    margin: 0;
-    width: 100%;
-  }
-  .follow_btn {
-    background: #EF8200;
-  }
-  .follow_btn_disable {
-    background: #13C8FF33;
-    color: #3DAEC9 !important;
-  }
-  .send_btn_disable {
-    background: #13C8FF;
-    opacity: 0.2;
-  }
-  .send_btn {
-    background: #13C8FF;
-    opacity: 1;
-  }
-  .search_transmit button {
-    padding: 5px 10px;
-    width: 95px;
-    border-radius: 25px;
-    color: white;
-    font-size: 14px;
-    margin: 3px 0;
-  }
-  .send_btn img {
-    margin-right: 7px;
-  }
-  .send_btn_disable img {
-    margin-right: 7px;
-  }
+    .wallet_glc_content {
+        width: 100%;
+        max-width: 414px;
+        position: fixed;
+        top: 60px;
+        background: white;
+        padding: 20px 20px 10px;
+    }
+    .wallet_glc_coin {
+        display: flex;
+    }
+    .wallet_glc_coin p {
+        margin: auto 0 auto auto;
+        display: grid;
+        text-align: right;
+    }
+    .wallet_glc_coin img {
+        margin: auto auto auto 10px;
+    }
+    .wallet_glc_coin p span {
+        font-size: 24px;
+    }
+    .wallet_glc_record {
+        margin: 0;
+        text-align: left;
+        font-size: 15px;
+    }
+    .wallet_glc_data {
+        width: 100%;
+        max-width: 414px;
+        margin: 188px auto 0;
+    }
+    .wallet_glc_count {
+        display: flex;
+        width: 100%;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+        padding: 3px 20px;
+    }
+    .wallet_glc_count:nth-child(odd) {
+        background: #E6F7FF;
+    }
 </style>
