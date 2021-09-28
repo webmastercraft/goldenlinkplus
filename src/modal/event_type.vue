@@ -166,14 +166,6 @@
     float: right;
     margin-top: 5px;
   }
-  .event_invite_position {
-    text-align: left;
-    overflow: auto;
-    height: 1000px;
-    background: white;
-    border-radius: 12px;
-    width: 414px;
-  }
   .each_height {
     height: 1000px !important;
   }

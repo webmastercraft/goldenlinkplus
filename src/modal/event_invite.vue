@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask event_invite_position" v-on:click.self="userProfileBackdrop">
+    <div class="modal-backdrop bg-mask event_invite_modal_position" v-on:click.self="userProfileBackdrop">
       <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
@@ -133,7 +133,7 @@
     overflow: auto;
     height: 1000px;
     background: white;
-    border-radius: 12px;
+    border-radius: 0;
     width: 100%;
     max-width: 414px;
   }
@@ -146,7 +146,7 @@
   .event_invite_modal {
     transform: translate(0, 0) !important;
   }
-  .event_invite_position {
+  .event_invite_modal_position {
     align-items: end !important;
   }
   .event_invite_body {
