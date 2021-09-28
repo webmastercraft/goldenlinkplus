@@ -72,27 +72,7 @@ export default {
                     earned: "200",
                     date: "08.14.21 08:57",
                     amount: "1",
-                },
-                {
-                    earned: "200",
-                    date: "08.14.21 09:30",
-                    amount: "2",
-                },
-                {
-                    earned: "200",
-                    date: "08.14.21 08:57",
-                    amount: "1",
-                },
-                {
-                    earned: "200",
-                    date: "08.14.21 09:30",
-                    amount: "1",
-                },
-                {
-                    earned: "200",
-                    date: "08.14.21 08:57",
-                    amount: "1",
-                },
+                }
             ]
         }
     },

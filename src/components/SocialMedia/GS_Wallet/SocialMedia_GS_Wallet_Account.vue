@@ -3,7 +3,7 @@
         <div class="profile_phone">
 
             <div class="header_modal profile_modal">
-                <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+                <router-link to="/socialmedia/gs_wallet/socialmedia_gs_wallet" class="header_arrow"><img src="img/header_arrow.png"></router-link>
                 <a>My Linked Accounts<img src="img/plus.png" class="my_event_btn"></a>
             </div>
             <div class="add_modal">
@@ -37,24 +37,6 @@ export default {
 }
 </script>
 <style>
-    .wallet_account p {
-        margin: 0;
-        display: flex;
-        width: 100%;
-        padding: 20px 0;
-    }
-    .wallet_account p img:first-child {
-        margin: auto 20px;
-        width: 24px;
-        height: 24px;
-    }
-    .wallet_account p img:last-child {
-        width: 8px;
-        height: 14px;
-        margin: auto 10px auto auto;
-    }
-    .wallet_account p span {
-        margin: auto auto auto 10px;
-    }
+
 </style>
 
