@@ -135,7 +135,6 @@
     background: white;
     border-radius: 0;
     width: 100%;
-    max-width: 414px;
   }
   .each_height {
     height: 1000px !important;
