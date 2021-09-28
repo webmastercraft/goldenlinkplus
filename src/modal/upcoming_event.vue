@@ -1,53 +1,45 @@
 <template>
-  <transition name="slide-fade" mode="out-in">
-    <div class=" modal-backdrop bg-user-mask" v-on:click.self="userProfileBackdrop" style="overflow-y: auto">
-      <div class="bg-user-mask" v-on:click.self="userProfileBackdrop">
-        <div class="modal upcoming_modal"
-          id="myModal"
-          role="dialog"
-          aria-labelledby="modalTitle"
-          aria-describedby="modalDescription"
-          @open="handleOpen" 
-          ref="myModal"
+  <transition name="modal-fade">
+    <div class="modal-backdrop bg-mask upcoming_modal_position" v-on:click.self="userProfileBackdrop">
+      <div class="event_invite_modal"
+        role="dialog"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDescription"
+      >
+        <header
+          class="event_invite_body"
+          id="modalTitle"
         >
-          <div class="user_pos modal-content">
-            <header
-              class="upcmoing_event_modal"
-              id="modalTitle"
-            >
-                    <p class="medium_1_title">TOMORROW   7:00 AM</p>
-                    <p class="upcoming_para"><span>from</span><img src="triangle.png" class="favicon_img"><span class="event_para_small">MAKING BIG TIME MONEY 101...</span></p>
-                    <p class="upcoming_title">Let’s All win the Market!! Start<br>Learning today!</p>
-                    <p class="upcoming_desc">Discussion will be all about making money online despite the impact of COVID pandemic</p>
-                    <div class="upcoming_content">
-                        <p>width</p>
-                        <div>
-                            <img src="Jean_Smith.png">
-                            <p>Jean Smith</p>
-                        </div>
-                        <div>
-                            <img src="Jean_Smith.png">
-                            <p>Jean Smith</p>
-                        </div>
-                        <div>
-                            <img src="Jean_Smith.png">
-                            <p>Jean Smith</p>
-                        </div>
-                    </div>
-                    <button
-                    type="button"
-                    class="event_done"
-                    @click="close"
-                    aria-label="Close modal"
-                    >Confirm Joining
-                    </button>
-            </header>
-          </div>
-        </div>
+            <p class="medium_1_title">TOMORROW   7:00 AM</p>
+            <p class="upcoming_para"><span>from</span><img src="triangle.png" class="favicon_img"><span class="event_para_small">MAKING BIG TIME MONEY 101...</span></p>
+            <p class="upcoming_title">Let’s All win the Market!! Start<br>Learning today!</p>
+            <p class="upcoming_desc">Discussion will be all about making money online despite the impact of COVID pandemic</p>
+            <div class="upcoming_content">
+                <p>width</p>
+                <div>
+                    <img src="Jean_Smith.png">
+                    <p>Jean Smith</p>
+                </div>
+                <div>
+                    <img src="Jean_Smith.png">
+                    <p>Jean Smith</p>
+                </div>
+                <div>
+                    <img src="Jean_Smith.png">
+                    <p>Jean Smith</p>
+                </div>
+            </div>
+            <button
+            type="button"
+            class="event_done"
+            @click="close"
+            aria-label="Close modal"
+            >Confirm Joining
+            </button>
+        </header>
       </div>
     </div>
   </transition>
-
 </template>
 
 <script>
@@ -105,5 +97,8 @@
     }
     .upcmoing_event_modal {
       text-align: left;
+    }
+    .upcoming_modal_position {
+      align-items: flex-end !important;
     }
 </style>

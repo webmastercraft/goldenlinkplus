@@ -103,11 +103,6 @@ import SocialMedia_BS_Reg_Profile_Photo from './components/SocialMedia/SocialMed
 import SocialMedia_BS_Reg_Basic_Info from './components/SocialMedia/SocialMedia_BS_Reg_Basic_Info.vue';
 import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMedia_BS_Recommendation_One.vue';
 
-import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_GLC.vue';
-
-import SocialMedia_BS_Wallet from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet.vue';
-
-
 import SocialMedia_Recommendation_One from './components/SocialMedia/SocialMedia_Recommendation_One.vue';
 import SocialMedia_Recommendation_Two from './components/SocialMedia/SocialMedia_Recommendation_Two.vue';
 import SocialMedia_Recommendation_Three from './components/SocialMedia/SocialMedia_Recommendation_Three.vue';
@@ -728,16 +723,6 @@ export default new Router({
             path: '/socialmedia/user_center/socialmedia_gs_invite',
             name: 'socialmedia_gs_invite',
             components: { default: SocialMedia_GS_Invite }
-        },
-        {
-            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_glc',
-            name: 'socialmedia_gs_wallet_glc',
-            components: { default: SocialMedia_GS_Wallet_GLC },
-        },
-        {
-            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet',
-            name: 'socialmedia_bs_wallet',
-            components: { default: SocialMedia_BS_Wallet },
         },
     ],
 

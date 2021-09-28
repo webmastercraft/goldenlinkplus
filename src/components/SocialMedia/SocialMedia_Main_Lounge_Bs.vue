@@ -84,7 +84,7 @@ export default {
           {rout : "socialmedia_bs_profile", img: "lounge_profile.png", name: "My Profile"}, 
           {rout : "bs_center/socialmedia_bs_user_center", img: "lounge_usercenter.png", name: "My User Center"},
           {rout : "", img: "lounge_membership.png", name: "My Membership"},
-          {rout : "bs_wallet/socialmedia_bs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
+          {rout : "", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
           {rout : "", img: "lounge_interests.png", name: "My Campaigns"},

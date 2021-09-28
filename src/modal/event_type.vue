@@ -126,9 +126,10 @@
     letter-spacing: 0.05em;
   }
   .event_user {
-    margin: 0 20px;
+    margin: 20px;
     text-align: center;
     display: flex;
+    width: calc(100% - 40px);
   }
   .event_invite_title {
     color: #F4992D;
@@ -165,14 +166,6 @@
   .medium_1_title img {
     float: right;
     margin-top: 5px;
-  }
-  .event_invite_position {
-    text-align: left;
-    overflow: auto;
-    height: 1000px;
-    background: white;
-    border-radius: 12px;
-    width: 414px;
   }
   .each_height {
     height: 1000px !important;

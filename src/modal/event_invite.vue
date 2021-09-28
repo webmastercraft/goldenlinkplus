@@ -1,13 +1,13 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="modal_event_transform"
+    <div class="modal-backdrop bg-mask event_invite_modal_position" v-on:click.self="userProfileBackdrop">
+      <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
         <header
-          class="host_view_position"
+          class="event_invite_body"
           id="modalTitle"
         >
             <p class="medium_1_title">TOMORROW   7:00 AM</p>
@@ -15,7 +15,7 @@
               
               <p class="event_invite_para"><span>from</span><img src="triangle.png" class="favicon_img"><span class="event_para_small">MAKING BIG TIME MONEY 101...</span></p>
               <hr class="event_invite_hr">
-              <div class="event_user">
+              <div class="event_user event_user_img">
                 <img src="Jean_Smith.png">
                 <img src="George Dy.png">
                 <img src="Alex Smith.png">
@@ -28,7 +28,7 @@
               <div class="event_invite_url">
                       <input type="text" placeholder="" class="form-control" v-model="promotion_link">
               </div>
-              <div class="event_user">
+              <div class="event_user link_img_margin">
                 <p><img src="share.png"><br><span>Share</span></p>
                 <p><img src="tweet.png"><br><span>Tweet</span></p>
                 <p><img src="copy_link.png" @click="copyLink"><br><span>Copy Link</span></p>
@@ -133,14 +133,34 @@
     overflow: auto;
     height: 1000px;
     background: white;
-    border-radius: 12px;
+    border-radius: 0;
     width: 100%;
-    max-width: 414px;
   }
   .each_height {
     height: 1000px !important;
   }
   .modal_event_transform {
     transform: translate(0, 25%) !important;
+  }
+  .event_invite_modal {
+    transform: translate(0, 0) !important;
+  }
+  .event_invite_modal_position {
+    align-items: flex-end !important;
+  }
+  .event_invite_body {
+    text-align: left;
+    overflow: auto;
+    height: 100%;
+    background: white;
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    max-width: 414px;
+  }
+  .link_img_margin {
+    margin-bottom: 20px;
+  }
+  .event_user_img img {
+    margin: auto;
   }
 </style>

@@ -34,40 +34,8 @@ export default {
 }
 </script>
 <style>
-  .passcode {
-    background: white !important;
-  }
-  .glplogo_reg_security {
-    text-align: center;
-    width: 100%;
-    margin: 30px 40px;
-  }
-  .glplogo_reg_p {
-    margin: 0 0 10px 0;
-  }
-  .glplogo_reg_img {
-    margin: 250px 0 30px 0;
-  }
   .glplogo_reg_passcode {
     font-size: 14px;
     margin: 0 0 200px 0;
-  }
-  .glplogo_reg_btn {
-    background-color: #F4992D;
-    color: white;
-    padding: 8px 50px;
-    border-radius: 30px;
-    font-size: 18px;
-    margin: 30px auto;
-  }
-  .glplogo_reg_btn_img {
-    margin: 0 0 2px 10px;
-  }
-  .glplogo_reg_code {
-    color: #F4992D;
-    float: right;
-  }
-  .glplogo_reg_security_title {
-    margin: 80px 0;
   }
 </style>
