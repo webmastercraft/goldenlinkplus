@@ -99,6 +99,6 @@
       text-align: left;
     }
     .upcoming_modal_position {
-      align-items: end !important;
+      align-items: flex-end !important;
     }
 </style>

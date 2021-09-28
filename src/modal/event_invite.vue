@@ -146,7 +146,7 @@
     transform: translate(0, 0) !important;
   }
   .event_invite_modal_position {
-    align-items: end !important;
+    align-items: flex-end !important;
   }
   .event_invite_body {
     text-align: left;
