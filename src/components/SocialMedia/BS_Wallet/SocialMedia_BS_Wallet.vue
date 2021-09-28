@@ -9,16 +9,18 @@
                 </div>
                 <div class="wallet_body">
                     <p class="wallet_content">
-                        <img src="wallet/linked.png" class="wallet_content_img">My Linked Accounts<span><img src="wallet/funds.png"  class="wallet_content_img">Withdraw Fund</span>
+                        <img src="wallet/linked.png" class="wallet_content_img">My Linked Accounts<span><img src="wallet/funds.png"  class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw">Withdraw Fund</router-link></span>
                     </p>
                     <p class="wallet_title">
                         <span><img src="wallet/activity.png" class="wallet_title_img">RECENT ACTIVITY</span>
-                        <button>View All</button>
+                        <button>
+                            <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_transaction">View All</router-link>
+                        </button>
                     </p>
-                    <div v-for="(item, index) in walletdata" :key="index">
-                        <div class="wallet_user_count">
-                            <p class="wallet_user_detail">{{item.name}}<span>{{item.state}}</span></p>
-                            <p class="wallet_user_date">{{item.date}}<span>{{item.amount}}</span></p>
+                    <div>
+                        <div v-for="(item, index) in walletdata" :key="index" class="wallet_user_count">
+                            <p class="wallet_user_detail"><b>{{item.name}}</b><span>{{item.state}}</span></p>
+                            <p class="wallet_user_date">{{item.date}}<span :class="{'wallet_user_amount': item.coin == true}">{{item.amount}}</span></p>
                         </div>
                     </div>
                 </div>
@@ -36,27 +38,38 @@
                 walletdata: [
                     {
                         name: "Mary Thompson",
-                        state: "You sent G-Coins",
+                        state: "Commission Payment",
                         date: "08.14.21 09:30",
-                        amount: "-1000"
+                        amount: "-10",
+                        coin: true
                     },
                     {
                         name: "Adam Levigne",
-                        state: "Received Event G-Coins",
+                        state: "G-Coins CPC Reward",
                         date: "08.14.21 09:30 ",
-                        amount: "+1000"
+                        amount: "-5",
+                        coin: true
                     },
                     {
                         name: "Mary Thompson",
-                        state: "You sent G-Coins",
+                        state: "G-Coins CPC Reward",
                         date: "08.14.21 09:30",
-                        amount: "-1000"
+                        amount: "-5",
+                        coin: true
                     },
                     {
                         name: "Adam Levigne",
-                        state: "Received Event G-Coins",
+                        state: "Events G-Coin Reward",
                         date: "08.14.21 09:30 ",
-                        amount: "+1000"
+                        amount: "-10",
+                        coin: true
+                    },
+                    {
+                        name: "Mary Thompson",
+                        state: "Events G-Coin Reward",
+                        date: "08.14.21 09:30",
+                        amount: "-5",
+                        coin: true
                     }
                 ]
             }
@@ -71,7 +84,7 @@
         max-width: 414px;
         margin-top: 185px;
         background: white;
-        padding: 110px 25px 25px;
+        padding: 100px 25px 25px;
     }
     .wallet_content_img  {
         width: 24px;
@@ -91,7 +104,7 @@
         text-align: left;
         font-size: 14px;
         letter-spacing: 0.08em;
-        margin: 50px auto auto;
+        margin: 40px auto 10px;
         width: 100%;
         display: flex;
     }
@@ -115,11 +128,19 @@
         width: 100%;
         font-size: 15px;
         letter-spacing: 0.02em;
+        padding: 6px 10px;;
+    }
+    .wallet_user_count:nth-child(odd) {
+        background: #E6F7FF;
+    }
+    .wallet_user_count:nth-child(even) {
+        background: #FFFFFF;
     }
     .wallet_user_detail {
         margin: auto auto auto 0;
         text-align: left;
         display: grid;
+        width: 60%;
     }
     .wallet_user_detail span {
         color: #13C8FF;
@@ -129,8 +150,15 @@
         text-align: right;
         display: grid;
         color: #13C8FF;
+        width: 40%;
     }
     .wallet_user_date span {
         color: black;
+    }
+    .wallet_user_amount {
+        color: red !important;
+    }
+    .wallet_title button a {
+        color: white;
     }
 </style>
