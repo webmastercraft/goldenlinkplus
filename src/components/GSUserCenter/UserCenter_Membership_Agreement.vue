@@ -8,44 +8,7 @@
             <a href="#">MEMBERSHIP AGREEMENT</a>
           </div>
           <div class="content left-content header_top">
-            <p class="medium_1_title">To Qualify as GS Regular and Gold Members</p>
-            <ul>
-              <li>All GS members must agree with GoldenLink+ policies and maintain their marketing campaign in good standing, not violate the GOLD rules, not to run malicious traffic, not to solicit fake clicks. If all these conditions are met, members can maintain their membership and continue to increase their revenue and sell or transfer their accounts upon the Platform's approval.</li>
-            </ul>
-            <ul>
-              <li>GOLD will maintain records of all activities and comments regardless if good or poor, this includes: conversion rates, starts, reviews, followers, amount of Diamonds and G-Coins received,  and conversion sales revenue.</li>
-            </ul>
-
-            <p class="medium_1_title">Withdrawing Funds</p>
-            <ul>
-              <li><b>Note:</b> When businesses are making offers for commission, G-Coins rewards, CPC G-Coins, GOLD takes a 50% split (check below). GOLD owns the rights for the share ratio and also the right to modify at any time.</li>
-            </ul>
-            <table class="membership-table">
-              <tr>
-                <th class="th20">G-Coins Reward</th>
-                <th class="th21">50% GS<br>50% GOLD</th>
-              </tr>
-              <tr>
-                <td class="td20">G-Coins CPC</td>
-                <td class="td21">50% GS<br>50% GOLD</td>
-              </tr>
-            </table>
-
-            <ul>
-              <li>You may keep your balance on hand to use for future events. By keeping your G-Coin balance on GOLD, it is possible your G-Coin value may grow.</li>
-            </ul>
-
-            <ul>
-              <li>GS Marketer：When the value in the account is equivalent to $50, funds can be cashed out, except for the first $5 promotional offer, following the completion of your registration.</li>
-            </ul>
-
-            <ul>
-              <li>G-Coins cash out:  Based on your current balance, plus current G-Coin value.</li>
-            </ul>
-
-            <ul>
-              <li>Commission cash out: To avoid account disputes and provide for possible returns, the account balance minimum must remain at least $50.  As your sales continue to grow, GOLD maintains the right to adjust this minimum cash deposit amount.</li>
-            </ul>
+            <p class="membership_agree_sentence">The following the terms of use constitute a legal agreement between you, the visitor of the Golden Link Plus website, and Gold, the service owner (“Gold”, “We, “Us”, “GS”, GS marketers or “Gold Striker'') and governs your use of the Gold Service (the “Service”). Please read this Agreement carefully before using or registering for the Service. For the purpose of this Agreement, by using and registering for the Service, you agree to the terms and conditions of this agreement. IF YOU DON'T AGREE WITH THE TERMS AND CONDITIONS OF THIS AGREEMENT, DO NOT USE OR REGISTER FOR THE SERVICE. YOU SHOULD REVIEW THE TERMS FREQUENTLY AS Gold MAY CHANGE THIS AGREEMENT AT ANY TIME BY POSTING A REVISED VERSION. YOUR CONTINUED USE OF THE SERVICE AFTER SUCH NOTICE CONSTITUTES YOUR CONSENT TO THE TERMS OF THE AGREEMENT INCLUDING UPDATED VERSIONS. All GS members must agree with GoldenLink+ policies and maintain their marketing campaign in good standing, not violate the GOLD rules, not to run malicious traffic, not to solicit fake clicks. If all these conditions are met, members can maintain their membership and continue to increase their revenue and sell or transfer their accounts upon the Platform's approval. To assist with the platform growth in a proper direction and avoiding unfair or illegal activities or events on GOLD, GOLD will maintain records of all activities and comments regardless if good or poor, this includes: stars, reviews, followers, amount of Diamonds and G-Coins reward, as well as conversion rates for businesses and GS marketers. </p>
             <router-link to="/usercenter/upgrade_gs_account">
               <button class="gs_account_stage_checkout_btn  rotate_btn">
                 <img src="reg_next.png" class="reg_next_rotate">Back
@@ -118,5 +81,9 @@ export default {
   }
   .rotate_btn {
     margin-top: 20px;
+  }
+  .membership_agree_sentence {
+    margin: 20px;
+    font-size: 14px;
   }
 </style>
