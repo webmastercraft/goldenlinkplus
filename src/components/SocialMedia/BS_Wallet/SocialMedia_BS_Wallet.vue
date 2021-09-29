@@ -9,7 +9,7 @@
                 </div>
                 <div class="wallet_body">
                     <p class="wallet_content">
-                        <img src="wallet/linked.png" class="wallet_content_img">My Linked Accounts<span><img src="wallet/funds.png"  class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw">Withdraw Fund</router-link></span>
+                        <img src="wallet/linked.png" class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_account">My Linked Accounts</router-link><span><img src="wallet/funds.png"  class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw">Withdraw Fund</router-link></span>
                     </p>
                     <p class="wallet_title">
                         <span><img src="wallet/activity.png" class="wallet_title_img">RECENT ACTIVITY</span>

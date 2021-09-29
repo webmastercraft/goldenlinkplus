@@ -106,6 +106,8 @@ import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMe
 import SocialMedia_GS_Wallet from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet.vue';
 import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_GLC.vue';
 import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Transaction.vue';
+import SocialMedia_GS_Wallet_Paypal_Withdraw from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Paypal_Withdraw.vue';
+import SocialMedia_GS_Wallet_Account from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Account.vue';
 
 import SocialMedia_BS_Wallet from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet.vue';
 import SocialMedia_BS_Wallet_Transaction from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Transaction.vue';
@@ -752,6 +754,11 @@ export default new Router({
             components: { default: SocialMedia_GS_Wallet_Transaction },
         },
         {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_account',
+            name: 'socialmedia_gs_wallet_account',
+            components: { default: SocialMedia_GS_Wallet_Account },
+        },
+        {
             path: '/socialmedia/bs_wallet/socialmedia_bs_wallet',
             name: 'socialmedia_bs_wallet',
             components: { default: SocialMedia_BS_Wallet },
@@ -776,6 +783,11 @@ export default new Router({
             path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw',
             name: 'socialmedia_bs_wallet_paypal_withdraw',
             components: { default: SocialMedia_BS_Wallet_Paypal_Withdraw },
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_paypal_withdraw',
+            name: 'socialmedia_gs_wallet_paypal_withdraw',
+            components: { default: SocialMedia_GS_Wallet_Paypal_Withdraw },
         },
     ],
 

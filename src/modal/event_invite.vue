@@ -15,7 +15,7 @@
               
               <p class="event_invite_para"><span>from</span><img src="triangle.png" class="favicon_img"><span class="event_para_small">MAKING BIG TIME MONEY 101...</span></p>
               <hr class="event_invite_hr">
-              <div class="event_user">
+              <div class="event_user event_user_img">
                 <img src="Jean_Smith.png">
                 <img src="George Dy.png">
                 <img src="Alex Smith.png">
@@ -28,7 +28,7 @@
               <div class="event_invite_url">
                       <input type="text" placeholder="" class="form-control" v-model="promotion_link">
               </div>
-              <div class="event_user">
+              <div class="event_user link_img_margin">
                 <p><img src="share.png"><br><span>Share</span></p>
                 <p><img src="tweet.png"><br><span>Tweet</span></p>
                 <p><img src="copy_link.png" @click="copyLink"><br><span>Copy Link</span></p>
@@ -146,7 +146,7 @@
     transform: translate(0, 0) !important;
   }
   .event_invite_modal_position {
-    align-items: end !important;
+    align-items: flex-end !important;
   }
   .event_invite_body {
     text-align: left;
@@ -156,5 +156,11 @@
     border-radius: 12px 12px 0 0;
     width: 100%;
     max-width: 414px;
+  }
+  .link_img_margin {
+    margin-bottom: 20px;
+  }
+  .event_user_img img {
+    margin: auto;
   }
 </style>

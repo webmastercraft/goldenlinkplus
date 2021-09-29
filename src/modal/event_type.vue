@@ -126,9 +126,10 @@
     letter-spacing: 0.05em;
   }
   .event_user {
-    margin: 0 20px;
+    margin: 20px;
     text-align: center;
     display: flex;
+    width: calc(100% - 40px);
   }
   .event_invite_title {
     color: #F4992D;
