@@ -63,8 +63,8 @@ export default {
   .glplogo {
     text-align: left;
     width: 100%;
-    margin: 30px 25px;
-    height: 100%;
+    margin: 25px;
+    height: auto;
   }
   .socialmedia_messages_desc {
     font-size: 14px;
