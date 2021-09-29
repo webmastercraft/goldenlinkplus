@@ -64,6 +64,8 @@ import SocialMedia_Privacy_Policy from './components/SocialMedia/SocialMedia_Pri
 import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intro.vue';
 import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
+import SocialMedia_Log_security_Passcode from './components/SocialMedia/SocialMedia_Log_security_Passcode.vue';
+import SocialMedia_Log_security_PassReset from './components/SocialMedia/SocialMedia_Log_security_PassReset.vue';
 import SocialMedia_Log_touch_security from './components/SocialMedia/SocialMedia_Log_touch_security.vue';
 import SocialMedia_Messaging_Messages from './components/SocialMedia/SocialMedia_Messaging_Messages.vue';
 import SocialMedia_Messaging_Chat from './components/SocialMedia/SocialMedia_Messaging_Chat.vue';
@@ -429,6 +431,16 @@ export default new Router({
             path: '/socialmedia/socialmedia_log_security',
             name: 'socialmedia_log_security',
             components: { default: SocialMedia_Log_security },
+        },
+        {
+            path: '/socialmedia/socialmedia_log_security_passcode',
+            name: 'socialmedia_log_security_passcode',
+            components: { default: SocialMedia_Log_security_Passcode },
+        },
+        {
+            path: '/socialmedia/socialMedia_log_security_passreset',
+            name: 'SocialMedia_Log_security_PassReset',
+            components: { default: SocialMedia_Log_security_PassReset },
         },
         {
             path: '/socialmedia/socialmedia_log_touch_security',

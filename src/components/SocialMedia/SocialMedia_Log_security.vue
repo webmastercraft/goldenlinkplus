@@ -12,7 +12,7 @@
             aria-describedby=""
             placeholder=""
           />
-          <p class="glplogo_reg_passcode">I forgot my passcode</p>
+          <p class="glplogo_reg_passcode"><router-link to="/socialmedia/socialmedia_log_security_passcode">I forgot my passcode</router-link></p>
           <div class="sociallogo_btn">
             <router-link to="/socialmedia/socialmedia_main">
               <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
