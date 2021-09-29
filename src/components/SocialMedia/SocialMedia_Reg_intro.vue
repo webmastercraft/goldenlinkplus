@@ -71,9 +71,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
   .glplogo_reg {
     text-align: left;
     width: 100%;

@@ -6,7 +6,9 @@
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
           <p class="glplogo_p">Welcome to<br>Your Social Media<br>Matrix</p>
-          <img src="Group 724.png" class="glplogo_p_img">
+          <div class="sociallogo_start_logo">
+            <img src="Group 724.png" class="glplogo_p_img">
+          </div>
           <p class="gs_reg_start_desc">Promote businesses, host events, mine g-coins and earn big rewards! Start by following<br>people now.</p>
            <div class="sociallogo_btn status_next">
               <router-link to="/socialmedia/socialmedia_gs_reg_profile_type">
@@ -29,20 +31,12 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
   .glplogo_p {
     font-size: 2rem;
     margin: 10px 0;
   }
   .glplogo_p_img {
-    width: 100%;
+    width: 70%;
   }
   .socialbtn {
     color: white;
@@ -74,5 +68,8 @@ export default {
     background-color: #F4992D;
     color: white;
     border-radius: 30px;
+  }
+  .sociallogo_start_logo {
+    text-align: center;
   }
 </style>

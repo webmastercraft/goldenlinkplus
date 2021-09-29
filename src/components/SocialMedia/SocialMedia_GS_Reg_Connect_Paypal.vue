@@ -58,6 +58,7 @@ export default {
 <style>
   .sociallogin {
     background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
+    position: relative;
   }
   .glplogo {
     text-align: left;

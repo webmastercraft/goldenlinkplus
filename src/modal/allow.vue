@@ -44,6 +44,7 @@
 .small_modal {
   max-width: 300px !important;
   height: auto !important;
+  border-radius: 12px !important;
 }
 .recom_modal {
   font-size: 16px;

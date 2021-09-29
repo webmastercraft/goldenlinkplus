@@ -7,6 +7,11 @@
                     <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
                     <a>GS Wallet<span class="wallet_glc_right"><router-link to="/socialmedia/gs_wallet/socialmedia_gs_wallet_glc">GLC</router-link></span></a>
                 </div>
+                <div class="wallet_balance">
+                    <p>Available Balance<img src="wallet/plus.png" class="wallet_plus_img"></p>
+                    <p class="wallet_money"><span class="wallet_price_type">USD</span><span class="wallet_price">570</span></p>
+                    <p class="wallet_price_detail"><span><router-link to="/socialmedia/socialmedia_wallet_cpc_rewards">Details ></router-link></span><button>Convert to GCoins</button></p>
+                </div>
                 <div class="wallet_body">
                     <p class="wallet_content">
                         <img src="wallet/linked.png" class="wallet_content_img"><router-link to="/socialmedia/gs_wallet/socialmedia_gs_wallet_account">My Linked Accounts</router-link><span><img src="wallet/funds.png"  class="wallet_content_img"><router-link to="/socialmedia/gs_wallet/socialmedia_gs_wallet_paypal_withdraw">Withdraw Fund</router-link></span>
@@ -75,14 +80,6 @@
     }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
   .socialmedia_messages_desc {
     font-size: 14px;
   }
@@ -161,4 +158,44 @@
     right: 20px;
     z-index: 1040;
   }
+    .wallet_balance {
+        background: #EF8200;
+        width: 65%;
+        position: absolute;
+        height: 170px;
+        top: 80px;
+        left: 20px;
+        border-radius: 16px;
+        color: white;
+        text-align: left;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .wallet_balance p {
+        margin: auto;
+    }
+    .wallet_plus_img {
+        float: right;
+    }
+    .wallet_price_type {
+        margin: 10px 10px auto auto;
+    }
+    .wallet_price {
+        font-size: 40px !important;
+    }
+    .wallet_money {
+        display: inline-flex;
+    }
+    .wallet_balance button {
+        color: white;
+        border-radius: 8px;
+        border: 1px solid white;
+    }
+    .wallet_price_detail {
+        margin: 24px auto auto !important;
+        display: flex;
+    }
+    .wallet_price_detail span {
+        margin: auto auto auto 0;
+    }
 </style>
