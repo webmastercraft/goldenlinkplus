@@ -53,7 +53,7 @@ export default {
 </script>
 <style>
   .status_img {
-    margin: 50px auto 0;
+    margin: 35px auto 0;
   }
   .status_title {
     font-size: 18px;

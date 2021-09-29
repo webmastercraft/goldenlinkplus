@@ -106,6 +106,8 @@ import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMe
 import SocialMedia_Wallet_Convert_GCoin from './components/SocialMedia/SocialMedia_Wallet_Convert_GCoin.vue';
 import SocialMedia_Wallet_Convert_USD from './components/SocialMedia/SocialMedia_Wallet_Convert_USD.vue';
 import SocialMedia_Wallet_CPC_Rewards from './components/SocialMedia/SocialMedia_Wallet_CPC_Rewards.vue';
+import SocialMedia_Wallet_Commissions from './components/SocialMedia/SocialMedia_Wallet_Commissions.vue';
+import SocialMedia_Wallet_Events from './components/SocialMedia/SocialMedia_Wallet_Events.vue';
 import SocialMedia_GS_Wallet from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet.vue';
 import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_GLC.vue';
 import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Transaction.vue';
@@ -810,6 +812,16 @@ export default new Router({
             path: '/socialmedia/socialmedia_wallet_cpc_rewards',
             name: 'socialmedia_wallet_cpc_rewards',
             components: { default: SocialMedia_Wallet_CPC_Rewards },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_commissions',
+            name: 'socialmedia_wallet_commissions',
+            components: { default: SocialMedia_Wallet_Commissions },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_events',
+            name: 'socialmedia_wallet_events',
+            components: { default: SocialMedia_Wallet_Events },
         },
     ],
 
