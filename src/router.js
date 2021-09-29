@@ -60,6 +60,7 @@ import SocialMedia_Reg_verify from './components/SocialMedia/SocialMedia_Reg_ver
 import SocialMedia_Reg_security from './components/SocialMedia/SocialMedia_Reg_security.vue';
 import SocialMedia_Reg_touch_security from './components/SocialMedia/SocialMedia_Reg_touch_security.vue';
 import SocialMedia_Reg_account_option from './components/SocialMedia/SocialMedia_Reg_account_option.vue';
+import SocialMedia_Privacy_Policy from './components/SocialMedia/SocialMedia_Privacy_Policy.vue';
 import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intro.vue';
 import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
@@ -408,6 +409,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_reg_account_option',
             name: 'socialmedia_reg_account_option',
             components: { default: SocialMedia_Reg_account_option },
+        },
+        {
+            path: '/socialmedia/socialmedia_privacy_policy',
+            name: 'socialmedia_privacy_policy',
+            components: { default: SocialMedia_Privacy_Policy },
         },
         {
             path: '/socialmedia/socialmedia_log_intro',
