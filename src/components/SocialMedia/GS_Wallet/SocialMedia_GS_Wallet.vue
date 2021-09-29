@@ -198,4 +198,7 @@
     .wallet_price_detail span {
         margin: auto auto auto 0;
     }
+    .wallet_price_detail span a {
+        color: white;
+    }
 </style>

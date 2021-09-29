@@ -128,7 +128,7 @@
         width: 100%;
         font-size: 15px;
         letter-spacing: 0.02em;
-        padding: 6px 10px;;
+        padding: 6px 20px;;
     }
     .wallet_user_count:nth-child(odd) {
         background: #E6F7FF;
