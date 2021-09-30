@@ -98,13 +98,6 @@ export default {
     width: 100%;
     display: inline-block;
   }
-
-  .header_top ul {
-    padding: revert;
-    list-style-type: disc;
-    margin: 0 10px 0 0;
-    font-size: 14px;
-  }
   .header_arrow {
     text-align: left;
     margin-left: 22px;

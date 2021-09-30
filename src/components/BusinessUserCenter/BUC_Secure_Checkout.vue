@@ -40,12 +40,6 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_top ul {
-    padding: revert;
-    list-style-type: disc;
-    margin: 0 10px 0 0;
-    font-size: 14px;
-  }
   .stage_date_money {
     margin: 20px 10px 20px 20px;
   }

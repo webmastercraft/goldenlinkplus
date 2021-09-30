@@ -97,7 +97,7 @@ export default {
     padding: 8px 50px;
     border-radius: 30px;
     font-size: 18px;
-    margin: 30px auto;
+    margin: 20px auto;
   }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
