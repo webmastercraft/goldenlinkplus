@@ -14,7 +14,7 @@
             placeholder=""
           />
           <p class="email_validation">Email is required</p>
-          <p class="code_sample">Referral Code: 123456</p>
+          <p class="code_sample">Referral Code: {{referral_code}}</p>
           <form>
               <div class="socialmedia_check">
                 <div class="checkbox_check">
@@ -46,6 +46,11 @@
 export default {
   name: 'SocialMedia_Reg_account_option',
   components: {
+  },
+  data() {
+    return {
+      referral_code: "123456"
+    }
   }
 }
 </script>
@@ -55,7 +60,7 @@ export default {
     font-size: 18px;
   }
   .glplogo_reg_account_btn {
-    padding: 10px 75px;
+    padding: 10px;
     display: block;
     border-radius: 16px;
     color: white;
