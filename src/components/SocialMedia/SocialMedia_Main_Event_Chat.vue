@@ -97,6 +97,12 @@ export default {
                 diaTwoActive: false,
                 diaSize: 12,
             },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 12,
+            }
         ]
     }
   },
@@ -155,7 +161,7 @@ export default {
   display: block !important;
 }
 .event_chat_window {
-  margin: 15px 20px 10px;
+  margin: 15px 20px 50px;
   background-color: white !important;
   border-radius: 16px;
   width: calc(100% - 40px);

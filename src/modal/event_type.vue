@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="modal_event_transform type_height"
+    <div class="modal-backdrop bg-mask upcoming_modal_position" v-on:click.self="userProfileBackdrop">
+      <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
@@ -205,11 +205,11 @@
     width: 100%;
   }
   .event_type_position {
-    text-align: left;
+    text-align: center;
     overflow: auto;
-    height: 900px;
+    height: 100%;
     background: white;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     max-width: 414px;
     width: 100%;
   }
@@ -227,8 +227,6 @@
     background-color: #F4F9FE !important;
     margin: 45px 25px 0;
     width: calc(100% - 50px) !important;
-    max-height: 50px;
-    height: 100% !important;
     padding: 0 20px !important;
   }
   .event_type_change {
