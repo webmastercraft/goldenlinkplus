@@ -32,8 +32,8 @@ export default {
 </script>
 <style>
   .glplogo_p {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 1.8rem;
+    margin: 0;
   }
   .glplogo_p_img {
     width: 70%;
@@ -56,11 +56,11 @@ export default {
     border-radius: 0px 30px 30px 0px;
   }
   .sociallogo_btn {
-    margin: 25px 0 0;
+    margin: 15px 0 0;
     text-align: center;
   }
   .gs_reg_start_desc {
-    margin: 25px 0 0;
+    margin: 15px 0 0;
     text-align: center;
   }
   .status_reg_start_btn {

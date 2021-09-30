@@ -6,14 +6,16 @@
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
           <p class="glplogo_p">Welcome to Your Live<br>Audio E-commerce<br>Experience</p>
-          <div class="reg_log_start">
-            <img src="reg_start.png">
-            <p>Start following people, creating events,<br>building communities, and launching your<br>campaigns</p>
-            <router-link to="/socialmedia/socialmedia_reward">
-              <button class="reg_start_btn">Get Started<img class="glplogo_reg_btn_img" src="reg_next.png"/></button>
-            </router-link>
+          <div class="sociallogo_start_logo">
+            <img src="Group 724.png" class="glplogo_p_img">
           </div>
-          
+          <p class="gs_reg_start_desc">Start following people, creating events,<br>building communities, and launching your<br>campaigns</p>
+           <div class="sociallogo_btn">
+              <router-link to="/socialmedia/socialmedia_reward">
+                <button class="status_reg_start_btn">Get Started <img class="glplogo_reg_btn_img" src="reg_next.png"/>
+                </button>
+              </router-link>
+            </div>
         </div>
       </div>
     </div>
