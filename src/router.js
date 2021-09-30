@@ -103,7 +103,9 @@ import SocialMedia_Reward from './components/SocialMedia/SocialMedia_Reward.vue'
 import SocialMedia_BS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_BS_Reg_Profile_Photo.vue';
 import SocialMedia_BS_Reg_Basic_Info from './components/SocialMedia/SocialMedia_BS_Reg_Basic_Info.vue';
 import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMedia_BS_Recommendation_One.vue';
-
+import SocialMedia_Wallet_Convert_GCoin from './components/SocialMedia/SocialMedia_Wallet_Convert_GCoin.vue';
+import SocialMedia_Wallet_Convert_USD from './components/SocialMedia/SocialMedia_Wallet_Convert_USD.vue';
+import SocialMedia_Wallet_CPC_Rewards from './components/SocialMedia/SocialMedia_Wallet_CPC_Rewards.vue';
 import SocialMedia_GS_Wallet from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet.vue';
 import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_GLC.vue';
 import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Transaction.vue';
@@ -793,6 +795,21 @@ export default new Router({
             path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw',
             name: 'socialmedia_bs_wallet_paypal_withdraw',
             components: { default: SocialMedia_BS_Wallet_Paypal_Withdraw },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_convert_usd',
+            name: 'socialmedia_wallet_convert_usd',
+            components: { default: SocialMedia_Wallet_Convert_USD },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_convert_gcoin',
+            name: 'socialmedia_wallet_convert_gcoin',
+            components: { default: SocialMedia_Wallet_Convert_GCoin },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_cpc_rewards',
+            name: 'socialmedia_wallet_cpc_rewards',
+            components: { default: SocialMedia_Wallet_CPC_Rewards },
         },
     ],
 

@@ -50,14 +50,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
   .glplogo_reg_account_title {
     margin: 65px 0 15px 0;
     font-size: 18px;

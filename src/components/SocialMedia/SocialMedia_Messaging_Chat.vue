@@ -78,10 +78,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-
   .socialmedia_chat {
     width: 100%;
     text-align: left;
