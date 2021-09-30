@@ -64,6 +64,7 @@ export default {
     text-align: left;
     width: 100%;
     margin: 30px 25px;
+    height: 100%;
   }
   .socialmedia_messages_desc {
     font-size: 14px;

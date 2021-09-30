@@ -175,8 +175,8 @@ export default {
         padding: 20px 20px 10px;
     }
     .wallet_data {
-        margin: 188px 20px 0;
+        margin: 195px 0 0;
         max-width: 414px;
-        width: calc(100% - 40px);
+        width: 100%;
     }
 </style>
