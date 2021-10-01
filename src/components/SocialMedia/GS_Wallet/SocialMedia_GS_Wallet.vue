@@ -10,7 +10,7 @@
                 <div class="wallet_balance">
                     <p>Available Balance<img src="wallet/plus.png" class="wallet_plus_img"></p>
                     <p class="wallet_money"><span class="wallet_price_type">USD</span><span class="wallet_price">570</span></p>
-                    <p class="wallet_price_detail"><span><router-link to="/socialmedia/socialmedia_wallet_cpc_rewards">Details ></router-link></span><button>Convert to GCoins</button></p>
+                    <p class="wallet_price_detail"><span><router-link to="/socialmedia/socialmedia_wallet_cpc_rewards">Details ></router-link></span><router-link to="/socialmedia/socialmedia_wallet_convert_gcoin"><button>Convert to GCoins</button></router-link></p>
                 </div>
                 <div class="wallet_body">
                     <p class="wallet_content">

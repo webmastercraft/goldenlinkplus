@@ -28,6 +28,9 @@
             <router-link to="/socialmedia/socialmedia_main_lounge_following" >
               Following
             </router-link>
+            <router-link to="/socialmedia/community/socialmedia_community_feed" >
+              Community
+            </router-link>
           </div>
         </div>
       </div>
