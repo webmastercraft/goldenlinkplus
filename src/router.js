@@ -114,12 +114,18 @@ import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Walle
 import SocialMedia_GS_Wallet_Paypal_Withdraw from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Paypal_Withdraw.vue';
 import SocialMedia_GS_Wallet_Account from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Account.vue';
 
+import SocialMedia_Wallet_Paypal_Confirm from './components/SocialMedia/SocialMedia_Wallet_Paypal_Confirm.vue';
+import SocialMedia_Wallet_Apple_Confirm from './components/SocialMedia/SocialMedia_Wallet_Apple_Confirm.vue';
+import SocialMedia_Wallet_Google_Confirm from './components/SocialMedia/SocialMedia_Wallet_Google_Confirm.vue';
+import SocialMedia_Wallet_Payoneer_Confirm from './components/SocialMedia/SocialMedia_Wallet_Payoneer_Confirm.vue';
+
+
 import SocialMedia_BS_Wallet from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet.vue';
 import SocialMedia_BS_Wallet_Transaction from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Transaction.vue';
 import SocialMedia_BS_Wallet_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Account.vue';
 import SocialMedia_BS_Wallet_Paypal from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal.vue';
 import SocialMedia_BS_Wallet_Paypal_Withdraw from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal_Withdraw.vue';
-
+import SocialMedia_BS_Wallet_Linked_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Linked_Account.vue';
 
 import SocialMedia_Recommendation_One from './components/SocialMedia/SocialMedia_Recommendation_One.vue';
 import SocialMedia_Recommendation_Two from './components/SocialMedia/SocialMedia_Recommendation_Two.vue';
@@ -799,6 +805,11 @@ export default new Router({
             components: { default: SocialMedia_BS_Wallet_Paypal_Withdraw },
         },
         {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_linked_account',
+            name: 'socialmedia_bs_wallet_linked_account',
+            components: { default: SocialMedia_BS_Wallet_Linked_Account },
+        },
+        {
             path: '/socialmedia/socialmedia_wallet_convert_usd',
             name: 'socialmedia_wallet_convert_usd',
             components: { default: SocialMedia_Wallet_Convert_USD },
@@ -822,6 +833,26 @@ export default new Router({
             path: '/socialmedia/socialmedia_wallet_events',
             name: 'socialmedia_wallet_events',
             components: { default: SocialMedia_Wallet_Events },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_paypal_confirm',
+            name: 'socialmedia_wallet_paypal_confirm',
+            components: { default: SocialMedia_Wallet_Paypal_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_apple_confirm',
+            name: 'socialmedia_wallet_apple_confirm',
+            components: { default: SocialMedia_Wallet_Apple_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_google_confirm',
+            name: 'socialmedia_wallet_google_confirm',
+            components: { default: SocialMedia_Wallet_Google_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_payoneer_confirm',
+            name: 'socialmedia_wallet_payoneer_confirm',
+            components: { default: SocialMedia_Wallet_Payoneer_Confirm },
         },
     ],
 

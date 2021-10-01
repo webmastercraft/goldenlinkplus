@@ -88,10 +88,6 @@ export default {
     margin-bottom: 20px;
     background-color: #F4F9FE !important;
   }
-  .glplogo_reg_des {
-    font-size: 14px;
-    margin: 0;
-  }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
   }

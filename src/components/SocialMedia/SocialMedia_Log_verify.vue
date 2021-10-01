@@ -57,12 +57,9 @@ export default {
   .glplogo_reg_des {
     font-size: 14px;
     margin: 0;
+    text-align: left;
   }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
-  }
-  .glplogo_reg_code {
-    color: #F4992D;
-    float: right;
   }
 </style>
