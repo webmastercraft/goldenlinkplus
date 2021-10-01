@@ -24,6 +24,7 @@
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
           <div class="event_body">
+            <p class="promotional_text">Promotional text goes here</p>
             <div class="event_users">
                 <span class="blink_span">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink1 == true}" src="coin_10.png"  @click="showBlink1">
@@ -65,7 +66,8 @@
                         <img src="diamond.png" v-if="item.diamond" class="event_diamond">
                     </div>
                 </div>
-                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin">{{item.event_user_coin}}K</p>
+                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
+                <p class="coin_letter"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
                 <p>{{item.name}}</p>
               </div>
             </div>
@@ -238,6 +240,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 892,
+              event_user_diamond: 526,
               name: "Shane",
               diamondActive: false
             },
@@ -249,6 +252,7 @@ export default {
               active: true,
               blink: false,
               event_user_coin: 484.2,
+              event_user_diamond: 526,
               name: "Kristin",
               diamondActive: false
             },
@@ -260,6 +264,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 345.6,
+              event_user_diamond: 526,
               name: "Leslie",
               diamondActive: false
             },
@@ -271,6 +276,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 527.1,
+              event_user_diamond: 526,
               name: "Eduardo",
               diamondActive: false
             },
@@ -282,6 +288,7 @@ export default {
               active: true,
               blink: false,
               event_user_coin: 78.5,
+              event_user_diamond: 526,
               name: "Jorge",
               diamondActive: false
             },
@@ -293,6 +300,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 18.9,
+              event_user_diamond: 526,
               name: "Esther",
               diamondActive: false
             },
@@ -304,6 +312,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 27.5,
+              event_user_diamond: 526,
               name: "Tanya",
               diamondActive: false
             },
@@ -315,6 +324,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 38.8,
+              event_user_diamond: 526,
               name: "Ronald",
               diamondActive: false
             },
@@ -326,6 +336,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 190.5,
+              event_user_diamond: 526,
               name: "Philip",
               diamondActive: false
             },
@@ -1135,5 +1146,11 @@ export default {
     /*.moving:nth-of-type(10) { animation: floatBubble9 2s infinite  normal ease-out; }
     .moving:nth-of-type(11) { animation: floatBubble10 2s infinite  normal ease-out; }
     .moving:nth-of-type(12) { animation: floatBubble11 2s infinite  normal ease-out; }*/
+    .promotional_text {
+      color: #13C8FF;
+      border-radius: 8px;
+      border: 1px solid #CDE1FF;
+      margin: 10px 10px 0;
+    }
 </style>
  

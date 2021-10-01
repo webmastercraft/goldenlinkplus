@@ -35,7 +35,7 @@
           <div class="glplogo_reg_account_position">
             <button><router-link to="/socialmedia/socialmediastart" class="glplogo_reg_account_cancel">Cancel</router-link></button>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@ export default {
 </script>
 <style>
   .glplogo_reg_account_title {
-    margin: 65px 0 15px 0;
+    margin: 30px 0 15px 0;
     font-size: 18px;
   }
   .glplogo_reg_account_btn {
@@ -64,7 +64,7 @@ export default {
     display: block;
     border-radius: 16px;
     color: white;
-    margin: 7px 0;
+    margin: 5px 0;
   }
   .account_business {
     background: #13C8FF;
@@ -84,7 +84,7 @@ export default {
   }
   .glplogo_reg_account_position {
     text-align: center;
-    margin: 50px 0;
+    margin: 30px 0 auto;
   }
   input[type=checkbox] {
     display:none;

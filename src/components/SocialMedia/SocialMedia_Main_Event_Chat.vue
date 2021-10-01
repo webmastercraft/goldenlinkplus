@@ -91,18 +91,6 @@ export default {
                 diaTwoActive: false,
                 diaSize: 125,
             },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 12,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 12,
-            }
         ]
     }
   },
@@ -240,12 +228,12 @@ export default {
     width: 35px !important;
     height: 28px !important;
     top: 0;
-    right: 0;
+    right: -4px;
 }
 .diamond_animation {
     position: relative;
-    width: 30px;
-    margin: 0 auto auto;
+    margin: 0 0 auto 0;
+    width: 25px;
 }
 .diamond_animation img {
   margin: 0;

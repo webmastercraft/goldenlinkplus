@@ -152,6 +152,9 @@ import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMe
 import SocialMedia_GS_Referrals from './components/SocialMedia/User_Center/SocialMedia_GS_Referrals.vue';
 import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMedia_GS_Invite.vue';
 
+import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
+
+
 
 Vue.use(Router);
 
@@ -853,6 +856,11 @@ export default new Router({
             path: '/socialmedia/socialmedia_wallet_payoneer_confirm',
             name: 'socialmedia_wallet_payoneer_confirm',
             components: { default: SocialMedia_Wallet_Payoneer_Confirm },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_feed',
+            name: 'socialmedia_community_feed',
+            components: { default: SocialMedia_Community_Feed },
         },
     ],
 

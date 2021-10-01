@@ -108,7 +108,7 @@ export default {
   }
   .chat_time {
     font-size: 11px;
-    margin: 0 0 0 10px;
+    margin: auto auto auto 10px;
     
     border-radius: 8px;
     padding: 10px;
