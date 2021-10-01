@@ -132,7 +132,7 @@ export default {
 </script>
 <style>
 .recom_user_padding {
-  padding: 50px 40px;
+  padding: 35px 40px;
   text-align: center;
 }
 .recom_users {

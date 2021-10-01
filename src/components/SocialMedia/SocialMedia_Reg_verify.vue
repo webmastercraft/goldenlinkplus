@@ -14,7 +14,11 @@
             placeholder=""
           />
           <p class="glplogo_reg_des">Enter code in 180s<span><router-link to="/socialmedia/socialmedia_reg_security" class="glplogo_reg_code">Resend Code</router-link></span></p>
-          <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_reg_account_option" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
+          <div class="sociallogo_btn">
+            <router-link to="/socialmedia/socialmedia_reg_account_option">
+              <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -31,9 +35,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
   .glplogo_reg {
     text-align: left;
     width: 100%;
@@ -45,15 +46,7 @@ export default {
   .glplogo_reg_img {
     margin: 250px 0 30px 0;
   }
-  .glplogo_reg_des {
-    font-size: 14px;
-    margin: 0;
-  }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
-  }
-  .glplogo_reg_code {
-    color: #F4992D;
-    float: right;
   }
 </style>

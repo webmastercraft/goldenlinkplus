@@ -78,10 +78,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-
   .socialmedia_chat {
     width: 100%;
     text-align: left;
@@ -112,7 +108,7 @@ export default {
   }
   .chat_time {
     font-size: 11px;
-    margin: 0 0 0 10px;
+    margin: auto auto auto 10px;
     
     border-radius: 8px;
     padding: 10px;

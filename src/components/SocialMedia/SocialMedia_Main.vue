@@ -261,7 +261,7 @@ export default {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin: auto;
+    margin: auto 0 auto auto;
   }
   .main_header {
     text-align: left;

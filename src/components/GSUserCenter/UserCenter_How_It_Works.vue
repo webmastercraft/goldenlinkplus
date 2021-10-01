@@ -60,12 +60,7 @@ export default {
     border-radius: 12px;
     overflow: hidden;
     min-height: calc(100vh - 26px);
-  }
-  .header_top ul {
-    padding: revert;
-    list-style-type: disc;
-    margin: 0 10px 0 0;
-    font-size: 14px;
+    padding-bottom: 20px;
   }
   .gs_account_stage_checkout_btn {
     color: white;

@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop">
-      <div class="modal"
+      <div class="modal small_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"

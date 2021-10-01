@@ -71,9 +71,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
   .glplogo_reg {
     text-align: left;
     width: 100%;
@@ -90,10 +87,6 @@ export default {
     border: 0 solid white !important;
     margin-bottom: 20px;
     background-color: #F4F9FE !important;
-  }
-  .glplogo_reg_des {
-    font-size: 14px;
-    margin: 0;
   }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;

@@ -35,9 +35,6 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
   .glplogo_reg {
     text-align: left;
     width: 100%;
@@ -53,20 +50,16 @@ export default {
     border-radius: 12px !important;
     border: 0 solid white !important;
     margin-bottom: 20px;
-    max-height: 50px;
-    font-size: 50px !important;
+    font-size: 25px !important;
     background-color: #F4F9FE !important;
     text-align: center;
   }
   .glplogo_reg_des {
     font-size: 14px;
     margin: 0;
+    text-align: left;
   }
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
-  }
-  .glplogo_reg_code {
-    color: #F4992D;
-    float: right;
   }
 </style>

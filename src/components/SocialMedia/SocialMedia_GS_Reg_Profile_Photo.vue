@@ -58,7 +58,7 @@ export default {
 
   .status_add_photo {
     font-size: 20px;
-    margin: 40px 0 10px;
+    margin: 30px 0 10px;
   }
   .status_add_desc {
     margin: 0 50px;

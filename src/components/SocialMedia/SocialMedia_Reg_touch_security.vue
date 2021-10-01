@@ -53,10 +53,6 @@
   .glplogo_reg_btn_img {
     margin: 0 0 2px 10px;
   }
-  .glplogo_reg_code {
-    color: #F4992D;
-    float: right;
-  }
   .glplogo_reg_security_title {
     margin: 80px 0;
   }

@@ -105,6 +105,29 @@ import SocialMedia_Reward from './components/SocialMedia/SocialMedia_Reward.vue'
 import SocialMedia_BS_Reg_Profile_Photo from './components/SocialMedia/SocialMedia_BS_Reg_Profile_Photo.vue';
 import SocialMedia_BS_Reg_Basic_Info from './components/SocialMedia/SocialMedia_BS_Reg_Basic_Info.vue';
 import SocialMedia_BS_Recommendation_One from './components/SocialMedia/SocialMedia_BS_Recommendation_One.vue';
+import SocialMedia_Wallet_Convert_GCoin from './components/SocialMedia/SocialMedia_Wallet_Convert_GCoin.vue';
+import SocialMedia_Wallet_Convert_USD from './components/SocialMedia/SocialMedia_Wallet_Convert_USD.vue';
+import SocialMedia_Wallet_CPC_Rewards from './components/SocialMedia/SocialMedia_Wallet_CPC_Rewards.vue';
+import SocialMedia_Wallet_Commissions from './components/SocialMedia/SocialMedia_Wallet_Commissions.vue';
+import SocialMedia_Wallet_Events from './components/SocialMedia/SocialMedia_Wallet_Events.vue';
+import SocialMedia_GS_Wallet from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet.vue';
+import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_GLC.vue';
+import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Transaction.vue';
+import SocialMedia_GS_Wallet_Paypal_Withdraw from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Paypal_Withdraw.vue';
+import SocialMedia_GS_Wallet_Account from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Account.vue';
+
+import SocialMedia_Wallet_Paypal_Confirm from './components/SocialMedia/SocialMedia_Wallet_Paypal_Confirm.vue';
+import SocialMedia_Wallet_Apple_Confirm from './components/SocialMedia/SocialMedia_Wallet_Apple_Confirm.vue';
+import SocialMedia_Wallet_Google_Confirm from './components/SocialMedia/SocialMedia_Wallet_Google_Confirm.vue';
+import SocialMedia_Wallet_Payoneer_Confirm from './components/SocialMedia/SocialMedia_Wallet_Payoneer_Confirm.vue';
+
+
+import SocialMedia_BS_Wallet from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet.vue';
+import SocialMedia_BS_Wallet_Transaction from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Transaction.vue';
+import SocialMedia_BS_Wallet_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Account.vue';
+import SocialMedia_BS_Wallet_Paypal from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal.vue';
+import SocialMedia_BS_Wallet_Paypal_Withdraw from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal_Withdraw.vue';
+import SocialMedia_BS_Wallet_Linked_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Linked_Account.vue';
 
 import SocialMedia_Recommendation_One from './components/SocialMedia/SocialMedia_Recommendation_One.vue';
 import SocialMedia_Recommendation_Two from './components/SocialMedia/SocialMedia_Recommendation_Two.vue';
@@ -130,6 +153,9 @@ import SocialMedia_GS_Marketing from './components/SocialMedia/User_Center/Socia
 import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMedia_GS_Social.vue';
 import SocialMedia_GS_Referrals from './components/SocialMedia/User_Center/SocialMedia_GS_Referrals.vue';
 import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMedia_GS_Invite.vue';
+
+import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
+
 
 
 Vue.use(Router);
@@ -741,6 +767,112 @@ export default new Router({
             path: '/socialmedia/user_center/socialmedia_gs_invite',
             name: 'socialmedia_gs_invite',
             components: { default: SocialMedia_GS_Invite }
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet',
+            name: 'socialmedia_gs_wallet',
+            components: { default: SocialMedia_GS_Wallet },
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_glc',
+            name: 'socialmedia_gs_wallet_glc',
+            components: { default: SocialMedia_GS_Wallet_GLC },
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_transaction',
+            name: 'socialmedia_gs_wallet_transaction',
+            components: { default: SocialMedia_GS_Wallet_Transaction },
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_account',
+            name: 'socialmedia_gs_wallet_account',
+            components: { default: SocialMedia_GS_Wallet_Account },
+        },
+        {
+            path: '/socialmedia/gs_wallet/socialmedia_gs_wallet_paypal_withdraw',
+            name: 'socialmedia_gs_wallet_paypal_withdraw',
+            components: { default: SocialMedia_GS_Wallet_Paypal_Withdraw },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet',
+            name: 'socialmedia_bs_wallet',
+            components: { default: SocialMedia_BS_Wallet },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_transaction',
+            name: 'socialmedia_bs_wallet_transaction',
+            components: { default: SocialMedia_BS_Wallet_Transaction },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_account',
+            name: 'socialmedia_bs_wallet_account',
+            components: { default: SocialMedia_BS_Wallet_Account },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal'
+            ,
+            name: 'socialmedia_bs_wallet_paypal',
+            components: { default: SocialMedia_BS_Wallet_Paypal },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw',
+            name: 'socialmedia_bs_wallet_paypal_withdraw',
+            components: { default: SocialMedia_BS_Wallet_Paypal_Withdraw },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_linked_account',
+            name: 'socialmedia_bs_wallet_linked_account',
+            components: { default: SocialMedia_BS_Wallet_Linked_Account },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_convert_usd',
+            name: 'socialmedia_wallet_convert_usd',
+            components: { default: SocialMedia_Wallet_Convert_USD },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_convert_gcoin',
+            name: 'socialmedia_wallet_convert_gcoin',
+            components: { default: SocialMedia_Wallet_Convert_GCoin },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_cpc_rewards',
+            name: 'socialmedia_wallet_cpc_rewards',
+            components: { default: SocialMedia_Wallet_CPC_Rewards },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_commissions',
+            name: 'socialmedia_wallet_commissions',
+            components: { default: SocialMedia_Wallet_Commissions },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_events',
+            name: 'socialmedia_wallet_events',
+            components: { default: SocialMedia_Wallet_Events },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_paypal_confirm',
+            name: 'socialmedia_wallet_paypal_confirm',
+            components: { default: SocialMedia_Wallet_Paypal_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_apple_confirm',
+            name: 'socialmedia_wallet_apple_confirm',
+            components: { default: SocialMedia_Wallet_Apple_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_google_confirm',
+            name: 'socialmedia_wallet_google_confirm',
+            components: { default: SocialMedia_Wallet_Google_Confirm },
+        },
+        {
+            path: '/socialmedia/socialmedia_wallet_payoneer_confirm',
+            name: 'socialmedia_wallet_payoneer_confirm',
+            components: { default: SocialMedia_Wallet_Payoneer_Confirm },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_feed',
+            name: 'socialmedia_community_feed',
+            components: { default: SocialMedia_Community_Feed },
         },
     ],
 

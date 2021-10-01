@@ -6,9 +6,11 @@
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
           <p class="glplogo_p">Welcome to<br>Your Social Media<br>Matrix</p>
-          <img src="Group 724.png" class="glplogo_p_img">
+          <div class="sociallogo_start_logo">
+            <img src="Group 724.png" class="glplogo_p_img">
+          </div>
           <p class="gs_reg_start_desc">Promote businesses, host events, mine g-coins and earn big rewards! Start by following<br>people now.</p>
-           <div class="sociallogo_btn status_next">
+           <div class="sociallogo_btn">
               <router-link to="/socialmedia/socialmedia_gs_reg_profile_type">
                 <button class="status_reg_start_btn">Get Started <img class="glplogo_reg_btn_img" src="reg_next.png"/>
                 </button>
@@ -29,20 +31,12 @@ export default {
 }
 </script>
 <style>
-  .sociallogin {
-    background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  }
-  .glplogo {
-    text-align: left;
-    width: 100%;
-    margin: 30px 25px;
-  }
   .glplogo_p {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 1.8rem;
+    margin: 0;
   }
   .glplogo_p_img {
-    width: 100%;
+    width: 70%;
   }
   .socialbtn {
     color: white;
@@ -62,11 +56,11 @@ export default {
     border-radius: 0px 30px 30px 0px;
   }
   .sociallogo_btn {
-    margin: 35px 0 0;
+    margin: 15px 0 0;
     text-align: center;
   }
   .gs_reg_start_desc {
-    margin: 30px 0 0;
+    margin: 15px 0 0;
     text-align: center;
   }
   .status_reg_start_btn {
@@ -74,5 +68,8 @@ export default {
     background-color: #F4992D;
     color: white;
     border-radius: 30px;
+  }
+  .sociallogo_start_logo {
+    text-align: center;
   }
 </style>

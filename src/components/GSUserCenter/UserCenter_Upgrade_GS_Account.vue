@@ -187,12 +187,6 @@ export default {
   .header_phone {
     position: relative;
   }
-  .header_top ul {
-    padding: revert;
-    list-style-type: disc;
-    margin: 0 10px 0 0;
-    font-size: 14px;
-  }
   .medium_title {
     margin: 20px 20px 10px 20px;
     font-weight: 600;
@@ -204,13 +198,6 @@ export default {
   .upgrade_gs_para {
     margin: 10px 20px;
     font-size: 14px;
-  }
-  .header_top table {
-    margin: 10px auto;
-    text-align: center;
-    font-size: 14px;
-    color: #3B3E51;
-    width: calc(100% - 40px);
   }
   .header_top table tr:nth-child(even) {
     background-color: #E8F1FA;
