@@ -49,12 +49,4 @@
   }
 </script>
 <style>
-    .bs_user_center_modal {
-        height: 100vh !important;
-        max-width: 414px;
-        margin-right: 140px;
-        width: calc(100% - 140px) !important;
-        transform: translate3d(0, 0, 0) !important;
-        border-radius: 0 !important;
-    }
 </style>
