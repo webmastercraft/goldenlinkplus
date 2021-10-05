@@ -207,6 +207,7 @@
         margin: 0;
         color: #EF8200;
         font-size: 16px;
+        font-weight: 600;
     }
     .switch_close {
         float: right;

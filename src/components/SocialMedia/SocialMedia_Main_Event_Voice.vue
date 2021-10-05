@@ -882,9 +882,13 @@ export default {
   .coin_letter {
     letter-spacing: 0.08em;
     font-size: 13px;
+    text-align: left;
+  }
+  .coin_letter span {
+    margin: auto auto auto 10px;
   }
   .event_user_coin {
-    margin: 0 10px 3px 0;
+    margin: auto auto auto 20px;
   }
   .event_ranking button{
     width: calc(50% - 40px);
