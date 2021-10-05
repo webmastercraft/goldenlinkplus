@@ -155,10 +155,12 @@ import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMe
 import SocialMedia_GS_Referrals from './components/SocialMedia/User_Center/SocialMedia_GS_Referrals.vue';
 import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMedia_GS_Invite.vue';
 
+import SocialMedia_Community_Create from './components/SocialMedia/Community/SocialMedia_Community_Create.vue';
 import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
 import SocialMedia_Community_About from './components/SocialMedia/Community/SocialMedia_Community_About.vue';
 import SocialMedia_Community_Member from './components/SocialMedia/Community/SocialMedia_Community_Member.vue';
 import SocialMedia_Community from './components/SocialMedia/Community/SocialMedia_Community.vue';
+import SocialMedia_Community_Simple from './components/SocialMedia/Community/SocialMedia_Community_Simple.vue';
 
 
 
@@ -889,6 +891,11 @@ export default new Router({
             components: { default: SocialMedia_Community_About },
         },
         {
+            path: '/socialmedia/community/socialmedia_community_create',
+            name: 'socialmedia_community_create',
+            components: { default: SocialMedia_Community_Create },
+        },
+        {
             path: '/socialmedia/community/socialmedia_community',
             name: 'socialmedia_community',
             components: { default: SocialMedia_Community },
@@ -897,6 +904,11 @@ export default new Router({
             path: '/socialmedia/community/socialmedia_community_member',
             name: 'socialmedia_community_member',
             components: { default: SocialMedia_Community_Member },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_simple',
+            name: 'socialmedia_community_simple',
+            components: { default: SocialMedia_Community_Simple },
         },
     ],
 
