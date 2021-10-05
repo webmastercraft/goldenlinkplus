@@ -21,7 +21,7 @@
                     <div class="community_header">
                         <div class="community_user_info">
                             <img src="Susan Boyle.png" class="community_user_img">
-                            <p><span>Making Big Time Money Community</span><span>Amanda Page<span class="community_number"><span class="community_dots">•</span>4m</span></span></p>
+                            <p><span><router-link to="/socialmedia/community/socialmedia_community">Making Big Time Money Community</router-link></span><span>Amanda Page<span class="community_number"><span class="community_dots">•</span>4m</span></span></p>
                             <img src="img/dots.png" class="community_user_detail">
                         </div>
                         <hr class="community_hr">
@@ -104,48 +104,81 @@
             <Industry 
                 v-show="f_show_industry"
                 @view-backdrop="closeViewProfile"
-                @showIndustrySystem="industrySystem"
+                @showIndustrySystem1="industrySystem1"
+                @showIndustrySystem2="industrySystem2"
+                @showIndustrySystem3="industrySystem3"
             >
             </Industry>
-            <IndustrySystem 
-                v-show="f_industry_system"
-                @close="backIndustrySystem"
+            <IndustrySystem1 
+                v-show="f_industry_system1"
+                @close="backIndustrySystem1"
                 @view-backdrop="closeViewProfile"
-                @showIndustryService="industryService"
             >
-            </IndustrySystem>
+            </IndustrySystem1>
+            <IndustrySystem2 
+                v-show="f_industry_system2"
+                @close="backIndustrySystem2"
+                @view-backdrop="closeViewProfile"
+            >
+            </IndustrySystem2>
+            <IndustrySystem3
+                v-show="f_industry_system3"
+                @close="backIndustrySystem3"
+                @view-backdrop="closeViewProfile"
+            >
+            </IndustrySystem3>
         </div>
     </div>
 </template>
 <script>
     import Industry from "../../../modal/manage_com.vue";
-    import IndustrySystem from "../../../modal/membership_com.vue";
+    import IndustrySystem1 from "../../../modal/membership_com.vue";
+    import IndustrySystem2 from "../../../modal/membership_leave.vue";
+    import IndustrySystem3 from "../../../modal/membership_follow.vue";
 
     export default {
         name: 'Community_Feed',
         components: {
             Industry,
-            IndustrySystem,
+            IndustrySystem1,
+            IndustrySystem2,
+            IndustrySystem3,
         },
         data () {
             return {
                 f_show_industry: false,
-                f_industry_system: false,
+                f_industry_system1: false,
+                f_industry_system2: false,
+                f_industry_system3: false,
             }
         },
         methods: {
             showIndustry() {
                 this.f_show_industry = true;
             },
-            industrySystem() {
-                this.f_industry_system = true;
+            industrySystem1() {
+                this.f_industry_system1 = true;
+            },
+            industrySystem2() {
+                this.f_industry_system2 = true;
+            },
+            industrySystem3() {
+                this.f_industry_system3 = true;
             },
             closeViewProfile() {
                 this.f_show_industry = false;
-                this.f_industry_system = false;
+                this.f_industry_system1 = false;
+                this.f_industry_system2 = false;
+                this.f_industry_system3 = false;
             },
-            backIndustrySystem() {
-                this.f_industry_system = false;
+            backIndustrySystem1() {
+                this.f_industry_system1 = false;
+            },
+            backIndustrySystem2() {
+                this.f_industry_system2 = false;
+            },
+            backIndustrySystem3() {
+                this.f_industry_system3 = false;
             },
         }
     }

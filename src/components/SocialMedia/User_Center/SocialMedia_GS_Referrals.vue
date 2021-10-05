@@ -12,123 +12,211 @@
                         <button class="btn striker_btn gs_referral_btn" :class="{'disable': isBusiness == true}" @click="showGoldStriker">Gold Striker {{goldstriker.length}}</button>
                     </div>
                     <div v-if="isBusiness == true">
-                        <p class="sub-title referrals_change_title">{{subtitle + ' ' + (b_current + 1)}}
-                            <button class="page-button" :class="{'disable': b_current == (size-1)}" @click="nextPage"><i class="fa fa-chevron-right"></i></button>
+                        <p class="sub-title referrals_change_title">{{subtitle}}
+                            <button class="page-button" :class="{'disable': (b_current + 7) >= size}" @click="nextPage"><i class="fa fa-chevron-right"></i></button>
                             <button class="page-button" :class="{'disable': !b_current}" @click="prevPage"><i class="fa fa-chevron-left"></i></button>
                         </p>
-                        <p class="update_profile_content">Company</p>
-                        <div class="referrals_data">
-                            {{business[b_current].company}}
-                        </div>
-                        <p class="update_profile_content">Contact Name</p>
-                        <div class="referrals_data">
-                            {{business[b_current].contactname}}
-                        </div>
-                        <p class="update_profile_content">Telephone </p>
-                        <div class="referrals_data">
-                            {{business[b_current].telephone}}
-                        </div>
-                        <p class="update_profile_content">Email</p>
-                        <div class="referrals_data">
-                            {{business[b_current].email}}
-                        </div>
-                        <p class="update_profile_content">Skype</p>
-                        <div class="referrals_data">
-                            {{business[b_current].skype}}
-                        </div>
+                        <p class="gs_referral_data" v-for="(business_item, index) in business.slice(b_current, b_current+7)" :key="index" @click="showReferral">
+                            <img :src="`${business_item.logo_img}`">
+                            <span>{{business_item.name}}</span>
+                            <span>{{business_item.number}}</span>
+                        </p>
                     </div>
                     <div v-else>
-                        <p class="sub-title referrals_change_title">{{subtitle + ' ' + (g_current + 1)}}
-                            <button class="page-button" :class="{'disable': g_current == (size-1)}" @click="nextPage"><i class="fa fa-chevron-right"></i></button>
+                        <p class="sub-title referrals_change_title">{{subtitle}}
+                            <button class="page-button" :class="{'disable': (g_current + 7) >= size}" @click="nextPage"><i class="fa fa-chevron-right"></i></button>
                             <button class="page-button" :class="{'disable': !g_current}" @click="prevPage"><i class="fa fa-chevron-left"></i></button>
                         </p>
-                        <p class="update_profile_content">Company</p>
-                        <div class="referrals_data">
-                            {{goldstriker[g_current].company}}
+                        <div class="gs_referral_inside">
+                            <button class="agency_btn" :class="{'disable_into': isMarketers != true}" @click="showMarketers">Marketers</button>
+                            <button class="agency_btn" :class="{'disable_into': isMarketers == true}" @click="showAgencies">Agencies</button>
                         </div>
-                        <p class="update_profile_content">Contact Name</p>
-                        <div class="referrals_data">
-                            {{goldstriker[g_current].contactname}}
+                        <div v-if="isMarketers == true">
+                            <p class="gs_referral_data gs_referral_gold" v-for="(marketer_item, index) in marketers.slice(m_current, m_current+7)" :key="index" @click="showReferral">
+                                <img :src="`${marketer_item.logo_img}`">
+                                <span>{{marketer_item.name}}</span>
+                                <span>{{marketer_item.number}}</span>
+                            </p>
                         </div>
-                        <p class="update_profile_content">Telephone </p>
-                        <div class="referrals_data">
-                            {{goldstriker[g_current].telephone}}
-                        </div>
-                        <p class="update_profile_content">Email</p>
-                        <div class="referrals_data">
-                            {{goldstriker[g_current].email}}
-                        </div>
-                        <p class="update_profile_content">Skype</p>
-                        <div class="referrals_data">
-                            {{goldstriker[g_current].skype}}
+                        <div v-else>
+                            <p class="gs_referral_data gs_referral_gold" v-for="(goldstriker_item, index) in goldstriker.slice(g_current, g_current+7)" :key="index" @click="showReferral">
+                                <img :src="`${goldstriker_item.logo_img}`">
+                                <span>{{goldstriker_item.name}}</span>
+                                <span>{{goldstriker_item.number}}</span>
+                            </p>
                         </div>
                     </div>
                 </div>
         </div>
+        <Referral 
+            v-show="f_show_referral"
+            @view-backdrop="closeViewProfile"
+        >
+        </Referral>
     </div>
 </template>
 
 <script>
+    import Referral from "../../../modal/referral.vue";
+
     export default {
         name: 'GS_Referrals',
         components: {
+            Referral
         },
         data () {
             return { 
                 size: 0,
                 b_current: 0,
                 g_current: 0,
+                m_current: 0,
+                pagination: 0,
                 isBusiness: true,
-                subtitle: "", 
+                isMarketers: true,
+                subtitle: "",
+                f_show_referral: false,
                 business: [
                     {
-                        company: "GlodenlinkPlus",
-                        contactname: "Alice Du",
-                        telephone: "+1626-684-8151",
-                        email: "",
-                        skype: "alicedu"
+                        logo_img: "profile/golden.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
                     },
                     {
-                        company: "GlodenlinkPlus123",
-                        contactname: "Alice Du",
-                        telephone: "+1626-684-8151",
-                        email: "",
-                        skype: "alicedu"
+                        logo_img: "profile/microsoft.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
                     },
                     {
-                        company: "GlodenlinkPlus3452345",
-                        contactname: "Alice Du",
-                        telephone: "+1626-684-8151",
-                        email: "",
-                        skype: "alicedu"
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
                     },
                     {
-                        company: "GlodenlinkPlus679768967",
-                        contactname: "Alice Du",
-                        telephone: "+1626-684-8151",
-                        email: "",
-                        skype: "alicedu"
-                    }
+                        logo_img: "profile/oracle.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/oracle.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/oracle.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/golden.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/microsoft.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
                 ],
                 goldstriker : [
                     {
-                        company: "GlodenlinkPLus GOLD000000000",
-                        contactname: "Alice Hansen",
-                        telephone: "+1626-6848151",
-                        email: "",
-                        skype: "alicehansen"
+                        logo_img: "Geoffrey Mott.png",
+                        name: "Kathryn Murphy",
+                        number: "+1626-684-8151",
                     },
                     {
-                        company: "Glodenstriker 111111111",
-                        contactname: "Gold Striker",
-                        telephone: "+1626-6848151",
-                        email: "",
-                        skype: "gold"
-                    }
+                        logo_img: "Alex Smith.png",
+                        name: "Ronald Richards",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Lily.png",
+                        name: "Laura Cooper",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Judith.png",
+                        name: "Robert Fox",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Kathry.png",
+                        name: "Esther Howard",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Jean_Smith.png",
+                        name: "Annette Black",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Irma.png",
+                        name: "Darrell",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Irma.png",
+                        name: "Darrell",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Irma.png",
+                        name: "Darrell",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "Irma.png",
+                        name: "Darrell",
+                        number: "+1626-684-8151",
+                    },
+                ],
+                marketers : [
+                    {
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/oracle.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/netflix.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/golden.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
+                    {
+                        logo_img: "profile/microsoft.png",
+                        name: "Goldenlinkplus",
+                        number: "+1626-684-8151",
+                    },
                 ]
             }
         },
         methods: {
+            showReferral() {
+                this.f_show_referral = true;
+            },
             showBusiness() {
                 this.isBusiness = true;
                 this.subtitle = "BUSINESSES";
@@ -137,29 +225,52 @@
             showGoldStriker() {
                 this.isBusiness = false;
                 this.subtitle = "GOLD STRIKERS";
-                this.size = this.goldstriker.length;
+                if (this.isMarketers) {
+                    this.size = this.marketers.length;
+                } else {
+                    this.size = this.goldstriker.length;
+                }
             },
+            showMarketers() {
+                 this.isMarketers = true;
+                 this.size = this.marketers.length;
+            },
+            showAgencies() {
+                 this.isMarketers = false;
+                 this.size = this.goldstriker.length;
+             },
             nextPage() {
                 if (this.isBusiness) {
-                    if (this.b_current < (this.size - 1)) {
-                        this.b_current++;
+                    if ((this.b_current + 7) < (this.size)) {
+                        this.b_current += 7;
+                    }
+                } else if (this.isMarketers) {
+                    if ((this.m_current + 7) < (this.size)) {
+                        this.m_current += 7;
                     }
                 } else {
-                    if (this.g_current < (this.size - 1)) {
-                        this.g_current++;
+                    if ((this.g_current + 7) < this.size) {
+                        this.g_current += 7;
                     }
                 }
             },
             prevPage() {
                 if (this.isBusiness) {
                     if (this.b_current > 0) {
-                        this.b_current--;
+                        this.b_current -= 7;
+                    }
+                } else if (this.g_current) {
+                    if (this.g_current > 0) {
+                        this.g_current -= 7;
                     }
                 } else {
                     if (this.g_current > 0) {
-                        this.g_current--;
+                        this.g_current -= 7;
                     }
                 }
+            },
+            closeViewProfile() {
+                this.f_show_referral = false;
             },
         },
         mounted() {
@@ -202,5 +313,46 @@
         border-radius: 8px;
         letter-spacing: -0.02em;
         padding: 8px 20px;
+    }
+    .gs_referral_data {
+        display: flex;
+        margin: auto;
+        margin: auto !important;
+        padding: 15px 0;
+    }
+    .gs_referral_data:nth-child(even) {
+        background: #E6F7FF;
+    }
+    .gs_referral_gold:nth-child(odd) {
+        background: #E6F7FF !important;
+    }
+    .gs_referral_gold:nth-child(even) {
+        background: white !important;
+    }
+    .gs_referral_data span {
+        margin: auto;
+    }
+    .gs_referral_data img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .agency_btn {
+        background: #13C8FF;
+        color: white;
+        margin: auto;
+        width: 50%;
+    }
+    .marketer_btn {
+    }
+    .disable_into {
+        background: white !important;
+        color: black !important;
+    }
+    .gs_referral_inside {
+        width: 100%;
+        display: flex;
+        margin: 10px auto;
     }
 </style>

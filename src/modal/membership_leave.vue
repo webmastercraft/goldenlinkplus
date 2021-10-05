@@ -23,27 +23,12 @@
                     <div class="membership_group" v-for="(item, index) in membershipdata" :key="index">
                         <img :src="`${item.com_img}`">
                         <p class="membership_group_content">
-                            <span class="membership_group_title">{{item.com_name}}</span>
-                            <span>{{item.com_state}}</span>
-                            <span><span class="community_number">{{item.mem_number}} Members<span class="community_dots">•</span>{{item.mem_new}} New</span></span>
+                            <span class="membership_group_title"><b>{{item.com_name}}</b></span>
+                            <span class="community_number">{{item.mem_date}}</span>
                         </p>
-                        <button class="membership_join">Join</button>
+                        <button class="membership_leave">Leave</button>
                     </div>
                 </div>
-                <!-- <p class="manage_content">Advetising Agencies</p>
-                <hr class="manage_content">
-                <p class="manage_content">Advertising Material Distribution</p>
-                <hr class="manage_content">
-                <p class="manage_content">Direct Marketing Services</p>
-                <hr class="manage_content">
-                <p class="manage_content"  @click="showIndustryService">Internet Marketing Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Marketing Consulting Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Public Relation Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Other Adertising Service</p>
-                <hr class="manage_content"> -->
               </div>
           </header>
         </div>
@@ -67,38 +52,28 @@
         membershipdata: [
             {
                 com_img: "community/money_box.png",
-                com_name: "Money Makers Com",
-                com_state: "Public Community",
-                mem_number: "123",
-                mem_new: "10"
+                com_name: "Money Makers Com...",
+                mem_date: "You visited 1 year ago",
             },
             {
                 com_img: "community/money_box.png",
-                com_name: "Money Makers Com",
-                com_state: "Public Community",
-                mem_number: "123",
-                mem_new: "10"
+                com_name: "Money Makers Com...",
+                mem_date: "You visited 1 year ago",
             },
             {
                 com_img: "community/money_box.png",
-                com_name: "Money Makers Com",
-                com_state: "Public Community",
-                mem_number: "123",
-                mem_new: "10"
+                com_name: "Money Makers Com...",
+                mem_date: "You visited 1 year ago",
             },
             {
                 com_img: "community/money_box.png",
-                com_name: "Money Makers Com",
-                com_state: "Public Community",
-                mem_number: "123",
-                mem_new: "10"
+                com_name: "Money Makers Com...",
+                mem_date: "You visited 1 year ago",
             },
             {
                 com_img: "community/money_box.png",
-                com_name: "Money Makers Com",
-                com_state: "Public Community",
-                mem_number: "123",
-                mem_new: "10"
+                com_name: "Money Makers Com...",
+                mem_date: "You visited 1 year ago",
             },
         ]
       }
@@ -132,62 +107,13 @@
   }
 </script>
 <style>
-    .community_back {
-        margin: auto 20px 2px auto;
-    }
-    .community_find {
-        margin: 20px auto;
-        display: flex;
-        position: relative;
-    }
-    .community_find img {
-        position: absolute;
-        right: 20px !important;
-        top: 13px;
-    }
-    .membership_group {
-        display: flex;
-        margin: 10px auto;
-    }
-    .membership_group img{
-        height: 45px;
-        width: 45px;
-        margin: 0 10px auto auto;
-    }
-    .membership_group_content {
-        display: grid;
-        margin: auto;
-        font-size: 14px;
-        color: #808695;
-    }
-    .membership_group_title {
-        font-size: 15px;
-        color: #3B3E51 !important;
-    }
-    .membership_join {
+    .membership_leave {
         margin: 0 auto auto auto;
-        background-color: #13C8FF;
-        color: white;
+        background-color: #E8F1FA;
+        color: black;
         border-radius: 16px;
         padding: 3px 0;
-        width: 30%;
-    }
-    .membership_header_fix {
-        position: fixed;
-        width: calc(100% - 48px);
-        background-color: white;
-        top: 0;
-    }
-    .manage_area_each {
-        padding: 0 24px 14px;
-        background: white;
-        width: 100%;
-        max-width: 414px;
-        height: 50vh;
-        text-align: left;
-    }
-    .membership_content_flow {
-        margin-top: 110px;
-        overflow: auto;
+        width: 25%;
+        font-size: 14px;
     }
 </style>

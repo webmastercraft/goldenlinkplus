@@ -15,11 +15,11 @@
                 <p class="manage_content title_orange">Manage Communities</p>
                 <p class="manage_content">You can manage all the groups you are a member all at once.</p>
                 <hr class="manage_hr">
-                <p class="manage_content" @click="showIndustrySystem">Quick Join</p>
+                <p class="manage_content" @click="showIndustrySystem1">Quick Join</p>
                 <hr class="manage_hr">
-                <p class="manage_content" @click="showIndustrySystem">Leave Communities</p>
+                <p class="manage_content" @click="showIndustrySystem2">Leave Communities</p>
                 <hr class="manage_hr">
-                <p class="manage_content" @click="showIndustrySystem">Follow / Unfollow</p>
+                <p class="manage_content" @click="showIndustrySystem3">Follow / Unfollow</p>
               </div>
           </header>
         </div>
@@ -56,11 +56,19 @@
           this.$emit('user-backdrop');
         }
       },
-      showIndustrySystem() {
-        this.$emit('showIndustrySystem');
+      showIndustrySystem1() {
+        this.$emit('showIndustrySystem1');
+      },
+      showIndustrySystem2() {
+        this.$emit('showIndustrySystem2');
+      },
+      showIndustrySystem3() {
+        this.$emit('showIndustrySystem3');
       },
       closeViewProfile() {
-        this.f_industry_system = false;
+        this.f_industry_system1 = false;
+        this.f_industry_system2 = false;
+        this.f_industry_system3 = false;
       },
     },
   }

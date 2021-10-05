@@ -143,6 +143,7 @@ import SocialMedia_BS_Product from './components/SocialMedia/BS_Center/SocialMed
 import SocialMedia_BS_Services from './components/SocialMedia/BS_Center/SocialMedia_BS_Services.vue';
 import SocialMedia_BS_Offers from './components/SocialMedia/BS_Center/SocialMedia_BS_Offers.vue';
 import SocialMedia_BS_Reward from './components/SocialMedia/BS_Center/SocialMedia_BS_Reward.vue';
+import SocialMedia_BS_Campaign from './components/SocialMedia/BS_Center/SocialMedia_BS_Campaign.vue';
 
 import SocialMedia_User_Center from './components/SocialMedia/User_Center/SocialMedia_User_Center.vue';
 import SocialMedia_GS_Update_Profile from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Profile.vue';
@@ -153,6 +154,9 @@ import SocialMedia_GS_Referrals from './components/SocialMedia/User_Center/Socia
 import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMedia_GS_Invite.vue';
 
 import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
+import SocialMedia_Community_About from './components/SocialMedia/Community/SocialMedia_Community_About.vue';
+import SocialMedia_Community_Member from './components/SocialMedia/Community/SocialMedia_Community_Member.vue';
+import SocialMedia_Community from './components/SocialMedia/Community/SocialMedia_Community.vue';
 
 
 
@@ -722,6 +726,11 @@ export default new Router({
             components: { default: SocialMedia_BS_Reward }
         },
         {
+            path: '/socialmedia/bs_center/socialmedia_bs_campaign',
+            name: 'socialmedia_bs_campaign',
+            components: { default: SocialMedia_BS_Campaign }
+        },
+        {
             path: '/socialmedia/user_center/socialmedia_user_center',
             name: 'socialmedia_user_center',
             components: { default: SocialMedia_User_Center }
@@ -861,6 +870,21 @@ export default new Router({
             path: '/socialmedia/community/socialmedia_community_feed',
             name: 'socialmedia_community_feed',
             components: { default: SocialMedia_Community_Feed },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_about',
+            name: 'socialmedia_community_about',
+            components: { default: SocialMedia_Community_About },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community',
+            name: 'socialmedia_community',
+            components: { default: SocialMedia_Community },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_member',
+            name: 'socialmedia_community_member',
+            components: { default: SocialMedia_Community_Member },
         },
     ],
 

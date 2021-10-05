@@ -23,27 +23,13 @@
                     <div class="membership_group" v-for="(item, index) in membershipdata" :key="index">
                         <img :src="`${item.com_img}`">
                         <p class="membership_group_content">
-                            <span class="membership_group_title">{{item.com_name}}</span>
+                            <span class="membership_group_title"><b>{{item.com_name}}</b></span>
                             <span>{{item.com_state}}</span>
                             <span><span class="community_number">{{item.mem_number}} Members<span class="community_dots">•</span>{{item.mem_new}} New</span></span>
                         </p>
                         <button class="membership_join">Join</button>
                     </div>
                 </div>
-                <!-- <p class="manage_content">Advetising Agencies</p>
-                <hr class="manage_content">
-                <p class="manage_content">Advertising Material Distribution</p>
-                <hr class="manage_content">
-                <p class="manage_content">Direct Marketing Services</p>
-                <hr class="manage_content">
-                <p class="manage_content"  @click="showIndustryService">Internet Marketing Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Marketing Consulting Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Public Relation Services</p>
-                <hr class="manage_content">
-                <p class="manage_content">Other Adertising Service</p>
-                <hr class="manage_content"> -->
               </div>
           </header>
         </div>
@@ -170,7 +156,8 @@
         color: white;
         border-radius: 16px;
         padding: 3px 0;
-        width: 30%;
+        width: 25%;
+        font-size: 14px;
     }
     .membership_header_fix {
         position: fixed;
