@@ -27,6 +27,10 @@
                     </div>
                 </router-link>
                 <p class="switch_title">Account</p>
+                <router-link to="/socialmedia/socialmedia_verify_account">
+                  <p class="switch_content green_text">Verify this Account</p>
+                </router-link>
+                <hr class="switch_hr">
                 <router-link to="/socialmedia/socialmedia_bs_profile"><p class="switch_content">View Profile</p></router-link>
                 <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
@@ -78,4 +82,7 @@
   }
 </script>
 <style>
+  .green_text {
+    color: #39B54A;
+  }
 </style>

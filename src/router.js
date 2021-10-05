@@ -113,6 +113,8 @@ import SocialMedia_GS_Wallet_GLC from './components/SocialMedia/GS_Wallet/Social
 import SocialMedia_GS_Wallet_Transaction from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Transaction.vue';
 import SocialMedia_GS_Wallet_Paypal_Withdraw from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Paypal_Withdraw.vue';
 import SocialMedia_GS_Wallet_Account from './components/SocialMedia/GS_Wallet/SocialMedia_GS_Wallet_Account.vue';
+import SocialMedia_Verify_Account from './components/SocialMedia/SocialMedia_Verify_Account.vue';
+import SocialMedia_Verify_Account_Success from './components/SocialMedia/SocialMedia_Verify_Account_Success.vue';
 
 import SocialMedia_Wallet_Paypal_Confirm from './components/SocialMedia/SocialMedia_Wallet_Paypal_Confirm.vue';
 import SocialMedia_Wallet_Apple_Confirm from './components/SocialMedia/SocialMedia_Wallet_Apple_Confirm.vue';
@@ -674,6 +676,16 @@ export default new Router({
             path: '/socialmedia/socialmedia_main_lounge_reward',
             name: 'socialmedia_main_lounge_reward',
             components: { default: SocialMedia_Main_Lounge_Reward },
+        },
+        {
+            path: '/socialmedia/socialmedia_verify_account',
+            name: 'socialmedia_verify_account',
+            components: { default: SocialMedia_Verify_Account },
+        },
+        {
+            path: '/socialmedia/socialmedia_verify_account_success',
+            name: 'socialmedia_verify_account_success',
+            components: { default: SocialMedia_Verify_Account_Success },
         },
         {
             path: '/socialmedia/socialmedia_main_event_host_view',
