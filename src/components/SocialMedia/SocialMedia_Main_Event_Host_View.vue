@@ -17,6 +17,7 @@
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
           <div class="event_body">
+            <p class="promotional_text">Promotional text goes here</p>
             <div class="event_users">
                 <span class="blink_span">
                     <img v-if="isAddingCoin" class="blink-img"  :class="{'blinking': isBlink1 == true}" src="coin_10.png"  @click="showBlink1">
@@ -49,7 +50,8 @@
                         <img src="diamond.png" v-if="item.diamond" class="event_diamond">
                     </div>
                 </div>
-                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin">{{item.event_user_coin}}K</p>
+                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
+                <p class="coin_letter"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
                 <p>{{item.name}}</p>
               </div>
             </div>
@@ -89,29 +91,31 @@
           </div>
           <div class="footer_background">
             <div class="footer_modal" v-show="!isAddingCoin">
+                <router-link to="/socialmedia/socialmedia_main">
+                    <span class="footer_img_rest_left">
+                        <img src="Leave_Quietly.png">
+                        <p>Leave Quietly</p>
+                    </span>
+                </router-link>
                 <span class="footer_img_rest_left">
                     <router-link to="/socialmedia/socialmedia_main_event_chat">
                         <img src="chat.png">
                     </router-link>
                     <p>Chat</p>
                 </span>
-                <span class="footer_img_rest_left" @click="showSendGcoin">
-                    <img src="send_gcoins.png">
-                    <p>Send GCoins</p>
-                </span>
                 <button class="audio_circle_btn"  @click="imgClicked = !imgClicked" v-on:click ="clicked = !clicked">
                     <img :src="imgSrc"/>
                 </button>
-                <span class="footer_img_rest_right" @click="showInvite">
+                <span class="footer_img_rest_right"  @click="showInvite">
                     <img src="invite.png">
                     <p>Invite</p>
                 </span>
-                <span class="footer_img_rest_right" @click="showHostView">
-                    <img src="participant.png">
-                    <p>Participant<img src="participant_10.png" class="participant_img"></p>
+                <span class="footer_img_rest_right" @click="showSendGcoin">
+                    <img src="send_gcoins.png">
+                    <p>Send GCoins</p>
                 </span>
-                
             </div>
+                <img src="handsup.png" class="handsup_modal" @click="showHostView">
             <div class="footer_modal footer_modal_border" v-show="isAddingCoin">
                 <button class="send_coin_btn "><img src="modal_coin.png">115, 250</button>
                 <div class="charge_close" @click="doneAddingCoin">
@@ -222,6 +226,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 892,
+              event_user_diamond: 526,
               name: "Shane",
               diamondActive: false
             },
@@ -233,6 +238,7 @@ export default {
               active: true,
               blink: false,
               event_user_coin: 484.2,
+              event_user_diamond: 526,
               name: "Kristin",
               diamondActive: false
             },
@@ -244,6 +250,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 345.6,
+              event_user_diamond: 526,
               name: "Leslie",
               diamondActive: false
             },
@@ -255,6 +262,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 527.1,
+              event_user_diamond: 526,
               name: "Eduardo",
               diamondActive: false
             },
@@ -266,6 +274,7 @@ export default {
               active: true,
               blink: false,
               event_user_coin: 78.5,
+              event_user_diamond: 526,
               name: "Jorge",
               diamondActive: false
             },
@@ -277,6 +286,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 18.9,
+              event_user_diamond: 526,
               name: "Esther",
               diamondActive: false
             },
@@ -288,6 +298,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 27.5,
+              event_user_diamond: 526,
               name: "Tanya",
               diamondActive: false
             },
@@ -299,6 +310,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 38.8,
+              event_user_diamond: 526,
               name: "Ronald",
               diamondActive: false
             },
@@ -310,6 +322,7 @@ export default {
               active: false,
               blink: false,
               event_user_coin: 190.5,
+              event_user_diamond: 526,
               name: "Philip",
               diamondActive: false
             },
@@ -733,6 +746,11 @@ export default {
     position: absolute;
     bottom: 47px;
     right: 10px;
+  }
+  .handsup_modal {
+    position: absolute;
+    top: 50px;
+    right: 20px;
   }
 </style>
  
