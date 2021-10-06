@@ -37,7 +37,7 @@
                                 <div class="chat_sentence community_chat_send">
                                     <input type="text" placeholder="What’s on your mind" class="community_chat_input form-control community_chat_background">
                                         
-                                    <button type="button" class="btn_send">
+                                    <button type="button" class="btn_send" @click="showNewPost">
                                         <img src="send.png">
                                     </button>
                                 </div>
@@ -66,10 +66,9 @@
                                 title="this is a title" 
                                 v-model="playing">
                             </vue-player> -->
-                            <p class="community_diamond"><img src="diamond_frame.png">458<span>275 Comments</span></p>
                             <hr class="community_hr">
                             <p class="community_utility">
-                                <span>Send<img src="diamond_frame.png"></span>
+                                <span>275 Comments</span>
                                 <span>Comment<img src="diamond_frame.png"></span>
                                 <span>Share<img src="diamond_frame.png"></span>
                             </p>
@@ -141,15 +140,21 @@
             <PostReport 
                 v-show="f_show_industry"
                 @view-backdrop="closeViewProfile"
-                @showIndustrySystem1="industrySystem1"
             >
             </PostReport>
+            <NewPost 
+                v-show="f_show_new_post"
+                @close="closeViewProfile"
+                @view-backdrop="closeViewProfile"
+            >
+            </NewPost>
         </div>
     </div>
 </template>
 <script>
 import Company from "../../../modal/community_view.vue";
 import PostReport from "../../../modal/community_post-report.vue";
+import NewPost from "../../../modal/community_new_post.vue";
 
 export default {
 
@@ -157,20 +162,26 @@ export default {
     components: {
             Company,
             PostReport,
+            NewPost
     },
     data () {
         return {
             f_show_company: false,
             f_show_industry: false,
+            f_show_new_post: false,
         }
     },
     methods: {
         closeModal() {
             this.f_show_company = false;
+            this.f_show_new_post = false;
             this.isModalVisible = false;
         },
         showIndustry() {
             this.f_show_industry = true;
+        },
+        showNewPost() {
+            this.f_show_new_post = true;
         },
         showCommunityView() {
             this.f_show_company = true;
@@ -178,10 +189,9 @@ export default {
         closeViewProfile() {
             this.f_show_company = false;
             this.f_show_industry = false;
+            this.f_show_new_post = false;
         },
-        backIndustrySystem1() {
-            this.f_industry_system1 = false;
-        },
+        
     }
   
 }
@@ -238,7 +248,6 @@ export default {
         color: white;
         padding: 4px 15px;
         border-radius: 16px;
-        width: 90px;
     }
     .community_title_btn button:first-child {
         background: #C4C4C4;
@@ -266,6 +275,7 @@ export default {
     }
     .community_chat_type p img {
         margin-right: 10px;
+        opacity: 0.4;
     }
     .community_chat_input {
         width: 100%;

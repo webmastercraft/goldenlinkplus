@@ -144,6 +144,8 @@
   }
   .event_invite_modal {
     transform: translate(0, 0) !important;
+    max-width: 414px;
+    width: 100%;
   }
   .event_invite_modal_position {
     align-items: flex-end !important;
