@@ -7,7 +7,7 @@
                     <router-link to="/socialmedia/community/socialmedia_community" class="header_arrow">
                         <img src="img/header_arrow.png">
                     </router-link>
-                    <a class="upcoming_pos">Create Your Community</a>
+                    <a class="upcoming_pos">Edit Community</a>
                 </div>
                 <div class="content left-content header_top height_static">
                     <div class="community_about_header">
@@ -77,7 +77,7 @@
                             </textarea>
                         </div>
                         <div class="community_upload_create_btn">
-                            <router-link to="/socialmedia/community/socialmedia_community_simple"><button>Create</button></router-link>
+                            <router-link to="/socialmedia/community/socialmedia_community_simple"><button>Update</button></router-link>
                             <span>Cancel</span>
                         </div>
                     </div>

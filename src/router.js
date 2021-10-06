@@ -158,6 +158,7 @@ import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMe
 import SocialMedia_Community_Create from './components/SocialMedia/Community/SocialMedia_Community_Create.vue';
 import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
 import SocialMedia_Community_About from './components/SocialMedia/Community/SocialMedia_Community_About.vue';
+import SocialMedia_Community_Edit from './components/SocialMedia/Community/SocialMedia_Community_Edit.vue';
 import SocialMedia_Community_Member from './components/SocialMedia/Community/SocialMedia_Community_Member.vue';
 import SocialMedia_Community from './components/SocialMedia/Community/SocialMedia_Community.vue';
 import SocialMedia_Community_Simple from './components/SocialMedia/Community/SocialMedia_Community_Simple.vue';
@@ -899,6 +900,11 @@ export default new Router({
             path: '/socialmedia/community/socialmedia_community',
             name: 'socialmedia_community',
             components: { default: SocialMedia_Community },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_edit',
+            name: 'socialmedia_community_edit',
+            components: { default: SocialMedia_Community_Edit },
         },
         {
             path: '/socialmedia/community/socialmedia_community_member',

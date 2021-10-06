@@ -61,7 +61,7 @@
                 <img src="profile/commun10.png">
                 <img src="profile/commun4.png">
                 <img src="profile/commun11.png">
-                <img src="profile/profile_plus.png">
+                <router-link to="/socialmedia/community/socialmedia_community_create"><img src="profile/profile_plus.png"></router-link>
               </div>
 
                   <!-- Marketing Direction -->

@@ -6,7 +6,7 @@
             </div>
             <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
                 <div class="welcome_dialog_content" @click="killGcoinTap">
-                    <img src="welcome_dialog.png">
+                    <img src="community/coin.png">
                     <p class="welcome_dialog_title community_first_post_welcome">Welcome to your new community!</p>
                     <p class="community_first_post">Create your first post</p>
                 </div>
