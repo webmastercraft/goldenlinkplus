@@ -51,24 +51,21 @@
                             </div>
                         </div>
                         <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span><span @click='toggle = true'>Respond</span><span class="community_dots">•</span><span class="community_number">25m</span></p>
-                        <div v-show='toggleMsg'>
+
+                        <div v-for="(item, index) in massages" :key="index">
                             <div class="community_chat">
                                 <img src="Profile_on.png" class="community_chat_user_sm">
                                 <div class="community_chat_content">
-                                    <p class="community_chat_content_sm"><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                    <p><img src="diamond_frame.png">123K</p>
+                                    <p class="community_chat_content_sm">
+                                        <span><b>{{item.name}}</b></span>
+                                        <span>{{item.msg}}</span>
+                                    </p>
+                                    <p><img src="diamond_frame.png">{{item.diamonds + 'K'}}</p>
                                 </div>
                             </div>
                             <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
                         </div>
-                        <div class="community_chat">
-                            <img src="Profile_on.png" class="community_chat_user_sm">
-                            <div class="community_chat_content">
-                                <p class="community_chat_content_sm"><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                <p><img src="diamond_frame.png">123K</p>
-                            </div>
-                        </div>
-                        <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
+
                         <div class="community_chat_lg" v-show='toggle'>
                             <img src="Jean_Smith.png" class="community_chat_user_sm">
                             <div class="chat_sentence community_chat_send">
@@ -79,7 +76,7 @@
                                 <button type="button" class="btn_emoty">
                                     <img src="emoty.png">
                                 </button>
-                                <button type="button" class="btn_send" @click='toggleMsg = true'>
+                                <button type="button" class="btn_send" @click='sendMessage()'>
                                     <img src="send.png">
                                 </button>
                             </div>
@@ -152,7 +149,7 @@
                 f_industry_system2: false,
                 f_industry_system3: false,
                 toggle: false,
-                toggleMsg: false
+                massages: []
             }
         },
         methods: {
@@ -183,6 +180,14 @@
             backIndustrySystem3() {
                 this.f_industry_system3 = false;
             },
+            sendMessage() {
+                let new_msg = {
+                    name: "Rayford Chenail",
+                    msg: "Nice post! Surely this will help as others!",
+                    diamonds: "123"
+                };
+                this.massages.push(new_msg);
+            }
         }
     }
 </script>

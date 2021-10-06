@@ -1,8 +1,17 @@
 <template>
     <div>
         <div class="container">
-            <div class="phone sociallogin slide_block">
-
+            <div class="loading_screen" v-show="isloading" >
+                <img src="loading_logo.png">
+            </div>
+            <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
+                <div class="welcome_dialog_content" @click="killGcoinTap">
+                    <img src="welcome_dialog.png">
+                    <p class="welcome_dialog_title community_first_post_welcome">Welcome to your new community!</p>
+                    <p class="community_first_post">Create your first post</p>
+                </div>
+            </div>
+            <div class="community_simple_phone" v-show="!isloading">
                 <div class="header_modal">
                     <router-link to="/socialmedia/community/socialmedia_community_feed" class="header_arrow">
                         <img src="img/header_arrow.png">
@@ -114,6 +123,8 @@ export default {
     },
     data () {
         return {
+            gcoin_tap: false,
+            isloading: true,
             f_show_company: false,
             f_show_post_report: false,
             f_show_community_add: false,
@@ -167,8 +178,23 @@ export default {
         backIndustrySystem3() {
             this.f_industry_system3 = false;
         },
+        killLoading() {
+            setTimeout(() => {
+                this.isloading = false;
+            }, 2000);
+
+            setTimeout(() => {
+                this.gcoin_tap = true
+            }, 3000);
+        },
+        killGcoinTap() {
+            this.gcoin_tap = false
+        },
         
-    }
+    },
+    created () {
+        this.killLoading();
+    },
   
 }
 </script>
@@ -201,5 +227,27 @@ export default {
         top: 15px;
         z-index: 1040;
         right: 15px;
+    }
+    .community_simple_phone {
+        width: 100%;
+        max-width: 414px;
+        min-height: 100vh;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
+        position: relative;
+    }
+    .community_first_post {
+        background: #F4992D;
+        color: white;
+        border-radius: 30px;
+        font-size: 18px;
+        width: 65%;
+        padding: 5px;
+        margin: auto !important;
+    }
+    .community_first_post_welcome {
+        margin: auto auto 10px !important;
     }
 </style>
