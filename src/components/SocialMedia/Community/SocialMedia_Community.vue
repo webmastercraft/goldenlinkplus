@@ -69,8 +69,8 @@
                             <hr class="community_hr">
                             <p class="community_utility">
                                 <span>275 Comments</span>
-                                <span>Comment<img src="diamond_frame.png"></span>
-                                <span>Share<img src="diamond_frame.png"></span>
+                                <span>Comment<img src="community/messaging.png"></span>
+                                <span>Share<img src="community/replay.png"></span>
                             </p>
                             <hr class="community_hr">
                             <div class="community_chat">

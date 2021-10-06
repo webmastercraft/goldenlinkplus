@@ -39,8 +39,87 @@
                         <hr class="community_hr">
                         <p class="community_utility">
                             <span>275 Comments</span>
-                            <span>Comment<img src="diamond_frame.png"></span>
-                            <span>Share<img src="diamond_frame.png"></span>
+                            <span>Comment<img src="community/messaging.png"></span>
+                            <span>Share<img src="community/replay.png"></span>
+                        </p>
+                        <hr class="community_hr">
+                        <div class="community_chat">
+                            <img src="Profile_on.png" class="community_chat_user">
+                            <div class="community_chat_content">
+                                <p><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
+                                <p><img src="diamond_frame.png">123K</p>
+                            </div>
+                        </div>
+                        <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span><span @click='toggle = true'>Respond</span><span class="community_dots">•</span><span class="community_number">25m</span></p>
+
+                        <div v-for="(item, index) in massages" :key="index">
+                            <div class="community_chat">
+                                <img src="Profile_on.png" class="community_chat_user_sm">
+                                <div class="community_chat_content">
+                                    <p class="community_chat_content_sm">
+                                        <span><b>{{item.name}}</b></span>
+                                        <span>{{item.msg}}</span>
+                                    </p>
+                                    <p><img src="diamond_frame.png">{{item.diamonds + 'K'}}</p>
+                                </div>
+                            </div>
+                            <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
+                        </div>
+
+                        <div class="community_chat_lg" v-show='toggle'>
+                            <img src="Jean_Smith.png" class="community_chat_user_sm">
+                            <div class="chat_sentence community_chat_send">
+                                <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background">
+                                <button type="button" class="btn_cam">
+                                    <img src="camera.png">
+                                </button>
+                                <button type="button" class="btn_emoty">
+                                    <img src="emoty.png">
+                                </button>
+                                <button type="button" class="btn_send" @click='sendMessage()'>
+                                    <img src="send.png">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="community_chat_lg">
+                            <img src="Jean_Smith.png" class="community_chat_user">
+                            <div class="chat_sentence community_chat_send_lg">
+                                <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background_lg">
+                                <button type="button" class="btn_cam">
+                                    <img src="camera.png">
+                                </button>
+                                <button type="button" class="btn_emoty">
+                                    <img src="emoty.png">
+                                </button>
+                                <button type="button" class="btn_send">
+                                    <img src="send.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="community_header">
+                        <div class="community_user_info">
+                            <img src="Susan Boyle.png" class="community_user_img">
+                            <p><span><router-link to="/socialmedia/community/socialmedia_community">Making Big Time Money Community</router-link></span><span>Amanda Page<span class="community_number"><span class="community_dots">•</span>4m</span></span></p>
+                            <img src="img/dots.png" class="community_user_detail">
+                        </div>
+                        <hr class="community_hr">
+                        <p class="community_desc">orem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien dui, commodo at fermentum vel, auctor a magna. Sed vitae imperdiet elit. Donec ac velit metus. Nam et aliquet libero. Aenean aliquam sem ut urna porttitor, eu varius nunc viverra. Phasellus ornare pellentesque lobortis. Sed viverra nisi ac ipsum commodo pulvinar.</p>
+                        <!-- <video width="100%" height="300px" controls>
+                            <source src="">
+                        </video> -->
+                        <img src="community/community_video.png" class="community_video">
+                        <!-- <vue-player 
+                            src="sample.mp4" 
+                            poster="poster.jpg" 
+                            title="this is a title" 
+                            v-model="playing">
+                        </vue-player> -->
+                        <hr class="community_hr">
+                        <p class="community_utility">
+                            <span>275 Comments</span>
+                            <span>Comment<img src="community/messaging.png"></span>
+                            <span>Share<img src="community/replay.png"></span>
                         </p>
                         <hr class="community_hr">
                         <div class="community_chat">
