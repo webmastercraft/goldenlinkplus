@@ -52,7 +52,7 @@
                             <div class="community_user_info">
                                 <img src="Susan Boyle.png" class="community_user_img">
                                 <p><span><router-link to="/socialmedia/community/socialmedia_community">Amanda Page</router-link></span><span>Yesterday at 7:00 AM</span></p>
-                                <img src="img/dots.png" class="community_user_detail" @click="showIndustry">
+                                <img src="img/dots.png" class="community_user_detail" @click="showPostReport">
                             </div>
                             <hr class="community_hr">
                             <p class="community_desc">orem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien dui, commodo at fermentum vel, auctor a magna. Sed vitae imperdiet elit. Donec ac velit metus. Nam et aliquet libero. Aenean aliquam sem ut urna porttitor, eu varius nunc viverra. Phasellus ornare pellentesque lobortis. Sed viverra nisi ac ipsum commodo pulvinar.</p>
@@ -131,14 +131,14 @@
                     </div>
                 </div>
             </div>
-            <Company 
-                v-show="f_show_company"
+            <CommunityView 
+                v-show="f_show_community_view"
                 @close="closeViewProfile"
                 @view-backdrop="closeViewProfile"
             >
-            </Company>
+            </CommunityView>
             <PostReport 
-                v-show="f_show_industry"
+                v-show="f_show_post_report"
                 @view-backdrop="closeViewProfile"
             >
             </PostReport>
@@ -152,7 +152,7 @@
     </div>
 </template>
 <script>
-import Company from "../../../modal/community_view.vue";
+import CommunityView from "../../../modal/community_view.vue";
 import PostReport from "../../../modal/community_post-report.vue";
 import NewPost from "../../../modal/community_new_post.vue";
 
@@ -160,35 +160,35 @@ export default {
 
     name: 'Community',
     components: {
-            Company,
+            CommunityView,
             PostReport,
             NewPost
     },
     data () {
         return {
-            f_show_company: false,
-            f_show_industry: false,
+            f_show_community_view: false,
+            f_show_post_report: false,
             f_show_new_post: false,
         }
     },
     methods: {
         closeModal() {
-            this.f_show_company = false;
+            this.f_show_community_view = false;
             this.f_show_new_post = false;
             this.isModalVisible = false;
         },
-        showIndustry() {
-            this.f_show_industry = true;
+        showPostReport() {
+            this.f_show_post_report = true;
         },
         showNewPost() {
             this.f_show_new_post = true;
         },
         showCommunityView() {
-            this.f_show_company = true;
+            this.f_show_community_view = true;
         },
         closeViewProfile() {
-            this.f_show_company = false;
-            this.f_show_industry = false;
+            this.f_show_community_view = false;
+            this.f_show_post_report = false;
             this.f_show_new_post = false;
         },
         
