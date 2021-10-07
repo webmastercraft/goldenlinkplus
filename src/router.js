@@ -126,6 +126,15 @@ import SocialMedia_BS_Wallet from './components/SocialMedia/BS_Wallet/SocialMedi
 import SocialMedia_BS_Wallet_Transaction from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Transaction.vue';
 import SocialMedia_BS_Wallet_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Account.vue';
 import SocialMedia_BS_Wallet_Paypal from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal.vue';
+import SocialMedia_BS_Wallet_Paypal_Success from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal_Success.vue';
+import SocialMedia_BS_Wallet_Google from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Google.vue';
+import SocialMedia_BS_Wallet_Google_Success from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Google_Success.vue';
+import SocialMedia_BS_Wallet_Apple from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Apple.vue';
+import SocialMedia_BS_Wallet_Apple_Success from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Apple_Success.vue';
+import SocialMedia_BS_Wallet_Payoneer from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Payoneer.vue';
+import SocialMedia_BS_Wallet_Payoneer_Success from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Payoneer_Success.vue';
+import SocialMedia_BS_Wallet_Stripe from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Stripe.vue';
+import SocialMedia_BS_Wallet_Stripe_Success from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Stripe_Success.vue';
 import SocialMedia_BS_Wallet_Paypal_Withdraw from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Paypal_Withdraw.vue';
 import SocialMedia_BS_Wallet_Linked_Account from './components/SocialMedia/BS_Wallet/SocialMedia_BS_Wallet_Linked_Account.vue';
 
@@ -825,6 +834,60 @@ export default new Router({
             ,
             name: 'socialmedia_bs_wallet_paypal',
             components: { default: SocialMedia_BS_Wallet_Paypal },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_success'
+            ,
+            name: 'socialmedia_bs_wallet_paypal_success',
+            components: { default: SocialMedia_BS_Wallet_Paypal_Success },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_apple'
+            ,
+            name: 'socialmedia_bs_wallet_apple',
+            components: { default: SocialMedia_BS_Wallet_Apple },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_apple_success'
+            ,
+            name: 'socialmedia_bs_wallet_apple_success',
+            components: { default: SocialMedia_BS_Wallet_Apple_Success },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_google'
+            ,
+            name: 'socialmedia_bs_wallet_google',
+            components: { default: SocialMedia_BS_Wallet_Google },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_google_success'
+            ,
+            name: 'socialmedia_bs_wallet_google_success',
+            components: { default: SocialMedia_BS_Wallet_Google_Success },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_payoneer'
+            ,
+            name: 'socialmedia_bs_wallet_payoneer',
+            components: { default: SocialMedia_BS_Wallet_Payoneer },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_payoneer_success'
+            ,
+            name: 'socialmedia_bs_wallet_payoneer_success',
+            components: { default: SocialMedia_BS_Wallet_Payoneer_Success },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_stripe'
+            ,
+            name: 'socialmedia_bs_wallet_stripe',
+            components: { default: SocialMedia_BS_Wallet_Stripe },
+        },
+        {
+            path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_stripe_success'
+            ,
+            name: 'socialmedia_bs_wallet_stripe_success',
+            components: { default: SocialMedia_BS_Wallet_Stripe_Success },
         },
         {
             path: '/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw',

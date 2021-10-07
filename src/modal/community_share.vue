@@ -1,8 +1,8 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-view-mask community_share_modal" v-on:click.self="viewProfileBackdrop">
+    <div class="modal-backdrop bg-view-mask community_share_end_modal" v-on:click.self="viewProfileBackdrop">
       <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
-        <div class="modal community_post_report_modal"
+        <div class="modal community_share_modal"
           role="dialog"
           aria-labelledby="modalTitle"
           aria-describedby="modalDescription"
@@ -70,7 +70,7 @@
   }
 </script>
 <style>
-    .community_share_modal {
+    .community_share_end_modal {
         align-items: flex-end !important;
     }
     .community_share_area {
@@ -87,5 +87,13 @@
     }
     .community_share_area p span {
         margin: auto;
+    }
+    .community_share_modal {
+      height: auto !important;
+      max-width: 414px !important;
+      width: 100% !important;
+      transform: translate3d(0, 0, 0) !important;
+      border-radius: 16px 16px 0 0 !important;
+      margin: auto;
     }
 </style>
