@@ -18,13 +18,15 @@
                       <div class="event_chat_text">
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
-                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
-                            <div class="diamond_animation">
-                              <img src="frame_diamond2.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
-                              <img src="chatdia.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
-                              <img src="chat_diamond.png" @click="showDiaOneItem(index)">
-                            </div>
+                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!! Can you test</span></p>
+                            <div class="chat_diamond_number">
+                              <div class="diamond_animation">
+                                <img src="frame_diamond2.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
+                                <img src="chatdia.png" v-if="item.diaTwoActive == true" class="diaframe" :class="{'diaTwoAppear': item.diaTwoActive == true}">
+                                <img src="chat_diamond.png" @click="showDiaOneItem(index)">
+                              </div>
                               <span>{{item.diaSize}}</span>
+                            </div>
                           </div>
                       </div>
                           <div class="event_chat_login">
@@ -91,6 +93,66 @@ export default {
                 diaTwoActive: false,
                 diaSize: 125,
             },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
+            {
+                diamond_img: "mona.png",
+                diaOneActive: false,
+                diaTwoActive: false,
+                diaSize: 125,
+            },
         ]
     }
   },
@@ -149,7 +211,7 @@ export default {
   display: block !important;
 }
 .event_chat_window {
-  margin: 15px 20px 50px;
+  margin: 156px 20px 50px;
   background-color: white !important;
   border-radius: 16px;
   width: calc(100% - 40px);
@@ -164,7 +226,9 @@ export default {
   bottom: 0;
 }
 .event_chat_title {
-  position: relative;
+  position: fixed;
+  background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
+  z-index: 1040;
 }
 .event_chat_login {
   margin: 3px 20px 0 0;
@@ -237,5 +301,11 @@ export default {
 }
 .diamond_animation img {
   margin: 0;
+}
+.chat_diamond_number {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 0;
 }
 </style>

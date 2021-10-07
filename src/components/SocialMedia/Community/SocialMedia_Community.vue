@@ -59,7 +59,7 @@
                             <!-- <video width="100%" height="300px" controls>
                                 <source src="">
                             </video> -->
-                            <img src="community/community_video.png" class="community_video">
+                            <img src="community/world_whole.png" class="community_video">
                             <!-- <vue-player 
                                 src="sample.mp4" 
                                 poster="poster.jpg" 

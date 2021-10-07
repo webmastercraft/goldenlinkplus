@@ -8,7 +8,7 @@
                     <a>Cash-in Confirmation</a>
                 </div>
                 <div class="wallet_cash_body">
-                    <img src="wallet/payoneer_brand.png" class="paypal_brand_img">
+                    <img src="wallet/mastercard.png" class="paypal_brand_img">
                     <p class="status_payment_word">You are about to cash-in</p>
                     <div class="form-group profile_input paypal_confirm_direction">
                         <input

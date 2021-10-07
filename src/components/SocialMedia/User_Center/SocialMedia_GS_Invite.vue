@@ -19,8 +19,8 @@
                         <hr class="hr_qr_down">
                         <div>
                             <input type="text" class="qr-group" name="invite_code" v-model="invite">
-                            <button  @click="copyInvite">
-                                    <img src="img/QRuse.png">
+                            <button  @click="copyInvite" class="copy_link_btn">
+                                    <img :src="`${copy_imginvite}`">
                             </button>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                         <hr class="hr_qr_down">
                         <div>
                             <input type="text" class="qr-group" name="invite_code" v-model="link">
-                            <button @click="copyLink">
-                                <img src="img/QRuse.png">
+                            <button @click="copyLink" class="copy_link_btn">
+                                <img :src="`${copy_imglink}`">
                             </button>
                         </div>
                     </div>
@@ -83,6 +83,8 @@
         },
         data() {
             return {
+                copy_imginvite: "img/QRuse.png",
+                copy_imglink: "img/QRuse.png",
                 invite: 'GID9174',
                 link: "https://www.goldenlinkplus.com"
             }
@@ -92,11 +94,21 @@
             this.$copyText(this.invite).then(function (e) {
             }, function (e) {
             })
+            var self = this;
+            this.copy_imginvite = "img/QRuse_done.png";
+            setTimeout(function() {
+                self.copy_imginvite = "img/QRuse.png";
+            }, 1000);   
           },
           copyLink: function () {
             this.$copyText(this.link).then(function (e) {
             }, function (e) {
             })
+            var self = this;
+            this.copy_imglink = "img/QRuse_done.png";
+            setTimeout(function() {
+                self.copy_imglink = "img/QRuse.png";
+            }, 1000);   
           }
         }
     }
@@ -125,5 +137,8 @@
     }
     .social_invite_link {
         margin: 0 40px 20px !important;
+    }
+    .copy_link_btn img{
+        border-radius: 12px;
     }
 </style>

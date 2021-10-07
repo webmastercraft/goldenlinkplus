@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div v-show="!isloading">
-                        <img src="wallet/payoneer_brand.png" class="paypal_brand_img">
+                        <img src="wallet/mastercard.png" class="paypal_brand_img">
                         <div class="form-group profile_input paypal_cash_input">
                             <input
                               type="text"
@@ -148,7 +148,7 @@
                         linked_img: "wallet/linked_googlepay.png"
                     },
                     {
-                        linked_img: "wallet/linked_payoneer.png"
+                        linked_img: "wallet/linked_mastercard.png"
                     }
                 ]
             }
