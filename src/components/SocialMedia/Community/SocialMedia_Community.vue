@@ -18,13 +18,15 @@
                         <p class="community_title_p"><img src="triangle.png" class="favicon_img">Money Makers Community<img src="img/dots.png" @click="showCommunityView"></p>
                         <p class="community_title_detail"><img src="community/key.png" class="favicon_img">Private Community •  125 Members</p>
                         <div class="community_title_img">
-                            <img src="Lily.png">
-                            <img src="Irma.png">
-                            <img src="Collen.png">
-                            <img src="Brandie.png">
-                            <img src="Philip.png">
-                            <img src="Geoffrey Mott.png">
-                            <img src="eduardo.png">
+                            <router-link to="/socialmedia/community/socialmedia_community_member">
+                                <img src="Lily.png">
+                                <img src="Irma.png">
+                                <img src="Collen.png">
+                                <img src="Brandie.png">
+                                <img src="Philip.png">
+                                <img src="Geoffrey Mott.png">
+                                <img src="eduardo.png">
+                            </router-link>
                         </div>
                         <div class="community_title_btn">
                             <button>Leave</button>

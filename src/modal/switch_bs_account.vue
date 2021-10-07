@@ -40,6 +40,10 @@
                 <router-link to="/socialmedia/socialmedia_main_notification_setting">
                     <p class="switch_content">Notification Settings</p>
                 </router-link>
+                <p class="switch_title">Communities</p>
+                <router-link to="/socialmedia/community/socialmedia_community_create">
+                    <p class="switch_content">Create a Community</p>
+                </router-link>
                 <p class="switch_title">Finances</p>
                 <p class="switch_content">Cash Balance<span><b>$254</b></span></p>
                 <hr class="switch_hr">

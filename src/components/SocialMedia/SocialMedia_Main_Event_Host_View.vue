@@ -12,7 +12,7 @@
             
               <p class="event_back">
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
-                  <img src="event_back.png">Hallway
+                  <img src="event_back.png">Go to Hallway
                 </router-link>
               <span @click="showEventSetting"><img src="img/dots.png"></span></p>
           </div>
