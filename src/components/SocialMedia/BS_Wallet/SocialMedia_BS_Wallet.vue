@@ -7,6 +7,11 @@
                     <router-link to="/socialmedia/socialmedia_main_lounge_bs" class="header_arrow"><img src="img/header_arrow.png"></router-link>
                     <a>BS Wallet</a>
                 </div>
+                <div class="wallet_balance">
+                    <p>Available Balance<img src="wallet/plus.png" class="wallet_plus_img"></p>
+                    <p class="wallet_money"><span class="wallet_price_type">USD</span><span class="wallet_price">570</span></p>
+                    <p class="wallet_price_detail"><span><router-link to="/socialmedia/socialmedia_wallet_cpc_rewards">Details ></router-link></span><router-link to="/socialmedia/socialmedia_wallet_convert_gcoin"><button>Convert to GCoins</button></router-link></p>
+                </div>
                 <div class="wallet_body">
                     <p class="wallet_content">
                         <img src="wallet/linked.png" class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_account">My Linked Accounts</router-link><span><img src="wallet/funds.png"  class="wallet_content_img"><router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_withdraw">Withdraw Fund</router-link></span>

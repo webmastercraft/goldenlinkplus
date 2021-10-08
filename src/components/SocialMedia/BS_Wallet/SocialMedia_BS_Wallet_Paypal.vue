@@ -34,7 +34,7 @@
                     </div>
                     <p class="paypal_brand_reminder">Reminder: For successful linking, make sure your first and last name in your Goldenlinkplus and paypal accounts are exactly the same</p>
                     <div class="sociallogo_btn">
-                        <button class="paypal_brand_btn">LINK</button>
+                        <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_paypal_success"><button class="paypal_brand_btn">LINK</button></router-link>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ export default {
     .paypal_brand_img img {
         width: 65%;
         height: 10%;
-        margin: 30px 0;
+        margin: auto;
     }
     .paypal_brand_content {
         margin: 20px;

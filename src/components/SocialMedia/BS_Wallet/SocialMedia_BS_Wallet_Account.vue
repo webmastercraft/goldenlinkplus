@@ -15,9 +15,34 @@
                             <img src="img/backbtn_black_right.png">
                         </p>
                     </router-link>
-                    <p><img src="wallet/apple_pay.png"><span>Apple Pay</span><img src="img/backbtn_black_right.png"></p>
-                    <p><img src="wallet/google_pay.png"><span>Google Pay</span><img src="img/backbtn_black_right.png"></p>
-                    <p><img src="wallet/payoneer.png"><span>Payoneer</span><img src="img/backbtn_black_right.png"></p>
+                    <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_apple">
+                        <p>
+                            <img src="wallet/apple_pay.png">
+                            <span>Apple Pay</span>
+                            <img src="img/backbtn_black_right.png">
+                        </p>
+                    </router-link>
+                    <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_google">
+                        <p>
+                            <img src="wallet/google_pay.png">
+                            <span>Google Pay</span>
+                            <img src="img/backbtn_black_right.png">
+                        </p>
+                    </router-link>
+                    <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_payoneer">
+                        <p>
+                            <img src="wallet/payoneer.png">
+                            <span>Payoneer</span>
+                            <img src="img/backbtn_black_right.png">
+                        </p>
+                    </router-link>
+                    <router-link to="/socialmedia/bs_wallet/socialmedia_bs_wallet_stripe">
+                        <p>
+                            <img src="wallet/stripe.png">
+                            <span>Stripe</span>
+                            <img src="img/backbtn_black_right.png">
+                        </p>
+                    </router-link>
                 </div>
             </div>
         </div>

@@ -18,6 +18,7 @@
                     <p><img src="wallet/apple_pay.png"><span>Apple Pay</span><img src="img/backbtn_black_right.png"></p>
                     <p><img src="wallet/google_pay.png"><span>Google Pay</span><img src="img/backbtn_black_right.png"></p>
                     <p><img src="wallet/payoneer.png"><span>Payoneer</span><img src="img/backbtn_black_right.png"></p>
+                    <p><img src="wallet/stripe.png"><span>Stripe</span><img src="img/backbtn_black_right.png"></p>
                 </div>
             </div>
         </div>

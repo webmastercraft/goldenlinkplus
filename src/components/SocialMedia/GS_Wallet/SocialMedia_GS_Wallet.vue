@@ -108,18 +108,6 @@
   .search_coins {
     font-size: 14px;
   }
-  .search_coins_img {
-    margin-bottom: 4px;
-    margin-right: 5px;
-  }
-  .search_check_offer {
-    color: #13C8FF;
-    font-size: 16px;
-  }
-  .socialmedia_search_para {
-    padding: 15px 10px;
-    display: flex;
-  }
   .search_para {
     margin: 0;
     width: 100%;
@@ -134,24 +122,6 @@
   .send_btn_disable {
     background: #13C8FF;
     opacity: 0.2;
-  }
-  .send_btn {
-    background: #13C8FF;
-    opacity: 1;
-  }
-  .search_transmit button {
-    padding: 5px 10px;
-    width: 95px;
-    border-radius: 25px;
-    color: white;
-    font-size: 14px;
-    margin: 3px 0;
-  }
-  .send_btn img {
-    margin-right: 7px;
-  }
-  .send_btn_disable img {
-    margin-right: 7px;
   }
   .wallet_glc_right {
     position: absolute;

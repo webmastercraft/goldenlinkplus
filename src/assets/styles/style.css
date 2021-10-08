@@ -857,13 +857,13 @@ small {
 }
 
 .content_modal .marketing_list p {
-    margin: 20px 0 5px;
+    margin: 15px 0 5px;
 }
 
 .content_modal .marketing_list span {
     border-radius: 50px;
     padding: 5px;
-    padding: 7px 20px;
+    padding: 7px 15px;
     margin: 5px 3px;
     display: inline-flex;
     font-size: 14px;
@@ -1252,7 +1252,4 @@ button {
     background-image: url('../images/dropdown.png');
     background-repeat: no-repeat;
     background-position: calc(100% - 15px) 50%;
-}
-a:hover {
-    color: white;
 }

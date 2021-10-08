@@ -73,7 +73,7 @@ export default {
     .lounge_following_user {
         width: 45px;
         height: 45px;
-        margin: 0 auto auto;
+        margin: auto;
     }
     .lounge_following_find {
         position: relative;

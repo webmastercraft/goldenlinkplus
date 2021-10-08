@@ -32,10 +32,12 @@
             <button
             type="button"
             class="event_done"
-            @click="close"
+            @click='toggle = true'
+            v-show='!toggle'
             aria-label="Close modal"
             >Confirm Joining
             </button>
+            <p v-show='toggle' class="upcoming_event_show">Thank you for choosing to join this Event You will be notified when this event is about to start</p>
         </header>
       </div>
     </div>
@@ -51,6 +53,7 @@
     },
     data () {
       return {
+        toggle: false,
       }
     },
     methods: {
@@ -100,5 +103,10 @@
     }
     .upcoming_modal_position {
       align-items: flex-end !important;
+    }
+    .upcoming_event_show {
+      text-align: center;
+      font-size: 14px;
+      margin: auto 70px 30px;
     }
 </style>

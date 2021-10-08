@@ -25,7 +25,7 @@ Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
 Vue.use(Vuedals);
-Vue.use(VueClipboard)
+Vue.use(VueClipboard);
 
 new Vue({
     router,

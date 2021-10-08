@@ -47,7 +47,7 @@
                 <img src="profile/commun3.png">
                 <img src="profile/commun4.png">
                 <img src="profile/commun5.png">
-                <img src="profile/profile_plus.png">
+                <router-link to="/socialmedia/community/socialmedia_community_create"><img src="profile/profile_plus.png"></router-link>
               </div>
 
               <div class="hooper_height">
