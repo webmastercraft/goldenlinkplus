@@ -37,7 +37,7 @@
                         <img :src="`${item.image_url}`" class="lounge_following_user">
                         <p class="community_member_text following_member_para"><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
                         <div class="member_admin_btn">
-                            <span class="remove_admin_btn">Make Admin</span> 
+                            <span class="remove_admin_btn" @click='sendMakeAdmin()'>Make Admin</span> 
                             <span class="remove_admin_btn_opacity">Remove</span> 
                         </div>
                     </div>
@@ -110,6 +110,14 @@
                 this.memberdatas[index].follow = false
                 this.image1 =  this.image2;
             },
+            sendMakeAdmin() {
+                let new_msg = {
+                    image_url: "Ray_big_on.png",
+                    user: "Rayford Chenail",
+                    year: 1,
+                };
+                this.coadmindatas.push(new_msg);
+            }
         }
     }
 </script>
