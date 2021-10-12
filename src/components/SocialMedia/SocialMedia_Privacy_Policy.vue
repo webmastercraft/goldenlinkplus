@@ -7,7 +7,7 @@
             <router-link to="/socialmedia/socialmedia_main" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>Privacy Policy</a>
           </div>
-            <div class="add_modal left-content shadow_body privacy_body">
+            <div class="left-content shadow_body privacy_body">
                 <p class="privacy_title">PRIVACY POLICY</p>
                 <p class="privacy_title_md">RECENT UPDATE: July 27, 2021</p>
                 <p class="privacy_title_md"><b>Agreement to Access the Site</b></p>
@@ -134,6 +134,9 @@ export default {
   }
   .privacy_body {
     padding: 15px;
+    margin: 80px 20px 20px;
+    max-width: 414px;
+    width: calc(100% - 40px);
   }
   .privacy_title {
     margin: 20px auto 10px;
@@ -146,7 +149,7 @@ export default {
     color: white;
     background-color: #F4992D;
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
     border-radius: 12px;
     padding: 12px;
   }

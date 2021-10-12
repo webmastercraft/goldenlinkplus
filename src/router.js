@@ -61,6 +61,10 @@ import SocialMedia_Reg_security from './components/SocialMedia/SocialMedia_Reg_s
 import SocialMedia_Reg_touch_security from './components/SocialMedia/SocialMedia_Reg_touch_security.vue';
 import SocialMedia_Reg_account_option from './components/SocialMedia/SocialMedia_Reg_account_option.vue';
 import SocialMedia_Privacy_Policy from './components/SocialMedia/SocialMedia_Privacy_Policy.vue';
+import SocialMedia_Terms_Conditions from './components/SocialMedia/SocialMedia_Terms_Conditions.vue';
+import SocialMedia_Guidelines from './components/SocialMedia/SocialMedia_Guidelines.vue';
+import SocialMedia_BS_Guidelines from './components/SocialMedia/SocialMedia_BS_Guidelines.vue';
+import SocialMedia_GS_Guidelines from './components/SocialMedia/SocialMedia_GS_Guidelines.vue';
 import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intro.vue';
 import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
@@ -464,6 +468,26 @@ export default new Router({
             path: '/socialmedia/socialmedia_privacy_policy',
             name: 'socialmedia_privacy_policy',
             components: { default: SocialMedia_Privacy_Policy },
+        },
+        {
+            path: '/socialmedia/socialmedia_terms_conditions',
+            name: 'socialmedia_terms_conditions',
+            components: { default: SocialMedia_Terms_Conditions },
+        },
+        {
+            path: '/socialmedia/socialmedia_guidelines',
+            name: 'socialmedia_guidelines',
+            components: { default: SocialMedia_Guidelines },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_guidelines',
+            name: 'socialmedia_gs_guidelines',
+            components: { default: SocialMedia_GS_Guidelines },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_guidelines',
+            name: 'socialmedia_bs_guidelines',
+            components: { default: SocialMedia_BS_Guidelines },
         },
         {
             path: '/socialmedia/socialmedia_log_intro',

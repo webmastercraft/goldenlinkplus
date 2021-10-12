@@ -13,20 +13,20 @@
           >
               <div class="switch_area">
                 <p class="toggle_content">
-                  <span>Terms and Conditions</span><img src="terms.png"></p>
+                  <span><router-link to="/socialmedia/socialmedia_terms_conditions">Terms and Conditions</router-link></span><img src="terms.png"></p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
                   <span><router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link></span><img src="security.png"></p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>Social Media Guidelines</span><img src="guideline.png"></p>
+                  <span><router-link to="/socialmedia/socialmedia_guidelines">Social Media Guidelines</router-link></span><img src="guideline.png"></p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>Business Membership Guidelines and Agreements</span><img src="bs_agreement.png"></p>
+                  <span><router-link to="/socialmedia/socialmedia_bs_guidelines">Business Membership Guidelines and Agreements</router-link></span><img src="bs_agreement.png"></p>
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
                     <p class="toggle_content">
-                      <span>GS Membership Guidelines and Agreements</span><img src="gs_agreement.png"></p>
+                      <span><router-link to="/socialmedia/socialmedia_gs_guidelines">GS Membership Guidelines and Agreements</router-link></span><img src="gs_agreement.png"></p>
                 </router-link>
                 <hr class="switch_hr">
               </div>
