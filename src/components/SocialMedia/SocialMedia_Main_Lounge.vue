@@ -11,7 +11,7 @@
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
-                <img src="main_contact.png">
+                <router-link to="/socialmedia/community/socialmedia_community"><img src="main_contact.png" class="main_contact"></router-link>
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>

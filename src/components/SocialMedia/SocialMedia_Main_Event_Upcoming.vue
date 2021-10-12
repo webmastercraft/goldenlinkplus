@@ -10,6 +10,7 @@
             <a class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow" @click="showEventLink"></a>
           </div>
           <div class="main_body upcoming_body">
+            <p class="no_event_title">You have no events set as of this time</p>
             <div class="para_event upcoming_para_event">
               <div class="para_title" @click="showUpcomingEvent">
                 <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
@@ -155,5 +156,9 @@ export default {
 .upcoming_event_back {
   position: absolute;
   top: 22px;
+}
+.no_event_title {
+  text-align: center;
+  font-size: 14px;
 }
 </style>
