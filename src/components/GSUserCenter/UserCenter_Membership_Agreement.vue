@@ -44,15 +44,6 @@ export default {
     color: #3B3E51;
     width: calc(100% - 40px);
   }
-  .gs_account_stage_checkout_btn {
-    color: white;
-    background-color: #F4992D;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 20px;
-  }
   .reg_next_rotate {
     transform: rotate(180deg);
     margin-right: 25px;

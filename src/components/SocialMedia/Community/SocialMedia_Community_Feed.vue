@@ -14,7 +14,7 @@
                                 <img src="main_calendar.png">
                             </router-link>
                             <img src="main_contact.png">
-                            <img src="mona.png" class="main_user">
+                            <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
                         </div>
                     </div>
                     <p class="community_favicon"><img src="community.png" class="favicon_img">RECENT ACTIVITY<img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
@@ -204,6 +204,11 @@
                 @view-backdrop="closeViewProfile"
             >
             </IndustrySystem3>
+            <SwitchGsAccount 
+                v-show="f_show_switch_gs_account"
+                @close="closeModal"
+            >
+            </SwitchGsAccount>
         </div>
     </div>
 </template>
@@ -212,6 +217,7 @@
     import IndustrySystem1 from "../../../modal/membership_com.vue";
     import IndustrySystem2 from "../../../modal/membership_leave.vue";
     import IndustrySystem3 from "../../../modal/membership_follow.vue";
+    import SwitchGsAccount from "../../../modal/switch_gs_account.vue";
 
     export default {
         name: 'Community_Feed',
@@ -220,6 +226,7 @@
             IndustrySystem1,
             IndustrySystem2,
             IndustrySystem3,
+            SwitchGsAccount
         },
         data () {
             return {
@@ -227,11 +234,15 @@
                 f_industry_system1: false,
                 f_industry_system2: false,
                 f_industry_system3: false,
+                f_show_switch_gs_account: false,
                 toggle: false,
                 massages: []
             }
         },
         methods: {
+            closeModal() {
+                this.f_show_switch_gs_account = false;
+            },
             showIndustry() {
                 this.f_show_industry = true;
             },
@@ -243,6 +254,9 @@
             },
             industrySystem3() {
                 this.f_industry_system3 = true;
+            },
+            showSwitchGsAccount() {
+                this.f_show_switch_gs_account = true;
             },
             closeViewProfile() {
                 this.f_show_industry = false;

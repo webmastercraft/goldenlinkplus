@@ -4,9 +4,9 @@
       <div class="phone sociallogin">
         
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
@@ -14,7 +14,6 @@
                 <img src="main_contact.png" class="main_contact">
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
-            </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
           </div>
           <div class="main_body main_body_audio">
@@ -145,31 +144,47 @@
             @close="closeModal"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
 </template>
 <script>
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
 
 export default {
   name: 'Audio_Event',
   components: {
-    SwitchGsAccount
+    SwitchGsAccount,
+    Toggle,
   },
   data() {
     return {
       f_show_switch_gs_account: false,
+      f_show_toggle: false,
     }
   },
   methods: {
     closeModal() {
       this.f_show_switch_gs_account = false;
+      this.f_show_toggle = false;
       this.isModalVisible = false;
+    },
+    showToggle() {
+        this.f_show_toggle = true;
     },
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+    }
   }
 }
 </script>

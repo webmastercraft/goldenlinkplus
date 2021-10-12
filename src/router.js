@@ -148,6 +148,9 @@ import SocialMedia_Profile_Offer from './components/SocialMedia/SocialMedia_Prof
 
 import SocialMedia_BS_User_Center from './components/SocialMedia/BS_Center/SocialMedia_BS_User_Center.vue';
 import SocialMedia_BS_Update_Profile from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Profile.vue';
+import SocialMedia_BS_Update_Account from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Account.vue';
+import SocialMedia_BS_Update_Business_Agreement from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Business_Agreement.vue';
+import SocialMedia_BS_Update_Account_Checkout from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Account_Checkout.vue';
 import SocialMedia_BS_Internal_Role from './components/SocialMedia/BS_Center/SocialMedia_BS_Internal_Role.vue';
 import SocialMedia_BS_Brands from './components/SocialMedia/BS_Center/SocialMedia_BS_Brands.vue';
 import SocialMedia_BS_Product from './components/SocialMedia/BS_Center/SocialMedia_BS_Product.vue';
@@ -158,6 +161,9 @@ import SocialMedia_BS_Campaign from './components/SocialMedia/BS_Center/SocialMe
 
 import SocialMedia_User_Center from './components/SocialMedia/User_Center/SocialMedia_User_Center.vue';
 import SocialMedia_GS_Update_Profile from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Profile.vue';
+import SocialMedia_GS_Update_Account from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account.vue';
+import SocialMedia_GS_Update_Account_How_It_Works from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account_How_It_Works.vue';
+import SocialMedia_GS_Update_Account_Checkout from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account_Checkout.vue';
 import SocialMedia_GS_Internal_Role from './components/SocialMedia/User_Center/SocialMedia_GS_Internal_Role.vue';
 import SocialMedia_GS_Marketing from './components/SocialMedia/User_Center/SocialMedia_GS_Marketing.vue';
 import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMedia_GS_Social.vue';
@@ -720,6 +726,21 @@ export default new Router({
             components: { default: SocialMedia_BS_Update_Profile }
         },
         {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_business_agreement',
+            name: 'socialmedia_bs_update_business_agreement',
+            components: { default: SocialMedia_BS_Update_Business_Agreement }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_account',
+            name: 'socialmedia_bs_update_account',
+            components: { default: SocialMedia_BS_Update_Account }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_account_checkout',
+            name: 'socialmedia_bs_update_account_checkout',
+            components: { default: SocialMedia_BS_Update_Account_Checkout }
+        },
+        {
             path: '/socialmedia/bs_center/socialmedia_bs_internal_role',
             name: 'socialmedia_bs_internal_role',
             components: { default: SocialMedia_BS_Internal_Role }
@@ -763,6 +784,21 @@ export default new Router({
             path: '/socialmedia/user_center/socialmedia_gs_update_profile',
             name: 'socialmedia_gs_update_profile',
             components: { default: SocialMedia_GS_Update_Profile }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account',
+            name: 'socialmedia_gs_update_account',
+            components: { default: SocialMedia_GS_Update_Account }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account_checkout',
+            name: 'socialmedia_gs_update_account_checkout',
+            components: { default: SocialMedia_GS_Update_Account_Checkout }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account_how_it_works',
+            name: 'socialmedia_gs_update_account_how_it_works',
+            components: { default: SocialMedia_GS_Update_Account_How_It_Works }
         },
         {
             path: '/socialmedia/user_center/socialmedia_gs_internal_role',

@@ -181,7 +181,7 @@ import HostView from "../../modal/host_view.vue";
 import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
 import Supporter from "../../modal/supporter.vue";
-import EventSetting from "../../modal/event_setting.vue";
+import EventSetting from "../../modal/event_setting_host.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
 
 export default {
@@ -605,7 +605,7 @@ export default {
       this.isModalVisible = false;
     },
     closeSendGcoinModal() {
-      this.isModalVisible = false;
+    this.isModalVisible = false;
     },
     closeHostViewModal() {
       this.isModalVisible = false;

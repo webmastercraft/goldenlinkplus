@@ -203,10 +203,6 @@ export default {
     margin: 0 20px;
     font-weight: 500;
   }
-  .upgrade_gs_para {
-    margin: 10px 20px;
-    font-size: 14px;
-  }
   .gs_account_check_link {
     color: #13C8FF;
     font-size: 18px;
@@ -238,9 +234,6 @@ export default {
     text-align: right;
     margin:20px 20px 0 0;
   }
-  .stage_date_money {
-    margin: 20px 10px 20px 20px;
-  }
   .stage_right {
     float: right;
   }
@@ -257,15 +250,6 @@ export default {
   .paypal_btn_img {
     width: 50px;
     margin-right: 20px;
-  }
-  .gs_account_stage_checkout_btn {
-    color: white;
-    background-color: #F4992D;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 20px;
   }
   input[type=checkbox] {
     display:none;
@@ -289,14 +273,6 @@ export default {
       display:inline-block;
       margin: auto 0;
 
-  }
-  .checkbox_check {
-    display: flex;
-    margin: 0 20px;
-    font-size: 12px;
-  }
-  .checkbox_check p{
-    width: calc(100% - 97px);
   }
   .CP_img {
     margin: 0 5px;

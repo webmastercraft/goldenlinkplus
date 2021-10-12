@@ -13,6 +13,7 @@
                 id="modalTitle"
             >
                 <div class="event_btn">
+                    <button class="event_setting_btn" @click="showPotSetting "><img src="send_gcoins.png">G-Coins Pot Settings</button>
                     <button class="event_setting_btn" @click="showShareEvent "><img src="event_setting/share.png">Share this Event</button>
                     <button class="event_setting_btn" @click="showSearchEvent"><img src="event_setting/search.png">Search this Event</button>
                     <button class="event_setting_btn"><img src="event_setting/rules.png">Event Rules</button>
@@ -22,6 +23,13 @@
             </header>
         </div>
       </div>
+        <PotSetting 
+            v-show="f_show_pot_setting"
+            @close="closeModal"
+            @view-backdrop="closePotSetting"
+            @user-backdrop="removePotFlagFromStack"
+        >
+        </PotSetting>
         <CloseEvent 
             v-show="f_show_close_event"
             @close="closeModal"
@@ -48,6 +56,7 @@
 </template>
 
 <script>
+import PotSetting from "./pot_setting.vue";
 import CloseEvent from "./close_event.vue";
 import ShareEvent from "../modal/share_event.vue";
 import SearchEvent from "../modal/search_event.vue";
@@ -55,13 +64,15 @@ import SearchEvent from "../modal/search_event.vue";
   export default {
     name: 'Event_Setting',
     components: {
-      CloseEvent,
-      SearchEvent,
-      ShareEvent
+        PotSetting,
+        CloseEvent,
+        SearchEvent,
+        ShareEvent
     },  
     data () {
       return {
         ringClicked: true,
+        f_show_pot_setting: false,
         f_show_share_event: false,
         f_show_close_event: false,
         f_show_search_event: false,
@@ -92,6 +103,9 @@ import SearchEvent from "../modal/search_event.vue";
         showCloseEvent() {
             this.f_show_close_event = !this.f_show_close_event;
         },
+        showPotSetting() {
+            this.f_show_pot_setting = !this.f_show_pot_setting;
+        },
         userProfileBackdrop(evt) {
             if(evt.target.classList.length > 0 && "bg-mask"){
                 this.$emit('user-backdrop');
@@ -110,6 +124,9 @@ import SearchEvent from "../modal/search_event.vue";
         closeCloseEvent() {
         this.f_show_close_event = false;
         },
+        closePotSetting() {
+        this.f_show_pot_setting = false;
+        },
         closeShareProfile() {
         this.f_show_share_event = false;
         },
@@ -121,7 +138,10 @@ import SearchEvent from "../modal/search_event.vue";
         },
         removeCloseFlagFromStack() {
             this.f_show_close_event = !this.f_show_close_event;
-        }
+        },
+        removePotFlagFromStack() {
+            this.f_show_pot_setting = !this.f_show_pot_setting;
+        },
     },
     computed: {
       ringSrc: function () {
@@ -131,32 +151,5 @@ import SearchEvent from "../modal/search_event.vue";
   };
 </script>
 <style>
-    .event_setting_modal {
-        max-width: 414px !important;
-        transform: translate3d(0, 0%, 0) !important;
-    }
-    .event_btn {
-        max-width: 414px;
-        width: 100%;
-        font-size: 16px;
-    }
-    .event_btn button {
-        width: 100%;
-        height: 50px;
-        text-align: ;
-    }
-    .event_setting_btn {
-        background-color: #E6F7FF;
-        border-radius: 8px;
-        color: #3B3E51;
-        margin: 0 0 10px;
-    }
-    .event_setting_btn img {
-        margin: 0 10px 3px 0;
-    }
-    .event_setting_end_btn {
-        background: #EF8200;
-        border-radius: 8px;
-        color: white;
-    }
+
 </style>

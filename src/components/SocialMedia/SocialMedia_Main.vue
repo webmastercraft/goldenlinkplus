@@ -4,9 +4,9 @@
       <div class="phone sociallogin">
         
           <div class="main_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
@@ -14,7 +14,6 @@
                 <img src="main_contact.png" class="main_contact">
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
-            </div>
             <div class="main_header">
               <router-link to="/socialmedia/socialmedia_search_products"><span><b>Products</b></span></router-link>
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
@@ -191,8 +190,15 @@
           <SwitchGsAccount 
             v-show="f_show_switch_gs_account"
             @close="closeModal"
+            @user-backdrop="removeFlagFromStack"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
@@ -202,6 +208,8 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
 import EventType from "../../modal/event_type.vue";
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
+
 
 export default {
   name: 'SocialMedia_Main',
@@ -209,11 +217,13 @@ export default {
     Swiper,
     SwiperSlide,
     EventType,
-    SwitchGsAccount
+    SwitchGsAccount,
+    Toggle,
   },
   data () {
     return {
       isModalVisible: false,
+      f_show_toggle: false,
       f_show_event_type: false,
       f_show_switch_gs_account: false,
       modalStack: [],
@@ -221,9 +231,13 @@ export default {
   },
   methods: {
     closeModal() {
+      this.f_show_toggle = false;
       this.f_show_event_type = false;
       this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
+    },
+    showToggle() {
+        this.f_show_toggle = true;
     },
     showEventType() {
       this.f_show_event_type = true;
@@ -231,6 +245,31 @@ export default {
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    removeFlagFromStack() {
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_switch_gs_account':
+          this.f_show_switch_gs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_switch_bs_account':
+          this.f_show_switch_bs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      this.f_show_switch_bs_account = false,
+
+      this.f_show_switch_gs_account = false
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+    }
   }
 }
 </script>
@@ -458,6 +497,10 @@ export default {
   }
   .main_contact {
     margin: auto;
+  }
+  .toggle_menu_btn {
+    margin: auto auto auto 0;
+    height: 100%;
   }
 </style>
  

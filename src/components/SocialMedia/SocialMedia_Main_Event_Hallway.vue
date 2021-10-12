@@ -4,16 +4,15 @@
       <div class="phone sociallogin">
         
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <div class="logo_header">
+            <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
-              </div>
             </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
           </div>
@@ -162,6 +161,12 @@
             @close="closeModal"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
@@ -170,17 +175,20 @@
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import Hallway from "../../modal/hallway.vue";
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
 
 export default {
   name: 'Event_Hallway',
   components: {
     SwitchGsAccount,
-    Hallway
+    Hallway,
+    Toggle,
   },
   data () {
     return {
       micClicked: false,
       f_show_hallway: false,
+      f_show_toggle: false,
       f_show_switch_gs_account: false,
       modalStack: [],
     }
@@ -188,11 +196,15 @@ export default {
   methods: {
     closeModal() {
       this.f_show_switch_gs_account = false;
+      this.f_show_toggle = false;
       this.isModalVisible = false;
     },
     showHallway() {
         this.f_show_hallway = true;
         this.modalStack.push('f_show_hallway');
+    },
+    showToggle() {
+        this.f_show_toggle = true;
     },
     removeFlagFromStack() {
 
@@ -210,6 +222,9 @@ export default {
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+    }
   },
   computed: {
     imgSrc: function () {

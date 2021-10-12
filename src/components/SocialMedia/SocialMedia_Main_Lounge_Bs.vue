@@ -4,16 +4,15 @@
       <div class="phone sociallogin">
         
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <div class="logo_header">
+            <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
                 <img src="Jean_Smith.png" class="main_user" @click="showSwitchBsAccount">
-              </div>
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>
           </div>
@@ -63,23 +62,34 @@
           <SwitchBsAccount 
             v-show="f_show_switch_bs_account"
             @close="closeModal"
+            @user-backdrop="removeFlagFromStack"
           >
           </SwitchBsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
 </template>
 <script>
 import SwitchBsAccount from "../../modal/switch_bs_account.vue";
+import Toggle from "../../modal/toggle.vue";
 
 export default {
   name: 'Lounge_BS',
   components: {
-    SwitchBsAccount
+    SwitchBsAccount,
+    Toggle,
   },
   data() {
       return {
       f_show_switch_bs_account: false,
+      f_show_toggle: false,
+      modalStack: [],
       items: [
           {rout : "socialmedia_bs_profile", img: "lounge_profile.png", name: "My Profile"}, 
           {rout : "bs_center/socialmedia_bs_user_center", img: "lounge_usercenter.png", name: "My User Center"},
@@ -87,7 +97,7 @@ export default {
           {rout : "bs_wallet/socialmedia_bs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
-          {rout : "", img: "lounge_interests.png", name: "My Campaigns"},
+          {rout : "", img: "lounge_campaign.png", name: "My Campaigns"},
           {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
@@ -95,11 +105,40 @@ export default {
   methods: {
     closeModal() {
       this.f_show_switch_bs_account = false;
+      this.f_show_toggle = false;
       this.isModalVisible = false;
     },
     showSwitchBsAccount() {
       this.f_show_switch_bs_account = true;
     },
+    showToggle() {
+        this.f_show_toggle = true;
+    },
+    removeFlagFromStack() {
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_switch_gs_account':
+          this.f_show_switch_gs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_switch_bs_account':
+          this.f_show_switch_bs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      this.f_show_switch_bs_account = false,
+
+      this.f_show_switch_gs_account = false
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+    }
   }
 }
 </script>

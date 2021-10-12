@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
-      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="userProfileBackdrop">
         <div class="modal swtich_account_modal"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -83,6 +83,11 @@
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
         }
+      },
+      userProfileBackdrop(evt) {
+          if(evt.target.classList.length > 0 && "bg-mask"){
+              this.$emit('user-backdrop');
+          }
       },
     },
   }

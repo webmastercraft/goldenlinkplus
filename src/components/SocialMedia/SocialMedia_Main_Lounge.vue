@@ -4,16 +4,15 @@
       <div class="phone sociallogin">
         
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <div class="logo_header">
+            <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
-              </div>
             </div>
             <p><img src="member's_lounge.png" class="favicon_img">MEMBER’S LOUNGE</p>
           </div>
@@ -65,20 +64,29 @@
             @close="closeModal"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
 </template>
 <script>
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
 
 export default {
   name: 'Lounge',
   components: {
-    SwitchGsAccount
+    Toggle,
+    SwitchGsAccount,
   },
   data() {
-      return {
+    return {
+      f_show_toggle: false,
       f_show_switch_gs_account: false,
       items: [
           {rout : "socialmedia_gs_profile", img: "lounge_profile.png", name: "My Profile"}, 
@@ -96,11 +104,18 @@ export default {
   methods: {
     closeModal() {
       this.f_show_switch_gs_account = false;
+      this.f_show_toggle = false;
       this.isModalVisible = false;
     },
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    showToggle() {
+        this.f_show_toggle = true;
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+    }
   }
 }
 </script>

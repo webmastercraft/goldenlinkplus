@@ -195,10 +195,6 @@ export default {
     margin: 0 20px;
     font-weight: 500;
   }
-  .upgrade_gs_para {
-    margin: 10px 20px;
-    font-size: 14px;
-  }
   .header_top table tr:nth-child(even) {
     background-color: #E8F1FA;
   }
@@ -327,9 +323,6 @@ export default {
     text-align: right;
     margin:20px 20px 0 0;
   }
-  .stage_date_money {
-    margin: 20px 10px 20px 20px;
-  }
   .stage_right {
     float: right;
   }
@@ -347,15 +340,6 @@ export default {
     width: 50px;
     margin-right: 20px;
   }
-  .gs_account_stage_checkout_btn {
-    color: white;
-    background-color: #F4992D;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 20px;
-  }
   input[type=checkbox] {
     display:none;
   }
@@ -366,5 +350,6 @@ export default {
   }
   .checkbox_check p{
     width: calc(100% - 97px);
+    margin: auto;
   }
 </style>

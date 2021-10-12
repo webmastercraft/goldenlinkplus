@@ -4,16 +4,15 @@
       <div class="phone sociallogin">
         
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <div class="logo_header">
+            <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
                 <img src="main_contact.png">
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
-              </div>
             </div>
             <p><img src="ring.png" class="favicon_img">ACTIVITIES</p>
           </div>
@@ -77,27 +76,43 @@
             @close="closeModal"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+          >
+          </Toggle>
       </div>
     </div>
   </div>
 </template>
 <script>
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
 
 export default {
   name: 'Activities',
   components: {
-    SwitchGsAccount
+    SwitchGsAccount,
+    Toggle
   },
   data() {
     return {
       f_show_switch_gs_account: false,
+      f_show_toggle: false,
     }
   },
   methods: {
     closeModal() {
       this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
+      this.f_show_toggle = false;
+    },
+    showToggle() {
+        this.f_show_toggle = true;
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
     },
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
@@ -113,6 +128,7 @@ export default {
     width: 100%;
     background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%);
     padding: 20px;
+    z-index: 1040;
   }
   .main_audio_modal .favicon_img {
     margin-right: 8px;

@@ -1,0 +1,76 @@
+<template>
+  <transition name="modal-fade">
+    <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
+        <div class="modal bs_user_center_modal"
+          role="dialog"
+          aria-labelledby="modalTitle"
+          aria-describedby="modalDescription"
+        >
+          <header
+            class="swtich_account_header"
+            id="modalTitle"
+          >
+              <div class="switch_area">
+                <p class="toggle_content">
+                  <span>Terms and Conditions</span><img src="terms.png"></p>
+                <hr class="switch_hr">
+                <p class="toggle_content">
+                  <span><router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link></span><img src="security.png"></p>
+                <hr class="switch_hr">
+                <p class="toggle_content">
+                  <span>Social Media Guidelines</span><img src="guideline.png"></p>
+                <hr class="switch_hr">
+                <p class="toggle_content">
+                  <span>Business Membership Guidelines and Agreements</span><img src="bs_agreement.png"></p>
+                <hr class="switch_hr">
+                <router-link to="/socialmedia/bs_center/socialmedia_bs_offers">
+                    <p class="toggle_content">
+                      <span>GS Membership Guidelines and Agreements</span><img src="gs_agreement.png"></p>
+                </router-link>
+                <hr class="switch_hr">
+              </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </transition>
+</template>
+
+<script>
+
+  export default {
+    name: 'Toggle',
+    components: {
+    },  
+    data () {
+      return {
+        f_show_view_profile: false
+      }
+    },
+    methods: {
+      closeModal() {
+        this.$emit('close');
+      },
+      viewProfileBackdrop(evt) {
+        if(evt.target.classList.length > 0 && "bg-view-mask"){
+          this.$emit('view-backdrop');
+        }
+      },
+    },
+  }
+</script>
+<style>
+  .toggle_content {
+    margin: 20px 0;
+    font-size: 15px;
+    display: flex;
+  }
+  .toggle_content span {
+    margin: auto auto auto 0;
+  }
+  .toggle_content img {
+    height: 100%;
+    margin: 0 0 auto auto;
+  }
+</style>

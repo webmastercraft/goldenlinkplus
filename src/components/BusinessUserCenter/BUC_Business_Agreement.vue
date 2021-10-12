@@ -59,8 +59,6 @@
                 <img src="reg_next.png" class="reg_next_rotate">Go Back
               </button>
             </router-link>
-            
-            
           </div>
         </div>
     </div>
@@ -117,14 +115,15 @@ export default {
   .upgrade_gs_para {
     margin: 10px 20px;
     font-size: 14px;
+    color: black;
+    font-weight: 400;
   }
   .gs_account_stage_checkout_btn {
     color: white;
     background-color: #F4992D;
     width: calc(100% - 40px);
-    margin: 0 20px;
+    margin: 20px 20px;
     border-radius: 12px;
     padding: 12px;
-    margin-bottom: 20px;
   }
 </style>
