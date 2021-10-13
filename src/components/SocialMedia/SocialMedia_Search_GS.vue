@@ -89,7 +89,7 @@ export default {
   }
   .dot_green {
     position: relative;
-    margin: auto 10px;
+    margin: auto 10px auto 0;
   }
   .over_img {
     position: absolute;
@@ -102,6 +102,9 @@ export default {
     border-radius: 50%;
   }
   .gs_market_content {
-    margin: auto 40px auto 10px;
+    margin: auto auto auto 0;
+  }
+  .gs_market_content img {
+    margin-right: 5px;
   }
 </style>
