@@ -202,25 +202,25 @@ export default {
     .community_world_user_simple {
         position: absolute;
         left: 5%;
-        top: 80%;
+        top: 86%;
         border-radius: 50%;
         border: 4px solid white;
         height: 75px;
         width: 75px;
     }
     .community_simple_area {
-        margin: 80px 20px 20px;
+        margin: 80px 20px 10px;
         text-align: left;
         width: calc(100 - 40px);
         height: auto;
         background: white;
         overflow: hidden;
         border-radius: 12px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     .community_simple_area_sm {
-        margin: 20px !important;
-        padding: 15px !important;
+        margin: 10px 20px !important;
+        padding: 10px 15px !important;
     }
     .communty_camera_lg {
         position: absolute;

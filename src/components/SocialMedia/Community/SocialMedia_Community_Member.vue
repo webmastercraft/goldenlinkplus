@@ -17,14 +17,14 @@
                     <p class="manage_content title_orange">Administrators</p>
                     <hr class="community_hr">
                     <div class="community_member_search_para" v-for="(item, index) in admindatas" :key="index">
-                        <img :src="`${item.image_url}`" class="lounge_following_user">
+                        <img :src="`${item.image_url}`" class="community_member_user">
                         <p class="community_member_text following_member_para"><img src="community/star_green.png"><br><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
                     </div>
                     <div v-show='toggle'>
                         <p class="manage_content title_orange">Co-Administrators</p>
                         <hr class="community_hr">
                         <div class="community_member_search_para" v-for="(item, index) in coadmindatas" :key="index">
-                            <img :src="`${item.image_url}`" class="lounge_following_user">
+                            <img :src="`${item.image_url}`" class="community_member_user">
                             <p class="community_member_text following_member_para"><img src="community/star_sky.png"><br><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
                             <div class="member_admin_btn">
                                 <span class="remove_admin_btn" @click='toggle = false'>Remove Admin</span>  
@@ -34,7 +34,7 @@
                     <p class="manage_content title_orange">Members</p>
                     <hr class="community_hr">
                     <div class="community_member_search_para" v-for="(item, index) in memberdatas" :key="index">
-                        <img :src="`${item.image_url}`" class="lounge_following_user">
+                        <img :src="`${item.image_url}`" class="community_member_user">
                         <p class="community_member_text following_member_para"><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
                         <div class="member_admin_btn">
                             <span class="remove_admin_btn" @click='sendMakeAdmin()'>Make Admin</span> 
@@ -165,5 +165,10 @@
         padding: 2px 0;
         display: flex;
         width: 100%;
+    }
+    .community_member_user {
+        width: 35px;
+        height: 35px;
+        margin: auto;
     }
 </style>
