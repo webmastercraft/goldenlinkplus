@@ -745,7 +745,7 @@ export default {
     margin: 10px 0;
   }
   .event_body {
-    margin: 150px 20px 150px;
+    margin: 130px 20px 150px;
     background: white;
     width: 100%;
     border-radius: 16px;
@@ -778,11 +778,11 @@ export default {
   }
   .event_body_title .event_desc {
     font-size: 20px;
-    margin: 10px 20px 0;
+    margin: 0 20px 0;
     letter-spacing: 0.02em;
   }
   .event_body_title .event_back {
-    margin: 10px 20px;
+    margin: 0 20px;
   }
   .event_body_title .event_back img {
     margin: 0 5px 2px;
