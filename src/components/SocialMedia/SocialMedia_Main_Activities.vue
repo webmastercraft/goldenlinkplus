@@ -128,7 +128,7 @@ export default {
     width: 100%;
     background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%);
     padding: 20px;
-    z-index: 1040;
+    z-index: 1;
   }
   .main_audio_modal .favicon_img {
     margin-right: 8px;

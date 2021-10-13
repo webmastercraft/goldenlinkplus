@@ -2,7 +2,20 @@
   <div>
     <div class="container">
       <div class="phone sociallogin">
-        
+          <div class="welcome_dialog loading_screen" v-if="isPopup">
+            <div class="popup_main_content">
+              <p>Your email account is not yet verified. Let’s verify your email.</p>
+              <div class="main_popup_btn">
+                <button  @click="disablePopup(1)">Later</button>
+                <button @click="disablePopup(2)">Verify Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="welcome_dialog loading_screen" v-if="verifyPopup">
+            <div class="popup_main_content_green">
+              <p>A verification email has been sent to your registered email address. </p>
+            </div>
+          </div>
           <div class="main_modal">
               <div class="logo_header">
                 <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
@@ -222,6 +235,8 @@ export default {
   },
   data () {
     return {
+      isPopup: false,
+      verifyPopup: false,
       isModalVisible: false,
       f_show_toggle: false,
       f_show_event_type: false,
@@ -269,8 +284,25 @@ export default {
     },
     closeViewProfile() {
       this.f_show_toggle = false;
-    }
-  }
+    },
+    disablePopup(index) {
+      this.isPopup = false
+      if (index > 1) {
+        this.verifyPopup = true;
+        setTimeout(() => {
+          this.verifyPopup = false;
+        }, 1500);
+      }
+    },
+    activePopup() {
+      this.isPopup = true
+    },
+  },
+  created () {
+    setTimeout(() => {
+          this.isPopup = true;
+    }, 3000);
+  },
 }
 </script>
 <style>
@@ -501,6 +533,41 @@ export default {
   .toggle_menu_btn {
     margin: auto auto auto 0;
     height: 100%;
+  }
+  .popup_main_content {
+    padding: 20px 35px;
+    background: rgba(255, 184, 3, 0.95);
+  }
+  .popup_main_content_green {
+    padding: 20px 35px;
+    background: rgba(57, 181, 74, 0.9);
+  }
+  .popup_main_content_green p {
+    color: white;
+    margin: auto !important;
+    text-align: left;
+  }
+  .popup_main_content p {
+    color: white;
+    margin: auto !important;
+    text-align: left;
+  }
+  .main_popup_btn {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .main_popup_btn button{
+    color: #FFB803;
+    border-radius: 16px;
+    background: white;
+    padding: 3px 30px;
+  }
+  .main_popup_btn button:nth-child(1) {
+    margin: auto auto auto 0;
+  }
+  .main_popup_btn button:nth-child(2) {
+    margin: auto 0 auto auto;
   }
 </style>
  

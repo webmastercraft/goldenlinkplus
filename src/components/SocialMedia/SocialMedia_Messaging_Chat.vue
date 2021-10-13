@@ -20,12 +20,6 @@
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
                             <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
-                            <div class="chat_diamond_number">
-                              <div class="diamond_animation">
-                                <img src="chat_diamond.png">
-                              </div>
-                              <span>125</span>
-                            </div>
                           </div>
                       </div>
                     </div>
@@ -192,7 +186,7 @@ export default {
     background-color: white !important;
     border-radius: 16px;
     width: 100%;
-    height: auto;
+    height: calc(100% - 70px);
     padding: 0 0 5px;
   }
 </style>

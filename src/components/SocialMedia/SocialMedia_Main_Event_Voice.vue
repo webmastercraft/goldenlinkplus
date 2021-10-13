@@ -6,10 +6,11 @@
       </div>
       <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
         <div class="welcome_dialog_content" @click="killGcoinTap">
-          <img src="welcome_dialog.png">
-          <p class="welcome_dialog_title">Congratulations!</p>
-          <p class="welcome_dialog_price">You received 20 G-Coins</p>
-          <p class="welcome_dialog_btn">Tap to continue</p>
+          <img src="Won Gcoins.png">
+          <p class="welcome_coin_title">
+            <span class="welcome_dialog_title">Congratulations!</span>
+            <span class="welcome_dialog_price">You received 20 G-Coins</span>
+          </p>
         </div>
       </div>
       <div class="phone sociallogin" v-show="!isloading">
@@ -1070,10 +1071,10 @@ export default {
   .welcome_dialog_content {
     text-align: center;
     background: white;
-    border-radius: 25px;
-    width: 70%;
-    height: 355px;
-    margin: calc(50vh - 177.5px) 15%;
+    width: 100%;
+    max-width: 414px;
+    margin: auto;
+    position: relative;
   }
   .welcome_dialog_content > img {
     width: 100%;
@@ -1155,6 +1156,12 @@ export default {
       border-radius: 8px;
       border: 1px solid #CDE1FF;
       margin: 10px 10px 0;
+    }
+    .welcome_coin_title {
+      position: absolute;
+      top: 10px;
+      left: 140px;
+      display: grid;
     }
 </style>
  

@@ -2,7 +2,15 @@
   <div>
     <div class="container">
       <div class="phone sociallogin">
-        
+          <div class="welcome_dialog loading_screen" v-if="isPopup">
+            <div class="popup_lounge_content">
+              <p><img src="popup_hand.png"><span>Jean Smith invited you to join as a speaker</span></p>
+              <div class="lounge_popup_btn">
+                <button  @click="disablePopup(1)">Maybe Later</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice"><button>Join as Speaker</button></router-link>
+              </div>
+            </div>
+          </div>
           <div class="main_audio_modal">
             <div class="logo_header">
                 <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
@@ -86,6 +94,8 @@ export default {
   },
   data() {
     return {
+      isPopup: false,
+      verifyPopup: false,
       f_show_toggle: false,
       f_show_switch_gs_account: false,
       items: [
@@ -115,8 +125,25 @@ export default {
     },
     closeViewProfile() {
       this.f_show_toggle = false;
-    }
-  }
+    },
+    disablePopup(index) {
+      this.isPopup = false
+      if (index > 1) {
+        this.verifyPopup = true;
+        setTimeout(() => {
+          this.verifyPopup = false;
+        }, 1500);
+      }
+    },
+    activePopup() {
+      this.isPopup = true
+    },
+  },
+  created () {
+    setTimeout(() => {
+          this.isPopup = true;
+    }, 3000);
+  },
 }
 </script>
 <style>
@@ -160,6 +187,37 @@ export default {
   }
   .lounge_content img {
     margin-bottom: 10px;
+  }
+  .popup_lounge_content {
+    padding: 20px 35px;
+    background: rgba(59, 62, 81, 0.9);
+  }
+  .popup_lounge_content p {
+    display: flex;
+    color: white;
+  }
+  .popup_lounge_content p span {
+    text-align: left;
+  }
+  .popup_lounge_content p img {
+    margin: auto 20px auto auto;
+  }
+  .lounge_popup_btn {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .lounge_popup_btn button{
+    color: #13C8FF;
+    border-radius: 16px;
+    background: white;
+    padding: 3px 15px;
+  }
+  .lounge_popup_btn button:nth-child(1) {
+    margin: auto auto auto 0;
+  }
+  .lounge_popup_btn button:nth-child(2) {
+    margin: auto 0 auto auto;
   }
 </style>
  

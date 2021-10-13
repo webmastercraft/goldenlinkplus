@@ -4,18 +4,17 @@
             <div class="phone sociallogin page_block">
 
                 <div class="community_body">
-                    <div>
+                    <div class="logo_header">
+                        <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
                         <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-                        <div class="logo_header">
-                            <router-link to="/socialmedia/socialmedia_messaging_messages">
-                                <img src="main_box.png">
-                            </router-link>
-                            <router-link to="/socialmedia/socialmedia_main_event_upcoming">
-                                <img src="main_calendar.png">
-                            </router-link>
-                            <router-link to="/socialmedia/community/socialmedia_community"><img src="main_contact.png" class="main_contact"></router-link>
-                            <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
-                        </div>
+                        <router-link to="/socialmedia/socialmedia_messaging_messages">
+                            <img src="main_box.png">
+                        </router-link>
+                        <router-link to="/socialmedia/socialmedia_main_event_upcoming">
+                            <img src="main_calendar.png">
+                        </router-link>
+                        <router-link to="/socialmedia/community/socialmedia_community"><img src="main_contact.png" class="main_contact"></router-link>
+                        <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
                     </div>
                     <p class="community_favicon"><img src="community.png" class="favicon_img">RECENT ACTIVITY<img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
                     <div class="community_header">
@@ -209,6 +208,12 @@
                 @close="closeModal"
             >
             </SwitchGsAccount>
+            <Toggle 
+                v-show="f_show_toggle"
+                @close="closeViewProfile"
+                @view-backdrop="closeViewProfile"
+            >
+            </Toggle>
         </div>
     </div>
 </template>
@@ -218,6 +223,7 @@
     import IndustrySystem2 from "../../../modal/membership_leave.vue";
     import IndustrySystem3 from "../../../modal/membership_follow.vue";
     import SwitchGsAccount from "../../../modal/switch_gs_account.vue";
+    import Toggle from "../../../modal/toggle.vue";
 
     export default {
         name: 'Community_Feed',
@@ -226,7 +232,8 @@
             IndustrySystem1,
             IndustrySystem2,
             IndustrySystem3,
-            SwitchGsAccount
+            SwitchGsAccount,
+            Toggle,
         },
         data () {
             return {
@@ -235,6 +242,7 @@
                 f_industry_system2: false,
                 f_industry_system3: false,
                 f_show_switch_gs_account: false,
+                f_show_toggle: false,
                 toggle: false,
                 massages: []
             }
@@ -242,7 +250,11 @@
         methods: {
             closeModal() {
                 this.f_show_switch_gs_account = false;
+                this.f_show_toggle = false;
             },
+            showToggle() {
+        this.f_show_toggle = true;
+    },
             showIndustry() {
                 this.f_show_industry = true;
             },
@@ -263,6 +275,7 @@
                 this.f_industry_system1 = false;
                 this.f_industry_system2 = false;
                 this.f_industry_system3 = false;
+                this.f_show_toggle = false;
             },
             backIndustrySystem1() {
                 this.f_industry_system1 = false;
