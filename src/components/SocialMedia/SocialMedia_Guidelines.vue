@@ -130,9 +130,11 @@
                 </p>
                 <p class="privacy_title_md">We accept multiple co-hosts to manage your content, posts, events, and anyone joining the community will get your notification when events start or are scheduled.<br>This is the place for the people who follow and love these community events, and another way you can build up your fan base and traffic matrix.</p>
                 <hr class="privacy_hr">
-                <button class="privacy_back_btn">
-                  <img src="reg_next.png" class="reg_next_rotate">Go Back
-                </button>
+                <router-link to="/socialmedia/socialmedia_privacy_policy">
+                    <button class="privacy_back_btn">
+                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                    </button>
+                </router-link>
             </div>
       </div>
     </div>

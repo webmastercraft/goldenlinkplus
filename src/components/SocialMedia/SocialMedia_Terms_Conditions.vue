@@ -93,9 +93,11 @@
                   <span class="privacy_title_md">In the event that any provision in these Terms and Conditions is held to be invalid or unenforceable, the unenforceable part will be given effect to the greatest extent permitted by law and the remaining provisions will remain in full force and effect to the maximum extent permitted by law. The failure of a party to enforce any right or provision of these Terms Of Condition will not be deemed a waiver of such right or provision. These Terms Of Condition together with the rules and policies of GOLD are incorporated herein by reference constitute the entire agreement between GOLD and you with respect to your use of the GOLD Site.</span>
                 </p>
                 <hr class="privacy_hr">
-                <button class="privacy_back_btn">
-                  <img src="reg_next.png" class="reg_next_rotate">Go Back
-                </button>
+                <router-link to="/socialmedia/socialmedia_privacy_policy">
+                    <button class="privacy_back_btn">
+                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                    </button>
+                </router-link>
             </div>
       </div>
     </div>

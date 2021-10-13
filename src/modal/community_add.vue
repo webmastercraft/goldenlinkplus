@@ -163,7 +163,7 @@
         overflow: auto;
     }
     .community_simple_height {
-        height: 65%;
+        height: 49%;
     }
     .community_simple_content_height {
         height: 100%;

@@ -162,7 +162,7 @@
         width: 65%;
     }
     .community_member_search_para {
-        padding: 10px 0;
+        padding: 2px 0;
         display: flex;
         width: 100%;
     }

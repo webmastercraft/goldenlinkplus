@@ -347,7 +347,7 @@
         height: 100%;
     }
     .community_hr {
-        margin: 10px auto;
+        margin: 5px auto;
     }
     .community_number {
         font-weight: 400;

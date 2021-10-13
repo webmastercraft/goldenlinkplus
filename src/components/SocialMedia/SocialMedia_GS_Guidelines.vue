@@ -250,9 +250,11 @@
                         </ul>
                     </p>
                 <hr class="privacy_hr">
-                <button class="privacy_back_btn">
-                  <img src="reg_next.png" class="reg_next_rotate">Go Back
-                </button>
+                <router-link to="/socialmedia/socialmedia_privacy_policy">
+                    <button class="privacy_back_btn">
+                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                    </button>
+                </router-link>
             </div>
       </div>
     </div>

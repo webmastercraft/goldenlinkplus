@@ -31,7 +31,7 @@
                         </div>
                         <div class="community_title_btn">
                             <button>Leave</button>
-                            <button>+ Invite</button>
+                            <button @click="showCommunityAdd">+ Invite</button>
                         </div>
                         <hr class="community_title_hr">
                         <div class="community_chat_type">
@@ -160,6 +160,11 @@
                 @view-backdrop="closeViewProfile"
             >
             </IndustrySystem3>
+            <CommunityAdd 
+                v-show="f_show_community_add"
+                @view-backdrop="closeViewProfile"
+            >
+            </CommunityAdd>
             <CommunityView 
                 v-show="f_show_community_view"
                 @close="closeViewProfile"
@@ -185,6 +190,7 @@ import Industry from "../../../modal/manage_com.vue";
 import IndustrySystem1 from "../../../modal/membership_com.vue";
 import IndustrySystem2 from "../../../modal/membership_leave.vue";
 import IndustrySystem3 from "../../../modal/membership_follow.vue";
+import CommunityAdd from "../../../modal/community_add.vue";
 import CommunityView from "../../../modal/community_view.vue";
 import PostReport from "../../../modal/community_post-report.vue";
 import NewPost from "../../../modal/community_new_post.vue";
@@ -197,6 +203,7 @@ export default {
             IndustrySystem1,
             IndustrySystem2,
             IndustrySystem3,
+            CommunityAdd,
             CommunityView,
             PostReport,
             NewPost
@@ -207,6 +214,7 @@ export default {
             f_industry_system1: false,
             f_industry_system2: false,
             f_industry_system3: false,
+            f_show_community_add: false,
             f_show_community_view: false,
             f_show_post_report: false,
             f_show_new_post: false,
@@ -236,6 +244,9 @@ export default {
         showNewPost() {
             this.f_show_new_post = true;
         },
+        showCommunityAdd() {
+            this.f_show_community_add = true;
+        },
         showCommunityView() {
             this.f_show_community_view = true;
         },
@@ -244,6 +255,7 @@ export default {
             this.f_industry_system1 = false;
             this.f_industry_system2 = false;
             this.f_industry_system3 = false;
+            this.f_show_community_add = false;
             this.f_show_community_view = false;
             this.f_show_post_report = false;
             this.f_show_new_post = false;

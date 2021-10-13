@@ -8,7 +8,7 @@
             <a>Business Guidelines</a>
           </div>
             <div class="left-content shadow_body privacy_body">
-                <p class="privacy_title">Business Guidelines 1.1</p>
+                <p class="privacy_title">Business Guidelines</p>
                 <span class="privacy_title">Business Membership</span><br>
                 <p class="privacy_title_lg">Regular Business<br>
                     <span class="privacy_title_md">Option 1</span><br>
@@ -137,9 +137,11 @@
                     <span class="privacy_title_md">At no time shall business engage in any activity on the platform, or other related platforms, which is considered false, misleading, deceptive or malicious, this includes all posts, campaigns, or other comments written or verbal which serve to defraud either GOLD or other customers on the platform.</span>
                 </p>
                 <hr class="privacy_hr">
-                <button class="privacy_back_btn">
-                  <img src="reg_next.png" class="reg_next_rotate">Go Back
-                </button>
+                <router-link to="/socialmedia/socialmedia_privacy_policy">
+                    <button class="privacy_back_btn">
+                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                    </button>
+                </router-link>
             </div>
       </div>
     </div>
