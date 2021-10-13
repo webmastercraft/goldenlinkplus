@@ -47,12 +47,11 @@
                 </span>
                 <div class="event_para_group">
                     <p>
-                        <img src="user_count_grey.png">2501
-                        <img src="msg_count_grey.png">139
+                        <img src="user_count_grey.png"><span>25.2K</span>
+                        <img src="msg_count_grey.png"><span>198</span>
                     </p>
-                    <p>13.9 K<img src="diamond.png"></p>
-                    <p @click="showPrice">625.4 K<img src="event_coin.png"></p>
-                    <p @click="showSupporter"><img src="login_users.png"></p>
+                    <p><span>13.9 K</span><img src="diamond.png"></p>
+                    <p @click="showPrice"><span>625.4 K</span><img src="event_coin.png"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -164,11 +163,6 @@
             @user-backdrop="removeFlagFromStack"
           >
           </Price>
-          <Supporter 
-            v-show="f_show_supporter"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Supporter>
           <EventSetting 
             v-show="f_show_event_setting"
             @close="closeEventSetting"
@@ -193,7 +187,6 @@ import UserProfile from "../../modal/user_profile.vue";
 import SendGcoin from "../../modal/send_gcoin.vue";
 import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
-import Supporter from "../../modal/supporter.vue";
 import EventSetting from "../../modal/event_setting.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
 
@@ -205,7 +198,6 @@ export default {
       SendGcoin,
       Invite,
       Price,
-      Supporter,
       EventSetting,
       UpcomingEvent
   },
@@ -228,7 +220,6 @@ export default {
         f_show_send_gcoin: false,
         f_show_invite: false,
         f_show_price: false,
-        f_show_supporter: false,
         f_show_event_setting: false,
         f_show_upcoming_event: false,
         modalStack: [],
@@ -676,13 +667,6 @@ export default {
           break;
       }
       switch (temp) {
-        case 'f_show_supporter':
-          this.f_show_supporter = false
-          break;
-        default:
-          break;
-      }
-      switch (temp) {
         case 'f_show_event_setting':
           this.f_show_event_setting = false
           break;
@@ -696,8 +680,6 @@ export default {
       this.f_show_invite = false,
 
       this.f_show_price = false,
-
-      this.f_show_supporter = false,
 
       this.f_show_event_setting = false
     },
@@ -719,10 +701,6 @@ export default {
     showPrice() {
         this.f_show_price = true;
         this.modalStack.push('f_show_price');
-    },
-    showSupporter() {
-        this.f_show_supporter = true;
-        this.modalStack.push('f_show_supporter');
     },
     showEventSetting() {
         this.f_show_event_setting = true;
@@ -845,9 +823,14 @@ export default {
   .event_para_group p {
     margin: 4px 0;
     text-align: right;
-  } 
+    display: flex;
+  }
+  .event_para_group p span {
+    margin: auto;
+  }
   .event_para_group p img {
-    margin: 0 5px;
+    margin: auto;
+    height: 100%;
   }
   .event_user_group {
     display: flex;

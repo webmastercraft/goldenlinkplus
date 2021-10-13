@@ -2,7 +2,15 @@
   <div>
     <div class="container">
       <div class="phone sociallogin">
-        
+          <div class="welcome_dialog loading_screen" v-if="isPopup">
+            <div class="popup_lounge_content" @click="disablePopup(1)">
+              <p><img src="popup_heart.png"><span>Alice Hansen followed you</span></p>
+              <!-- <div class="lounge_popup_btn">
+                <button >Maybe Later</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice"><button>Join as Speaker</button></router-link>
+              </div> -->
+            </div>
+          </div>
           <div class="main_audio_modal">
             <div class="logo_header">
                 <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
@@ -186,6 +194,8 @@ export default {
   },
   data () {
     return {
+      isPopup: false,
+      verifyPopup: false,
       micClicked: false,
       f_show_hallway: false,
       f_show_toggle: false,
@@ -224,13 +234,30 @@ export default {
     },
     closeViewProfile() {
       this.f_show_toggle = false;
-    }
+    },
+    disablePopup(index) {
+      this.isPopup = false
+      if (index > 1) {
+        this.verifyPopup = true;
+        setTimeout(() => {
+          this.verifyPopup = false;
+        }, 1500);
+      }
+    },
+    activePopup() {
+      this.isPopup = true
+    },
   },
   computed: {
     imgSrc: function () {
       return this.micClicked ? 'mic_small.png' : 'mic_small_dis.png'
-    },
-  }
+    }
+  },
+  created () {
+    setTimeout(() => {
+          this.isPopup = true;
+    }, 3000);
+  },
 }
 </script>
 <style>

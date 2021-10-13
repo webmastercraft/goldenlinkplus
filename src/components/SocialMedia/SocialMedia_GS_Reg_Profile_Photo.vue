@@ -45,12 +45,6 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
   .socialmedia_messages_size {
     height: 100%;
     margin: auto;

@@ -7,9 +7,10 @@
                     <router-link to="/socialmedia/community/socialmedia_community_feed" class="header_arrow">
                         <img src="img/header_arrow.png">
                     </router-link>
-                    <a class="upcoming_pos">Community<img src="community/setting.png" class="my_event_btn"></a>
+                    <a class="upcoming_pos">Community</a>
+                    <img src="community/setting.png" class="my_event_btn" @click="showIndustry">
                 </div>
-                <div class="content left-content header_top height_static">
+                <div class="content left-content community_header_top height_static">
                     <div class="community_header_img">
                         <img src="community/world.png" class="community_world_img">
                         <img src="international_user.png" class="community_world_user">
@@ -133,6 +134,32 @@
                     </div>
                 </div>
             </div>
+            <Industry 
+                v-show="f_show_industry"
+                @view-backdrop="closeViewProfile"
+                @showIndustrySystem1="industrySystem1"
+                @showIndustrySystem2="industrySystem2"
+                @showIndustrySystem3="industrySystem3"
+            >
+            </Industry>
+            <IndustrySystem1 
+                v-show="f_industry_system1"
+                @close="backIndustrySystem1"
+                @view-backdrop="closeViewProfile"
+            >
+            </IndustrySystem1>
+            <IndustrySystem2 
+                v-show="f_industry_system2"
+                @close="backIndustrySystem2"
+                @view-backdrop="closeViewProfile"
+            >
+            </IndustrySystem2>
+            <IndustrySystem3
+                v-show="f_industry_system3"
+                @close="backIndustrySystem3"
+                @view-backdrop="closeViewProfile"
+            >
+            </IndustrySystem3>
             <CommunityView 
                 v-show="f_show_community_view"
                 @close="closeViewProfile"
@@ -154,6 +181,10 @@
     </div>
 </template>
 <script>
+import Industry from "../../../modal/manage_com.vue";
+import IndustrySystem1 from "../../../modal/membership_com.vue";
+import IndustrySystem2 from "../../../modal/membership_leave.vue";
+import IndustrySystem3 from "../../../modal/membership_follow.vue";
 import CommunityView from "../../../modal/community_view.vue";
 import PostReport from "../../../modal/community_post-report.vue";
 import NewPost from "../../../modal/community_new_post.vue";
@@ -162,12 +193,20 @@ export default {
 
     name: 'Community',
     components: {
+            Industry,
+            IndustrySystem1,
+            IndustrySystem2,
+            IndustrySystem3,
             CommunityView,
             PostReport,
             NewPost
     },
     data () {
         return {
+            f_show_industry: false,
+            f_industry_system1: false,
+            f_industry_system2: false,
+            f_industry_system3: false,
             f_show_community_view: false,
             f_show_post_report: false,
             f_show_new_post: false,
@@ -179,6 +218,18 @@ export default {
             this.f_show_new_post = false;
             this.isModalVisible = false;
         },
+        showIndustry() {
+            this.f_show_industry = true;
+        },
+        industrySystem1() {
+            this.f_industry_system1 = true;
+        },
+        industrySystem2() {
+            this.f_industry_system2 = true;
+        },
+        industrySystem3() {
+            this.f_industry_system3 = true;
+        },
         showPostReport() {
             this.f_show_post_report = true;
         },
@@ -189,9 +240,22 @@ export default {
             this.f_show_community_view = true;
         },
         closeViewProfile() {
+            this.f_show_industry = false;
+            this.f_industry_system1 = false;
+            this.f_industry_system2 = false;
+            this.f_industry_system3 = false;
             this.f_show_community_view = false;
             this.f_show_post_report = false;
             this.f_show_new_post = false;
+        },
+        backIndustrySystem1() {
+            this.f_industry_system1 = false;
+        },
+        backIndustrySystem2() {
+            this.f_industry_system2 = false;
+        },
+        backIndustrySystem3() {
+            this.f_industry_system3 = false;
         },
         
     }
@@ -292,5 +356,11 @@ export default {
         border-radius: 16px;
         color: #3B3E51;
         margin: 10px auto;
+    }
+    .community_header_top {
+        margin: 80px 20px 20px 20px;
+        border-radius: 12px;
+        overflow: hidden;
+        min-height: calc(100vh - 26px);
     }
 </style>

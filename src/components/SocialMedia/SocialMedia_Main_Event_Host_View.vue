@@ -33,9 +33,8 @@
                         <img src="user_count_grey.png">2501
                         <img src="msg_count_grey.png">139
                     </p>
-                    <p>13.9 K<img src="diamond.png"></p>
-                    <p @click="showPrice">625.4 K<img src="event_coin.png"></p>
-                    <p @click="showSupporter"><img src="login_users.png"></p>
+                    <p><span>13.9 K</span><img src="Sending_Diamonds.png" class="host_view_money_btn"></p>
+                    <p @click="showPrice"><span>625.4 K</span><img src="event_coin.png" class="host_view_money_btn"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -150,11 +149,6 @@
             @user-backdrop="removeFlagFromStack"
           >
           </Price>
-          <Supporter 
-            v-show="f_show_supporter"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Supporter>
           <EventSetting 
             v-show="f_show_event_setting"
             @close="closeEventSetting"
@@ -180,7 +174,6 @@ import SendGcoin from "../../modal/send_gcoin.vue";
 import HostView from "../../modal/host_view.vue";
 import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
-import Supporter from "../../modal/supporter.vue";
 import EventSetting from "../../modal/event_setting_host.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
 
@@ -193,7 +186,6 @@ export default {
       HostView,
       Invite,
       Price,
-      Supporter,
       EventSetting,
       UpcomingEvent
   },
@@ -212,7 +204,6 @@ export default {
         f_show_send_gcoin: false,
         f_show_host_view: false,
         f_show_invite: false,
-        f_show_supporter: false,
         f_show_price: false,
         f_show_event_setting: false,
         f_show_upcoming_event: false,
@@ -654,13 +645,6 @@ export default {
           break;
       }
       switch (temp) {
-        case 'f_show_supporter':
-          this.f_show_supporter = false
-          break;
-        default:
-          break;
-      }
-      switch (temp) {
         case 'f_show_event_setting':
           this.f_show_event_setting = false
           break;
@@ -676,8 +660,6 @@ export default {
       this.f_show_host_view = false,
 
       this.f_show_price = false,
-
-      this.f_show_supporter = false,
 
       this.f_show_event_setting = false
     },
@@ -702,10 +684,6 @@ export default {
     showPrice() {
         this.f_show_price = true;
         this.modalStack.push('f_show_price');
-    },
-    showSupporter() {
-        this.f_show_supporter = true;
-        this.modalStack.push('f_show_supporter');
     },
     showEventSetting() {
         this.f_show_event_setting = true;
@@ -751,6 +729,9 @@ export default {
     position: absolute;
     top: 50px;
     right: 20px;
+  }
+  .host_view_money_btn {
+    margin: auto auto auto 10px !important;
   }
 </style>
  

@@ -80,23 +80,4 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_messages_size {
-    height: 100%;
-    margin: auto;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
-  .notification_non {
-    background-color: white;
-  }
 </style>

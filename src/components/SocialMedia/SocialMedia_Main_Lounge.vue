@@ -106,7 +106,7 @@ export default {
           {rout : "gs_wallet/socialmedia_gs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
-          {rout : "", img: "lounge_interests.png", name: "My Interests"},
+          {rout : "", img: "lounge_interests.png", name: "My Space"},
           {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
@@ -198,9 +198,10 @@ export default {
   }
   .popup_lounge_content p span {
     text-align: left;
+    margin: auto auto auto 0;
   }
   .popup_lounge_content p img {
-    margin: auto 20px auto auto;
+    margin: auto 20px auto 0;
   }
   .lounge_popup_btn {
     display: flex;

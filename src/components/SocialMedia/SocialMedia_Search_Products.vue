@@ -79,7 +79,7 @@ export default {
     font-size: 16px;
   }
   .socialmedia_search_para {
-    padding: 15px 10px 15px 0;
+    padding: 5px 10px;
     display: flex;
     width: 100%;
   }

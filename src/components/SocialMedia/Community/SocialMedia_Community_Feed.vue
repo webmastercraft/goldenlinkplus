@@ -253,8 +253,8 @@
                 this.f_show_toggle = false;
             },
             showToggle() {
-        this.f_show_toggle = true;
-    },
+                this.f_show_toggle = true;
+            },
             showIndustry() {
                 this.f_show_industry = true;
             },

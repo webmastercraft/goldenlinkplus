@@ -60,7 +60,7 @@ export default {
     border-radius: 12px;
     overflow: hidden;
     min-height: calc(100vh - 26px);
-    padding-bottom: 20px;
+    padding: 10px 0;
   }
   .reg_next_rotate {
     transform: rotate(180deg);

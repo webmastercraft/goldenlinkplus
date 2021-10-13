@@ -146,6 +146,7 @@ export default {
     text-align: center;
     width: 100%;
     padding: 7px 20px;
+    background: #D7F6FF;
   }
   .activities_user img {
     height: 100%;
