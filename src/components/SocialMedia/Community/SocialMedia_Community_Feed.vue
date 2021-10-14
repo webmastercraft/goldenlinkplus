@@ -62,7 +62,8 @@
                                         </p>
                                         <p class="community_send_p">
                                             <img :src="`${item.diamonds ? 'diamond_frame.png' : 'chat_diamond.png'}`">
-                                            <img  class="community_frame_diamond" :class="{'sending_diamond_one': item.sendingDiamondActive == true}">
+                                            <img src="community/send.png" class="community_frame_diamond sending_diamond_one" v-if="item.unsendingDiamondActive">
+                                            <img src="community/unsend.png" class="community_frame_diamond sending_diamond_two" v-if="item.sendingDiamondActive">
                                         {{item.diamonds}}
                                     </p>
                                     </div>
@@ -311,12 +312,17 @@
                     msg: "Nice post! Surely this will help as others!",
                     diamonds: 0,
                     sendDiamondText: "Send Diamond",
-                    sendingDiamondActive: false
+                    sendingDiamondActive: false,
+                    unsendingDiamondActive: false,
                 };
                 this.massages.push(new_msg);
             },
             sendDiamond(index) {
-                this.massages[index].sendingDiamondActive = true;
+                if (this.massages[index].diamonds > 0) {
+                    this.massages[index].sendingDiamondActive = true;
+                } else {
+                    this.massages[index].unsendingDiamondActive = true;
+                }
                 setTimeout(() => {
                     if (this.massages[index].diamonds > 0) {
                         this.massages[index].diamonds = 0;
@@ -326,6 +332,7 @@
                         this.massages[index].sendDiamondText = "Unsend Diamond";
                     }
                     this.massages[index].sendingDiamondActive = false;
+                    this.massages[index].unsendingDiamondActive = false;
                 }, 1500)
             }
         }
@@ -518,8 +525,20 @@
     }
     @keyframes sending_diamond_one_frame {
         0% {opacity: 1.00;}
-        25% {opacity: 1.0; width: 30px; height: 21px; background: url('/community/send.png') no-repeat;}
-        75% {opacity: 1.00; width: 30px; height: 21px; background: url('/community/unsend.png') no-repeat;}
+        25% {opacity: 1.0;}
+        75% {opacity: 1.00;}
+        100% {opacity: 1.00;}
+        from {top: 7px; left: 4px;}
+        to {top: 7px; left: 4px;}
+    }
+    .sending_diamond_two {
+        animation-name: sending_diamond_two_frame;
+        animation-duration: 1.5s;
+    }
+    @keyframes sending_diamond_two_frame {
+        0% {opacity: 1.00;}
+        25% {opacity: 1.0;}
+        75% {opacity: 1.00;}
         100% {opacity: 1.00;}
         from {top: 7px; left: 4px;}
         to {top: 7px; left: 4px;}
@@ -529,6 +548,8 @@
     }
     .community_frame_diamond {
         position: absolute;
+        top: 7px;
+        left: 4px;
     }
 </style>
 
