@@ -47,23 +47,27 @@
                                 <img src="Profile_on.png" class="community_chat_user">
                                 <div class="community_chat_content">
                                     <p><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                    <p><img src="diamond_frame.png">123K</p>
+                                    <p><img src="chat_diamond.png">0</p>
                                 </div>
                             </div>
                             <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span><span @click='toggle = true'>Respond</span><span class="community_dots">•</span><span class="community_number">25m</span></p>
 
                             <div v-for="(item, index) in massages" :key="index">
                                 <div class="community_chat">
-                                    <img src="Profile_on.png" class="community_chat_user_sm">
+                                    <img src="Jean_Smith.png" class="community_chat_user_sm">
                                     <div class="community_chat_content">
                                         <p class="community_chat_content_sm">
                                             <span><b>{{item.name}}</b></span>
                                             <span>{{item.msg}}</span>
                                         </p>
-                                        <p><img src="diamond_frame.png">{{item.diamonds + 'K'}}</p>
+                                        <p class="community_send_p">
+                                            <img :src="`${item.diamonds ? 'diamond_frame.png' : 'chat_diamond.png'}`">
+                                            <img  class="community_frame_diamond" :class="{'sending_diamond_one': item.sendingDiamondActive == true}">
+                                        {{item.diamonds}}
+                                    </p>
                                     </div>
                                 </div>
-                                <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
+                                <p class="community_chat_detail"><span @click="sendDiamond(index)">{{item.sendDiamondText}}</span><span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
                             </div>
 
                             <div class="community_chat_lg" v-show='toggle'>
@@ -305,9 +309,24 @@
                 let new_msg = {
                     name: "Rayford Chenail",
                     msg: "Nice post! Surely this will help as others!",
-                    diamonds: "123"
+                    diamonds: 0,
+                    sendDiamondText: "Send Diamond",
+                    sendingDiamondActive: false
                 };
                 this.massages.push(new_msg);
+            },
+            sendDiamond(index) {
+                this.massages[index].sendingDiamondActive = true;
+                setTimeout(() => {
+                    if (this.massages[index].diamonds > 0) {
+                        this.massages[index].diamonds = 0;
+                        this.massages[index].sendDiamondText = "Send Diamond";
+                    } else {
+                        this.massages[index].diamonds = 1;
+                        this.massages[index].sendDiamondText = "Unsend Diamond";
+                    }
+                    this.massages[index].sendingDiamondActive = false;
+                }, 1500)
             }
         }
     }
@@ -431,6 +450,11 @@
     }
     .community_chat_content p:last-child img {
         margin: auto auto 0 auto;
+
+    }
+    .community_send_p img:nth-child(1) {
+        width: 21px;
+        height: 16px;
     }
     .community_chat_detail {
         font-size: 13px;
@@ -487,6 +511,24 @@
     .community_chat_send_lg > button {
         position: absolute;
         top: 3px;
+    }
+    .sending_diamond_one {
+        animation-name: sending_diamond_one_frame;
+        animation-duration: 1.5s;
+    }
+    @keyframes sending_diamond_one_frame {
+        0% {opacity: 1.00;}
+        25% {opacity: 1.0; width: 30px; height: 21px; background: url('/community/send.png') no-repeat;}
+        75% {opacity: 1.00; width: 30px; height: 21px; background: url('/community/unsend.png') no-repeat;}
+        100% {opacity: 1.00;}
+        from {top: 7px; left: 4px;}
+        to {top: 7px; left: 4px;}
+    }
+    .community_send_p {
+        position: relative;
+    }
+    .community_frame_diamond {
+        position: absolute;
     }
 </style>
 
