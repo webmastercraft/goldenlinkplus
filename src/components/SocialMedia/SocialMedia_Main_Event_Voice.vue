@@ -15,7 +15,7 @@
       </div>
       <div class="phone sociallogin" v-show="!isloading">
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
+            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"></p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -1145,6 +1145,11 @@ export default {
       top: 10px;
       left: 140px;
       display: grid;
+    }
+    .event_room_lock {
+      position: fixed;
+      margin: auto 10px !important;
+      z-index: 1040;
     }
 </style>
  

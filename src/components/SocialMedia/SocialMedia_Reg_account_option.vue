@@ -28,7 +28,7 @@
                   <p>YES! I understand and agree to Goldenlink+ Terms of service, including the <b>User Agreement</b> and <b><router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link></b></p>
                 </div>
               </div>
-            </form>
+          </form>
           <p class="glplogo_reg_account_title">Set up your Account:</p>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_business">Register as a Business</router-link></button>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_gsmarketer">Register as  a GS Marketer</router-link></button>

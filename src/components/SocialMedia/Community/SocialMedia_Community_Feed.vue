@@ -37,62 +37,64 @@
                         </vue-player> -->
                         <hr class="community_hr">
                         <p class="community_utility">
-                            <span>275 Comments</span>
+                            <span @click="isChat = !isChat">275 Comments</span>
                             <span>Comment<img src="community/messaging.png"></span>
-                            <span>Share<img src="community/replay.png"></span>
+                            <span @click="showCommunityShare">Share<img src="community/replay.png"></span>
                         </p>
                         <hr class="community_hr">
-                        <div class="community_chat">
-                            <img src="Profile_on.png" class="community_chat_user">
-                            <div class="community_chat_content">
-                                <p><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                <p><img src="diamond_frame.png">123K</p>
-                            </div>
-                        </div>
-                        <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span><span @click='toggle = true'>Respond</span><span class="community_dots">•</span><span class="community_number">25m</span></p>
-
-                        <div v-for="(item, index) in massages" :key="index">
+                        <div v-show="isChat">
                             <div class="community_chat">
-                                <img src="Profile_on.png" class="community_chat_user_sm">
+                                <img src="Profile_on.png" class="community_chat_user">
                                 <div class="community_chat_content">
-                                    <p class="community_chat_content_sm">
-                                        <span><b>{{item.name}}</b></span>
-                                        <span>{{item.msg}}</span>
-                                    </p>
-                                    <p><img src="diamond_frame.png">{{item.diamonds + 'K'}}</p>
+                                    <p><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
+                                    <p><img src="diamond_frame.png">123K</p>
                                 </div>
                             </div>
-                            <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
-                        </div>
+                            <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span><span @click='toggle = true'>Respond</span><span class="community_dots">•</span><span class="community_number">25m</span></p>
 
-                        <div class="community_chat_lg" v-show='toggle'>
-                            <img src="Jean_Smith.png" class="community_chat_user_sm">
-                            <div class="chat_sentence community_chat_send">
-                                <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background">
-                                <button type="button" class="btn_cam">
-                                    <img src="camera.png">
-                                </button>
-                                <button type="button" class="btn_emoty">
-                                    <img src="emoty.png">
-                                </button>
-                                <button type="button" class="btn_send" @click='sendMessage()'>
-                                    <img src="send.png">
-                                </button>
+                            <div v-for="(item, index) in massages" :key="index">
+                                <div class="community_chat">
+                                    <img src="Profile_on.png" class="community_chat_user_sm">
+                                    <div class="community_chat_content">
+                                        <p class="community_chat_content_sm">
+                                            <span><b>{{item.name}}</b></span>
+                                            <span>{{item.msg}}</span>
+                                        </p>
+                                        <p><img src="diamond_frame.png">{{item.diamonds + 'K'}}</p>
+                                    </div>
+                                </div>
+                                <p class="community_chat_detail">Send Diamond<span class="community_dots">•</span>Respond<span class="community_dots">•</span><span class="community_number">25m</span></p>
                             </div>
-                        </div>
-                        <div class="community_chat_lg">
-                            <img src="Jean_Smith.png" class="community_chat_user">
-                            <div class="chat_sentence community_chat_send_lg">
-                                <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background_lg">
-                                <button type="button" class="btn_cam">
-                                    <img src="camera.png">
-                                </button>
-                                <button type="button" class="btn_emoty">
-                                    <img src="emoty.png">
-                                </button>
-                                <button type="button" class="btn_send">
-                                    <img src="send.png">
-                                </button>
+
+                            <div class="community_chat_lg" v-show='toggle'>
+                                <img src="Jean_Smith.png" class="community_chat_user_sm">
+                                <div class="chat_sentence community_chat_send">
+                                    <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background">
+                                    <button type="button" class="btn_cam">
+                                        <img src="camera.png">
+                                    </button>
+                                    <button type="button" class="btn_emoty">
+                                        <img src="emoty.png">
+                                    </button>
+                                    <button type="button" class="btn_send" @click='sendMessage()'>
+                                        <img src="send.png">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="community_chat_lg">
+                                <img src="Jean_Smith.png" class="community_chat_user">
+                                <div class="chat_sentence community_chat_send_lg">
+                                    <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background_lg">
+                                    <button type="button" class="btn_cam">
+                                        <img src="camera.png">
+                                    </button>
+                                    <button type="button" class="btn_emoty">
+                                        <img src="emoty.png">
+                                    </button>
+                                    <button type="button" class="btn_send">
+                                        <img src="send.png">
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,6 +216,11 @@
                 @view-backdrop="closeViewProfile"
             >
             </Toggle>
+            <CommunityShare 
+                v-show="f_show_community_share"
+                @view-backdrop="closeViewProfile"
+            >
+            </CommunityShare>
         </div>
     </div>
 </template>
@@ -224,6 +231,7 @@
     import IndustrySystem3 from "../../../modal/membership_follow.vue";
     import SwitchGsAccount from "../../../modal/switch_gs_account.vue";
     import Toggle from "../../../modal/toggle.vue";
+    import CommunityShare from "../../../modal/community_share.vue";
 
     export default {
         name: 'Community_Feed',
@@ -234,15 +242,18 @@
             IndustrySystem3,
             SwitchGsAccount,
             Toggle,
+            CommunityShare,
         },
         data () {
             return {
+                isChat: true,
                 f_show_industry: false,
                 f_industry_system1: false,
                 f_industry_system2: false,
                 f_industry_system3: false,
                 f_show_switch_gs_account: false,
                 f_show_toggle: false,
+                f_show_community_share: false,
                 toggle: false,
                 massages: []
             }
@@ -270,12 +281,16 @@
             showSwitchGsAccount() {
                 this.f_show_switch_gs_account = true;
             },
+            showCommunityShare() {
+                this.f_show_community_share = true;
+            },
             closeViewProfile() {
                 this.f_show_industry = false;
                 this.f_industry_system1 = false;
                 this.f_industry_system2 = false;
                 this.f_industry_system3 = false;
                 this.f_show_toggle = false;
+                this.f_show_community_share = false;
             },
             backIndustrySystem1() {
                 this.f_industry_system1 = false;

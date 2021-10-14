@@ -4,10 +4,10 @@
         <div class="phone header_phone">
           <div class="header_modal">
             <router-link to="/businessusercenter" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>UPGRADE YOUR BUSINESS ACCOUNT</a>
+            <a>UPGRADE BUSINESS ACCOUNT</a>
           </div>
           <div class="content left-content header_top">
-            <p class="secure_checkout_title">Order Details</p>
+            <p class="secure_checkout_title">Business Guidelines</p>
             <p class="medium_title">BUSINESS MEMBERSHIP</p>
             <p class="medium_1_title">Regular Business</p>
             <p class="medium_2_title"><b>Option 1</b></p>
@@ -60,11 +60,11 @@
             </div>
             
             <ul>
-              <li>Branding</li>
+              <li><b>Branding</b></li>
               <p class="upgrade_buc_desc">Create Events or Communities for your brand or service. Grow your Fan base and build your Brand Matrix, use Events for communicating,  promoting, and sending G-Coins.</p>
-              <li>Build your incentive program based upon your budget constraints.</li>
+              <li><b>Build your incentive program based upon your budget constraints.</b></li>
               <p class="upgrade_buc_desc">Reward your partners including but not limited to G-Coin rewards, CPC G-Coin, as well as conversion commissions.</p>
-              <li>Business Gold member fee applies to traffic costs. Post your campaign offer details in your account on GOLD.</li>
+              <li><b>Business Gold member fee applies to traffic costs. Post your campaign offer details in your account on GOLD.</b></li>
               <p class="upgrade_buc_desc">Tap and go, the campaign will be active.  Invite friends, partners, employees, influencers, marketers, and promote your offers.  The GOLD tracking system will automatically track your campaign conversions.</p>
             </ul>
 
@@ -72,67 +72,23 @@
 
             <p class="medium_title">UPGRADE YOUR ACCOUNT</p>
             <img src="img/logo.svg" class="buc_account_logo">
-            <p class="medium_title">Business Diamond Membership</p>
-            <div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">One (1) free landing page design</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">One (1) free set of Ad banners<br>(total of 6 banners)</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">Profile bundle for events</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">Admin rights for your events</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">Unlimited Community Admin Rights</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">Demote Host or Co-host</p>
-                    </div>
-                </div>
-                <div class="diamond_logo">
-                    <div class="check_logo">
-                      <img src="img/check.png" class="business-diamond_check">
-                    </div>
-                    <div class="notice_list">
-                      <p class="diamond_logo_p">Review user removal details</p>
-                    </div>
-                </div>
-            </div>
-
-            <p class="upgrade_gs_para"><b>Note:</b> The deposit is non-refundable<br>This deposit will be used for your various campaign expenses such as GS Coins Rewards Credit, CPC G-Coins benefits, Conversion sales commissions, sending G-coins to event speakers and audience</p>
+            <p class="medium_title">Business Gold Membership</p>
+            <label class="label_select">
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+              <span class="upgrade_account_select">$1000 deposit<br>Choose 1 of the options below.</span>
+            </label>
+            <label class="label_select">
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+              <span class="upgrade_account_select">$2000 deposit<br>Choose 2 of the options below.</span>
+            </label>
+            <label class="label_select">
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+              <span class="upgrade_account_select">$3000 deposit<br>Get all 3 options below.</span>
+            </label>
+            <p class="business_fee_title">Gold Business Membership fee selection:</p>
             <div class="gs_account_stage_year">
             <select class="form-control gs_account_stage_select">
               <option>1 Year</option>
@@ -141,12 +97,32 @@
               <option>4 Year</option>
               <option>5 Year</option>
             </select>
-            <p class="stage_orange_price">$3000</p>
+            <p class="stage_orange_price">$1000</p>
             </div>
             <p class="gs_account_stage_date">Renews July 2022 for $3000</p>
-            <hr class="stage_date_money">
-            <p class="stage_total">Total Amount<span class="stage_right"><b>$3000</b></span></p>
+            <p class="business_fee_title"><b>Business Gold Membership comes with FREE Features. Select any of the below features that best fits to your business goals.</b></p>
+            <form>
+              <div>
+                <div class="checkbox_check">
+                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                  <label for="vehicle1"></label>
+                  <p>Traffic direct  to Gold5g store, or your own official website, or any other e-commerce platform that you choose (in order to work correctly you must include the GOLD provided tracking pixel).</p>
+                </div>
+                <div class="checkbox_check">
+                  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                  <label for="vehicle2"></label>
+                  <p>One landing page design for free; One set of advertising banners (one of each size).</p>
+                </div>
+                <div class="checkbox_check">
+                  <input type="checkbox" id="vehicle3" name="vehicle3" value="Car">
+                  <label for="vehicle3"></label>
+                  <p>3. Free single payment for 4 Admin items.</p>
+                </div>
+              </div>
+            </form>
+            <p class="stage_total">Total Amount<span class="stage_right"><b>$1000</b></span></p>
             <button class="stage_paypal_btn"><img src="img/paypal.png" class="paypal_btn_img">alicedu@goldenlinkplus.com</button>
+            <p class="upgrade_gs_para"><b>Note:</b> The deposit is non-refundable<br>This deposit will be used for your various campaign expenses such as GS Coins Rewards Credit, CPC G-Coins benefits, Conversion sales commissions, sending G-coins to event speakers and audience</p>
             <router-link to="/businessusercenter/business_secure_checkout">
               <button class="gs_account_stage_checkout_btn">Checkout
                 <img src="reg_next.png" class="glplogo_reg_btn_img">
@@ -195,17 +171,13 @@ export default {
   .header_phone {
     position: relative;
   }
-  .medium_title {
-    margin: 20px 20px 10px 20px;
-    font-weight: 600;
-  }
   .medium_2_title {
     margin: 0 20px;
     font-weight: 500;
   }
   .gs_account_check_link {
     color: #13C8FF;
-    font-size: 18px;
+    font-size: 16px;
   }
   .gs_account_link {
     margin: 10px 20px;
@@ -232,7 +204,7 @@ export default {
   }
   .gs_account_stage_date {
     text-align: right;
-    margin:20px 20px 0 0;
+    margin:20px;
   }
   .stage_right {
     float: right;
@@ -262,7 +234,7 @@ export default {
       width: 39px;
       background-size: 100%;
       background: url('../../../public/Checkbox_non.png') no-repeat;
-      margin: auto  0;
+      margin: 0;
   }
 
   input[type=checkbox]:checked + label {
@@ -271,15 +243,15 @@ export default {
       height: 39px;
       background-size: 100%;
       display:inline-block;
-      margin: auto 0;
-
+      margin: 0;
   }
   .CP_img {
-    margin: 0 5px;
+    margin: auto;
   }
   .CP_images {
-    margin: 5px 20px 15px;
+    margin: 20px;
     text-align: center;
+    display: flex;
   }
   .upgrade_buc_desc {
     margin: 0;
@@ -305,5 +277,64 @@ export default {
     margin: 7px 0 0 70px !important;
     font-size: 16px !important;
     color: #F4992D;
+  }
+
+
+  /* The container */
+  .label_select {
+    display: flex;
+    position: relative;
+    margin: 10px auto 10px 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+  .label_select input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 39px;
+    width: 39px;
+    background: url('../../../public/Checkbox_non.png') no-repeat;
+    border-radius: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  .label_select input:checked ~ .checkmark {
+    background: url('../../../public/Checkbox.png') no-repeat;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .label_select input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .upgrade_account_select {
+    font-size: 15px;
+    margin: auto auto auto 50px;
+  }
+  .business_fee_title {
+    margin: auto 20px 20px;
+    font-size: 14px;
   }
 </style>

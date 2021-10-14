@@ -60,7 +60,9 @@
               </tr>
             </table>
 
-            <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
+            <router-link to="/usercenter/how_it_works">
+              <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
+            </router-link>
 
             <ul>
               <li>You have the right to sell, transfer or auction your ownership of these exclusive rights at your sole discretion; upon such a sale, the following fees are applied:</li>
@@ -144,6 +146,8 @@ export default {
   },
   data () {
     return {
+      is_stage1: true,
+      isModalVisible: false,
       values: [
         {regular: "6%", gold: "10%", all: "$1-$499"},
         {regular: "6%", gold: "20%", all: "$500-$999"},
@@ -162,8 +166,6 @@ export default {
         {membership: "Regular price $599 + $100 (Add-on items )", offer: "For the last 9,000 paid members"},
         {membership: "Total early stage opportunity", offer: "First 2,0000 paid members"},
       ],
-      is_stage1: true,
-      isModalVisible: false
     };
   },
   methods: {
@@ -186,10 +188,6 @@ export default {
 <style>
   .header_phone {
     position: relative;
-  }
-  .medium_title {
-    margin: 20px 20px 10px 20px;
-    font-weight: 600;
   }
   .medium_2_title {
     margin: 0 20px;
@@ -319,10 +317,6 @@ export default {
     margin: 0 0 0 70px ;
     font-size: 14px;
   }
-  .gs_account_stage_date {
-    text-align: right;
-    margin:20px 20px 0 0;
-  }
   .stage_right {
     float: right;
   }
@@ -345,11 +339,11 @@ export default {
   }
   .checkbox_check {
     display: flex;
-    margin: 0 20px;
-    font-size: 12px;
+    margin: 20px;
   }
   .checkbox_check p{
-    width: calc(100% - 97px);
-    margin: auto;
+    width: calc(100% - 60px);
+    margin: 0 0 auto 20px;
+    font-size: 14px;
   }
 </style>

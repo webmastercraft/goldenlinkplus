@@ -27,7 +27,7 @@
           <div class="main_body main_body_audio">
             <div class="para_event">
               <div class="para_title">
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<img src="community/about_key.png" class="event_room_lock"></p>
                 <router-link to="/socialmedia/socialmedia_main_event_voice">
                   <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 </router-link>
