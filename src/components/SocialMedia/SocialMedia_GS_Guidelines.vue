@@ -250,11 +250,16 @@
                         </ul>
                     </p>
                 <hr class="privacy_hr">
-                <router-link to="/socialmedia/socialmedia_privacy_policy">
-                    <button class="privacy_back_btn">
-                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                <div class="how_it_works_btn term_condition_back_btn">
+                    <router-link to="/socialmedia/socialmedia_main" class="how_it_works_back_btn">
+                        <button class="how_it_works_back_btn">
+                            <img src="reg_next.png" class="reg_next_rotate">Go Back
+                        </button>
+                    </router-link>
+                    <button class="back_top_btn" @click="scrollToTop">
+                        <img src="img/top_arrow.png">
                     </button>
-                </router-link>
+                </div>
             </div>
       </div>
     </div>
@@ -288,6 +293,11 @@ export default {
                             {membership: "Total early stage opportunity", offer: "First 2,0000 paid members"},
                         ],
             }
+    },
+    methods: { 
+        scrollToTop() {
+            window.scrollTo(0,0);
+        }
     }
 }
 </script>

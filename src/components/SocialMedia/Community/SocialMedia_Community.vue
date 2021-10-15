@@ -17,7 +17,10 @@
                     </div>
                     <div class="community_title">
                         <p class="community_title_p"><img src="triangle.png" class="favicon_img">Money Makers Community<img src="img/dots.png" @click="showCommunityView"></p>
-                        <p class="community_title_detail"><img src="community/key.png" class="favicon_img">Private Community •  125 Members</p>
+                        <p class="community_title_detail">
+                            <span><img src="community/key.png" class="favicon_img">Private Community •  125 Members</span>
+                            <span @click="showCommunityShare"><img src="community/replay.png">Share</span>
+                        </p>
                         <div class="community_title_img">
                             <router-link to="/socialmedia/community/socialmedia_community_member">
                                 <img src="Lily.png">
@@ -71,63 +74,91 @@
                             </vue-player> -->
                             <hr class="community_hr">
                             <p class="community_utility">
-                                <span>275 Comments</span>
+                                <span @click="isChat = !isChat">275 Comments</span>
                                 <span>Comment<img src="community/messaging.png"></span>
-                                <span>Share<img src="community/replay.png"></span>
+                                <span @click="showCommunityShare">Share<img src="community/replay.png"></span>
                             </p>
                             <hr class="community_hr">
-                            <div class="community_chat">
-                                <img src="Profile_on.png" class="community_chat_user">
-                                <div class="community_chat_content">
-                                    <p><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                    <p><img src="diamond_frame.png">123K</p>
+                            <div v-show="isChat">
+                                <div v-for="(item, index) in massages1" :key="index">
+                                    <div class="community_chat">
+                                        <img src="Profile_on.png" class="community_chat_user">
+                                        <div class="community_chat_content">
+                                            <p class="community_chat_content_sm">
+                                                <span><b>{{item.name}}</b></span>
+                                                <span>{{item.msg}}</span>
+                                            </p>
+                                            <p class="community_send_p">
+                                                <img :src="`${item.diamonds ? 'diamond_frame.png' : 'chat_diamond.png'}`">
+                                                <img src="community/send.png" class="community_frame_diamond sending_diamond_one" v-if="item.unsendingDiamondActive">
+                                                <img src="community/unsend.png" class="community_frame_diamond sending_diamond_two" v-if="item.sendingDiamondActive">
+                                            {{item.diamonds}}
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <p class="community_chat_detail">
+                                        <span @click="sendDiamond1(index)">{{item.sendDiamondText}}</span>
+                                        <span class="community_dots">•</span>
+                                        <span @click='toggle = true'>Respond</span>
+                                        <span class="community_dots">•</span>
+                                        <span class="community_number">25m</span>
+                                    </p>
                                 </div>
-                            </div>
-                            <p class="community_chat_detail"><b>Private Community<span class="community_dots">•</span>Respond<span class="community_dots">•</span></b><span class="community_number">25m</span></p>
-                            <div class="community_chat">
-                                <img src="Profile_on.png" class="community_chat_user_sm">
-                                <div class="community_chat_content">
-                                    <p class="community_chat_content_sm"><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                    <p><img src="diamond_frame.png">123K</p>
+
+                                <div v-for="(item, index) in massages" :key="index">
+                                    <div class="community_chat">
+                                        <img src="Jean_Smith.png" class="community_chat_user_sm">
+                                        <div class="community_chat_content">
+                                            <p class="community_chat_content_sm">
+                                                <span><b>{{item.name}}</b></span>
+                                                <span>{{item.msg}}</span>
+                                            </p>
+                                            <p class="community_send_p">
+                                                <img :src="`${item.diamonds ? 'diamond_frame.png' : 'chat_diamond.png'}`">
+                                                <img src="community/send.png" class="community_frame_diamond sending_diamond_one" v-if="item.unsendingDiamondActive">
+                                                <img src="community/unsend.png" class="community_frame_diamond sending_diamond_two" v-if="item.sendingDiamondActive">
+                                            {{item.diamonds}}
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <p class="community_chat_detail">
+                                        <span @click="sendDiamond(index)">{{item.sendDiamondText}}</span>
+                                        <span class="community_dots">•</span>
+                                        Respond
+                                        <span class="community_dots">•</span>
+                                        <span class="community_number">25m</span>
+                                    </p>
                                 </div>
-                            </div>
-                            <p class="community_chat_detail"><b>Private Community<span class="community_dots">•</span>Respond<span class="community_dots">•</span></b><span class="community_number">25m</span></p>
-                            <div class="community_chat">
-                                <img src="Profile_on.png" class="community_chat_user_sm">
-                                <div class="community_chat_content">
-                                    <p class="community_chat_content_sm"><span><b>Rayford Chenail</b></span><span>Nice post! Surely this will help  as others!</span></p>
-                                    <p><img src="diamond_frame.png">123K</p>
+
+                                <div class="community_chat_lg" v-show='toggle'>
+                                    <img src="Jean_Smith.png" class="community_chat_user_sm">
+                                    <div class="chat_sentence community_chat_send">
+                                        <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background">
+                                        <button type="button" class="btn_cam">
+                                            <img src="camera.png">
+                                        </button>
+                                        <button type="button" class="btn_emoty">
+                                            <img src="emoty.png">
+                                        </button>
+                                        <button type="button" class="btn_send" @click='sendMessage()'>
+                                            <img src="send.png">
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="community_chat_detail"><b>Private Community<span class="community_dots">•</span>Respond<span class="community_dots">•</span></b><span class="community_number">25m</span></p>
-                            <div class="community_chat_lg">
-                                <img src="Jean_Smith.png" class="community_chat_user_sm">
-                                <div class="chat_sentence community_chat_send">
-                                    <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background">
-                                    <button type="button" class="btn_cam">
-                                        <img src="camera.png">
-                                    </button>
-                                    <button type="button" class="btn_emoty">
-                                        <img src="emoty.png">
-                                    </button>
-                                    <button type="button" class="btn_send">
-                                        <img src="send.png">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="community_chat_lg">
-                                <img src="Jean_Smith.png" class="community_chat_user">
-                                <div class="chat_sentence community_chat_send_lg">
-                                    <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background_lg">
-                                    <button type="button" class="btn_cam">
-                                        <img src="camera.png">
-                                    </button>
-                                    <button type="button" class="btn_emoty">
-                                        <img src="emoty.png">
-                                    </button>
-                                    <button type="button" class="btn_send">
-                                        <img src="send.png">
-                                    </button>
+                                <div class="community_chat_lg">
+                                    <img src="Jean_Smith.png" class="community_chat_user">
+                                    <div class="chat_sentence community_chat_send_lg">
+                                        <input type="text" placeholder="Type your comment..." class="socialmedia_chat_input form-control community_chat_background_lg">
+                                        <button type="button" class="btn_cam">
+                                            <img src="camera.png">
+                                        </button>
+                                        <button type="button" class="btn_emoty">
+                                            <img src="emoty.png">
+                                        </button>
+                                        <button type="button" class="btn_send">
+                                            <img src="send.png">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -182,6 +213,11 @@
                 @view-backdrop="closeViewProfile"
             >
             </NewPost>
+            <CommunityShare 
+                v-show="f_show_community_share"
+                @view-backdrop="closeViewProfile"
+            >
+            </CommunityShare>
         </div>
     </div>
 </template>
@@ -194,6 +230,7 @@ import CommunityAdd from "../../../modal/community_add.vue";
 import CommunityView from "../../../modal/community_view.vue";
 import PostReport from "../../../modal/community_post-report.vue";
 import NewPost from "../../../modal/community_new_post.vue";
+import CommunityShare from "../../../modal/community_share.vue";
 
 export default {
 
@@ -206,10 +243,12 @@ export default {
             CommunityAdd,
             CommunityView,
             PostReport,
-            NewPost
+            NewPost,
+            CommunityShare,
     },
     data () {
         return {
+            isChat: true,
             f_show_industry: false,
             f_industry_system1: false,
             f_industry_system2: false,
@@ -218,6 +257,20 @@ export default {
             f_show_community_view: false,
             f_show_post_report: false,
             f_show_new_post: false,
+            f_show_community_share: false,
+            f_show_toggle: false,
+            toggle: false,
+            massages: [],
+            massages1: [
+                {
+                    name: "Rayford Chenail",
+                    msg: "Nice post! Surely this will help as others!",
+                    diamonds: 0,
+                    sendDiamondText: "Send Diamond",
+                    sendingDiamondActive: false,
+                    unsendingDiamondActive: false,
+                }
+            ]
         }
     },
     methods: {
@@ -250,6 +303,9 @@ export default {
         showCommunityView() {
             this.f_show_community_view = true;
         },
+        showCommunityShare() {
+            this.f_show_community_share = true;
+        },
         closeViewProfile() {
             this.f_show_industry = false;
             this.f_industry_system1 = false;
@@ -259,6 +315,7 @@ export default {
             this.f_show_community_view = false;
             this.f_show_post_report = false;
             this.f_show_new_post = false;
+            this.f_show_community_share = false;
         },
         backIndustrySystem1() {
             this.f_industry_system1 = false;
@@ -269,6 +326,53 @@ export default {
         backIndustrySystem3() {
             this.f_industry_system3 = false;
         },
+        sendMessage() {
+            let new_msg = {
+                name: "Rayford Chenail",
+                msg: "Nice post! Surely this will help as others!",
+                diamonds: 0,
+                sendDiamondText: "Send Diamond",
+                sendingDiamondActive: false,
+                unsendingDiamondActive: false,
+            };
+            this.massages.push(new_msg);
+        },
+        sendDiamond(index) {
+            if (this.massages[index].diamonds > 0) {
+                this.massages[index].sendingDiamondActive = true;
+            } else {
+                this.massages[index].unsendingDiamondActive = true;
+            }
+            setTimeout(() => {
+                if (this.massages[index].diamonds > 0) {
+                    this.massages[index].diamonds = 0;
+                    this.massages[index].sendDiamondText = "Send Diamond";
+                } else {
+                    this.massages[index].diamonds = 1;
+                    this.massages[index].sendDiamondText = "Unsend Diamond";
+                }
+                this.massages[index].sendingDiamondActive = false;
+                this.massages[index].unsendingDiamondActive = false;
+            }, 1500)
+        },
+        sendDiamond1(index) {
+            if (this.massages1[index].diamonds > 0) {
+                this.massages1[index].sendingDiamondActive = true;
+            } else {
+                this.massages1[index].unsendingDiamondActive = true;
+            }
+            setTimeout(() => {
+                if (this.massages1[index].diamonds > 0) {
+                    this.massages1[index].diamonds = 0;
+                    this.massages1[index].sendDiamondText = "Send Diamond";
+                } else {
+                    this.massages1[index].diamonds = 1;
+                    this.massages1[index].sendDiamondText = "Unsend Diamond";
+                }
+                this.massages1[index].sendingDiamondActive = false;
+                this.massages1[index].unsendingDiamondActive = false;
+            }, 1500)
+        }
         
     }
   
@@ -284,7 +388,7 @@ export default {
     .community_world_user {
         position: absolute;
         left: 40%;
-        top: 80%;
+        top: 85%;
         border-radius: 50%;
         border: 4px solid white;
         height: 75px;
@@ -305,6 +409,10 @@ export default {
         margin: auto;
         font-size: 14px;
         color: #65676B;
+    }
+    .community_title_detail span:nth-child(2) {
+        float: right;
+        color: black;
     }
     .community_title_detail .favicon_img {
         margin-bottom: 5px;

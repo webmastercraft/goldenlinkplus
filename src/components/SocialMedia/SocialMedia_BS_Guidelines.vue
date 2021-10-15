@@ -137,11 +137,16 @@
                     <span class="privacy_title_md">At no time shall business engage in any activity on the platform, or other related platforms, which is considered false, misleading, deceptive or malicious, this includes all posts, campaigns, or other comments written or verbal which serve to defraud either GOLD or other customers on the platform.</span>
                 </p>
                 <hr class="privacy_hr">
-                <router-link to="/socialmedia/socialmedia_privacy_policy">
-                    <button class="privacy_back_btn">
-                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                <div class="how_it_works_btn term_condition_back_btn">
+                    <router-link to="/socialmedia/socialmedia_main" class="how_it_works_back_btn">
+                        <button class="how_it_works_back_btn">
+                            <img src="reg_next.png" class="reg_next_rotate">Go Back
+                        </button>
+                    </router-link>
+                    <button class="back_top_btn" @click="scrollToTop">
+                        <img src="img/top_arrow.png">
                     </button>
-                </router-link>
+                </div>
             </div>
       </div>
     </div>
@@ -154,6 +159,11 @@ export default {
   name: 'BS_Guideline',
   components: {
   },
+  methods: { 
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
+  }
 }
 </script>
 <style>

@@ -130,11 +130,14 @@
                 </p>
                 <p class="privacy_title_md">We accept multiple co-hosts to manage your content, posts, events, and anyone joining the community will get your notification when events start or are scheduled.<br>This is the place for the people who follow and love these community events, and another way you can build up your fan base and traffic matrix.</p>
                 <hr class="privacy_hr">
-                <router-link to="/socialmedia/socialmedia_privacy_policy">
-                    <button class="privacy_back_btn">
-                        <img src="reg_next.png" class="reg_next_rotate">Go Back
+                <div class="how_it_works_btn term_condition_back_btn">
+                  <router-link to="/socialmedia/socialmedia_main" class="how_it_works_back_btn">
+                    <button class="how_it_works_back_btn">
+                      <img src="reg_next.png" class="reg_next_rotate">Go Back
                     </button>
-                </router-link>
+                  </router-link>
+                  <button class="back_top_btn" @click="scrollToTop"><img src="img/top_arrow.png"></button>
+                </div>
             </div>
       </div>
     </div>
@@ -147,6 +150,11 @@ export default {
   name: 'Privacy_Policy',
   components: {
   },
+  methods: { 
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
+  }
 }
 </script>
 <style>
