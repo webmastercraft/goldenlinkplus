@@ -28,7 +28,7 @@
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
-                <p>
+                <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
                 </p>
@@ -46,7 +46,7 @@
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
-                <p>
+                <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
                 </p>
@@ -64,7 +64,7 @@
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
-                <p>
+                <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
                 </p>
@@ -82,7 +82,7 @@
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
-                <p>
+                <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
                 </p>
@@ -100,7 +100,7 @@
               </div>
               <div class="para_group">
                 <img src="Group_user.png">
-                <p>
+                <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
                 </p>
@@ -298,6 +298,13 @@ export default {
   .main_audio_modal p {
     text-align: left;
     margin: 10px 0;
+  }
+  .group_user_flex {
+    display: flex;
+  }
+  .group_user_flex img {
+    height: 100%;
+    margin: auto !important;
   }
 </style>
  
