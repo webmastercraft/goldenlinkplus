@@ -162,8 +162,50 @@
                 v-show="f_show_toggle"
                 @close="closeViewProfile"
                 @view-backdrop="closeViewProfile"
+                @showTermCondition="termCondition"
+                @showPrivacyPolicy="privacyPolicy"
+                @showGuideline="guideline"
+                @showBSAgreement="bsAgreement"
+                @showGSAgreement="gsAgreement"
+                @showTranslate="translate"
             >
             </Toggle>
+            <TermCondition 
+                v-show="f_show_term_condition"
+                @close="backTermCondition"
+                @view-backdrop="closeViewProfile"
+            >
+            </TermCondition>
+            <PrivacyPolicy 
+                v-show="f_show_privacy_policy"
+                @close="backPrivacyPolicy"
+                @view-backdrop="closeViewProfile"
+            >
+            </PrivacyPolicy>
+            <Guideline 
+                 v-show="f_show_guideline"
+                @close="backGuideline"
+                @view-backdrop="closeViewProfile"
+            >
+            </Guideline>
+            <BSAgreement 
+                v-show="f_show_bs_agreement"
+                @close="backBSAgreement"
+                @view-backdrop="closeViewProfile"
+            >
+            </BSAgreement>
+            <GSAgreement 
+                v-show="f_show_gs_agreement"
+                @close="backGSAgreement"
+                @view-backdrop="closeViewProfile"
+            >
+            </GSAgreement>
+            <Translate 
+                v-show="f_show_translate"
+                @close="backTranslate"
+                @view-backdrop="closeViewProfile"
+            >
+            </Translate>
             <CommunityShare 
                 v-show="f_show_community_share"
                 @view-backdrop="closeViewProfile"
@@ -179,6 +221,12 @@
     import IndustrySystem3 from "../../../modal/membership_follow.vue";
     import SwitchGsAccount from "../../../modal/switch_gs_account.vue";
     import Toggle from "../../../modal/toggle.vue";
+    import TermCondition from "../../../modal/term_condition.vue";
+    import PrivacyPolicy from "../../../modal/privacy_policy.vue";
+    import Guideline from "../../../modal/guideline.vue";
+    import BSAgreement from "../../../modal/bs_agreement.vue";
+    import GSAgreement from "../../../modal/gs_agreement.vue";
+    import Translate from "../../../modal/translate.vue";
     import CommunityShare from "../../../modal/community_share.vue";
 
     export default {
@@ -190,6 +238,12 @@
             IndustrySystem3,
             SwitchGsAccount,
             Toggle,
+            TermCondition,
+            PrivacyPolicy,
+            Guideline,
+            BSAgreement,
+            GSAgreement,
+            Translate,
             CommunityShare,
         },
         data () {
@@ -201,6 +255,12 @@
                 f_industry_system3: false,
                 f_show_switch_gs_account: false,
                 f_show_toggle: false,
+                f_show_term_condition: false,
+                f_show_privacy_policy: false,
+                f_show_guideline: false,
+                f_show_bs_agreement: false,
+                f_show_gs_agreement: false,
+                f_show_translate: false,
                 f_show_community_share: false,
                 toggle: false,
                 massages: [],
@@ -242,12 +302,54 @@
             showCommunityShare() {
                 this.f_show_community_share = true;
             },
+            termCondition() {
+                this.f_show_term_condition = true;
+            },
+            privacyPolicy() {
+                this.f_show_privacy_policy = true;
+            },
+            guideline() {
+                this.f_show_guideline = true;
+            },
+            bsAgreement() {
+                this.f_show_bs_agreement = true;
+            },
+            gsAgreement() {
+                this.f_show_gs_agreement = true;
+            },
+            translate() {
+                this.f_show_translate = true;
+            },
+            backTermCondition() {
+                this.f_show_term_condition = false;
+            },
+            backPrivacyPolicy() {
+                this.f_show_privacy_policy = false;
+            },
+            backGuideline() {
+                this.f_show_guideline = false;
+            },
+            backBSAgreement() {
+                this.f_show_bs_agreement = false;
+            },
+            backGSAgreement() {
+                this.f_show_gs_agreement = false;
+            },
+            backTranslate() {
+                this.f_show_translate = false;
+            },
             closeViewProfile() {
                 this.f_show_industry = false;
                 this.f_industry_system1 = false;
                 this.f_industry_system2 = false;
                 this.f_industry_system3 = false;
                 this.f_show_toggle = false;
+                this.f_show_term_condition = false;
+                this.f_show_privacy_policy = false;
+                this.f_show_guideline = false;
+                this.f_show_bs_agreement = false;
+                this.f_show_gs_agreement = false;
+                this.f_show_translate = false;
                 this.f_show_community_share = false;
             },
             backIndustrySystem1() {

@@ -173,8 +173,50 @@
               v-show="f_show_toggle"
               @close="closeViewProfile"
               @view-backdrop="closeViewProfile"
+              @showTermCondition="termCondition"
+              @showPrivacyPolicy="privacyPolicy"
+              @showGuideline="guideline"
+              @showBSAgreement="bsAgreement"
+              @showGSAgreement="gsAgreement"
+              @showTranslate="translate"
           >
           </Toggle>
+          <TermCondition 
+              v-show="f_show_term_condition"
+              @close="backTermCondition"
+              @view-backdrop="closeViewProfile"
+          >
+          </TermCondition>
+          <PrivacyPolicy 
+              v-show="f_show_privacy_policy"
+              @close="backPrivacyPolicy"
+              @view-backdrop="closeViewProfile"
+          >
+          </PrivacyPolicy>
+          <Guideline 
+              v-show="f_show_guideline"
+              @close="backGuideline"
+              @view-backdrop="closeViewProfile"
+          >
+          </Guideline>
+          <BSAgreement 
+              v-show="f_show_bs_agreement"
+              @close="backBSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </BSAgreement>
+          <GSAgreement 
+              v-show="f_show_gs_agreement"
+              @close="backGSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </GSAgreement>
+          <Translate 
+              v-show="f_show_translate"
+              @close="backTranslate"
+              @view-backdrop="closeViewProfile"
+          >
+          </Translate>
       </div>
     </div>
   </div>
@@ -184,6 +226,12 @@ import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vued
 import Hallway from "../../modal/hallway.vue";
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
 import Toggle from "../../modal/toggle.vue";
+import TermCondition from "../../modal/term_condition.vue";
+import PrivacyPolicy from "../../modal/privacy_policy.vue";
+import Guideline from "../../modal/guideline.vue";
+import BSAgreement from "../../modal/bs_agreement.vue";
+import GSAgreement from "../../modal/gs_agreement.vue";
+import Translate from "../../modal/translate.vue";
 
 export default {
   name: 'Event_Hallway',
@@ -191,6 +239,12 @@ export default {
     SwitchGsAccount,
     Hallway,
     Toggle,
+    TermCondition,
+    PrivacyPolicy,
+    Guideline,
+    BSAgreement,
+    GSAgreement,
+    Translate
   },
   data () {
     return {
@@ -199,6 +253,12 @@ export default {
       micClicked: false,
       f_show_hallway: false,
       f_show_toggle: false,
+      f_show_term_condition: false,
+      f_show_privacy_policy: false,
+      f_show_guideline: false,
+      f_show_bs_agreement: false,
+      f_show_gs_agreement: false,
+      f_show_translate: false,
       f_show_switch_gs_account: false,
       modalStack: [],
     }
@@ -232,8 +292,50 @@ export default {
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    termCondition() {
+        this.f_show_term_condition = true;
+    },
+    privacyPolicy() {
+        this.f_show_privacy_policy = true;
+    },
+    guideline() {
+        this.f_show_guideline = true;
+    },
+    bsAgreement() {
+        this.f_show_bs_agreement = true;
+    },
+    gsAgreement() {
+        this.f_show_gs_agreement = true;
+    },
+    translate() {
+        this.f_show_translate = true;
+    },
+    backTermCondition() {
+        this.f_show_term_condition = false;
+    },
+    backPrivacyPolicy() {
+        this.f_show_privacy_policy = false;
+    },
+    backGuideline() {
+        this.f_show_guideline = false;
+    },
+    backBSAgreement() {
+        this.f_show_bs_agreement = false;
+    },
+    backGSAgreement() {
+        this.f_show_gs_agreement = false;
+    },
+    backTranslate() {
+        this.f_show_translate = false;
+    },
     closeViewProfile() {
       this.f_show_toggle = false;
+      this.f_show_term_condition = false;
+      this.f_show_privacy_policy = false;
+      this.f_show_guideline = false;
+      this.f_show_bs_agreement = false;
+      this.f_show_gs_agreement = false;
+      this.f_show_translate = false;
     },
     disablePopup(index) {
       this.isPopup = false
