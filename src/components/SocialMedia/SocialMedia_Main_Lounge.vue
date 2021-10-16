@@ -27,7 +27,7 @@
           <div class="main_body main_body_audio">
            
             <div class="lounge_content">
-              <router-link class="menu_item" v-for="(item) in items" :key="item.rout" :to="`/socialmedia/${item.rout}`">
+              <router-link class="menu_item" v-for="(item) in items" :key="item.rout" :to="`/${item.rout}`">
                 <div>
                     <p><img :src="`${item.img}`"><br>
                     <span>{{item.name}}</span></p>
@@ -159,14 +159,14 @@ export default {
       f_show_translate: false,
       f_show_switch_gs_account: false,
       items: [
-          {rout : "socialmedia_gs_profile", img: "lounge_profile.png", name: "My Profile"}, 
-          {rout : "user_center/socialmedia_user_center", img: "lounge_usercenter.png", name: "My User Center"},
-          {rout : "socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
-          {rout : "", img: "lounge_membership.png", name: "My Membership"},
-          {rout : "gs_wallet/socialmedia_gs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
-          {rout : "socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
-          {rout : "socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
-          {rout : "socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
+          {rout : "socialmedia/socialmedia_gs_profile", img: "lounge_profile.png", name: "My Profile"}, 
+          {rout : "socialmedia/user_center/socialmedia_user_center", img: "lounge_usercenter.png", name: "My User Center"},
+          {rout : "socialmedia/socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
+          {rout : "usercenter/upgrade_gs_account", img: "lounge_membership.png", name: "My Membership"},
+          {rout : "socialmedia/gs_wallet/socialmedia_gs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
+          {rout : "socialmedia/socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
+          {rout : "socialmedia/socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
+          {rout : "socialmedia/socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
         ]
       }
   },
