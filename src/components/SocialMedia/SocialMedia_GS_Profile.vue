@@ -86,6 +86,7 @@
                       <img src="profile/review_star.png">
                       <img src="profile/review_star.png">
                       <p class="relax_desc">{{item.review_title}}</p>
+                      <p class="relax_desc_review">{{item.review_date}}</p>
                       <div class="review_user">
                         <img :src="`${item.review_user}`">
                         <p><b>{{item.review_name}}</b><br>{{item.review_address}}</p>
@@ -132,24 +133,28 @@ export default {
       reviewdata: [
         {
           review_title: "This marketer works great for my business! \n Highly recommended",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "profile/review_user.png",
           review_name: "Willy Williams",
           review_address: "Marketing Head, Detour",
         },
         {
           review_title: "Woah! My sales rocketed ever since!",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "recommendation/recom_user5.png",
           review_name: "Jack Hugh",
           review_address: "Owner, Tickles",
         },
         {
           review_title: "Great job so far I like this GS!",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "recommendation/recom_user3.png",
           review_name: "Amanda Bright",
           review_address: "CEO, Perfect Shape",
         },
         {
           review_title: "Thanks for helping my business.This \n Marketer really cares about your business, I \n highly recommend!",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "recommendation/recom_user4.png",
           review_name: "Matt Mackenzie",
           review_address: "CEO, Matt and Mackenzie",

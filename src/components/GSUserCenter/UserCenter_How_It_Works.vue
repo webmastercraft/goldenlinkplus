@@ -39,7 +39,7 @@
                   <img src="reg_next.png" class="reg_next_rotate">Back
                 </button>
               </router-link>
-              <button class="back_top_btn"><img src="img/top_arrow.png"></button>
+              <button class="back_top_btn" @click="scrollToTop"><img src="img/top_arrow.png"></button>
             </div>
           </div>
         </div>
@@ -52,6 +52,11 @@ export default {
   name: "How It Works",
   components: {
   },
+  methods: { 
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
+  }
 }
 </script>
 <style>

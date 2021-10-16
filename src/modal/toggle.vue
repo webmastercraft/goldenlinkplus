@@ -13,43 +13,43 @@
           >
               <div class="switch_area">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_terms_conditions">Terms and Conditions</router-link>
+                  <span @click="showTermCondition">
+                    Terms and Conditions
                   </span>
                   <img src="terms.png">
                 </p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link>
+                  <span @click="showPrivacyPolicy">
+                    Privacy Policy
                   </span>
                   <img src="security.png">
                 </p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_guidelines">Social Media Guidelines</router-link>
+                  <span @click="showGuideline">
+                    Social Media Guidelines
                   </span>
                   <img src="guideline.png">
                 </p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_bs_guidelines">Business Membership Guidelines and Agreements</router-link>
+                  <span @click="showBSAgreement">
+                    Business Membership Guidelines and Agreements
                   </span>
                   <img src="bs_agreement.png">
                 </p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_gs_guidelines">GS Membership Guidelines and Agreements</router-link>
+                  <span @click="showGSAgreement">
+                    GS Membership Guidelines and Agreements
                   </span>
                   <img src="gs_agreement.png">
                 </p>
                 <hr class="switch_hr">
                 <p class="toggle_content">
-                  <span>
-                    <router-link to="">Translate App to Chinese</router-link>
+                  <span @click="showTranslate">
+                    Translate App to Chinese
                   </span>
                   <img src="translator.png">
                 </p>
@@ -77,10 +77,44 @@
       closeModal() {
         this.$emit('close');
       },
+      close() {
+        this.$emit('close');
+      },
       viewProfileBackdrop(evt) {
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
         }
+      },
+      userProfileBackdrop(evt) {
+        if(evt.target.classList.length > 0 && "bg-mask"){
+          this.$emit('user-backdrop');
+        }
+      },
+      closeViewProfile() {
+        this.f_show_term_condition = false;
+        this.f_show_privacy_policy = false;
+        this.f_show_guideline = false;
+        this.f_show_bs_agreement = false;
+        this.f_show_gs_agreement = false;
+        this.f_show_translate = false;
+      },
+      showTermCondition() {
+        this.$emit('showTermCondition');
+      },
+      showPrivacyPolicy() {
+        this.$emit('showPrivacyPolicy');
+      },
+      showGuideline() {
+        this.$emit('showGuideline');
+      },
+      showBSAgreement() {
+        this.$emit('showBSAgreement');
+      },
+      showGSAgreement() {
+        this.$emit('showGSAgreement');
+      },
+      showTranslate() {
+        this.$emit('showTranslate');
       },
     },
   }

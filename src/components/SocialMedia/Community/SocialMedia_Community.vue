@@ -483,4 +483,7 @@ export default {
         overflow: hidden;
         min-height: calc(100vh - 26px);
     }
+    .community_header_modal a{
+        line-height: 60px;
+    }
 </style>

@@ -33,18 +33,30 @@
               <li>As a GS Gold, if you bring referred business registrations, you will become the global exclusive marketing agent of that business on GOLD; also, enjoy all the privileges of direct and indirect sales commission rewards. This benefit is permanent, and cannot be lost (as long as your membership remains in good standing).</li>
             </ul>
 
-            <table class="table0">
-              <tr>
-                <th scope="col" class="th01">Indirect<br>Commission<br>GOLD 50% /<br>GS 50%</th>
-                <th scope="col" class="th02">Monthly<br>Sales<br>Revenue<br>See Revenue<br>Levels Below<br>Direct<br>Commission<br>(50%) All<br>Memberships</th> 
-                <th scope="col" class="th03">Regular GS<br>Indirect<br>Commission<br>(6% of the<br>50%)<br>Indirect<br>Commission<br>6% /GS<br>Regular 25%</th>
-              </tr>
-              <tr v-for="(value, index) in values" :key="index">
-                <td>{{value.gold}}</td>
-                <td>{{value.all}}</td>
-                <td>{{value.regular}}</td>
-              </tr>
-            </table>
+            <table class="gs_guideline_3">
+                          <tr>
+                              <th>GS Gold Direct Commission 50%/ offer</th>
+                              <th>Direct Commission (50%) All Memberships</th>
+                              <th>Regular GS direct Commission 50%/ offer</th>
+                          </tr>
+                          <tr>
+                              <td>Credit hold</td>
+                              <td>See Revenue Levels Below</td>
+                              <td>6% of Via 50%</td>
+                          </tr>
+                      </table>
+                      <table class="gs_guideline_3 gs_guideline_2">
+                          <tr>
+                              <th>Indirect commission 10-50%</th>
+                              <th>Monthly sales Revenus Levels Below</th>
+                              <th>Indirect Commission 6%</th>
+                          </tr>
+                          <tr v-for="(value, index) in values" :key="index" class="gs_guideline_2_tr">
+                              <td>{{value.gold}}</td>
+                              <td>{{value.all}}</td>
+                              <td>{{value.regular}}</td>
+                          </tr>
+                      </table>
 
             <ul>
               <li>GOLD will only launch 20k paid memberships initially.  During this early stage, we offer significant price discounts, act before prices rise.</li>

@@ -16,7 +16,7 @@
                   <p class="manage_content" @click="closeModal">About this Community</p>
                 </router-link>
                 <hr class="switch_hr">
-                <p class="manage_content" @click="showCommunityShare">Share Community</p>
+                <p class="manage_content">Share Community</p>
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/community/socialmedia_community_edit">
                   <p class="manage_content">Edit Description</p>

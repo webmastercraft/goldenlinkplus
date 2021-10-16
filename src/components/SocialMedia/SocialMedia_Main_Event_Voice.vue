@@ -51,7 +51,7 @@
                         <img src="msg_count_grey.png"><span>198</span>
                     </p>
                     <p><span>13.9 K</span><img src="diamond.png"></p>
-                    <p @click="showPrice"><span>625.4 K</span><img src="event_coin.png"></p>
+                    <p><span>625.4 K</span><img src="event_coin.png"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -66,8 +66,8 @@
                         <img src="diamond.png" v-if="item.diamond" class="event_diamond">
                     </div>
                 </div>
-                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
-                <p class="coin_letter"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
+                <p class="coin_letter" @click="showPrice"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
+                <p class="coin_letter" @click="showPrice"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
                 <p>{{item.name}}</p>
               </div>
             </div>

@@ -11,7 +11,7 @@
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
-                <router-link to="/socialmedia/community/socialmedia_community"><img src="main_contact.png" class="main_contact"></router-link>
+                <router-link to="/socialmedia/community/socialmedia_community_feed_link"><img src="main_contact.png" class="main_contact"></router-link>
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
@@ -196,9 +196,6 @@ export default {
   .main_audio_modal p {
     text-align: left;
     margin: 10px 0;
-  }
-  .main_body_audio {
-    margin: 90px 20px 150px 20px !important;
   }
 </style>
  
