@@ -5,7 +5,6 @@
         
           <div class="main_audio_modal">
               <div class="logo_header">
-                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
                 <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
@@ -18,14 +17,16 @@
           </div>
           <div class="community_feed_link_area">
             <div v-for="(item, index) in linkData" :key="index" class="feed_link_data">
-              <img :src="`${item.brand_img}`" class="feed_link_brand_img">
-              <p class="feed_link_p">
-                <span class="feed_link_group_span"><span>{{item.group_name}}</span><img src="triangle.png"></span>
-                <span class="feed_link_member_span">{{item.member_number}} Members</span>
-                <span class="feed_link_view_span"><img :src="`${item.view_img}`"><span>{{item.view_text}}</span></span>
-                <span class="feed_link_title_span">{{item.title}}</span>
-              </p>
-              <button class="feed_link_join">Join</button>
+              <router-link to="/socialmedia/community/socialmedia_community" class="feed_link_data_a">
+                <img :src="`${item.brand_img}`" class="feed_link_brand_img">
+                <p class="feed_link_p">
+                  <span class="feed_link_group_span"><span>{{item.group_name}}</span><img src="triangle.png"></span>
+                  <span class="feed_link_member_span">{{item.member_number}} Members</span>
+                  <span class="feed_link_view_span"><img :src="`${item.view_img}`"><span>{{item.view_text}}</span></span>
+                  <span class="feed_link_title_span">{{item.title}}</span>
+                </p>
+              </router-link>
+              <button class="feed_link_join" :class="`${item.join_status_class}`" @click="updateJoin(index)">{{item.join_status_class}}</button>
             </div>
           </div>
           <SwitchGsAccount 
@@ -102,7 +103,9 @@ export default {
           member_number: "288K",
           view_img: "community/grey_lock.png",
           view_text: "Private Community",
-          title: "Welcome to Elite Marketing Community"
+          title: "Welcome to Elite Marketing Community",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand2.png",
@@ -110,7 +113,9 @@ export default {
           member_number: "1.3M",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "THE FUTURE IS HERE"
+          title: "THE FUTURE IS HERE",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand3.png",
@@ -118,15 +123,19 @@ export default {
           member_number: "50K",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "Kabooom! Welcome!"
+          title: "Kabooom! Welcome!",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand4.png",
-          group_name: "Goldrushers Community",
+          group_name: "Goldrushers",
           member_number: "125K",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "The goldrush is here!"
+          title: "The goldrush is here!",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand1.png",
@@ -134,7 +143,9 @@ export default {
           member_number: "288K",
           view_img: "community/grey_lock.png",
           view_text: "Private Community",
-          title: "Welcome to Elite Marketing Community"
+          title: "Welcome to Elite Marketing Community",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand2.png",
@@ -142,7 +153,9 @@ export default {
           member_number: "1.3M",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "THE FUTURE IS HERE"
+          title: "THE FUTURE IS HERE",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand3.png",
@@ -150,15 +163,19 @@ export default {
           member_number: "50K",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "Kabooom! Welcome!"
+          title: "Kabooom! Welcome!",
+          join_status_class: 'join',
+          join_status: 0
         },
         {
           brand_img: "community/brand4.png",
-          group_name: "Goldrushers Community",
+          group_name: "Goldrushers",
           member_number: "125K",
           view_img: "community/grey_eye.png",
           view_text: "Public Community ",
-          title: "The goldrush is here!"
+          title: "The goldrush is here!",
+          join_status_class: 'join',
+          join_status: 0
         },
       ]
     }
@@ -203,6 +220,17 @@ export default {
     backIndustrySystem3() {
         this.f_industry_system3 = false;
     },
+    updateJoin(index) {
+      this.linkData[index].join_status++;
+      this.linkData[index].join_status = this.linkData[index].join_status % 3;
+      if (this.linkData[index].join_status == 0) {
+        this.linkData[index].join_status_class = 'join';
+      } else if (this.linkData[index].join_status == 1) {
+        this.linkData[index].join_status_class = 'pending';
+      } else if (this.linkData[index].join_status == 2) {
+        this.linkData[index].join_status_class = 'joined';
+      }
+    }
   }
 }
 </script>
@@ -222,11 +250,12 @@ export default {
     display: grid;
     margin: auto auto auto 0;
     text-align: left;
-    width: 60%;
   }
   .feed_link_brand_img {
     height: 100%;
-    margin: 0 10px auto 0;
+    margin: 0 15px auto 0;
+    width: 48px;
+    height: 48px;
   }
   .feed_link_group_span {
     font-size: 15px;
@@ -235,6 +264,8 @@ export default {
   }
   .feed_link_group_span img {
     margin-left: 5px;
+    width: 13px;
+    height: 22px;
   }
   .feed_link_member_span {
     font-size: 13px;
@@ -256,12 +287,43 @@ export default {
   }
   .feed_link_join {
     margin: auto 0 auto auto;
+    border-radius: 16px;
+    padding: 3px 0;
+    width: 90px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .feed_link_join.join {
     background-color: #13C8FF;
     color: white;
     border-radius: 16px;
     padding: 3px 0;
-    width: 85px;
+    width: 90px;
     font-size: 14px;
+    text-transform: uppercase;
+  }
+  .feed_link_join.pending {
+    background: #E8F1FA;
+    color: grey;
+    border-radius: 16px;
+    padding: 5px 0;
+    width: 90px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .feed_link_join.joined {
+    background: white;
+    border: 1px solid #13C8FF;
+    color: #13C8FF;
+    border-radius: 16px;
+    padding: 3px 0;
+    width: 90px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .feed_link_data_a {
+    display: flex;
+    width: calc(100% - 90px);
   }
 </style>
  

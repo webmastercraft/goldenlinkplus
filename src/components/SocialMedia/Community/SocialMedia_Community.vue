@@ -4,7 +4,7 @@
             <div class="phone sociallogin">
 
                 <div class="header_modal">
-                    <router-link to="/socialmedia/community/socialmedia_community_feed" class="header_arrow">
+                    <router-link to="/socialmedia/community/socialmedia_community_feed_link" class="header_arrow">
                         <img src="img/header_arrow.png">
                     </router-link>
                     <a class="upcoming_pos">Community</a>

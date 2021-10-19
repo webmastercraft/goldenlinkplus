@@ -133,7 +133,7 @@ export default {
     font-size: 14px;
   }
   .header_top table {
-    margin: 10px auto;
+    margin: auto;
     text-align: center;
     font-size: 14px;
     color: #3B3E51;

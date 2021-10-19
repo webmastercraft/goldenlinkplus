@@ -36,6 +36,7 @@
                       <p class="privacy_title_lg">CONTENT AND INTELLECTUAL PROPERTY<br>
                         <span class="privacy_title_md">GOLD provides the environment to connect Business and marketers. All the content on GOLD that may be provided by business to GS for marketing purposes, the Business acknowledges and understands that they must have legal and valid copyright ownership of such data, and any additional data produced on the platform in any form becomes the property of the platform (GOLD). Businesses and GS marketers agree that all GOLD content is owned by or licensed to us, subject to copyright and other intellectual property rights under United States and foreign laws and international conventions. The platform is provided to you AS IS and may not be used, copied, reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any other purposes whatsoever without the prior written consent of GOLD. GOLD reserves all rights not expressly granted in and to the GOLD content. You agree to not engage in the use, copying, or distribution of any of the GOLD Content other than as expressly permitted herein. If you download or print any GOLD Content for personal use, you must retain all copyright and other proprietary notices contained therein. You agree not to circumvent, disable or otherwise interfere with security related features of the platform or features that prevent or restrict use or copying of any GOLD Content or enforce limitations on use of the GOLD platform or content.</span>
                       </p>
+                      
                       <p class="privacy_title_lg">PAYMENTS AND FEES<br>
                         <span class="privacy_title_md">Businesses and GS Marketers use Golden Link Plus platforms to promote their products or services. You pick and pay for the services GOLD provides on the platform. You must comply with all applicable laws, regulations and guidelines when promoting your business or engaging in marketing.  We have the rights to change the Fee’s, please check the Terms and Conditions and Price Policies frequently. Some GS marketers and Businesses pay an annual fee to become a GOLD member. Business agrees to pay GOLD for all marketing offers published on GOLD, its assignee and/or GS marketer, on a CPA, CPC, CPS, CPL, CPI basis (Cost Per Acquisition or Cost Per Click, Cost Per Sale, Cost Per Lead, Cost Per Installation) in accordance with the terms of conditions on GOLD. All such actions, acquisitions, clicks, sales and/or other form of payable events herewith shall be referred to as “Actions”. Business agrees to pay in advance for any business events and there will be no chargebacks allowed once the campaign is set up, and once the G-Coin promotions and rewards have been spent, then there is no chargeback. Business and GS Marketers know and agree upon the ad offer, if either is unable to provide conversion information, or intentionally deletes the tracking pixels; and/or GOLD’s tracking system fails to report Actions or reports less Actions than the actual amount, then business or GS Marketer agrees to pay GOLD based on an estimate to be negotiated in good faith by the parties based on the data available to both parties. Please check GOLD Membership Qualifications, Guidelines, Agreement for GS and Business. Business and GS marketer agrees to pay all costs incurred by GOLD including, but not limited to, collection agency and attorneys' fees and costs, as a result of having to enforce these Terms and Conditions.</span>
                       </p>
@@ -180,5 +181,22 @@
         position: absolute;
         top: 22px;
         left: 22px;
+    }
+    .term_condition_tb {
+      width: 100%;
+      text-align: center;
+    }
+    .term_condition_tb th {
+      width: 33.33%;
+      color: white;
+    }
+    .term_condition_tb th:nth-child(1) {
+      background-color: #808695;
+    }
+    .term_condition_tb th:nth-child(2) {
+      background-color: #FFB803;
+    }
+    .term_condition_tb th:nth-child(3) {
+      background-color: #BFC1CE;
     }
 </style>

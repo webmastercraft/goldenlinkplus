@@ -71,7 +71,7 @@
                           <tr>
                               <th>Single Payment Option</th>
                               <th>Regular GS and Business</th>
-                              <th>GOLD GS Member</th>
+                              <th>GOLD Member</th>
                               <th>Required G-Coin Balance</th>
                           </tr>
                           <tr>
@@ -103,7 +103,65 @@
                       <p class="privacy_title_lg">Single Payment Option Definitions<br>
                         <span class="privacy_title_md">Profile Bundle for Events:  This gives the member the ability to bundle two profiles together, to assist with switching between both of the profiles, and will also give greater exposure to those two profiles while the Event is in progress.<br><b>Admin rights for Events:</b> This gives the member the ability to rejoin an event that they have been removed from, and also keeps anyone else from shutting down an event that you created.<br><b>Unlimited Community Admin Rights:</b> This gives the member Admin rights to avoid removals, replacement, or shut-down by the co-hosts for an unlimited number of Communities.<br><b>Review user removal details:</b> This gives the member the ability to identify who removed them from an event.</span>
                       </p>
-
+                      <p class="privacy_title_lg">GLC EARNING METHOD</p>
+                      <p class="privacy_title_md">For Verified Users<br>
+                        <table class="term_condition_tb">
+                          <tr>
+                            <th>GLC Mining</th>
+                            <th>Earning</th>
+                            <th>Membership</th>
+                          </tr>
+                          <tr>
+                            <td>Receive 1,000 Diamonds</td>
+                            <td>1 GLC</td>
+                            <td>GS Regular</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 500 Diamonds</td>
+                            <td>1 GLC</td>
+                            <td>GS Gold</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 1,000 G-Coins</td>
+                            <td>1 GLC</td>
+                            <td>Business Regular</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 500 G-Coins</td>
+                            <td>1 GLC</td>
+                            <td>Business Gold</td>
+                          </tr>
+                        </table>
+                      </p>
+                      <p class="privacy_title_md">For Unverified Users<br>
+                        <table class="term_condition_tb">
+                          <tr>
+                            <th>GLC Mining</th>
+                            <th>Earning</th>
+                            <th>Membership</th>
+                          </tr>
+                          <tr>
+                            <td>Receive 1,500 Diamonds</td>
+                            <td>1 GLC</td>
+                            <td>GS Regular</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 750 Diamonds</td>
+                            <td>1 GLC</td>
+                            <td>GS Gold</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 1,500 G-Coins</td>
+                            <td>1 GLC</td>
+                            <td>Business Regular</td>
+                          </tr>
+                          <tr>
+                            <td>Receive 750 G-Coins</td>
+                            <td>1 GLC</td>
+                            <td>Business Gold</td>
+                          </tr>
+                        </table>
+                      </p>
                       <p class="privacy_title_lg">Event Hierarchy<br>
                         <span class="privacy_title_md">Top priority - the Host</span><br>
                         <span class="privacy_title_md">Second priority - Co-Hosts</span><br>
@@ -198,4 +256,17 @@
   }
 </script>
 <style>
+  .term_condition_tb tr td:nth-child(1) {
+    background-color: #E8F1FA;
+    text-align: left;
+  }
+  .term_condition_tb tr td:nth-child(2) {
+    background-color: #F6FBFF;
+  }
+  .term_condition_tb tr td:nth-child(3) {
+    background-color: #FFFFFF;
+  }
+  .term_condition_tb td, .term_condition_tb th {
+    padding: 10px 5px;
+  }
 </style>

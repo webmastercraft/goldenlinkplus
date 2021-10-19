@@ -162,7 +162,6 @@ export default {
           {rout : "socialmedia/socialmedia_gs_profile", img: "lounge_profile.png", name: "My Profile"}, 
           {rout : "socialmedia/user_center/socialmedia_user_center", img: "lounge_usercenter.png", name: "My User Center"},
           {rout : "socialmedia/socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
-          {rout : "usercenter/upgrade_gs_account", img: "lounge_membership.png", name: "My Membership"},
           {rout : "socialmedia/gs_wallet/socialmedia_gs_wallet", img: "lounge_wallet.png", name: "My Wallet"},
           {rout : "socialmedia/socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia/socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},

@@ -63,7 +63,7 @@
                     <tr>
                         <th>Single Payment Option</th>
                         <th>Regular GS and Business</th>
-                        <th>GOLD GS Member</th>
+                        <th>GOLD Member</th>
                         <th>Required G-Coin Balance</th>
                     </tr>
                     <tr>

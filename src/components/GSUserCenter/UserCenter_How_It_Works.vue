@@ -49,7 +49,7 @@
 <script>
 
 export default {
-  name: "How It Works",
+  name: "How_It_Works",
   components: {
   },
   methods: { 

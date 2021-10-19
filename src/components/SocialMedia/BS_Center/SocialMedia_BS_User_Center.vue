@@ -38,7 +38,7 @@
                     <p class="switch_content">G-Coin Rewards</p>
                 </router-link>
                 <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_update_account">
+                <router-link to="/businessusercenter/upgrade_business_account">
                     <p class="switch_content">Upgrade Business Account</p>
                 </router-link>
                 <hr class="switch_hr">

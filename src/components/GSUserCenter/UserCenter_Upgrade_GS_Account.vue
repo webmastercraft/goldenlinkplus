@@ -3,7 +3,7 @@
     <div class="container">
         <div class="phone header_phone">
           <div class="header_modal">
-            <router-link to="/usercenter" class="header_arrow"><img src="img/header_arrow.png"></router-link>
+            <router-link to="/socialmedia/user_center/socialmedia_user_center" class="header_arrow"><img src="img/header_arrow.png"></router-link>
             <a>UPGRADE YOUR GS ACCOUNT</a>
           </div>
           <div class="content left-content header_top">
@@ -32,49 +32,50 @@
             <ul>
               <li>As a GS Gold, if you bring referred business registrations, you will become the global exclusive marketing agent of that business on GOLD; also, enjoy all the privileges of direct and indirect sales commission rewards. This benefit is permanent, and cannot be lost (as long as your membership remains in good standing).</li>
             </ul>
-
-            <table class="gs_guideline_3">
-                          <tr>
-                              <th>GS Gold Direct Commission 50%/ offer</th>
-                              <th>Direct Commission (50%) All Memberships</th>
-                              <th>Regular GS direct Commission 50%/ offer</th>
-                          </tr>
-                          <tr>
-                              <td>Credit hold</td>
-                              <td>See Revenue Levels Below</td>
-                              <td>6% of Via 50%</td>
-                          </tr>
-                      </table>
-                      <table class="gs_guideline_3 gs_guideline_2">
-                          <tr>
-                              <th>Indirect commission 10-50%</th>
-                              <th>Monthly sales Revenus Levels Below</th>
-                              <th>Indirect Commission 6%</th>
-                          </tr>
-                          <tr v-for="(value, index) in values" :key="index" class="gs_guideline_2_tr">
-                              <td>{{value.gold}}</td>
-                              <td>{{value.all}}</td>
-                              <td>{{value.regular}}</td>
-                          </tr>
-                      </table>
+            <div class="account_table_margin">
+              <table class="gs_guideline_3">
+                            <tr>
+                                <th>GS Gold Direct Commission 50%/ offer</th>
+                                <th>Direct Commission (50%) All Memberships</th>
+                                <th>Regular GS direct Commission 50%/ offer</th>
+                            </tr>
+                            <tr>
+                                <td>Credit hold</td>
+                                <td>See Revenue<br>Levels Below</td>
+                                <td>6% of Via 50%</td>
+                            </tr>
+                        </table>
+              <table class="gs_guideline_3 gs_guideline_2">
+                  <tr>
+                      <th>Indirect commission 10-50%</th>
+                      <th>Monthly sales Revenus Levels Below</th>
+                      <th>Indirect Commission 6%</th>
+                  </tr>
+                  <tr v-for="(value, index) in values" :key="index" class="gs_guideline_2_tr">
+                      <td>{{value.gold}}</td>
+                      <td>{{value.all}}</td>
+                      <td>{{value.regular}}</td>
+                  </tr>
+              </table>
+            </div>
 
             <ul>
               <li>GOLD will only launch 20k paid memberships initially.  During this early stage, we offer significant price discounts, act before prices rise.</li>
             </ul>
-            <table class="table1">
-              <tr>
-                <th scope="col" class="th11">GS Gold Paid<br>Membership</th>
-                <th scope="col" class="th12">Limited Time<br>Offer</th> 
-              </tr>
-              <tr v-for="(value, index) in percentage" :key="index">
-                <td>{{value.membership}}</td>
-                <td>{{value.offer}}</td>
-              </tr>
-            </table>
+            <div class="account_table_margin">
+              <table class="table1">
+                <tr>
+                  <th scope="col" class="th11">GS Gold Paid<br>Membership</th>
+                  <th scope="col" class="th12">Limited Time<br>Offer</th> 
+                </tr>
+                <tr v-for="(value, index) in percentage" :key="index">
+                  <td>{{value.membership}}</td>
+                  <td>{{value.offer}}</td>
+                </tr>
+              </table>
+            </div>
 
-            <router-link to="/usercenter/how_it_works">
-              <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
-            </router-link>
+            
 
             <ul>
               <li>You have the right to sell, transfer or auction your ownership of these exclusive rights at your sole discretion; upon such a sale, the following fees are applied:</li>
@@ -96,7 +97,9 @@
             <p class="upgrade_gs_para"><b>NOTE:</b></p>
             <p class="upgrade_gs_para">GS marketer must agree with the policy of commission plan. That GS knows commission refers to marketing conversion sales.  “Commission” also refers to direct and indirect commissions. For those benefit related such as : G-Coins reward, CPC G-coins, received G-Coins from events are not considered commissions</p>
             <p class="upgrade_gs_para">If you have previous sales or referrals prior to becoming a GS Gold member, those sales and referrals are not grandfathered into your membership.</p>
-
+            <router-link to="/usercenter/how_it_works">
+              <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
+            </router-link>
             <p class="gs_account_link"><router-link class="gs_account_check_link" to="/usercenter/how_it_works"><b>Check How It Works >></b></router-link></p>
             <p class="gs_account_link"><router-link class="gs_account_check_link" to="/usercenter/membership_agreement"><b>Check Membership Agreement >></b></router-link></p>
 
@@ -152,7 +155,7 @@
 import Modal from "../../modal/gs_account.vue";
 
 export default {
-  name: "Upgrade GS Account",
+  name: "Upgrade_GS_Account",
   components: {
     Modal
   },
@@ -357,5 +360,8 @@ export default {
     width: calc(100% - 60px);
     margin: 0 0 auto 20px;
     font-size: 14px;
+  }
+  .account_table_margin {
+    margin: 10px auto;
   }
 </style>

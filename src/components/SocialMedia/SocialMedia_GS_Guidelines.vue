@@ -307,6 +307,8 @@ export default {
         text-align: center;
         font-size: 14px;
         font-weight: 400;
+        width: calc(100% - 40px);
+        margin: auto;
     }
     .gs_guideline_3 th {
         color: white;
@@ -325,14 +327,15 @@ export default {
         background: #B09858;
         width: 30%;
     }
-    .gs_guideline_2 {
-        margin-bottom: 10px;
-    }
     .gs_guideline_3 td {
         background: #F4F9FE;
     }
+    .gs_guideline_2 {
+        margin: auto;
+    }
     .gs_guideline_2 tr td:nth-child(2) {
         text-align: right;
+        padding: 10px 5px !important;
     }
     .gs_guideline_2 tr td{
         padding: 10px;

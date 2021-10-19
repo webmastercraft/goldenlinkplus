@@ -35,6 +35,8 @@
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/socialmedia_gs_profile"><p class="switch_content">View Profile</p></router-link>
                 <hr class="switch_hr">
+                <router-link to="/socialmedia/user_center/socialmedia_user_center"><p class="switch_content">My User Center</p></router-link>
+                <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
                 <hr class="switch_hr">
                 <p class="switch_content">Security</p>

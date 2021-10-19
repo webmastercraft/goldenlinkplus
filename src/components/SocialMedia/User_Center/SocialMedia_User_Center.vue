@@ -34,7 +34,7 @@
                     <p class="switch_content">My Offers</p>
                 </router-link>
                 <hr class="switch_hr">
-                <router-link to="/socialmedia/user_center/socialmedia_gs_update_account">
+                <router-link to="/usercenter/upgrade_gs_account">
                     <p class="switch_content">Upgrade my GS Account</p>
                 </router-link>
                 <hr class="switch_hr">
