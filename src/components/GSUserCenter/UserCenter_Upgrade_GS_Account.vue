@@ -97,9 +97,7 @@
             <p class="upgrade_gs_para"><b>NOTE:</b></p>
             <p class="upgrade_gs_para">GS marketer must agree with the policy of commission plan. That GS knows commission refers to marketing conversion sales.  “Commission” also refers to direct and indirect commissions. For those benefit related such as : G-Coins reward, CPC G-coins, received G-Coins from events are not considered commissions</p>
             <p class="upgrade_gs_para">If you have previous sales or referrals prior to becoming a GS Gold member, those sales and referrals are not grandfathered into your membership.</p>
-            <router-link to="/usercenter/how_it_works">
-              <p class="gs_account_link gs_account_check_link"><b>Check Add-on details here >></b></p>
-            </router-link>
+            <p class="gs_account_link gs_account_check_link" @click="showGSMore"><b>Check more details >></b></p>
             <p class="gs_account_link"><router-link class="gs_account_check_link" to="/usercenter/how_it_works"><b>Check How It Works >></b></router-link></p>
             <p class="gs_account_link"><router-link class="gs_account_check_link" to="/usercenter/membership_agreement"><b>Check Membership Agreement >></b></router-link></p>
 
@@ -142,27 +140,30 @@
                 </div>
               </div>
             </form>
-            <Modal
-            v-show="isModalVisible"
-            @close="closeModal"
-            />
+            <GSMore 
+                v-show="f_show_gs_more"
+                @user-backdrop="removeFlagFromStack"
+                @close="closeViewProfile"
+                >
+            </GSMore>
           </div>
         </div>
     </div>
   </div>
 </template>
 <script>
-import Modal from "../../modal/gs_account.vue";
+import GSMore from "../../modal/gs_more.vue";
 
 export default {
   name: "Upgrade_GS_Account",
   components: {
-    Modal
+    GSMore
   },
   data () {
     return {
       is_stage1: true,
-      isModalVisible: false,
+      f_show_gs_more: false,
+      modalStack: [],
       values: [
         {regular: "6%", gold: "10%", all: "$1-$499"},
         {regular: "6%", gold: "20%", all: "$500-$999"},
@@ -191,11 +192,25 @@ export default {
             this.is_stage1 = false;
         }
     },
-    showModal() {
-      this.isModalVisible = true;
+    showGSMore() {
+        this.f_show_gs_more = true;
+        this.modalStack.push('f_show_gs_more');
     },
-    closeModal() {
-      this.isModalVisible = false;
+    removeFlagFromStack() {
+
+      let temp = this.modalStack.pop(-1);
+
+      switch (temp) {
+        case 'f_show_gs_more':
+          this.f_show_gs_more = false
+          break;
+        default:
+          break;
+      }
+      this.f_show_gs_more = false
+    },
+    closeViewProfile() {
+      this.f_show_gs_more = false;
     }
   }
 }

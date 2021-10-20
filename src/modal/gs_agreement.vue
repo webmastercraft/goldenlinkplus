@@ -10,6 +10,7 @@
             <header
                 class="swtich_account_header"
                 id="modalTitle"
+                ref="modalTitle"
             >
                 <div class="header_modal profile_modal toggle_modal_line_height">
                     <img src="img/header_arrow.png" class="page_modal_arrow bg-view-mask" @click="closeModal">
@@ -90,6 +91,7 @@
                               <li>G-coins CPC, G-Coins reward from events, are not considered indirect commissions.</li>
                           </ul>
                       </p>
+                      <p class="gs_account_link gs_account_check_link" @click="showGSMore"><b>Check more details >></b></p>
                       <p class="privacy_title_md"><b>NOTES:</b><br>GS marketer must agree with the policy of commission plan. That GS knows commission refers to marketing conversion sales.  “Commission” also refers to direct and indirect commissions. For those benefit related such as : G-coins CPC, G-Coins received from events are not considered commissions</p>
                       <p class="privacy_title_md">Also If you have previous sales or referrals related to a specific Business, prior to becoming a GS Gold member, you will not receive credit for any previous referrals.<br>The difference between GS and Business referrals is a GS will receive his/her previous referral credits once they have made payment for their Gold membership, if it was a Business referral then no exclusive rights will come to you.</p>
                       <p class="privacy_title_md">The difference between GS and Business referrals is the previous business referral's account can not be exclusive to the Gold GS.  But referred GS account benefits will upgrade their indirect sales commissions from 10% to 80%, or even higher levels upon payment of their membership upgrade, as well as the conversion sales amount made by.</p>
@@ -270,21 +272,29 @@
             </header>
         </div>
       </div>
-
+      <GSMore 
+          v-show="f_show_gs_more"
+          @user-backdrop="removeFlagFromStack"
+          @close="closeViewProfile"
+          >
+      </GSMore>
     </div>
   </transition>
 </template>
 
 <script>
-    
+  import GSMore from "../modal/gs_more.vue";
 
   export default {
     name: 'Industry_System',
     components: {
+      GSMore
     },  
     data () {
         return {
             f_show_view_profile: false,
+            f_show_gs_more: false,
+            modalStack: [],
             values: [
                       {regular: "6%", gold: "10%", all: "$1-$499"},
                       {regular: "6%", gold: "20%", all: "$500-$999"},
@@ -328,9 +338,27 @@
         },
         closeViewProfile() {
             this.f_industry_service = false;
+            this.f_show_gs_more = false;
         },
         scrollToTop() {
             this.$refs.modalTitle.scrollTop = 0;
+        },
+        showGSMore() {
+            this.f_show_gs_more = true;
+            this.modalStack.push('f_show_gs_more');
+        },
+        removeFlagFromStack() {
+
+          let temp = this.modalStack.pop(-1);
+
+          switch (temp) {
+            case 'f_show_gs_more':
+              this.f_show_gs_more = false
+              break;
+            default:
+              break;
+          }
+          this.f_show_gs_more = false
         }
     },
   }

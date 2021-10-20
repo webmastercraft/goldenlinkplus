@@ -10,6 +10,7 @@
             <header
                 class="swtich_account_header"
                 id="modalTitle"
+                ref="modalTitle"
             >
                 <div class="header_modal profile_modal toggle_modal_line_height">
                     <img src="img/header_arrow.png" class="page_modal_arrow bg-view-mask" @click="closeModal">

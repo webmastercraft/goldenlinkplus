@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="share_event_transform"
+    <div class="modal-backdrop bg-mask community_share_end_modal" v-on:click.self="userProfileBackdrop">
+      <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"

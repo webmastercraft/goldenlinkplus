@@ -157,6 +157,7 @@ export default {
           {rout : "socialmedia/socialmedia_search_communities", img: "lounge_communities.png", name: "My Communities"},
           {rout : "socialmedia/socialmedia_main_lounge_event", img: "lounge_event.png", name: "My Events"},
           {rout : "socialmedia/socialmedia_main_lounge_reward", img: "lounge_rewards.png", name: "My Rewards"},
+          {rout : "socialmedia/socialmedia_main_lounge_add", img: "lounge-addons.png", name: "My Add-ons"},
         ]
       }
   },

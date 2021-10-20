@@ -12,9 +12,11 @@
             id="modalTitle"
           >
               <div class="manage_area">
+                <p class="manage_content">Hide this Post</p>
                 <hr class="manage_hr">
-                <p class="community_post_report_flex"><img src="community/report.png"><span>Report post to<br>community admins</span></p>
-                <p class="community_post_report_flex"><img src="community/bell.png"><span>Turn on notifications for this post<br>this post</span></p>
+                <p class="manage_content">Report this Post</p>
+                <hr class="manage_hr">
+                <p class="manage_content">I don't want to see post from Amanda Page</p>
               </div>
           </header>
         </div>
@@ -72,9 +74,9 @@
   .community_post_report_modal {
     height: auto !important;
     max-width: 414px !important;
-    width: calc(100% - 100px) !important;
+    width: calc(100% - 130px) !important;
     transform: translate3d(0, 0, 0) !important;
     border-radius: 16px !important;
-    margin: auto 50px;
+    margin: auto 40px auto 90px;
   }
 </style>
