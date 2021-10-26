@@ -7,7 +7,7 @@
       <div class="phone sociallogin" v-show="!isloading">
         
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"></p>
+            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"><img src="host_view_msg.png" class="host_view_msg"></p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -35,6 +35,7 @@
                     </p>
                     <p><span>13.9 K</span><img src="Sending_Diamonds.png" class="host_view_money_btn"></p>
                     <p @click="showPrice"><span>625.4 K</span><img src="event_coin.png" class="host_view_money_btn"></p>
+                    <p><img src="logo_group.png" class="event_voice_logo"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -732,6 +733,10 @@ export default {
   }
   .host_view_money_btn {
     margin: auto auto auto 10px !important;
+  }
+  .host_view_msg {
+    float: right;
+    margin: auto !important;
   }
 </style>
  

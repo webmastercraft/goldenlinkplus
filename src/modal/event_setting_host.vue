@@ -15,6 +15,7 @@
                 <div class="event_btn">
                     <button class="event_setting_btn" @click="showPotSetting "><img src="send_gcoins.png">G-Coins Pot Settings</button>
                     <button class="event_setting_btn" @click="showShareEvent "><img src="event_setting/share.png">Share this Event</button>
+                    <button class="event_setting_btn"><img src="event_setting/rules.png">Event Rules</button>
                     <button class="event_setting_btn" @click="showSearchEvent"><img src="event_setting/search.png">Search this Event</button>
                     <button class="event_setting_btn"><img src="event_setting/report.png">Report Recent Speaker</button>
                     <button class="event_setting_end_btn" @click="showCloseEvent">End this Event</button>

@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="share_event_transform"
+    <div class="modal-backdrop bg-mask upcoming_modal_position" v-on:click.self="userProfileBackdrop">
+      <div class="detail_event_transform"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"

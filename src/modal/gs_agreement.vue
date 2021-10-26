@@ -66,7 +66,7 @@
                           </tr>
                       </table>
                       <ul class="guideline_ul">
-                          <li>GOLD will only launch 20k paid memberships initially.  During this early stage, we offer significant price discounts, act before prices rise.</li>
+                          <li>GOLD will only launch 20k paid memberships initially for Gold GS. During this early stage, we offer significant price discounts, act before prices rise.</li>
                       </ul>
                       <table class="table1 table1_center">
                         <tr>

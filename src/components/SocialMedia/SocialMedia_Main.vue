@@ -59,7 +59,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img">
+                      <img src="group_1.png">
+                      <img src="group_2.png">
+                      <img src="group_3.png">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -81,7 +85,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img">
+                      <img src="group_1.png">
+                      <img src="group_2.png">
+                      <img src="group_3.png">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -103,7 +111,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img">
+                      <img src="group_1.png">
+                      <img src="group_2.png">
+                      <img src="group_3.png">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -505,7 +517,7 @@ export default {
     margin-left: 5px;
   }
   .para_group p {
-    margin-top: 20px;
+    margin-top: 80px;
   }
   .para_title button {
     background-color: #EF8200;
@@ -671,6 +683,24 @@ export default {
   }
   .main_popup_btn button:nth-child(2) {
     margin: auto 0 auto auto;
+  }
+  .para_group_img {
+    position: relative;
+  }
+  .para_group_img img {
+    position: absolute;
+  }
+  .para_group_img img:nth-child(1) {
+    top: 0;
+    left: 10px;
+  }
+  .para_group_img img:nth-child(2) {
+    top: 0;
+    right: 10px;
+  }
+  .para_group_img img:nth-child(3) {
+    top: 30px;
+    left: 30px;
   }
 </style>
  

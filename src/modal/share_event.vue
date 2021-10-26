@@ -22,22 +22,12 @@
                 <img src="Susan Boyle.png">
                 <img src="Peter Rogers.png">
               </div>
-              <div class="event_setting_logo">
-                <img src="Grandma.png">
-                <img src="Kathry.png">
-                <img src="esther.png">
-                <img src="Savannah.png">
-                <img src="view_user.png">
-              </div>
               <p class="event_invite_para"><span class="event_para_small">with Jean Smith, George Dy, Alex Smith, Susan Boyle, Peter Rogers</span></p>
               <div class="event_setting_user">
                 <p><img src="share.png"><br><span>Share</span></p>
                 <p><img src="tweet.png"><br><span>Tweet</span></p>
                 <p><img src="copy_link.png"><br><span>Copy Link</span></p>
                 <p><img src="add_tocal.png"><br><span>Add to Cal</span></p>
-              </div>
-              <div class="cancel_btn_pos">
-                <button class="share_cancel" @click="userProfileBackdrop">Cancel</button>
               </div>
         </header>
       </div>

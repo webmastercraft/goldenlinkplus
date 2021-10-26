@@ -13,21 +13,15 @@
                 id="modalTitle"
             >
                 <div class="event_btn">
-                    <button class="event_setting_btn" @click="showShareEvent "><img src="event_setting/share.png">Share this Event</button>
+                    <button class="event_setting_btn" @click="showGcoinPot"><img src="send_gcoins.png">G-Coins Pot Settings</button>
+                    <button class="event_setting_btn" @click="showShareEvent"><img src="event_setting/share.png">Share this Event</button>
                     <button class="event_setting_btn" @click="showSearchEvent"><img src="event_setting/search.png">Search this Event</button>
-                    <button class="event_setting_btn"><img src="event_setting/report.png">Report Recent Speaker</button>
-                    <button class="event_setting_end_btn" @click="showCloseEvent">End this Event</button>
+                    <button class="event_setting_btn" @click="showEventRules"><img src="event_setting/rules.png">Event Rules</button>
+                    <button class="event_setting_btn" @click="showReport"><img src="event_setting/report.png">Report Recent Speaker</button>
                 </div>
             </header>
         </div>
       </div>
-        <CloseEvent 
-            v-show="f_show_close_event"
-            @close="closeModal"
-            @view-backdrop="closeCloseEvent"
-            @user-backdrop="removeCloseFlagFromStack"
-        >
-        </CloseEvent>
         <ShareEvent 
             v-show="f_show_share_event"
             @close="closeModal"
@@ -42,39 +36,74 @@
             @user-backdrop="removeSearchFlagFromStack"
         >
         </SearchEvent>
+        <EventRules 
+            v-show="f_show_event_rules"
+            @close="closeModal"
+            @view-backdrop="closeRulesProfile"
+            @user-backdrop="removeRulesFlagFromStack"
+        >
+        </EventRules>
+        <GcoinPot 
+            v-show="f_show_gcoin_pot"
+            @user-backdrop="removeFlagFromStack"
+            @close="closeGcoinPot"
+            @share1="ttt1"
+        >
+        </GcoinPot>
+        <GcoinQueue 
+            v-show="f_show_gcoin_queue"
+            @close="closeGcoinQueue"
+            @view-backdrop="closeGcoinQueue"
+        >
+        </GcoinQueue>
+        <Report 
+            v-show="f_show_report"
+            @user-backdrop="removeFlagFromStack"
+            @close="closeReport"
+            @share2="ttt2"
+        >
+        </Report>
+        <ReportSuccess 
+            v-show="f_show_report_success"
+            @close="closeReportSuccess"
+            @view-backdrop="closeReportSuccess"
+        >
+        </ReportSuccess>
     </div>
   </transition>
 </template>
 
 <script>
-import CloseEvent from "./close_event.vue";
 import ShareEvent from "../modal/share_event.vue";
 import SearchEvent from "../modal/search_event.vue";
+import EventRules from "../modal/event_rules.vue";
+import GcoinPot from "../modal/gcoin_pot.vue";
+import GcoinQueue from "../modal/gcoin_pot_queue.vue";
+import Report from "../modal/report.vue";
+import ReportSuccess from "../modal/report_success.vue";
 
   export default {
     name: 'Event_Setting',
     components: {
-      CloseEvent,
       SearchEvent,
-      ShareEvent
+      ShareEvent,
+      EventRules,
+      GcoinPot,
+      GcoinQueue,
+      Report,
+      ReportSuccess
     },  
     data () {
       return {
         ringClicked: true,
         f_show_share_event: false,
-        f_show_close_event: false,
         f_show_search_event: false,
-        viewdata: [
-          {
-            user_img: "Susan_Doyle.png",
-            follow: true,
-            name: "ASusan Doyle",
-            coin_followers: "2",
-            coin_following: "16",
-            front_name: "CEO Assistant",
-            last_name: "Legendary Coffee",
-          }
-        ],
+        f_show_event_rules: false,
+        f_show_gcoin_pot: false,
+        f_show_gcoin_queue: false,
+        f_show_report: false,
+        f_show_report_success: false,
+        modalStack: [],
       }
     },
     methods: {
@@ -84,12 +113,6 @@ import SearchEvent from "../modal/search_event.vue";
         },
         handleOpen() {
             this.$emit('handleOpen');
-        },
-        selectFollow(index) {
-            this.viewdata[index].follow = false;
-        },
-        showCloseEvent() {
-            this.f_show_close_event = !this.f_show_close_event;
         },
         userProfileBackdrop(evt) {
             if(evt.target.classList.length > 0 && "bg-mask"){
@@ -102,15 +125,17 @@ import SearchEvent from "../modal/search_event.vue";
         showSearchEvent() {
             this.f_show_search_event = true;
         },
-
+        showEventRules() {
+            this.f_show_event_rules = true;
+        },
         closeSearchProfile() {
         this.f_show_search_event = false;
         },
-        closeCloseEvent() {
-        this.f_show_close_event = false;
-        },
         closeShareProfile() {
         this.f_show_share_event = false;
+        },
+        closeRulesProfile() {
+        this.f_show_event_rules = false;
         },
         removeShareFlagFromStack() {
             this.f_show_share_event = !this.f_show_share_event;
@@ -118,9 +143,59 @@ import SearchEvent from "../modal/search_event.vue";
         removeSearchFlagFromStack() {
             this.f_show_search_event = !this.f_show_search_event;
         },
-        removeCloseFlagFromStack() {
-            this.f_show_close_event = !this.f_show_close_event;
-        }
+        removeRulesFlagFromStack() {
+            this.f_show_event_rules = !this.f_show_event_rules;
+        },
+        removeFlagFromStack() {
+
+          let temp = this.modalStack.pop(-1);
+
+          
+          switch (temp) {
+            case 'f_show_gcoin_pot':
+              this.f_show_gcoin_pot = false
+              break;
+            default:
+              break;
+          }
+          switch (temp) {
+            case 'f_show_report':
+              this.f_show_report = false
+              break;
+            default:
+              break;
+          }
+          this.f_show_gcoin_pot = false,
+          this.f_show_report = false
+        },
+        showGcoinPot() {
+          this.f_show_gcoin_pot = true;
+        },
+        showReport() {
+          this.f_show_report = true;
+        },
+        ttt1() {
+          this.f_show_gcoin_queue = true; // showing child
+          this.f_show_gcoin_pot = false;
+          // this.$emit('close'); // disable myself to parent
+        },
+        ttt2() {
+          this.f_show_report_success = true; // showing child
+          this.f_show_report = false;
+          // this.$emit('close'); // disable myself to parent
+        },
+        closeGcoinPot() {
+            this.f_show_gcoin_pot = false;
+        },
+        closeGcoinQueue() {
+          this.f_show_gcoin_queue = false;
+        },
+        closeReport() {
+            this.f_show_report = false;
+        },
+        closeReportSuccess() {
+          this.f_show_report_success = false;
+        },
     },
     computed: {
       ringSrc: function () {

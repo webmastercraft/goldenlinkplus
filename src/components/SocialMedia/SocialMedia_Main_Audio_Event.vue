@@ -27,7 +27,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -45,7 +49,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -63,7 +71,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -81,7 +93,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -99,7 +115,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139

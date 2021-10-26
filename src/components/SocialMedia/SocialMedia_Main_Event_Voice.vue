@@ -50,8 +50,9 @@
                         <img src="user_count_grey.png"><span>25.2K</span>
                         <img src="msg_count_grey.png"><span>198</span>
                     </p>
-                    <p><span>13.9 K</span><img src="diamond.png"></p>
+                    <p><span>13.9 K</span><img src="event_voice_dia.png"></p>
                     <p><span>625.4 K</span><img src="event_coin.png"></p>
+                    <p><img src="logo_group.png" class="event_voice_logo"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -819,6 +820,7 @@ export default {
     width: 100%;
     letter-spacing: 0.08em;
     font-size: 14px;
+    line-height: 26px;
   }
   .event_para_group p {
     margin: 4px 0;
@@ -829,7 +831,7 @@ export default {
     margin: auto;
   }
   .event_para_group p img {
-    margin: auto;
+    margin: auto 0 auto 5px;
     height: 100%;
   }
   .event_user_group {
@@ -1150,6 +1152,9 @@ export default {
       position: fixed;
       margin: auto 10px !important;
       z-index: 1040;
+    }
+    .event_voice_logo {
+      margin: auto 0 auto auto !important;
     }
 </style>
  
