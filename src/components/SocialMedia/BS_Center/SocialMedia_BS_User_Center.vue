@@ -38,12 +38,17 @@
                     <p class="switch_content">G-Coin Rewards</p>
                 </router-link>
                 <hr class="switch_hr">
+                <router-link to="/businessusercenter/upgrade_business_account">
+                    <p class="switch_content">Upgrade Business Account</p>
+                </router-link>
+                <hr class="switch_hr">
                 <p class="switch_content">Create a New DBA for this business</p>
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/bs_center/socialmedia_bs_campaign">
                     <p class="switch_content">Start my Campaign</p>
                 </router-link>
                 <hr class="switch_hr">
+                
         </div>
     </div>
 </template>

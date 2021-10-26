@@ -5,7 +5,7 @@
                 <img src="loading_logo.png">
             </div>
             <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
-                <div class="welcome_dialog_content" @click="killGcoinTap">
+                <div class="welcome_dialog_content welcome_dialog_community" @click="killGcoinTap">
                     <img src="community/coin.png">
                     <p class="welcome_dialog_title community_first_post_welcome">Welcome to your new community!</p>
                     <p class="community_first_post">Create your first post</p>
@@ -202,25 +202,25 @@ export default {
     .community_world_user_simple {
         position: absolute;
         left: 5%;
-        top: 80%;
+        top: 86%;
         border-radius: 50%;
         border: 4px solid white;
         height: 75px;
         width: 75px;
     }
     .community_simple_area {
-        margin: 80px 20px 20px;
+        margin: 80px 20px 10px;
         text-align: left;
         width: calc(100 - 40px);
         height: auto;
         background: white;
         overflow: hidden;
         border-radius: 12px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     .community_simple_area_sm {
-        margin: 20px !important;
-        padding: 15px !important;
+        margin: 10px 20px !important;
+        padding: 10px 15px !important;
     }
     .communty_camera_lg {
         position: absolute;
@@ -243,11 +243,17 @@ export default {
         color: white;
         border-radius: 30px;
         font-size: 18px;
-        width: 65%;
+        width: 80%;
         padding: 5px;
         margin: auto !important;
     }
     .community_first_post_welcome {
         margin: auto auto 10px !important;
+    }
+    .welcome_dialog_community {
+        height: 355px !important;
+        margin: calc(50vh - 177.5px) 15% !important;
+        border-radius: 25px !important;
+        width: 70% !important;
     }
 </style>

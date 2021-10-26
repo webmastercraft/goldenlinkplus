@@ -33,11 +33,14 @@
                 <li>Enter emails in the Invite section on your GOLD account and send the invitations.</li>
               </ul>
             </ul>
-            <router-link to="/usercenter/upgrade_gs_account">
-              <button class="gs_account_stage_checkout_btn rotate_btn">
-                <img src="reg_next.png" class="reg_next_rotate">Back
-              </button>
-            </router-link>
+            <div class="how_it_works_btn">
+              <router-link to="/usercenter/upgrade_gs_account" class="how_it_works_back_btn">
+                <button class="how_it_works_back_btn">
+                  <img src="reg_next.png" class="reg_next_rotate">Back
+                </button>
+              </router-link>
+              <button class="back_top_btn" @click="scrollToTop"><img src="img/top_arrow.png"></button>
+            </div>
           </div>
         </div>
     </div>
@@ -46,9 +49,14 @@
 <script>
 
 export default {
-  name: "How It Works",
+  name: "How_It_Works",
   components: {
   },
+  methods: { 
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
+  }
 }
 </script>
 <style>
@@ -60,16 +68,7 @@ export default {
     border-radius: 12px;
     overflow: hidden;
     min-height: calc(100vh - 26px);
-    padding-bottom: 20px;
-  }
-  .gs_account_stage_checkout_btn {
-    color: white;
-    background-color: #F4992D;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 10px 0;
   }
   .reg_next_rotate {
     transform: rotate(180deg);
@@ -77,5 +76,22 @@ export default {
   }
   .rotate_btn {
     margin-top: 20px;
+  }
+  .how_it_works_btn {
+    display: flex;
+    margin: 10px 10px 10px 20px;
+    width: calc(100% - 30px);
+  }
+  .how_it_works_btn button {
+    background: #F4992D;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+  }
+  .back_top_btn {
+    margin: auto 0 auto 5px;
+  }
+  .how_it_works_back_btn {
+    width: 100%;
   }
 </style>

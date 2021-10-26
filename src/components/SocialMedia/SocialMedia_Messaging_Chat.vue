@@ -14,16 +14,12 @@
                     <p class="socialmedia_chat_p">Rayford Chenail</p>
                     <span class="socialmedia_chat_span">...</span>
                 </div>
-                <div class="left-content messaging_chat_window">
-                    <div class="messaging_chat_content"  v-for="(item, index) in DiamondData" :key="index">
-                      <div class="messaging_chat_text">
+                <div class="left-content messaging_chat_window_area">
+                    <div class="event_chat_content"  v-for="(item, index) in DiamondData" :key="index">
+                      <div class="event_chat_text">
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
                             <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
-                            <div class="diamond_animation">
-                              <img src="chat_diamond.png">
-                            </div>
-                            <span>125</span>
                           </div>
                       </div>
                     </div>
@@ -184,5 +180,13 @@ export default {
   .messaging_chat_width {
     width: calc(100% - 40px) !important;
     margin: 0 !important;
+  }
+  .messaging_chat_window_area {
+    margin: 10px 0 50px;
+    background-color: white !important;
+    border-radius: 16px;
+    width: 100%;
+    height: calc(100% - 70px);
+    padding: 0 0 5px;
   }
 </style>

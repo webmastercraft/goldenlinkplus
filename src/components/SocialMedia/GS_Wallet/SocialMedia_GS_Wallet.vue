@@ -80,21 +80,15 @@
     }
 </script>
 <style>
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
   .socialmedia_messages {
     display: flex;
-    padding: 15px 0;
+    padding: 5px 0;
     background-color: #E6F7FF;
     color: #3B3E51;
   }
   .socialmedia_search_logo_size {
     height: 100%;
     margin: 0 15px;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
   }
   .notification_non {
     background-color: white;
@@ -107,18 +101,6 @@
   }
   .search_coins {
     font-size: 14px;
-  }
-  .search_coins_img {
-    margin-bottom: 4px;
-    margin-right: 5px;
-  }
-  .search_check_offer {
-    color: #13C8FF;
-    font-size: 16px;
-  }
-  .socialmedia_search_para {
-    padding: 15px 10px;
-    display: flex;
   }
   .search_para {
     margin: 0;
@@ -134,24 +116,6 @@
   .send_btn_disable {
     background: #13C8FF;
     opacity: 0.2;
-  }
-  .send_btn {
-    background: #13C8FF;
-    opacity: 1;
-  }
-  .search_transmit button {
-    padding: 5px 10px;
-    width: 95px;
-    border-radius: 25px;
-    color: white;
-    font-size: 14px;
-    margin: 3px 0;
-  }
-  .send_btn img {
-    margin-right: 7px;
-  }
-  .send_btn_disable img {
-    margin-right: 7px;
   }
   .wallet_glc_right {
     position: absolute;

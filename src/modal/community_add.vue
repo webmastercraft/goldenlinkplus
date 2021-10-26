@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
+    <div class="modal-backdrop bg-view-mask community_share_end_modal" v-on:click.self="viewProfileBackdrop">
       <div class="bg-view-mask user_modal_width community_simple_height" v-on:click.self="viewProfileBackdrop">
         <div class="event_invite_modal community_simple_content_height"
           role="dialog"
@@ -34,7 +34,7 @@
                 </p>
                 <div class="socialmedia_search_para" v-for="(item, index) in memberdatas" :key="index">
                     <img :src="`${item.image_url}`" class="lounge_following_user">
-                    <p class="community_member_text following_para"><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
+                    <p class="community_member_text following_add_para"><span class="text_color_softblack">{{item.user}}</span><br><span class="text_color_grey">Joined {{item.year}} year ago</span></p>
                     <div class="search_transmit">
                         <button class="follow_btn" :disabled="!item.follow" @click="selectFollow3(index)" :class="{'follow_btn_disable': item.follow == false}">{{ item.follow ? 'Follow' : 'Following' }} <img src="contact.png" v-show="item.follow"></button>
                         <router-link to="/socialmedia/socialmedia_messaging_chat">
@@ -163,9 +163,13 @@
         overflow: auto;
     }
     .community_simple_height {
-        height: 65%;
+        height: 49%;
     }
     .community_simple_content_height {
         height: 100%;
+    }
+    .following_add_para {
+        margin: auto auto auto 10px;
+        width: 100%;
     }
 </style>

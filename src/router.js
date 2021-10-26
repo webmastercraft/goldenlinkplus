@@ -61,6 +61,10 @@ import SocialMedia_Reg_security from './components/SocialMedia/SocialMedia_Reg_s
 import SocialMedia_Reg_touch_security from './components/SocialMedia/SocialMedia_Reg_touch_security.vue';
 import SocialMedia_Reg_account_option from './components/SocialMedia/SocialMedia_Reg_account_option.vue';
 import SocialMedia_Privacy_Policy from './components/SocialMedia/SocialMedia_Privacy_Policy.vue';
+import SocialMedia_Terms_Conditions from './components/SocialMedia/SocialMedia_Terms_Conditions.vue';
+import SocialMedia_Guidelines from './components/SocialMedia/SocialMedia_Guidelines.vue';
+import SocialMedia_BS_Guidelines from './components/SocialMedia/SocialMedia_BS_Guidelines.vue';
+import SocialMedia_GS_Guidelines from './components/SocialMedia/SocialMedia_GS_Guidelines.vue';
 import SocialMedia_Log_intro from './components/SocialMedia/SocialMedia_Log_intro.vue';
 import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_verify.vue';
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
@@ -148,6 +152,9 @@ import SocialMedia_Profile_Offer from './components/SocialMedia/SocialMedia_Prof
 
 import SocialMedia_BS_User_Center from './components/SocialMedia/BS_Center/SocialMedia_BS_User_Center.vue';
 import SocialMedia_BS_Update_Profile from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Profile.vue';
+import SocialMedia_BS_Update_Account from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Account.vue';
+import SocialMedia_BS_Update_Business_Agreement from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Business_Agreement.vue';
+import SocialMedia_BS_Update_Account_Checkout from './components/SocialMedia/BS_Center/SocialMedia_BS_Update_Account_Checkout.vue';
 import SocialMedia_BS_Internal_Role from './components/SocialMedia/BS_Center/SocialMedia_BS_Internal_Role.vue';
 import SocialMedia_BS_Brands from './components/SocialMedia/BS_Center/SocialMedia_BS_Brands.vue';
 import SocialMedia_BS_Product from './components/SocialMedia/BS_Center/SocialMedia_BS_Product.vue';
@@ -158,6 +165,9 @@ import SocialMedia_BS_Campaign from './components/SocialMedia/BS_Center/SocialMe
 
 import SocialMedia_User_Center from './components/SocialMedia/User_Center/SocialMedia_User_Center.vue';
 import SocialMedia_GS_Update_Profile from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Profile.vue';
+import SocialMedia_GS_Update_Account from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account.vue';
+import SocialMedia_GS_Update_Account_How_It_Works from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account_How_It_Works.vue';
+import SocialMedia_GS_Update_Account_Checkout from './components/SocialMedia/User_Center/SocialMedia_GS_Update_Account_Checkout.vue';
 import SocialMedia_GS_Internal_Role from './components/SocialMedia/User_Center/SocialMedia_GS_Internal_Role.vue';
 import SocialMedia_GS_Marketing from './components/SocialMedia/User_Center/SocialMedia_GS_Marketing.vue';
 import SocialMedia_GS_Social from './components/SocialMedia/User_Center/SocialMedia_GS_Social.vue';
@@ -166,6 +176,7 @@ import SocialMedia_GS_Invite from './components/SocialMedia/User_Center/SocialMe
 
 import SocialMedia_Community_Create from './components/SocialMedia/Community/SocialMedia_Community_Create.vue';
 import SocialMedia_Community_Feed from './components/SocialMedia/Community/SocialMedia_Community_Feed.vue';
+import SocialMedia_Community_Feed_Link from './components/SocialMedia/Community/SocialMedia_Community_Feed_Link.vue';
 import SocialMedia_Community_About from './components/SocialMedia/Community/SocialMedia_Community_About.vue';
 import SocialMedia_Community_Edit from './components/SocialMedia/Community/SocialMedia_Community_Edit.vue';
 import SocialMedia_Community_Member from './components/SocialMedia/Community/SocialMedia_Community_Member.vue';
@@ -460,6 +471,26 @@ export default new Router({
             components: { default: SocialMedia_Privacy_Policy },
         },
         {
+            path: '/socialmedia/socialmedia_terms_conditions',
+            name: 'socialmedia_terms_conditions',
+            components: { default: SocialMedia_Terms_Conditions },
+        },
+        {
+            path: '/socialmedia/socialmedia_guidelines',
+            name: 'socialmedia_guidelines',
+            components: { default: SocialMedia_Guidelines },
+        },
+        {
+            path: '/socialmedia/socialmedia_gs_guidelines',
+            name: 'socialmedia_gs_guidelines',
+            components: { default: SocialMedia_GS_Guidelines },
+        },
+        {
+            path: '/socialmedia/socialmedia_bs_guidelines',
+            name: 'socialmedia_bs_guidelines',
+            components: { default: SocialMedia_BS_Guidelines },
+        },
+        {
             path: '/socialmedia/socialmedia_log_intro',
             name: 'socialmedia_log_intro',
             components: { default: SocialMedia_Log_intro },
@@ -720,6 +751,21 @@ export default new Router({
             components: { default: SocialMedia_BS_Update_Profile }
         },
         {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_business_agreement',
+            name: 'socialmedia_bs_update_business_agreement',
+            components: { default: SocialMedia_BS_Update_Business_Agreement }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_account',
+            name: 'socialmedia_bs_update_account',
+            components: { default: SocialMedia_BS_Update_Account }
+        },
+        {
+            path: '/socialmedia/bs_center/socialmedia_bs_update_account_checkout',
+            name: 'socialmedia_bs_update_account_checkout',
+            components: { default: SocialMedia_BS_Update_Account_Checkout }
+        },
+        {
             path: '/socialmedia/bs_center/socialmedia_bs_internal_role',
             name: 'socialmedia_bs_internal_role',
             components: { default: SocialMedia_BS_Internal_Role }
@@ -763,6 +809,21 @@ export default new Router({
             path: '/socialmedia/user_center/socialmedia_gs_update_profile',
             name: 'socialmedia_gs_update_profile',
             components: { default: SocialMedia_GS_Update_Profile }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account',
+            name: 'socialmedia_gs_update_account',
+            components: { default: SocialMedia_GS_Update_Account }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account_checkout',
+            name: 'socialmedia_gs_update_account_checkout',
+            components: { default: SocialMedia_GS_Update_Account_Checkout }
+        },
+        {
+            path: '/socialmedia/user_center/socialmedia_gs_update_account_how_it_works',
+            name: 'socialmedia_gs_update_account_how_it_works',
+            components: { default: SocialMedia_GS_Update_Account_How_It_Works }
         },
         {
             path: '/socialmedia/user_center/socialmedia_gs_internal_role',
@@ -948,6 +1009,11 @@ export default new Router({
             path: '/socialmedia/community/socialmedia_community_feed',
             name: 'socialmedia_community_feed',
             components: { default: SocialMedia_Community_Feed },
+        },
+        {
+            path: '/socialmedia/community/socialmedia_community_feed_link',
+            name: 'socialmedia_community_feed_link',
+            components: { default: SocialMedia_Community_Feed_Link },
         },
         {
             path: '/socialmedia/community/socialmedia_community_about',

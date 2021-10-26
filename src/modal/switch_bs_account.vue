@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-backdrop bg-view-mask" v-on:click.self="viewProfileBackdrop">
-      <div class="bg-view-mask user_modal_width" v-on:click.self="viewProfileBackdrop">
+      <div class="bg-view-mask user_modal_width" v-on:click.self="userProfileBackdrop">
         <div class="modal swtich_account_modal"
           role="dialog"
           aria-labelledby="modalTitle"
@@ -33,12 +33,18 @@
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/socialmedia_bs_profile"><p class="switch_content">View Profile</p></router-link>
                 <hr class="switch_hr">
+                <router-link to="/socialmedia/bs_center/socialmedia_bs_user_center"><p class="switch_content">My User Center</p></router-link>
+                <hr class="switch_hr">
                 <p class="switch_content">Membership</p>
                 <hr class="switch_hr">
                 <p class="switch_content">Security</p>
                 <hr class="switch_hr">
                 <router-link to="/socialmedia/socialmedia_main_notification_setting">
                     <p class="switch_content">Notification Settings</p>
+                </router-link>
+                <p class="switch_title">Communities</p>
+                <router-link to="/socialmedia/community/socialmedia_community_create">
+                    <p class="switch_content">Create a Community</p>
                 </router-link>
                 <p class="switch_title">Finances</p>
                 <p class="switch_content">Cash Balance<span><b>$254</b></span></p>
@@ -77,6 +83,11 @@
         if(evt.target.classList.length > 0 && "bg-view-mask"){
           this.$emit('view-backdrop');
         }
+      },
+      userProfileBackdrop(evt) {
+          if(evt.target.classList.length > 0 && "bg-mask"){
+              this.$emit('user-backdrop');
+          }
       },
     },
   }

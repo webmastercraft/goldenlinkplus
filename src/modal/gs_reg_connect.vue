@@ -35,9 +35,6 @@
   };
 </script>
 <style>
-.modal-header .upgrade_gs_para {
-    font-weight: 400;
-}
 .connect_modal p, .connect_modal img{
   text-align: center;
   font-size: 16px;

@@ -54,13 +54,14 @@
             <p class="upgrade_gs_para">At no time shall business engage in any activity on the platform, or other related platforms, which is considered false, misleading, deceptive or malicious, this includes all posts, campaigns, or other comments written or verbal which serve to defraud either GOLD or other customers on the platform</p>
 
             <hr class="stage_date_money">
-            <router-link to="/businessusercenter/upgrade_business_account">
-              <button class="gs_account_stage_checkout_btn rotate_btn">
-                <img src="reg_next.png" class="reg_next_rotate">Go Back
-              </button>
-            </router-link>
-            
-            
+            <div class="how_it_works_btn membership_agreement_back_btn">
+              <router-link to="/businessusercenter/upgrade_business_account" class="how_it_works_back_btn">
+                <button class="how_it_works_back_btn">
+                  <img src="reg_next.png" class="reg_next_rotate">Back
+                </button>
+              </router-link>
+              <button class="back_top_btn" @click="scrollToTop"><img src="img/top_arrow.png"></button>
+            </div>
           </div>
         </div>
     </div>
@@ -74,8 +75,12 @@ export default {
   },
   data () {
     return {
-      
-  }
+    }
+  },
+  methods: { 
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
   }
 }
 </script>
@@ -93,10 +98,10 @@ export default {
     z-index: 1040;
   }
   .header_modal a {
-    line-height: 60px;
     font-weight: 600;
     width: 100%;
     display: inline-block;
+    line-height: 60px;
   }
   .header_arrow {
     text-align: left;
@@ -117,14 +122,15 @@ export default {
   .upgrade_gs_para {
     margin: 10px 20px;
     font-size: 14px;
+    color: black;
+    font-weight: 400;
   }
   .gs_account_stage_checkout_btn {
     color: white;
     background-color: #F4992D;
     width: calc(100% - 40px);
-    margin: 0 20px;
+    margin: 20px 20px;
     border-radius: 12px;
     padding: 12px;
-    margin-bottom: 20px;
   }
 </style>

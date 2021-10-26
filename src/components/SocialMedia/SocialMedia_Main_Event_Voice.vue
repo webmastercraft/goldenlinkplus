@@ -6,15 +6,16 @@
       </div>
       <div class="welcome_dialog loading_screen" v-if="gcoin_tap">
         <div class="welcome_dialog_content" @click="killGcoinTap">
-          <img src="welcome_dialog.png">
-          <p class="welcome_dialog_title">Congratulations!</p>
-          <p class="welcome_dialog_price">You received 20 G-Coins</p>
-          <p class="welcome_dialog_btn">Tap to continue</p>
+          <img src="Won Gcoins.png">
+          <p class="welcome_coin_title">
+            <span class="welcome_dialog_title">Congratulations!</span>
+            <span class="welcome_dialog_price">You received 20 G-Coins</span>
+          </p>
         </div>
       </div>
       <div class="phone sociallogin" v-show="!isloading">
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
+            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"></p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -46,12 +47,11 @@
                 </span>
                 <div class="event_para_group">
                     <p>
-                        <img src="user_count_grey.png">2501
-                        <img src="msg_count_grey.png">139
+                        <img src="user_count_grey.png"><span>25.2K</span>
+                        <img src="msg_count_grey.png"><span>198</span>
                     </p>
-                    <p>13.9 K<img src="diamond.png"></p>
-                    <p @click="showPrice">625.4 K<img src="event_coin.png"></p>
-                    <p @click="showSupporter"><img src="login_users.png"></p>
+                    <p><span>13.9 K</span><img src="diamond.png"></p>
+                    <p><span>625.4 K</span><img src="event_coin.png"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -66,8 +66,8 @@
                         <img src="diamond.png" v-if="item.diamond" class="event_diamond">
                     </div>
                 </div>
-                <p class="coin_letter"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
-                <p class="coin_letter"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
+                <p class="coin_letter" @click="showPrice"><img src="event_user_coin.png" class="event_user_coin"><span>{{item.event_user_coin}}K</span></p>
+                <p class="coin_letter" @click="showPrice"><img src="event_user_diamond.png" class="event_user_coin"><span>{{item.event_user_diamond}}</span></p>
                 <p>{{item.name}}</p>
               </div>
             </div>
@@ -163,11 +163,6 @@
             @user-backdrop="removeFlagFromStack"
           >
           </Price>
-          <Supporter 
-            v-show="f_show_supporter"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Supporter>
           <EventSetting 
             v-show="f_show_event_setting"
             @close="closeEventSetting"
@@ -192,7 +187,6 @@ import UserProfile from "../../modal/user_profile.vue";
 import SendGcoin from "../../modal/send_gcoin.vue";
 import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
-import Supporter from "../../modal/supporter.vue";
 import EventSetting from "../../modal/event_setting.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
 
@@ -204,7 +198,6 @@ export default {
       SendGcoin,
       Invite,
       Price,
-      Supporter,
       EventSetting,
       UpcomingEvent
   },
@@ -227,7 +220,6 @@ export default {
         f_show_send_gcoin: false,
         f_show_invite: false,
         f_show_price: false,
-        f_show_supporter: false,
         f_show_event_setting: false,
         f_show_upcoming_event: false,
         modalStack: [],
@@ -675,13 +667,6 @@ export default {
           break;
       }
       switch (temp) {
-        case 'f_show_supporter':
-          this.f_show_supporter = false
-          break;
-        default:
-          break;
-      }
-      switch (temp) {
         case 'f_show_event_setting':
           this.f_show_event_setting = false
           break;
@@ -695,8 +680,6 @@ export default {
       this.f_show_invite = false,
 
       this.f_show_price = false,
-
-      this.f_show_supporter = false,
 
       this.f_show_event_setting = false
     },
@@ -718,10 +701,6 @@ export default {
     showPrice() {
         this.f_show_price = true;
         this.modalStack.push('f_show_price');
-    },
-    showSupporter() {
-        this.f_show_supporter = true;
-        this.modalStack.push('f_show_supporter');
     },
     showEventSetting() {
         this.f_show_event_setting = true;
@@ -766,7 +745,7 @@ export default {
     margin: 10px 0;
   }
   .event_body {
-    margin: 150px 20px 150px;
+    margin: 130px 20px 150px;
     background: white;
     width: 100%;
     border-radius: 16px;
@@ -799,11 +778,11 @@ export default {
   }
   .event_body_title .event_desc {
     font-size: 20px;
-    margin: 10px 20px 0;
+    margin: 0 20px 0;
     letter-spacing: 0.02em;
   }
   .event_body_title .event_back {
-    margin: 10px 20px;
+    margin: 0 20px;
   }
   .event_body_title .event_back img {
     margin: 0 5px 2px;
@@ -844,9 +823,14 @@ export default {
   .event_para_group p {
     margin: 4px 0;
     text-align: right;
-  } 
+    display: flex;
+  }
+  .event_para_group p span {
+    margin: auto;
+  }
   .event_para_group p img {
-    margin: 0 5px;
+    margin: auto;
+    height: 100%;
   }
   .event_user_group {
     display: flex;
@@ -1070,10 +1054,10 @@ export default {
   .welcome_dialog_content {
     text-align: center;
     background: white;
-    border-radius: 25px;
-    width: 70%;
-    height: 355px;
-    margin: calc(50vh - 177.5px) 15%;
+    width: 100%;
+    max-width: 414px;
+    margin: auto;
+    position: relative;
   }
   .welcome_dialog_content > img {
     width: 100%;
@@ -1155,6 +1139,17 @@ export default {
       border-radius: 8px;
       border: 1px solid #CDE1FF;
       margin: 10px 10px 0;
+    }
+    .welcome_coin_title {
+      position: absolute;
+      top: 10px;
+      left: 140px;
+      display: grid;
+    }
+    .event_room_lock {
+      position: fixed;
+      margin: auto 10px !important;
+      z-index: 1040;
     }
 </style>
  

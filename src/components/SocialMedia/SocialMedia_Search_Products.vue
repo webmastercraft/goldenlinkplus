@@ -67,28 +67,6 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_search_logo_size {
-    height: 100%;
-    margin: 0 15px;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
-  .notification_non {
-    background-color: white;
-  }
-  .search_area {
-    font-size: 11px;
-  }
   .search_coins {
     font-size: 14px;
   }
@@ -101,8 +79,9 @@ export default {
     font-size: 16px;
   }
   .socialmedia_search_para {
-    padding: 15px 10px;
+    padding: 5px 10px;
     display: flex;
+    width: 100%;
   }
   .follow_btn {
     background: #EF8200;

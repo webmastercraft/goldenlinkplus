@@ -35,34 +35,34 @@ export default {
                 reward_image: "lounge/reward.png",
                 diamond: "11000",
                 reward_desc: "Create One (1) Paid Event",
-                lock: false
+                lock: true
             },
             {
                 reward_image: "lounge/reward.png",
                 diamond: "11000",
                 reward_desc: "Create Unlimited Communities",
-                lock: false
+                lock: true
             },
             {
                 reward_image: "lounge/reward.png",
                 diamond: "11000",
                 reward_desc: "Create up to Three (3) Communities",
-                lock: false
+                lock: true
             },
             {
                 reward_image: "lounge/reward.png",
                 diamond: "11000",
                 reward_desc: "Unlimited Community Admin Rights",
-                lock: false
+                lock: true
             },
             {
                 reward_image: "lounge/reward.png",
                 diamond: "11000",
                 reward_desc: "Profile Bundle for Events",
-                lock: false
+                lock: true
             },
             {
-                reward_image: "lounge/reward.png",
+                reward_image: "lounge/reward_1.png",
                 diamond: "11000",
                 reward_desc: "Admin rights for your events",
                 lock: false

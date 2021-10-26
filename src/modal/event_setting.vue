@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-view-mask" v-on:click.self="userProfileBackdrop">
+    <div class="modal-backdrop bg-view-mask event_invite_modal_position" v-on:click.self="userProfileBackdrop">
       <div class="bg-view-mask user_modal_width" v-on:click.self="userProfileBackdrop">
         <div class="modal event_setting_modal"
           role="dialog"
@@ -15,7 +15,6 @@
                 <div class="event_btn">
                     <button class="event_setting_btn" @click="showShareEvent "><img src="event_setting/share.png">Share this Event</button>
                     <button class="event_setting_btn" @click="showSearchEvent"><img src="event_setting/search.png">Search this Event</button>
-                    <button class="event_setting_btn"><img src="event_setting/rules.png">Event Rules</button>
                     <button class="event_setting_btn"><img src="event_setting/report.png">Report Recent Speaker</button>
                     <button class="event_setting_end_btn" @click="showCloseEvent">End this Event</button>
                 </div>
@@ -133,7 +132,7 @@ import SearchEvent from "../modal/search_event.vue";
 <style>
     .event_setting_modal {
         max-width: 414px !important;
-        transform: translate3d(0, 3%, 0) !important;
+        transform: translate3d(0, 0%, 0) !important;
     }
     .event_btn {
         max-width: 414px;

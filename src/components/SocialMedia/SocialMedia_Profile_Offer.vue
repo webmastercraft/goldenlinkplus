@@ -189,6 +189,7 @@
                             <img src="profile/review_star.png">
                             <img src="profile/review_star.png">
                             <p class="relax_desc">{{item.review_title}}</p>
+                            <p class="relax_desc_review">{{item.review_date}}</p>
                             <div class="review_user">
                                 <img :src="`${item.review_user}`">
                                 <p><b>{{item.review_name}}</b><br>{{item.review_address}}</p>
@@ -315,12 +316,14 @@ export default {
       BSreviewdata: [
         {
           review_title: "Good Business!",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "profile/review_user.png",
           review_name: "Willy Williams",
           review_address: "San Diego, California",
         },
         {
           review_title: "Good perfumes! the scents are memorable!",
+          review_date: "Reviewed on October 14, 2021",
           review_user: "recommendation/recom_user5.png",
           review_name: "Jack Hugh",
           review_address: "Los Angeles, California",
@@ -441,5 +444,10 @@ export default {
   }
   .profile_offer_btn .is-current button {
     color: white;
+  }
+  .relax_desc_review {
+    text-align: left;
+    margin: 5px 20px 5px 0;
+    font-size: 14px;
   }
 </style>

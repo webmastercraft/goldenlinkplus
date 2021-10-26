@@ -42,7 +42,4 @@
   };
 </script>
 <style>
-.modal-header .upgrade_gs_para {
-    font-weight: 400;
-}
 </style>

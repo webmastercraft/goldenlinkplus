@@ -2,19 +2,31 @@
   <div>
     <div class="container">
       <div class="phone sociallogin">
-        
+          <div class="welcome_dialog loading_screen" v-if="isPopup">
+            <div class="popup_main_content">
+              <p>Your email account is not yet verified. Let’s verify your email.</p>
+              <div class="main_popup_btn">
+                <button  @click="disablePopup(1)">Later</button>
+                <button @click="disablePopup(2)">Verify Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="welcome_dialog loading_screen" v-if="verifyPopup">
+            <div class="popup_main_content_green">
+              <p>A verification email has been sent to your registered email address. </p>
+            </div>
+          </div>
           <div class="main_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
               <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
-                <img src="main_contact.png" class="main_contact">
+                <router-link to="/socialmedia/community/socialmedia_community_feed_link"><img src="main_contact.png" class="main_contact"></router-link>
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
-            </div>
             <div class="main_header">
               <router-link to="/socialmedia/socialmedia_search_products"><span><b>Products</b></span></router-link>
               <router-link to="/socialmedia/socialmedia_search_services"><span>Services</span></router-link>
@@ -191,8 +203,58 @@
           <SwitchGsAccount 
             v-show="f_show_switch_gs_account"
             @close="closeModal"
+            @user-backdrop="removeFlagFromStack"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+              @showTermCondition="termCondition"
+              @showPrivacyPolicy="privacyPolicy"
+              @showGuideline="guideline"
+              @showBSAgreement="bsAgreement"
+              @showGSAgreement="gsAgreement"
+              @showTranslate="translate"
+          >
+          </Toggle>
+          <TermCondition 
+              v-show="f_show_term_condition"
+              @close="backTermCondition"
+              @view-backdrop="closeViewProfile"
+          >
+          </TermCondition>
+          <PrivacyPolicy 
+              v-show="f_show_privacy_policy"
+              @close="backPrivacyPolicy"
+              @view-backdrop="closeViewProfile"
+          >
+          </PrivacyPolicy>
+          <Guideline 
+              v-show="f_show_guideline"
+              @close="backGuideline"
+              @view-backdrop="closeViewProfile"
+          >
+          </Guideline>
+          <BSAgreement 
+              v-show="f_show_bs_agreement"
+              @close="backBSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </BSAgreement>
+          <GSAgreement 
+              v-show="f_show_gs_agreement"
+              @close="backGSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </GSAgreement>
+          <Translate 
+              v-show="f_show_translate"
+              @close="backTranslate"
+              @view-backdrop="closeViewProfile"
+          >
+          </Translate>
+
       </div>
     </div>
   </div>
@@ -202,6 +264,14 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.min.css";
 import EventType from "../../modal/event_type.vue";
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
+import TermCondition from "../../modal/term_condition.vue";
+import PrivacyPolicy from "../../modal/privacy_policy.vue";
+import Guideline from "../../modal/guideline.vue";
+import BSAgreement from "../../modal/bs_agreement.vue";
+import GSAgreement from "../../modal/gs_agreement.vue";
+import Translate from "../../modal/translate.vue";
+
 
 export default {
   name: 'SocialMedia_Main',
@@ -209,21 +279,41 @@ export default {
     Swiper,
     SwiperSlide,
     EventType,
-    SwitchGsAccount
+    SwitchGsAccount,
+    Toggle,
+    TermCondition,
+    PrivacyPolicy,
+    Guideline,
+    BSAgreement,
+    GSAgreement,
+    Translate
   },
   data () {
     return {
+      isPopup: false,
+      verifyPopup: false,
       isModalVisible: false,
+      f_show_toggle: false,
       f_show_event_type: false,
       f_show_switch_gs_account: false,
+      f_show_term_condition: false,
+      f_show_privacy_policy: false,
+      f_show_guideline: false,
+      f_show_bs_agreement: false,
+      f_show_gs_agreement: false,
+      f_show_translate: false,
       modalStack: [],
     }
   },
   methods: {
     closeModal() {
+      this.f_show_toggle = false;
       this.f_show_event_type = false;
       this.f_show_switch_gs_account = false;
       this.isModalVisible = false;
+    },
+    showToggle() {
+        this.f_show_toggle = true;
     },
     showEventType() {
       this.f_show_event_type = true;
@@ -231,7 +321,91 @@ export default {
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
-  }
+    termCondition() {
+        this.f_show_term_condition = true;
+    },
+    privacyPolicy() {
+        this.f_show_privacy_policy = true;
+    },
+    guideline() {
+        this.f_show_guideline = true;
+    },
+    bsAgreement() {
+        this.f_show_bs_agreement = true;
+    },
+    gsAgreement() {
+        this.f_show_gs_agreement = true;
+    },
+    translate() {
+        this.f_show_translate = true;
+    },
+    backTermCondition() {
+        this.f_show_term_condition = false;
+    },
+    backPrivacyPolicy() {
+        this.f_show_privacy_policy = false;
+    },
+    backGuideline() {
+        this.f_show_guideline = false;
+    },
+    backBSAgreement() {
+        this.f_show_bs_agreement = false;
+    },
+    backGSAgreement() {
+        this.f_show_gs_agreement = false;
+    },
+    backTranslate() {
+        this.f_show_translate = false;
+    },
+    removeFlagFromStack() {
+      let temp = this.modalStack.pop(-1);
+      switch (temp) {
+        case 'f_show_switch_gs_account':
+          this.f_show_switch_gs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      switch (temp) {
+        case 'f_show_switch_bs_account':
+          this.f_show_switch_bs_account = false
+          break;
+        default:
+          // statements_def
+          break;
+      }
+      this.f_show_switch_bs_account = false,
+
+      this.f_show_switch_gs_account = false
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+      this.f_show_term_condition = false;
+      this.f_show_privacy_policy = false;
+      this.f_show_guideline = false;
+      this.f_show_bs_agreement = false;
+      this.f_show_gs_agreement = false;
+      this.f_show_translate = false;
+    },
+    disablePopup(index) {
+      this.isPopup = false
+      if (index > 1) {
+        this.verifyPopup = true;
+        setTimeout(() => {
+          this.verifyPopup = false;
+        }, 1500);
+      }
+    },
+    activePopup() {
+      this.isPopup = true
+    },
+  },
+  created () {
+    setTimeout(() => {
+          this.isPopup = true;
+    }, 3000);
+  },
 }
 </script>
 <style>
@@ -458,6 +632,45 @@ export default {
   }
   .main_contact {
     margin: auto;
+  }
+  .toggle_menu_btn {
+    margin: auto auto auto 0;
+    height: 100%;
+  }
+  .popup_main_content {
+    padding: 20px 35px;
+    background: rgba(255, 184, 3, 0.95);
+  }
+  .popup_main_content_green {
+    padding: 20px 35px;
+    background: rgba(57, 181, 74, 0.9);
+  }
+  .popup_main_content_green p {
+    color: white;
+    margin: auto !important;
+    text-align: left;
+  }
+  .popup_main_content p {
+    color: white;
+    margin: auto !important;
+    text-align: left;
+  }
+  .main_popup_btn {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .main_popup_btn button{
+    color: #FFB803;
+    border-radius: 16px;
+    background: white;
+    padding: 3px 30px;
+  }
+  .main_popup_btn button:nth-child(1) {
+    margin: auto auto auto 0;
+  }
+  .main_popup_btn button:nth-child(2) {
+    margin: auto 0 auto auto;
   }
 </style>
  

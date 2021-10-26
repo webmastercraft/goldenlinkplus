@@ -76,22 +76,6 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_messages_size {
-    height: 100%;
-    margin: auto;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
   .search_gs_margin {
     background-color: white !important;
     margin-right: 20px;
@@ -105,7 +89,7 @@ export default {
   }
   .dot_green {
     position: relative;
-    margin: auto 10px;
+    margin: auto 10px auto 0;
   }
   .over_img {
     position: absolute;
@@ -118,6 +102,9 @@ export default {
     border-radius: 50%;
   }
   .gs_market_content {
-    margin: auto 40px auto 10px;
+    margin: auto auto auto 0;
+  }
+  .gs_market_content img {
+    margin-right: 5px;
   }
 </style>

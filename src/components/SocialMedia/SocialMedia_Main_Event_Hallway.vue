@@ -2,25 +2,32 @@
   <div>
     <div class="container">
       <div class="phone sociallogin">
-        
+          <div class="welcome_dialog loading_screen" v-if="isPopup">
+            <div class="popup_lounge_content" @click="disablePopup(1)">
+              <p><img src="popup_heart.png"><span>Alice Hansen followed you</span></p>
+              <!-- <div class="lounge_popup_btn">
+                <button >Maybe Later</button>
+                <router-link to="/socialmedia/socialmedia_main_event_voice"><button>Join as Speaker</button></router-link>
+              </div> -->
+            </div>
+          </div>
           <div class="main_audio_modal">
-            <div>
-              <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-              <div class="logo_header">
+            <div class="logo_header">
+                <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
+                <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
                 <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
-                <img src="main_contact.png">
+                <router-link to="/socialmedia/community/socialmedia_community_feed_link"><img src="main_contact.png" class="main_contact"></router-link>
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
-              </div>
             </div>
             <p><img src="microphone.png" class="favicon_img">LIVE AUDIO EVENTS</p>
           </div>
           <div class="main_body main_body_audio">
             <div class="para_event">
               <div class="para_title">
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<img src="community/about_key.png" class="event_room_lock"></p>
                 <router-link to="/socialmedia/socialmedia_main_event_voice">
                   <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 </router-link>
@@ -162,6 +169,54 @@
             @close="closeModal"
           >
           </SwitchGsAccount>
+          <Toggle 
+              v-show="f_show_toggle"
+              @close="closeViewProfile"
+              @view-backdrop="closeViewProfile"
+              @showTermCondition="termCondition"
+              @showPrivacyPolicy="privacyPolicy"
+              @showGuideline="guideline"
+              @showBSAgreement="bsAgreement"
+              @showGSAgreement="gsAgreement"
+              @showTranslate="translate"
+          >
+          </Toggle>
+          <TermCondition 
+              v-show="f_show_term_condition"
+              @close="backTermCondition"
+              @view-backdrop="closeViewProfile"
+          >
+          </TermCondition>
+          <PrivacyPolicy 
+              v-show="f_show_privacy_policy"
+              @close="backPrivacyPolicy"
+              @view-backdrop="closeViewProfile"
+          >
+          </PrivacyPolicy>
+          <Guideline 
+              v-show="f_show_guideline"
+              @close="backGuideline"
+              @view-backdrop="closeViewProfile"
+          >
+          </Guideline>
+          <BSAgreement 
+              v-show="f_show_bs_agreement"
+              @close="backBSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </BSAgreement>
+          <GSAgreement 
+              v-show="f_show_gs_agreement"
+              @close="backGSAgreement"
+              @view-backdrop="closeViewProfile"
+          >
+          </GSAgreement>
+          <Translate 
+              v-show="f_show_translate"
+              @close="backTranslate"
+              @view-backdrop="closeViewProfile"
+          >
+          </Translate>
       </div>
     </div>
   </div>
@@ -170,17 +225,40 @@
 import { default as Vuedals, Component as Vuedal, Bus as VuedalsBus } from 'vuedals';
 import Hallway from "../../modal/hallway.vue";
 import SwitchGsAccount from "../../modal/switch_gs_account.vue";
+import Toggle from "../../modal/toggle.vue";
+import TermCondition from "../../modal/term_condition.vue";
+import PrivacyPolicy from "../../modal/privacy_policy.vue";
+import Guideline from "../../modal/guideline.vue";
+import BSAgreement from "../../modal/bs_agreement.vue";
+import GSAgreement from "../../modal/gs_agreement.vue";
+import Translate from "../../modal/translate.vue";
 
 export default {
   name: 'Event_Hallway',
   components: {
     SwitchGsAccount,
-    Hallway
+    Hallway,
+    Toggle,
+    TermCondition,
+    PrivacyPolicy,
+    Guideline,
+    BSAgreement,
+    GSAgreement,
+    Translate
   },
   data () {
     return {
+      isPopup: false,
+      verifyPopup: false,
       micClicked: false,
       f_show_hallway: false,
+      f_show_toggle: false,
+      f_show_term_condition: false,
+      f_show_privacy_policy: false,
+      f_show_guideline: false,
+      f_show_bs_agreement: false,
+      f_show_gs_agreement: false,
+      f_show_translate: false,
       f_show_switch_gs_account: false,
       modalStack: [],
     }
@@ -188,11 +266,15 @@ export default {
   methods: {
     closeModal() {
       this.f_show_switch_gs_account = false;
+      this.f_show_toggle = false;
       this.isModalVisible = false;
     },
     showHallway() {
         this.f_show_hallway = true;
         this.modalStack.push('f_show_hallway');
+    },
+    showToggle() {
+        this.f_show_toggle = true;
     },
     removeFlagFromStack() {
 
@@ -210,12 +292,74 @@ export default {
     showSwitchGsAccount() {
       this.f_show_switch_gs_account = true;
     },
+    termCondition() {
+        this.f_show_term_condition = true;
+    },
+    privacyPolicy() {
+        this.f_show_privacy_policy = true;
+    },
+    guideline() {
+        this.f_show_guideline = true;
+    },
+    bsAgreement() {
+        this.f_show_bs_agreement = true;
+    },
+    gsAgreement() {
+        this.f_show_gs_agreement = true;
+    },
+    translate() {
+        this.f_show_translate = true;
+    },
+    backTermCondition() {
+        this.f_show_term_condition = false;
+    },
+    backPrivacyPolicy() {
+        this.f_show_privacy_policy = false;
+    },
+    backGuideline() {
+        this.f_show_guideline = false;
+    },
+    backBSAgreement() {
+        this.f_show_bs_agreement = false;
+    },
+    backGSAgreement() {
+        this.f_show_gs_agreement = false;
+    },
+    backTranslate() {
+        this.f_show_translate = false;
+    },
+    closeViewProfile() {
+      this.f_show_toggle = false;
+      this.f_show_term_condition = false;
+      this.f_show_privacy_policy = false;
+      this.f_show_guideline = false;
+      this.f_show_bs_agreement = false;
+      this.f_show_gs_agreement = false;
+      this.f_show_translate = false;
+    },
+    disablePopup(index) {
+      this.isPopup = false
+      if (index > 1) {
+        this.verifyPopup = true;
+        setTimeout(() => {
+          this.verifyPopup = false;
+        }, 1500);
+      }
+    },
+    activePopup() {
+      this.isPopup = true
+    },
   },
   computed: {
     imgSrc: function () {
       return this.micClicked ? 'mic_small.png' : 'mic_small_dis.png'
-    },
-  }
+    }
+  },
+  created () {
+    setTimeout(() => {
+          this.isPopup = true;
+    }, 3000);
+  },
 }
 </script>
 <style>

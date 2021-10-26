@@ -28,12 +28,12 @@
                   <p>YES! I understand and agree to Goldenlink+ Terms of service, including the <b>User Agreement</b> and <b><router-link to="/socialmedia/socialmedia_privacy_policy">Privacy Policy</router-link></b></p>
                 </div>
               </div>
-            </form>
+          </form>
           <p class="glplogo_reg_account_title">Set up your Account:</p>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_business">Register as a Business</router-link></button>
           <button class="socialmedia_account_btn"><router-link to="/socialmedia/socialmedia_reg_touch_security" class="glplogo_reg_account_btn account_gsmarketer">Register as  a GS Marketer</router-link></button>
           <div class="glplogo_reg_account_position">
-            <button><router-link to="/socialmedia/socialmediastart" class="glplogo_reg_account_cancel">Cancel</router-link></button>
+            <button class="glplogo_reg_account_cancel"><router-link to="/socialmedia/socialmediastart">Cancel</router-link></button>
           </div>
         </div>  
       </div>
@@ -78,7 +78,7 @@ export default {
   .glplogo_reg_account_cancel {
     border-radius: 30px;
     border: 2px solid #70BCE5;
-    color: #70BCE5;
+    
     padding: 8px 55px;
     text-align: center;
   }
@@ -110,5 +110,8 @@ export default {
   }
   .code_sample {
     margin: 5px 0 0;
+  }
+  .glplogo_reg_account_cancel a {
+    color: #70BCE5;
   }
 </style>

@@ -77,7 +77,7 @@
                             </textarea>
                         </div>
                         <div class="community_upload_create_btn">
-                            <router-link to="/socialmedia/community/socialmedia_community_simple"><button>Update</button></router-link>
+                            <router-link to="/socialmedia/community/socialmedia_community"><button>Update</button></router-link>
                             <span>Cancel</span>
                         </div>
                     </div>

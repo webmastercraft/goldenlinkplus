@@ -109,6 +109,7 @@
     }
     .profile_role_input {
         width: 100% !important;
+        position: relative;
     }
     .profile_map_role {
         position: relative;

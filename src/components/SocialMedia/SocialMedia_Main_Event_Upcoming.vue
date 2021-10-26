@@ -10,48 +10,19 @@
             <a class="upcoming_pos">Upcoming Audio Events<img src="bottom_arrow.png" class="upcoming_arrow" @click="showEventLink"></a>
           </div>
           <div class="main_body upcoming_body">
-            <div class="para_event upcoming_para_event">
+            <p class="no_event_title">You have no events set as of this time</p>
+            <div class="para_event upcoming_para_event" v-for="(item, index) in upcomingData" :key="index">
               <div class="para_title" @click="showUpcomingEvent">
-                <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+                <p class="upcoming_orange"><b>{{item.date}}</b></p>
+                <p><img src="triangle.png" class="favicon_img">{{item.title}}</p>
                 <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
+                <p>{{item.name_1}}<img src="msg_favicon.png" class="favicon_img_left"></p>
+                <p>{{item.name_2}}<img src="msg_favicon.png" class="favicon_img_left"></p>
+                <p>{{item.name_3}}<img src="msg_favicon.png" class="favicon_img_left"></p>
                 
               </div>
               <div class="para_group upcoming_group">
-                <img src="Group_user.png">
-              </div>
-            </div>
-
-            <div class="para_event upcoming_para_event">
-              <div class="para_title" @click="showUpcomingEvent">
-                <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                
-              </div>
-              <div class="para_group upcoming_group">
-                <img src="Group_user.png">
-              </div>
-            </div>
-
-            <div class="para_event upcoming_para_event">
-              <div class="para_title" @click="showUpcomingEvent">
-                <p class="upcoming_orange"><b>TOMORROW 7:00 AM</b></p>
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
-                <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
-                <p>Arnold Swarzeneger<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Ben Hugh<img src="msg_favicon.png" class="favicon_img_left"></p>
-                <p>Alex Jackson<img src="msg_favicon.png" class="favicon_img_left"></p>
-                
-              </div>
-              <div class="para_group upcoming_group">
-                <img src="Group_user.png">
+                <img :src="`${item.group_img}`">
               </div>
             </div>
             <UpcomingEvent 
@@ -86,6 +57,32 @@ export default {
         f_show_upcoming_event: false,
         f_show_event_link: false,
         modalStack: [],
+        upcomingData: [
+            {
+              date: "TOMORROW 7:00 AM",
+              title: "MAKING BIG TIME MONEY 101",
+              name_1: "Arnold Swarzeneger",
+              name_2: "Ben Hugh",
+              name_3: "Alex Jackson",
+              group_img: "Group_user.png"
+            },
+            {
+              date: "TOMORROW 7:00 AM",
+              title: "MAKING BIG TIME MONEY 101",
+              name_1: "Arnold Swarzeneger",
+              name_2: "Ben Hugh",
+              name_3: "Alex Jackson",
+              group_img: "Group_user.png"
+            },
+            {
+              date: "TOMORROW 7:00 AM",
+              title: "MAKING BIG TIME MONEY 101",
+              name_1: "Arnold Swarzeneger",
+              name_2: "Ben Hugh",
+              name_3: "Alex Jackson",
+              group_img: "Group_user.png"
+            }
+        ]
     }
   },
   methods: {
@@ -155,5 +152,9 @@ export default {
 .upcoming_event_back {
   position: absolute;
   top: 22px;
+}
+.no_event_title {
+  text-align: center;
+  font-size: 14px;
 }
 </style>

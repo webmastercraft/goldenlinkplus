@@ -30,11 +30,11 @@
                     <p class="switch_content">My Referrals</p>
                 </router-link>
                 <hr class="switch_hr">
-                <router-link to="">
+                <!-- <router-link to="">
                     <p class="switch_content">My Offers</p>
                 </router-link>
-                <hr class="switch_hr">
-                <router-link to="/socialmedia/bs_center/socialmedia_bs_reward">
+                <hr class="switch_hr"> -->
+                <router-link to="/usercenter/upgrade_gs_account">
                     <p class="switch_content">Upgrade my GS Account</p>
                 </router-link>
                 <hr class="switch_hr">

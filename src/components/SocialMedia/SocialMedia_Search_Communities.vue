@@ -5,13 +5,19 @@
         
           <div class="header_modal profile_modal">
             <router-link to="/socialmedia/socialmedia_main_lounge" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>Your 24 Communities</a>
+            <a>Your 24 Communities<router-link to="/socialmedia/community/socialmedia_community_create"><img src="profile/profile_plus.png" class="search_plus_img"></router-link></a>
+
+
           </div>
           <div class="add_modal left-content">
-              <div class="socialmedia_search_para" v-for="(item, index) in datas" :key="index">
-                <img :src="`${item.image_url}`" class="socialmedia_search_logo_size">
-                <p class="socialmedia_search_title search_para"><b>{{item.name}}</b><br><span class="search_commun"></span>Private Community<br>{{item.price}}K Members</p>
-              </div>
+              <div v-for="(item, index) in linkData" :key="index" class="feed_link_data">
+                <img :src="`${item.brand_img}`" class="feed_link_brand_img">
+                <p class="feed_link_p">
+                  <span class="feed_link_group_span"><span>{{item.group_name}}</span><img src="triangle.png"></span>
+                  <span class="feed_link_member_span">{{item.member_number}} Members</span>
+                  <span class="feed_link_view_span"><img :src="`${item.view_img}`"><span>{{item.view_text}}</span></span>
+                </p>
+            </div>
 
           </div>
       </div>
@@ -27,37 +33,36 @@ export default {
   },
   data () {
     return {
-      datas: [
-      { image_url: "marketers_int.png",
-        name: "Markets Int",
-        price: 235,
-        follow:true
-      },
-      { image_url: "international_market.png",
-        name: "International\nMarket",
-        price: 2,
-        follow:true
-      },
-      { image_url: "money_builders.png",
-        name: "Money Builders",
-        price: 54,
-        follow:true
-      },
-      { image_url: "marketers_int.png",
-        name: "Markets Int",
-        price: 235,
-        follow:true
-      },
-      { image_url: "international_market.png",
-        name: "International\nMarket",
-        price: 2,
-        follow:true
-      },
-      { image_url: "money_builders.png",
-        name: "Money Builders",
-        price: 54,
-        follow:true
-      }
+      linkData: [
+        {
+          brand_img: "community/brand1.png",
+          group_name: "Elite Marketing Group",
+          member_number: "288K",
+          view_img: "community/grey_lock.png",
+          view_text: "Private Community",
+          
+        },
+        {
+          brand_img: "community/brand2.png",
+          group_name: "4M Future Marketing",
+          member_number: "1.3M",
+          view_img: "community/grey_eye.png",
+          view_text: "Public Community ",
+        },
+        {
+          brand_img: "community/brand3.png",
+          group_name: "Boom Promoters Inc",
+          member_number: "50K",
+          view_img: "community/grey_eye.png",
+          view_text: "Public Community ",
+        },
+        {
+          brand_img: "community/brand4.png",
+          group_name: "Goldrushers",
+          member_number: "125K",
+          view_img: "community/grey_eye.png",
+          view_text: "Public Community ",
+        },
       ]
     }
   },
@@ -70,26 +75,16 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_messages_desc {
-    font-size: 14px;
-  }
-  .socialmedia_messages {
-    display: flex;
-    padding: 15px 0;
-    background-color: #E6F7FF;
-    color: #3B3E51;
-  }
-  .socialmedia_messages_size {
-    height: 100%;
-    margin: auto;
-  }
-  .socialmedia_messages_p {
-    margin: 0;
-  }
   .notification_non {
     background-color: white;
   }
   .search_commun {
     font-size: 14px;
+  }
+  .search_plus_img {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 1;
   }
 </style>
