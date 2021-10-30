@@ -73,11 +73,9 @@
                   <slide class="swiperslide_btn">
                     <button @click=setCurrentCarouselIndex(6)>Marketing Future Trends</button>
                   </slide>
-                  <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                  <hooper-pagination slot="hooper-addons"></hooper-pagination>
                 </hooper>
                 <hr class="profile_hr">
-                <hooper group="group1" ref="carousel" @slide="updateCarousel" class="profile_hooper_content">
+                <hooper group="group1" ref="carousel" class="profile_hooper_content">
                   <slide class="slide_block">
                     <!-- Offers -->
                     <p class="profile_relax"><b>Relaxology (14)</b></p>
@@ -254,8 +252,27 @@
                   <slide class="swiperslide_btn">
                     <!-- Business Chain -->
                       <div class="profile_services">
-                        <p class="bs_relax_desc" v-for="(item, index) in industry" :key="index"><b>{{item.title1}}</b><br>{{item.property1}}<br>{{item.property2}}<br>{{item.property3}}<br>{{item.property4}}<br>{{item.property5}}</p>
-                        <p class="relax_desc" v-for="(item, index) in internal" :key="index"><b>{{item.title2}}</b><br>{{item.property6}}<br>{{item.property7}}<br>{{item.property8}}<br>{{item.property9}}<br>{{item.property10}}<br>{{item.property11}}<br>{{item.property12}}<br>{{item.property13}}</p>
+                        <p class="bs_relax_desc" v-for="(item, index) in industryData" :key="index">
+                          <b>{{item.industry_title}}</b><br>
+                          {{item.Manufactures}}<br>
+                          {{item.Distributors}}<br>
+                          {{item.Wholesalers}}<br>
+                          {{item.Retailers}}<br>
+                          {{item.Others}}
+                        </p>
+                      </div>
+                      <div class="profile_services">
+                        <p class="relax_desc" v-for="(item, index) in internalData" :key="index">
+                          <b>{{item.internal_title}}</b><br>
+                          {{item.Headquarters}}<br>
+                          {{item.Chain}}<br>
+                          {{item.Franchisee}}<br>
+                          {{item.Global}}<br>
+                          {{item.Nationwide}}<br>
+                          {{item.Wholesale}}<br>
+                          {{item.Retail}}<br>
+                          {{item.Others}}
+                        </p>
                       </div>
                   </slide>
                   <slide class="swiperslide_btn">
@@ -287,13 +304,17 @@
                   <slide class="swiperslide_btn">
                     <!-- Marketing Future Trends -->
                       <p class="profile_commun"><b>Marketing Future Trends</b></p>
-                      <p class="future_maps">2 Headquarters<span>10 Branches</span></p>
-                      <img src="profile/future_maps.png" class="trends_map">
+                      <p class="future_maps">
+                        <span :class="{'header_btn': isHead == true}" @click="showHead">2 Headquarters</span>
+                        <span :class="{'header_btn': isBranches == true}" @click="showBranches">4 Branches</span>
+                      </p>
+                      <img :src="`${currentImage}`" class="trends_map">
                       <p class="profile_commun"><b>Existing Branches</b></p>
                       <p class="future_maps">2 Headquarters</p>
-                      <p class="future_maps">1 Chain Store</p>
-                      <p class="future_maps">1 Country</p>
-                      <p class="future_maps">2 Headquarters</p>
+                      <p :class="{'future_maps_color': isChain == true}" class="future_maps" @click="showChain">1 Chain Store</p>
+                      <p :class="{'future_maps_color': isCountry == true}" class="future_maps" @click="showCountry">1 Country</p>
+                      <p :class="{'future_maps_color': isFranchisee == true}" class="future_maps" @click="showFranchisee">1 Franchisee</p>
+                      <p :class="{'future_maps_color': isOther == true}" class="future_maps" @click="showOther">1 Other</p>
                   </slide>
                 </hooper>
               </div>
@@ -353,12 +374,19 @@ export default {
     Slide
   },
   data () {
-    return { 
+    return {
+      isHead: true,
+      isBranches: false,
+      isChain: false,
+      isCountry: false,
+      isFranchisee: false,
+      isOther: false,
       f_show_video: false,
       f_show_banner: false,
       f_show_detail: false,
       f_show_review: false,
       modalStack: [],
+      currentImage: "profile/Group_719.png",
       currentCarouselIndex: 0,
       datas: [
         {
@@ -385,27 +413,27 @@ export default {
           desc: "Trade Mark Certificate \n for Relaxxology"
         }
       ],
-      industry: [
+      industryData: [
         {
-          title1: "Industry Business Chain",
-          property1: "Manufactures 1",
-          property2: "Distributors 0",
-          property3: "Wholesalers 0",
-          property4: "Retailers 0",
-          property5: "Others 0",
+          industry_title: "Industry Business Chain",
+          Manufactures: "Manufactures 1",
+          Distributors: "Distributors 0",
+          Wholesalers: "Wholesalers 0",
+          Retailers: "Retailers 0",
+          Others: "Others 0",
         },
       ],
-      internal: [
+      internalData: [
         {
-          title2: "Internal Business Chain",
-          property6: "Headquarters 9",
-          property7: "Chain Stores 9",
-          property8: "Franchisee 1",
-          property9: "Global Distributors 2",
-          property10: "Nationwide Distributor 0",
-          property11: "Wholesale Dealer 12",
-          property12: "Retail Dealer 0",
-          property13: "Others 1",
+          internal_title: "Internal Business Chain",
+          Headquarters: "Headquarters 9",
+          Chain: "Chain Stores 9",
+          Franchisee: "Franchisee 1",
+          Global: "Global Distributors 2",
+          Nationwide: "Nationwide Distributor 0",
+          Wholesale: "Wholesale Dealer 12",
+          Retail: "Retail Dealer 0",
+          Others: "Others 1",
         }
       ],
       BSreviewdata: [
@@ -444,6 +472,44 @@ export default {
     }
   },
   methods: {
+    showHead() {
+      this.currentImage = "profile/Group_719.png";
+      this.initSelectedMap();
+      this.isHead = true;
+    },
+    showBranches() {
+      this.currentImage = "profile/branches.png";
+      this.initSelectedMap();
+      this.isBranches = true;
+    },
+    showChain() {
+      this.currentImage = "profile/chain_store.png";
+      this.initSelectedMap();
+      this.isChain = true;
+    },
+    showCountry() {
+      this.currentImage = "profile/country.png";
+      this.initSelectedMap();
+      this.isCountry = true;
+    },
+    showFranchisee() {
+      this.currentImage = "profile/franchisee.png";
+      this.initSelectedMap();
+      this.isFranchisee = true;
+    },
+    showOther() {
+      this.currentImage = "profile/other.png";
+      this.initSelectedMap();
+      this.isOther = true;
+    },
+    initSelectedMap() {
+      this.isHead = false;
+      this.isBranches = false;
+      this.isChain = false;
+      this.isCountry = false;
+      this.isFranchisee = false;
+      this.isOther = false;
+    },
     selectFollow(index) {
       this.datas[index].follow = false
     },
@@ -509,6 +575,12 @@ export default {
 }
 </script>
 <style>
+  .header_btn {
+    color: #13C8FF !important;
+  }
+  .branch_btn {
+    color: #BFC1CE;
+  }
   .profile_modal {
     box-shadow: 0 5px 10px #f2f2f2;
   }
@@ -737,7 +809,7 @@ export default {
   .future_maps span {
     margin: 0 0 0 30px;
     text-align: left;
-    color: #BFC1CE !important;
+    color: #BFC1CE;
   }
   .trends_map {
     width: 100%;
@@ -776,5 +848,8 @@ export default {
   .profile_hooper_content {
     height: auto !important;
     outline: unset;
+  }
+  .future_maps_color {
+    color: #FFB803 !important;
   }
 </style>

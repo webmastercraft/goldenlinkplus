@@ -768,6 +768,7 @@ export default {
     text-align: left;
     width: 100%;
     max-width: 414px;
+    z-index: 1;
   }
   .event_body_title .event_favicon_img{
     margin: 20px 20px 0;

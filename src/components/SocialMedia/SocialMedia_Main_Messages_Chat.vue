@@ -5,7 +5,7 @@
         
           <div class="header_modal">
             <router-link to="/socialmedia/socialmedia_messaging_messages" class="header_arrow"><img src="img/header_arrow.png"></router-link>
-            <a>Chat</a>
+            <a>Chat Message</a>
           </div>
           
             <div class="header_top socialmedia_chat height_static">
@@ -61,7 +61,7 @@ export default {
                 text: "Hey, what's up Ray!!"
             },
             {
-                diamond_img: "mona.png",
+                diamond_img: "George Dy.png",
                 diaOneActive: false,
                 diaTwoActive: false,
                 time: "1 minute ago",
@@ -80,10 +80,6 @@ export default {
 }
 </script>
 <style>
-  .socialmedia_chat {
-    width: 100%;
-    text-align: left;
-  }
   .socialmedia_chat_person {
     display: flex;
     position: relative;
@@ -164,6 +160,9 @@ export default {
   }
   .chat_sentence .btn_send {
     right: 10px;
+  }
+  .height_static {
+    min-height: 100%;
   }
   .messaging_chat_window {
     margin: 10px 0;

@@ -5,9 +5,19 @@
         <img src="loading_logo.png">
       </div>
       <div class="phone sociallogin" v-show="!isloading">
-        
+            <div v-show="isNotification" @click="killNotification()" class="event_popup_area">
+              <img :src="`${notifications[currentNotificationIndex].user}`" class="event_popup_area_user">
+              <span class="popup_content">
+                <span class="event_popup_area_name">
+                  {{notifications[currentNotificationIndex].name}} sent 
+                  {{notifications[currentNotificationIndex].coin ? "" : " a "}} 
+                </span>
+                <img :src="`${notifications[currentNotificationIndex].coin?'modal_coin.png':'popup_dia.png'}`" class="event_popup_area_coin">
+                <span class="event_popup_area_name" v-if="notifications[currentNotificationIndex].coin"> <b>{{notifications[currentNotificationIndex].size}}</b> GCoins</span>
+              </span>
+            </div>
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"><img src="host_view_msg.png" class="host_view_msg"></p>
+            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"><img src="host_view_msg.png" class="host_view_msg" @click="setNotification()"></p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -192,6 +202,8 @@ export default {
   },
   data () {
     return {
+        currentNotificationIndex: 0,
+        isNotification: false,
         isAddingCoin: false,
         isBlink: false,
         isDiamond: false,
@@ -519,11 +531,40 @@ export default {
               mute_image: "Irma.png",
               mute_user: "Arlene",
             },
+        ],
+        notifications: [
+          {duration: 2500, name: "Carol White", user: "Savannah.png", coin: true, size: 50},
+          {duration: 2500, name: "Carla Rose", user: "Serenity.png", coin: false},
+          {duration: 2500, name: "Margarette Holmes", user: "Irma.png", coin: false},
+          {duration: 2500, name: "Keith Rogers", user: "group_1.png", coin: true, size: 250},
+          {duration: 2500, name: "Emmanuela Smith Johanssen", user: "Judith.png", coin: true, size: 250},
+          {duration: 2500, name: "Julie Jones", user: "Alex Smith.png", coin: true, size: 1000},
         ]
     }
   },
   
   methods: {
+    setNotification() {
+      this.isNotification = true;
+      this.loop();
+    },
+    killNotification() {
+      this.isNotification = false;
+    },
+    delay: duration => {
+      return new Promise(resolve => {
+        setTimeout(resolve, duration);
+      })
+    },
+    loop: async function() {
+      if (!this.isNotification) return;
+      for (let i = 0; i < this.notifications.length; i++)
+        {
+            this.currentNotificationIndex = i;
+            await this.delay(this.notifications[i].duration)
+        }
+        this.loop()
+     },
     addingCoin() {
         this.isAddingCoin = true;
         this.f_show_send_gcoin = false;
@@ -713,6 +754,7 @@ export default {
   },
   created () {
     this.killLoading();
+    // this.loop();
   },
   closeModal() {
       this.f_show_host_view = false;
@@ -737,6 +779,36 @@ export default {
   .host_view_msg {
     float: right;
     margin: auto !important;
+  }
+  .event_popup_area {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 6.09%, #FFFFFF 39.21%);
+    height: 100px;
+    margin: auto;
+    display: flex;
+    padding: 0 25px 35px 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    max-width: 414px;
+  }
+  .event_popup_area_user {
+    width: 32px;
+    height: 32px;
+    margin: auto 0;
+  }
+  .event_popup_area_name {
+    font-size: 15px;
+    margin: auto 0;
+  }
+  .event_popup_area_coin {
+    /*width: 25px;*/
+    /*height: 24px;*/
+    margin: auto 10px;
+    text-align: left;
+  }
+  .popup_content {
+    margin: auto auto auto 20px;
+    text-align: left;
   }
 </style>
  

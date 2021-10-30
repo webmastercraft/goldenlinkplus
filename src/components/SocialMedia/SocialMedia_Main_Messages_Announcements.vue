@@ -3,22 +3,25 @@
     <div class="container">
       <div class="phone sociallogin event_chat">
         
-            <div class="event_body_title event_chat_title">
-              <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101</p>
-              <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
-              
-                <p class="event_back">
-                  <router-link to="/socialmedia/socialmedia_main_event_hallway">
-                    <img src="event_back.png">Back
-                  </router-link>
-                <router-link to=""><span @click="showChatMembers">See All Chat Members</span></router-link></p>
+            <div class="msg_system_modal">
+                <div class="logo_header">
+                    <router-link to="/socialmedia/socialmedia_main_messages" class="msg_system_toggle">
+                        <img src="toggle.png">
+                    </router-link>
+                    <span class="msg_system_title"># Announcements</span>
+                    <router-link to="/socialmedia/socialmedia_main_messages_invite" class="msg_system_users">
+                        <img src="users.png">
+                    </router-link>
+                </div>
+                <p class="msg_system_content">Announcements</p>
             </div>
-            <div class="left-content event_chat_window">
+            <div class="msg_system_window">
+                <p class="msg_system_chat_date">October 19, 2021</p>
                     <div class="event_chat_content"  v-for="(item, index) in DiamondData" :key="index">
                       <div class="event_chat_text">
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
-                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!! Can you test</span></p>
+                            <p class="msg_chat_time"><span>{{item.user_name}}{{item.time}}</span><span class="msg_chat_sentence">Hey, what’s up Guys!! Can you test</span></p>
                             <div class="chat_diamond_number">
                               <div class="diamond_animation">
                                 <img src="frame_diamond2.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
@@ -82,77 +85,37 @@ export default {
         modalStack: [],
         DiamondData: [
             {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 120,
-            },
-            {
+                user_name: "",
+                time: "3m ago",
                 diamond_img: "mona.png",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
-                diamond_img: "mona.png",
+                user_name: "Martin Cook • ",
+                time: "3m",
+                diamond_img: "msg_system/user_3.png",
                 diaOneActive: false,
                 diaTwoActive: false,
-                diaSize: 125,
+                diaSize: 14,
             },
             {
-                diamond_img: "mona.png",
+                user_name: "Samantha Briggs • ",
+                time: "2m",
+                diamond_img: "msg_system/user_2.png",
                 diaOneActive: false,
                 diaTwoActive: false,
-                diaSize: 125,
+                diaSize: 2,
             },
             {
-                diamond_img: "mona.png",
+                user_name: "George Smith • ",
+                time: "1m",
+                diamond_img: "msg_system/user_1.png",
                 diaOneActive: false,
                 diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
-            {
-                diamond_img: "mona.png",
-                diaOneActive: false,
-                diaTwoActive: false,
-                diaSize: 125,
-            },
+                diaSize: 36,
+            }
         ]
     }
   },
@@ -207,105 +170,58 @@ export default {
 }
 </script>
 <style>
-.event_chat {
-  display: block !important;
-}
-.event_chat_window {
-  margin: 130px 20px 50px;
-  background-color: white !important;
-  border-radius: 16px;
-  width: calc(100% - 40px);
-  height: auto;
-  padding: 0 0 5px;
-}
-.event_chat_send {
-  width: calc(100% - 40px);
-  margin: 0 20px;
-  max-width: 374px;
-  position: absolute !important;
-  bottom: 0;
-}
-.event_chat_title {
-  position: fixed;
-  background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
-  z-index: 1040;
-}
-.event_chat_login {
-  margin: 3px 20px 0 0;
-}
-.event_chat_login img{
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  margin: 0 1px;
-  float: right;
-}
-.event_chat_login img:last-child {
-  width: 15px;
-  height: 15px;
-}
-.event_chat_text {
-  display: flex;
-  width: 100%;
-}
-.socialmedia_chat_para img {
-  width: 21px;
-  height: 16px;
-  margin: 5px 5px 0 auto;
-}
-.socialmedia_chat_para span{
-  margin: 0;
-}
-.event_chat_content {
-  display: grid;
-  padding: 10px 20px 0;
-}
-.diaOneAppear {
-  animation-name: diaOneFramesUser;
-  animation-duration: 1s;
-  position: absolute;
-}
-@keyframes diaOneFramesUser {
-    0% {opacity: 0.00;}
-    25% {opacity: 0.75;}
-    75% {opacity: 1.00;}
-    100% {opacity: 0.00;}
-    from {bottom: 35px;}
-    to {bottom: 35px;}
-}
-.diaTwoAppear {
-  animation-name: diaTwoFramesUser;
-  animation-duration: 1s;
-  position: absolute;
-}
-@keyframes diaTwoFramesUser {
-    0% {opacity: 0.00;}
-    25% {opacity: 0.75;}
-    75% {opacity: 1.00;}
-    100% {opacity: 0.00;}
-    from {bottom: 35px;}
-    to {bottom: 35px;}
-}
-.diaframe {
-    opacity: 0.00;
-    position: absolute;
-    width: 35px !important;
-    height: 28px !important;
-    top: 0;
-    right: -4px;
-}
-.diamond_animation {
-    position: relative;
-    margin: 0 0 auto 0;
-    width: 25px;
-}
-.diamond_animation img {
-  margin: 0 0 3px 0;
-}
-.chat_diamond_number {
-  position: absolute;
-  display: flex;
-  right: 10px;
-  top: 4px;
-}
+    .msg_system_modal {
+        position: fixed;
+        max-width: 414px;
+        padding: 20px 20px 0;
+        width: 100%;
+        background: linear-gradient(270deg, #C4FFF7 -26.45%, #CDE1FF 109.06%) !important;
+        z-index: 1;
+    }
+    .msg_system_toggle {
+        margin: auto 0 !important;
+    }
+    .msg_system_title {
+        margin: auto auto auto 20px;
+    }
+    .msg_system_users {
+        height: 100%;
+        margin: auto 0 auto auto !important;
+    }
+    .msg_system_content {
+        margin: 10px auto;
+        font-size: 20px;
+        font-weight: 600;
+        color: #3B3E51;
+        text-align: left;
+    }
+    .msg_system_window {
+        margin: 93px 20px 50px;
+        background-color: white !important;
+        border-radius: 16px;
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 5px 0;
+        text-align: left;
+    }
+    .msg_system_chat_date {
+        margin: 5px auto;
+        letter-spacing: -0.02em;
+        color: #687B8E;
+        font-size: 13px;
+        text-align: center;
+    }
+    .msg_chat_time {
+        font-size: 12px;
+        margin: auto;
+        width: 100%;
+        border-radius: 8px;
+        padding: 10px;
+        color: #687B8E;
+        display: grid;
+    }
+    .msg_chat_sentence {
+        font-size: 16px;
+        color: #3B3E51;
+    }
 </style>

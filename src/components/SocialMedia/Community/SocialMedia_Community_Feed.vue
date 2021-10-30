@@ -506,12 +506,14 @@
     .community_chat {
         display: flex;
         font-size: 14px;
+        width: 100%;
     }
     .community_chat_content {
         background: #E6F7FF;
         border-radius: 8px;
         display: flex;
         padding: 10px;
+        width: calc(100% - 42px);
     }
     .community_chat_content p {
     }
@@ -555,7 +557,7 @@
         margin: 0 7px auto 40px;
     }
     .community_chat_content_sm {
-        margin: auto !important;
+        margin: auto auto auto 0 !important;
     }
     .community_chat_send {
         width: 100%;
@@ -619,6 +621,8 @@
     .community_send_p {
         position: relative;
         text-align: center;
+        margin: auto 0 auto auto !important;
+        height: 50px;
     }
     .community_frame_diamond {
         position: absolute;

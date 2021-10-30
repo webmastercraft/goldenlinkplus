@@ -70,6 +70,17 @@ import SocialMedia_Log_verify from './components/SocialMedia/SocialMedia_Log_ver
 import SocialMedia_Log_security from './components/SocialMedia/SocialMedia_Log_security.vue';
 import SocialMedia_Log_touch_security from './components/SocialMedia/SocialMedia_Log_touch_security.vue';
 import SocialMedia_Messaging_Messages from './components/SocialMedia/SocialMedia_Messaging_Messages.vue';
+import SocialMedia_Main_Messages from './components/SocialMedia/SocialMedia_Main_Messages.vue';
+import SocialMedia_Main_Messages_Chat from './components/SocialMedia/SocialMedia_Main_Messages_Chat.vue';
+import SocialMedia_Main_Messages_Plus from './components/SocialMedia/SocialMedia_Main_Messages_Plus.vue';
+import SocialMedia_Main_Messages_Welcome from './components/SocialMedia/SocialMedia_Main_Messages_Welcome.vue';
+import SocialMedia_Main_Messages_Announcements from './components/SocialMedia/SocialMedia_Main_Messages_Announcements.vue';
+import SocialMedia_Main_Messages_Resources from './components/SocialMedia/SocialMedia_Main_Messages_Resources.vue';
+import SocialMedia_Main_Messages_General from './components/SocialMedia/SocialMedia_Main_Messages_General.vue';
+import SocialMedia_Main_Messages_Marketing from './components/SocialMedia/SocialMedia_Main_Messages_Marketing.vue';
+import SocialMedia_Main_Messages_Awesome from './components/SocialMedia/SocialMedia_Main_Messages_Awesome.vue';
+import SocialMedia_Main_Messages_Brand from './components/SocialMedia/SocialMedia_Main_Messages_Brand.vue';
+import SocialMedia_Main_Messages_Invite from './components/SocialMedia/SocialMedia_Main_Messages_Invite.vue';
 import SocialMedia_Messaging_Chat from './components/SocialMedia/SocialMedia_Messaging_Chat.vue';
 import SocialMedia_Search_Communities from './components/SocialMedia/SocialMedia_Search_Communities.vue';
 import SocialMedia_Search_GS from './components/SocialMedia/SocialMedia_Search_GS.vue';
@@ -514,6 +525,61 @@ export default new Router({
             path: '/socialmedia/socialmedia_messaging_messages',
             name: 'socialmedia_messaging_messages',
             components: { default: SocialMedia_Messaging_Messages },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages',
+            name: 'socialmedia_main_messages',
+            components: { default: SocialMedia_Main_Messages },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_chat',
+            name: 'socialmedia_main_messages_chat',
+            components: { default: SocialMedia_Main_Messages_Chat },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_plus',
+            name: 'socialmedia_main_messages_plus',
+            components: { default: SocialMedia_Main_Messages_Plus },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_welcome',
+            name: 'socialmedia_main_messages_welcome',
+            components: { default: SocialMedia_Main_Messages_Welcome },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_announcements',
+            name: 'socialmedia_main_messages_announcements',
+            components: { default: SocialMedia_Main_Messages_Announcements },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_resources',
+            name: 'socialmedia_main_messages_resources',
+            components: { default: SocialMedia_Main_Messages_Resources },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_general',
+            name: 'socialmedia_main_messages_general',
+            components: { default: SocialMedia_Main_Messages_General },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_marketing',
+            name: 'socialmedia_main_messages_marketing',
+            components: { default: SocialMedia_Main_Messages_Marketing },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_awesome',
+            name: 'socialmedia_main_messages_awesome',
+            components: { default: SocialMedia_Main_Messages_Awesome },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_invite',
+            name: 'socialmedia_main_messages_invite',
+            components: { default: SocialMedia_Main_Messages_Invite },
+        },
+        {
+            path: '/socialmedia/socialmedia_main_messages_brand',
+            name: 'socialmedia_main_messages_brand',
+            components: { default: SocialMedia_Main_Messages_Brand },
         },
         {
             path: '/socialmedia/socialmedia_messaging_chat',

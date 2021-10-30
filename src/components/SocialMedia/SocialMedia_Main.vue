@@ -20,7 +20,7 @@
               <div class="logo_header">
                 <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
                 <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
@@ -59,10 +59,10 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <div class="para_group_img">
-                      <img src="group_1.png">
-                      <img src="group_2.png">
-                      <img src="group_3.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
                     </div>
                     <p>
                       <img src="user_count.png">2501
@@ -85,10 +85,10 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <div class="para_group_img">
-                      <img src="group_1.png">
-                      <img src="group_2.png">
-                      <img src="group_3.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
                     </div>
                     <p>
                       <img src="user_count.png">2501
@@ -111,10 +111,10 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <div class="para_group_img">
-                      <img src="group_1.png">
-                      <img src="group_2.png">
-                      <img src="group_3.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
                     </div>
                     <p>
                       <img src="user_count.png">2501
@@ -315,6 +315,13 @@ export default {
       f_show_gs_agreement: false,
       f_show_translate: false,
       modalStack: [],
+      loginData: [
+        {
+          user_1: "group_1.png",
+          user_2: "group_2.png",
+          user_3: "group_3.png"
+        }
+      ]
     }
   },
   methods: {
@@ -686,6 +693,7 @@ export default {
   }
   .para_group_img {
     position: relative;
+    width: 105px;
   }
   .para_group_img img {
     position: absolute;

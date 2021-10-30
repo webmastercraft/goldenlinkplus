@@ -30,6 +30,7 @@
                                 <img src="Philip.png">
                                 <img src="Geoffrey Mott.png">
                                 <img src="eduardo.png">
+                                <img src="community/msg_box.png" class="community_msg_box">
                             </router-link>
                         </div>
                         <div class="community_title_btn">
@@ -264,7 +265,7 @@ export default {
             massages1: [
                 {
                     name: "Rayford Chenail",
-                    msg: "Nice post! Surely this will help as others!",
+                    msg: "Hi! Awesome content!",
                     diamonds: 0,
                     sendDiamondText: "Send Diamond",
                     sendingDiamondActive: false,
@@ -329,7 +330,7 @@ export default {
         sendMessage() {
             let new_msg = {
                 name: "Rayford Chenail",
-                msg: "Nice post! Surely this will help as others!",
+                msg: "Hi! Awesome content!",
                 diamonds: 0,
                 sendDiamondText: "Send Diamond",
                 sendingDiamondActive: false,
@@ -432,7 +433,7 @@ export default {
     }
     .community_title_btn button {
         color: white;
-        padding: 4px 15px;
+        padding: 3px 15px;
         border-radius: 16px;
     }
     .community_title_btn button:first-child {
@@ -485,5 +486,14 @@ export default {
     }
     .community_header_modal a{
         line-height: 60px;
+    }
+    .community_msg_box {
+        margin: auto 0 auto auto !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .community_title_img a {
+        display: flex;
+        width: 100%;
     }
 </style>
