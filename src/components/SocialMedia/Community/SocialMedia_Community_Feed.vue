@@ -16,7 +16,7 @@
                         <router-link to="/socialmedia/community/socialmedia_community_feed_link"><img src="main_contact.png" class="main_contact"></router-link>
                         <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
                     </div>
-                    <p class="community_favicon"><img src="community.png" class="favicon_img">RECENT ACTIVITY<img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
+                    <p class="community_favicon"><img src="community.png" class="community_favicon_img"><span>RECENT ACTIVITY</span><img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
                     <div class="community_header">
                         <div class="community_user_info">
                             <img src="Susan Boyle.png" class="community_user_img">
@@ -430,10 +430,18 @@
     .community_favicon {
         margin: 10px auto;
         text-align: left;
+        display: flex;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+    }
+    .community_favicon span {
+        margin: auto 0;
+    }
+    .community_favicon img {
+        height: 100%;
     }
     .setting_img {
-        margin-bottom: 5px;
-        float: right;
+        margin: auto 0;
     }
     .community_user_info {
         display: flex;
@@ -506,12 +514,14 @@
     .community_chat {
         display: flex;
         font-size: 14px;
+        width: 100%;
     }
     .community_chat_content {
         background: #E6F7FF;
         border-radius: 8px;
         display: flex;
         padding: 10px;
+        width: calc(100% - 42px);
     }
     .community_chat_content p {
     }
@@ -555,7 +565,7 @@
         margin: 0 7px auto 40px;
     }
     .community_chat_content_sm {
-        margin: auto !important;
+        margin: auto auto auto 0 !important;
     }
     .community_chat_send {
         width: 100%;
@@ -619,11 +629,17 @@
     .community_send_p {
         position: relative;
         text-align: center;
+        margin: auto 0 auto auto !important;
+        height: 50px;
     }
     .community_frame_diamond {
         position: absolute;
         top: 7px;
         left: 4px;
+    }
+    .community_favicon_img {
+        height: 100%;
+        margin: auto 8px auto 0;
     }
 </style>
 

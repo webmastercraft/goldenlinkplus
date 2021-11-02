@@ -20,7 +20,7 @@
               <div class="logo_header">
                 <img src="toggle.png" class="toggle_menu_btn" @click="showToggle">
                 <router-link to="/"><img src="main_logo.png" class="main_logo"></router-link>
-                <router-link to="/socialmedia/socialmedia_messaging_messages"><img src="main_box.png"></router-link>
+                <router-link to="/socialmedia/socialmedia_main_messages"><img src="main_box.png"></router-link>
                 <router-link to="/socialmedia/socialmedia_main_event_upcoming">
                   <img src="main_calendar.png">
                 </router-link>
@@ -59,7 +59,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -81,7 +85,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -103,7 +111,11 @@
                     </router-link>
                   </div>
                   <div class="para_group">
-                    <img src="Group_user.png">
+                    <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                      <img :src="`${item.user_1}`">
+                      <img :src="`${item.user_2}`">
+                      <img :src="`${item.user_3}`">
+                    </div>
                     <p>
                       <img src="user_count.png">2501
                       <img src="msg_count.png">139
@@ -303,6 +315,13 @@ export default {
       f_show_gs_agreement: false,
       f_show_translate: false,
       modalStack: [],
+      loginData: [
+        {
+          user_1: "group_1.png",
+          user_2: "group_2.png",
+          user_3: "group_3.png"
+        }
+      ]
     }
   },
   methods: {
@@ -505,7 +524,7 @@ export default {
     margin-left: 5px;
   }
   .para_group p {
-    margin-top: 20px;
+    margin-top: 80px;
   }
   .para_title button {
     background-color: #EF8200;
@@ -671,6 +690,25 @@ export default {
   }
   .main_popup_btn button:nth-child(2) {
     margin: auto 0 auto auto;
+  }
+  .para_group_img {
+    position: relative;
+    width: 105px;
+  }
+  .para_group_img img {
+    position: absolute;
+  }
+  .para_group_img img:nth-child(1) {
+    top: 0;
+    left: 10px;
+  }
+  .para_group_img img:nth-child(2) {
+    top: 0;
+    right: 10px;
+  }
+  .para_group_img img:nth-child(3) {
+    top: 30px;
+    left: 30px;
   }
 </style>
  

@@ -19,7 +19,7 @@
                       <div class="event_chat_text">
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
-                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!!</span></p>
+                            <p class="chat_time">{{item.time}}<br><span class="chat_sentence">{{item.text}}</span></p>
                           </div>
                       </div>
                     </div>
@@ -56,18 +56,24 @@ export default {
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
+                diaTwoActive: false,
+                time: "2 minutes ago",
+                text: "Hey, what's up Ray!!"
             },
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
+                diaTwoActive: false,
+                time: "1 minute ago",
+                text: "I am good! thanks Lets meet tonight at 8."
             },
             {
                 diamond_img: "mona.png",
                 diaOneActive: false,
-                diaTwoActive: false
-            },
+                diaTwoActive: false,
+                time: "Just Now",
+                text: "Okay thanks"
+            }
       ]
     }
   }
@@ -101,13 +107,6 @@ export default {
     background-color: white !important;
     margin: 20px 0 15px;
     border-radius: 16px;
-  }
-  .chat_time {
-    font-size: 11px;
-    margin: auto auto auto 10px;
-    width: 100%;
-    border-radius: 8px;
-    padding: 10px;
   }
   .chat_sentence {
     font-size: 16px;
@@ -144,7 +143,6 @@ export default {
   }
   .chat_sentence {
     position: relative;
-    height: 45px;
   }
   .chat_sentence > button{
     position: absolute;
@@ -158,9 +156,6 @@ export default {
   }
   .chat_sentence .btn_send {
     right: 10px;
-  }
-  .height_static {
-    min-height: 100%;
   }
   .messaging_chat_window {
     margin: 10px 0;
@@ -186,7 +181,7 @@ export default {
     background-color: white !important;
     border-radius: 16px;
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100% - 85px);
     padding: 0 0 5px;
   }
 </style>

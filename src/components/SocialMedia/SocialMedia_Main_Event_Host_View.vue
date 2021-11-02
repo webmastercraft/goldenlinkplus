@@ -5,9 +5,25 @@
         <img src="loading_logo.png">
       </div>
       <div class="phone sociallogin" v-show="!isloading">
-        
+            <div v-show="isNotification" @click="killNotification()" class="event_popup_area">
+              <img :src="`${notifications[currentNotificationIndex].user}`" class="event_popup_area_user">
+              <span class="popup_content">
+                <span class="event_popup_area_name">
+                  {{notifications[currentNotificationIndex].name}} sent 
+                  {{notifications[currentNotificationIndex].coin ? "" : " a "}} 
+                </span>
+                <img :src="`${notifications[currentNotificationIndex].coin?'modal_coin.png':'popup_dia.png'}`" class="event_popup_area_coin">
+                <span class="event_popup_area_name" v-if="notifications[currentNotificationIndex].coin"> <b>{{notifications[currentNotificationIndex].size}}</b> GCoins</span>
+              </span>
+            </div>
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"></p>
+            <p class="event_favicon_img">
+              <router-link to="/socialmedia/community/socialmedia_community">
+                  <img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101
+              </router-link>
+              <img src="lock.png" class="event_room_lock">
+              <img src="host_view_msg.png" class="host_view_msg" @click="setNotification()">
+            </p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -35,6 +51,7 @@
                     </p>
                     <p><span>13.9 K</span><img src="Sending_Diamonds.png" class="host_view_money_btn"></p>
                     <p @click="showPrice"><span>625.4 K</span><img src="event_coin.png" class="host_view_money_btn"></p>
+                    <p><img src="logo_group.png" class="event_voice_logo" @click="showGcoinQueue"></p>
                 </div>
             </div>
             <div class="event_user_group">
@@ -123,44 +140,92 @@
                 </div>
             </div>
           </div>
-          <SendGcoin 
-            v-show="f_show_send_gcoin"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </SendGcoin>
-          <vuedal></vuedal>
-          <UserProfile 
-            v-show="f_show_user_profile"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </UserProfile>
-          <HostView 
-            v-show="f_show_host_view"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </HostView>
-          <Invite 
-            v-show="f_show_invite"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Invite>
-          <Price 
-            v-show="f_show_price"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Price>
-          <EventSetting 
-            v-show="f_show_event_setting"
-            @close="closeEventSetting"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </EventSetting>
-          <UpcomingEvent 
-            v-show="f_show_upcoming_event"
-            @close="closeUpcomingEvent"
-            @view-backdrop="closeUpcomingEvent"
-          >
-          </UpcomingEvent>
+            <SendGcoin 
+                v-show="f_show_send_gcoin"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </SendGcoin>
+            <vuedal></vuedal>
+            <UserProfile 
+                v-show="f_show_user_profile"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </UserProfile>
+            <HostView 
+                v-show="f_show_host_view"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </HostView>
+            <Invite 
+                v-show="f_show_invite"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </Invite>
+            <Price 
+                v-show="f_show_price"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </Price>
+            <EventSetting 
+                v-show="f_show_event_setting"
+                @close="closeEventSetting"
+                @user-backdrop="removeFlagFromStack"
+                @ShowGcoinPot="showGcoinPot"
+                @ShowReport="showReport"
+            >
+            </EventSetting>
+            <UpcomingEvent 
+                v-show="f_show_upcoming_event"
+                @close="closeUpcomingEvent"
+                @view-backdrop="closeUpcomingEvent"
+            >
+            </UpcomingEvent>
+            <!-- <UsersQueue 
+                v-show="f_show_users_queue"
+                @close="closeUsersQueue"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </UsersQueue> -->
+            <GcoinPot 
+                v-show="f_show_gcoin_pot"
+                @user-backdrop="closeModal"
+                @close="closeGcoinPot"
+                @share1="ttt1"
+            >
+            </GcoinPot>
+            <GcoinQueue 
+                v-show="f_show_gcoin_queue"
+                @close="closeGcoinQueue"
+                @view-backdrop="closeGcoinQueue"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+                @showGcoinPot="showGcoinPot"
+            >
+            </GcoinQueue>
+            <Report 
+                v-show="f_show_report"
+                @user-backdrop="closeModal"
+                @close="closeReport"
+                @share2="ttt2"
+            >
+            </Report>
+            <ReportDetail
+                v-show="f_show_report_detail"
+                @close="closeReportDetail"
+                @view-backdrop="closeReportDetail"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+                @share3="ttt3"
+            >
+            </ReportDetail>
+            <ReportSuccess 
+                v-show="f_show_report_success"
+                @close="closeReportSuccess"
+                @view-backdrop="closeReportSuccess"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+            >
+            </ReportSuccess>
       </div>
     </div>
   </div>
@@ -176,6 +241,12 @@ import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
 import EventSetting from "../../modal/event_setting_host.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
+// import UsersQueue from "../../modal/users_queue.vue";
+import GcoinPot from "../../modal/gcoin_pot.vue";
+import GcoinQueue from "../../modal/gcoin_pot_queue.vue";
+import Report from "../../modal/report.vue";
+import ReportDetail from "../../modal/report_detail.vue";
+import ReportSuccess from "../../modal/report_success.vue";
 
 export default {
   name: 'Event_Voice_Host',
@@ -187,10 +258,18 @@ export default {
       Invite,
       Price,
       EventSetting,
-      UpcomingEvent
+      UpcomingEvent,
+      // UsersQueue,
+      GcoinPot,
+      GcoinQueue,
+      Report,
+      ReportDetail,
+      ReportSuccess
   },
   data () {
     return {
+        currentNotificationIndex: 0,
+        isNotification: false,
         isAddingCoin: false,
         isBlink: false,
         isDiamond: false,
@@ -207,6 +286,12 @@ export default {
         f_show_price: false,
         f_show_event_setting: false,
         f_show_upcoming_event: false,
+        // f_show_users_queue: false,
+        f_show_gcoin_pot: false,
+        f_show_gcoin_queue: false,
+        f_show_report: false,
+        f_show_report_detail: false,
+        f_show_report_success: false,
         modalStack: [],
         datas: [
             {
@@ -518,11 +603,49 @@ export default {
               mute_image: "Irma.png",
               mute_user: "Arlene",
             },
+        ],
+        notifications: [
+          {duration: 2500, name: "Carol White", user: "Savannah.png", coin: true, size: 50},
+          {duration: 2500, name: "Carla Rose", user: "Serenity.png", coin: false},
+          {duration: 2500, name: "Margarette Holmes", user: "Irma.png", coin: false},
+          {duration: 2500, name: "Keith Rogers", user: "group_1.png", coin: true, size: 250},
+          {duration: 2500, name: "Emmanuela Smith Johanssen", user: "Judith.png", coin: true, size: 250},
+          {duration: 2500, name: "Julie Jones", user: "Alex Smith.png", coin: true, size: 1000},
         ]
     }
   },
   
   methods: {
+    closeModal() {
+      // this.f_show_host_view = false;
+      // this.isModalVisible = false;
+      this.f_show_gcoin_pot = false;
+      this.f_show_gcoin_queue = false;
+      this.f_show_report = false;
+      this.f_show_report_success = false;
+    },
+
+    setNotification() {
+      this.isNotification = true;
+      this.loop();
+    },
+    killNotification() {
+      this.isNotification = false;
+    },
+    delay: duration => {
+      return new Promise(resolve => {
+        setTimeout(resolve, duration);
+      })
+    },
+    loop: async function() {
+      if (!this.isNotification) return;
+      for (let i = 0; i < this.notifications.length; i++)
+        {
+            this.currentNotificationIndex = i;
+            await this.delay(this.notifications[i].duration)
+        }
+        this.loop()
+     },
     addingCoin() {
         this.isAddingCoin = true;
         this.f_show_send_gcoin = false;
@@ -592,6 +715,9 @@ export default {
     showModal() {
       this.isModalVisible = true;
     },
+    // showUsersQueue() {
+    //   this.f_show_users_queue = true;
+    // },
     closeUserProfileModal() {
       this.isModalVisible = false;
     },
@@ -600,6 +726,25 @@ export default {
     },
     closeHostViewModal() {
       this.isModalVisible = false;
+    },
+    // closeUsersQueue() {
+    //   this.f_show_users_queue = false;
+    // },
+    closeGcoinPot() {
+        this.f_show_gcoin_pot = false;
+        this.f_show_gcoin_queue = true;
+    },
+    closeGcoinQueue() {
+        this.f_show_gcoin_queue = false;
+    },
+    closeReport() {
+        this.f_show_report = false;
+    },
+    closeReportSuccess() {
+        this.f_show_report_success = false;
+    },
+    closeReportDetail() {
+        this.f_show_report_detail = false;
     },
     removeFlagFromStack() {
 
@@ -651,6 +796,13 @@ export default {
         default:
           break;
       }
+      // switch (temp) {
+      //   case 'f_show_users_queue':
+      //     this.f_show_users_queue = false
+      //     break;
+      //   default:
+      //     break;
+      // }
       this.f_show_send_gcoin = false,
 
       this.f_show_user_profile = false,
@@ -661,7 +813,19 @@ export default {
 
       this.f_show_price = false,
 
-      this.f_show_event_setting = false
+      this.f_show_event_setting = false,
+
+      // this.f_show_users_queue = false,
+
+      this.f_show_gcoin_queue = false,
+
+      this.f_show_gcoin_pot = false,
+
+      this.f_show_report = false,
+
+      this.f_show_report_detail = false,
+
+      this.f_show_report_success = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
@@ -674,6 +838,23 @@ export default {
     showSendGcoin() {
       this.f_show_send_gcoin = true;
       this.modalStack.push('f_show_send_gcoin');
+    },
+    ttt1() {
+      this.f_show_gcoin_queue = true; // showing child
+      this.f_show_gcoin_pot = false;
+      // this.$emit('close'); // disable myself to parent
+    },
+    ttt2() {
+      this.f_show_report_success = false; // showing child
+      this.f_show_report = false;
+      this.f_show_report_detail = true;
+      // this.$emit('close'); // disable myself to parent
+    },
+    ttt3() {
+      this.f_show_report_success = true; // showing child
+      this.f_show_report = false;
+      this.f_show_report_detail = false;
+      // this.$emit('close'); // disable myself to parent
     },
     showHostView() {
       this.f_show_host_view = true;
@@ -688,6 +869,29 @@ export default {
     showEventSetting() {
         this.f_show_event_setting = true;
         this.modalStack.push('f_show_event_setting');
+    },
+    showGcoinPot() {
+      this.f_show_gcoin_pot = true;
+      this.f_show_gcoin_queue = false;
+      this.f_show_event_setting = false;
+    },
+    showGcoinQueue() {
+      this.f_show_gcoin_queue = true;
+      this.f_show_gcoin_pot = false;
+    },
+    showReport() {
+      this.f_show_report = true;
+      this.f_show_report_success = false;
+      this.f_show_event_setting = false;
+    },
+    showReportDetail(index) {
+        this.f_show_report_detail = true;
+        this.f_show_report = false;
+    },
+    showReportSuccess() {
+        this.f_show_report_success = true;
+        this.f_show_report = false;
+        this.f_show_report_detail = false;
     },
     ttt() {
       this.f_show_upcoming_event = true; // showing child
@@ -704,6 +908,9 @@ export default {
     closeUpcomingEvent() {
       this.f_show_upcoming_event = false;
     },
+    removeDetailFlagFromStack() {
+        this.f_show_report_detail = !this.f_show_report_detail;
+    },
   },
   computed: {
     imgSrc: function () {
@@ -712,11 +919,9 @@ export default {
   },
   created () {
     this.killLoading();
+    // this.loop();
   },
-  closeModal() {
-      this.f_show_host_view = false;
-      this.isModalVisible = false;
-  },
+
 }
 </script>
 <style>
@@ -732,6 +937,40 @@ export default {
   }
   .host_view_money_btn {
     margin: auto auto auto 10px !important;
+  }
+  .host_view_msg {
+    float: right;
+    margin: auto !important;
+  }
+  .event_popup_area {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 6.09%, #FFFFFF 39.21%);
+    height: 100px;
+    margin: auto;
+    display: flex;
+    padding: 0 25px 35px 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    max-width: 414px;
+  }
+  .event_popup_area_user {
+    width: 32px;
+    height: 32px;
+    margin: auto 0;
+  }
+  .event_popup_area_name {
+    font-size: 15px;
+    margin: auto 0;
+  }
+  .event_popup_area_coin {
+    /*width: 25px;*/
+    /*height: 24px;*/
+    margin: auto 10px;
+    text-align: left;
+  }
+  .popup_content {
+    margin: auto auto auto 20px;
+    text-align: left;
   }
 </style>
  

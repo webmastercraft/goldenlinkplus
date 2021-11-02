@@ -29,11 +29,9 @@
                     <slide class="swiperslide_btn">
                     <button @click=setCurrentCarouselIndex(4)>Marketing Future Trends</button>
                     </slide>
-                    <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                    <hooper-pagination slot="hooper-addons"></hooper-pagination>
                 </hooper>
                 <hr class="profile_hr">
-                <hooper group="group1" ref="carousel" @slide="updateCarousel" class="profile_hooper_content">
+                <hooper group="group1" ref="carousel" class="profile_hooper_content">
                     <slide class="slide_block">
                         <!-- Offers -->
                         <p class="profile_relax"><b>Foot</b></p>
@@ -265,7 +263,7 @@ export default {
       f_show_review: false,
       modalStack: [],
       currentCarouselIndex: 0,
-      datas: [
+      followData: [
         {
           follow: true
         }
@@ -350,7 +348,7 @@ export default {
   },
   methods: {
     selectFollow(index) {
-      this.datas[index].follow = false
+      this.followData[index].follow = false
     },
     closeModal() {
       this.f_show_video = false;

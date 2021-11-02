@@ -27,7 +27,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                  <img :src="`${item.user_1}`">
+                  <img :src="`${item.user_2}`">
+                  <img :src="`${item.user_3}`">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -45,7 +49,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                  <img :src="`${item.user_1}`">
+                  <img :src="`${item.user_2}`">
+                  <img :src="`${item.user_3}`">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -63,7 +71,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                  <img :src="`${item.user_1}`">
+                  <img :src="`${item.user_2}`">
+                  <img :src="`${item.user_3}`">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -81,7 +93,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                  <img :src="`${item.user_1}`">
+                  <img :src="`${item.user_2}`">
+                  <img :src="`${item.user_3}`">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -99,7 +115,11 @@
                 <button>Join this Event</button>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img" v-for="(item, index) in loginData" :key="index">
+                  <img :src="`${item.user_1}`">
+                  <img :src="`${item.user_2}`">
+                  <img :src="`${item.user_3}`">
+                </div>
                 <p class="group_user_flex">
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -228,6 +248,13 @@ export default {
       f_show_bs_agreement: false,
       f_show_gs_agreement: false,
       f_show_translate: false,
+      loginData: [
+        {
+          user_1: "group_1.png",
+          user_2: "group_2.png",
+          user_3: "group_3.png"
+        }
+      ]
     }
   },
   methods: {
@@ -291,14 +318,6 @@ export default {
 }
 </script>
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
-  }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
-  }
   .group_user_flex {
     display: flex;
   }

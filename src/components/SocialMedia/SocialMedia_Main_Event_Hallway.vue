@@ -27,7 +27,7 @@
           <div class="main_body main_body_audio">
             <div class="para_event">
               <div class="para_title">
-                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101<img src="community/about_key.png" class="event_room_lock"></p>
+                <p><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
                 <router-link to="/socialmedia/socialmedia_main_event_voice">
                   <p class="para_event_title">Let’s All win the Market!! asdf asd asdfsad</p>
                 </router-link>
@@ -39,7 +39,11 @@
                 </router-link>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p>
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -61,7 +65,11 @@
                 </router-link>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p>
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -83,7 +91,11 @@
                 </router-link>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p>
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -105,7 +117,11 @@
                 </router-link>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p>
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
@@ -129,7 +145,11 @@
                 </router-link>
               </div>
               <div class="para_group">
-                <img src="Group_user.png">
+                <div class="para_group_img">
+                  <img src="group_1.png">
+                  <img src="group_2.png">
+                  <img src="group_3.png">
+                </div>
                 <p>
                   <img src="user_count.png">2501
                   <img src="msg_count.png">139
