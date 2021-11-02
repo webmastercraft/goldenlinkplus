@@ -1,13 +1,13 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop" v-on:click.self="userProfileBackdrop">
-      <div class="modal_price_transform"
+    <div class="modal-backdrop community_share_end_modal" v-on:click.self="userProfileBackdrop">
+      <div class="price_position_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
         <header
-          class="host_view_position"
+          class="price_view_position"
           id="modalTitle"
         >
             <div class="price_modal">
@@ -276,5 +276,19 @@
   }
   .price_content {
     margin: 90px 20px 0;
+  }
+  .price_position_modal {
+    transform: translate(0, 0%) !important;
+    width: 100%;
+    max-width: 414px;
+  }
+  .price_view_position {
+    text-align: left;
+    overflow: auto;
+    height: 450px;
+    background: white;
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    max-width: 414px;
   }
 </style>

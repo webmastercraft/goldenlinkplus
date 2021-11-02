@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-mask" v-on:click.self="userProfileBackdrop">
-      <div class="modal height_auto close_event_transform"
+    <div class="modal-backdrop community_share_end_modal bg-mask" v-on:click.self="userProfileBackdrop">
+      <div class="modal height_auto pot_setting_modal"
         role="dialog"
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
@@ -92,5 +92,8 @@
         padding: 10px 0;
         margin: 20px auto auto auto;
     }
+    .pot_setting_modal {
+        transform: translate3d(0, 0%, 0) !important;
+        border-radius: 12px 12px 0 0 !important;
+    }
 </style>
-l

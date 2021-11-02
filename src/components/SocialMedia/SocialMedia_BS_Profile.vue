@@ -303,18 +303,20 @@
                   </slide>
                   <slide class="swiperslide_btn">
                     <!-- Marketing Future Trends -->
-                      <p class="profile_commun"><b>Marketing Future Trends</b></p>
-                      <p class="future_maps">
-                        <span :class="{'header_btn': isHead == true}" @click="showHead">2 Headquarters</span>
-                        <span :class="{'header_btn': isBranches == true}" @click="showBranches">4 Branches</span>
-                      </p>
+                      <p :class="{'future_maps_color_existing' : isExisting == true}" class="profile_commun" @click="showExisting"><b>Existing Branches</b></p>
+                      <div class="marketing_maps">
+                        <p :class="{'future_maps_color_head': isHead == true}" class="future_maps_head" @click="showHead">2<br>Headquarters</p>
+                        <p :class="{'future_maps_color_chain': isChain1 == true}" class="future_maps_chain" @click="showChain1">3<br>Chain<br>Stores</p>
+                        <p :class="{'future_maps_color_country': isCountry == true}" class="future_maps_country" @click="showCountry">1<br>Country</p>
+                        <p :class="{'future_maps_color_franchisee': isFranchisee1 == true}" class="future_maps_franchisee" @click="showFranchisee1">4<br>Franchisee</p>
+                      </div>
                       <img :src="`${currentImage}`" class="trends_map">
-                      <p class="profile_commun"><b>Existing Branches</b></p>
-                      <p class="future_maps">2 Headquarters</p>
-                      <p :class="{'future_maps_color': isChain == true}" class="future_maps" @click="showChain">1 Chain Store</p>
-                      <p :class="{'future_maps_color': isCountry == true}" class="future_maps" @click="showCountry">1 Country</p>
-                      <p :class="{'future_maps_color': isFranchisee == true}" class="future_maps" @click="showFranchisee">1 Franchisee</p>
-                      <p :class="{'future_maps_color': isOther == true}" class="future_maps" @click="showOther">1 Other</p>
+                      <p class="profile_commun"><b>Marketing Future Trends</b></p>
+                      <div class="existing_maps">
+                        <p :class="{'future_maps_color_chain': isDistributor == true}" class="future_maps_head" @click="showDistributor">3<br>Distributors</p>
+                        <p :class="{'future_maps_color_country': isChain2 == true}" class="future_maps_country" @click="showChain2">1<br>Chain Stores</p>
+                        <p :class="{'future_maps_color_franchisee': isFranchisee2 == true}" class="future_maps_franchisee" @click="showFranchisee2">4<br>Franchisee</p>
+                      </div>
                   </slide>
                 </hooper>
               </div>
@@ -375,12 +377,14 @@ export default {
   },
   data () {
     return {
+      isExisting: true,
       isHead: true,
-      isBranches: false,
-      isChain: false,
+      isChain1: false,
+      isChain2: false,
       isCountry: false,
-      isFranchisee: false,
-      isOther: false,
+      isFranchisee1: false,
+      isFranchisee2: false,
+      isDistributor: false,
       f_show_video: false,
       f_show_banner: false,
       f_show_detail: false,
@@ -472,43 +476,55 @@ export default {
     }
   },
   methods: {
+    showExisting() {
+      this.currentImage = "profile/existing.png";
+      this.initSelectedMap();
+      this.isExisting = true;
+    },
     showHead() {
       this.currentImage = "profile/Group_719.png";
       this.initSelectedMap();
       this.isHead = true;
     },
-    showBranches() {
-      this.currentImage = "profile/branches.png";
+    showDistributor() {
+      this.currentImage = "profile/distributor.png";
       this.initSelectedMap();
-      this.isBranches = true;
+      this.isDistributor = true;
     },
-    showChain() {
-      this.currentImage = "profile/chain_store.png";
+    showChain1() {
+      this.currentImage = "profile/chain1.png";
       this.initSelectedMap();
-      this.isChain = true;
+      this.isChain1 = true;
+    },
+    showChain2() {
+      this.currentImage = "profile/chain2.png";
+      this.initSelectedMap();
+      this.isChain2 = true;
     },
     showCountry() {
       this.currentImage = "profile/country.png";
       this.initSelectedMap();
       this.isCountry = true;
     },
-    showFranchisee() {
-      this.currentImage = "profile/franchisee.png";
+    showFranchisee1() {
+      this.currentImage = "profile/franchisee1.png";
       this.initSelectedMap();
-      this.isFranchisee = true;
+      this.isFranchisee1 = true;
     },
-    showOther() {
-      this.currentImage = "profile/other.png";
+    showFranchisee2() {
+      this.currentImage = "profile/franchisee2.png";
       this.initSelectedMap();
-      this.isOther = true;
+      this.isFranchisee2 = true;
     },
     initSelectedMap() {
+      this.isExisting = false;
       this.isHead = false;
-      this.isBranches = false;
-      this.isChain = false;
+      this.isDistributor = false;
+      this.isChain1 = false;
+      this.isChain2 = false;
       this.isCountry = false;
-      this.isFranchisee = false;
-      this.isOther = false;
+      this.isFranchisee1 = false;
+      this.isFranchisee2 = false;
     },
     selectFollow(index) {
       this.datas[index].follow = false
@@ -849,7 +865,61 @@ export default {
     height: auto !important;
     outline: unset;
   }
-  .future_maps_color {
-    color: #FFB803 !important;
+  .future_maps_color_head {
+    background: rgba(24, 152, 221, 0.4) !important;
+  }
+  .future_maps_color_chain {
+    background: rgba(11, 55, 147, 0.4) !important;
+  }
+  .future_maps_color_country {
+    background: rgba(240, 107, 8, 0.4) !important;
+  }
+  .future_maps_color_franchisee {
+    background: rgba(231, 87, 175, 0.4) !important;
+  }
+  .future_maps_head {
+    background: rgba(24, 152, 221, 0.05);
+    margin: auto 0;
+  }
+  .future_maps_chain {
+    background: rgba(11, 55, 147, 0.05);
+    margin: auto 0 auto 2px;
+  }
+  .future_maps_country {
+    background: rgba(240, 107, 8, 0.05);
+    margin: auto 0 auto 2px;
+  }
+  .future_maps_franchisee {
+    background: rgba(231, 87, 175, 0.05);
+    margin: auto 0 auto 2px;
+  }
+  .marketing_maps {
+    display: flex;
+  }
+  .marketing_maps p {
+    height: 70px;
+    color: black;
+    text-align: left;
+    width: 100%;
+    display: grid;
+    padding: 0 8px;
+    font-size: 14px;
+    align-items: center;
+  }
+  .existing_maps {
+    display: flex;
+  }
+  .existing_maps p {
+    height: 50px;
+    color: black;
+    text-align: left;
+    width: 100%;
+    display: grid;
+    padding: 0 8px;
+    font-size: 14px;
+    align-items: center;
+  }
+  .future_maps_color_existing {
+
   }
 </style>

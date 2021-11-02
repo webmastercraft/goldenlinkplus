@@ -11,7 +11,11 @@
           id="modalTitle"
         >
             <div class="event_setting_area">
-              <p class="event_rules_title"><img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101</p>
+              <p class="event_rules_title">
+                <router-link to="/socialmedia/community/socialmedia_community">
+                  <img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101
+                </router-link>
+              </p>
               <p class="event_rules_title_lg">Event Rules</p>
               <p class="event_rules_title_md">Respect Each Other</p>
               <p class="event_rules_title_sm">We welcomeall members to share their thought about sustainability but need to show respect to different speakers</p>

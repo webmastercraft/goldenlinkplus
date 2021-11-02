@@ -18,7 +18,7 @@
                       <div class="event_chat_text">
                           <img :src="`${item.diamond_img}`" class="chat_logo">
                           <div class="socialmedia_chat_para">
-                            <p class="chat_time">2 minutes ago<br><span class="chat_sentence">Hey, what’s up Guys!! Can you test</span></p>
+                            <p class="chat_time"><span>2 minutes ago</span><span class="chat_sentence">{{item.chat_content}}</span></p>
                             <div class="chat_diamond_number">
                               <div class="diamond_animation">
                                 <img src="frame_diamond2.png" class="diaframe" v-if="item.diaOneActive == true" :class="{'diaOneAppear': item.diaOneActive == true}">
@@ -83,72 +83,84 @@ export default {
         DiamondData: [
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflk jsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 120,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
             },
             {
                 diamond_img: "mona.png",
+                chat_content: "ffsfaasdkflsdajfalsdfjljdflsjflkjsadklf0947109242093423i14h312hk",
                 diaOneActive: false,
                 diaTwoActive: false,
                 diaSize: 125,
@@ -255,10 +267,13 @@ export default {
 }
 .socialmedia_chat_para span{
   margin: 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 .event_chat_content {
   display: grid;
   padding: 10px 20px 0;
+  width: 100%;
 }
 .diaOneAppear {
   animation-name: diaOneFramesUser;

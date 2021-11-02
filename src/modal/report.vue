@@ -113,14 +113,8 @@
                 this.HostData[index].blink = false
             }, 2000)
         },
-        showReportSuccess(index) {
-            this.$emit('share2');
-            // setTimeout(() => {
-            //     console.log('sss');
-            // }, 1500);
-        },
         showReportDetail(index) {
-            this.f_show_report_detail = true;
+            this.$emit('share2');
         },
         closeReportDetail() {
             this.f_show_report_detail = false;

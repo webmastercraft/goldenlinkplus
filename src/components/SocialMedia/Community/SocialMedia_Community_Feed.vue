@@ -16,7 +16,7 @@
                         <router-link to="/socialmedia/community/socialmedia_community_feed_link"><img src="main_contact.png" class="main_contact"></router-link>
                         <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
                     </div>
-                    <p class="community_favicon"><img src="community.png" class="favicon_img">RECENT ACTIVITY<img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
+                    <p class="community_favicon"><img src="community.png" class="community_favicon_img"><span>RECENT ACTIVITY</span><img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
                     <div class="community_header">
                         <div class="community_user_info">
                             <img src="Susan Boyle.png" class="community_user_img">
@@ -430,10 +430,18 @@
     .community_favicon {
         margin: 10px auto;
         text-align: left;
+        display: flex;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+    }
+    .community_favicon span {
+        margin: auto 0;
+    }
+    .community_favicon img {
+        height: 100%;
     }
     .setting_img {
-        margin-bottom: 5px;
-        float: right;
+        margin: auto 0;
     }
     .community_user_info {
         display: flex;
@@ -628,6 +636,10 @@
         position: absolute;
         top: 7px;
         left: 4px;
+    }
+    .community_favicon_img {
+        height: 100%;
+        margin: auto 8px auto 0;
     }
 </style>
 

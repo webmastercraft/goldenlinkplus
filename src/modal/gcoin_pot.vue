@@ -138,9 +138,9 @@
                 this.HostData[index].blink = false
             }, 2000)
       },
-      showGcoinQueue() {
-        this.$emit('share1');
-      },
+        showGcoinQueue() {
+            this.$emit('share1');
+        },
 
     },
   };

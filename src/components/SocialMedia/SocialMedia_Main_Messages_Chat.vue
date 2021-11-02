@@ -106,13 +106,11 @@ export default {
   }
   .chat_time {
     font-size: 11px;
-    margin: auto;
+    margin: auto auto auto 0;
     width: 100%;
     border-radius: 8px;
     padding: 10px;
-  }
-  .chat_sentence {
-    font-size: 16px;
+    display: grid;
   }
   .socialmedia_chat_para {
     width: 100%;
@@ -143,10 +141,6 @@ export default {
   }
   .chat_sentence .form-control:focus {
     background-color: white;
-  }
-  .chat_sentence {
-    position: relative;
-    height: 45px;
   }
   .chat_sentence > button{
     position: absolute;

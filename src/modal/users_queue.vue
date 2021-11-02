@@ -11,37 +11,34 @@
           id="modalTitle"
         >
             <div class="gcoin_modal">
-                <p class="switch_title">Report<span class="profile_done" @click="closeModal">Close</span></p>
-                <div class="report_success">
-                    <img src="connect_modal.png">
-                    <p>Thank you for your concern. Your concern will be reviewed and will be acted upon accordingly. </p>
+                <p class="gcoin_title">G-Coins Pot Queue</p>
+                <p class="gcoin_queue_title">
+                  <span>Sender</span>
+                  <span>Reward</span>
+                  <span>Claim TIme</span>
+                </p>
+                <div v-for="(item, index) in gcoinData" :key="index" class="gcoin_queue_data">
+                  <img :src="`${item.user_img}`">
+                  <span class="gcoin_queue_name">{{item.user_name}}</span>
+                  <span>{{item.user_reward}}</span>
+                  <span>{{item.time}}</span>
                 </div>
             </div>
         </header>
       </div>
-      <Report 
-          v-show="f_show_report"
-          @user-backdrop="removeFlagFromStack"
-          @close="closeReport"
-          @share2="ttt2"
-      >
-      </Report>
     </div>
   </transition>
 </template>
 
 <script>
-  import Report from "../modal/report.vue";
-
   export default {
-    name: 'Report_Success',
+    name: 'Gcoin_Queue',
     components: {
-      Report,
     },  
     data() {
       return {
         promotion_link: "www.goldenlinkplus.com",
-        f_show_report: false,
+        f_show_gcoin_pot: false,
         modalStack: [],
         gcoinData: [
           {
@@ -84,8 +81,8 @@
           this.$emit('user-backdrop');
         }
       },
-      showReportSuccess() {
-        this.$emit('share2');
+      showGcoinQueue() {
+        this.$emit('share1');
       },
       removeFlagFromStack() {
 
@@ -93,62 +90,30 @@
 
         
         switch (temp) {
-          case 'f_show_report':
-            this.f_show_report = false
+          case 'f_show_gcoin_pot':
+            this.f_show_gcoin_pot = false
             break;
           default:
             break;
         }
-        this.f_show_report = false
+        this.f_show_gcoin_pot = false
       },
-      showReport() {
-        this.f_show_report = true;
+      showGcoinPot() {
+        this.f_show_gcoin_pot = true;
       },
-      ttt2() {
-        this.f_show_report_success = true; // showing child
-        this.f_show_report = false;
+      ttt1() {
+        this.f_show_gcoin_queue = true; // showing child
+        this.f_show_gcoin_pot = false;
         // this.$emit('close'); // disable myself to parent
       },
-      closeReport() {
-          this.f_show_report = false;
+      closeGcoinPot() {
+          this.f_show_gcoin_pot = false;
       },
-      closeReportSuccess() {
-        this.f_show_report_success = false;
+      closeGcoinQueue() {
+        this.f_show_gcoin_queue = false;
       },
     }
   };
 </script>
 <style>
-  .gcoin_queue_data {
-    display: flex;
-    padding: 15px 0;
-  }
-  .gcoin_queue_data img {
-    margin: auto 0 auto 10px;
-  }
-  .gcoin_queue_data span {
-    margin: auto;
-  }
-  .gcoin_queue_data span:first-child {
-    margin: auto 0 auto auto;
-  }
-  .gcoin_queue_data span:last-child {
-    margin: auto 10px auto auto;
-  }
-  .gcoin_queue_data:nth-child(odd) {
-    background-color: #F4F9FE;
-  }
-  .gcoin_queue_data:nth-child(even) {
-    background-color: #FFFFFF;
-  }
-  .gcoin_queue_name {
-    margin: auto 10px !important;
-  }
-  .report_success {
-    text-align: center;
-    padding: 30px 50px;
-  }
-  .report_success p {
-    margin: 20px auto;
-  }
 </style>

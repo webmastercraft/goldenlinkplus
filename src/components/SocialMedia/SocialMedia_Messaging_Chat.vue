@@ -108,13 +108,6 @@ export default {
     margin: 20px 0 15px;
     border-radius: 16px;
   }
-  .chat_time {
-    font-size: 11px;
-    margin: auto;
-    width: 100%;
-    border-radius: 8px;
-    padding: 10px;
-  }
   .chat_sentence {
     font-size: 16px;
   }
@@ -150,7 +143,6 @@ export default {
   }
   .chat_sentence {
     position: relative;
-    height: 45px;
   }
   .chat_sentence > button{
     position: absolute;

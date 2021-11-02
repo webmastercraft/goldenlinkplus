@@ -13,11 +13,11 @@
                 id="modalTitle"
             >
                 <div class="event_btn">
-                    <button class="event_setting_btn" @click="showGcoinPot"><img src="send_gcoins.png">G-Coins Pot Settings</button>
+                    <button class="event_setting_btn" v-on:click="btnShowGcoinPot"><img src="send_gcoins.png">G-Coins Pot Settings</button>
                     <button class="event_setting_btn" @click="showShareEvent"><img src="event_setting/share.png">Share this Event</button>
                     <button class="event_setting_btn" @click="showSearchEvent"><img src="event_setting/search.png">Search this Event</button>
                     <button class="event_setting_btn" @click="showEventRules"><img src="event_setting/rules.png">Event Rules</button>
-                    <button class="event_setting_btn" @click="showReport"><img src="event_setting/report.png">Report Recent Speaker</button>
+                    <button class="event_setting_btn" v-on:click="btnShowReport"><img src="event_setting/report.png">Report Recent Speaker</button>
                 </div>
             </header>
         </div>
@@ -43,32 +43,6 @@
             @user-backdrop="removeRulesFlagFromStack"
         >
         </EventRules>
-        <GcoinPot 
-            v-show="f_show_gcoin_pot"
-            @user-backdrop="removeFlagFromStack"
-            @close="closeGcoinPot"
-            @share1="ttt1"
-        >
-        </GcoinPot>
-        <GcoinQueue 
-            v-show="f_show_gcoin_queue"
-            @close="closeGcoinQueue"
-            @view-backdrop="closeGcoinQueue"
-        >
-        </GcoinQueue>
-        <Report 
-            v-show="f_show_report"
-            @user-backdrop="removeFlagFromStack"
-            @close="closeReport"
-            @share2="ttt2"
-        >
-        </Report>
-        <ReportSuccess 
-            v-show="f_show_report_success"
-            @close="closeReportSuccess"
-            @view-backdrop="closeReportSuccess"
-        >
-        </ReportSuccess>
     </div>
   </transition>
 </template>
@@ -77,10 +51,6 @@
 import ShareEvent from "../modal/share_event.vue";
 import SearchEvent from "../modal/search_event.vue";
 import EventRules from "../modal/event_rules.vue";
-import GcoinPot from "../modal/gcoin_pot.vue";
-import GcoinQueue from "../modal/gcoin_pot_queue.vue";
-import Report from "../modal/report.vue";
-import ReportSuccess from "../modal/report_success.vue";
 
   export default {
     name: 'Event_Setting',
@@ -88,10 +58,6 @@ import ReportSuccess from "../modal/report_success.vue";
       SearchEvent,
       ShareEvent,
       EventRules,
-      GcoinPot,
-      GcoinQueue,
-      Report,
-      ReportSuccess
     },  
     data () {
       return {
@@ -99,10 +65,6 @@ import ReportSuccess from "../modal/report_success.vue";
         f_show_share_event: false,
         f_show_search_event: false,
         f_show_event_rules: false,
-        f_show_gcoin_pot: false,
-        f_show_gcoin_queue: false,
-        f_show_report: false,
-        f_show_report_success: false,
         modalStack: [],
       }
     },
@@ -128,14 +90,29 @@ import ReportSuccess from "../modal/report_success.vue";
         showEventRules() {
             this.f_show_event_rules = true;
         },
+        btnShowGcoinPot() {
+            this.$emit('ShowGcoinPot');
+        },
+        btnShowReport() {
+            this.$emit('ShowReport');
+        },
+        showReport() {
+          this.f_show_report = true;
+        },
         closeSearchProfile() {
         this.f_show_search_event = false;
         },
         closeShareProfile() {
         this.f_show_share_event = false;
         },
-        closeRulesProfile() {
-        this.f_show_event_rules = false;
+        closeGcoinQueue() {
+          this.f_show_gcoin_queue = false;
+        },
+        closeReport() {
+            this.f_show_report = false;
+        },
+        closeReportSuccess() {
+            this.f_show_report_success = false;
         },
         removeShareFlagFromStack() {
             this.f_show_share_event = !this.f_show_share_event;
@@ -148,53 +125,35 @@ import ReportSuccess from "../modal/report_success.vue";
         },
         removeFlagFromStack() {
 
-          let temp = this.modalStack.pop(-1);
-
-          
-          switch (temp) {
-            case 'f_show_gcoin_pot':
-              this.f_show_gcoin_pot = false
-              break;
-            default:
-              break;
-          }
-          switch (temp) {
-            case 'f_show_report':
-              this.f_show_report = false
-              break;
-            default:
-              break;
-          }
+            let temp = this.modalStack.pop(-1);
+            switch (temp) {
+                case 'f_show_gcoin_pot':
+                this.f_show_gcoin_pot = false
+                break;
+                default:
+                break;
+            }
+            switch (temp) {
+                case 'f_show_report':
+                this.f_show_report = false
+                break;
+                default:
+                break;
+            }
+            switch (temp) {
+                case 'f_show_gcoin_queue':
+                this.f_show_gcoin_queue = false
+                this.f_show_event_setting = false
+                break;
+                default:
+                break;
+            }
           this.f_show_gcoin_pot = false,
-          this.f_show_report = false
+          this.f_show_report = false,
+          this.f_show_gcoin_queue = false
         },
-        showGcoinPot() {
-          this.f_show_gcoin_pot = true;
-        },
-        showReport() {
-          this.f_show_report = true;
-        },
-        ttt1() {
-          this.f_show_gcoin_queue = true; // showing child
-          this.f_show_gcoin_pot = false;
-          // this.$emit('close'); // disable myself to parent
-        },
-        ttt2() {
-          this.f_show_report_success = true; // showing child
-          this.f_show_report = false;
-          // this.$emit('close'); // disable myself to parent
-        },
-        closeGcoinPot() {
-            this.f_show_gcoin_pot = false;
-        },
-        closeGcoinQueue() {
-          this.f_show_gcoin_queue = false;
-        },
-        closeReport() {
-            this.f_show_report = false;
-        },
-        closeReportSuccess() {
-          this.f_show_report_success = false;
+        closeRulesProfile() {
+        this.f_show_event_rules = false;
         },
     },
     computed: {

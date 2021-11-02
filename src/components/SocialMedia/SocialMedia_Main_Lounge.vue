@@ -247,14 +247,6 @@ export default {
 }
 </script>
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
-  }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
-  }
   .lounge_content {
     width: 100%;
     margin: 20px auto 0;

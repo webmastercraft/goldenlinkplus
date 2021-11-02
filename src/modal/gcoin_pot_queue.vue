@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop bg-view-mask event_invite_modal_position" v-on:click.self="userProfileBackdrop">
+    <div class="modal-backdrop bg-view-mask event_invite_modal_position" v-on:click="userProfileBackdrop">
       <div class="event_invite_modal"
         role="dialog"
         aria-labelledby="modalTitle"
@@ -11,9 +11,9 @@
           id="modalTitle"
         >
             <div class="gcoin_modal">
-                <p class="gcoin_title">G-Coins Pot Queue<img src="profile/profile_plus.png" @click="showGcoinPot"></p>
+                <p class="gcoin_title">G-Coins Pot Queue<img src="profile/profile_plus.png" @click="showGcoinPotFromQuene"></p>
                 <p class="gcoin_queue_title">
-                  <span>Host / Speaker</span>
+                  <span>Sender</span>
                   <span>Reward</span>
                   <span>Claim TIme</span>
                 </p>
@@ -26,29 +26,19 @@
             </div>
         </header>
       </div>
-      <GcoinPot 
-          v-show="f_show_gcoin_pot"
-          @user-backdrop="removeFlagFromStack"
-          @close="closeGcoinPot"
-          @share1="ttt1"
-      >
-      </GcoinPot>
     </div>
   </transition>
 </template>
 
 <script>
-  import GcoinPot from "../modal/gcoin_pot.vue";
 
   export default {
     name: 'Gcoin_Queue',
     components: {
-      GcoinPot,
     },  
     data() {
       return {
         promotion_link: "www.goldenlinkplus.com",
-        f_show_gcoin_pot: false,
         modalStack: [],
         gcoinData: [
           {
@@ -88,11 +78,14 @@
       },
       userProfileBackdrop(evt) {
         if(evt.target.classList.length > 0 && "bg-mask"){
-          this.$emit('user-backdrop');
+          this.$emit('disable-self');
         }
       },
       showGcoinQueue() {
         this.$emit('share1');
+      },
+      showGcoinPotFromQuene() {
+        this.$emit('showGcoinPot')
       },
       removeFlagFromStack() {
 
@@ -108,20 +101,6 @@
         }
         this.f_show_gcoin_pot = false
       },
-      showGcoinPot() {
-        this.f_show_gcoin_pot = true;
-      },
-      ttt1() {
-        this.f_show_gcoin_queue = true; // showing child
-        this.f_show_gcoin_pot = false;
-        // this.$emit('close'); // disable myself to parent
-      },
-      closeGcoinPot() {
-          this.f_show_gcoin_pot = false;
-      },
-      closeGcoinQueue() {
-        this.f_show_gcoin_queue = false;
-      },
     }
   };
 </script>
@@ -134,8 +113,14 @@
     display: flex;
     height: 32px;
   }
-  .gcoin_queue_title span {
+  .gcoin_queue_title span:nth-child(1) {
     margin: auto;
+  }
+  .gcoin_queue_title span:nth-child(2) {
+    margin: auto 20px auto 0;
+  }
+  .gcoin_queue_title span:nth-child(3) {
+    margin: auto 10px auto 0;
   }
   .gcoin_queue_data {
     display: flex;

@@ -14,7 +14,7 @@
                 <router-link to="/socialmedia/community/socialmedia_community"><img src="main_contact.png" class="main_contact"></router-link>
                 <img src="mona.png" class="main_user" @click="showSwitchGsAccount">
               </div>
-              <p class="community_favicon"><img src="community.png" class="favicon_img">RECENT ACTIVITY<img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
+              <p class="community_favicon"><img src="community.png" class="community_favicon_img"><span>RECENT ACTIVITY</span><router-link to="/socialmedia/community/socialmedia_community_create" class="community_create_plus"><img src="profile/profile_plus.png"></router-link><img src="community/setting.png" class="setting_img" @click="showIndustry"></p>
           </div>
           <div class="community_feed_link_area">
             <div v-for="(item, index) in linkData" :key="index" class="feed_link_data">
@@ -407,7 +407,6 @@ export default {
     padding: 3px 0;
     width: 90px;
     font-size: 14px;
-    text-transform: uppercase;
   }
   .feed_link_join.pending {
     background: #E8F1FA;
@@ -426,11 +425,14 @@ export default {
     padding: 3px 0;
     width: 90px;
     font-size: 14px;
-    text-transform: uppercase;
   }
   .feed_link_data_a {
     display: flex;
     width: calc(100% - 90px);
+  }
+  .community_create_plus {
+    height: 100%;
+    margin: auto 15px auto auto;
   }
 </style>
  

@@ -32,7 +32,7 @@
                     <img src="event_setting/mp3_file.png">
                 </div>
                 <div class="report_detail_btn">
-                    <button>Submit Report</button>
+                    <button @click="showReportSuccess">Submit Report</button>
                 </div>
             </div>
         </header>
@@ -43,48 +43,39 @@
 </template>
 
 <script>
+    export default {
+        name: 'Report_Detail',
+        components: {
+        },
+        data () {
+            return {
+                reportselect: 0,
+            }
+        },
+        methods: {
+            close() {
+                this.$emit('close');
+            },
+            userProfileBackdrop(evt) {
+                if(evt.target.classList.length > 0 && "bg-mask"){
+                    this.$emit('disable-self');
+                }
+            },
+            toggleActive(index) {
+                this.HostData[index].blink = true
+                setTimeout(() => {
+                    this.HostData[index].blink = false
+                }, 2000)
+            },
+            showReportSuccess() {
+                this.$emit('share3');
+            },
+            setReport(index) {
+                this.reportselect = index;
+            },
 
-  export default {
-    name: 'Report',
-    components: {
-    },
-    data () {
-        return {
-            reportselect: 0,
-        }
-    },
-    methods: {
-      close() {
-        this.$emit('close');
-      },
-      userProfileBackdrop(evt) {
-        if(evt.target.classList.length > 0 && "bg-mask"){
-          this.$emit('user-backdrop');
-        }
-      },
-      test(evt) {
-        if(evt.target.classList.length > 0 && "share_span"){
-          this.$emit('user-backdrop');
-        }
-      },
-      toggleActive(index) {
-            this.HostData[index].blink = true
-            setTimeout(() => {
-                this.HostData[index].blink = false
-            }, 2000)
-      },
-      showReportSuccess() {
-        this.$emit('share2');
-        // setTimeout(() => {
-        //   this.$emit('close');
-        // }, 1500);
-      },
-      setReport(index) {
-        this.reportselect = index;
-      },
-
-    },
-  };
+        },
+    };
 </script>
 <style>
     .report_detail_title {

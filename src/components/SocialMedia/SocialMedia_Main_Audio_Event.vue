@@ -318,14 +318,6 @@ export default {
 }
 </script>
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
-  }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
-  }
   .group_user_flex {
     display: flex;
   }

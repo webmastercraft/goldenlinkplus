@@ -15,7 +15,12 @@
       </div>
       <div class="phone sociallogin" v-show="!isloading">
           <div class="event_body_title">
-            <p class="event_favicon_img"><img src="triangle.png">MAKING BIG TIME MONEY 101<img src="lock.png" class="event_room_lock"></p>
+            <p class="event_favicon_img">
+              <router-link to="/socialmedia/community/socialmedia_community">
+                  <img src="triangle.png" class="favicon_img">MAKING BIG TIME MONEY 101
+              </router-link>
+              <img src="lock.png" class="event_room_lock">
+            </p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
             
               <p class="event_back">
@@ -141,41 +146,83 @@
                 </div>
             </div>
           </div>
-          <SendGcoin 
-            v-show="f_show_send_gcoin"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </SendGcoin>
-          <vuedal></vuedal>
-          <UserProfile 
-            v-show="f_show_user_profile"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </UserProfile>
-          <Invite 
-            v-show="f_show_invite"
-            @user-backdrop="removeFlagFromStack"
-            @close="closeInviteModal"
-            @share="ttt"
-          >
-          </Invite>
-          <Price 
-            v-show="f_show_price"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </Price>
-          <EventSetting 
-            v-show="f_show_event_setting"
-            @close="closeEventSetting"
-            @user-backdrop="removeFlagFromStack"
-          >
-          </EventSetting>
-          <UpcomingEvent 
-            v-show="f_show_upcoming_event"
-            @close="closeUpcomingEvent"
-            @view-backdrop="closeUpcomingEvent"
-          >
-          </UpcomingEvent>
+            <SendGcoin 
+                v-show="f_show_send_gcoin"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </SendGcoin>
+            <vuedal></vuedal>
+            <UserProfile 
+                v-show="f_show_user_profile"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </UserProfile>
+            <Invite 
+                v-show="f_show_invite"
+                @user-backdrop="removeFlagFromStack"
+                @close="closeInviteModal"
+                @share="ttt"
+            >
+            </Invite>
+            <Price 
+                v-show="f_show_price"
+                @user-backdrop="removeFlagFromStack"
+            >
+            </Price>
+            <EventSetting 
+                v-show="f_show_event_setting"
+                @close="closeEventSetting"
+                @user-backdrop="removeFlagFromStack"
+                @ShowGcoinPot="showGcoinPot"
+                @ShowReport="showReport"
+            >
+            </EventSetting>
+            <UpcomingEvent 
+                v-show="f_show_upcoming_event"
+                @close="closeUpcomingEvent"
+                @view-backdrop="closeUpcomingEvent"
+            >
+            </UpcomingEvent>
+            <GcoinPot 
+                v-show="f_show_gcoin_pot"
+                @user-backdrop="closeModal"
+                @close="closeGcoinPot"
+                @share1="ttt1"
+            >
+            </GcoinPot>
+            <GcoinQueue 
+                v-show="f_show_gcoin_queue"
+                @close="closeGcoinQueue"
+                @view-backdrop="closeGcoinQueue"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+                @showGcoinPot="showGcoinPot"
+            >
+            </GcoinQueue>
+            <Report 
+                v-show="f_show_report"
+                @user-backdrop="closeModal"
+                @close="closeReport"
+                @share2="ttt2"
+            >
+            </Report>
+            <ReportDetail
+                v-show="f_show_report_detail"
+                @close="closeReportDetail"
+                @view-backdrop="closeReportDetail"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+                @share3="ttt3"
+            >
+            </ReportDetail>
+            <ReportSuccess 
+                v-show="f_show_report_success"
+                @close="closeReportSuccess"
+                @view-backdrop="closeReportSuccess"
+                @user-backdrop="closeModal"
+                @disable-self="removeFlagFromStack"
+            >
+            </ReportSuccess>
       </div>
     </div>
   </div>
@@ -190,6 +237,11 @@ import Invite from "../../modal/invite.vue";
 import Price from "../../modal/price.vue";
 import EventSetting from "../../modal/event_setting.vue";
 import UpcomingEvent from "../../modal/event_invite.vue";
+import GcoinPot from "../../modal/gcoin_pot.vue";
+import GcoinQueue from "../../modal/gcoin_pot_queue.vue";
+import Report from "../../modal/report.vue";
+import ReportDetail from "../../modal/report_detail.vue";
+import ReportSuccess from "../../modal/report_success.vue";
 
 export default {
   name: 'Event_Voice',
@@ -200,7 +252,12 @@ export default {
       Invite,
       Price,
       EventSetting,
-      UpcomingEvent
+      UpcomingEvent,
+      GcoinPot,
+      GcoinQueue,
+      Report,
+      ReportDetail,
+      ReportSuccess
   },
   data () {
     return {
@@ -216,7 +273,6 @@ export default {
         imgClicked: false,
         isAudience: false,
         isSpeakers: false,
-        
         f_show_user_profile: false,
         f_show_send_gcoin: false,
         f_show_invite: false,
@@ -224,6 +280,11 @@ export default {
         f_show_event_setting: false,
         f_show_upcoming_event: false,
         modalStack: [],
+        f_show_gcoin_pot: false,
+        f_show_gcoin_queue: false,
+        f_show_report: false,
+        f_show_report_detail: false,
+        f_show_report_success: false,
         datas: [
             {
               image_url: "shane.png",
@@ -539,6 +600,14 @@ export default {
   },
   
   methods: {
+    closeModal() {
+        // this.f_show_host_view = false;
+        // this.isModalVisible = false;
+        this.f_show_gcoin_pot = false;
+        this.f_show_gcoin_queue = false;
+        this.f_show_report = false;
+        this.f_show_report_success = false;
+    },
     addingCoin() {
         this.isAddingCoin = true;
         this.f_show_send_gcoin = false;
@@ -639,6 +708,22 @@ export default {
     closeSendGcoinModal() {
       this.isModalVisible = false;
     },
+    closeGcoinPot() {
+        this.f_show_gcoin_pot = false;
+        this.f_show_gcoin_queue = true;
+    },
+    closeGcoinQueue() {
+        this.f_show_gcoin_queue = false;
+    },
+    closeReport() {
+        this.f_show_report = false;
+    },
+    closeReportSuccess() {
+        this.f_show_report_success = false;
+    },
+    closeReportDetail() {
+        this.f_show_report_detail = false;
+    },
     removeFlagFromStack() {
 
       let temp = this.modalStack.pop(-1);
@@ -682,7 +767,17 @@ export default {
 
       this.f_show_price = false,
 
-      this.f_show_event_setting = false
+      this.f_show_event_setting = false,
+
+      this.f_show_gcoin_queue = false,
+
+      this.f_show_gcoin_pot = false,
+
+      this.f_show_report = false,
+
+      this.f_show_report_detail = false,
+
+      this.f_show_report_success = false
     },
     showUserProfile() {
         if (!this.isAddingCoin) {
@@ -707,9 +802,49 @@ export default {
         this.f_show_event_setting = true;
         // this.modalStack.push('f_show_event_setting');
     },
+    showGcoinPot() {
+      this.f_show_gcoin_pot = true;
+      this.f_show_gcoin_queue = false;
+      this.f_show_event_setting = false;
+    },
+    showGcoinQueue() {
+      this.f_show_gcoin_queue = true;
+      this.f_show_gcoin_pot = false;
+    },
+    showReport() {
+      this.f_show_report = true;
+      this.f_show_report_success = false;
+      this.f_show_event_setting = false;
+    },
+    showReportDetail(index) {
+        this.f_show_report_detail = true;
+        this.f_show_report = false;
+    },
+    showReportSuccess() {
+        this.f_show_report_success = true;
+        this.f_show_report = false;
+        this.f_show_report_detail = false;
+    },
     ttt() {
       this.f_show_upcoming_event = true; // showing child
       this.f_show_invite = false;
+      // this.$emit('close'); // disable myself to parent
+    },
+    ttt1() {
+      this.f_show_gcoin_queue = true; // showing child
+      this.f_show_gcoin_pot = false;
+      // this.$emit('close'); // disable myself to parent
+    },
+    ttt2() {
+      this.f_show_report_success = false; // showing child
+      this.f_show_report = false;
+      this.f_show_report_detail = true;
+      // this.$emit('close'); // disable myself to parent
+    },
+    ttt3() {
+      this.f_show_report_success = true; // showing child
+      this.f_show_report = false;
+      this.f_show_report_detail = false;
       // this.$emit('close'); // disable myself to parent
     },
     closeEventSetting() {
@@ -722,8 +857,9 @@ export default {
     closeUpcomingEvent() {
       this.f_show_upcoming_event = false;
     },
-
-
+    removeDetailFlagFromStack() {
+        this.f_show_report_detail = !this.f_show_report_detail;
+    },
   },
   computed: {
     imgSrc: function () {
@@ -737,14 +873,6 @@ export default {
 </script>
 
 <style>
-  .main_audio_modal .favicon_img {
-    margin-right: 8px;
-    text-align: left;
-  }
-  .main_audio_modal p {
-    text-align: left;
-    margin: 10px 0;
-  }
   .event_body {
     margin: 130px 20px 150px;
     background: white;
