@@ -5,17 +5,19 @@
         <img src="loading_logo.png">
       </div>
       <div class="phone sociallogin" v-show="!isloading">
+
             <div v-show="isNotification" @click="killNotification()" class="event_popup_area">
               <img :src="`${notifications[currentNotificationIndex].user}`" class="event_popup_area_user">
               <span class="popup_content">
                 <span class="event_popup_area_name">
-                  {{notifications[currentNotificationIndex].name}} sent 
-                  {{notifications[currentNotificationIndex].coin ? "" : " a "}} 
+                  {{notifications[currentNotificationIndex].name}} sent
+                  {{notifications[currentNotificationIndex].coin ? "" : " a "}}
                 </span>
                 <img :src="`${notifications[currentNotificationIndex].coin?'modal_coin.png':'popup_dia.png'}`" class="event_popup_area_coin">
                 <span class="event_popup_area_name" v-if="notifications[currentNotificationIndex].coin"> <b>{{notifications[currentNotificationIndex].size}}</b> GCoins</span>
               </span>
             </div>
+
           <div class="event_body_title">
             <p class="event_favicon_img">
               <router-link to="/socialmedia/community/socialmedia_community">
@@ -25,7 +27,7 @@
               <img src="host_view_msg.png" class="host_view_msg" @click="setNotification()">
             </p>
             <p class="event_desc">Let’s All win the Market!! Start<br>Learning today!</p>
-            
+
               <p class="event_back">
                 <router-link to="/socialmedia/socialmedia_main_event_hallway">
                   <img src="event_back.png">Go to Hallway
@@ -97,7 +99,7 @@
             </div>
             <div class="event_mute_group">
               <div v-for="(item, index) in mutedata" :key="index" class="mute_user">
-                
+
                 <div class="mute_icon">
                   <img :src="`${item.mute_image}`" class="mute_user_img">
                 </div>
@@ -140,33 +142,34 @@
                 </div>
             </div>
           </div>
-            <SendGcoin 
+
+            <SendGcoin
                 v-show="f_show_send_gcoin"
                 @user-backdrop="removeFlagFromStack"
             >
             </SendGcoin>
             <vuedal></vuedal>
-            <UserProfile 
+            <UserProfile
                 v-show="f_show_user_profile"
                 @user-backdrop="removeFlagFromStack"
             >
             </UserProfile>
-            <HostView 
+            <HostView
                 v-show="f_show_host_view"
                 @user-backdrop="removeFlagFromStack"
             >
             </HostView>
-            <Invite 
+            <Invite
                 v-show="f_show_invite"
                 @user-backdrop="removeFlagFromStack"
             >
             </Invite>
-            <Price 
+            <Price
                 v-show="f_show_price"
                 @user-backdrop="removeFlagFromStack"
             >
             </Price>
-            <EventSetting 
+            <EventSetting
                 v-show="f_show_event_setting"
                 @close="closeEventSetting"
                 @user-backdrop="removeFlagFromStack"
@@ -174,26 +177,26 @@
                 @ShowReport="showReport"
             >
             </EventSetting>
-            <UpcomingEvent 
+            <UpcomingEvent
                 v-show="f_show_upcoming_event"
                 @close="closeUpcomingEvent"
                 @view-backdrop="closeUpcomingEvent"
             >
             </UpcomingEvent>
-            <!-- <UsersQueue 
+            <!-- <UsersQueue
                 v-show="f_show_users_queue"
                 @close="closeUsersQueue"
                 @user-backdrop="removeFlagFromStack"
             >
             </UsersQueue> -->
-            <GcoinPot 
+            <GcoinPot
                 v-show="f_show_gcoin_pot"
                 @user-backdrop="closeModal"
                 @close="closeGcoinPot"
                 @share1="ttt1"
             >
             </GcoinPot>
-            <GcoinQueue 
+            <GcoinQueue
                 v-show="f_show_gcoin_queue"
                 @close="closeGcoinQueue"
                 @view-backdrop="closeGcoinQueue"
@@ -202,7 +205,7 @@
                 @showGcoinPot="showGcoinPot"
             >
             </GcoinQueue>
-            <Report 
+            <Report
                 v-show="f_show_report"
                 @user-backdrop="closeModal"
                 @close="closeReport"
@@ -218,7 +221,7 @@
                 @share3="ttt3"
             >
             </ReportDetail>
-            <ReportSuccess 
+            <ReportSuccess
                 v-show="f_show_report_success"
                 @close="closeReportSuccess"
                 @view-backdrop="closeReportSuccess"
@@ -226,6 +229,7 @@
                 @disable-self="removeFlagFromStack"
             >
             </ReportSuccess>
+
       </div>
     </div>
   </div>
@@ -614,7 +618,7 @@ export default {
         ]
     }
   },
-  
+
   methods: {
     closeModal() {
       // this.f_show_host_view = false;
@@ -683,7 +687,7 @@ export default {
             setTimeout(() => {
                 this.isBlink1 = false
             }, 2000)
-        } 
+        }
     },
     killLoading() {
       setTimeout(() => {
@@ -973,4 +977,3 @@ export default {
     text-align: left;
   }
 </style>
- 

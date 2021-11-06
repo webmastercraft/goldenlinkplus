@@ -102,9 +102,9 @@
                   <span class="privacy_title_md">Third priority - Speakers</span><br>
                   <span class="privacy_title_md">Fourth priority - Audience members</span>
                 </p>
-                <p class="privacy_title_md">In order to protect branding or service purposes.  This is part of our social media environment, and as part of your social media life, you understand and agree that your role will be sometimes Host, sometimes Co-host …….  meaning sometimes you are first priority and sometimes you are second priority, and this is common practice now that you are a part of the GOLD social media life. You agree that as part of single payment purchase for Admin rights, that the above conditions govern as part of your single payment.   Host is first priority and co-host is the second priority, so you cannot argue or dispute, with being in the second priority.  So always the Host is the top priority and the co-host is always second and you understand this is our GOLD protection policy</p>
+                <p class="privacy_title_md">Event Hierarchy is used to provide services and to protect branding. This is part of our social media environment, and as part of your social media life, you understand and agree that your role may alternate between Host and Co-hos …….  meaning sometimes you are first priority and sometimes you are second priority, and this is common practice now that you are a part of the GOLD social media life. You agree that as part of single payment purchase for Admin rights, that the above conditions govern as part of your single payment.   Host is first priority and co-host is the second priority, so you cannot argue or dispute, with being in the second priority.  So always the Host is the top priority and the co-host is always second and you understand this is our GOLD protection policy</p>
                 <p class="privacy_title_lg">About social media events<br>
-                  <span class="privacy_title_md">A feature of social media activity on GOLD, would be an event room that you create or join.  In the Event rooms you moderate your created topics which support your brand or service, this becomes an important marketing tool for your use. We supply various options for you to use, to maximize your marketing impact, such as:</span><br>
+                  <span class="privacy_title_md">A feature of social media activity on GOLD, would be an event room that you create or join.  In the Event rooms you host your created topics which support your brand or service, this becomes an important marketing tool for your use. We supply various options for you to use to maximize your marketing impact, including:</span><br>
                     <ul class="guideline_ul">
                         <li>Create Invitations</li>
                         <li>Select speakers and co-hosters</li>
@@ -112,23 +112,23 @@
                         <li>Improve audience engagement</li>
                         <li>Attract influencer attention</li>
                         <li>Grow your brand matrix</li>
-                        <li>Engage our tools such as: drop G-Coins, send Diamonds in place of “Likes”, grow your</li>
-                        <li>G-Coin and Diamond credits</li>
-                        <li>In the room topic or brain-storming for your marketing strategies</li>
+                        <li>Engage our tools such as: drop G-Coins, send Diamonds in place of “Likes”,</li>
+                        <li>Grow your G-Coin and Diamond credits</li>
+                        <li>“In room”, topic or brain-storming for your marketing strategies</li>
                         <li>Identify marketing conversion improvements</li>
                         <li>Get live reactions to your business offers</li>
                         <li>Discover new opportunities and marketing channels</li>
-                        <li>Improve your Profile, and impact people with action immediately.</li>
-                        <li>Real live audio events will sell your product right away.</li>
+                        <li>Improve your Profile, and impact people with immediate action.</li>
+                        <li>Real live audio events will sell your product right immediately.</li>
                         <li>Stay in your events, to increase your social media traffic and influence, this is a good way to build up your personal brand.</li>
-                        <li>Events room supports direct messaging for branding purposes, communication or to clarify the target point.</li>
+                        <li>Events room supports direct messaging for branding purposes, communication or to clarify the target audience.</li>
                         <li>Following and mutual fans are another way to increase your influence.</li>
                     </ul>
                 </p>
                 <p class="privacy_title_lg">About community events<br>
                   <span class="privacy_title_md">Community events are another way to build up your brand or service.<br>Create good content for your brand, service, or business. A good brand image, banner or landing page as well as content are the way to make people understand your brand.<br>This is the way leaders, and your marketers, will drive your traffic.</span>
                 </p>
-                <p class="privacy_title_md">We accept multiple co-hosts to manage your content, posts, events, and anyone joining the community will get your notification when events start or are scheduled.<br>This is the place for the people who follow and love these community events, and another way you can build up your fan base and traffic matrix.</p>
+                <p class="privacy_title_md">We accept multiple co-hosts to manage your content, posts, events, and anyone joining the community will get your notification when events start or are scheduled.<br>This is the place for the people who follow and engage with these community events, and another way you can build up your fan base and traffic matrix.</p>
                 <hr class="privacy_hr">
                 <div class="how_it_works_btn term_condition_back_btn">
                   <router-link to="/socialmedia/socialmedia_main" class="how_it_works_back_btn">

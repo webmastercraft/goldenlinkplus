@@ -9,152 +9,67 @@
           </div>
           <div class="new_msg_area">
             <div class="new_msg_brand">
-              <div v-for="(item, index) in msgBrandData" :key="index" class="new_msg_brand_img" @click="setActiveHost(index)">
-                  <img :src="`${item.brand_user_img}`" :class="{activeNewbrand: activeHost === index}">
+              <div class="main_new_msg_brand">
+                <img src="community/subtract.png" :class="{activeNewbrand: activeHost < 0}" @click="setActiveHost(-1)">
+              </div>
+              <div v-for="(item, index) in msgGroup" :key="index" class="main_new_msg_brand" @click="setActiveHost(index)">
+                  <img :src="`${item.img}`" :class="{activeNewbrand: activeHost === index}">
               </div>
               <div class="new_msg_brand_img">
                 <img src="community/plus.png" @click="brandPlus">
               </div>
             </div>
             <div class="new_msg_content">
-              <div class="new_msg_para" v-if="activeHost === 0">
-                <router-link to="/socialmedia/socialmedia_main_messages_chat">
-                  <div class="new_msg_para_each">
+              <div class="new_msg_para" v-if="activeHost < 0 ">
+                <div v-for="(item,  index) in msgData" :key="index">
+                  <router-link to="/socialmedia/socialmedia_main_messages_chat" v-if="item.route_active">
+                    <div class="new_msg_para_each">
+                      <div class="new_msg_user_total">
+                        <img :src="`${item.user_img}`" class="new_msg_user">
+                        <img :src="`${item.online?'/community/dot_green.png':'/community/dot_grey.png'}`" class="new_msg_state">
+                      </div>
+                      <div class="new_msg_title">
+                          <span class="socialmedia_messages_p">{{item.user_name}}</span>
+                          <span class="socialmedia_messages_desc">{{item.user_detail}}</span>
+                      </div>
+                    </div>
+                  </router-link>
+                  <div class="new_msg_para_each_white" v-if="!item.route_active">
                     <div class="new_msg_user_total">
-                      <img src="Ray_big.png" class="new_msg_user">
-                      <img src="community/dot_green.png" class="new_msg_state">
+                      <img :src="`${item.user_img}`" class="new_msg_user">
+                      <img :src="`${item.online?'/community/dot_green.png':'/community/dot_grey.png'}`" class="new_msg_state">
                     </div>
                     <div class="new_msg_title">
-                        <span class="socialmedia_messages_p">Rayford Chenail</span>
-                        <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
+                        <span class="socialmedia_messages_p">{{item.user_name}}</span>
+                        <span class="socialmedia_messages_desc">{{item.user_detail}}</span>
                     </div>
-                  </div>
-                </router-link>
-                <router-link to="/socialmedia/socialmedia_main_messages_chat">
-                  <div class="new_msg_para_each">
-                    <div class="new_msg_user_total">
-                      <img src="Ray_big.png" class="new_msg_user">
-                      <img src="community/dot_grey.png" class="new_msg_state">
-                    </div>
-                    <div class="new_msg_title">
-                        <span class="socialmedia_messages_p">Rayford Chenail</span>
-                        <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                    </div>
-                  </div>
-                </router-link>
-                <div class="new_msg_para_each_white">
-                  <div class="new_msg_user_total">
-                    <img src="Ray_big.png" class="new_msg_user">
-                    <img src="community/dot_grey.png" class="new_msg_state">
-                  </div>
-                  <div class="new_msg_title">
-                      <span class="socialmedia_messages_p">Rayford Chenail</span>
-                      <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                  </div>
-                </div>
-                <div class="new_msg_para_each_white">
-                  <div class="new_msg_user_total">
-                    <img src="Ray_big.png" class="new_msg_user">
-                    <img src="community/dot_green.png" class="new_msg_state">
-                  </div>
-                  <div class="new_msg_title">
-                      <span class="socialmedia_messages_p">Rayford Chenail</span>
-                      <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                  </div>
-                </div>
-                <div class="new_msg_para_each_white">
-                  <div class="new_msg_user_total">
-                    <img src="Ray_big.png" class="new_msg_user">
-                    <img src="community/dot_green.png" class="new_msg_state">
-                  </div>
-                  <div class="new_msg_title">
-                      <span class="socialmedia_messages_p">Rayford Chenail</span>
-                      <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                  </div>
-                </div>
-                <div class="new_msg_para_each_white">
-                  <div class="new_msg_user_total">
-                    <img src="Ray_big.png" class="new_msg_user">
-                    <img src="community/dot_green.png" class="new_msg_state">
-                  </div>
-                  <div class="new_msg_title">
-                      <span class="socialmedia_messages_p">Rayford Chenail</span>
-                      <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                  </div>
-                </div>
-                <div class="new_msg_para_each_white">
-                  <div class="new_msg_user_total">
-                    <img src="Ray_big.png" class="new_msg_user">
-                    <img src="community/dot_green.png" class="new_msg_state">
-                  </div>
-                  <div class="new_msg_title">
-                      <span class="socialmedia_messages_p">Rayford Chenail</span>
-                      <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
                   </div>
                 </div>
               </div>
-              <div class="new_msg_para_brand_padding" v-if="activeHost === 1">
+              <div class="new_msg_para_brand_padding" v-if="activeHost >= 0">
                 <div class="new_brand_title">
-                  <img src="community/brand_each_1.png">
-                  <p><span>Elite Promotions</span><span>Community Chat</span></p>
+                  <img :src="`${msgGroup[activeHost].img}`">
+                  <p>{{msgGroup[activeHost].description}}</p>
                 </div>
-                <p class="new_brand_content">
-                  <span>Information<img src="community/plus.png" @click="msgPlus"></span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_welcome"># Welcome and Rules</router-link>
-                  </span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_announcements"># Announcements</router-link>
-                  </span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_resources"># Resources</router-link>
+                <p class="new_brand_content" v-for="(channel, cid) in msgGroup[activeHost].channels" :key="cid">
+                  <span>{{channel.title}}<img src="community/plus.png"  @click="msgPlus(cid)"></span>
+                  <span v-for="(item, lid) in channel.list" :key="lid">
+                    <router-link :to="item.link"># {{item.txt}}</router-link>
                   </span>
                 </p>
-                <p class="new_brand_content">
-                  <span>Text Channels<img src="community/plus.png" @click="msgPlus"></span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_general"># General</router-link>
-                  </span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_marketing"># Marketing</router-link>
-                  </span>
-                  <span>
-                    <router-link to="/socialmedia/socialmedia_main_messages_awesome"># Awesome Tips</router-link>
-                  </span>
-                  <span># Pushing Things</span>
-                  <span># Being an Elite</span>
-                </p>
-              </div>
-              <div class="new_msg_para_brand_padding" v-if="activeHost === 2">
-                <!-- <div class="new_msg_user_total">
-                  <img src="Ray_big.png" class="new_msg_user">
-                  <img src="community/dot_green.png" class="new_msg_state">
-                </div>
-                <div class="new_msg_title">
-                    <span class="socialmedia_messages_p">Rayford Chenail</span>
-                    <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                </div> -->
-              </div>
-              <div class="new_msg_para_brand_padding" v-if="activeHost === 3">
-                <!-- <div class="new_msg_user_total">
-                  <img src="Ray_big.png" class="new_msg_user">
-                  <img src="community/dot_green.png" class="new_msg_state">
-                </div>
-                <div class="new_msg_title">
-                    <span class="socialmedia_messages_p">Rayford Chenail</span>
-                    <span class="socialmedia_messages_desc">I sent you an email, I hope you... • 2h</span>
-                </div> -->
               </div>
             </div>
           </div>
           <MsgPlus 
               v-show="f_msg_plus"
+              v-on:childToParent="addChannel"
               @close="closeViewProfile"
               @view-backdrop="closeViewProfile"
           >
           </MsgPlus>
           <BrandPlus 
               v-show="f_brand_plus"
+              v-on:childToParent="addGroup"
               @close="closeViewProfile"
               @view-backdrop="closeViewProfile"
           >
@@ -177,58 +92,163 @@ export default {
     return {
       f_msg_plus: false,
       f_brand_plus: false,
-      activeHost: 0,
-      msgBrandData: [
-              {
-                  brand_user_img: "community/subtract.png",
-              },
-              {
-                  brand_user_img: "community/brand1.png",
-              },
-              {
-                  brand_user_img: "community/brand3.png",
-              },
-              {
-                  brand_user_img: "community/brand4.png",
-              }
+      activeHost: -1,
+      current_channal: -1,
+      msgBrandImages: [
+        {
+            brand_user_img: "community/subtract.png",
+        },
+        {
+            brand_user_img: "community/brand_each_1.png",
+        },
+        {
+            brand_user_img: "community/brand3.png",
+        },
+        {
+            brand_user_img: "community/brand4.png",
+        }
       ],
       msgData: [
             {
               user_img: "Ray_big.png",
-              state_img: "community/dot_green.png",
+              online: true,
+              route_active: true,
               user_name: "Rayford Chenail",
               user_detail: "I sent you an email, I hope you... • 2h"
             },
             {
               user_img: "Ray_big.png",
-              state_img: "community/dot_grey.png",
+              online: true,
+              route_active: true,
               user_name: "Rayford Chenail",
               user_detail: "I sent you an email, I hope you... • 2h"
             },
             {
               user_img: "Ray_big.png",
-              state_img: "community/dot_green.png",
+              online: false,
+              route_active: false,
               user_name: "Rayford Chenail",
               user_detail: "I sent you an email, I hope you... • 2h"
             },
             {
               user_img: "Ray_big.png",
-              state_img: "community/dot_green.png",
+              online: true,
+              route_active: false,
               user_name: "Rayford Chenail",
               user_detail: "I sent you an email, I hope you... • 2h"
             },
             {
               user_img: "Ray_big.png",
-              state_img: "community/dot_green.png",
+              online: false,
+              route_active: false,
               user_name: "Rayford Chenail",
               user_detail: "I sent you an email, I hope you... • 2h"
             },
+            {
+              user_img: "Ray_big.png",
+              online: false,
+              route_active: false,
+              user_name: "Rayford Chenail",
+              user_detail: "I sent you an email, I hope you... • 2h"
+            },
+            {
+              user_img: "Ray_big.png",
+              online: true,
+              route_active: false,
+              user_name: "Rayford Chenail",
+              user_detail: "I sent you an email, I hope you... • 2h"
+            },
+            {
+              user_img: "Ray_big.png",
+              online: false,
+              route_active: false,
+              user_name: "Rayford Chenail",
+              user_detail: "I sent you an email, I hope you... • 2h"
+            },
+      ],
+      msgGroup: [
+        {
+          img: "community/brand1.png",
+          description: "Elite Promotions Community Chat",
+          channels: [
+            {
+              title: "Information",
+              list: [ 
+                {
+                  txt: "Welcome and Rules",
+                  link: "/socialmedia/socialmedia_main_messages_welcome"
+                },
+                {
+                  txt: "Announcements",
+                  link: "/socialmedia/socialmedia_main_messages_announcements"
+                },
+                {
+                  txt: "Resources",
+                  link: "/socialmedia/socialmedia_main_messages_resources"
+                }
+              ]
+            },
+            {
+              title: "Text Channels",
+              list: [ 
+                {
+                  txt: "General",
+                  link: "/socialmedia/socialmedia_main_messages_general"
+                },
+                {
+                  txt: "Marketing",
+                  link: "/socialmedia/socialmedia_main_messages_marketing"
+                },
+                {
+                  txt: "Awesome Tips",
+                  link: "/socialmedia/socialmedia_main_messages_awesome"
+                },
+                {
+                  txt: "Pushing Things",
+                  link: ""
+                },
+                {
+                  txt: "Being an Elite",
+                  link: ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          img: "community/brand3.png",
+          description: "Brand3 Promotions Community Chat",
+          channels: []
+        },
+        {
+          img: "community/brand4.png",
+          description: "Brand4 Promotions Community Chat",
+          channels: []
+        }
       ]
     }
   },
   methods: {
-    msgPlus() {
+    msgPlus(index) {
+        this.current_channal = index;
         this.f_msg_plus = true;
+    },
+    addChannel (value) {
+      var _data = {
+        txt: value,
+        link: ""
+      }
+      this.msgGroup[this.activeHost].channels[this.current_channal].list.push(_data);
+      this.f_msg_plus = false;
+    },
+    addGroup(new_txt, new_img) {
+      var _data = {
+        img: new_img,
+        description: new_txt,
+        channels: []
+      }
+      this.msgGroup.push(_data);
+      this.f_brand_plus = false;
     },
     brandPlus() {
         this.f_brand_plus = true;
@@ -284,6 +304,15 @@ export default {
   .new_msg_brand_img img {
     margin: 10px auto;
   }
+  .main_new_msg_brand {
+  }
+  .main_new_msg_brand img {
+    border: 3px solid #cce5fe;
+    margin: 10px auto;
+  }
+  .main_new_msg_brand img.activeNewbrand {
+    border-color: #F4992D;
+  }
   .new_msg_para {
     display: grid;
     color: #3B3E51;
@@ -308,8 +337,9 @@ export default {
   .new_brand_title p {
     margin: auto 10px;
     text-align: left;
-    display: grid;
     font-size: 14px;
+    word-break: break-word;
+    width: 50%;
   }
   .new_brand_title img {
     margin: auto 0;

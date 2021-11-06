@@ -9,7 +9,7 @@
             <input
               type="password"
               class="form-control social_input_password"
-              id=""
+              v-model="passcode"
               aria-describedby=""
               placeholder=""
             />
@@ -17,10 +17,11 @@
             <input
               type="password"
               class="form-control social_input_password"
-              id=""
+              v-model="repasscode"
               aria-describedby=""
               placeholder=""
             />
+            <p class="email_validation" v-if="passcode != repasscode">Set Passcode failed!</p>
           </div>
           <div class="sociallogo_btn"><button><router-link to="/socialmedia/socialmedia_reg_verify" class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/></router-link></button>
           </div>
@@ -31,10 +32,17 @@
 </template>
 <script>
 
-
 export default {
   name: 'SocialMedia_Reg_security',
   components: {
+  },
+  data() {
+      return {
+        passcode: '',
+        repasscode: ''
+      }
+  },
+  methods: {
   }
 }
 </script>

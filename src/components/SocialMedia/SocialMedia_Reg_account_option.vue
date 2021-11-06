@@ -6,14 +6,16 @@
           <router-link to="/"><img src="glplogo.png"/>
           </router-link>
           <p class="glplogo_reg_p">Enter your Email Address</p>
-          <input
-            type="email"
-            class="form-control socialmedia_reg_email"
-            id=""
-            aria-describedby=""
-            placeholder=""
+          <input 
+            class="form-control socialmedia_reg_email" 
+            for="email" 
+            type="email" 
+            placeholder="Please enter your email here" 
+            required 
+            v-model="email" 
+            @blur="validateEmail" 
           />
-          <p class="email_validation">Email is required</p>
+          <p class="email_validation" v-if="!email">{{email_validation}}</p>
           <p class="code_sample">Referral Code: {{referral_code}}</p>
           <form>
               <div class="socialmedia_check">
@@ -44,12 +46,33 @@
 
 
 export default {
-  name: 'SocialMedia_Reg_account_option',
+  name: 'socialmedia_reg_account_option',
   components: {
   },
   data() {
     return {
-      referral_code: "123456"
+      referral_code: "123456",
+      email: '',
+      email_validation: "Email is required",
+    }
+  },
+  methods: {
+    registerBusiness() {
+      var send_data = {
+        email: this.email,
+        role: '1',
+        code: this.referral_code
+      }
+    },
+    registerGSMarketer() {
+    },
+    validateEmail() {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+          this.email_validation = ''
+      } else {
+        this.email = '';
+        this.email_validation = 'Email validation error.'
+      }
     }
   }
 }

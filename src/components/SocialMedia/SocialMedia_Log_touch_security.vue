@@ -17,9 +17,8 @@
   </div>
 </template>
 <script>
-  
+
   export default {
-    name: 'ProgressProPage',
     name: 'SocialMedia_Log_touch_security',
     components: {
     },

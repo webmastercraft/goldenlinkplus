@@ -13,17 +13,17 @@
             <p class="status_add_desc">Let’s add your business profile photo so people can easily recognize your business.</p>
             <div class="form-group wrapper">
                 <div class="box user-profile">
-                  <img src="img/user_img.png" class="img-fluid" />
+                  <img :src="`${profile_pass}`" class="img-fluid" />
                   <div class="upload-options">
                     <label>
-                      <input type="file" class="image-upload" accept="image/*" />
+                      <input type="file" class="image-upload"  @change="uploadImage" accept="image/*" />
                     </label>
                   </div>
                 </div>
             </div>
             <div class="sociallogo_btn status_next">
               <router-link to="/socialmedia/socialmedia_bs_reg_basic_info">
-                <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
+                <button class="glplogo_reg_btn" @click="submit">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
                 </button>
               </router-link>
             </div>
@@ -37,10 +37,30 @@
 </template>
 <script>
 
-
 export default {
   name: 'BS_Reg_Profile_Photo',
   components: {
+  },
+  data() {
+    return {
+      profile_pass: 'img/user_img.png'
+    }
+  },
+  methods: {
+    uploadImage (e) {
+      let img = e.target.files[0]
+      let fd= new FormData()
+
+      fd.append('image', img);
+
+    },
+    submit () {
+      let data = {
+        imagePath: this.profile_pass
+      }
+    
+      
+    }
   }
 }
 </script>

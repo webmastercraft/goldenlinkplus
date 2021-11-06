@@ -8,8 +8,8 @@
                 </p>
                 <div class="profile_map_role">
                     <img src="profile/role_blank.png" class="profile_role_img">
-                    <img src="profile/LOGO-G1.png" class="profile_map_each_1" @click="bsInternal">
-                    <img src="profile/LOGO-G1.png" class="profile_map_each_2" @click="bsInternal">
+                    <img v-for="(item,  index1) in headquarters" :key="'headquarters'+index1" src="profile/LOGO-G1.png" class="profile_map_each_1" @click="bsInternal(index1, 0)">
+                    <img v-for="(item,  index2) in branches" :key="'branches'+index2" src="profile/LOGO-G1.png" class="profile_map_each_2" @click="bsInternal(index2, 1)">
                 </div>
                 <div class="profile_role_para">
                     <p class="update_profile_content">Search location
@@ -25,30 +25,32 @@
                           value=""
                         />
                     </div>
-                    <p class="update_profile_content">All 2</p>
-                    <p class="update_profile_content">Headquarters 2</p>
-                    <p class="update_profile_content">Branches 1</p>
+                    <p class="update_profile_content">All {{headquarters.length + branches.length}}</p>
+                    <p class="update_profile_content">Headquarters {{headquarters.length}}</p>
+                    <p class="update_profile_content">Branches {{branches.length}}</p>
                 </div>
         </div>
         <BsInternal 
             v-show="f_bs_internal"
+            :addition=0
+            :role=selected_location_role
+            :current_index=selected_location_id
             @close="closeViewProfile"
             @view-backdrop="closeViewProfile"
-        >
-        </BsInternal>
+        />
         <Industry 
             v-show="f_show_industry"
             @view-backdrop="closeViewProfile"
             @showIndustrySystem="industrySystem"
-        >
-        </Industry>
+        />
         <IndustrySystem 
             v-show="f_industry_system"
+            :addition=1
+            :role=-1
+            :current_index=-1
             @close="backIndustrySystem"
             @view-backdrop="closeViewProfile"
-            @showIndustryService="industryService"
-        >
-        </IndustrySystem>
+        />
     </div>
 </template>
 
@@ -69,11 +71,33 @@
                 f_bs_internal: false,
                 f_show_industry: false,
                 f_industry_system: false,
+                headquarters: [
+                    {
+                        // role: Headquarters, //Branches
+                        address1: "Los Angeles",
+                        address2: "California",
+                        zipcode: "458786",
+                        contact_name: "Alice Hansen"
+                    }
+                ],
+                branches: [
+                    {
+                        // role: Headquarters, //Branches
+                        address1: "Los Angeles",
+                        address2: "California",
+                        zipcode: "458786",
+                        contact_name: "Alice Hansen"
+                    }
+                ],
+                selected_location_id: -1,
+                selected_location_role: -1
             }
         },
         methods: {
             bsInternal() {
                 this.f_bs_internal = true;
+                this.selected_location_id = index;
+                this.selected_location_role = role;
             },
             closeViewProfile() {
                 this.f_bs_internal = false;

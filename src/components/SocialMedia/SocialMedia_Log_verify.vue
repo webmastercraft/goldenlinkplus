@@ -9,14 +9,19 @@
           <input
             type="password"
             class="form-control social_input_password"
-            id=""
+            v-model="code"
             aria-describedby=""
             placeholder=""
           />
           <p class="glplogo_reg_des">Enter code in 180s<span class="glplogo_reg_code">Resend Code</span></p>
+          <div style="text-align: center;padding-top: 20px;">
+          <router-link to="/socialmedia/socialmedia_log_security">
+            <p style=" text-decoration-line: underline">or use a passcode instead</p>
+          </router-link>
+          </div>
           <div class="sociallogo_btn">
             <router-link to="/socialmedia/socialmedia_log_touch_security">
-              <button class="glplogo_reg_btn">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
+              <button class="glplogo_reg_btn" @click="sendSMSforLogin()">Next <img class="glplogo_reg_btn_img" src="reg_next.png"/>
               </button>
             </router-link>
           </div>
@@ -27,10 +32,18 @@
 </template>
 <script>
 
-
 export default {
   name: 'SocialMedia_Log_verify',
   components: {
+  },
+  data() {
+    return {
+      code: ''
+    }
+  },
+  methods: {
+    sendSMSforLogin() {
+    }
   }
 }
 </script>
