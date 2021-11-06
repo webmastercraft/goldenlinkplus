@@ -61,8 +61,9 @@
                       value="Alice Hansen"
                     />
                 </div>
-                <button class="profile_brand_btn profile_map_del" @click="closeModal">Delete</button>
-                <button class="profile_brand_btn profile_map_update" @click="closeModal">Update</button>
+                <button v-if="!addition" class="profile_brand_btn profile_map_del" @click="closeModal">Delete</button>
+                <button v-if="!addition" class="profile_brand_btn profile_map_update" @click="closeModal">Update</button>
+                <button v-if="addition" class="profile_brand_btn profile_map_update w-100" @click="closeModal">Add this Location</button>
           </header>
         </div>
       </div>
@@ -76,6 +77,7 @@
     name: 'User',
     components: {
     },  
+    props: ['role', 'current_index', 'addition'],
     data () {
         return {
           is_Internal: true,
@@ -97,6 +99,8 @@
             this.is_Internal = false;
         }
       }
+    },
+    mounted() {
     }
   }
 </script>

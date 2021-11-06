@@ -16,7 +16,7 @@
                         <p class="gcoin_title_md">Give this new group chat a personality with a name and an icon. You can always change it later.</p>
                         <div class="form-group wrapper">
                             <div class="box group_profile">
-                              <img src="group_chat.png" class="img-fluid" />
+                              <img :src="`${new_group_img}`" class="img-fluid" width="135" height="135" />
                               <div class="upload-options">
                                 <label>
                                   <input type="file" class="image-upload" accept="image/*" />
@@ -24,11 +24,9 @@
                               </div>
                             </div>
                         </div>
-                        <input type="text" placeholder="" class="form-control new_msg_input" value="Group Chat Name">
+                        <input type="text" placeholder="Group Chat Name" class="form-control new_msg_input" v-model="description">
                         <p class="privacy_title_md">By creating a group chat, you agree to<br>Goldenlinkplus’ <b>Community Guidelines</b></p>
-                        <router-link to="/socialmedia/socialmedia_main_messages_plus">
-                            <button class="gcoin_modal_btn" @click="closeModal">Create!</button>
-                        </router-link>
+                        <button class="gcoin_modal_btn" @click="addGroup">Create!</button>
                     </div>
                 </header>
             </div>
@@ -46,11 +44,16 @@
     data () {
         return {
           is_Internal: true,
+          description: "New Group",
+          new_group_img: "community/new_brand.png"
       }
     },
     methods: {
       closeModal() {
         this.$emit('close');
+      },
+      addGroup() {
+        this.$emit('childToParent', this.description, this.new_group_img);
       },
       viewProfileBackdrop(evt) {
         if(evt.target.classList.length > 0 && "bg-view-mask"){

@@ -14,9 +14,9 @@
                     <div class="gcoin_modal">
                         <p class="gcoin_title">Create Text Channel<img src="close.png" @click="closeModal"></p>
                         <p class="gcoin_title_md">Post images, emojis, opinions, and more...</p>
-                        <input type="text" placeholder="" class="form-control new_msg_input" value="# Channel Name">
+                        <input type="text" placeholder="# Channel Name" class="form-control new_msg_input" v-model="new_channel">
                         <p class="privacy_title_md">By creating a channel, you agree to<br>Goldenlinkplus’ <b>Community Guidelines</b></p>
-                        <button class="gcoin_modal_btn" @click="closeModal">Create Channel!</button>
+                        <button class="gcoin_modal_btn" @click="addChannel">Create Channel!</button>
                     </div>
                 </header>
             </div>
@@ -34,11 +34,15 @@
     data () {
         return {
           is_Internal: true,
+          new_channel: 'New Channel'
       }
     },
     methods: {
       closeModal() {
         this.$emit('close');
+      },
+      addChannel() {
+        this.$emit('childToParent', this.new_channel);
       },
       viewProfileBackdrop(evt) {
         if(evt.target.classList.length > 0 && "bg-view-mask"){
