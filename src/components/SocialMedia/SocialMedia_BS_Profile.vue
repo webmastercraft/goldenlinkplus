@@ -303,16 +303,16 @@
                   </slide>
                   <slide class="swiperslide_btn">
                     <!-- Marketing Future Trends -->
-                      <p :class="{'future_maps_color_existing' : isExisting == true}" class="profile_commun" @click="showExisting"><b>Existing Branches</b></p>
-                      <div class="marketing_maps">
+                      <p class="profile_commun" @click="showExisting"><b>Existing Branches</b></p>
+                      <div class="existing_maps">
                         <p :class="{'future_maps_color_head': isHead == true}" class="future_maps_head" @click="showHead">2<br>Headquarters</p>
                         <p :class="{'future_maps_color_chain': isChain1 == true}" class="future_maps_chain" @click="showChain1">3<br>Chain<br>Stores</p>
                         <p :class="{'future_maps_color_country': isCountry == true}" class="future_maps_country" @click="showCountry">1<br>Country</p>
                         <p :class="{'future_maps_color_franchisee': isFranchisee1 == true}" class="future_maps_franchisee" @click="showFranchisee1">4<br>Franchisee</p>
                       </div>
                       <img :src="`${currentImage}`" class="trends_map">
-                      <p class="profile_commun"><b>Marketing Future Trends</b></p>
-                      <div class="existing_maps">
+                      <p class="profile_commun" @click="showMarketing"><b>Marketing Future Trends</b></p>
+                      <div class="marketing_maps">
                         <p :class="{'future_maps_color_chain': isDistributor == true}" class="future_maps_head" @click="showDistributor">3<br>Distributors</p>
                         <p :class="{'future_maps_color_country': isChain2 == true}" class="future_maps_country" @click="showChain2">1<br>Chain Stores</p>
                         <p :class="{'future_maps_color_franchisee': isFranchisee2 == true}" class="future_maps_franchisee" @click="showFranchisee2">4<br>Franchisee</p>
@@ -378,6 +378,7 @@ export default {
   data () {
     return {
       isExisting: true,
+      isMarketing: false,
       isHead: true,
       isChain1: false,
       isChain2: false,
@@ -481,6 +482,11 @@ export default {
       this.initSelectedMap();
       this.isExisting = true;
     },
+    showMarketing() {
+      this.currentImage = "profile/marketing.png";
+      this.initSelectedMap();
+      this.isMarketing = true;
+    },
     showHead() {
       this.currentImage = "profile/Group_719.png";
       this.initSelectedMap();
@@ -518,6 +524,7 @@ export default {
     },
     initSelectedMap() {
       this.isExisting = false;
+      this.isMarketing = false;
       this.isHead = false;
       this.isDistributor = false;
       this.isChain1 = false;
@@ -910,7 +917,7 @@ export default {
     display: flex;
   }
   .existing_maps p {
-    height: 50px;
+    height: 70px;
     color: black;
     text-align: left;
     width: 100%;
@@ -918,8 +925,5 @@ export default {
     padding: 0 8px;
     font-size: 14px;
     align-items: center;
-  }
-  .future_maps_color_existing {
-
   }
 </style>
